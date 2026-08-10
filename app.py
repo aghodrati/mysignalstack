@@ -119,7 +119,6 @@ st.set_page_config(page_title="Market comparisons", layout="wide", initial_sideb
 
 st.markdown(
     "<style>"
-    "div.block-container{padding-top:1rem}"
     "[data-testid='stSidebar'] div.block-container{padding-top:0}"
     "[data-testid='stSidebarUserContent']{padding-top:0}"
     "[data-testid='stSidebar'] .stExpander{margin-bottom:0}"
@@ -136,6 +135,7 @@ st.markdown(
     # Only strip these on wide (desktop) viewports, where the sidebar stays
     # permanently visible and this chrome is genuinely unused.
     "@media (min-width: 768px){"
+    "div.block-container{padding-top:1rem}"
     "[data-testid='stHeader']{display:none}"
     "[data-testid='stSidebarHeader']{display:none}"
     "[data-testid='stSidebarCollapseButton']{display:none}"
