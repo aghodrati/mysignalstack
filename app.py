@@ -119,7 +119,6 @@ st.set_page_config(page_title="Market comparisons", layout="wide", initial_sideb
 
 st.markdown(
     "<style>"
-    "[data-testid='stHeader']{display:none}"
     "div.block-container{padding-top:1rem}"
     "[data-testid='stSidebar'] div.block-container{padding-top:0}"
     "[data-testid='stSidebarUserContent']{padding-top:0}"
@@ -130,11 +129,14 @@ st.markdown(
     "[data-testid='stSidebar'] button p{font-size:0.72rem}"
     "[data-testid='stSidebar'] [data-testid='stPills'] button{padding:0.1rem 0.5rem}"
     "[data-testid='stSidebar'] [data-testid='stVerticalBlock']{gap:0.25rem}"
-    # Below 768px, keep Streamlit's native sidebar header/collapse/expand
-    # controls untouched -- on a phone the sidebar is a full-screen overlay,
-    # and these are the only way to open/dismiss it. Only strip them on
-    # wide (desktop) viewports, where the sidebar stays permanently visible.
+    # Below 768px, keep Streamlit's native header/sidebar controls untouched --
+    # stExpandSidebarButton (the only way to reopen a collapsed sidebar on a
+    # phone) is rendered *inside* stHeader, so hiding stHeader unconditionally
+    # was silently deleting a phone's only way to open the sidebar at all.
+    # Only strip these on wide (desktop) viewports, where the sidebar stays
+    # permanently visible and this chrome is genuinely unused.
     "@media (min-width: 768px){"
+    "[data-testid='stHeader']{display:none}"
     "[data-testid='stSidebarHeader']{display:none}"
     "[data-testid='stSidebarCollapseButton']{display:none}"
     "[data-testid='stExpandSidebarButton']{display:none}"
