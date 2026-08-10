@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Backtest data/output
+cache/
+output/*
+# ...except the point-in-time factor panel: expensive to rebuild (SEC EDGAR +
+# yfinance backfill), doesn't change from user interaction, and the Metrics
+# tab needs it present on a fresh (e.g. hosted) checkout. (A git gotcha: an
+# ignored parent dir blocks re-inclusion of files inside it, hence output/*
+# above instead of output/.)
+!output/panel.csv
+
+# OS files
+.DS_Store
+
+# Secrets
+.env
