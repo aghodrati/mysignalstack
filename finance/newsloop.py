@@ -85,7 +85,7 @@ from finance.data import get_earnings_history, get_prices
 from finance.llm import RateLimited, complete, get_rate_limit_status, get_usage_counter, reset_usage_counter
 from finance.loop_a_config import active_news_sources, llm_config, max_article_chars, tracked_universe
 from finance.news import SEC_8K_SOURCE_PREFIX, get_news_from_sources, get_sec_8k_news
-from finance.portfolio import append_trade, current_state, execution_price, rule_positions
+from finance.portfolio import append_trade, current_state, execution_price, load_meta, rule_positions
 from finance.thesis import Position, append_closed, append_created, open_positions
 from finance.tickerthesis import (
     TickerThesis,
@@ -140,6 +140,46 @@ POSITION_PCT_FULL = 0.05
 POSITION_PCT_HALF = 0.025
 MIN_TRADE_DOLLARS = 50.0
 MAX_CONCURRENT_POSITIONS = 8
+
+# Per-portfolio strategy knobs -- stored in meta.json under "rules"."loop_a" (see
+# finance.portfolio.save_rule_settings, the same mechanism every other rule already uses to
+# remember its own settings), chosen once at portfolio creation (see app.py). A portfolio with no
+# such entry (every one created before this existed) resolves every key to "balanced"/"any" --
+# exactly the hardcoded globals above -- so nothing about an existing portfolio's behavior changes.
+RISK_PROFILES = {
+    # name -> (confidence_min, confidence_full)
+    "conservative": (0.75, 0.85),
+    "balanced": (CONFIDENCE_MIN, CONFIDENCE_FULL),
+    "aggressive": (0.50, 0.65),
+}
+CONCENTRATION_PROFILES = {
+    # name -> (position_pct_full, position_pct_half, max_concurrent_positions)
+    "diversified": (0.03, 0.015, 12),
+    "balanced": (POSITION_PCT_FULL, POSITION_PCT_HALF, MAX_CONCURRENT_POSITIONS),
+    "concentrated": (0.10, 0.05, 4),
+}
+HORIZON_PROFILES = {
+    # name -> (min_days, max_days) a ticker-thesis's own expected_horizon_days must fall within to
+    # be *opened* -- doesn't affect closing, review_loop_a always closes on the thesis's own
+    # horizon regardless of this setting.
+    "short_term": (HORIZON_MIN_DAYS, 90),
+    "long_term": (90, HORIZON_MAX_DAYS),
+    "any": (HORIZON_MIN_DAYS, HORIZON_MAX_DAYS),
+}
+
+
+def _portfolio_strategy(portfolio_name: str) -> dict:
+    """Resolves a portfolio's loop_a settings from meta.json into concrete numeric thresholds."""
+    settings = load_meta(portfolio_name).get("rules", {}).get(RULE_NAME, {})
+    conf_min, conf_full = RISK_PROFILES[settings.get("risk_profile", "balanced")]
+    pct_full, pct_half, max_positions = CONCENTRATION_PROFILES[settings.get("concentration", "balanced")]
+    horizon_min, horizon_max = HORIZON_PROFILES[settings.get("horizon", "any")]
+    return {
+        "confidence_min": conf_min, "confidence_full": conf_full,
+        "position_pct_full": pct_full, "position_pct_half": pct_half,
+        "max_concurrent_positions": max_positions,
+        "horizon_min_days": horizon_min, "horizon_max_days": horizon_max,
+    }
 
 # Stage A gate: an event below this on its own self-reported 0-10 importance
 # scale never reaches Stage B. Treat the score as a coarse noise filter, not
@@ -570,11 +610,11 @@ def position_id(portfolio_name: str, ticker: str, as_of: dt.date) -> str:
     return hashlib.sha1(f"{portfolio_name}|{ticker}|{as_of.isoformat()}".encode()).hexdigest()[:16]
 
 
-def _position_pct(confidence: float) -> float | None:
-    if confidence >= CONFIDENCE_FULL:
-        return POSITION_PCT_FULL
-    if confidence >= CONFIDENCE_MIN:
-        return POSITION_PCT_HALF
+def _position_pct(confidence: float, strategy: dict) -> float | None:
+    if confidence >= strategy["confidence_full"]:
+        return strategy["position_pct_full"]
+    if confidence >= strategy["confidence_min"]:
+        return strategy["position_pct_half"]
     return None
 
 
@@ -589,17 +629,20 @@ def _portfolio_value(portfolio_name: str, as_of: dt.date) -> float:
     return value
 
 
-def _try_open(portfolio_name: str, tt: TickerThesis, as_of: dt.date) -> dict | None:
+def _try_open(portfolio_name: str, tt: TickerThesis, as_of: dt.date, strategy: dict) -> dict | None:
     """Attempts the entry trade for a ticker-thesis. Returns the trade log
     dict on success, None if it wasn't traded (short direction, confidence
-    too low, at position cap, insufficient cash, or no price available).
+    too low, horizon outside this portfolio's preference, at position cap,
+    insufficient cash, or no price available).
     """
     if tt.direction != "long":
         return None
-    pct = _position_pct(tt.confidence)
+    if not (strategy["horizon_min_days"] <= tt.expected_horizon_days <= strategy["horizon_max_days"]):
+        return None
+    pct = _position_pct(tt.confidence, strategy)
     if pct is None:
         return None
-    if len(rule_positions(portfolio_name, RULE_NAME)) >= MAX_CONCURRENT_POSITIONS:
+    if len(rule_positions(portfolio_name, RULE_NAME)) >= strategy["max_concurrent_positions"]:
         return None
 
     value = _portfolio_value(portfolio_name, as_of)
@@ -1033,6 +1076,7 @@ def run_loop_a(
     as_of = as_of or dt.date.today()
     update_research(as_of=as_of, verbose=verbose, include_sec_8k=include_sec_8k)
 
+    strategy = _portfolio_strategy(portfolio_name)
     log: list[dict] = []
     open_by_ticker = {p.ticker: p for p in open_positions(portfolio_name)}
 
@@ -1042,7 +1086,7 @@ def run_loop_a(
             continue
         held = open_by_ticker.get(ticker)
         if held is not None:
-            if tt.confidence < CONFIDENCE_MIN or tt.direction != "long":
+            if tt.confidence < strategy["confidence_min"] or tt.direction != "long":
                 close_trade = _close_position_now(portfolio_name, held, as_of, reason="invalidated")
                 if close_trade:
                     log.append(close_trade)
@@ -1052,7 +1096,7 @@ def run_loop_a(
                             f"(confidence={tt.confidence:.0%}, direction={tt.direction})"
                         )
         else:
-            trade = _try_open(portfolio_name, tt, as_of)
+            trade = _try_open(portfolio_name, tt, as_of, strategy)
             if trade:
                 log.append({"action": "position_opened", "ticker": ticker, "confidence": tt.confidence})
                 log.append(trade)

@@ -44,6 +44,7 @@ from finance.momentum import (
     top_n_momentum_weight_func,
 )
 from finance.news import NEWS_SOURCES, get_all_news
+from finance.newsloop import CONCENTRATION_PROFILES, HORIZON_PROFILES, RISK_PROFILES, RULE_NAME
 from finance.overnight import decompose_returns, summarize as summarize_overnight
 from finance.panel import FACTOR_COLUMNS as PANEL_FACTOR_COLUMNS
 from finance.pead import Direction as PeadDirection, find_earnings_streak_trades, find_pead_trades
@@ -310,8 +311,17 @@ def _create_portfolio_clicked() -> None:
     # already been instantiated this pass) avoids Streamlit's "cannot modify
     # a widget's session_state after it's instantiated" exception.
     try:
-        create_portfolio(st.session_state["portfolio_new_name"], st.session_state["portfolio_new_cash"])
-        st.session_state["portfolio_selected"] = st.session_state["portfolio_new_name"].strip()
+        name = st.session_state["portfolio_new_name"]
+        create_portfolio(name, st.session_state["portfolio_new_cash"])
+        save_rule_settings(
+            name.strip(), RULE_NAME,
+            {
+                "risk_profile": st.session_state["portfolio_new_risk_profile"],
+                "concentration": st.session_state["portfolio_new_concentration"],
+                "horizon": st.session_state["portfolio_new_horizon"],
+            },
+        )
+        st.session_state["portfolio_selected"] = name.strip()
         st.session_state["_portfolio_create_error"] = None
     except ValueError as exc:
         st.session_state["_portfolio_create_error"] = str(exc)
@@ -681,6 +691,32 @@ def render_portfolio_tab() -> None:
             st.text_input("Name", key="portfolio_new_name", placeholder="e.g. momentum_top5")
             st.number_input(
                 "Starting cash ($)", min_value=100.0, value=10000.0, step=500.0, key="portfolio_new_cash"
+            )
+            st.caption("Loop A strategy -- how this portfolio reacts to Loop A's theses. Fixed at creation.")
+            st.selectbox(
+                "Risk profile", options=list(RISK_PROFILES), index=1, key="portfolio_new_risk_profile",
+                help=(
+                    "How high a ticker-thesis's confidence must be before this portfolio trades it. "
+                    "conservative=75%/85%, balanced=60%/75% (the long-standing default), aggressive=50%/65% "
+                    "(min confidence to trade at all / to size a full position)."
+                ),
+            )
+            st.selectbox(
+                "Concentration", options=list(CONCENTRATION_PROFILES), index=1, key="portfolio_new_concentration",
+                help=(
+                    "Position sizing and how many positions can be open at once. diversified=3%/1.5% of "
+                    "portfolio value per position, up to 12 open; balanced=5%/2.5%, up to 8 (the "
+                    "long-standing default); concentrated=10%/5%, up to 4."
+                ),
+            )
+            st.selectbox(
+                "Horizon", options=list(HORIZON_PROFILES), index=2, key="portfolio_new_horizon",
+                help=(
+                    "Only opens a position if the ticker-thesis's own expected_horizon_days falls in "
+                    "range. short_term=7-90 days, long_term=90-730 days, any=no restriction (the "
+                    "long-standing default). Doesn't affect closing -- positions still close on their "
+                    "own thesis's horizon regardless of this setting."
+                ),
             )
             st.button("Create", key="portfolio_new_create", on_click=_create_portfolio_clicked)
             if st.session_state.get("_portfolio_create_error"):
