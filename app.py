@@ -572,10 +572,16 @@ def render_portfolio_tab() -> None:
     cash, positions = current_state(selected)
     prices_now: dict[str, float] = {}
     if not positions.empty:
-        with st.spinner("Fetching current prices..."):
-            recent = get_prices(sorted(positions.index), start=(dt.date.today() - dt.timedelta(days=7)).isoformat())
-        if not recent.empty:
-            prices_now = recent.ffill().iloc[-1].to_dict()
+        # Best-effort -- holdings_value below already falls back to avg_cost per-ticker when a
+        # price is missing, so a total fetch failure (e.g. yfinance rate-limited) degrades to
+        # showing cost-basis values instead of crashing the page.
+        try:
+            with st.spinner("Fetching current prices..."):
+                recent = get_prices(sorted(positions.index), start=(dt.date.today() - dt.timedelta(days=7)).isoformat())
+            if not recent.empty:
+                prices_now = recent.ffill().iloc[-1].to_dict()
+        except Exception:
+            st.caption("⚠️ Live prices unavailable right now (rate-limited) -- showing cost-basis values.")
 
     holdings_value = sum(qty * prices_now.get(t, row["avg_cost"]) for t, row in positions.iterrows() for qty in [row["shares"]])
     total_value = cash + holdings_value
@@ -611,14 +617,21 @@ def render_portfolio_tab() -> None:
         _THESES_MOMENTUM_WEEKS = 12
         technical_lookback_days = _THESES_MOMENTUM_WEEKS * 7 + 15
         technical_start = (dt.date.today() - dt.timedelta(days=technical_lookback_days)).isoformat()
-        with st.spinner("Fetching price action..."):
-            technical_prices = get_prices(theses_tickers + [SP500_BENCHMARK], start=technical_start)
-        if SP500_BENCHMARK in technical_prices.columns:
-            technical_factors = build_factor_table(
-                theses_tickers, technical_prices, technical_prices[SP500_BENCHMARK],
-                momentum_weeks=_THESES_MOMENTUM_WEEKS,
-            )
-        else:
+        # Purely best-effort: yfinance rate-limits are common on shared cloud IPs (e.g. Streamlit
+        # Community Cloud) and this context is display-only, so a fetch failure here should never
+        # take down the whole Theses list -- just show it without the price-action line.
+        try:
+            with st.spinner("Fetching price action..."):
+                technical_prices = get_prices(theses_tickers + [SP500_BENCHMARK], start=technical_start)
+            if SP500_BENCHMARK in technical_prices.columns:
+                technical_factors = build_factor_table(
+                    theses_tickers, technical_prices, technical_prices[SP500_BENCHMARK],
+                    momentum_weeks=_THESES_MOMENTUM_WEEKS,
+                )
+            else:
+                technical_factors = pd.DataFrame()
+        except Exception:
+            st.caption("⚠️ Price action unavailable right now (rate-limited) -- theses shown without it.")
             technical_factors = pd.DataFrame()
         theses_rows = []
         for ticker in theses_tickers:
