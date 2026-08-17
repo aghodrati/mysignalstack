@@ -220,7 +220,7 @@ with st.sidebar:
     if _typed_custom_tickers != load_custom_tickers():
         save_custom_tickers(_typed_custom_tickers)
 
-_tab_names = ["This Week"]
+_tab_names = ["This Week", "Research"]
 if not HOSTED:
     _tab_names += ["Portfolio", "Sim"]
 _tab_names += [
@@ -531,6 +531,124 @@ def _critic_dialog(ticker: str, critic_events: list) -> None:
                 st.caption(_md(ev["llm_reasoning"]))
 
 
+def render_research_tab() -> None:
+    """Read-only knowledge/recommendation view of Loop A's output -- global,
+    not scoped to any portfolio, and with no trade-execution affordance of
+    any kind. Deliberately separate from the Portfolio tab (which owns
+    actual buy/sell/undo actions) so this can be browsed -- e.g. on a public
+    hosted deploy, see app.py's HOSTED flag -- without exposing anything
+    that moves money. The optional portfolio picker below is only for the
+    "already holding this" cross-reference; it never enables a trade.
+    """
+    st.caption(
+        "Global, shared across every portfolio -- finance.claims (every article-level claim ever "
+        "extracted) synthesized by finance.tickerthesis into one current view per ticker. Read-only: "
+        "no trades happen here, see the Portfolio tab for that."
+    )
+    existing_portfolios = list_portfolios()
+    context_portfolio = st.selectbox(
+        "Cross-reference against a portfolio's holdings (optional)", options=existing_portfolios,
+        index=None, placeholder="None -- just browsing", key="research_context_portfolio",
+    )
+
+    theses_tickers = list_tickers_with_thesis()
+    if not theses_tickers:
+        st.caption("No theses yet -- run Loop A against any portfolio to populate this.")
+        return
+
+    # Live price-action context (momentum, relative strength vs. S&P 500, relative volume) --
+    # deterministic, no LLM, never cached/blended into the thesis itself (see finance.ranking's
+    # own Momentum category, deliberately excluded from finance.fundamentals). Purely informational
+    # for a human deciding entry/exit timing -- Loop A's own trade logic never looks at this.
+    # Fetched once for every ticker shown here, not per-ticker, same batching the Rank tab uses.
+    _THESES_MOMENTUM_WEEKS = 12
+    technical_lookback_days = _THESES_MOMENTUM_WEEKS * 7 + 15
+    technical_start = (dt.date.today() - dt.timedelta(days=technical_lookback_days)).isoformat()
+    # Purely best-effort: yfinance rate-limits are common on shared cloud IPs (e.g. Streamlit
+    # Community Cloud) and this context is display-only, so a fetch failure here should never
+    # take down the whole Theses list -- just show it without the price-action line.
+    try:
+        with st.spinner("Fetching price action..."):
+            technical_prices = get_prices(theses_tickers + [SP500_BENCHMARK], start=technical_start)
+        if SP500_BENCHMARK in technical_prices.columns:
+            technical_factors = build_factor_table(
+                theses_tickers, technical_prices, technical_prices[SP500_BENCHMARK],
+                momentum_weeks=_THESES_MOMENTUM_WEEKS,
+            )
+        else:
+            technical_factors = pd.DataFrame()
+    except Exception:
+        st.caption("⚠️ Price action unavailable right now (rate-limited) -- theses shown without it.")
+        technical_factors = pd.DataFrame()
+    theses_rows = []
+    for ticker in theses_tickers:
+        tt = load_ticker_thesis(ticker)
+        if tt is None:
+            continue
+        claims = sorted(load_claims(ticker), key=lambda c: c.created, reverse=True)
+        theses_rows.append((ticker, tt, claims))
+    theses_rows.sort(key=lambda row: row[2][0].created if row[2] else dt.date.min, reverse=True)
+    for ticker, tt, claims in theses_rows:
+        n_aggregations = sum(1 for ev in tt.history if ev["event"] == "aggregated")
+        latest_claim_date = f", latest {claims[0].created.isoformat()}" if claims else ""
+        title = (
+            f"{ticker}  ·  {tt.direction}  ·  conf={tt.confidence:.0%}  ·  "
+            f"{n_aggregations} aggregation(s)  ·  {len(claims)} claim(s){latest_claim_date}"
+        )
+        with st.expander(title, expanded=False):
+            if context_portfolio:
+                held = open_positions(context_portfolio, ticker=ticker)
+                if held:
+                    p = held[0]
+                    st.info(
+                        f"**{context_portfolio}** is currently holding {ticker} -- opened {p.created} at "
+                        f"entry confidence {p.entry_confidence:.0%}, {p.expected_horizon_days}d horizon."
+                    )
+            st.write(f"**Thesis:** {_md(tt.thesis)}")
+            m1, m2, m3, m4 = st.columns(4)
+            m1.metric("Direction", tt.direction)
+            m2.metric("Confidence", f"{tt.confidence:.0%}")
+            m3.metric("Expected return", f"{tt.expected_return_pct:+.1f}%")
+            m4.metric("Horizon", f"{tt.expected_horizon_days}d")
+            if ticker in technical_factors.index:
+                tech = technical_factors.loc[ticker]
+                parts = []
+                if pd.notna(tech.get("momentum")):
+                    parts.append(f"Momentum ({_THESES_MOMENTUM_WEEKS}w): {tech['momentum']:+.1f}%")
+                if pd.notna(tech.get("relative_strength")):
+                    parts.append(f"vs S&P 500: {tech['relative_strength']:+.1f}pp")
+                if pd.notna(tech.get("relative_volume")):
+                    parts.append(f"Volume: {tech['relative_volume']:.1f}x avg")
+                if parts:
+                    st.caption("\U0001f4c8 " + "  ·  ".join(parts) + "  (context only, not used in the thesis)")
+            st.write(f"**Catalysts:** {_md(', '.join(tt.catalysts)) if tt.catalysts else '--'}")
+            st.write(f"**Invalidation:** {_md(', '.join(tt.invalidation)) if tt.invalidation else '--'}")
+
+            aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
+            fundamental_events = [ev for ev in tt.history if ev["event"] == "fundamental"]
+            critic_events = [ev for ev in tt.history if ev["event"] == "critic"]
+
+            btn_col1, btn_col2, btn_col3, btn_col4 = st.columns(4)
+            with btn_col1:
+                if st.button(f"Claims ({len(claims)})", key=f"claims_dialog_btn_{ticker}"):
+                    _claims_dialog(ticker, claims)
+            with btn_col2:
+                if critic_events and st.button(
+                    f"Critic ({len(critic_events)})", key=f"critic_dialog_btn_{ticker}"
+                ):
+                    _critic_dialog(ticker, critic_events)
+            with btn_col3:
+                if fundamental_events and st.button(
+                    f"Fundamentals ({len(fundamental_events)})", key=f"fund_dialog_btn_{ticker}"
+                ):
+                    _fundamentals_dialog(ticker, fundamental_events)
+            with btn_col4:
+                if aggregated_events and st.button(
+                    f"Theses ({len(aggregated_events)})", key=f"agg_dialog_btn_{ticker}"
+                ):
+                    _aggregation_history_dialog(ticker, aggregated_events)
+
+
 def render_portfolio_tab() -> None:
     st.caption(
         "Paper-trading portfolios. Each one is its own trade log saved to disk under "
@@ -597,109 +715,6 @@ def render_portfolio_tab() -> None:
     if not trades.empty and st.button("Undo last trade", key="portfolio_undo"):
         undo_last_trade(selected)
         st.rerun()
-
-    st.divider()
-    st.subheader("Theses")
-    st.caption(
-        "Global, shared across every portfolio -- finance.claims (every article-level claim ever "
-        "extracted) synthesized by finance.tickerthesis into one current view per ticker. Not scoped "
-        "to this portfolio; browse any ticker Loop A has looked at."
-    )
-    theses_tickers = list_tickers_with_thesis()
-    if not theses_tickers:
-        st.caption("No theses yet -- run Loop A against any portfolio to populate this.")
-    else:
-        # Live price-action context (momentum, relative strength vs. S&P 500, relative volume) --
-        # deterministic, no LLM, never cached/blended into the thesis itself (see finance.ranking's
-        # own Momentum category, deliberately excluded from finance.fundamentals). Purely informational
-        # for a human deciding entry/exit timing -- Loop A's own trade logic never looks at this.
-        # Fetched once for every ticker shown here, not per-ticker, same batching the Rank tab uses.
-        _THESES_MOMENTUM_WEEKS = 12
-        technical_lookback_days = _THESES_MOMENTUM_WEEKS * 7 + 15
-        technical_start = (dt.date.today() - dt.timedelta(days=technical_lookback_days)).isoformat()
-        # Purely best-effort: yfinance rate-limits are common on shared cloud IPs (e.g. Streamlit
-        # Community Cloud) and this context is display-only, so a fetch failure here should never
-        # take down the whole Theses list -- just show it without the price-action line.
-        try:
-            with st.spinner("Fetching price action..."):
-                technical_prices = get_prices(theses_tickers + [SP500_BENCHMARK], start=technical_start)
-            if SP500_BENCHMARK in technical_prices.columns:
-                technical_factors = build_factor_table(
-                    theses_tickers, technical_prices, technical_prices[SP500_BENCHMARK],
-                    momentum_weeks=_THESES_MOMENTUM_WEEKS,
-                )
-            else:
-                technical_factors = pd.DataFrame()
-        except Exception:
-            st.caption("⚠️ Price action unavailable right now (rate-limited) -- theses shown without it.")
-            technical_factors = pd.DataFrame()
-        theses_rows = []
-        for ticker in theses_tickers:
-            tt = load_ticker_thesis(ticker)
-            if tt is None:
-                continue
-            claims = sorted(load_claims(ticker), key=lambda c: c.created, reverse=True)
-            theses_rows.append((ticker, tt, claims))
-        theses_rows.sort(key=lambda row: row[2][0].created if row[2] else dt.date.min, reverse=True)
-        for ticker, tt, claims in theses_rows:
-            n_aggregations = sum(1 for ev in tt.history if ev["event"] == "aggregated")
-            latest_claim_date = f", latest {claims[0].created.isoformat()}" if claims else ""
-            title = (
-                f"{ticker}  ·  {tt.direction}  ·  conf={tt.confidence:.0%}  ·  "
-                f"{n_aggregations} aggregation(s)  ·  {len(claims)} claim(s){latest_claim_date}"
-            )
-            with st.expander(title, expanded=False):
-                held = open_positions(selected, ticker=ticker)
-                if held:
-                    p = held[0]
-                    st.info(
-                        f"**{selected}** is currently holding {ticker} -- opened {p.created} at "
-                        f"entry confidence {p.entry_confidence:.0%}, {p.expected_horizon_days}d horizon. "
-                        f"See Trade history above for the fill."
-                    )
-                st.write(f"**Thesis:** {_md(tt.thesis)}")
-                m1, m2, m3, m4 = st.columns(4)
-                m1.metric("Direction", tt.direction)
-                m2.metric("Confidence", f"{tt.confidence:.0%}")
-                m3.metric("Expected return", f"{tt.expected_return_pct:+.1f}%")
-                m4.metric("Horizon", f"{tt.expected_horizon_days}d")
-                if ticker in technical_factors.index:
-                    tech = technical_factors.loc[ticker]
-                    parts = []
-                    if pd.notna(tech.get("momentum")):
-                        parts.append(f"Momentum ({_THESES_MOMENTUM_WEEKS}w): {tech['momentum']:+.1f}%")
-                    if pd.notna(tech.get("relative_strength")):
-                        parts.append(f"vs S&P 500: {tech['relative_strength']:+.1f}pp")
-                    if pd.notna(tech.get("relative_volume")):
-                        parts.append(f"Volume: {tech['relative_volume']:.1f}x avg")
-                    if parts:
-                        st.caption("\U0001f4c8 " + "  ·  ".join(parts) + "  (context only, not used in the thesis)")
-                st.write(f"**Catalysts:** {_md(', '.join(tt.catalysts)) if tt.catalysts else '--'}")
-                st.write(f"**Invalidation:** {_md(', '.join(tt.invalidation)) if tt.invalidation else '--'}")
-
-                aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
-                fundamental_events = [ev for ev in tt.history if ev["event"] == "fundamental"]
-                critic_events = [ev for ev in tt.history if ev["event"] == "critic"]
-
-                btn_col1, btn_col2, btn_col3, btn_col4 = st.columns(4)
-                with btn_col1:
-                    if st.button(f"Claims ({len(claims)})", key=f"claims_dialog_btn_{ticker}"):
-                        _claims_dialog(ticker, claims)
-                with btn_col2:
-                    if critic_events and st.button(
-                        f"Critic ({len(critic_events)})", key=f"critic_dialog_btn_{ticker}"
-                    ):
-                        _critic_dialog(ticker, critic_events)
-                with btn_col3:
-                    if fundamental_events and st.button(
-                        f"Fundamentals ({len(fundamental_events)})", key=f"fund_dialog_btn_{ticker}"
-                    ):
-                        _fundamentals_dialog(ticker, fundamental_events)
-                with btn_col4:
-                    if aggregated_events and st.button(
-                        f"Theses ({len(aggregated_events)})", key=f"agg_dialog_btn_{ticker}"
-                    ):
-                        _aggregation_history_dialog(ticker, aggregated_events)
 
     st.divider()
     st.subheader("Current positions")
@@ -3153,6 +3168,8 @@ def render_panel_tab() -> None:
 
 if active_tab == "This Week":
     render_weekly_tab()
+elif active_tab == "Research":
+    render_research_tab()
 elif active_tab == "Portfolio":
     render_portfolio_tab()
 elif active_tab == "Sim":
