@@ -235,14 +235,25 @@ _tab_names += [
 # segmented_control instead reports only the *selected* section, so only that one render
 # function below actually runs each time -- switching sections is a fast, cheap rerun instead
 # of everything computing eagerly upfront.
-# Equal-width segments -- st.segmented_control otherwise sizes each button to fit its own label,
-# so "This Week" ends up visibly wider than "Rank"; forcing flex:1 on every button makes them
-# uniform regardless of label length.
+# Equal-width segments wrapped onto exactly two rows -- st.segmented_control otherwise sizes each
+# button to fit its own label (so "This Week" is visibly wider than "Rank") and packs everything
+# onto one line. A grid with ceil(n/2) columns fills row 1 first, then row 2, regardless of how
+# many tabs exist. Scoped to .st-key-active_tab (the class Streamlit adds for any widget created
+# with an explicit key=) -- st.pills elsewhere (e.g. the sidebar's ticker category pickers) render
+# through this exact same stButtonGroup component, so an unscoped rule here previously squeezed
+# those into the same grid too.
+_tab_grid_cols = -(-len(_tab_names) // 2)  # ceil division
 st.markdown(
-    """
+    f"""
     <style>
-    div[data-testid="stButtonGroup"] > div { display: flex; width: 100%; }
-    div[data-testid="stButtonGroup"] button[data-variant="segmented_control"] { flex: 1 1 0; }
+    .st-key-active_tab div[data-testid="stButtonGroup"] > div {{
+        display: grid;
+        grid-template-columns: repeat({_tab_grid_cols}, 1fr);
+        width: 100%;
+    }}
+    .st-key-active_tab div[data-testid="stButtonGroup"] button[data-variant="segmented_control"] {{
+        width: 100%;
+    }}
     </style>
     """,
     unsafe_allow_html=True,
@@ -323,6 +334,7 @@ def _create_portfolio_clicked() -> None:
         )
         st.session_state["portfolio_selected"] = name.strip()
         st.session_state["_portfolio_create_error"] = None
+        st.rerun()  # closes the dialog and returns to the main page with the new portfolio selected
     except ValueError as exc:
         st.session_state["_portfolio_create_error"] = str(exc)
 
@@ -671,6 +683,43 @@ def render_research_tab() -> None:
                     _aggregation_history_dialog(ticker, aggregated_events)
 
 
+@st.dialog("New portfolio")
+def _new_portfolio_dialog() -> None:
+    st.text_input("Name", key="portfolio_new_name", placeholder="e.g. momentum_top5")
+    st.number_input(
+        "Starting cash ($)", min_value=100.0, value=10000.0, step=500.0, key="portfolio_new_cash"
+    )
+    st.caption("Loop A strategy -- how this portfolio reacts to Loop A's theses. Fixed at creation.")
+    st.selectbox(
+        "Risk profile", options=list(RISK_PROFILES), index=1, key="portfolio_new_risk_profile",
+        help=(
+            "How high a ticker-thesis's confidence must be before this portfolio trades it. "
+            "conservative=75%/85%, balanced=60%/75% (the long-standing default), aggressive=50%/65% "
+            "(min confidence to trade at all / to size a full position)."
+        ),
+    )
+    st.selectbox(
+        "Concentration", options=list(CONCENTRATION_PROFILES), index=1, key="portfolio_new_concentration",
+        help=(
+            "Position sizing and how many positions can be open at once. diversified=3%/1.5% of "
+            "portfolio value per position, up to 12 open; balanced=5%/2.5%, up to 8 (the "
+            "long-standing default); concentrated=10%/5%, up to 4."
+        ),
+    )
+    st.selectbox(
+        "Horizon", options=list(HORIZON_PROFILES), index=2, key="portfolio_new_horizon",
+        help=(
+            "Only opens a position if the ticker-thesis's own expected_horizon_days falls in "
+            "range. short_term=7-90 days, long_term=90-730 days, any=no restriction (the "
+            "long-standing default). Doesn't affect closing -- positions still close on their "
+            "own thesis's horizon regardless of this setting."
+        ),
+    )
+    st.button("Create", key="portfolio_new_create", on_click=_create_portfolio_clicked)
+    if st.session_state.get("_portfolio_create_error"):
+        st.error(st.session_state["_portfolio_create_error"])
+
+
 def render_portfolio_tab() -> None:
     st.caption(
         "Paper-trading portfolios. Each one is its own trade log saved to disk under "
@@ -687,40 +736,8 @@ def render_portfolio_tab() -> None:
             label_visibility="collapsed", key="portfolio_selected",
         )
     with create_col:
-        with st.popover("+ New portfolio"):
-            st.text_input("Name", key="portfolio_new_name", placeholder="e.g. momentum_top5")
-            st.number_input(
-                "Starting cash ($)", min_value=100.0, value=10000.0, step=500.0, key="portfolio_new_cash"
-            )
-            st.caption("Loop A strategy -- how this portfolio reacts to Loop A's theses. Fixed at creation.")
-            st.selectbox(
-                "Risk profile", options=list(RISK_PROFILES), index=1, key="portfolio_new_risk_profile",
-                help=(
-                    "How high a ticker-thesis's confidence must be before this portfolio trades it. "
-                    "conservative=75%/85%, balanced=60%/75% (the long-standing default), aggressive=50%/65% "
-                    "(min confidence to trade at all / to size a full position)."
-                ),
-            )
-            st.selectbox(
-                "Concentration", options=list(CONCENTRATION_PROFILES), index=1, key="portfolio_new_concentration",
-                help=(
-                    "Position sizing and how many positions can be open at once. diversified=3%/1.5% of "
-                    "portfolio value per position, up to 12 open; balanced=5%/2.5%, up to 8 (the "
-                    "long-standing default); concentrated=10%/5%, up to 4."
-                ),
-            )
-            st.selectbox(
-                "Horizon", options=list(HORIZON_PROFILES), index=2, key="portfolio_new_horizon",
-                help=(
-                    "Only opens a position if the ticker-thesis's own expected_horizon_days falls in "
-                    "range. short_term=7-90 days, long_term=90-730 days, any=no restriction (the "
-                    "long-standing default). Doesn't affect closing -- positions still close on their "
-                    "own thesis's horizon regardless of this setting."
-                ),
-            )
-            st.button("Create", key="portfolio_new_create", on_click=_create_portfolio_clicked)
-            if st.session_state.get("_portfolio_create_error"):
-                st.error(st.session_state["_portfolio_create_error"])
+        if st.button("New portfolio", key="portfolio_new_open"):
+            _new_portfolio_dialog()
     with delete_col:
         if selected:
             with st.popover("Delete portfolio"):
