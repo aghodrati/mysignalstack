@@ -220,7 +220,7 @@ with st.sidebar:
     if _typed_custom_tickers != load_custom_tickers():
         save_custom_tickers(_typed_custom_tickers)
 
-_tab_names = ["This Week", "Research"]
+_tab_names = ["Research", "This Week"]
 if not HOSTED:
     _tab_names += ["Portfolio", "Sim"]
 _tab_names += [
@@ -234,6 +234,18 @@ _tab_names += [
 # segmented_control instead reports only the *selected* section, so only that one render
 # function below actually runs each time -- switching sections is a fast, cheap rerun instead
 # of everything computing eagerly upfront.
+# Equal-width segments -- st.segmented_control otherwise sizes each button to fit its own label,
+# so "This Week" ends up visibly wider than "Rank"; forcing flex:1 on every button makes them
+# uniform regardless of label length.
+st.markdown(
+    """
+    <style>
+    div[data-testid="stButtonGroup"] > div { display: flex; width: 100%; }
+    div[data-testid="stButtonGroup"] button[data-variant="segmented_control"] { flex: 1 1 0; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 active_tab = st.segmented_control(
     "Section", options=_tab_names, default=_tab_names[0], required=True,
     key="active_tab", label_visibility="collapsed",
