@@ -20,6 +20,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from finance.backtest import buy_and_hold, rebalance_dates, run_backtest
+from finance.claims import load_claims
 from finance.correlation import divergence_now, pairwise_correlation
 from finance.data import (
     get_earnings_history,
@@ -32,7 +33,7 @@ from finance.data import (
     get_upgrades_downgrades,
     get_volume,
 )
-from finance.dip import find_dip_trades
+from finance.dip import find_dip_trades, find_pending_dips
 from finance.intraday import average_intraday_path
 from finance.metrics import summary_table
 from finance.momentum import (
@@ -47,7 +48,6 @@ from finance.overnight import decompose_returns, summarize as summarize_overnigh
 from finance.panel import FACTOR_COLUMNS as PANEL_FACTOR_COLUMNS
 from finance.pead import Direction as PeadDirection, find_earnings_streak_trades, find_pead_trades
 from finance.portfolio import (
-    append_trade,
     closed_trades,
     create_portfolio,
     current_state,
@@ -76,7 +76,9 @@ from finance.ranking import (
     composite_score,
     percentile_rank_table,
 )
-from finance.summarize import has_api_key, summarize_article
+from finance.summarize import get_cached_summary, has_api_key, summarize_article
+from finance.thesis import open_positions
+from finance.tickerthesis import list_tickers_with_thesis, load_ticker_thesis
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
 
 # Set on the hosted deployment only (e.g. a Streamlit Community Cloud secret).
@@ -128,6 +130,31 @@ st.markdown(
     "[data-testid='stSidebar'] button p{font-size:0.72rem}"
     "[data-testid='stSidebar'] [data-testid='stPills'] button{padding:0.1rem 0.5rem}"
     "[data-testid='stSidebar'] [data-testid='stVerticalBlock']{gap:0.25rem}"
+    # Research trail entries (ticker-thesis history, article claims) are the only nested expanders
+    # in the app (a trail entry expander inside a wrapping one, sometimes with a further-nested
+    # "Source article text") -- this selector reaches exactly those, giving them a light tint
+    # distinguishing them from top-level text without touching any other expander in the app.
+    "[data-testid='stExpanderDetails'] [data-testid='stExpander']"
+    "{background-color:rgba(151,166,195,0.15);border-radius:0.5rem}"
+    # Per-claim Direction/Confidence/Expected return/Horizon metrics (Theses -> ticker -> Claims ->
+    # a single claim) are nested three levels deep and shown once per claim, often many per ticker --
+    # full-size st.metric styling (meant for a page's headline numbers) is too heavy repeated that
+    # often, so shrink just these, leaving every other metric in the app (portfolio totals, the
+    # ticker-level thesis, aggregation/fundamental history) untouched.
+    "[class*='st-key-claim_metrics_'] [data-testid='stMetricValue']{font-size:1.4rem}"
+    "[class*='st-key-claim_metrics_'] [data-testid='stMetricLabel'] p{font-size:0.8rem}"
+    # Per-category fundamental-factor metrics (Growth/Valuation/.../Ownership) pack several raw
+    # values into one metric's value string -- shrink so a multi-value string like "16.3x · 0.6x ·
+    # 19.6x" fits without wrapping awkwardly.
+    "[class*='st-key-fundamental_factors_'] [data-testid='stMetricValue']{font-size:0.85rem}"
+    "[class*='st-key-fundamental_factors_'] [data-testid='stMetricLabel'] p{font-size:0.8rem}"
+    # News/Fundamental confidence are the *inputs* to the headline Blended confidence metric above
+    # them -- shrink so they read as a breakdown/footnote, not equal-weight siblings.
+    "[class*='st-key-confidence_breakdown_'] [data-testid='stMetricValue']{font-size:0.85rem}"
+    "[class*='st-key-confidence_breakdown_'] [data-testid='stMetricLabel'] p{font-size:0.75rem}"
+    # Claim cards inside the Claims dialog -- lightly tinted to read as distinct cards while
+    # scrolling, default size/spacing otherwise.
+    "[class*='st-key-claim_card_']{background-color:rgba(151,166,195,0.10);border-radius:0.5rem}"
     # Below 768px, keep Streamlit's native header/sidebar controls untouched --
     # stExpandSidebarButton (the only way to reopen a collapsed sidebar on a
     # phone) is rendered *inside* stHeader, so hiding stHeader unconditionally
@@ -195,25 +222,22 @@ with st.sidebar:
 
 _tab_names = ["This Week"]
 if not HOSTED:
-    _tab_names.append("Portfolio")
+    _tab_names += ["Portfolio", "Sim"]
 _tab_names += [
-    "Compare", "Correlations", "Momentum", "Buy the dip", "Calendar",
-    "PEAD", "Insider", "Institutions", "Metrics", "Ranking",
+    "Compare", "Corr", "Mom", "buy-dip", "Calendar",
+    "PEAD", "Insider", "Inst'", "Rank", "LT data",
 ]
-_tabs = dict(zip(_tab_names, st.tabs(_tab_names)))
-
-weekly_tab = _tabs["This Week"]
-portfolio_tab = _tabs.get("Portfolio")
-compare_tab = _tabs["Compare"]
-correlation_tab = _tabs["Correlations"]
-momentum_tab = _tabs["Momentum"]
-dip_tab = _tabs["Buy the dip"]
-calendar_tab = _tabs["Calendar"]
-pead_tab = _tabs["PEAD"]
-insider_tab = _tabs["Insider"]
-ownership_tab = _tabs["Institutions"]
-panel_tab = _tabs["Metrics"]
-ranking_tab = _tabs["Ranking"]
+# A plain st.tabs() computes every tab's content on every script run regardless of which is
+# visible (they're all rendered into the page, just CSS-hidden) -- with 13 tabs, several of
+# which fetch prices for a whole universe of tickers or build multi-year factor panels, a
+# full run can take well over a minute even before you can see anything past the first tab.
+# segmented_control instead reports only the *selected* section, so only that one render
+# function below actually runs each time -- switching sections is a fast, cheap rerun instead
+# of everything computing eagerly upfront.
+active_tab = st.segmented_control(
+    "Section", options=_tab_names, default=_tab_names[0], required=True,
+    key="active_tab", label_visibility="collapsed",
+)
 
 
 def render_compare_tab() -> None:
@@ -267,41 +291,281 @@ def render_compare_tab() -> None:
     st.dataframe(summary.style.format("{:+.2%}"), width="stretch", key="table_compare")
 
 
+def _create_portfolio_clicked() -> None:
+    # Runs before the rerun that re-instantiates the "portfolio_selected"
+    # selectbox widget -- setting its session_state key here (rather than in
+    # the `if st.button(...)` body below, which runs *after* that widget has
+    # already been instantiated this pass) avoids Streamlit's "cannot modify
+    # a widget's session_state after it's instantiated" exception.
+    try:
+        create_portfolio(st.session_state["portfolio_new_name"], st.session_state["portfolio_new_cash"])
+        st.session_state["portfolio_selected"] = st.session_state["portfolio_new_name"].strip()
+        st.session_state["_portfolio_create_error"] = None
+    except ValueError as exc:
+        st.session_state["_portfolio_create_error"] = str(exc)
+
+
+def _delete_portfolio_clicked(name: str) -> None:
+    delete_portfolio(name)
+    del st.session_state["portfolio_selected"]
+
+
+def _md(text: str) -> str:
+    """Escapes a `$` before handing LLM-generated prose to st.write/st.markdown/st.caption --
+    those render two `$` as inline LaTeX math (KaTeX), and financial text is full of dollar
+    amounts, so a claim/thesis/summary mentioning e.g. "$30 million to $50 million" gets the
+    text *between* the two dollar signs silently typeset as math instead of displayed literally
+    (mangled spacing, unexpected color/styling). Every dynamic piece of text that ultimately
+    comes from an LLM or an article (claims, context, thesis, reasoning, catalysts, invalidation,
+    risks, article summaries) should be wrapped in this before display.
+    """
+    return text.replace("$", "\\$")
+
+
+# Unit each finance.fundamentals raw factor is stored in -- see finance.ranking's own row[...]
+# assignments (some are already *100 percentages, some raw ratios/dollars/counts) -- used only to
+# format the fundamental card's per-category factor summary, not to re-derive/rank anything.
+_FUNDAMENTAL_FACTOR_UNIT: dict[str, str] = {
+    "revenue_growth": "pct100", "earnings_growth": "pct100",
+    "forward_pe": "x", "peg_ratio": "x", "ev_to_revenue": "x",
+    "operating_margin": "pct100", "fcf_margin": "pct100",
+    "analyst_upside": "pct", "revisions_trend": "pct", "net_upgrades": "count",
+    "institutional_flow": "pct", "insider_flow": "$", "low_short_interest": "pct",
+}
+
+
+def _format_factor(name: str, value: float) -> str:
+    unit = _FUNDAMENTAL_FACTOR_UNIT.get(name, "")
+    if unit == "pct100":
+        return f"{value * 100:+.1f}%"
+    if unit == "pct":
+        return f"{value:+.1f}%"
+    if unit == "x":
+        return f"{value:.1f}x"
+    if unit == "$":
+        return f"${value:+,.0f}"
+    if unit == "count":
+        return f"{value:+.0f}"
+    return f"{value:.2f}"
+
+
+# The single most decision-relevant factor per category, used to boil the fundamental card's
+# per-category summary down to one number instead of listing every raw factor -- a true composite
+# would need percentile-ranking against a universe (deliberately not done for a single-ticker check,
+# see finance.fundamentals's own module docstring), so this picks the most commonly-cited headline
+# metric for each category instead of averaging incompatible units together.
+_CATEGORY_HEADLINE_FACTOR: dict[str, str] = {
+    "Growth": "revenue_growth",
+    "Valuation": "forward_pe",
+    "Quality": "operating_margin",
+    "Sentiment": "analyst_upside",
+    "Ownership": "institutional_flow",
+}
+
+_FUNDAMENTAL_STYLE: dict[str, tuple[str, str]] = {
+    "supports": ("\U0001f7e2", "Fundamentals: Supports"),
+    "contradicts": ("\U0001f534", "Fundamentals: Contradicts"),
+    "neutral": ("⚪", "Fundamentals: Neutral"),
+}
+
+
+@st.dialog("Claims", width="medium")
+def _claims_dialog(ticker: str, claims: list) -> None:
+    """Experimental alternative to nested expanders: every claim for `ticker`
+    shown as its own card in a scrollable modal, closeable without losing
+    your place in the Theses list underneath. Shows the source article's AI
+    summary if one's already cached (finance.summarize, e.g. from browsing
+    the This Week tab) -- never generates one on demand, that'd be a fresh
+    LLM call just to populate a claim card.
+    """
+    n_long = sum(1 for c in claims if c.direction == "long")
+    n_short = sum(1 for c in claims if c.direction == "short")
+    st.caption(
+        f"{ticker}  ·  {len(claims)} claim(s), newest first  ·  \U0001f53c {n_long} long  ·  "
+        f"\U0001f53d {n_short} short"
+    )
+    for c in claims:
+        with st.container(border=True, key=f"claim_card_{c.id}"):
+            badge = {"long": "🔼", "short": "🔽"}.get(c.direction, "➖")
+            st.markdown(f"**{badge} {_md(c.claim)}**")
+            st.caption(
+                f"{c.created}  ·  importance {c.importance}/10  ·  "
+                f"[{c.source_title}]({c.source_link})  ·  event_type={c.event_type}"
+            )
+            # Trade-worthy/confidence are meaningful for every claim, trade-worthy or not -- direction
+            # is already shown via the badge above, no need to repeat it as a metric too. Only the
+            # sizing fields (return/horizon) genuinely don't exist for a claim too vague/indirect to
+            # size a trade on (the extractor leaves them at 0 rather than guessing), so those stay
+            # gated behind trade_worthy. Shown above the context paragraph, not below, so the
+            # at-a-glance numbers don't require scrolling past a paragraph of prose first.
+            with st.container(key=f"claim_metrics_{c.id}"):
+                if c.trade_worthy:
+                    cm1, cm2, cm3, cm4 = st.columns(4)
+                    cm1.metric("Trade-worthy", "Yes")
+                    cm2.metric("Confidence", f"{c.confidence:.0%}")
+                    cm3.metric("Expected return", f"{c.expected_return_pct:+.1f}%")
+                    cm4.metric("Horizon", f"{c.expected_horizon_days}d")
+                else:
+                    cm1, cm2 = st.columns(2)
+                    cm1.metric("Trade-worthy", "No")
+                    cm2.metric("Confidence", f"{c.confidence:.0%}")
+            if c.context:
+                st.write(_md(c.context))
+            if not c.trade_worthy:
+                st.caption(
+                    "Not specific/actionable enough to size a trade on -- recorded as evidence "
+                    "for the ticker's overall thesis only."
+                )
+            article_summary = get_cached_summary(c.source_link)
+            if article_summary:
+                st.caption(f"\U0001f4f0 Summary of article: {_md(article_summary)}")
+
+
+@st.dialog("Aggregation history", width="medium")
+def _aggregation_history_dialog(ticker: str, aggregated_events: list) -> None:
+    """Same card-in-a-scrollable-modal treatment as the Claims dialog, for
+    Stage C's synthesized-thesis snapshots over time.
+    """
+    st.caption(f"{ticker}  ·  {len(aggregated_events)} aggregation(s), newest first")
+    for n, ev in reversed(list(enumerate(aggregated_events, 1))):
+        with st.container(border=True, key=f"agg_card_{ticker}_{n}"):
+            st.markdown(f"**#{n}  \U0001f9e9  {ev['date']}  ·  {ev.get('claims_considered', '?')} claim(s) considered**")
+            a1, a2, a3 = st.columns(3)
+            a1.metric("Direction", ev["direction"])
+            a2.metric("Blended confidence", f"{ev['confidence']:.0%}")
+            a3.metric(
+                "Expected return", f"{ev['expected_return_pct']:+.1f}%",
+                f"{ev['expected_horizon_days']}d horizon", delta_color="off",
+            )
+            news_confidence = ev.get("news_confidence")
+            fundamental_confidence = ev.get("fundamental_confidence")
+            with st.container(key=f"confidence_breakdown_{ticker}_{n}"):
+                b1, b2 = st.columns(2)
+                b1.metric("News confidence", f"{news_confidence:.0%}" if news_confidence is not None else "--")
+                b2.metric(
+                    "Fundamental support score",
+                    f"{fundamental_confidence:.0%}" if fundamental_confidence is not None else "--",
+                )
+            st.write(f"Thesis: {_md(ev['thesis'])}")
+            if ev.get("catalysts"):
+                st.write("Catalysts: " + _md(", ".join(ev["catalysts"])))
+            if ev.get("invalidation"):
+                st.write("Invalidation: " + _md(", ".join(ev["invalidation"])))
+            st.caption(_md(ev["reasoning"]))
+
+
+@st.dialog("Fundamentals", width="medium")
+def _fundamentals_dialog(ticker: str, fundamental_events: list) -> None:
+    """Same card-in-a-scrollable-modal treatment as the Claims dialog, for
+    the independent fundamental second opinion's history.
+    """
+    st.caption(f"{ticker}  ·  {len(fundamental_events)} check(s), newest first")
+    for n, ev in reversed(list(enumerate(fundamental_events, 1))):
+        with st.container(border=True, key=f"fund_card_{ticker}_{n}"):
+            icon, headline = _FUNDAMENTAL_STYLE.get(ev["assessment"], ("", ev["assessment"]))
+            st.markdown(f"**#{n}  {icon}  {headline}  ·  {ev['date']}**")
+            direction = ev.get("direction")
+            if ev.get("thesis"):
+                st.write(f"**Thesis scored:** {_md(ev['thesis'])}")
+            metric_label = f"Support for '{direction}'" if direction else "Fundamental confidence"
+            st.metric(
+                metric_label, f"{ev['fundamental_confidence']:.0%}",
+                help=(
+                    "0% = fundamentals strongly argue AGAINST this direction, 100% = fundamentals "
+                    "strongly SUPPORT it, 50% = no strong bearing either way."
+                ),
+            )
+            fv, cp = ev.get("fair_value_estimate"), ev.get("current_price")
+            if fv and cp:
+                implied = ev.get("implied_return_pct")
+                implied_text = f"  ·  implied return {implied:+.1f}%" if implied is not None else ""
+                st.caption(f"Analyst fair value estimate: \\${fv:.2f}  ·  Current price: \\${cp:.2f}{implied_text}")
+            factors = ev.get("factors")
+            if factors:
+                present = {c: v for c, v in factors.items() if v}
+                if present:
+                    with st.container(key=f"fundamental_factors_{ticker}_{n}"):
+                        cat_cols = st.columns(len(present))
+                        for col, (category, values) in zip(cat_cols, present.items()):
+                            headline_factor = _CATEGORY_HEADLINE_FACTOR.get(category)
+                            if headline_factor not in values:
+                                headline_factor = next(iter(values))  # fallback: whatever's there
+                            value = values[headline_factor]
+                            higher_better = HIGHER_IS_BETTER.get(headline_factor, True)
+                            arrow = "▲" if higher_better else "▼"
+                            description = FACTOR_DESCRIPTIONS.get(category, {}).get(headline_factor, "")
+                            col.metric(
+                                f"{category} {arrow}", _format_factor(headline_factor, value),
+                                help=description or None,
+                            )
+            for risk in ev.get("risks") or []:
+                st.write(f"⚠️ risk: {_md(risk)}")
+            st.caption(_md(ev["reasoning"]))
+
+
+@st.dialog("Critic", width="medium")
+def _critic_dialog(ticker: str, critic_events: list) -> None:
+    """Same card-in-a-scrollable-modal treatment as the Claims dialog, for
+    the critic pass's history: deterministic guardrails (source
+    concentration, evidence thinness, staleness) plus one LLM red-team call
+    -- both dampen confidence, never raise it (see finance.critic and
+    finance.tickerthesis._deterministic_critic_flags).
+    """
+    st.caption(f"{ticker}  ·  {len(critic_events)} check(s), newest first")
+    for n, ev in reversed(list(enumerate(critic_events, 1))):
+        with st.container(border=True, key=f"critic_card_{ticker}_{n}"):
+            multiplier = ev.get("final_multiplier", 1.0)
+            if multiplier >= 0.99:
+                icon, headline = "✅", "No material concerns"
+            else:
+                icon, headline = "🟡", f"Confidence dampened {1 - multiplier:.0%}"
+            st.markdown(f"**#{n}  {icon}  {headline}  ·  {ev['date']}**")
+            c1, c2 = st.columns(2)
+            c1.metric("Confidence before critic", f"{ev['confidence_before']:.0%}")
+            c2.metric("Confidence after critic", f"{ev['confidence_after']:.0%}")
+            for flag in ev.get("deterministic_flags") or []:
+                st.write(f"\U0001f6a9 {flag}")
+            for concern in ev.get("llm_concerns") or []:
+                st.write(f"\U0001f9d0 {_md(concern)}")
+            if ev.get("llm_reasoning"):
+                st.caption(_md(ev["llm_reasoning"]))
+
+
 def render_portfolio_tab() -> None:
     st.caption(
-        "Paper-trading simulations. Each one is its own trade log saved to disk under "
-        "`output/portfolios/`, so it survives closing the app. Log trades by hand here; "
-        "rule-driven trades (once you define a rule) would append to the same log."
+        "Paper-trading portfolios. Each one is its own trade log saved to disk under "
+        "`output/portfolios/`, so it survives closing the app. Trades come from Loop A "
+        "(see run_loop_a.py) -- for rule-driven, automated trades and backtesting, see the "
+        "Simulation tab."
     )
 
     existing = list_portfolios()
     name_col, create_col, delete_col = st.columns([2, 1, 1])
     with name_col:
-        selected = st.selectbox("Simulation", options=existing, key="portfolio_selected") if existing else None
+        selected = st.selectbox(
+            "Portfolio", options=existing, index=None, placeholder="Choose a portfolio",
+            label_visibility="collapsed", key="portfolio_selected",
+        )
     with create_col:
-        with st.popover("+ New simulation"):
-            new_name = st.text_input("Name", key="portfolio_new_name", placeholder="e.g. momentum_top5")
-            new_cash = st.number_input(
+        with st.popover("+ New portfolio"):
+            st.text_input("Name", key="portfolio_new_name", placeholder="e.g. momentum_top5")
+            st.number_input(
                 "Starting cash ($)", min_value=100.0, value=10000.0, step=500.0, key="portfolio_new_cash"
             )
-            if st.button("Create", key="portfolio_new_create"):
-                try:
-                    create_portfolio(new_name, new_cash)
-                    st.session_state["portfolio_selected"] = new_name.strip()
-                    st.rerun()
-                except ValueError as exc:
-                    st.error(str(exc))
+            st.button("Create", key="portfolio_new_create", on_click=_create_portfolio_clicked)
+            if st.session_state.get("_portfolio_create_error"):
+                st.error(st.session_state["_portfolio_create_error"])
     with delete_col:
         if selected:
-            with st.popover("Delete simulation"):
+            with st.popover("Delete portfolio"):
                 st.write(f"Permanently delete **{selected}** and its trade history?")
-                if st.button("Confirm delete", key="portfolio_delete_confirm"):
-                    delete_portfolio(selected)
-                    del st.session_state["portfolio_selected"]
-                    st.rerun()
+                st.button(
+                    "Confirm delete", key="portfolio_delete_confirm",
+                    on_click=_delete_portfolio_clicked, args=(selected,),
+                )
 
     if not selected:
-        st.info("Create a simulation to get started.")
+        st.info("Create a portfolio to get started." if not existing else "Choose a portfolio above.")
         return
 
     meta = load_meta(selected)
@@ -323,57 +587,222 @@ def render_portfolio_tab() -> None:
     m3.metric("Total value", f"${total_value:,.2f}")
     m4.metric("Return since inception", f"{total_return:+.2%}")
 
-    st.divider()
-    st.subheader("Log a trade")
-    with st.form("portfolio_trade_form", clear_on_submit=True):
-        c1, c2, c3, c4, c5 = st.columns([1.2, 1, 1, 1, 1])
-        with c1:
-            trade_ticker = st.text_input("Ticker", key="portfolio_trade_ticker").strip().upper()
-        with c2:
-            trade_action = st.pills(
-                "Action", options=["BUY", "SELL"], default="BUY", key="portfolio_trade_action"
-            )
-        with c3:
-            trade_shares = st.number_input("Shares", min_value=0.0, step=1.0, key="portfolio_trade_shares")
-        with c4:
-            trade_date = st.date_input("Date", value=dt.date.today(), max_value=dt.date.today(), key="portfolio_trade_date")
-        with c5:
-            trade_auto_price = st.checkbox("Use market price", value=True, key="portfolio_trade_auto_price")
-        trade_price_manual = st.number_input(
-            "Price ($) -- only used when 'Use market price' is off",
-            min_value=0.0,
-            step=0.01,
-            key="portfolio_trade_price",
-            disabled=trade_auto_price,
-        )
-        trade_note = st.text_input("Note (optional)", key="portfolio_trade_note")
-        submitted = st.form_submit_button("Log trade")
-        if submitted:
-            trade_price = trade_price_manual
-            if trade_auto_price:
-                fetch_end = trade_date + dt.timedelta(days=1)  # yfinance end is exclusive
-                fetch_start = trade_date - dt.timedelta(days=7)
-                quote = get_prices([trade_ticker], start=fetch_start.isoformat(), end=fetch_end.isoformat())
-                quote = quote.loc[quote.index <= pd.Timestamp(trade_date)]
-                if trade_ticker not in quote.columns or quote[trade_ticker].dropna().empty:
-                    st.error(f"No market price found for {trade_ticker} on/before {trade_date}.")
-                    st.stop()
-                trade_price = float(quote[trade_ticker].dropna().iloc[-1])
-                st.caption(f"Filled {trade_ticker} at market price ${trade_price:,.2f} (last close on/before {trade_date}).")
-            try:
-                append_trade(
-                    selected, trade_date, trade_ticker, trade_action or "BUY", trade_shares, trade_price, trade_note
-                )
-                st.rerun()
-            except ValueError as exc:
-                st.error(str(exc))
-
     trades = load_trades(selected)
     if not trades.empty and st.button("Undo last trade", key="portfolio_undo"):
         undo_last_trade(selected)
         st.rerun()
 
     st.divider()
+    st.subheader("Theses")
+    st.caption(
+        "Global, shared across every portfolio -- finance.claims (every article-level claim ever "
+        "extracted) synthesized by finance.tickerthesis into one current view per ticker. Not scoped "
+        "to this portfolio; browse any ticker Loop A has looked at."
+    )
+    theses_tickers = list_tickers_with_thesis()
+    if not theses_tickers:
+        st.caption("No theses yet -- run Loop A against any portfolio to populate this.")
+    else:
+        # Live price-action context (momentum, relative strength vs. S&P 500, relative volume) --
+        # deterministic, no LLM, never cached/blended into the thesis itself (see finance.ranking's
+        # own Momentum category, deliberately excluded from finance.fundamentals). Purely informational
+        # for a human deciding entry/exit timing -- Loop A's own trade logic never looks at this.
+        # Fetched once for every ticker shown here, not per-ticker, same batching the Rank tab uses.
+        _THESES_MOMENTUM_WEEKS = 12
+        technical_lookback_days = _THESES_MOMENTUM_WEEKS * 7 + 15
+        technical_start = (dt.date.today() - dt.timedelta(days=technical_lookback_days)).isoformat()
+        with st.spinner("Fetching price action..."):
+            technical_prices = get_prices(theses_tickers + [SP500_BENCHMARK], start=technical_start)
+        if SP500_BENCHMARK in technical_prices.columns:
+            technical_factors = build_factor_table(
+                theses_tickers, technical_prices, technical_prices[SP500_BENCHMARK],
+                momentum_weeks=_THESES_MOMENTUM_WEEKS,
+            )
+        else:
+            technical_factors = pd.DataFrame()
+        theses_rows = []
+        for ticker in theses_tickers:
+            tt = load_ticker_thesis(ticker)
+            if tt is None:
+                continue
+            claims = sorted(load_claims(ticker), key=lambda c: c.created, reverse=True)
+            theses_rows.append((ticker, tt, claims))
+        theses_rows.sort(key=lambda row: row[2][0].created if row[2] else dt.date.min, reverse=True)
+        for ticker, tt, claims in theses_rows:
+            n_aggregations = sum(1 for ev in tt.history if ev["event"] == "aggregated")
+            latest_claim_date = f", latest {claims[0].created.isoformat()}" if claims else ""
+            title = (
+                f"{ticker}  ·  {tt.direction}  ·  conf={tt.confidence:.0%}  ·  "
+                f"{n_aggregations} aggregation(s)  ·  {len(claims)} claim(s){latest_claim_date}"
+            )
+            with st.expander(title, expanded=False):
+                held = open_positions(selected, ticker=ticker)
+                if held:
+                    p = held[0]
+                    st.info(
+                        f"**{selected}** is currently holding {ticker} -- opened {p.created} at "
+                        f"entry confidence {p.entry_confidence:.0%}, {p.expected_horizon_days}d horizon. "
+                        f"See Trade history above for the fill."
+                    )
+                st.write(f"**Thesis:** {_md(tt.thesis)}")
+                m1, m2, m3, m4 = st.columns(4)
+                m1.metric("Direction", tt.direction)
+                m2.metric("Confidence", f"{tt.confidence:.0%}")
+                m3.metric("Expected return", f"{tt.expected_return_pct:+.1f}%")
+                m4.metric("Horizon", f"{tt.expected_horizon_days}d")
+                if ticker in technical_factors.index:
+                    tech = technical_factors.loc[ticker]
+                    parts = []
+                    if pd.notna(tech.get("momentum")):
+                        parts.append(f"Momentum ({_THESES_MOMENTUM_WEEKS}w): {tech['momentum']:+.1f}%")
+                    if pd.notna(tech.get("relative_strength")):
+                        parts.append(f"vs S&P 500: {tech['relative_strength']:+.1f}pp")
+                    if pd.notna(tech.get("relative_volume")):
+                        parts.append(f"Volume: {tech['relative_volume']:.1f}x avg")
+                    if parts:
+                        st.caption("\U0001f4c8 " + "  ·  ".join(parts) + "  (context only, not used in the thesis)")
+                st.write(f"**Catalysts:** {_md(', '.join(tt.catalysts)) if tt.catalysts else '--'}")
+                st.write(f"**Invalidation:** {_md(', '.join(tt.invalidation)) if tt.invalidation else '--'}")
+
+                aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
+                fundamental_events = [ev for ev in tt.history if ev["event"] == "fundamental"]
+                critic_events = [ev for ev in tt.history if ev["event"] == "critic"]
+
+                btn_col1, btn_col2, btn_col3, btn_col4 = st.columns(4)
+                with btn_col1:
+                    if st.button(f"Claims ({len(claims)})", key=f"claims_dialog_btn_{ticker}"):
+                        _claims_dialog(ticker, claims)
+                with btn_col2:
+                    if critic_events and st.button(
+                        f"Critic ({len(critic_events)})", key=f"critic_dialog_btn_{ticker}"
+                    ):
+                        _critic_dialog(ticker, critic_events)
+                with btn_col3:
+                    if fundamental_events and st.button(
+                        f"Fundamentals ({len(fundamental_events)})", key=f"fund_dialog_btn_{ticker}"
+                    ):
+                        _fundamentals_dialog(ticker, fundamental_events)
+                with btn_col4:
+                    if aggregated_events and st.button(
+                        f"Theses ({len(aggregated_events)})", key=f"agg_dialog_btn_{ticker}"
+                    ):
+                        _aggregation_history_dialog(ticker, aggregated_events)
+
+    st.divider()
+    st.subheader("Current positions")
+    if positions.empty:
+        st.caption("No open positions.")
+    else:
+        display = positions.copy()
+        display["current_price"] = [prices_now.get(t, display.loc[t, "avg_cost"]) for t in display.index]
+        display["market_value"] = display["shares"] * display["current_price"]
+        display["unrealized_pl"] = (display["current_price"] - display["avg_cost"]) * display["shares"]
+        display["unrealized_pl_pct"] = display["current_price"] / display["avg_cost"] - 1
+        display.index.name = "Ticker"
+        st.dataframe(
+            display.rename(
+                columns={
+                    "shares": "Shares",
+                    "avg_cost": "Avg cost",
+                    "current_price": "Current price",
+                    "market_value": "Market value",
+                    "unrealized_pl": "Unrealized P/L ($)",
+                    "unrealized_pl_pct": "Unrealized P/L (%)",
+                }
+            ).style.format(
+                {
+                    "Shares": "{:g}",
+                    "Avg cost": "${:,.2f}",
+                    "Current price": "${:,.2f}",
+                    "Market value": "${:,.2f}",
+                    "Unrealized P/L ($)": "${:+,.2f}",
+                    "Unrealized P/L (%)": "{:+.2%}",
+                }
+            ),
+            width="stretch",
+            key="table_portfolio_positions",
+        )
+
+    st.subheader("Value over time")
+    history = valuation_history(selected)
+    if len(history) > 1:
+        fig = go.Figure()
+        fig.add_trace(
+            go.Scatter(x=history["date"], y=history["total_value"], name="Total value", line=dict(width=2))
+        )
+        fig.add_hline(y=meta["initial_cash"], line=dict(dash="dash", color="#9a9da4"), opacity=0.6)
+        fig.update_layout(
+            yaxis_title="Portfolio value ($)",
+            xaxis_title="Date",
+            hovermode="x unified",
+            height=400,
+            margin=dict(t=20, b=20),
+        )
+        st.plotly_chart(fig, width="stretch", key="chart_portfolio_value")
+
+    st.subheader("Trade history")
+    if trades.empty:
+        st.caption("No trades logged yet.")
+    else:
+        trades_display = trades.sort_values("date", ascending=False).copy()
+        trades_display["date"] = trades_display["date"].dt.date
+        st.dataframe(
+            trades_display.rename(
+                columns={
+                    "date": "Date",
+                    "ticker": "Ticker",
+                    "action": "Action",
+                    "shares": "Shares",
+                    "price": "Price",
+                    "note": "Note",
+                }
+            ).style.format({"Shares": "{:g}", "Price": "${:,.2f}"}),
+            width="stretch",
+            key="table_portfolio_trades",
+        )
+
+
+def render_simulation_tab() -> None:
+    st.caption(
+        "Automated, rule-driven trading and historical backtesting. Shares the same underlying "
+        "storage as the Portfolio tab -- a simulation created here shows up there too, and vice versa."
+    )
+
+    existing = list_portfolios()
+    name_col, create_col, delete_col = st.columns([2, 1, 1])
+    with name_col:
+        selected = st.selectbox(
+            "Simulation", options=existing, index=None, placeholder="Choose a simulation",
+            label_visibility="collapsed", key="simulation_selected",
+        )
+    with create_col:
+        with st.popover("+ New simulation"):
+            new_name = st.text_input("Name", key="simulation_new_name", placeholder="e.g. momentum_top5")
+            new_cash = st.number_input(
+                "Starting cash ($)", min_value=100.0, value=10000.0, step=500.0, key="simulation_new_cash"
+            )
+            if st.button("Create", key="simulation_new_create"):
+                try:
+                    create_portfolio(new_name, new_cash)
+                    st.session_state["simulation_selected"] = new_name.strip()
+                    st.rerun()
+                except ValueError as exc:
+                    st.error(str(exc))
+    with delete_col:
+        if selected:
+            with st.popover("Delete simulation"):
+                st.write(f"Permanently delete **{selected}** and its trade history?")
+                if st.button("Confirm delete", key="simulation_delete_confirm"):
+                    delete_portfolio(selected)
+                    del st.session_state["simulation_selected"]
+                    st.rerun()
+
+    if not selected:
+        st.info("Create a simulation to get started." if not existing else "Choose a simulation above.")
+        return
+
+    meta = load_meta(selected)
+
     st.subheader("Automated rules")
     st.caption(
         "Runs immediately, once, against today's data. Exits first (positions past their hold-days "
@@ -388,8 +817,8 @@ def render_portfolio_tab() -> None:
     active_rules: dict[str, tuple] = {}
 
     diverged_defaults = saved_rules.get("diverged_pairs", {})
-    with st.expander("Diverged pairs (correlation >= 0.8, |Z| >= 1.5, buy the laggard)"):
-        dp_enabled = st.checkbox("Enable", value=bool(diverged_defaults), key="portfolio_dp_enabled")
+    with st.expander("Diverged pairs (correlation >= 0.8, |Z| >= 1.5, buy the laggard)", expanded=True):
+        dp_enabled = st.checkbox("Enable", value=False, key="portfolio_dp_enabled")
         rc1, rc2, rc3 = st.columns(3)
         with rc1:
             dp_top_n = st.number_input(
@@ -414,8 +843,8 @@ def render_portfolio_tab() -> None:
             )
 
     dip_defaults = saved_rules.get("buy_the_dip", {})
-    with st.expander("Buy the dip (fell 5%+ in a day, sell after N days)"):
-        dip_enabled = st.checkbox("Enable", value=bool(dip_defaults), key="portfolio_dip_enabled")
+    with st.expander("Buy the dip (fell 5%+ in a day, sell after N days)", expanded=True):
+        dip_enabled = st.checkbox("Enable", value=False, key="portfolio_dip_enabled")
         rc1, rc2, rc3, rc4 = st.columns(4)
         with rc1:
             dip_drop_pct = st.number_input(
@@ -451,8 +880,8 @@ def render_portfolio_tab() -> None:
             )
 
     streak_defaults = saved_rules.get("earnings_streak", {})
-    with st.expander("Earnings-beat streak, mild (last 2 quarters surprised 0-2%, buy day before next report)"):
-        streak_enabled = st.checkbox("Enable", value=bool(streak_defaults), key="portfolio_streak_enabled")
+    with st.expander("Earnings-beat streak, mild (last 2 quarters surprised 0-2%, buy day before next report)", expanded=True):
+        streak_enabled = st.checkbox("Enable", value=False, key="portfolio_streak_enabled")
         st.caption(
             "Only ever qualifies on the single trading day before a ticker's next earnings report -- "
             "run this rule that day (or later that same day, before the report) to catch it."
@@ -494,8 +923,8 @@ def render_portfolio_tab() -> None:
             )
 
     analyst_defaults = saved_rules.get("analyst_momentum", {})
-    with st.expander("Analyst momentum (last 7 days: up+maintain >= down, avg target >= 20% above price)"):
-        analyst_enabled = st.checkbox("Enable", value=bool(analyst_defaults), key="portfolio_analyst_enabled")
+    with st.expander("Analyst momentum (last 7 days: up+maintain >= down, avg target >= 20% above price)", expanded=True):
+        analyst_enabled = st.checkbox("Enable", value=False, key="portfolio_analyst_enabled")
         rc1, rc2, rc3, rc4 = st.columns(4)
         with rc1:
             analyst_min_upside = st.number_input(
@@ -697,78 +1126,6 @@ def render_portfolio_tab() -> None:
                 width="stretch", key="table_backtest_trades", hide_index=True,
             )
 
-    st.divider()
-    st.subheader("Current positions")
-    if positions.empty:
-        st.caption("No open positions.")
-    else:
-        display = positions.copy()
-        display["current_price"] = [prices_now.get(t, display.loc[t, "avg_cost"]) for t in display.index]
-        display["market_value"] = display["shares"] * display["current_price"]
-        display["unrealized_pl"] = (display["current_price"] - display["avg_cost"]) * display["shares"]
-        display["unrealized_pl_pct"] = display["current_price"] / display["avg_cost"] - 1
-        display.index.name = "Ticker"
-        st.dataframe(
-            display.rename(
-                columns={
-                    "shares": "Shares",
-                    "avg_cost": "Avg cost",
-                    "current_price": "Current price",
-                    "market_value": "Market value",
-                    "unrealized_pl": "Unrealized P/L ($)",
-                    "unrealized_pl_pct": "Unrealized P/L (%)",
-                }
-            ).style.format(
-                {
-                    "Shares": "{:g}",
-                    "Avg cost": "${:,.2f}",
-                    "Current price": "${:,.2f}",
-                    "Market value": "${:,.2f}",
-                    "Unrealized P/L ($)": "${:+,.2f}",
-                    "Unrealized P/L (%)": "{:+.2%}",
-                }
-            ),
-            width="stretch",
-            key="table_portfolio_positions",
-        )
-
-    st.subheader("Value over time")
-    history = valuation_history(selected)
-    if len(history) > 1:
-        fig = go.Figure()
-        fig.add_trace(
-            go.Scatter(x=history["date"], y=history["total_value"], name="Total value", line=dict(width=2))
-        )
-        fig.add_hline(y=meta["initial_cash"], line=dict(dash="dash", color="#9a9da4"), opacity=0.6)
-        fig.update_layout(
-            yaxis_title="Portfolio value ($)",
-            xaxis_title="Date",
-            hovermode="x unified",
-            height=400,
-            margin=dict(t=20, b=20),
-        )
-        st.plotly_chart(fig, width="stretch", key="chart_portfolio_value")
-
-    st.subheader("Trade history")
-    if trades.empty:
-        st.caption("No trades logged yet.")
-    else:
-        trades_display = trades.sort_values("date", ascending=False).copy()
-        trades_display["date"] = trades_display["date"].dt.date
-        st.dataframe(
-            trades_display.rename(
-                columns={
-                    "date": "Date",
-                    "ticker": "Ticker",
-                    "action": "Action",
-                    "shares": "Shares",
-                    "price": "Price",
-                    "note": "Note",
-                }
-            ).style.format({"Shares": "{:g}", "Price": "${:,.2f}"}),
-            width="stretch",
-            key="table_portfolio_trades",
-        )
 
 
 def render_correlations_tab() -> None:
@@ -1087,17 +1444,45 @@ def render_dip_tab() -> None:
         )
 
     dip_start = pd.Timestamp(dip_start_date)
+    # A few days of buffer before "Since" so the very first fetched trading day
+    # still has a prior close to compute its own return against -- otherwise a
+    # dip that happened to fall on that first day is unmeasurable (NaN return)
+    # and silently disappears from the scan.
+    fetch_start = dip_start - pd.Timedelta(days=10)
     with st.spinner("Scanning for dips..."):
-        prices = get_prices(universe_tickers + [SP500_BENCHMARK], start=dip_start.date().isoformat())
+        prices = get_prices(universe_tickers + [SP500_BENCHMARK], start=fetch_start.date().isoformat())
         stock_prices = prices[universe_tickers].dropna(axis=1, how="all")
         benchmark = prices[SP500_BENCHMARK]
 
         trades = find_dip_trades(
             stock_prices, benchmark, drop_pct=drop_pct / 100, hold_days=int(hold_days), cost_bps=dip_cost_bps
         )
+        trades = trades[trades["buy_date"] >= dip_start]
 
     if trades.empty:
-        st.info("No dips of that size found in this period.")
+        pending = find_pending_dips(stock_prices, drop_pct=drop_pct / 100, hold_days=int(hold_days))
+        pending = pending[pending["buy_date"] >= dip_start]
+        if pending.empty:
+            st.info("No dips of that size found in this period.")
+        else:
+            st.info(
+                f"{len(pending)} dip(s) of that size happened in this period, but none have reached "
+                f"their {int(hold_days)}-day hold yet -- still in progress, not yet a scoreable trade."
+            )
+            pending_display = pending.copy()
+            pending_display["Ticker"] = pending_display["ticker"].map(lambda t: f"{STOCK_TICKER_TO_NAME.get(t, t)} ({t})")
+            pending_display["Buy date"] = pending_display["buy_date"].dt.date
+            pending_display = pending_display.rename(
+                columns={
+                    "buy_price": "Buy price", "drop_that_day": "Drop that day",
+                    "days_held_so_far": "Days held so far",
+                }
+            )
+            st.dataframe(
+                pending_display[["Ticker", "Buy date", "Buy price", "Drop that day", "Days held so far"]]
+                .style.format({"Buy price": "${:,.2f}", "Drop that day": "{:+.2%}"}),
+                width=800, key="table_dip_pending", hide_index=True,
+            )
         return
 
     compounded_stock = (1 + trades["stock_return"]).prod() - 1
@@ -2753,39 +3138,29 @@ def render_panel_tab() -> None:
         st.dataframe(raw.reset_index(drop=True), width=600, key="table_panel_factor_history", hide_index=True)
 
 
-with weekly_tab:
+if active_tab == "This Week":
     render_weekly_tab()
-
-if portfolio_tab is not None:
-    with portfolio_tab:
-        render_portfolio_tab()
-
-with compare_tab:
+elif active_tab == "Portfolio":
+    render_portfolio_tab()
+elif active_tab == "Sim":
+    render_simulation_tab()
+elif active_tab == "Compare":
     render_compare_tab()
-
-with correlation_tab:
+elif active_tab == "Corr":
     render_correlations_tab()
-
-with momentum_tab:
+elif active_tab == "Mom":
     render_momentum_tab()
-
-with dip_tab:
+elif active_tab == "buy-dip":
     render_dip_tab()
-
-with calendar_tab:
+elif active_tab == "Calendar":
     render_calendar_tab()
-
-with pead_tab:
+elif active_tab == "PEAD":
     render_pead_tab()
-
-with insider_tab:
+elif active_tab == "Insider":
     render_insider_tab()
-
-with ownership_tab:
+elif active_tab == "Inst'":
     render_ownership_tab()
-
-with panel_tab:
-    render_panel_tab()
-
-with ranking_tab:
+elif active_tab == "Rank":
     render_ranking_tab()
+elif active_tab == "LT data":
+    render_panel_tab()

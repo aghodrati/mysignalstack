@@ -8,44 +8,16 @@ article twice -- important given OpenRouter's free-tier daily request cap
 from __future__ import annotations
 
 import json
-import os
 import re
 from pathlib import Path
 
-import requests
+from finance.llm import RateLimited, complete as _complete
+from finance.llm import has_api_key
 
-CACHE_DIR = Path(__file__).resolve().parent.parent / "cache"
-SUMMARY_CACHE_PATH = CACHE_DIR / "news_summaries.json"
-ENV_PATH = Path(__file__).resolve().parent.parent / ".env"
-
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-
-# Tried in order; a reasoning model (gpt-oss-20b) sometimes burns its whole
-# token budget on hidden reasoning and returns empty content, so a plain
-# instruct model goes first for reliability, with fallbacks if it's down.
-MODEL_CANDIDATES = [
-    "nvidia/nemotron-3-nano-30b-a3b:free",
-    "google/gemma-4-31b-it:free",
-    "openai/gpt-oss-20b:free",
-]
+CACHE_DIR = Path(__file__).resolve().parent.parent / "cache" / "news"
+SUMMARY_CACHE_PATH = CACHE_DIR / "summaries.json"
 
 _TAG_RE = re.compile(r"<[^>]+>")
-
-
-def _load_env_var(name: str) -> str | None:
-    value = os.environ.get(name)
-    if value:
-        return value
-    if not ENV_PATH.exists():
-        return None
-    for line in ENV_PATH.read_text().splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, _, val = line.partition("=")
-        if key.strip() == name:
-            return val.strip()
-    return None
 
 
 def _strip_html(html: str) -> str:
@@ -96,8 +68,17 @@ def _save_cache(cache: dict[str, str]) -> None:
     SUMMARY_CACHE_PATH.write_text(json.dumps(cache, indent=2))
 
 
-def has_api_key() -> bool:
-    return _load_env_var("OPENROUTER_API_KEY") is not None
+def get_cached_summary(link: str) -> str | None:
+    """The AI summary already cached for `link`, if one exists -- a pure
+    cache lookup, never calls the LLM. For callers (like Loop A's claim
+    cards) that want to show a summary when one's already been generated
+    (e.g. from browsing the This Week tab) but shouldn't spend a fresh LLM
+    call just to produce one on demand.
+    """
+    cache = _load_cache()
+    if link in cache:
+        return _normalize_text(cache[link])
+    return None
 
 
 def summarize_article(link: str, title: str, html_content: str) -> str | None:
@@ -110,10 +91,6 @@ def summarize_article(link: str, title: str, html_content: str) -> str | None:
     if link in cache:
         return _normalize_text(cache[link])
 
-    api_key = _load_env_var("OPENROUTER_API_KEY")
-    if not api_key:
-        return None
-
     text = _strip_html(html_content)
     if not text:
         return None
@@ -124,23 +101,14 @@ def summarize_article(link: str, title: str, html_content: str) -> str | None:
         f"Title: {title}\n\n{text[:6000]}"
     )
 
-    for model in MODEL_CANDIDATES:
-        try:
-            response = requests.post(
-                OPENROUTER_URL,
-                headers={"Authorization": f"Bearer {api_key}"},
-                json={"model": model, "messages": [{"role": "user", "content": prompt}], "max_tokens": 500},
-                timeout=30,
-            )
-            response.raise_for_status()
-            summary = response.json()["choices"][0]["message"].get("content")
-        except (requests.RequestException, KeyError, IndexError):
-            continue
-        summary = (summary or "").strip()
-        if summary and not _looks_like_leaked_reasoning(summary):
-            summary = _normalize_text(summary)
-            cache[link] = summary
-            _save_cache(cache)
-            return summary
+    try:
+        summary = _complete(prompt, max_tokens=500, accept=lambda text: not _looks_like_leaked_reasoning(text))
+    except RateLimited:
+        return None  # same fallback as any other failure -- caller uses the feed's own teaser instead
+    if summary:
+        summary = _normalize_text(summary)
+        cache[link] = summary
+        _save_cache(cache)
+        return summary
 
     return None

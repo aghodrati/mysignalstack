@@ -1,0 +1,57 @@
+{
+  "universe": {
+    "AAPL": "Apple",
+    "MSFT": "Microsoft",
+    "GOOGL": "Alphabet (Google)",
+    "AMZN": "Amazon",
+    "META": "Meta Platforms",
+    "TSLA": "Tesla",
+    "ORCL": "Oracle",
+    "UBER": "Uber",
+    "RDDT": "Reddit",
+    "BRK-B": "Berkshire Hathaway",
+    "NVDA": "Nvidia",
+    "TSM": "TSMC",
+    "ASML": "ASML",
+    "AMD": "AMD",
+    "ARM": "ARM",
+    "QCOM": "Qualcomm",
+    "MU": "Micron",
+    "INTC": "Intel",
+    "NBIS": "Nebius",
+    "AVGO": "Broadcom",
+    "XOM": "ExxonMobil",
+    "CVX": "Chevron",
+    "PLTR": "Palantir",
+    "LMT": "Lockheed Martin",
+    "QBTS": "D-Wave Quantum",
+    "RGTI": "Rigetti Computing",
+    "OKLO": "Oklo",
+    "SPCX": "SpaceX",
+    "BTC-USD": "Bitcoin",
+    "GLD": "Gold",
+    "SLV": "Silver",
+    "CPER": "Copper",
+    "CRWV": "CoreWeave",
+    "IREN": "IREN"
+  },
+  "news_sources": [
+    {"name": "SemiAnalysis", "url": "https://newsletter.semianalysis.com/feed", "active": true, "frequency": "~1-2 articles/week"},
+    {"name": "Stratechery", "url": "https://stratechery.com/feed/", "active": true, "frequency": "~1 free article/week (+3 paid Daily Updates/week)"},
+    {"name": "Next Platform", "url": "https://www.nextplatform.com/feed/", "active": false, "frequency": "unverified, trade press, likely several/day"},
+    {"name": "The Diff", "url": "https://www.thediff.co/feed", "active": false, "frequency": "~daily (5x/week) free tier"},
+    {"name": "Citrini Research", "url": "https://citriniresearch.com/feed", "active": false, "frequency": "~2-3 in-depth pieces/year (infrequent)"},
+    {"name": "EE Times", "url": "https://www.eetimes.com/feed/", "active": false, "frequency": "unverified, trade press, likely several/day"},
+    {"name": "Semiconductor Engineering", "url": "https://semiengineering.com/feed/", "active": false, "frequency": "unverified, ~weekly cadence per their own site"},
+    {"name": "Cassandra Unchained", "url": "https://michaeljburry.substack.com/feed", "active": false, "frequency": "major pieces ~every 2-3 weeks, plus more frequent short trading posts"},
+    {"name": "Doomberg", "url": "https://newsletter.doomberg.com/feed", "active": false, "frequency": "~1.5-2 articles/week (6-8/month)"},
+    {"name": "Bitcoin Magazine", "url": "https://bitcoinmagazine.com/feed", "active": false, "frequency": "unverified, daily newsroom, likely several/day"},
+    {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": false, "frequency": "unverified, daily briefing, exact count unclear"}
+  ],
+  "llm": {
+    "provider": "openrouter",
+    "models": [
+      {"name": "openai/gpt-5.6-luna", "reasoning": true}
+    ]
+  }
+}

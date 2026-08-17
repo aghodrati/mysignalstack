@@ -17,8 +17,6 @@ A base for testing finance hypotheses with pandas + yfinance.
 - `finance/data.py` also has `get_stock_info(ticker)` (cached snapshot of yfinance's `Ticker.info` — valuation/growth/margin/price-target/short-interest fields), `get_recommendations_trend(ticker)` (analyst buy/hold/sell counts, current + prior 3 months), and `get_upgrades_downgrades(ticker)` (dated analyst upgrade/downgrade actions) — all feeding `finance/ranking.py`.
 - `finance/ranking.py` — `build_factor_table` computes ~18 raw factors (growth, valuation, quality, momentum, sentiment, ownership/flow) per stock; `percentile_rank_table` converts each to a 0-100 rank within the universe; `category_scores` averages factors within each of 6 categories; `composite_score` combines categories into one score using caller-supplied weights (normalized to sum to 1).
 - `finance/sec13f.py` — multi-quarter institutional ownership straight from SEC's bulk Form 13F structured datasets (unlike yfinance, which only exposes the latest quarter's % change). Resolves a ticker's CUSIP by matching company name against the aggregated data, then each quarter ranks filers by position size and takes the top 10 ("large institutional holders," same as yfinance's own table) — for each of those 10, computes that specific holder's own % change vs its prior-quarter position (100% if it wasn't a holder last quarter, matching yfinance's convention for a new position), and averages the 10, same methodology as yfinance, so the two numbers are directly comparable. Each quarterly dataset is ~100-400MB raw; only small aggregates (cusip-level and holder-level, a few MB each) are cached, and the raw files are deleted after use. Note: because this looks at individual filers' raw reported share counts rather than Yahoo's already-cleaned top-10 list, it's occasionally exposed to genuine data-entry errors in individual 13F filings (a filer's share count jumping by orders of magnitude between quarters) — a real example was found and confirmed during testing (AAPL, one filer's shares went from 35,852 to 205,722,672 with a value field that didn't match either).
-- `finance/hypotheses/` — one file per hypothesis. Each exposes `main(start, end)`.
-- `main.py` — CLI: `uv run main.py <hypothesis> [--start YYYY-MM-DD] [--end YYYY-MM-DD]`
 - `app.py` — interactive Streamlit app. A "Return calculator" (ticker + start/end date → return) sits at the top of the sidebar, above the quick-pick categories. Nine tabs, most with their own "Since"/period control on their main page:
   - **Compare** — click to add/remove tickers from quick-pick categories in the sidebar (Biggest companies, Semiconductors, Software, Crypto, Metals, Oil & gas, Defense, Futuristic, S&P sectors) and/or type other tickers, then compare cumulative return against SPY (always a solid red line). Nothing is pre-selected — by default it shows just SPY.
   - **Correlations** — across every tracked ticker (equities + crypto + metals, excluding S&P sector ETFs and Defense), a correlation heatmap, a table of the most correlated pairs over a chosen lookback window, a beta-vs-S&P-500 table (formula shown inline), and a table of which correlated pairs have diverged most from their usual relationship right now (by z-score of the current return spread, formulas shown inline).
@@ -31,17 +29,6 @@ A base for testing finance hypotheses with pandas + yfinance.
   - **Ranking** — relative rank of every stock in the universe across six factor categories: Growth (revenue/earnings growth), Valuation (forward P/E, PEG, EV/revenue), Quality (operating/FCF margin — gross margin dropped, since many companies (Alphabet, Exxon, Chevron, ...) don't report a literal "gross profit" line), Momentum (trailing return, relative strength vs S&P, price vs 50-day-or-200-day moving average — selectable, relative volume), Sentiment (analyst price-target upside, revisions trend, net upgrades), and Ownership/Flow (institutional position change, insider buying/selling, short interest). Each raw factor is converted to a percentile rank within the universe, averaged equally within its category, then combined into one composite score using adjustable per-category weight sliders (default: equal). Shows the composite ranking table plus expandable raw-factor and percentile-rank tables for inspection.
   Run with `uv run streamlit run app.py`.
 - `finance/universe.py` — static reference data backing the app: the quick-pick categories (including the S&P 500 sector → SPDR ETF mapping) and the SPY benchmark ticker.
-
-## Existing hypotheses
-
-- `momentum_top10` — each month, buy the top-10 stocks (from a fixed large-cap universe) by trailing 12-month return, equal-weighted. Compared against SPY buy & hold.
-
-## Adding a new hypothesis
-
-1. Create `finance/hypotheses/your_hypothesis.py` with a `main(start, end=None)` function.
-2. For a rebalancing strategy: write a `weight_func(date, history_df) -> dict[ticker, weight]` and pass it to `run_backtest`.
-3. For a simple "buy X vs Y at time T" comparison, you likely don't need `run_backtest` at all — just pull prices with `get_prices` and compare cumulative returns directly.
-4. Register it in `HYPOTHESES` in `main.py`.
 
 ## Notes
 

@@ -14,7 +14,9 @@ CACHE_DIR = Path(__file__).resolve().parent.parent / "cache"
 def _cache_key(tickers: list[str], start: str, end: str, interval: str, label: str = "prices") -> Path:
     raw = f"{sorted(tickers)}|{start}|{end}|{interval}|{label}"
     digest = hashlib.sha1(raw.encode()).hexdigest()[:16]
-    return CACHE_DIR / f"{label}_{digest}.csv"
+    label_dir = CACHE_DIR / label
+    label_dir.mkdir(parents=True, exist_ok=True)
+    return label_dir / f"{digest}.csv"
 
 
 def _download(tickers: list[str], start: str, end: str | None, interval: str) -> pd.DataFrame:
@@ -48,7 +50,6 @@ def get_prices(
     Cached to disk by (tickers, start, end, interval) so re-running a hypothesis
     doesn't repeatedly hit the network. Pass refresh=True to force a re-download.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key(tickers, start, end or "", interval)
 
     if cache_path.exists() and not refresh:
@@ -84,7 +85,6 @@ def get_volume(
     caching scheme as `get_prices`; a separate cache label since it's a
     different field from the same underlying download.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key(tickers, start, end or "", interval, label="volume")
 
     if cache_path.exists() and not refresh:
@@ -106,7 +106,6 @@ def get_intraday_closes(
     local time). Yahoo limits how far back intraday bars go: 60m bars are
     available for up to ~2 years, finer intervals (5m, 15m, ...) only ~60 days.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key(tickers, period, "", interval, label="intraday")
 
     if cache_path.exists() and not refresh:
@@ -145,7 +144,6 @@ def get_earnings_history(ticker: str, limit: int = 12, refresh: bool = False) ->
     This is a per-ticker scrape (yfinance has no batched earnings endpoint), so
     it's cached aggressively — each ticker is its own network round-trip.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], str(limit), "", "earnings", label="earnings")
 
     if cache_path.exists() and not refresh:
@@ -177,7 +175,6 @@ def get_insider_transactions(ticker: str, refresh: bool = False) -> pd.DataFrame
     transactions (grants, gifts). This is a per-ticker scrape, so it's cached
     aggressively like `get_earnings_history`.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], "", "", "insider", label="insider")
 
     if cache_path.exists() and not refresh:
@@ -214,7 +211,6 @@ def get_institutional_ownership(ticker: str, refresh: bool = False) -> pd.DataFr
     shares, value, pct_change (% change in that holder's position since the prior
     quarter's filing).
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], "", "", "ownership", label="ownership")
     columns = ["holder", "holder_type", "date_reported", "pct_held", "shares", "value", "pct_change"]
 
@@ -257,7 +253,6 @@ def get_major_holders(ticker: str, refresh: bool = False) -> pd.Series:
     """insidersPercentHeld, institutionsPercentHeld, institutionsFloatPercentHeld,
     institutionsCount for one ticker, as a Series indexed by those breakdown names.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], "", "", "major", label="major_holders")
 
     if cache_path.exists() and not refresh:
@@ -276,7 +271,6 @@ def get_stock_info(ticker: str, refresh: bool = False) -> dict:
     `dict.get(key)` since coverage varies by ticker (e.g. crypto/ETFs lack
     most fundamental fields).
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], "", "", "info", label="info")
 
     if cache_path.exists() and not refresh:
@@ -292,7 +286,6 @@ def get_recommendations_trend(ticker: str, refresh: bool = False) -> pd.DataFram
     current month and the prior 3 months, via yfinance. Columns: period ("0m",
     "-1m", "-2m", "-3m"), strongBuy, buy, hold, sell, strongSell.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], "", "", "rec_trend", label="rec_trend")
     columns = ["period", "strongBuy", "buy", "hold", "sell", "strongSell"]
 
@@ -311,7 +304,6 @@ def get_upgrades_downgrades(ticker: str, refresh: bool = False) -> pd.DataFrame:
     "init", "main", "reit"), current_price_target (0 if not given with that
     action).
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], "", "", "upgrades", label="upgrades")
     columns = ["grade_date", "firm", "to_grade", "from_grade", "action", "current_price_target"]
 
@@ -353,7 +345,6 @@ def get_splits(ticker: str, refresh: bool = False) -> pd.Series:
     by the split ratios that happened *after* that figure's own date to be
     comparable to a price pulled from `get_prices` for the same date.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path = _cache_key([ticker], "", "", "splits", label="splits")
 
     if cache_path.exists() and not refresh:
@@ -383,7 +374,6 @@ def get_open_close(
     for decomposing a day into its overnight (prev close -> open) and intraday
     (open -> close) components. Cached separately from `get_prices`.
     """
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
     open_path = _cache_key(tickers, start, end or "", interval, label="open")
     close_path = _cache_key(tickers, start, end or "", interval, label="close")
 

@@ -80,3 +80,39 @@ def find_dip_trades(
             ]
         )
     return pd.DataFrame(rows).sort_values("buy_date").reset_index(drop=True)
+
+
+def find_pending_dips(prices: pd.DataFrame, drop_pct: float, hold_days: int) -> pd.DataFrame:
+    """Dip events that qualify but whose `hold_days` hasn't elapsed yet in the
+    available price data -- the ones `find_dip_trades` correctly-but-silently
+    excludes as incomplete. Without this, "0 trades found" is indistinguishable
+    from "nothing dipped," when a recent, still-in-progress dip is often the
+    actual reason the result is empty.
+
+    Columns: ticker, buy_date, buy_price, drop_that_day, days_held_so_far.
+    """
+    daily_returns = prices.pct_change(fill_method=None)
+    rows = []
+    for ticker in prices.columns:
+        series = prices[ticker].dropna()
+        rets = daily_returns[ticker]
+        for buy_date in series.index:
+            r = rets.get(buy_date)
+            if r is None or pd.isna(r) or r > -drop_pct:
+                continue
+            sell_target = buy_date + pd.Timedelta(days=hold_days)
+            if (series.index >= sell_target).any():
+                continue  # already has a completed exit -- not pending
+            rows.append(
+                {
+                    "ticker": ticker,
+                    "buy_date": buy_date,
+                    "buy_price": series.loc[buy_date],
+                    "drop_that_day": r,
+                    "days_held_so_far": (series.index[-1] - buy_date).days,
+                }
+            )
+    columns = ["ticker", "buy_date", "buy_price", "drop_that_day", "days_held_so_far"]
+    if not rows:
+        return pd.DataFrame(columns=columns)
+    return pd.DataFrame(rows).sort_values("buy_date", ascending=False).reset_index(drop=True)
