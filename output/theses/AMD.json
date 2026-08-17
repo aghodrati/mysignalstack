@@ -1,0 +1,89 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "AMD\u2019s AI accelerator opportunity is expanding through hyperscaler deployments and improving software, but near-term returns are more likely constrained by persistent production distributed-inference gaps, limited internal validation capacity, and Helios execution and cost risks.",
+    "direction": "short",
+    "confidence": 0.516,
+    "news_confidence": 0.62,
+    "fundamental_confidence": 0.36,
+    "pre_critic_confidence": 0.516,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": -12,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "AMD\u2019s shortage of stable internal GPU clusters continues to delay CUDA-parity development and automated validation",
+      "ROCm, WideEP, prefill/decode disaggregation, KV-cache transfer, routing, and scheduling remain unreliable across distributed-inference models and topologies",
+      "Helios ramps slowly or incurs higher manufacturing, power, and reliability costs because of flyover cabling, backplane issues, and extensive Broadcom retimer requirements",
+      "AMD\u2019s reliance on Broadcom Tomahawk 6 creates partner-execution or system co-design problems relative to Nvidia\u2019s proprietary networking",
+      "Meta retains a customized MI455X configuration that is less attractive for large-language-model workloads than Nvidia Rubin"
+    ],
+    "invalidation": [
+      "AMD and Meta switch to the standard MI450 configuration, making AMD a credible Vera Rubin alternative for Meta\u2019s AI research organization",
+      "Anthropic\u2019s planned 2GW AMD deployment and Microsoft\u2019s MI455X Helios deployment convert into substantial, durable hyperscaler demand",
+      "AMD closes much of Nvidia\u2019s software gap and makes distributed inference dependable in production",
+      "MI455X and standard Helios racks achieve competitive total cost of ownership while ramping reliably and at scale",
+      "Robust revenue and earnings growth may justify the elevated forward valuation",
+      "A PEG ratio near 1.1 and 12.4% consensus upside suggest valuation is not clearly excessive relative to growth",
+      "Strong free-cash-flow generation and positive institutional flows could support continued fundamental momentum"
+    ],
+    "reasoning": "Although AMD has credible share-gain catalysts from hyperscaler adoption, improved software, and competitive hardware, the higher-confidence and higher-importance evidence indicates that software reliability, validation capacity, and Helios execution remain material near-term bottlenecks.",
+    "claims_considered": 16
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "contradicts",
+    "thesis": "AMD\u2019s AI accelerator opportunity is expanding through hyperscaler deployments and improving software, but near-term returns are more likely constrained by persistent production distributed-inference gaps, limited internal validation capacity, and Helios execution and cost risks.",
+    "direction": "short",
+    "news_confidence": 0.62,
+    "fundamental_confidence": 0.36,
+    "blended_confidence": 0.516,
+    "fair_value_estimate": 579.1064,
+    "current_price": 515.22,
+    "implied_return_pct": 12.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.378,
+        "earnings_growth": 0.912
+      },
+      "Valuation": {
+        "forward_pe": 37.019474,
+        "peg_ratio": 1.12,
+        "ev_to_revenue": 20.873
+      },
+      "Quality": {
+        "operating_margin": 0.14396,
+        "fcf_margin": 0.25965183015871646
+      },
+      "Sentiment": {
+        "analyst_upside": 12.399829199177038,
+        "revisions_trend": 0.0,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 12.067499836000001,
+        "insider_flow": -386507739.0,
+        "low_short_interest": -2.4500001
+      }
+    },
+    "risks": [
+      "Robust revenue and earnings growth may justify the elevated forward valuation",
+      "A PEG ratio near 1.1 and 12.4% consensus upside suggest valuation is not clearly excessive relative to growth",
+      "Strong free-cash-flow generation and positive institutional flows could support continued fundamental momentum"
+    ],
+    "reasoning": "Although AMD\u2019s high EV-to-revenue multiple and modest operating margin provide some support for a short, strong growth, earnings acceleration, cash generation, and reasonable growth-adjusted valuation argue that fundamentals do not strongly validate the bearish direction."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.516,
+    "confidence_after": 0.516
+  }
+]

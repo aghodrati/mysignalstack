@@ -1,0 +1,9 @@
+date,ticker,action,shares,price,note,rule
+2026-08-17,AMZN,BUY,0.9518007938567021,262.6600036621094,"loop_a 1d70d797a8da3d5d entry_conf=73% horizon=270d: Amazon has a moderately high-conviction long thesis as AI-driven AWS demand, imp",loop_a
+2026-08-17,GOOGL,BUY,0.7227940224087323,345.8800048828125,"loop_a b1977903a6e72ff5 entry_conf=75% horizon=365d: GOOGL’s weakening frontier-AI position is a meaningful strategic risk, but accel",loop_a
+2026-08-17,INTC,BUY,2.4380729253742692,102.54000091552734,loop_a 1cb8321dcea3bebc entry_conf=64% horizon=540d: INTC offers a moderately attractive long-term turnaround opportunity as 18A comp,loop_a
+2026-08-17,MSFT,BUY,0.5046223269631129,495.4200134277344,loop_a 84e973e14bcc3b83 entry_conf=63% horizon=365d: Microsoft has a moderately bullish AI-infrastructure and monetization thesis: ag,loop_a
+2026-08-17,MU,BUY,0.256995407461952,972.780029296875,loop_a 60f4adf768fcad32 entry_conf=73% horizon=365d: MU remains an attractive long because an undersupplied DRAM market should suppor,loop_a
+2026-08-17,NVDA,BUY,1.1103215310618277,225.16000366210938,"loop_a 80d72b8fae3d6963 entry_conf=71% horizon=365d: NVIDIA remains structurally bullish as its integrated AI-factory systems, networ",loop_a
+2026-08-17,TSM,BUY,0.5864139512689434,426.32000732421875,"loop_a 50c2e7ef184b179d entry_conf=61% horizon=365d: TSM’s mature, high-volume CoWoS leadership and direct-to-silicon liquid-cooling ",loop_a
+2026-08-17,CRWV,BUY,2.375296912114014,105.25,"loop_a 2ff1195170b90161 entry_conf=63% horizon=270d: CoreWeave remains a moderately high-conviction long as accelerating Meta demand,",loop_a

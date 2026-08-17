@@ -1,0 +1,38 @@
+[
+  {
+    "id": "f2ca3907fcccbaee",
+    "ticker": "UBER",
+    "source_link": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+    "source_title": "TokenBudgeting: Our Conversations with Enterprises on Token Spend",
+    "event_type": "macro",
+    "created": "2026-06-30",
+    "claim": "Uber\u2019s rapid exhaustion of its annual Claude Code and Codex budget exposes a risk of uncontrolled AI-related operating costs, but the new usage cap should improve spending discipline.",
+    "direction": "long",
+    "confidence": 0.96,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Uber reportedly consumed its full annual allocation for Claude Code and Codex in only four months, prompting management to impose a $1,500 monthly per-employee limit while retaining a case-by-case overage process. In the article\u2019s broader account, this is presented as an example of early tokenmaxxing caused by poor incentives and lax oversight rather than evidence that enterprise AI demand is collapsing. The cap therefore points to tighter expense control, although the article provides no estimate of the savings relative to Uber\u2019s overall cost base."
+  },
+  {
+    "id": "3411aa6eea735c7b",
+    "ticker": "UBER",
+    "source_link": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+    "source_title": "TokenBudgeting: Our Conversations with Enterprises on Token Spend",
+    "event_type": "macro",
+    "created": "2026-06-30",
+    "claim": "Uber\u2019s willingness to approve AI-budget overages indicates that management continues to view heavy AI usage as potentially valuable for productivity rather than imposing an outright retrenchment.",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Although Uber introduced a $1,500-per-employee monthly limit after burning through its annual budget, employees can request additional usage and receive approval on a case-by-case basis. This fits the article\u2019s conclusion that enterprise customers are shifting from unrestricted consumption to budgets and model optimization while continuing to expand AI spending and API demand. For Uber specifically, the policy suggests controlled continuation of AI adoption, but the article does not quantify any resulting revenue, productivity, or valuation impact."
+  }
+]

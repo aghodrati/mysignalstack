@@ -10,7 +10,17 @@ wheels/
 .venv
 
 # Backtest data/output
-cache/
+cache/*
+# ...except Loop A's own state (events.json, claims_attempted.json, etc.) --
+# small, and needed by the GitHub Actions cron job (see run_loop_a.py) so
+# each run knows what it's already processed instead of re-spending LLM
+# quota re-classifying the same articles every time. Everything else under
+# cache/ is generic, re-fetchable yfinance/SEC market data -- large (100s of
+# MB) and pointless to commit since any environment can re-fetch it live.
+# (Same "ignored parent dir" gotcha as output/* below -- cache/* not cache/.)
+!cache/thesis/
+!cache/thesis/**
+
 output/*
 # ...except the point-in-time factor panel: expensive to rebuild (SEC EDGAR +
 # yfinance backfill), doesn't change from user interaction, and the Metrics
@@ -18,6 +28,16 @@ output/*
 # ignored parent dir blocks re-inclusion of files inside it, hence output/*
 # above instead of output/.)
 !output/panel.csv
+# ...and Loop A's actual products (claims/theses/portfolios) -- this is what
+# lets the Streamlit Cloud deploy show current results without making a
+# single live LLM call itself; GitHub Actions commits updates here twice a
+# day (see run_loop_a.py).
+!output/claims/
+!output/claims/**
+!output/theses/
+!output/theses/**
+!output/portfolios/
+!output/portfolios/**
 
 # OS files
 .DS_Store

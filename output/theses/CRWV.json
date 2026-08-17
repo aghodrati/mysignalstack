@@ -1,0 +1,95 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "CoreWeave remains a moderately high-conviction long as accelerating Meta demand, planned expansion toward approximately 1.7 GW, improving deployment standardization, and potential Rubin-based efficiency gains outweigh near-term delivery delays and unproven Rubin economics.",
+    "direction": "long",
+    "confidence": 0.62664,
+    "news_confidence": 0.83,
+    "fundamental_confidence": 0.62,
+    "pre_critic_confidence": 0.746,
+    "critic_multiplier": 0.84,
+    "expected_return_pct": 20,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "Meta materially increases third-party compute procurement, driving CoreWeave backlog and remaining-performance-obligation growth.",
+      "CoreWeave reaches or remains on track for approximately 1.7 GW of active power by year-end 2026.",
+      "Meta continues paying attractive margins for externally supplied AI compute, supporting CoreWeave fleet expansion and economics.",
+      "CoreWeave successfully reproduces Rubin NVL72 performance in production and demonstrates improved inference capacity or unit economics.",
+      "DSX Air improves the repeatability and efficiency of CoreWeave AI-factory deployments."
+    ],
+    "invalidation": [
+      "CoreWeave fails to deliver its planned 2026 capacity expansion, with delays becoming broader or more persistent than currently indicated.",
+      "Meta compute procurement or backlog growth fails to accelerate over the coming quarters.",
+      "Rubin benchmarks fail to translate into production performance or meaningful financial improvement.",
+      "Deployment inefficiencies prevent CoreWeave from expanding capacity economically despite DSX Air standardization.",
+      "Very elevated valuation at approximately 13.7x forward revenue despite negative operating margin and earnings.",
+      "Reportedly exceptional free-cash-flow margin may be distorted by upfront customer payments, financing, or working-capital effects rather than durable profitability.",
+      "Heavy dependence on a small number of hyperscale customers creates concentration and renegotiation risk.",
+      "Substantial insider selling is a negative governance and alignment signal."
+    ],
+    "reasoning": "The strongest, higher-importance claims support durable demand and capacity growth, while execution delays and the weak evidentiary basis for Rubin benefits are meaningful but presently secondary risks.",
+    "claims_considered": 10
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "supports",
+    "thesis": "CoreWeave remains a moderately high-conviction long as accelerating Meta demand, planned expansion toward approximately 1.7 GW, improving deployment standardization, and potential Rubin-based efficiency gains outweigh near-term delivery delays and unproven Rubin economics.",
+    "direction": "long",
+    "news_confidence": 0.83,
+    "fundamental_confidence": 0.62,
+    "blended_confidence": 0.746,
+    "fair_value_estimate": 143.25714,
+    "current_price": 105.26,
+    "implied_return_pct": 36.1,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 1.125
+      },
+      "Valuation": {
+        "forward_pe": -62.092236,
+        "ev_to_revenue": 13.719
+      },
+      "Quality": {
+        "operating_margin": -0.01903,
+        "fcf_margin": 0.9105401775297572
+      },
+      "Sentiment": {
+        "analyst_upside": 36.098365950978504,
+        "revisions_trend": 5.563909774436093,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 44.400999435,
+        "insider_flow": -1480896088.0,
+        "low_short_interest": -20.41
+      }
+    },
+    "risks": [
+      "Very elevated valuation at approximately 13.7x forward revenue despite negative operating margin and earnings.",
+      "Reportedly exceptional free-cash-flow margin may be distorted by upfront customer payments, financing, or working-capital effects rather than durable profitability.",
+      "Heavy dependence on a small number of hyperscale customers creates concentration and renegotiation risk.",
+      "Substantial insider selling is a negative governance and alignment signal."
+    ],
+    "reasoning": "Exceptional revenue growth and positive analyst revisions support the long direction, but the premium valuation, negative operating profitability, uncertain cash-flow quality, and customer concentration make the fundamental support only moderate rather than strong."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The claims support multiple positive drivers but do not establish that they outweigh delivery delays, nor do they provide valuation, timing, or magnitude evidence sufficient to justify a 75% confidence long.",
+      "Meta-driven backlog and RPO growth are forecasts, not demonstrated outcomes, and the claims do not quantify how much demand or margin support CoreWeave would actually receive.",
+      "The approximately 1.7 GW figure is company guidance and is explicitly paired with location-specific delivery delays, so treating expansion as a dependable bullish catalyst may overstate execution certainty.",
+      "Rubin is appropriately described as a potential efficiency gain, but its preliminary, unverified, non-production evidence and the conditional wording of the supporting claims make it a weak basis for the stated overall conviction.",
+      "DSX Air supports deployment standardization and repeatability, but the claim does not demonstrate material financial benefits or that it offsets delays."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The synthesis is directionally consistent with the claims, but it converts conditional and partly unverified catalysts into a conclusion that they outweigh execution risks without evidence on relative magnitude, timing, or valuation.",
+    "final_multiplier": 0.84,
+    "confidence_before": 0.746,
+    "confidence_after": 0.62664
+  }
+]

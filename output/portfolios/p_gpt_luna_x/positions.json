@@ -1,0 +1,67 @@
+[
+  {
+    "event": "created",
+    "id": "faf2c2edde673342",
+    "ticker": "AMZN",
+    "created": "2026-08-16",
+    "entry_confidence": 0.8360000000000001,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "9fe8fa11bbb0e259",
+    "ticker": "META",
+    "created": "2026-08-16",
+    "entry_confidence": 0.6940000000000001,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "d2ba2cd4385cca4d",
+    "ticker": "MU",
+    "created": "2026-08-16",
+    "entry_confidence": 0.612612,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "c30109488f1ddc56",
+    "ticker": "NVDA",
+    "created": "2026-08-16",
+    "entry_confidence": 0.7375200000000001,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "391fd2d459fa60d0",
+    "ticker": "TSM",
+    "created": "2026-08-16",
+    "entry_confidence": 0.7638400000000001,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  }
+]

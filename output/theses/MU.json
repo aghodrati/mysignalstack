@@ -1,0 +1,90 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "MU remains an attractive long because an undersupplied DRAM market should support pricing and earnings through at least 2027, while its server DRAM and HBM mix and CXMT\u2019s higher costs and immature HBM manufacturing limit near-term competitive pressure.",
+    "direction": "long",
+    "confidence": 0.7344,
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.78,
+    "pre_critic_confidence": 0.8160000000000001,
+    "critic_multiplier": 0.9,
+    "expected_return_pct": 20,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "DRAM market tightness persists through at least 2027, supporting Micron\u2019s pricing and earnings outlook",
+      "Server DRAM and HBM become a larger share of the market, reinforcing Micron\u2019s product-mix and pricing advantage",
+      "CXMT\u2019s DDR5 costs remain substantially above Micron\u2019s and its HBM manufacturing remains immature"
+    ],
+    "invalidation": [
+      "CXMT\u2019s growing wafer capacity and bit shipments materially erode Micron\u2019s DRAM market share and economics",
+      "CXMT successfully ramps HBM and gains meaningful share in China\u2019s domestic AI-accelerator market",
+      "The expected DRAM undersupply ends earlier than anticipated, weakening pricing and near-term earnings",
+      "The very low forward P/E and PEG may reflect peak-cycle earnings and could be misleading if DRAM pricing normalizes sooner than expected.",
+      "Revenue growth is modest relative to the earnings outlook, raising questions about the durability of margin expansion.",
+      "The elevated EV-to-revenue multiple leaves less valuation support if demand, pricing, or HBM/server execution disappoints.",
+      "Semiconductor capital intensity, customer concentration, and execution requirements could pressure free cash flow and returns across the cycle."
+    ],
+    "reasoning": "The evidence is predominantly bullish and trade-worthy over the next year, with CXMT representing a meaningful longer-term risk but not an immediate threat to Micron\u2019s margins or differentiated server and HBM position.",
+    "claims_considered": 5
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "supports",
+    "thesis": "MU remains an attractive long because an undersupplied DRAM market should support pricing and earnings through at least 2027, while its server DRAM and HBM mix and CXMT\u2019s higher costs and immature HBM manufacturing limit near-term competitive pressure.",
+    "direction": "long",
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.78,
+    "blended_confidence": 0.8160000000000001,
+    "fair_value_estimate": 1507.7906,
+    "current_price": 873.5392,
+    "implied_return_pct": 72.6,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 3.457,
+        "earnings_growth": 13.685
+      },
+      "Valuation": {
+        "forward_pe": 5.615338,
+        "peg_ratio": 0.12,
+        "ev_to_revenue": 10.16
+      },
+      "Quality": {
+        "operating_margin": 0.80370003,
+        "fcf_margin": 0.5697321860019828
+      },
+      "Sentiment": {
+        "analyst_upside": 72.60709078653824,
+        "revisions_trend": 0.49407114624505644,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 7.4550000600000015,
+        "insider_flow": -377026209.0,
+        "low_short_interest": -3.2100000000000004
+      }
+    },
+    "risks": [
+      "The very low forward P/E and PEG may reflect peak-cycle earnings and could be misleading if DRAM pricing normalizes sooner than expected.",
+      "Revenue growth is modest relative to the earnings outlook, raising questions about the durability of margin expansion.",
+      "The elevated EV-to-revenue multiple leaves less valuation support if demand, pricing, or HBM/server execution disappoints.",
+      "Semiconductor capital intensity, customer concentration, and execution requirements could pressure free cash flow and returns across the cycle."
+    ],
+    "reasoning": "Strong projected earnings growth, exceptionally high margins, low forward valuation, positive revisions, and substantial consensus upside support a long, though cyclical-earnings and valuation-quality risks prevent a higher score."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article"
+    ],
+    "deterministic_multiplier": 0.9,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 0.9,
+    "confidence_before": 0.8160000000000001,
+    "confidence_after": 0.7344
+  }
+]

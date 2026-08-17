@@ -1,0 +1,14 @@
+date,ticker,action,shares,price,note,rule
+2026-08-15,AMZN,BUY,1.9036015877134043,262.6600036621094,loop_a e66d817c7888023f entry_conf=76% horizon=60d: Amazon's justifiable capital expenditures imply a positive outlook for the compa,loop_a
+2026-08-15,GOOGL,BUY,0.7227940224087323,345.8800048828125,loop_a 47bc1641533ea33d entry_conf=68% horizon=60d: Google's short-to-medium term outlook is positive due to the Anthropic hedge and,loop_a
+2026-08-15,INTC,BUY,4.8761458507485385,102.54000091552734,loop_a c586486dd40e5040 entry_conf=78% horizon=180d: Intel's strategic execution and growth prospects are likely to improve due to it,loop_a
+2026-08-15,MSFT,BUY,1.0092446539262259,495.4200134277344,loop_a 019f60d1d1f909db entry_conf=81% horizon=100d: Microsoft is positioned for significant revenue growth and profitability due to ,loop_a
+2026-08-15,NVDA,BUY,2.2206430621236555,225.16000366210938,loop_a 819f69f38cc58d90 entry_conf=87% horizon=240d: Nvidia is well-positioned for long-term growth due to its significant cost-perfo,loop_a
+2026-08-15,TSM,BUY,1.1728279025378867,426.32000732421875,loop_a cb80e035ce2b608b entry_conf=86% horizon=365d: TSMC maintains a competitive advantage in logic density and efficiency due to it,loop_a
+2026-08-16,META,BUY,0.8475869586247818,589.9099731445312,"loop_a cec92ae4607f212c entry_conf=81% horizon=180d: Meta’s aggressive investment in cloud capacity, AI talent, and modular datacente",loop_a
+2026-08-16,ORCL,BUY,1.662897472992633,150.33999633789062,loop_a e108259a660a6277 entry_conf=66% horizon=365d: Oracle’s pivot to debt‑backed AI infrastructure expansion outweighs short‑term c,loop_a
+2026-08-16,GOOGL,SELL,0.7227940224087323,345.8800048828125,"loop_a 47bc1641533ea33d closed (invalidated, return=+0.0%)",loop_a
+2026-08-16,UBER,BUY,6.585445899279737,75.92500305175781,"loop_a 49b06b83bcb75697 entry_conf=75% horizon=180d: Uber’s token budgeting initiative, limiting monthly token usage per employee to ",loop_a
+2026-08-16,AMZN,SELL,1.9036015877134045,262.6600036621094,"loop_a e66d817c7888023f closed (invalidated, return=+0.0%)",loop_a
+2026-08-16,GOOGL,BUY,1.4455880448174645,345.8800048828125,loop_a e6784f7b7e06ef28 entry_conf=77% horizon=120d: Google’s recent earnings confirm a robust Anthropic hedge and the DeepMind leade,loop_a
+2026-08-16,TSM,SELL,1.1728279025378867,426.32000732421875,"loop_a cb80e035ce2b608b closed (invalidated, return=+0.0%)",loop_a

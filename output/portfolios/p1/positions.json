@@ -1,0 +1,153 @@
+[
+  {
+    "event": "created",
+    "id": "e66d817c7888023f",
+    "ticker": "AMZN",
+    "created": "2026-08-15",
+    "entry_confidence": 0.76,
+    "expected_horizon_days": 60,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "47bc1641533ea33d",
+    "ticker": "GOOGL",
+    "created": "2026-08-15",
+    "entry_confidence": 0.6819999999999999,
+    "expected_horizon_days": 60,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "c586486dd40e5040",
+    "ticker": "INTC",
+    "created": "2026-08-15",
+    "entry_confidence": 0.7799999999999999,
+    "expected_horizon_days": 180,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "019f60d1d1f909db",
+    "ticker": "MSFT",
+    "created": "2026-08-15",
+    "entry_confidence": 0.812,
+    "expected_horizon_days": 100,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "819f69f38cc58d90",
+    "ticker": "NVDA",
+    "created": "2026-08-15",
+    "entry_confidence": 0.8680000000000001,
+    "expected_horizon_days": 240,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "cb80e035ce2b608b",
+    "ticker": "TSM",
+    "created": "2026-08-15",
+    "entry_confidence": 0.8560000000000001,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "cec92ae4607f212c",
+    "ticker": "META",
+    "created": "2026-08-16",
+    "entry_confidence": 0.808,
+    "expected_horizon_days": 180,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "created",
+    "id": "e108259a660a6277",
+    "ticker": "ORCL",
+    "created": "2026-08-16",
+    "entry_confidence": 0.66,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "closed",
+    "id": "47bc1641533ea33d",
+    "closed_date": "2026-08-16",
+    "actual_return_pct": 0.0,
+    "close_reason": "invalidated"
+  },
+  {
+    "event": "created",
+    "id": "49b06b83bcb75697",
+    "ticker": "UBER",
+    "created": "2026-08-16",
+    "entry_confidence": 0.752,
+    "expected_horizon_days": 180,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "closed",
+    "id": "e66d817c7888023f",
+    "closed_date": "2026-08-16",
+    "actual_return_pct": 0.0,
+    "close_reason": "invalidated"
+  },
+  {
+    "event": "created",
+    "id": "e6784f7b7e06ef28",
+    "ticker": "GOOGL",
+    "created": "2026-08-16",
+    "entry_confidence": 0.77,
+    "expected_horizon_days": 120,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "closed",
+    "id": "cb80e035ce2b608b",
+    "closed_date": "2026-08-16",
+    "actual_return_pct": 2.220446049250313e-14,
+    "close_reason": "invalidated"
+  }
+]

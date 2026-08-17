@@ -1,0 +1,6 @@
+date,ticker,action,shares,price,note,rule
+2026-08-16,AMZN,BUY,1.9036015877134043,262.6600036621094,loop_a faf2c2edde673342 entry_conf=84% horizon=365d: AMZN has a favorable medium-term setup as AWS combines durable AI-lab and enterp,loop_a
+2026-08-16,META,BUY,0.4237934793123909,589.9099731445312,loop_a 9fe8fa11bbb0e259 entry_conf=69% horizon=365d: META remains a moderately constructive long-term AI investment because exception,loop_a
+2026-08-16,MU,BUY,0.256995407461952,972.780029296875,loop_a d2ba2cd4385cca4d entry_conf=61% horizon=365d: Micron is favorably positioned for near- to medium-term gains from materially un,loop_a
+2026-08-16,NVDA,BUY,1.1103215310618277,225.16000366210938,loop_a c30109488f1ddc56 entry_conf=74% horizon=365d: NVIDIA remains strongly positioned for substantial growth as integrated accelera,loop_a
+2026-08-16,TSM,BUY,1.1728279025378867,426.32000732421875,loop_a 391fd2d459fa60d0 entry_conf=76% horizon=365d: TSMC remains favorably positioned for AI-era semiconductor manufacturing and adv,loop_a

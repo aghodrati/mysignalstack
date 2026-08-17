@@ -1,0 +1,88 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "INTC offers a moderately attractive long-term turnaround opportunity as 18A competitiveness, Terafab and 14A customer commitments, and EMIB-T packaging optionality support foundry growth, provided it secures substantial equity funding and executes through its funding and commercialization risks.",
+    "direction": "long",
+    "confidence": 0.636,
+    "news_confidence": 0.7,
+    "fundamental_confidence": 0.54,
+    "pre_critic_confidence": 0.636,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 540,
+    "catalysts": [
+      "A roughly $25 billion equity offering that funds Terafab and 14A expansion without materially increasing leverage",
+      "Conversion of Terafab and 14A customer commitments into visible leading-edge foundry capacity demand",
+      "Evidence that Intel 18A maintains its density and backside-power advantages over SMIC N+3",
+      "Successful resolution of EMIB-T assembly yield, warpage and overlay challenges, followed by commercial adoption in large AI packages",
+      "Continued operational and foundry progress under Lip-Bu Tan and the technology-focused board"
+    ],
+    "invalidation": [
+      "Intel cannot secure sufficient funding and operating cash flow remains inadequate for the foundry expansion burden",
+      "Equity issuance causes substantial dilution without accelerating successful foundry capacity expansion",
+      "EMIB-T fails to overcome assembly and volume-execution challenges, leaving Intel materially behind TSMC in advanced-package integration",
+      "Terafab or 14A customer commitments fail to translate into durable demand",
+      "Intel 18A loses its asserted process-technology advantage over SMIC N+3",
+      "Rich valuation multiples leave limited margin of safety if growth or foundry expectations disappoint",
+      "Operating margin remains weak for a semiconductor leader, raising concerns about sustainable profitability",
+      "Substantial insider selling is a negative alignment signal"
+    ],
+    "reasoning": "The evidence favors a long because credible process, packaging and customer-demand advantages outweigh the funding burden, but confidence is capped by high capital needs, dilution risk, and Intel's acknowledged disadvantage in packaging integration maturity and volume execution.",
+    "claims_considered": 15
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "neutral",
+    "thesis": "INTC offers a moderately attractive long-term turnaround opportunity as 18A competitiveness, Terafab and 14A customer commitments, and EMIB-T packaging optionality support foundry growth, provided it secures substantial equity funding and executes through its funding and commercialization risks.",
+    "direction": "long",
+    "news_confidence": 0.7,
+    "fundamental_confidence": 0.54,
+    "blended_confidence": 0.636,
+    "fair_value_estimate": 115.26829,
+    "current_price": 98.315,
+    "implied_return_pct": 17.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.254
+      },
+      "Valuation": {
+        "forward_pe": 48.25608,
+        "peg_ratio": 1.36,
+        "ev_to_revenue": 8.687
+      },
+      "Quality": {
+        "operating_margin": 0.12189999,
+        "fcf_margin": 0.2618880741704077
+      },
+      "Sentiment": {
+        "analyst_upside": 17.243848853176004,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 19.89300001,
+        "insider_flow": -7623034.0,
+        "low_short_interest": -2.4
+      }
+    },
+    "risks": [
+      "Rich valuation multiples leave limited margin of safety if growth or foundry expectations disappoint",
+      "Operating margin remains weak for a semiconductor leader, raising concerns about sustainable profitability",
+      "Substantial insider selling is a negative alignment signal"
+    ],
+    "reasoning": "Strong reported growth, positive institutional flows, and roughly 17% consensus upside support a long stance, but high valuation and weak operating profitability make the fundamental case only moderately supportive."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.636,
+    "confidence_after": 0.636
+  }
+]

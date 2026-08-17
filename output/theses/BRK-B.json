@@ -1,0 +1,90 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "Berkshire Hathaway\u2019s Google investment and substantial capital-allocation capacity modestly improve BRK-B\u2019s long-term outlook, though returns remain exposed to the risk that AI infrastructure demand disappoints.",
+    "direction": "long",
+    "confidence": 0.5042160000000001,
+    "news_confidence": 0.74,
+    "fundamental_confidence": 0.38,
+    "pre_critic_confidence": 0.5960000000000001,
+    "critic_multiplier": 0.846,
+    "expected_return_pct": 6,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Google\u2019s AI infrastructure and cloud opportunity produces attractive long-term returns on Berkshire\u2019s investment",
+      "Berkshire deploys its large cash balance and recurring free cash flow into similarly attractive capital-intensive opportunities"
+    ],
+    "invalidation": [
+      "AI infrastructure demand and revenue prove insufficient, causing Berkshire\u2019s Google investment to lose value",
+      "Berkshire\u2019s capital deployment fails to generate attractive long-term returns",
+      "Forward valuation is relatively demanding versus modest 4.4% revenue growth and the elevated PEG ratio suggests earnings growth may be nonrecurring",
+      "Consensus fair value implies only about 2.2% upside, leaving limited valuation margin of safety",
+      "Insurance, railroad, and utility earnings remain exposed to cyclical, catastrophe, regulatory, and operating risks",
+      "Future returns depend heavily on effective deployment of Berkshire\u2019s large cash holdings and succession execution"
+    ],
+    "reasoning": "The two higher-confidence, higher-importance claims support a modestly bullish view based on management\u2019s apparent confidence in Google and Berkshire\u2019s capital optionality, while the lower-confidence downside claim warrants only a meaningful risk adjustment rather than reversing the direction.",
+    "claims_considered": 3
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "contradicts",
+    "thesis": "Berkshire Hathaway\u2019s Google investment and substantial capital-allocation capacity modestly improve BRK-B\u2019s long-term outlook, though returns remain exposed to the risk that AI infrastructure demand disappoints.",
+    "direction": "long",
+    "news_confidence": 0.74,
+    "fundamental_confidence": 0.38,
+    "blended_confidence": 0.5960000000000001,
+    "fair_value_estimate": 525.3333,
+    "current_price": 513.965,
+    "implied_return_pct": 2.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.044,
+        "earnings_growth": 1.196
+      },
+      "Valuation": {
+        "forward_pe": 23.826082,
+        "peg_ratio": 10.06,
+        "ev_to_revenue": -0.707
+      },
+      "Quality": {
+        "operating_margin": 0.14352,
+        "fcf_margin": 0.12121663878054308
+      },
+      "Sentiment": {
+        "analyst_upside": 2.21188213205179,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 14.497000060999998,
+        "insider_flow": -8179357.0,
+        "low_short_interest": -0.9599999500000002
+      }
+    },
+    "risks": [
+      "Forward valuation is relatively demanding versus modest 4.4% revenue growth and the elevated PEG ratio suggests earnings growth may be nonrecurring",
+      "Consensus fair value implies only about 2.2% upside, leaving limited valuation margin of safety",
+      "Insurance, railroad, and utility earnings remain exposed to cyclical, catastrophe, regulatory, and operating risks",
+      "Future returns depend heavily on effective deployment of Berkshire\u2019s large cash holdings and succession execution"
+    ],
+    "reasoning": "Solid margins, balance-sheet flexibility, and a sharp reported earnings rebound provide some support, but modest underlying growth, limited implied upside, and a demanding valuation make the fundamentals only weakly supportive of a long position."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article"
+    ],
+    "deterministic_multiplier": 0.9,
+    "llm_concerns": [
+      "The thesis slightly conflates Berkshire\u2019s general capital-allocation optionality with prospective deployment into Google\u2019s AI infrastructure; the claims say such deployment is possible, not that it will occur or that it is a demonstrated source of returns.",
+      "The claims support downside exposure if AI infrastructure demand disappoints, but do not establish that this risk is material to BRK-B\u2019s overall returns; the synthesis leaves that exposure unquantified."
+    ],
+    "llm_multiplier": 0.94,
+    "llm_reasoning": "The thesis broadly follows the claims and the August 11 catalyst is not stale by August 17, but it modestly overstates the evidentiary link between optionality, Google deployment, and Berkshire-wide returns.",
+    "final_multiplier": 0.846,
+    "confidence_before": 0.5960000000000001,
+    "confidence_after": 0.5042160000000001
+  }
+]

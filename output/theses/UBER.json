@@ -1,0 +1,91 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "Uber\u2019s AI spending is a manageable near-term cost risk, with the new usage cap improving discipline while management\u2019s willingness to approve overages signals continued belief in productivity value.",
+    "direction": "long",
+    "confidence": 0.4575311999999999,
+    "news_confidence": 0.8,
+    "fundamental_confidence": 0.58,
+    "pre_critic_confidence": 0.712,
+    "critic_multiplier": 0.6426,
+    "expected_return_pct": 3,
+    "expected_horizon_days": 30,
+    "catalysts": [
+      "The new AI usage cap improves spending discipline and contains operating-cost growth",
+      "Management continues approving AI-budget overages, indicating sustained confidence that heavy usage can generate productivity value"
+    ],
+    "invalidation": [
+      "AI-related costs remain uncontrolled despite the usage cap",
+      "Management retrenches from approving AI-budget overages, signaling that the productivity benefits do not justify the spending",
+      "Severe earnings contraction and negative estimate revisions undermine earnings visibility.",
+      "The PEG ratio of 7.8 suggests valuation is demanding relative to current earnings growth despite a reasonable forward P/E.",
+      "Substantial insider selling may signal limited near-term management confidence."
+    ],
+    "reasoning": "Both high-confidence claims lean bullish, but their low trade-worthiness and zero-day horizons warrant a modest expected return and less-than-maximal confidence.",
+    "claims_considered": 2
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "neutral",
+    "thesis": "Uber\u2019s AI spending is a manageable near-term cost risk, with the new usage cap improving discipline while management\u2019s willingness to approve overages signals continued belief in productivity value.",
+    "direction": "long",
+    "news_confidence": 0.8,
+    "fundamental_confidence": 0.58,
+    "blended_confidence": 0.712,
+    "fair_value_estimate": 103.88667,
+    "current_price": 71.7,
+    "implied_return_pct": 44.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.145,
+        "earnings_growth": -0.846
+      },
+      "Valuation": {
+        "forward_pe": 16.097599,
+        "peg_ratio": 7.8,
+        "ev_to_revenue": 2.853
+      },
+      "Quality": {
+        "operating_margin": 0.14565,
+        "fcf_margin": 0.18861176677390054
+      },
+      "Sentiment": {
+        "analyst_upside": 44.89075313807531,
+        "revisions_trend": -0.5179430262671092,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.510500045700002,
+        "insider_flow": -71595370.0,
+        "low_short_interest": -2.6400002000000002
+      }
+    },
+    "risks": [
+      "Severe earnings contraction and negative estimate revisions undermine earnings visibility.",
+      "The PEG ratio of 7.8 suggests valuation is demanding relative to current earnings growth despite a reasonable forward P/E.",
+      "Substantial insider selling may signal limited near-term management confidence."
+    ],
+    "reasoning": "Strong revenue growth, operating margins, free-cash-flow generation, and substantial consensus upside support a long, but sharply declining earnings, weak revisions, and demanding growth-adjusted valuation make the fundamental case only moderately supportive."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article",
+      "newest supporting claim is 48d old, older than the thesis's own 30d horizon"
+    ],
+    "deterministic_multiplier": 0.765,
+    "llm_concerns": [
+      "The thesis understates the evidence by calling the cost risk manageable: the underlying claim describes rapid budget exhaustion and a risk of uncontrolled AI-related operating costs, while offering only an expected\u2014not demonstrated\u2014disciplining effect from the cap.",
+      "The cap's effectiveness is presented as established in the thesis, but the claim only says it should improve spending discipline; it does not show that costs have actually become controlled.",
+      "Management's approval of overages supports perceived potential productivity value, but does not establish that the value outweighs the associated costs or that the spending is sustainable."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The synthesis is directionally consistent with the claims but overreaches by converting a serious, unresolved cost risk and a prospective control into a manageable outcome, while treating perceived potential value as evidence of economic justification.",
+    "final_multiplier": 0.6426,
+    "confidence_before": 0.712,
+    "confidence_after": 0.4575311999999999
+  }
+]

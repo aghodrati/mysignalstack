@@ -1,0 +1,93 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "Nebius remains a constructive long-term growth opportunity as Meta-driven backlog and potentially attractive AI-compute economics, combined with modular New Jersey and reused Bethune capacity strategies, should outweigh the near-term impact of New Jersey\u2019s delivery delay.",
+    "direction": "long",
+    "confidence": 0.52584,
+    "news_confidence": 0.79,
+    "fundamental_confidence": 0.38,
+    "pre_critic_confidence": 0.626,
+    "critic_multiplier": 0.84,
+    "expected_return_pct": 22,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Meta\u2019s increasing use of third-party compute drives significant Nebius revenue-backlog and RPO growth.",
+      "Meta workloads generate attractive contract economics rather than low-margin bare-metal revenue.",
+      "Modular power-and-cooling deployment accelerates and lowers the cost of New Jersey AI-capacity expansion toward approximately 300 MW.",
+      "Reuse of the former Bridgestone plant in B\u00e9thune accelerates capacity deployment by reducing greenfield construction and permitting requirements."
+    ],
+    "invalidation": [
+      "New Jersey delays materially worsen and prevent timely capacity, revenue, or ARR delivery.",
+      "The modular New Jersey strategy fails to deliver the expected speed, cost efficiency, or scalable capacity.",
+      "Meta demand does not translate into meaningful Nebius backlog, RPO, or attractive economics.",
+      "B\u00e9thune\u2019s reused-site strategy fails to accelerate deployment as expected.",
+      "Extremely elevated EV/revenue valuation leaves little room for execution misses or slower growth.",
+      "Negative operating margin and deeply negative forward P/E indicate profitability remains unproven despite modest positive free-cash-flow margin.",
+      "Large insider selling may signal reduced management confidence or create an overhang.",
+      "The PEG ratio is difficult to interpret while earnings are negative and could overstate fundamental attractiveness."
+    ],
+    "reasoning": "Although the New Jersey schedule slip is a meaningful near-term negative, the higher-importance evidence favors a long thesis because Meta demand and multiple deployment advantages support stronger backlog and capacity growth over the next several quarters.",
+    "claims_considered": 6
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "contradicts",
+    "thesis": "Nebius remains a constructive long-term growth opportunity as Meta-driven backlog and potentially attractive AI-compute economics, combined with modular New Jersey and reused Bethune capacity strategies, should outweigh the near-term impact of New Jersey\u2019s delivery delay.",
+    "direction": "long",
+    "news_confidence": 0.79,
+    "fundamental_confidence": 0.38,
+    "blended_confidence": 0.626,
+    "fair_value_estimate": 256.0,
+    "current_price": 217.97,
+    "implied_return_pct": 17.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 6.839
+      },
+      "Valuation": {
+        "forward_pe": -135.09895,
+        "peg_ratio": 0.63,
+        "ev_to_revenue": 62.263
+      },
+      "Quality": {
+        "operating_margin": -0.32080000000000003,
+        "fcf_margin": 3.235334239058326
+      },
+      "Sentiment": {
+        "analyst_upside": 17.447355140615684,
+        "revisions_trend": 1.1111111111111183,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 27.592999450000004,
+        "insider_flow": -158237228.0,
+        "low_short_interest": -28.000000000000004
+      }
+    },
+    "risks": [
+      "Extremely elevated EV/revenue valuation leaves little room for execution misses or slower growth.",
+      "Negative operating margin and deeply negative forward P/E indicate profitability remains unproven despite modest positive free-cash-flow margin.",
+      "Large insider selling may signal reduced management confidence or create an overhang.",
+      "The PEG ratio is difficult to interpret while earnings are negative and could overstate fundamental attractiveness."
+    ],
+    "reasoning": "Although exceptional reported growth, positive free cash flow, improving revisions, and moderate consensus upside support a long, the very rich valuation, negative operating profitability, and insider selling make the fundamental case only weakly supportive."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The claims support several positive contributors but do not establish that they will outweigh New Jersey\u2019s near-term revenue or ARR delay; that is an unsupported comparative conclusion.",
+      "The Meta backlog/RPO claim is probabilistic and forward-looking, while attractive contract economics has only 0.70 confidence, so presenting both as sufficient offsets overstates the evidence.",
+      "The New Jersey modular strategy and Bethune reuse support faster or more efficient deployment, but the claims do not directly demonstrate that either will translate into enough near-term realized revenue or margins to compensate for the delay."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The thesis is directionally consistent with the claims, but its conclusion that the long-term positives should outweigh the delay goes beyond the evidence because no claim quantifies their relative financial impact or establishes conversion from deployment advantages and backlog into realized economics.",
+    "final_multiplier": 0.84,
+    "confidence_before": 0.626,
+    "confidence_after": 0.52584
+  }
+]

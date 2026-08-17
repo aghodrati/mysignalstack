@@ -1,0 +1,115 @@
+{
+  "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia": [
+    "NVDA"
+  ],
+  "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real": [
+    "MSFT",
+    "NVDA",
+    "SPCX"
+  ],
+  "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking": [
+    "GOOGL",
+    "META",
+    "NVDA"
+  ],
+  "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the": [
+    "NVDA"
+  ],
+  "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters": [
+    "AMZN",
+    "META",
+    "NBIS",
+    "NVDA",
+    "CRWV"
+  ],
+  "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing": [
+    "AVGO",
+    "META",
+    "MSFT",
+    "NVDA",
+    "AMD",
+    "TSM"
+  ],
+  "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference": [
+    "NVDA",
+    "CRWV"
+  ],
+  "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a": [
+    "AVGO",
+    "META",
+    "NVDA",
+    "AMD",
+    "ARM"
+  ],
+  "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence": [
+    "GOOGL",
+    "META",
+    "MSFT"
+  ],
+  "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes": [
+    "NVDA",
+    "AMD"
+  ],
+  "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be": [
+    "META",
+    "NBIS",
+    "ORCL",
+    "CRWV"
+  ],
+  "https://newsletter.semianalysis.com/p/ectc2026": [
+    "GOOGL",
+    "INTC",
+    "MSFT",
+    "NVDA",
+    "TSM",
+    "AMD"
+  ],
+  "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations": [
+    "AMZN",
+    "META",
+    "MSFT",
+    "UBER"
+  ],
+  "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw": [
+    "AMZN",
+    "META",
+    "ORCL"
+  ],
+  "https://newsletter.semianalysis.com/p/chinas-cxmt-is-set-to-challenge-dram": [
+    "MU"
+  ],
+  "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter": [
+    "NBIS",
+    "ORCL",
+    "CRWV"
+  ],
+  "https://newsletter.semianalysis.com/p/steel-smic-n3-teardown": [
+    "INTC",
+    "TSM"
+  ],
+  "https://newsletter.semianalysis.com/p/intel-should-raise-capital": [
+    "ASML",
+    "GOOGL",
+    "INTC",
+    "NVDA",
+    "QCOM",
+    "SPCX",
+    "TSLA"
+  ],
+  "https://stratechery.com/2026/nvidias-risky-business/": [
+    "AMZN",
+    "BRK-B",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NVDA",
+    "ORCL"
+  ],
+  "https://stratechery.com/2026/google-earnings-the-frontier-case-amazon-earnings/": [
+    "AMZN",
+    "GOOGL"
+  ],
+  "https://stratechery.com/2026/meta-earnings-metas-timing-problems-the-financial-tail/": [
+    "META"
+  ]
+}

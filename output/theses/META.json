@@ -1,0 +1,92 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "Meta\u2019s AI strategy has substantial long-term upside from expanded compute, data, talent, and power access, but near-term infrastructure inefficiency, costly capacity commitments, execution failures, and still-weak model competitiveness are more likely to pressure returns before those benefits mature.",
+    "direction": "short",
+    "confidence": 0.504,
+    "news_confidence": 0.68,
+    "fundamental_confidence": 0.24,
+    "pre_critic_confidence": 0.504,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": -14,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "2027 capital expenditure and third-party compute commitments accelerate, increasing free-cash-flow pressure and valuation risk",
+      "Infrastructure missteps, project cancellations, duplicated engineering work, and inefficient generative-AI configurations raise compute costs over the next several quarters",
+      "The Rivos acquisition fails to produce differentiated custom AI silicon, while silicon-engineer turnover increases reliance on expensive external accelerators",
+      "Meta\u2019s custom MI455X or related configurations underperform Nvidia alternatives, limiting accelerator economics and deployment efficiency",
+      "Muse models continue to lag leading DeepSeek, Kimi, OpenAI, or Anthropic systems, weakening the payoff from Meta\u2019s AI spending"
+    ],
+    "invalidation": [
+      "Meta\u2019s compute buildout gives it more aggregate AI capacity than OpenAI and Anthropic by the end of 2026 and materially improves frontier-model and recommendation performance",
+      "Meta\u2019s rebuilt superintelligence organization narrows the capability gap with OpenAI and Anthropic by the end of 2026 while retaining its recruited talent",
+      "External compute contracts generate more than $10 billion of annual high-margin revenue, offsetting infrastructure spending",
+      "Behind-the-meter power, off-grid campuses, third-party capacity, and rapid-deployment datacenters materially accelerate capacity delivery and improve AI infrastructure economics",
+      "Standard GB300-type deployments and organizational changes resolve prior infrastructure problems, producing substantially better compute efficiency and custom-silicon execution",
+      "Revenue growth remains robust at 28%, while operating and free-cash-flow margins are exceptionally strong.",
+      "Forward P/E of 16.8 and PEG of 0.83 suggest valuation is not demanding relative to growth.",
+      "Consensus implies approximately 30% upside, with positive institutional flows and low short interest potentially supporting the shares.",
+      "The earnings decline and negative revisions provide some support for the short thesis, but may reflect temporary investment intensity rather than structural deterioration."
+    ],
+    "reasoning": "The evidence supports durable strategic optionality, but the highest-confidence, trade-worthy and 365-day claims point to elevated capex, infrastructure waste, custom-chip setbacks, and near-term model weakness that outweigh unproven long-term monetization and capability gains.",
+    "claims_considered": 29
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "contradicts",
+    "thesis": "Meta\u2019s AI strategy has substantial long-term upside from expanded compute, data, talent, and power access, but near-term infrastructure inefficiency, costly capacity commitments, execution failures, and still-weak model competitiveness are more likely to pressure returns before those benefits mature.",
+    "direction": "short",
+    "news_confidence": 0.68,
+    "fundamental_confidence": 0.24,
+    "blended_confidence": 0.504,
+    "fair_value_estimate": 759.40564,
+    "current_price": 584.63,
+    "implied_return_pct": 29.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.28,
+        "earnings_growth": -0.134
+      },
+      "Valuation": {
+        "forward_pe": 16.752144,
+        "peg_ratio": 0.8300000000000001,
+        "ev_to_revenue": 6.684
+      },
+      "Quality": {
+        "operating_margin": 0.30879,
+        "fcf_margin": 0.5708771839908303
+      },
+      "Sentiment": {
+        "analyst_upside": 29.895085780750218,
+        "revisions_trend": -0.35282258064516236,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.317500002500001,
+        "insider_flow": -202019380.0,
+        "low_short_interest": -1.72
+      }
+    },
+    "risks": [
+      "Revenue growth remains robust at 28%, while operating and free-cash-flow margins are exceptionally strong.",
+      "Forward P/E of 16.8 and PEG of 0.83 suggest valuation is not demanding relative to growth.",
+      "Consensus implies approximately 30% upside, with positive institutional flows and low short interest potentially supporting the shares.",
+      "The earnings decline and negative revisions provide some support for the short thesis, but may reflect temporary investment intensity rather than structural deterioration."
+    ],
+    "reasoning": "Underlying fundamentals more strongly argue against a short because rapid growth, high profitability, reasonable valuation, and substantial implied upside outweigh the weaker earnings trend and revisions."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.504,
+    "confidence_after": 0.504
+  }
+]

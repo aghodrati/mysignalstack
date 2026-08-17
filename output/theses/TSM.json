@@ -1,0 +1,93 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-17",
+    "thesis": "TSM\u2019s mature, high-volume CoWoS leadership and direct-to-silicon liquid-cooling capabilities outweigh longer-term circular-wafer scaling constraints, supporting a cautiously bullish view.",
+    "direction": "long",
+    "confidence": 0.607824,
+    "news_confidence": 0.76,
+    "fundamental_confidence": 0.87,
+    "pre_critic_confidence": 0.804,
+    "critic_multiplier": 0.756,
+    "expected_return_pct": 12,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Continued volume execution and integration maturity of TSMC\u2019s CoWoS ecosystem relative to Intel and other alternatives",
+      "Successful deployment of direct-to-silicon liquid cooling for multi-kilowatt AI accelerator packages",
+      "Sustained demand for advanced packaging that reinforces TSMC\u2019s competitive position"
+    ],
+    "invalidation": [
+      "CoWoS-R and CoWoS-L package-size and wafer-utilization constraints materially impair scaling",
+      "Intel or other alternatives close the maturity and volume-execution gap in advanced packaging",
+      "TSMC\u2019s liquid-cooling work fails to enable commercially relevant multi-kilowatt AI accelerator packages",
+      "High revenue and earnings growth may normalize from exceptionally elevated levels, making the forward valuation more demanding than it appears",
+      "Semiconductor demand remains cyclical and concentrated among a limited number of major customers",
+      "Taiwan geopolitical exposure and substantial capital-intensity create risks to cash-flow durability despite currently exceptional margins",
+      "A forward P/E near 19x leaves some sensitivity to estimate cuts if AI and advanced-node demand weakens"
+    ],
+    "reasoning": "The evidence favors TSMC because two high-importance claims establish packaging leadership and differentiated cooling capability, while the credible scaling constraint is better viewed as a longer-term risk than an immediate reversal of that advantage.",
+    "claims_considered": 3
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-17",
+    "assessment": "supports",
+    "thesis": "TSM\u2019s mature, high-volume CoWoS leadership and direct-to-silicon liquid-cooling capabilities outweigh longer-term circular-wafer scaling constraints, supporting a cautiously bullish view.",
+    "direction": "long",
+    "news_confidence": 0.76,
+    "fundamental_confidence": 0.87,
+    "blended_confidence": 0.804,
+    "fair_value_estimate": 540.20483,
+    "current_price": 415.575,
+    "implied_return_pct": 30.0,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.36,
+        "earnings_growth": 0.774
+      },
+      "Valuation": {
+        "forward_pe": 19.232382,
+        "peg_ratio": 0.98,
+        "ev_to_revenue": 3.233
+      },
+      "Quality": {
+        "operating_margin": 0.60344005,
+        "fcf_margin": 0.5933303319992628
+      },
+      "Sentiment": {
+        "analyst_upside": 29.989732298622407,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 5.7089999460000005,
+        "insider_flow": 346428,
+        "low_short_interest": -0.6900000000000001
+      }
+    },
+    "risks": [
+      "High revenue and earnings growth may normalize from exceptionally elevated levels, making the forward valuation more demanding than it appears",
+      "Semiconductor demand remains cyclical and concentrated among a limited number of major customers",
+      "Taiwan geopolitical exposure and substantial capital-intensity create risks to cash-flow durability despite currently exceptional margins",
+      "A forward P/E near 19x leaves some sensitivity to estimate cuts if AI and advanced-node demand weakens"
+    ],
+    "reasoning": "Exceptional growth, industry-leading margins, strong free-cash-flow generation, reasonable PEG valuation, and roughly 30% indicated upside provide strong fundamental support for a long position, although cyclicality and concentration temper conviction."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-17",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article"
+    ],
+    "deterministic_multiplier": 0.9,
+    "llm_concerns": [
+      "The claims support that cooling work strengthens TSMC\u2019s position, but do not establish deployed or commercially proven direct-to-silicon liquid-cooling capabilities; the thesis upgrades an ongoing effort into a capability.",
+      "The claims support CoWoS leadership and identify a longer-term scaling constraint, but provide no evidence that the leadership and cooling advantages quantitatively or strategically outweigh that constraint, so the bullish conclusion and 80% confidence overreach the evidence.",
+      "The leadership claim is relative to Intel and other alternatives, whereas the thesis presents leadership as sufficient support for a bullish view without addressing whether those alternatives mitigate the circular-wafer limitation."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The claims are directionally compatible, but they do not substantiate the key balancing judgment that present advantages outweigh the stated scaling constraint, nor fully support the thesis\u2019s characterization of cooling as an established capability.",
+    "final_multiplier": 0.756,
+    "confidence_before": 0.804,
+    "confidence_after": 0.607824
+  }
+]
