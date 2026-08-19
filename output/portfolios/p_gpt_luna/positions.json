@@ -102,5 +102,25 @@
     "closed_date": null,
     "actual_return_pct": null,
     "close_reason": null
+  },
+  {
+    "event": "closed",
+    "id": "1cb8321dcea3bebc",
+    "closed_date": "2026-08-19",
+    "actual_return_pct": -5.705089157294174,
+    "close_reason": "invalidated"
+  },
+  {
+    "event": "created",
+    "id": "96a864c3bc15e3be",
+    "ticker": "AMD",
+    "created": "2026-08-19",
+    "entry_confidence": 0.746,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
   }
 ]

@@ -1,0 +1,84 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "LMT has a modestly positive strategic signal from its 5G- and AI-powered drone-detection system, but the absence of demonstrated contracts, revenue, or earnings impact supports only a low-conviction bullish view.",
+    "direction": "long",
+    "confidence": 0.38520000000000004,
+    "news_confidence": 0.28,
+    "fundamental_confidence": 0.65,
+    "pre_critic_confidence": 0.42800000000000005,
+    "critic_multiplier": 0.9,
+    "expected_return_pct": 2,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Evidence of contracts or customer adoption for the 5G- and AI-powered drone-detection system",
+      "Demonstrated revenue contribution or near-term earnings impact from counter-UAS and networked defense systems"
+    ],
+    "invalidation": [
+      "Failure to secure contracts or generate revenue from the system",
+      "Evidence that the unveiling does not improve LMT\u2019s positioning in counter-UAS or networked defense systems",
+      "Earnings growth is weak relative to the 17.8x forward P/E, limiting valuation upside.",
+      "The roughly 8% fair-value discount suggests only modest return potential, while substantial insider selling is a negative ownership signal."
+    ],
+    "reasoning": "The sole claim is directionally bullish but explicitly lacks commercial validation, so it supports a small expected gain with substantially limited confidence.",
+    "claims_considered": 1
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "supports",
+    "thesis": "LMT has a modestly positive strategic signal from its 5G- and AI-powered drone-detection system, but the absence of demonstrated contracts, revenue, or earnings impact supports only a low-conviction bullish view.",
+    "direction": "long",
+    "news_confidence": 0.28,
+    "fundamental_confidence": 0.65,
+    "blended_confidence": 0.42800000000000005,
+    "fair_value_estimate": 629.5263,
+    "current_price": 582.065,
+    "implied_return_pct": 8.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.105,
+        "earnings_growth": 4.438
+      },
+      "Valuation": {
+        "forward_pe": 17.793173,
+        "peg_ratio": 1.21,
+        "ev_to_revenue": 1.974
+      },
+      "Quality": {
+        "operating_margin": 0.11956999500000001,
+        "fcf_margin": 0.1350663505838611
+      },
+      "Sentiment": {
+        "analyst_upside": 8.15395187822665,
+        "revisions_trend": 4.761904761904762,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 8.79800000015,
+        "insider_flow": -14142284.0,
+        "low_short_interest": -1.6199999999999999
+      }
+    },
+    "risks": [
+      "Earnings growth is weak relative to the 17.8x forward P/E, limiting valuation upside.",
+      "The roughly 8% fair-value discount suggests only modest return potential, while substantial insider selling is a negative ownership signal."
+    ],
+    "reasoning": "Solid revenue growth, healthy margins, a PEG near 1.2, positive institutional and analyst trends, and modest upside to consensus fair value support a cautiously bullish long view, but not with high conviction."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article"
+    ],
+    "deterministic_multiplier": 0.9,
+    "llm_concerns": [],
+    "llm_multiplier": 1.0,
+    "llm_reasoning": "The synthesis closely paraphrases the sole claim, preserves its modest positive signal and explicit lack of commercial evidence, and introduces no additional overreach or stale-catalyst issue.",
+    "final_multiplier": 0.9,
+    "confidence_before": 0.42800000000000005,
+    "confidence_after": 0.38520000000000004
+  }
+]

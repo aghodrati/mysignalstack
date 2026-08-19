@@ -1,0 +1,21 @@
+[
+  {
+    "id": "536a163bf1c3d9a6",
+    "ticker": "LMT",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-151/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "supply_chain",
+    "created": "2026-08-14",
+    "claim": "Lockheed Martin\u2019s unveiling of a 5G- and AI-powered drone-detection system modestly strengthens its positioning in counter-UAS and networked defense systems, but the article provides no evidence of contracts, revenue impact, or near-term earnings contribution.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 2,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The system was developed with Keysight and other partners and is presented alongside broader advances in AI-enabled defense and autonomous vehicles. While the product could support Lockheed Martin\u2019s defense-technology portfolio, the article does not disclose customer adoption, order value, production timing, or government awards, making the investment effect indirect and difficult to quantify.",
+    "source": "Semiconductor Engineering"
+  }
+]

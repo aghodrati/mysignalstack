@@ -1,0 +1,90 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "RGTI has a cautiously bullish setup from potential $100 million government funding and HPE ecosystem validation, but execution, political approval risk, and nonexclusive competition limit conviction and upside.",
+    "direction": "long",
+    "confidence": 0.48240000000000005,
+    "news_confidence": 0.68,
+    "fundamental_confidence": 0.32,
+    "pre_critic_confidence": 0.536,
+    "critic_multiplier": 0.9,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Finalization and funding of the proposed $100 million Commerce Department investment",
+      "Use of government funding to advance and scale Rigetti\u2019s quantum-computing technology",
+      "Successful integration of Rigetti systems into HPE\u2019s Cray-based hybrid HPC platforms and testbeds",
+      "Evidence that HPE partnership develops into a meaningful commercialization channel"
+    ],
+    "invalidation": [
+      "Congressional or administrative action delays, modifies, or blocks the proposed investment",
+      "Rigetti fails to convert HPE\u2019s multi-vendor platform access into differentiated adoption or commercial contracts",
+      "Competitive quantum processors are treated as interchangeable alternatives without meaningful Rigetti demand",
+      "Extreme enterprise-value-to-revenue valuation leaves little room for execution disappointments.",
+      "Negative operating and free-cash-flow margins indicate ongoing losses and potential dilution or financing needs.",
+      "Large insider selling may signal weak internal conviction.",
+      "Near-zero analyst net upgrades weaken the reliability of the implied upside estimate."
+    ],
+    "reasoning": "The high-confidence, high-importance financing and government-validation potential outweighs the HPE nonexclusivity and competitive risks, but the funding remains politically uncertain and the partnership does not establish a durable moat.",
+    "claims_considered": 5
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "contradicts",
+    "thesis": "RGTI has a cautiously bullish setup from potential $100 million government funding and HPE ecosystem validation, but execution, political approval risk, and nonexclusive competition limit conviction and upside.",
+    "direction": "long",
+    "news_confidence": 0.68,
+    "fundamental_confidence": 0.32,
+    "blended_confidence": 0.536,
+    "fair_value_estimate": 29.64583,
+    "current_price": 16.735,
+    "implied_return_pct": 77.1,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 1.989
+      },
+      "Valuation": {
+        "forward_pe": -83.213165,
+        "ev_to_revenue": 490.572
+      },
+      "Quality": {
+        "operating_margin": -5.8979497,
+        "fcf_margin": -6.101038338658147
+      },
+      "Sentiment": {
+        "analyst_upside": 77.14867045115028,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 44.8989988305,
+        "insider_flow": -77200278,
+        "low_short_interest": -18.540001
+      }
+    },
+    "risks": [
+      "Extreme enterprise-value-to-revenue valuation leaves little room for execution disappointments.",
+      "Negative operating and free-cash-flow margins indicate ongoing losses and potential dilution or financing needs.",
+      "Large insider selling may signal weak internal conviction.",
+      "Near-zero analyst net upgrades weaken the reliability of the implied upside estimate."
+    ],
+    "reasoning": "Exceptional revenue growth and substantial consensus upside provide some support for a long position, but extreme valuation, deeply negative profitability and cash flow, and insider selling make the fundamental risk-reward unfavorable without further evidence of scalable economics."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis cites execution risk, but none of the supplied claims identifies execution as a specific risk; the evidence supports funding-approval risk and competitive pressure instead.",
+      "The $100 million catalyst remains proposed and conditional on finalization, so describing it as a near-term financing catalyst is somewhat stronger than the claims warrant, although the thesis does qualify it as potential.",
+      "The supplied claims are dated May and July 2026 and provide no subsequent confirmation that the funding was finalized, delayed, modified, or blocked; the thesis should preserve that unresolved status rather than imply a current catalyst with known timing."
+    ],
+    "llm_multiplier": 0.9,
+    "llm_reasoning": "The cautious direction is broadly consistent with the claims, but the thesis adds unsupported execution risk and slightly overstates the immediacy of an unresolved, conditional funding catalyst.",
+    "final_multiplier": 0.9,
+    "confidence_before": 0.536,
+    "confidence_after": 0.48240000000000005
+  }
+]

@@ -57,6 +57,9 @@ class ArticleClaim:
     trade_worthy: bool = False
     context: str = ""  # a paragraph from the article specific to this claim, for a reader who
     # doesn't want to re-read the whole source to understand why the claim was made
+    source: str = ""  # the news source's display name (e.g. "SemiAnalysis") -- lets the Research
+    # tab mask out a source's claims from the thesis view without deleting them. Empty for claims
+    # stored before this field existed; a one-off backfill resolves those from source_link's domain.
 
 
 def claim_id(ticker: str, source_link: str, claim_text: str) -> str:

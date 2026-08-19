@@ -76,7 +76,8 @@
     "ORCL"
   ],
   "https://newsletter.semianalysis.com/p/chinas-cxmt-is-set-to-challenge-dram": [
-    "MU"
+    "MU",
+    "SKHY"
   ],
   "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter": [
     "NBIS",
@@ -94,7 +95,8 @@
     "NVDA",
     "QCOM",
     "SPCX",
-    "TSLA"
+    "TSLA",
+    "SKHY"
   ],
   "https://stratechery.com/2026/nvidias-risky-business/": [
     "AMZN",
@@ -111,5 +113,333 @@
   ],
   "https://stratechery.com/2026/meta-earnings-metas-timing-problems-the-financial-tail/": [
     "META"
+  ],
+  "https://www.citriniresearch.com/p/state-of-the-themes-june-2026": [
+    "GOOGL",
+    "MSFT",
+    "NVDA",
+    "UBER"
+  ],
+  "https://www.citriniresearch.com/p/semis-memo-supply-chain-inheritance": [
+    "MU",
+    "NVDA"
+  ],
+  "https://www.citriniresearch.com/p/agentic-utilities": [
+    "NVDA"
+  ],
+  "https://www.citriniresearch.com/p/2028gic": [
+    "NVDA",
+    "TSM",
+    "UBER"
+  ],
+  "https://newsletter.doomberg.com/p/over-target": [
+    "CVX"
+  ],
+  "https://newsletter.doomberg.com/p/treatment-resistant": [
+    "ASML"
+  ],
+  "https://www.nextplatform.com/connect/2026/08/17/cisco-can-finally-sell-lots-of-supercomputers-and-their-networks/5288804": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040": [
+    "CRWV",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NBIS",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/ai/2026/08/13/the-war-between-open-source-open-weight-and-closed-ai-models/5287504": [
+    "META",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/08/13/the-genai-boom-will-lift-supermicro-but-it-will-lift-others-too/5287161": [
+    "CRWV",
+    "GOOGL",
+    "NVDA",
+    "SPCX"
+  ],
+  "https://www.nextplatform.com/ai/2026/08/11/nvidia-drives-bang-for-the-buck-with-new-genai-model-and-router/5286365": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/connect/2026/08/10/as-ai-networks-scale-in-three-directions-so-does-arista/5285500": [
+    "AVGO",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/08/07/with-taalas-amd-can-bake-ai-inference-directly-into-its-chippery/5285060": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/cloud/2026/08/06/google-builds-a-new-gemini-model-team-as-ai-investments-accelerate/5284258": [
+    "GOOGL"
+  ],
+  "https://www.nextplatform.com/compute/2026/08/05/amd-catches-the-agentic-ai-wave-and-will-ride-it-up-masterfully/5283468": [
+    "AMD",
+    "META",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/cloud/2026/08/04/why-shouldnt-amazon-spinoff-aws-and-annapurna-labs/5282586": [
+    "AMZN"
+  ],
+  "https://www.nextplatform.com/cloud/2026/07/31/ai-dominates-the-microsoft-conversation-but-not-the-companys-business/5281992": [
+    "MSFT"
+  ],
+  "https://www.nextplatform.com/compute/2026/07/30/just-how-rosy-are-those-ai-infrastructure-spending-forecasts/5281473": [
+    "AMD",
+    "AMZN",
+    "ARM",
+    "GOOGL",
+    "INTC",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/07/29/the-rackscale-ai-system-roadmaps-that-amd-is-using-to-chase-money/5280098": [
+    "AMD",
+    "INTC",
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/compute/2026/07/28/ai-hosts-and-sandboxes-save-intels-datacenter-cpu-cookies/5279338": [
+    "AMD",
+    "INTC",
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/hpc/2026/07/27/nvidia-accelerates-chip-engineering-with-ai-agents/5279125": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/07/24/the-money-amd-is-chasing-with-its-rackscale-ai-system-roadmaps/5278510": [
+    "AMD"
+  ],
+  "https://www.nextplatform.com/hpc/2026/07/23/doe-fires-the-5-billion-starter-gun-for-its-ai-targeted-genesis-mission/5277061": [
+    "MSFT"
+  ],
+  "https://www.nextplatform.com/connect/2026/07/22/salience-labs-wants-to-scale-up-ai-with-silicon-photonics-optical-switch/5276643": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/ai/2026/07/21/genai-hardware-investments-are-way-ahead-of-model-and-platform-revenues/5275842": [
+    "AMZN",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/cloud/2026/07/20/microsoft-taps-amd-for-at-scale-ai-cpu-and-gpu-clusters/5275161": [
+    "AMD",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/07/20/google-uses-ai-reinforcement-learning-for-quantum-error-correction/5275023": [
+    "GOOGL"
+  ],
+  "https://www.nextplatform.com/connect/2026/07/17/marvell-brings-radix-low-latency-and-bandwidth-to-bear-with-teralynx-t100/5274615": [
+    "META",
+    "MSFT",
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/ai/2026/07/16/ai-chips-drive-around-a-third-of-tsmc-revenues/5273929": [
+    "AMD",
+    "INTC",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/compute/2026/07/13/the-aspirations-of-hpe-and-dell-in-the-quantum-classical-hpc-datacenter/5270664": [
+    "INTC",
+    "NVDA",
+    "RGTI"
+  ],
+  "https://www.nextplatform.com/connect/2026/07/06/as-goes-ai-compute-so-goes-ethernet-networking/5267007": [
+    "AVGO",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/cloud/2026/07/01/of-course-meta-platforms-is-going-to-be-a-cloud/5265392": [
+    "AMD",
+    "AMZN",
+    "CRWV",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/30/three-hpc-gurus-ask-do-we-still-need-gpus/5264552": [
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/connect/2026/06/30/optical-scale-up-fabrics-are-limited-by-manufacturing-not-architecture/5264399": [
+    "AMD",
+    "META",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/store/2026/06/29/amd-stretches-server-dram-with-flash-extended-memory/5263848": [
+    "AMD",
+    "MU",
+    "SKHY"
+  ],
+  "https://www.nextplatform.com/store/2026/06/26/the-end-of-boom/bust-cycles-for-the-memory-market/5263287": [
+    "MU",
+    "SKHY"
+  ],
+  "https://www.nextplatform.com/hpc/2026/06/25/a-deep-dive-on-chinas-lineshine-all-cpu-exaflops-class-supercomputer/5262439": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/hpc/2026/06/23/amd-and-nvidia-are-neck-and-neck-in-hpc-supercomputing/5260202": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/enterprise/2026/06/22/hpe-rides-the-agentic-ai-wave-back-into-the-datacenter/5259579": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/store/2026/06/19/everpures-ai-strategy-is-almost-purely-based-on-nvidia/5258997": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/17/the-server-boom-balances-price-increases-against-chip-shortages/5258066": [
+    "AMZN",
+    "ARM",
+    "GOOGL",
+    "INTC",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/connect/2026/06/17/hpes-datacenter-networking-picture-comes-into-clearer-focus/5258015": [
+    "AMD"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/16/tensordyne-converts-ai-matrix-math-to-logs-to-crank-up-inference-oomph/5256558": [
+    "AMZN",
+    "AVGO",
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/16/queras-libra-fault-tolerant-quantum-system-heading-to-amazon-braket-service/5256477": [
+    "AMZN"
+  ],
+  "https://www.nextplatform.com/cloud/2026/06/12/while-oracle-will-rake-in-big-bucks-on-ai-profits-are-hard-to-predict/5255098": [
+    "NVDA",
+    "ORCL",
+    "SPCX"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/11/aws-tunes-up-graviton5-for-agentic-ai-boosts-bang-for-the-buck-bigtime/5254538": [
+    "AMZN",
+    "ARM",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/10/d-wave-riding-the-dual-rail-for-its-gate-model-quantum-ambitions/5253279": [
+    "QBTS"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/09/ai-chip-shepherds-broadcom-and-marvell-have-skinned-the-golden-fleece/5253011": [
+    "AMD",
+    "AMZN",
+    "AVGO",
+    "META",
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/ai/2026/06/05/chip-capacity-constraints-put-a-governor-on-ai-spending-growth/5251474": [
+    "AMD",
+    "MU",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/04/hpe-catches-its-first-genai-wave-with-enterprises-sovereigns-and-neoclouds/5250944": [
+    "AMD",
+    "INTC",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/ai/2026/06/02/nvidia-extends-its-grip-on-the-ai-datacenter-outwards/5250344": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/06/01/dell-makes-the-profits-up-in-volume-for-booming-ai-servers/5249707": [
+    "MU",
+    "NVDA",
+    "SKHY"
+  ],
+  "https://www.nextplatform.com/store/2026/05/29/data-and-storage-at-the-center-of-the-ai-stack/5247585": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/28/gpus-and-ram-are-in-short-supply-but-the-real-bottleneck-for-ai-is-electricians/5247566": [
+    "AMD"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/27/uncle-sam-awards-2-billion-plus-to-quantum-companies-but-wants-a-cut/5247083": [
+    "QBTS",
+    "RGTI"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/27/not-so-fast-on-that-charge-for-800-volt-datacenter-power/5246760": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/19/dell-bulks-up-hardware-as-ai-infrastructure-shifts-to-on-premises/5242811": [
+    "GOOGL",
+    "NVDA",
+    "PLTR",
+    "SPCX"
+  ],
+  "https://www.nextplatform.com/connect/2026/05/18/cisco-wins-over-ai-customers-with-merchant-silicon-and-optics/5242200": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/15/with-its-ipo-done-cerebras-can-get-back-to-pushing-the-ai-envelope/5241317": [
+    "AMD",
+    "AMZN",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/connect/2026/05/12/openai-microsoft-and-friends-build-a-better-more-scalable-ethernet/5239078": [
+    "AMD",
+    "AVGO",
+    "MSFT",
+    "NVDA",
+    "ORCL"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/08/sometimes-air-is-the-only-way-for-ai-systems-to-keep-their-cool/5237421": [
+    "AMD"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/06/if-you-can-make-a-compute-engine-you-can-sell-a-compute-engine/5231317": [
+    "AMD",
+    "ARM",
+    "INTC",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/05/05/broadcom-helps-cpu-and-xpu-makers-go-vertical-with-compute/5219419": [
+    "AMZN",
+    "AVGO",
+    "META",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/compute/2026/04/27/ai-driven-cpu-shortage-saves-intels-financial-cookies/5218916": [
+    "AMD",
+    "INTC"
+  ],
+  "https://www.nextplatform.com/compute/2026/04/24/with-tpu-8-google-makes-genai-systems-much-better-not-just-bigger/5218834": [
+    "AVGO",
+    "GOOGL",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/04/22/the-second-time-will-be-the-ipo-charm-for-cerebras/5218651": [
+    "AMZN",
+    "NVDA"
+  ],
+  "https://semiengineering.com/chip-industry-earnings-roundup/": [
+    "AMD",
+    "ARM",
+    "ASML",
+    "AVGO",
+    "INTC",
+    "MU",
+    "NVDA",
+    "QCOM",
+    "TSM",
+    "SKHY"
+  ],
+  "https://semiengineering.com/chip-industry-week-in-review-151/": [
+    "ARM",
+    "INTC",
+    "LMT",
+    "NVDA",
+    "ORCL",
+    "TSLA",
+    "TSM",
+    "SKHY",
+    "GOOGL",
+    "MSFT"
   ]
 }

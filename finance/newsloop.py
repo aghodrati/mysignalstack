@@ -83,8 +83,14 @@ from finance.claims import (
 )
 from finance.data import get_earnings_history, get_prices
 from finance.llm import RateLimited, complete, get_rate_limit_status, get_usage_counter, reset_usage_counter
-from finance.loop_a_config import active_news_sources, llm_config, max_article_chars, tracked_universe
-from finance.news import SEC_8K_SOURCE_PREFIX, get_news_from_sources, get_sec_8k_news
+from finance.loop_a_config import (
+    active_news_sources,
+    full_page_fetch_sources,
+    llm_config,
+    max_article_chars,
+    tracked_universe,
+)
+from finance.news import SEC_8K_SOURCE_PREFIX, fetch_full_page_text, get_news_from_sources, get_sec_8k_news
 from finance.portfolio import append_trade, current_state, execution_price, load_meta, rule_positions
 from finance.thesis import Position, append_closed, append_created, open_positions
 from finance.tickerthesis import (
@@ -185,6 +191,12 @@ def _portfolio_strategy(portfolio_name: str) -> dict:
 # scale never reaches Stage B. Treat the score as a coarse noise filter, not
 # a precise ranking -- small free-tier models aren't well-calibrated on it.
 IMPORTANCE_MIN = 3
+
+# Below this many characters, RSS's own title/summary/content is too thin for Stage A to
+# meaningfully judge importance/novelty from (a WordPress-style excerpt, not the real article --
+# see finance.news.fetch_full_page_text). Only tried for a source in full_page_fetch_sources();
+# for everything else, thin RSS content is used as-is, same as always.
+FULL_PAGE_FETCH_MIN_CHARS = 500
 
 EVENT_TYPES = (
     "capex", "earnings", "guidance", "product_launch", "regulatory", "m_and_a",
@@ -293,6 +305,23 @@ def _universe_name_to_ticker() -> dict[str, str]:
         combined[name] = ticker
         combined[ticker] = ticker
     return combined
+
+
+def _tracked_company_pattern(universe_map: dict[str, str]) -> re.Pattern:
+    """Compiles a single case-insensitive, word-boundary regex matching any
+    tracked ticker or display name -- a free, no-LLM pre-filter so a Stage A
+    call is never spent on an article that couldn't possibly be about any
+    tracked company (same substring-match trick _backfill_new_tickers already
+    uses per-ticker, applied here to the whole universe at once, before the
+    main per-article loop). Word-boundaried (unlike the backfill version)
+    specifically because short tickers (e.g. "MU") would otherwise match
+    constantly as substrings of unrelated words ("must", "music", ...) --
+    with the tighter match, this pre-filter is worth trusting to actually
+    skip an article, not just flag it. Longest needles sorted first so a
+    multi-word name matches before a shorter ticker embedded within it could.
+    """
+    needles = sorted(universe_map, key=len, reverse=True)
+    return re.compile(r"\b(" + "|".join(re.escape(n) for n in needles) + r")\b", re.IGNORECASE)
 
 
 def compute_signal_bundle(ticker: str, as_of: dt.date) -> dict:
@@ -704,13 +733,13 @@ def _close_position_now(portfolio_name: str, position: Position, as_of: dt.date,
 
 def _extract_and_store_claims(
     ticker: str, link: str, title: str, article_text: str, event: dict, article_date: dt.date,
-    claims_attempted: dict, verbose: bool,
-) -> bool:
+    claims_attempted: dict, verbose: bool, source: str,
+) -> list[ArticleClaim]:
     """Stage B for one (article, ticker) pair: extracts claims, stores them, and marks the pair
     attempted -- shared by update_research's main per-article loop and the new-ticker backfill
-    sweep below, so both go through identical claim-extraction/storage logic. Returns True if at
-    least one trade-worthy claim was stored (the caller's signal to (re)run Stage C for this
-    ticker).
+    sweep below, so both go through identical claim-extraction/storage logic. Returns every claim
+    stored (empty list if none) -- callers needing just the old "at least one trade-worthy claim"
+    signal (whether to (re)run Stage C for this ticker) use any(c.trade_worthy for c in result).
     """
     signals = compute_signal_bundle(ticker, article_date)
     if verbose:
@@ -723,7 +752,7 @@ def _extract_and_store_claims(
     claims_attempted.setdefault(link, []).append(ticker)
     _save_claims_attempted(claims_attempted)
     if not extracted:
-        return False
+        return []
     article_claims = [
         ArticleClaim(
             id=claim_id(ticker, link, c["claim"]), ticker=ticker, source_link=link,
@@ -731,12 +760,12 @@ def _extract_and_store_claims(
             direction=c["direction"], confidence=c["confidence"], importance=c["importance"],
             expected_return_pct=c["expected_return_pct"],
             expected_horizon_days=c["expected_horizon_days"], trade_worthy=c["trade_worthy"],
-            context=c["context"],
+            context=c["context"], source=source,
         )
         for c in extracted
     ]
     append_claims(ticker, article_claims)
-    return any(c.trade_worthy for c in article_claims)
+    return article_claims
 
 
 # How far back the new-ticker backfill sweep looks when a ticker is newly added to
@@ -764,7 +793,7 @@ def _save_known_universe_tickers(tickers: set[str]) -> None:
 def _backfill_new_tickers(
     events_cache: dict, claims_attempted: dict, universe_map: dict[str, str],
     new_tickers: dict[str, str], as_of: dt.date, verbose: bool,
-) -> tuple[set[str], set[str]]:
+) -> tuple[set[str], set[str], dict[tuple[str, str], int]]:
     """For every ticker newly added to config_loop_a.json (not yet in the known-universe
     snapshot), retroactively reconsiders cached articles from the last BACKFILL_LOOKBACK_DAYS
     days: a free text pre-filter first (no LLM cost, just a substring search over the permanent
@@ -773,14 +802,17 @@ def _backfill_new_tickers(
     about the new ticker (or fails the importance/novelty gate, same as the main loop) produces
     no claim, same as if it had been seen for the first time today.
 
-    Returns (completed, touched) -- `completed` is every ticker whose sweep finished without
-    hitting RateLimited (safe to mark as known so it's never re-swept); a ticker cut short by
-    RateLimited stays out of it and is retried next run. `touched` is every ticker that picked up
-    at least one new trade-worthy claim, for the caller to fold into Stage C's update set.
+    Returns (completed, touched, claims_by_source_ticker) -- `completed` is every ticker whose
+    sweep finished without hitting RateLimited (safe to mark as known so it's never re-swept); a
+    ticker cut short by RateLimited stays out of it and is retried next run. `touched` is every
+    ticker that picked up at least one new trade-worthy claim, for the caller to fold into Stage
+    C's update set. `claims_by_source_ticker` counts every claim stored (trade-worthy or not),
+    keyed by (source name, ticker), for run_loop_a.py's end-of-run summary.
     """
     cutoff = as_of - dt.timedelta(days=BACKFILL_LOOKBACK_DAYS)
     completed: set[str] = set()
     touched: set[str] = set()
+    claims_by_source_ticker: dict[tuple[str, str], int] = {}
     for ticker, name in sorted(new_tickers.items()):
         needles = [s.lower() for s in {ticker, name} if s]
         candidates = [
@@ -808,17 +840,23 @@ def _backfill_new_tickers(
                 _save_events(events_cache)
                 if ticker not in event["companies"] or not event["novel"] or event["importance"] < IMPORTANCE_MIN:
                     continue
-                if _extract_and_store_claims(
-                    ticker, link, entry["title"], entry["text"], event, article_date, claims_attempted, verbose
-                ):
-                    touched.add(ticker)
+                source = entry.get("source", "unknown")
+                new_claims = _extract_and_store_claims(
+                    ticker, link, entry["title"], entry["text"], event, article_date, claims_attempted, verbose,
+                    source,
+                )
+                if new_claims:
+                    key = (source, ticker)
+                    claims_by_source_ticker[key] = claims_by_source_ticker.get(key, 0) + len(new_claims)
+                    if any(c.trade_worthy for c in new_claims):
+                        touched.add(ticker)
             completed.add(ticker)
         except RateLimited as exc:
             if verbose:
                 reason = f" ({exc.message})" if exc.message else ""
                 print(f"  [backfill] {ticker} -- rate limited{reason}, stopping backfill here (will retry next run).")
             break
-    return completed, touched
+    return completed, touched, claims_by_source_ticker
 
 
 def _print_rate_limit_status() -> None:
@@ -863,13 +901,20 @@ def _print_rate_limit_status() -> None:
 
 def update_research(
     as_of: dt.date | None = None, verbose: bool = True, include_sec_8k: bool = False
-) -> set[str]:
+) -> dict:
     """Global, portfolio-independent research pass: Stage A -> Stage B ->
     ticker-thesis aggregation. Safe to call from every portfolio's
     `run_loop_a` -- everything here is cached/keyed globally, so a second or
     third portfolio calling this the same day does no redundant LLM work
-    beyond whatever's genuinely new since the last call. Returns the set of
-    tickers whose TickerThesis was actually updated this call.
+    beyond whatever's genuinely new since the last call.
+
+    Returns a dict with "updated_tickers" (the set of tickers whose
+    TickerThesis was actually updated this call), "claims_by_source_ticker"
+    (every claim stored this call, trade-worthy or not, keyed by
+    (source name, ticker) -> count), and "thesis_changes" (ticker ->
+    {"before_confidence", "after_confidence", "direction"} for every ticker
+    whose thesis was (re)aggregated this call) -- run_loop_a.py's end-of-run
+    summary is built from the latter two.
     """
     as_of = as_of or dt.date.today()
     if verbose:
@@ -878,19 +923,25 @@ def update_research(
     events_cache = _load_events()
     claims_attempted = _load_claims_attempted()
     universe_map = _universe_name_to_ticker()
+    tracked_company_pattern = _tracked_company_pattern(universe_map)
+    fetch_full_page_for = full_page_fetch_sources()
     updated_tickers: set[str] = set()
+    claims_by_source_ticker: dict[tuple[str, str], int] = {}
 
     known_tickers = _load_known_universe_tickers()
     newly_added = {t: n for t, n in tracked_universe().items() if t not in known_tickers}
     if newly_added:
-        completed, backfill_touched = _backfill_new_tickers(
+        completed, backfill_touched, backfill_claims = _backfill_new_tickers(
             events_cache, claims_attempted, universe_map, newly_added, as_of, verbose
         )
         if completed:
             _save_known_universe_tickers(known_tickers | completed)
         updated_tickers |= backfill_touched
+        for key, count in backfill_claims.items():
+            claims_by_source_ticker[key] = claims_by_source_ticker.get(key, 0) + count
 
-    articles = get_news_from_sources(active_news_sources())
+    sources = active_news_sources()
+    articles = get_news_from_sources(sources)
     if include_sec_8k:
         tracked_tickers = sorted(set(universe_map.values()))
         articles = pd.concat([articles, get_sec_8k_news(tracked_tickers, get_cik_map())], ignore_index=True)
@@ -900,13 +951,22 @@ def update_research(
     # is kept (falls back to as_of below), not dropped, since that's a feed-parsing gap, not staleness.
     articles_cutoff = pd.Timestamp(as_of) - pd.DateOffset(months=6)
     articles = articles[articles["published"].isna() | (articles["published"] >= articles_cutoff)]
-    articles = articles.sort_values("published", ascending=False).reset_index(drop=True)
+    # Grouped by source (config_loop_a.json's news_sources order; an 8-K filing's source starts
+    # with SEC_8K_SOURCE_PREFIX and always sorts last, after every real news source), newest first
+    # within each source -- rather than interleaving every source together purely by date, so a
+    # run works through one source's whole batch before moving to the next.
+    source_order = {name: i for i, (name, _url) in enumerate(sources)}
+    articles["_source_order"] = articles["source"].map(source_order).fillna(len(source_order))
+    articles = articles.sort_values(["_source_order", "published"], ascending=[True, False])
+    articles = articles.drop(columns="_source_order").reset_index(drop=True)
     if verbose:
         print(f"Research update: checking {len(articles)} article(s) as of {as_of.isoformat()}.")
 
     for i, row in enumerate(articles.itertuples(index=False), 1):
         reset_usage_counter()  # measured per article -- includes Stage A (if not cached) + every Stage B call below
         title = _safe_text(row.title)
+        if verbose:
+            print(f"[{i}/{len(articles)}] ({row.source}) {title[:70]}")
         # The article's own publish date, not today -- reasoning/signals should reflect what was
         # actually knowable *when the article came out*, not the day this run happens to process it
         # (a rate-limit-delayed backlog article processed days late would otherwise get today's
@@ -922,6 +982,12 @@ def update_research(
             else:
                 title, summary, content = _safe_text(row.title), _safe_text(row.summary), _safe_text(row.content)
                 article_text = _strip_html(content) if content else _strip_html(summary)
+                if len(article_text) < FULL_PAGE_FETCH_MIN_CHARS and row.source in fetch_full_page_for:
+                    fetched = fetch_full_page_text(row.link)
+                    if fetched:
+                        if verbose:
+                            print(f"    [full-page fetch] {row.source}: got {len(fetched)} chars")
+                        article_text = fetched
                 known_ticker = row.source[len(SEC_8K_SOURCE_PREFIX):] if row.source.startswith(SEC_8K_SOURCE_PREFIX) else None
                 if not article_text:
                     event = None
@@ -929,6 +995,16 @@ def update_research(
                     if verbose:
                         print(f"    [Stage A] classifying ({known_ticker}): {title[:60]}")
                     event = extract_event_known_company(title, article_text, known_ticker, article_date, debug=verbose)
+                elif not tracked_company_pattern.search(f"{title} {article_text}"):
+                    # Free pre-filter: no tracked ticker/name appears anywhere in the article at
+                    # all, so Stage A couldn't possibly find a tracked company either -- skip the
+                    # LLM call entirely. Loose by design (a real match can still slip through
+                    # phrased around a nickname with no literal ticker/name, e.g. "Team Green" for
+                    # Nvidia) -- the cost of that false negative is one skipped article, not a
+                    # wrong claim, so erring toward cheap and slightly lossy is the right tradeoff.
+                    event = None
+                    if verbose:
+                        print(f"    [pre-filter] no tracked company mentioned, skipping Stage A: {title[:60]}")
                 else:
                     if verbose:
                         print(f"    [Stage A] classifying: {title[:60]}")
@@ -940,14 +1016,14 @@ def update_research(
                 # at (including ones that produced no event, and why).
                 events_cache[row.link] = {
                     "seen_date": as_of.isoformat(), "article_date": article_date.isoformat(),
-                    "title": title, "text": article_text, "event": event,
+                    "title": title, "text": article_text, "event": event, "source": row.source,
                 }
                 _save_events(events_cache)
 
             def _log(detail: str) -> None:
                 if verbose:
                     tokens = get_usage_counter()["total_tokens"]
-                    print(f"  [{i}/{len(articles)}] ({row.source}) {title[:70]} -- {detail} (tokens: {tokens})")
+                    print(f"  -- {detail} (tokens: {tokens})")
 
             if not article_text:
                 _log("empty article, skipped")
@@ -968,10 +1044,15 @@ def update_research(
                 continue
 
             for ticker in new_tickers:
-                if _extract_and_store_claims(
-                    ticker, row.link, title, article_text, event, article_date, claims_attempted, verbose
-                ):
-                    updated_tickers.add(ticker)
+                new_claims = _extract_and_store_claims(
+                    ticker, row.link, title, article_text, event, article_date, claims_attempted, verbose,
+                    row.source,
+                )
+                if new_claims:
+                    key = (row.source, ticker)
+                    claims_by_source_ticker[key] = claims_by_source_ticker.get(key, 0) + len(new_claims)
+                    if any(c.trade_worthy for c in new_claims):
+                        updated_tickers.add(ticker)
 
             _log(f"{event_summary} -- {len(new_tickers)} ticker(s) processed")
         except RateLimited as exc:
@@ -1003,11 +1084,18 @@ def update_research(
             continue
         updated_tickers.add(ticker)
 
+    thesis_changes: dict[str, dict] = {}
     for ticker in sorted(updated_tickers):
+        prior = load_ticker_thesis(ticker)
+        prior_confidence = prior.confidence if prior is not None else None
         try:
             tt = update_ticker_thesis(ticker, as_of)
             if tt is not None:
                 attempts.pop(ticker, None)
+                thesis_changes[ticker] = {
+                    "before_confidence": prior_confidence, "after_confidence": tt.confidence,
+                    "direction": tt.direction,
+                }
             else:
                 record = attempts.setdefault(ticker, {"consecutive_failures": 0})
                 record["consecutive_failures"] += 1
@@ -1055,7 +1143,11 @@ def update_research(
                 print(f"  [earnings-fundamentals] {ticker} -- rate limited{reason}, stopping here.")
             break
 
-    return updated_tickers
+    return {
+        "updated_tickers": updated_tickers,
+        "claims_by_source_ticker": claims_by_source_ticker,
+        "thesis_changes": thesis_changes,
+    }
 
 
 def run_loop_a(
@@ -1063,7 +1155,7 @@ def run_loop_a(
     as_of: dt.date | None = None,
     verbose: bool = True,
     include_sec_8k: bool = False,
-) -> list[dict]:
+) -> dict:
     """Two phases: first `update_research` -- global, shared, cached; then a
     thin, portfolio-specific, LLM-free trade-decision pass reacting to
     whichever TickerThesis snapshots exist: opens a position for a ticker not
@@ -1072,9 +1164,12 @@ def run_loop_a(
     size changes on reinforcement -- confidence moving up while already held
     doesn't add to the position, only a drop below the bar (or a direction
     flip) closes it.
+
+    Returns {"trades": [...], "research": update_research's own return dict}
+    -- run_loop_a.py prints an end-of-run summary from "research".
     """
     as_of = as_of or dt.date.today()
-    update_research(as_of=as_of, verbose=verbose, include_sec_8k=include_sec_8k)
+    research = update_research(as_of=as_of, verbose=verbose, include_sec_8k=include_sec_8k)
 
     strategy = _portfolio_strategy(portfolio_name)
     log: list[dict] = []
@@ -1103,7 +1198,7 @@ def run_loop_a(
                 if verbose:
                     print(f"  [open] {ticker}: confidence={tt.confidence:.0%} -- {tt.thesis[:80]}")
 
-    return log
+    return {"trades": log, "research": research}
 
 
 def review_loop_a(portfolio_name: str, as_of: dt.date | None = None) -> list[dict]:

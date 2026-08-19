@@ -15,7 +15,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article describes Google\u2019s planned $85 billion equity raise and highlights Berkshire Hathaway\u2019s special $10 billion allocation as a signaling mechanism: Google signals that expected compute demand is much larger than currently understood, while Berkshire signals endorsement and puts its substantial cash resources to work. The investment is presented as evidence that Berkshire sees Google as unusually well positioned because it can benefit from its services business, Gemini, cloud infrastructure, and TPU capacity sold to other AI companies."
+    "context": "The article describes Google\u2019s planned $85 billion equity raise and highlights Berkshire Hathaway\u2019s special $10 billion allocation as a signaling mechanism: Google signals that expected compute demand is much larger than currently understood, while Berkshire signals endorsement and puts its substantial cash resources to work. The investment is presented as evidence that Berkshire sees Google as unusually well positioned because it can benefit from its services business, Gemini, cloud infrastructure, and TPU capacity sold to other AI companies.",
+    "source": "Stratechery"
   },
   {
     "id": "d59e6bb70dba0f22",
@@ -33,7 +34,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article compares Berkshire\u2019s ownership of BNSF Railway with its Google investment: BNSF requires substantial ongoing capital but produces large absolute profits, while Google can similarly absorb very large investment in AI infrastructure. Berkshire is described as holding roughly $373 billion in cash and having generated $25 billion of free cash flow in 2025, making Google one of the few businesses capable of absorbing that capital at potentially attractive rates while offering exposure to multiple AI outcomes rather than a single model winner."
+    "context": "The article compares Berkshire\u2019s ownership of BNSF Railway with its Google investment: BNSF requires substantial ongoing capital but produces large absolute profits, while Google can similarly absorb very large investment in AI infrastructure. Berkshire is described as holding roughly $373 billion in cash and having generated $25 billion of free cash flow in 2025, making Google one of the few businesses capable of absorbing that capital at potentially attractive rates while offering exposure to multiple AI outcomes rather than a single model winner.",
+    "source": "Stratechery"
   },
   {
     "id": "304870d3ac20dd35",
@@ -51,6 +53,7 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article warns that hyperscalers are rapidly using debt and equity to finance AI capacity and compares the financing structures with the leveraged railroad expansion preceding the Panic of 1873. It says Berkshire\u2019s investment works if Google\u2019s demand expectations are correct, but the broader buildout could become dangerous if AI revenues arrive too slowly to support the capital being deployed. This creates downside exposure for Berkshire\u2019s Google position, though the $10 billion investment is characterized as relatively small relative to both companies."
+    "context": "The article warns that hyperscalers are rapidly using debt and equity to finance AI capacity and compares the financing structures with the leveraged railroad expansion preceding the Panic of 1873. It says Berkshire\u2019s investment works if Google\u2019s demand expectations are correct, but the broader buildout could become dangerous if AI revenues arrive too slowly to support the capital being deployed. This creates downside exposure for Berkshire\u2019s Google position, though the $10 billion investment is characterized as relatively small relative to both companies.",
+    "source": "Stratechery"
   }
 ]

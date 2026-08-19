@@ -15,7 +15,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "Uber reportedly consumed its full annual allocation for Claude Code and Codex in only four months, prompting management to impose a $1,500 monthly per-employee limit while retaining a case-by-case overage process. In the article\u2019s broader account, this is presented as an example of early tokenmaxxing caused by poor incentives and lax oversight rather than evidence that enterprise AI demand is collapsing. The cap therefore points to tighter expense control, although the article provides no estimate of the savings relative to Uber\u2019s overall cost base."
+    "context": "Uber reportedly consumed its full annual allocation for Claude Code and Codex in only four months, prompting management to impose a $1,500 monthly per-employee limit while retaining a case-by-case overage process. In the article\u2019s broader account, this is presented as an example of early tokenmaxxing caused by poor incentives and lax oversight rather than evidence that enterprise AI demand is collapsing. The cap therefore points to tighter expense control, although the article provides no estimate of the savings relative to Uber\u2019s overall cost base.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "3411aa6eea735c7b",
@@ -33,6 +34,64 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "Although Uber introduced a $1,500-per-employee monthly limit after burning through its annual budget, employees can request additional usage and receive approval on a case-by-case basis. This fits the article\u2019s conclusion that enterprise customers are shifting from unrestricted consumption to budgets and model optimization while continuing to expand AI spending and API demand. For Uber specifically, the policy suggests controlled continuation of AI adoption, but the article does not quantify any resulting revenue, productivity, or valuation impact."
+    "context": "Although Uber introduced a $1,500-per-employee monthly limit after burning through its annual budget, employees can request additional usage and receive approval on a case-by-case basis. This fits the article\u2019s conclusion that enterprise customers are shifting from unrestricted consumption to budgets and model optimization while continuing to expand AI spending and API demand. For Uber specifically, the policy suggests controlled continuation of AI adoption, but the article does not quantify any resulting revenue, productivity, or valuation impact.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "72fd86f51b7b5203",
+    "ticker": "UBER",
+    "source_link": "https://www.citriniresearch.com/p/state-of-the-themes-june-2026",
+    "source_title": "State of the Themes: June 2026",
+    "event_type": "competitive",
+    "created": "2026-06-08",
+    "claim": "Uber\u2019s rapid exhaustion of its 2026 AI budget signals rising AI-related operating-cost pressure and may force the company to constrain usage or seek more efficient models and infrastructure.",
+    "direction": "short",
+    "confidence": 0.98,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article cites a report that Uber used its entire 2026 AI budget within four months as an early example of corporate pushback against rapidly increasing token and compute bills. It presents this primarily as evidence that companies deploying agents and advanced reasoning models are confronting unexpectedly high costs, rather than as a quantified forecast for Uber\u2019s earnings or cash flow.",
+    "source": "Citrini Research"
+  },
+  {
+    "id": "fa9c4ede1f8af699",
+    "ticker": "UBER",
+    "source_link": "https://www.citriniresearch.com/p/2028gic",
+    "source_title": "THE 2028 GLOBAL INTELLIGENCE CRISIS",
+    "event_type": "macro",
+    "created": "2026-02-22",
+    "claim": "AI consumer agents could erode Uber's platform moat by automatically comparing Uber Eats and competing delivery services, routing orders to the lowest-fee and fastest option and compressing Uber's delivery margins.",
+    "direction": "short",
+    "confidence": 0.94,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article describes agents as eliminating habitual app loyalty and making it easy for coding agents to launch competing delivery platforms. It identifies DoorDash as the poster child, but explicitly includes Uber Eats among the services checked by agents and says competing platforms passed 90\u201395% of delivery fees to drivers, causing market fragmentation and margins to compress toward zero. The same mechanism would weaken Uber's delivery intermediation economics.",
+    "source": "Citrini Research"
+  },
+  {
+    "id": "9f4c121443a9cb91",
+    "ticker": "UBER",
+    "source_link": "https://www.citriniresearch.com/p/2028gic",
+    "source_title": "THE 2028 GLOBAL INTELLIGENCE CRISIS",
+    "event_type": "macro",
+    "created": "2026-02-22",
+    "claim": "The spread of autonomous vehicles could undermine Uber's human-driver marketplace by eliminating the gig-driving work that absorbs workers displaced from white-collar jobs.",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says displaced professionals initially downshifted into service and gig-economy roles such as driving for Uber, but then states that autonomous delivery and self-driving vehicles began to proliferate and that this technology would remove the demand for gig drivers. For Uber, this threatens the scale and relevance of its driver-based transportation model, although the article does not specify how much of any cost benefit would accrue to Uber versus vehicle owners or competing autonomous fleets.",
+    "source": "Citrini Research"
   }
 ]

@@ -15,7 +15,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article identifies CoreWeave as already using Nvidia DSX Air to build and test digital twins of its AI factories. Nvidia\u2019s broader DSX platform covers compute, networking, storage, power, cooling, controls, and facility design, allowing operators to simulate layouts and thermal and power behavior before construction and reuse validated architectures across sites. For CoreWeave, this provides a direct operational advantage as it scales AI capacity, although the article does not quantify the resulting revenue, margin, or deployment-timing impact."
+    "context": "The article identifies CoreWeave as already using Nvidia DSX Air to build and test digital twins of its AI factories. Nvidia\u2019s broader DSX platform covers compute, networking, storage, power, cooling, controls, and facility design, allowing operators to simulate layouts and thermal and power behavior before construction and reuse validated architectures across sites. For CoreWeave, this provides a direct operational advantage as it scales AI capacity, although the article does not quantify the resulting revenue, margin, or deployment-timing impact.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "6f653116caf5e5dc",
@@ -33,7 +34,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "CoreWeave\u2019s early DeepSeek R1 testing reportedly produced 5.4x the performance per megawatt and 5x the performance per dollar of the older GB200 NVL72 baseline. Against July 2026 GB200 and GB300 systems, Rubin was reportedly cheaper at every tested interactivity level, with the advantage reaching about 3x versus GB200 at 200\u2013250 output tokens per second per user. For CoreWeave, which operates AI infrastructure for customers, this could allow more inference output from a given power and capital base or support more competitive pricing and margins."
+    "context": "CoreWeave\u2019s early DeepSeek R1 testing reportedly produced 5.4x the performance per megawatt and 5x the performance per dollar of the older GB200 NVL72 baseline. Against July 2026 GB200 and GB300 systems, Rubin was reportedly cheaper at every tested interactivity level, with the advantage reaching about 3x versus GB200 at 200\u2013250 output tokens per second per user. For CoreWeave, which operates AI infrastructure for customers, this could allow more inference output from a given power and capital base or support more competitive pricing and margins.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "acceda7f200fa652",
@@ -51,7 +53,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article says Rubin remained operational at 300 and 350 tokens per second per user, while GB200 could not serve the analyzed workload at 300 and GB300 barely reached that point. CoreWeave conducted the test on a pre-production Dell engineering-sample rack and used disaggregated serving, wide expert parallelism, speculative decoding and NVFP4. If these capabilities carry into deployable systems, CoreWeave could differentiate its hosted infrastructure for latency-sensitive or \u201cfast mode\u201d workloads and capture demand from customers requiring higher per-user response speed."
+    "context": "The article says Rubin remained operational at 300 and 350 tokens per second per user, while GB200 could not serve the analyzed workload at 300 and GB300 barely reached that point. CoreWeave conducted the test on a pre-production Dell engineering-sample rack and used disaggregated serving, wide expert parallelism, speculative decoding and NVFP4. If these capabilities carry into deployable systems, CoreWeave could differentiate its hosted infrastructure for latency-sensitive or \u201cfast mode\u201d workloads and capture demand from customers requiring higher per-user response speed.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "f3f0f3e58482fa66",
@@ -69,7 +72,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "SemiAnalysis explicitly says it has not independently verified CoreWeave\u2019s figures. Testing used an engineering-sample rack without a scale-out fabric and a single-turn 8k-input/1k-output DeepSeek R1 workload, while the model is described as less representative of newer multi-trillion-parameter workloads. Nvidia has committed to submitting verifiable Rubin results to InferenceX in the third quarter of calendar 2026, so competitive performance, deployment reliability and economics remain subject to validation before the claimed benefits can be confidently incorporated into CoreWeave estimates."
+    "context": "SemiAnalysis explicitly says it has not independently verified CoreWeave\u2019s figures. Testing used an engineering-sample rack without a scale-out fabric and a single-turn 8k-input/1k-output DeepSeek R1 workload, while the model is described as less representative of newer multi-trillion-parameter workloads. Nvidia has committed to submitting verifiable Rubin results to InferenceX in the third quarter of calendar 2026, so competitive performance, deployment reliability and economics remain subject to validation before the claimed benefits can be confidently incorporated into CoreWeave estimates.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "3d3753e11be11218",
@@ -87,7 +91,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": true,
-    "context": "The article says Meta has signed nearly 10GW of capacity deals since early 2024, contracted more than 5GW during the first half of 2026, and is increasingly sourcing incremental capacity through third parties rather than self-build. It specifically identifies CoreWeave as a likely beneficiary of this continuing demand, implying more customer contracts and higher reported RPO."
+    "context": "The article says Meta has signed nearly 10GW of capacity deals since early 2024, contracted more than 5GW during the first half of 2026, and is increasingly sourcing incremental capacity through third parties rather than self-build. It specifically identifies CoreWeave as a likely beneficiary of this continuing demand, implying more customer contracts and higher reported RPO.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "072442d908b809f2",
@@ -105,7 +110,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": true,
-    "context": "Rather than becoming a low-margin bare-metal provider, Meta may use capacity for frontier-model training, advertising recommendation systems, model-serving partnerships, and premium short-term external contracts. The article argues these uses could generate high margins, allowing Meta to pay other neoclouds to accelerate fleet construction even if Meta Superintelligence Labs underperforms."
+    "context": "Rather than becoming a low-margin bare-metal provider, Meta may use capacity for frontier-model training, advertising recommendation systems, model-serving partnerships, and premium short-term external contracts. The article argues these uses could generate high margins, allowing Meta to pay other neoclouds to accelerate fleet construction even if Meta Superintelligence Labs underperforms.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "405c2195122267ad",
@@ -123,7 +129,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article opens by rejecting the market interpretation that Meta becoming a neocloud would flood the market with excess supply and hurt neoclouds such as CoreWeave. It instead argues that Meta\u2019s procurement will continue expanding and that external capacity demand will create future RPO growth, making the recent neocloud sell-off appear inconsistent with the expected demand outlook."
+    "context": "The article opens by rejecting the market interpretation that Meta becoming a neocloud would flood the market with excess supply and hurt neoclouds such as CoreWeave. It instead argues that Meta\u2019s procurement will continue expanding and that external capacity demand will create future RPO growth, making the recent neocloud sell-off appear inconsistent with the expected demand outlook.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "0f10882bbd904271",
@@ -141,7 +148,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article treats Meta Superintelligence Labs as the primary use of incremental compute but says that failure of the effort would cause cloud capacity to \u201cskyrocket.\u201d It presents external model serving, Anthropic partnerships, premium compute contracts, and recommendation systems as fallback monetization channels, preserving demand for third-party infrastructure providers such as CoreWeave."
+    "context": "The article treats Meta Superintelligence Labs as the primary use of incremental compute but says that failure of the effort would cause cloud capacity to \u201cskyrocket.\u201d It presents external model serving, Anthropic partnerships, premium compute contracts, and recommendation systems as fallback monetization channels, preserving demand for third-party infrastructure providers such as CoreWeave.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "00984a6076b534fe",
@@ -159,7 +167,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": true,
-    "context": "SemiAnalysis says its tracking correctly identified delays at Core Scientific but also determined that other CoreWeave datacenter sites were progressing on schedule, leading it to forecast 1.7 GW of active power by year-end 2026\u2014the same figure as CoreWeave\u2019s guidance. This supports confidence in the company\u2019s near-term capacity ramp despite the broader narrative that half of datacenter capacity is being delayed or canceled."
+    "context": "SemiAnalysis says its tracking correctly identified delays at Core Scientific but also determined that other CoreWeave datacenter sites were progressing on schedule, leading it to forecast 1.7 GW of active power by year-end 2026\u2014the same figure as CoreWeave\u2019s guidance. This supports confidence in the company\u2019s near-term capacity ramp despite the broader narrative that half of datacenter capacity is being delayed or canceled.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "3b20428320d81a98",
@@ -177,6 +186,159 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article highlights Core Scientific\u2019s Denton and other contracted locations as genuine delays caused by permitting, weather, construction issues, equipment problems, and infrastructure redesigns. SemiAnalysis says it warned clients ahead of CoreWeave\u2019s earnings, but also concluded that delays at those sites were offset by progress elsewhere. The implication for CRWV is that individual deployment schedules remain vulnerable, although the company\u2019s aggregate year-end capacity outlook was not reduced."
+    "context": "The article highlights Core Scientific\u2019s Denton and other contracted locations as genuine delays caused by permitting, weather, construction issues, equipment problems, and infrastructure redesigns. SemiAnalysis says it warned clients ahead of CoreWeave\u2019s earnings, but also concluded that delays at those sites were offset by progress elsewhere. The implication for CRWV is that individual deployment schedules remain vulnerable, although the company\u2019s aggregate year-end capacity outlook was not reduced.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "eaf4db9dea555cda",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "CoreWeave\u2019s $129.2 billion revenue backlog and agreements with OpenAI, Meta, Google, and Anthropic materially improve the visibility of future revenue growth over the next several quarters.",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 10,
+    "expected_return_pct": 18.0,
+    "expected_horizon_days": 270,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article says CoreWeave had accumulated $104.2 billion of backlog by the end of Q2 2026 and added another $25 billion afterward. It also identifies long-term contracts with multiple major AI model builders and says CoreWeave wants to prevent any one customer from exceeding 35% of revenue, suggesting that committed demand is both substantial and increasingly diversified beyond its earlier reliance on Microsoft.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "239af0814a2cf2e7",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "CoreWeave\u2019s rapid revenue growth and narrowing operating loss indicate improving operating leverage, supporting a bullish outlook despite the company remaining deeply unprofitable on a net basis.",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 8,
+    "expected_return_pct": 12.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Q2 revenue increased 2.1 times to $2.58 billion and the operating loss narrowed to $49 million. However, net loss rose to $626 million, so the favorable operating trend has not yet translated into bottom-line profitability and the positive implication is primarily for the medium-term earnings trajectory.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "2a771e2263d2b2f0",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "CoreWeave\u2019s extremely heavy capital spending creates a material financing and execution risk that could constrain shareholder returns even if customer demand remains strong.",
+    "direction": "short",
+    "confidence": 0.95,
+    "importance": 9,
+    "expected_return_pct": -15.0,
+    "expected_horizon_days": 365,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "CoreWeave spent $9.4 billion on capital expenditures in Q2 while ending the quarter with $6.41 billion of cash and equivalents. The company is also committed to building out 3,700 MW of contracted future power, meaning its backlog requires continued large investments and may leave it dependent on additional financing or successful cash generation while net losses remain significant.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "c2c84acae39146fb",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "CoreWeave\u2019s large installed GPU and power base, together with its early deployment of Nvidia\u2019s Vera-Rubin NVL72 system, strengthens its competitive position in supplying advanced AI infrastructure.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 14.0,
+    "expected_horizon_days": 240,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "At the end of Q2, CoreWeave operated 51 datacenters with 1,500 MW of active power and an estimated 1.1 million GPUs, while holding contracts for another 3,700 MW of power. Its close Nvidia relationship enabled it to bring up the first Vera-Rubin NVL72 system during the quarter, potentially helping it attract customers seeking early access to next-generation systems.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "d18e568d3605dc82",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "CoreWeave\u2019s growing customer diversity reduces the specific business risk associated with its former dependence on Microsoft, but does not eliminate concentration and execution risk.",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article explicitly notes that CoreWeave was initially utterly dependent on Microsoft, then highlights new long-term commitments from OpenAI, Meta, Google, and Anthropic. Management\u2019s stated goal that no single customer exceed 35% of near-term revenue is a favorable change in concentration, although the scale of the commitments also makes successful delivery across several very large customers increasingly important.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "e8def6299c647e18",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/compute/2026/08/13/the-genai-boom-will-lift-supermicro-but-it-will-lift-others-too/5287161",
+    "source_title": "The GenAI Boom Will Lift Supermicro, But It Will Lift Others, Too",
+    "event_type": "earnings",
+    "created": "2026-08-13",
+    "claim": "CoreWeave is one of Supermicro\u2019s nine customers that each spent more than $1 billion during fiscal 2026, indicating that CoreWeave is scaling its AI infrastructure footprint at substantial volume.",
+    "direction": "long",
+    "confidence": 0.97,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies CoreWeave among Supermicro\u2019s largest customers and says the nine customers collectively represented approximately half of Supermicro\u2019s fiscal 2026 revenue. For CoreWeave, this confirms a very large procurement relationship with a major AI-system supplier and supports the view that it is aggressively expanding capacity, although the spending also reflects significant infrastructure investment and capital intensity.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "bd9cd0396045cf6a",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/cloud/2026/07/01/of-course-meta-platforms-is-going-to-be-a-cloud/5265392",
+    "source_title": "Of Course Meta Platforms Is Going To Be A Cloud",
+    "event_type": "competitive",
+    "created": "2026-07-01",
+    "claim": "Meta\u2019s agreed $21 billion capacity purchase from CoreWeave provides a substantial demand and revenue-supporting catalyst for CRWV over the coming quarters.",
+    "direction": "long",
+    "confidence": 0.96,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Meta has agreed to buy $21 billion of capacity from CoreWeave and identifies Meta as CoreWeave\u2019s largest customer, previously displacing Microsoft in that position. This indicates a very large committed relationship that should support CoreWeave\u2019s utilization and financial outlook, although the article does not specify the contract\u2019s timing or revenue recognition schedule.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "455d20c637095589",
+    "ticker": "CRWV",
+    "source_link": "https://www.nextplatform.com/cloud/2026/07/01/of-course-meta-platforms-is-going-to-be-a-cloud/5265392",
+    "source_title": "Of Course Meta Platforms Is Going To Be A Cloud",
+    "event_type": "competitive",
+    "created": "2026-07-01",
+    "claim": "Meta\u2019s planned Meta Compute business could become a direct competitive threat to CoreWeave by offering customers access to AI infrastructure and potentially virtual machines and containers.",
+    "direction": "short",
+    "confidence": 0.91,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The proposed Meta Compute effort would reportedly sell API access to Meta models and may also offer infrastructure-as-a-service products, while using Meta\u2019s Nvidia and AMD GPU clusters to host workloads. That would place Meta alongside CoreWeave as a neocloud provider and could compete for AI-compute customers, though the business is still being planned and its scale, timing, and ability to use excess capacity remain uncertain.",
+    "source": "Next Platform"
   }
 ]

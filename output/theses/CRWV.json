@@ -91,5 +91,91 @@
     "final_multiplier": 0.84,
     "confidence_before": 0.746,
     "confidence_after": 0.62664
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "CRWV has a strong long-term growth setup from its $129.2 billion backlog, diversified blue-chip demand, expanding AI capacity, and improving operating leverage, but the thesis remains materially exposed to extreme capital intensity, financing needs, and execution risk.",
+    "direction": "long",
+    "confidence": 0.708,
+    "news_confidence": 0.8,
+    "fundamental_confidence": 0.57,
+    "pre_critic_confidence": 0.708,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "Conversion of the $129.2 billion backlog and agreements with Meta, OpenAI, Google, and Anthropic into revenue and higher remaining performance obligations",
+      "Progress toward approximately 1.7 GW of active power by the end of 2026",
+      "Continued rapid revenue growth and narrowing operating losses",
+      "Successful deployment of Vera Rubin NVL72 systems with improved inference capacity and unit economics",
+      "Further customer diversification and evidence that AI compute demand is accelerating rather than signaling overcapacity"
+    ],
+    "invalidation": [
+      "Capital spending and financing requirements materially constrain growth or shareholder returns",
+      "Persistent delivery delays prevent CoreWeave from meeting its 2026 capacity target",
+      "Vera Rubin performance fails to translate from preliminary benchmarks into production economics",
+      "Meta Compute becomes a meaningful direct competitor and weakens demand or pricing",
+      "Backlog agreements fail to convert into expected revenue growth or customer concentration remains a major source of risk",
+      "The 13.7x enterprise-value-to-revenue multiple leaves limited room for growth or margin disappointment.",
+      "Negative operating margin and an anomalously high reported free-cash-flow margin raise concerns about earnings quality and the durability of cash generation.",
+      "Substantial insider selling is a potential governance or confidence signal."
+    ],
+    "reasoning": "The evidence is predominantly bullish on demand visibility, capacity expansion, competitive positioning, and improving leverage, while the principal counterweight is the substantial financing and execution burden required to realize that growth.",
+    "claims_considered": 18
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "neutral",
+    "thesis": "CRWV has a strong long-term growth setup from its $129.2 billion backlog, diversified blue-chip demand, expanding AI capacity, and improving operating leverage, but the thesis remains materially exposed to extreme capital intensity, financing needs, and execution risk.",
+    "direction": "long",
+    "news_confidence": 0.8,
+    "fundamental_confidence": 0.57,
+    "blended_confidence": 0.708,
+    "fair_value_estimate": 143.25714,
+    "current_price": 105.26,
+    "implied_return_pct": 36.1,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 1.125
+      },
+      "Valuation": {
+        "forward_pe": -62.092236,
+        "ev_to_revenue": 13.719
+      },
+      "Quality": {
+        "operating_margin": -0.019030000000000002,
+        "fcf_margin": 0.9105401775297572
+      },
+      "Sentiment": {
+        "analyst_upside": 36.098365950978504,
+        "revisions_trend": 5.563909774436093,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 44.400999435,
+        "insider_flow": -1480896088.0,
+        "low_short_interest": -20.41
+      }
+    },
+    "risks": [
+      "The 13.7x enterprise-value-to-revenue multiple leaves limited room for growth or margin disappointment.",
+      "Negative operating margin and an anomalously high reported free-cash-flow margin raise concerns about earnings quality and the durability of cash generation.",
+      "Substantial insider selling is a potential governance or confidence signal."
+    ],
+    "reasoning": "Exceptional revenue growth, positive analyst revisions, institutional inflows, and substantial implied upside support the long thesis, but premium valuation, ongoing operating losses, and questionable cash-flow quality materially temper that support."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.708,
+    "confidence_after": 0.708
   }
 ]

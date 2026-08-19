@@ -33,20 +33,35 @@
     "SLV": "Silver",
     "CPER": "Copper",
     "CRWV": "CoreWeave",
-    "IREN": "IREN"
+    "IREN": "IREN",
+    "SKHY": "SK Hynix",
+    "TMSC": "TMSC"
+  },
+  "sectors": {
+    "AAPL": "Big Tech", "MSFT": "Big Tech", "GOOGL": "Big Tech", "AMZN": "Big Tech",
+    "META": "Big Tech", "TSLA": "Big Tech", "ORCL": "Big Tech", "UBER": "Big Tech",
+    "RDDT": "Big Tech", "BRK-B": "Big Tech",
+    "NVDA": "Semiconductors", "TSM": "Semiconductors", "ASML": "Semiconductors",
+    "AMD": "Semiconductors", "ARM": "Semiconductors", "QCOM": "Semiconductors",
+    "MU": "Semiconductors", "INTC": "Semiconductors", "AVGO": "Semiconductors",
+    "SKHY": "Semiconductors", "TMSC": "Semiconductors",
+    "NBIS": "AI Infrastructure", "CRWV": "AI Infrastructure", "PLTR": "AI Infrastructure",
+    "XOM": "Energy", "CVX": "Energy", "OKLO": "Energy",
+    "LMT": "Defense & Aerospace", "SPCX": "Defense & Aerospace",
+    "QBTS": "Quantum Computing", "RGTI": "Quantum Computing",
+    "BTC-USD": "Crypto & Commodities", "GLD": "Crypto & Commodities",
+    "SLV": "Crypto & Commodities", "CPER": "Crypto & Commodities", "IREN": "Crypto & Commodities"
   },
   "news_sources": [
     {"name": "SemiAnalysis", "url": "https://newsletter.semianalysis.com/feed", "active": true, "frequency": "~1-2 articles/week"},
     {"name": "Stratechery", "url": "https://stratechery.com/feed/", "active": true, "frequency": "~1 free article/week (+3 paid Daily Updates/week)"},
-    {"name": "Next Platform", "url": "https://www.nextplatform.com/feed/", "active": false, "frequency": "unverified, trade press, likely several/day"},
-    {"name": "The Diff", "url": "https://www.thediff.co/feed", "active": false, "frequency": "~daily (5x/week) free tier"},
-    {"name": "Citrini Research", "url": "https://citriniresearch.com/feed", "active": false, "frequency": "~2-3 in-depth pieces/year (infrequent)"},
-    {"name": "EE Times", "url": "https://www.eetimes.com/feed/", "active": false, "frequency": "unverified, trade press, likely several/day"},
-    {"name": "Semiconductor Engineering", "url": "https://semiengineering.com/feed/", "active": false, "frequency": "unverified, ~weekly cadence per their own site"},
-    {"name": "Cassandra Unchained", "url": "https://michaeljburry.substack.com/feed", "active": false, "frequency": "major pieces ~every 2-3 weeks, plus more frequent short trading posts"},
-    {"name": "Doomberg", "url": "https://newsletter.doomberg.com/feed", "active": false, "frequency": "~1.5-2 articles/week (6-8/month)"},
-    {"name": "Bitcoin Magazine", "url": "https://bitcoinmagazine.com/feed", "active": false, "frequency": "unverified, daily newsroom, likely several/day"},
-    {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": false, "frequency": "unverified, daily briefing, exact count unclear"}
+    {"name": "Next Platform", "url": "https://www.nextplatform.com/feed/", "active": true, "frequency": "unverified, trade press, likely several/day", "full_page_fetch": true},
+    {"name": "The Diff", "url": "https://www.thediff.co/archive/rss/", "active": true, "frequency": "~daily (5x/week) free tier"},
+    {"name": "Citrini Research", "url": "https://citriniresearch.com/feed", "active": true, "frequency": "~2-3 in-depth pieces/year (infrequent)"},
+    {"name": "Semiconductor Engineering", "url": "https://semiengineering.com/feed/", "active": true, "frequency": "unverified, ~weekly cadence per their own site"},
+    {"name": "Cassandra Unchained", "url": "https://michaeljburry.substack.com/feed", "active": true, "frequency": "major pieces ~every 2-3 weeks, plus more frequent short trading posts"},
+    {"name": "Doomberg", "url": "https://newsletter.doomberg.com/feed", "active": true, "frequency": "~1.5-2 articles/week (6-8/month)"},
+    {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": true, "frequency": "unverified, daily briefing, exact count unclear"}
   ],
   "llm": {
     "provider": "openrouter",

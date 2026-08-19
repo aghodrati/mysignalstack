@@ -89,5 +89,194 @@
     "final_multiplier": 0.756,
     "confidence_before": 0.804,
     "confidence_after": 0.607824
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-18",
+    "thesis": "TSM remains a high-conviction long because resilient AI infrastructure demand, advanced-node validation, and leading but increasingly scalable advanced-packaging capabilities should outweigh longer-term CoWoS wafer-utilization and package-size constraints.",
+    "direction": "long",
+    "confidence": 0.7052,
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.89,
+    "pre_critic_confidence": 0.8600000000000001,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "AI infrastructure demand and TSMC capacity utilization remain exceptionally strong despite broader economic deterioration",
+      "TSMC maintains its integration and volume-execution lead in CoWoS advanced packaging",
+      "Direct-to-silicon liquid cooling expands TSMC's role in multi-kilowatt AI accelerator packages",
+      "AMD's MI455X and Venice adoption validates N2 and drives additional advanced-node demand",
+      "AMD's MI455X and Helios gain accelerator share, creating incremental TSMC advanced-node and packaging demand"
+    ],
+    "invalidation": [
+      "CoWoS-R and CoWoS-L scaling constraints materially limit package size, wafer utilization, or shipment growth",
+      "AI infrastructure demand weakens enough to reduce TSMC capacity utilization and offset packaging leadership",
+      "AMD's N2 adoption or AI accelerator growth fails to translate into sustained TSMC demand",
+      "TSMC loses its advanced-packaging integration or volume-execution advantage to Intel or other alternatives",
+      "Taiwan geopolitical exposure and potential supply-chain disruption",
+      "Semiconductor cyclicality and the risk that elevated AI-related growth expectations normalize",
+      "High customer and industry concentration, including dependence on a limited number of leading chip designers",
+      "Large capital-expenditure requirements could pressure free cash flow if demand or technology transitions weaken"
+    ],
+    "reasoning": "The evidence is predominantly bullish and high-confidence, with multiple reinforcing AI, N2, cooling, and packaging advantages, while the main bearish claim is a longer-term scaling risk rather than an immediate demand impairment.",
+    "claims_considered": 7
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-18",
+    "assessment": "supports",
+    "thesis": "TSM remains a high-conviction long because resilient AI infrastructure demand, advanced-node validation, and leading but increasingly scalable advanced-packaging capabilities should outweigh longer-term CoWoS wafer-utilization and package-size constraints.",
+    "direction": "long",
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.89,
+    "blended_confidence": 0.8600000000000001,
+    "fair_value_estimate": 540.20483,
+    "current_price": 415.575,
+    "implied_return_pct": 30.0,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.36,
+        "earnings_growth": 0.774
+      },
+      "Valuation": {
+        "forward_pe": 19.232382,
+        "peg_ratio": 0.98,
+        "ev_to_revenue": 3.233
+      },
+      "Quality": {
+        "operating_margin": 0.60344005,
+        "fcf_margin": 0.5933303319992628
+      },
+      "Sentiment": {
+        "analyst_upside": 29.989732298622407,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 5.7089999460000005,
+        "insider_flow": 346428,
+        "low_short_interest": -0.6900000000000001
+      }
+    },
+    "risks": [
+      "Taiwan geopolitical exposure and potential supply-chain disruption",
+      "Semiconductor cyclicality and the risk that elevated AI-related growth expectations normalize",
+      "High customer and industry concentration, including dependence on a limited number of leading chip designers",
+      "Large capital-expenditure requirements could pressure free cash flow if demand or technology transitions weaken"
+    ],
+    "reasoning": "Exceptional revenue and earnings growth, industry-leading margins, a reasonable PEG and forward P/E, and roughly 30% implied valuation upside strongly support the long direction despite meaningful geopolitical, cyclical, and concentration risks."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-18",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The claims support near-term AI demand resilience, but do not establish that this resilience persists over the thesis's implied longer-term horizon or that it outweighs packaging constraints.",
+      "\u201cIncreasingly scalable\u201d advanced packaging overstates the evidence: the claims identify CoWoS-R/L circular-wafer limits on package size and wafer utilization, while the large MI455X package demonstrates capability and opportunity rather than scalable economics or throughput.",
+      "AMD's 2nm adoption is an early validation signal, and incremental demand is explicitly conditional on AMD gaining meaningful accelerator share; neither establishes material realized growth.",
+      "The thesis asserts that benefits outweigh constraints without quantitative evidence on the relative magnitude, timing, or impact of demand, utilization, package-size, and wafer-utilization effects.",
+      "Direct-to-silicon cooling strengthens competitive positioning for multi-kilowatt packages but does not by itself demonstrate additional revenue, utilization, or returns."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The thesis is directionally supported, but its high confidence overreaches by converting near-term and conditional qualitative signals into a durable, quantitatively superior long thesis despite explicit longer-term scaling constraints.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.8600000000000001,
+    "confidence_after": 0.7052
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "TSM remains a high-confidence long because accelerating AI infrastructure demand, strong advanced-node ramps, pricing power, and packaging leadership should support exceptional earnings growth despite capacity, capex, competition, and geopolitical risks.",
+    "direction": "long",
+    "confidence": 0.7314400000000001,
+    "news_confidence": 0.88,
+    "fundamental_confidence": 0.91,
+    "pre_critic_confidence": 0.8920000000000001,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": 22,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained AI-chip demand keeps advanced-node utilization and pricing elevated",
+      "AMD Venice and MI455X drive continued N2 and N3 capacity demand over the next several quarters",
+      "Higher 2026 capital expenditure expands capacity sufficiently to support future revenue growth",
+      "Broadcom, AWS, Marvell, and other custom AI-chip programs increase TSMC foundry demand",
+      "TSMC scales CoWoS, hybrid bonding, and direct-to-silicon liquid cooling for increasingly large AI accelerator packages"
+    ],
+    "invalidation": [
+      "CoWoS-L and other advanced-packaging constraints materially limit customer shipments and revenue conversion",
+      "Elevated capex and construction-cost inflation cause a significant deterioration in free-cash-flow conversion",
+      "Intel Foundry, Samsung Foundry, or SMIC take meaningful share and erode TSMC pricing power",
+      "AI infrastructure demand weakens enough to reduce utilization, advanced-process pricing, or earnings growth",
+      "Taiwan-related geopolitical risk materially disrupts TSMC operations or customer commitments",
+      "Exceptional recent earnings growth may normalize, making the PEG ratio less attractive if forward estimates are revised down.",
+      "The valuation remains sensitive to AI-related growth expectations and any compression in the semiconductor cycle multiple.",
+      "Consensus fair value and analyst upside may be overly dependent on optimistic long-term assumptions."
+    ],
+    "reasoning": "The evidence is overwhelmingly bullish across near- and multi-year horizons, with record profitability, AI-led growth, advanced-node demand, and packaging advantages outweighing credible but mainly longer-dated execution, cash-flow, competitive, and geopolitical risks.",
+    "claims_considered": 28
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "supports",
+    "thesis": "TSM remains a high-confidence long because accelerating AI infrastructure demand, strong advanced-node ramps, pricing power, and packaging leadership should support exceptional earnings growth despite capacity, capex, competition, and geopolitical risks.",
+    "direction": "long",
+    "news_confidence": 0.88,
+    "fundamental_confidence": 0.91,
+    "blended_confidence": 0.8920000000000001,
+    "fair_value_estimate": 540.20483,
+    "current_price": 415.575,
+    "implied_return_pct": 30.0,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.36,
+        "earnings_growth": 0.774
+      },
+      "Valuation": {
+        "forward_pe": 19.232382,
+        "peg_ratio": 0.98,
+        "ev_to_revenue": 3.233
+      },
+      "Quality": {
+        "operating_margin": 0.60344005,
+        "fcf_margin": 0.5933303319992628
+      },
+      "Sentiment": {
+        "analyst_upside": 29.989732298622407,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 5.7089999460000005,
+        "insider_flow": 346428,
+        "low_short_interest": -0.6900000000000001
+      }
+    },
+    "risks": [
+      "Exceptional recent earnings growth may normalize, making the PEG ratio less attractive if forward estimates are revised down.",
+      "The valuation remains sensitive to AI-related growth expectations and any compression in the semiconductor cycle multiple.",
+      "Consensus fair value and analyst upside may be overly dependent on optimistic long-term assumptions."
+    ],
+    "reasoning": "TSM\u2019s 36% revenue growth, 77% earnings growth, roughly 60% operating and free-cash-flow margins, and reasonable 19x forward P/E with a sub-1 PEG strongly support the long thesis, while the indicated 30% upside provides additional valuation backing."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The claims support strong demand and revenue growth, but do not establish 'exceptional earnings growth': elevated capex, construction-cost inflation, and packaging constraints could limit earnings and free-cash-flow conversion.",
+      "The synthesis overstates pricing power as broadly durable; tight supply and rising prices support near-term revenue per wafer, while Intel EMIB-T, competing foundries, and future capacity additions could weaken packaging and foundry pricing power.",
+      "Packaging leadership is qualified by insufficient CoWoS-L capacity and longer-term CoWoS-R/L scaling constraints, so leadership does not necessarily translate into unconstrained shipment or profit growth.",
+      "Several demand catalysts are conditional or hypothetical\u2014Tensordyne volume production, future Arm designs, AMD share gains, and Broadcom expansion\u2014and therefore should not be treated as firm contributors to the base-case thesis.",
+      "The claims identify a direct tension between strong AI demand and TSMC's ability to fulfill it: CoWoS-L and HBM bottlenecks may constrain customer revenue and TSMC's own monetization rather than merely represent manageable risks.",
+      "The 2026 capex increase signals expected demand but is not evidence that capacity will arrive in time or earn attractive returns; the Arizona investment's stated five-to-seven-year payback horizon is distant relative to the near-term bullish framing.",
+      "The 89% confidence appears too high because the evidence includes material, high-confidence downside claims on packaging capacity, free cash flow, competition, and geopolitics, while several positive catalysts are explicitly conditional."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The claims justify a bullish demand and advanced-node outlook, but the synthesis overreaches by converting conditional growth opportunities and constrained packaging leadership into exceptional, durable earnings growth and pricing power despite explicit execution, cash-flow, competitive, and geopolitical offsets.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.8920000000000001,
+    "confidence_after": 0.7314400000000001
   }
 ]

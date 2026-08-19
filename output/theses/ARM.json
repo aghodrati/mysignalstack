@@ -1,0 +1,89 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "ARM has a moderately strong long-term bullish outlook as accelerating Arm-based server adoption, Graviton5 validation, and AI-hosting growth improve its competitive position, although limited CPU value capture and emerging RISC-V and power-efficiency risks constrain the upside.",
+    "direction": "long",
+    "confidence": 0.634,
+    "news_confidence": 0.79,
+    "fundamental_confidence": 0.4,
+    "pre_critic_confidence": 0.634,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Continued commercial deployment of Graviton5-powered instances and validation of Arm's Neoverse V3 architecture",
+      "Further share gains for Arm-based servers as x86 systems decline",
+      "Rising adoption of internally designed Arm CPUs by hyperscalers, cloud builders, and AI developers",
+      "Arm-based systems sustaining or increasing their leading share of AI-host revenue"
+    ],
+    "invalidation": [
+      "Arm-based CPUs capture only a small portion of the economics of GPU-heavy AI rack-scale systems",
+      "Higher power consumption materially weakens Arm-based server competitiveness in power-sensitive workloads",
+      "RISC-V adoption accelerates among cloud and hyperscale buyers seeking lower-cost internally designed CPUs",
+      "Arm fails to surpass or maintain gains against x86 in server revenue and deployment",
+      "Extremely elevated valuation leaves little room for execution disappointments or multiple compression",
+      "Low operating margin suggests limited current profitability despite strong revenue and earnings growth",
+      "Heavy insider selling and net analyst downgrades weaken alignment and near-term fundamental conviction",
+      "Consensus fair value implies only modest upside, limiting the margin of safety"
+    ],
+    "reasoning": "The evidence strongly supports improving Arm server architecture adoption and competitive momentum, but the bullish case is tempered by uncertain royalty economics, limited CPU share of AI-system value, power-efficiency concerns, and longer-term RISC-V substitution risk.",
+    "claims_considered": 12
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "contradicts",
+    "thesis": "ARM has a moderately strong long-term bullish outlook as accelerating Arm-based server adoption, Graviton5 validation, and AI-hosting growth improve its competitive position, although limited CPU value capture and emerging RISC-V and power-efficiency risks constrain the upside.",
+    "direction": "long",
+    "news_confidence": 0.79,
+    "fundamental_confidence": 0.4,
+    "blended_confidence": 0.634,
+    "fair_value_estimate": 286.78918,
+    "current_price": 267.9375,
+    "implied_return_pct": 7.0,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.224,
+        "earnings_growth": 1.083
+      },
+      "Valuation": {
+        "forward_pe": 87.29426,
+        "peg_ratio": 1.97,
+        "ev_to_revenue": 48.858
+      },
+      "Quality": {
+        "operating_margin": 0.07603,
+        "fcf_margin": 0.40612880216620895
+      },
+      "Sentiment": {
+        "analyst_upside": 7.035849778399816,
+        "net_upgrades": -2.0
+      },
+      "Ownership": {
+        "institutional_flow": 282.20248620000007,
+        "insider_flow": -66380361.0,
+        "low_short_interest": -12.020000999999999
+      }
+    },
+    "risks": [
+      "Extremely elevated valuation leaves little room for execution disappointments or multiple compression",
+      "Low operating margin suggests limited current profitability despite strong revenue and earnings growth",
+      "Heavy insider selling and net analyst downgrades weaken alignment and near-term fundamental conviction",
+      "Consensus fair value implies only modest upside, limiting the margin of safety"
+    ],
+    "reasoning": "Strong growth and institutional inflows support a long thesis, but very high valuation, weak operating margins, insider selling, and limited implied upside make the fundamental support only modest."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.634,
+    "confidence_after": 0.634
+  }
+]

@@ -85,5 +85,95 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.516,
     "confidence_after": 0.516
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "AMD presents a moderately high-conviction long opportunity as accelerating Data Center growth, Epyc share gains, agentic-AI CPU demand, and Helios/Instinct adoption outweigh near-term HBM, software, execution, and custom-accelerator risks.",
+    "direction": "long",
+    "confidence": 0.746,
+    "news_confidence": 0.79,
+    "fundamental_confidence": 0.68,
+    "pre_critic_confidence": 0.746,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 28,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained Epyc demand and server CPU share gains through 2026-2027, supported by Turin and Venice",
+      "Microsoft Azure Helios, MI455X, HDv2, and HXv2 deployments ramping at scale",
+      "Anthropic\u2019s planned 2GW AMD deployment converting into material accelerator demand",
+      "AMD\u2019s Instinct GPU business more than doubling in 2027 as Helios systems ramp",
+      "Further ROCm, AITER, vLLM, SGLang, and inference-stack improvements that narrow the production software gap",
+      "Record quarterly results and continued Data Center-led revenue and profitability acceleration"
+    ],
+    "invalidation": [
+      "Helios ramps slowly or suffers material manufacturing, power, reliability, or Broadcom networking execution problems",
+      "HBM shortages and limited GPU allocations materially cap AMD accelerator shipments and earnings revisions",
+      "AMD\u2019s software remains unreliable for distributed production inference and stable internal GPU capacity is not secured",
+      "Meta, Microsoft, Anthropic, or other hyperscalers reduce AMD deployments in favor of Nvidia, custom accelerators, Cerebras, or other alternatives",
+      "Custom accelerators and Arm-based or internally designed CPUs take a growing share of hyperscaler spending and weaken AMD\u2019s Epyc opportunity",
+      "AMD\u2019s larger AI market projections fail to translate into realized revenue, margins, or earnings upgrades",
+      "Premium valuation at roughly 37x forward earnings and 21x revenue leaves limited margin for execution disappointments or multiple compression.",
+      "Operating margin remains relatively modest despite strong growth, making profitability sensitive to product mix and competitive pricing.",
+      "Flat estimate revisions and substantial insider selling provide limited confirmation of further upside."
+    ],
+    "reasoning": "The evidence supports a Data Center-led long thesis with strong CPU fundamentals and credible late-2026 AI-system catalysts, but confidence is moderated by AMD\u2019s persistent CUDA/software gap, HBM constraints, hyperscaler custom silicon, and Helios execution risks.",
+    "claims_considered": 100
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "supports",
+    "thesis": "AMD presents a moderately high-conviction long opportunity as accelerating Data Center growth, Epyc share gains, agentic-AI CPU demand, and Helios/Instinct adoption outweigh near-term HBM, software, execution, and custom-accelerator risks.",
+    "direction": "long",
+    "news_confidence": 0.79,
+    "fundamental_confidence": 0.68,
+    "blended_confidence": 0.746,
+    "fair_value_estimate": 579.1064,
+    "current_price": 515.22,
+    "implied_return_pct": 12.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.378,
+        "earnings_growth": 0.912
+      },
+      "Valuation": {
+        "forward_pe": 37.019474,
+        "peg_ratio": 1.12,
+        "ev_to_revenue": 20.873
+      },
+      "Quality": {
+        "operating_margin": 0.14396,
+        "fcf_margin": 0.25965183015871646
+      },
+      "Sentiment": {
+        "analyst_upside": 12.399829199177038,
+        "revisions_trend": 0.0,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 12.067499836000001,
+        "insider_flow": -386507739.0,
+        "low_short_interest": -2.4500001
+      }
+    },
+    "risks": [
+      "Premium valuation at roughly 37x forward earnings and 21x revenue leaves limited margin for execution disappointments or multiple compression.",
+      "Operating margin remains relatively modest despite strong growth, making profitability sensitive to product mix and competitive pricing.",
+      "Flat estimate revisions and substantial insider selling provide limited confirmation of further upside."
+    ],
+    "reasoning": "Exceptional revenue and earnings growth, strong free-cash-flow generation, and modest consensus upside support a long stance, but the elevated valuation and only moderate operating margin constrain conviction."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.746,
+    "confidence_after": 0.746
   }
 ]

@@ -39,6 +39,21 @@ def tracked_universe() -> dict[str, str]:
     return dict(_load().get("universe", {}))
 
 
+_UNCATEGORIZED_SECTOR = "Other"
+
+
+def ticker_sectors() -> dict[str, str]:
+    """ticker -> sector, for grouping the tracked universe in the UI (see
+    app.py's page_ticker) the same way finance.universe's QUICK_PICK_CATEGORIES
+    groups its own, separate ticker list. Display-only -- Stage A/B/C never
+    read this, so a ticker missing from "sectors" (e.g. one just added to
+    "universe" and not yet categorized) still works everywhere else, just
+    falls back to a catch-all "Other" group here.
+    """
+    sectors = _load().get("sectors", {})
+    return {ticker: sectors.get(ticker, _UNCATEGORIZED_SECTOR) for ticker in tracked_universe()}
+
+
 def active_news_sources() -> list[tuple[str, str]]:
     """(name, feed_url) for every source with "active": true -- same shape
     finance.news.get_news_from_sources expects. A source left in the config
@@ -81,6 +96,20 @@ def llm_config() -> dict:
         "models": [m["name"] for m in models],
         "reasoning_models": {m["name"] for m in models if m.get("reasoning", False)},
     }
+
+
+def full_page_fetch_sources() -> set[str]:
+    """Names of every source configured with "full_page_fetch": true -- their
+    RSS feed's title/summary/content fields are known too thin (or empty) to
+    classify from, so finance.newsloop fetches the article's own webpage
+    directly (finance.news.fetch_full_page_text) as a fallback instead of
+    skipping it outright. Off by default -- an extra HTTP GET per thin
+    article, harmless for a source that cooperates, but only worth the
+    latency for a source actually confirmed to need it (and confirmed not
+    to be bot-blocking scrapers, e.g. see finance.news.fetch_full_page_text's
+    docstring re: EE Times).
+    """
+    return {s["name"] for s in _load().get("news_sources", []) if s.get("full_page_fetch", False)}
 
 
 def max_article_chars() -> int | None:

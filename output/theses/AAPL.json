@@ -1,0 +1,92 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-18",
+    "thesis": "AAPL faces near-term downside as soaring memory and logic chip costs compress smartphone margins and create a difficult choice between absorbing costs or raising prices and risking market-share losses.",
+    "direction": "short",
+    "confidence": 0.520128,
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.42,
+    "pre_critic_confidence": 0.672,
+    "critic_multiplier": 0.774,
+    "expected_return_pct": -8,
+    "expected_horizon_days": 90,
+    "catalysts": [
+      "Sustained or further increases in memory and logic chip costs",
+      "Continued margin compression from higher smartphone production costs",
+      "AAPL raising smartphone prices enough to offset input costs and consequently losing market share"
+    ],
+    "invalidation": [
+      "Chip costs stabilizing or declining enough to preserve AAPL's smartphone margins",
+      "AAPL offsetting higher component costs without materially raising prices or losing market share",
+      "Strong revenue and earnings growth may provide earnings support despite cost inflation",
+      "Exceptional operating and free-cash-flow margins suggest substantial resilience and pricing power",
+      "Valuation is elevated, but consensus fair value still implies approximately 5.8% upside",
+      "Low short interest and positive institutional flows may limit fundamental downside pressure"
+    ],
+    "reasoning": "Both high-confidence, high-importance claims point to near-term bearish pressure through either lower margins or weaker market share, though the evidence is limited to one source and is not explicitly trade-worthy.",
+    "claims_considered": 2
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-18",
+    "assessment": "neutral",
+    "thesis": "AAPL faces near-term downside as soaring memory and logic chip costs compress smartphone margins and create a difficult choice between absorbing costs or raising prices and risking market-share losses.",
+    "direction": "short",
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.42,
+    "blended_confidence": 0.672,
+    "fair_value_estimate": 324.01367,
+    "current_price": 306.19,
+    "implied_return_pct": 5.8,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.164,
+        "earnings_growth": 0.28700000000000003
+      },
+      "Valuation": {
+        "forward_pe": 32.186245,
+        "peg_ratio": 2.46,
+        "ev_to_revenue": 9.533
+      },
+      "Quality": {
+        "operating_margin": 0.32623002,
+        "fcf_margin": 0.31430327873742997
+      },
+      "Sentiment": {
+        "analyst_upside": 5.821114340768796,
+        "revisions_trend": -1.6304347826086918,
+        "net_upgrades": -3.0
+      },
+      "Ownership": {
+        "institutional_flow": 11.074000021499996,
+        "insider_flow": -420311137.0,
+        "low_short_interest": -1.0
+      }
+    },
+    "risks": [
+      "Strong revenue and earnings growth may provide earnings support despite cost inflation",
+      "Exceptional operating and free-cash-flow margins suggest substantial resilience and pricing power",
+      "Valuation is elevated, but consensus fair value still implies approximately 5.8% upside",
+      "Low short interest and positive institutional flows may limit fundamental downside pressure"
+    ],
+    "reasoning": "Premium valuation and weakening revisions modestly support a short, but robust growth, very high profitability, and slight consensus upside mean the fundamentals overall do not strongly validate it."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-18",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article"
+    ],
+    "deterministic_multiplier": 0.9,
+    "llm_concerns": [
+      "The claims support operational risks to margins and market share, but do not directly establish near-term downside in AAPL's stock or investment return.",
+      "The thesis frames absorbing costs versus raising prices as a difficult binary choice, whereas the claims only identify margin pressure and a conditional market-share risk from raising prices; they do not establish that these are the only or inevitable alternatives."
+    ],
+    "llm_multiplier": 0.86,
+    "llm_reasoning": "The core direction follows the claims, but it modestly overreaches by translating company-level risks into stock downside and presenting a conditional tradeoff as an unavoidable binary choice.",
+    "final_multiplier": 0.774,
+    "confidence_before": 0.672,
+    "confidence_after": 0.520128
+  }
+]

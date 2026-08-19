@@ -91,5 +91,94 @@
     "final_multiplier": 0.88,
     "confidence_before": 0.8320000000000001,
     "confidence_after": 0.73216
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "AMZN has a favorable multi-quarter outlook as accelerating AWS demand, expanding profitability, custom silicon, modular datacenter deployment, and secured power capacity should outweigh near-term free-cash-flow pressure, debt sensitivity, infrastructure bottlenecks, and emerging cloud competition.",
+    "direction": "long",
+    "confidence": 0.8200000000000001,
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.79,
+    "pre_critic_confidence": 0.8200000000000001,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "AWS growth and profitability continue accelerating above expectations.",
+      "The $496 billion backlog and largely booked Trainium capacity convert into sustained revenue growth over the next several quarters.",
+      "Project Houdini and SAMDC modular datacenter systems bring AI capacity online faster than conventional construction.",
+      "The 1,200MW Vistra Comanche Peak co-location improves AWS\u2019s ability to secure power and expand capacity.",
+      "Trainium, Graviton5, Cerebras integration, and Annapurna-designed infrastructure improve AWS economics and customer adoption.",
+      "Enterprise demand for Bedrock and agentic-AI workloads remains strong."
+    ],
+    "invalidation": [
+      "Higher capital expenditures materially worsen free cash flow and margins without corresponding AWS returns.",
+      "Debt-funded AI infrastructure spending exposes Amazon to significantly higher credit costs or tightening financing conditions.",
+      "AWS capacity expansion is materially delayed by component shortages, utility interconnection, commissioning, or construction constraints.",
+      "Meta Compute or cheaper inference alternatives such as Tensordyne\u2019s Napier take meaningful demand or force sustained AWS price reductions.",
+      "Graviton5\u2019s higher power consumption and costly implementation weaken AWS cloud economics.",
+      "Forward valuation still embeds substantial execution and AWS growth expectations, leaving limited downside protection if growth normalizes.",
+      "The exceptional earnings-growth figure may partly reflect a low base or one-time effects and may not be sustainable.",
+      "Heavy insider selling is a modest governance and alignment concern."
+    ],
+    "reasoning": "The evidence shows a strong and increasingly monetizable AWS AI-infrastructure cycle with unusually visible demand and capacity support, while the main risks are substantial but appear more likely to moderate returns than overturn the underlying growth thesis.",
+    "claims_considered": 36
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "supports",
+    "thesis": "AMZN has a favorable multi-quarter outlook as accelerating AWS demand, expanding profitability, custom silicon, modular datacenter deployment, and secured power capacity should outweigh near-term free-cash-flow pressure, debt sensitivity, infrastructure bottlenecks, and emerging cloud competition.",
+    "direction": "long",
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.79,
+    "blended_confidence": 0.8200000000000001,
+    "fair_value_estimate": 323.29083,
+    "current_price": 279.7455,
+    "implied_return_pct": 15.6,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.196,
+        "earnings_growth": 2.423
+      },
+      "Valuation": {
+        "forward_pe": 27.110668,
+        "peg_ratio": 1.46,
+        "ev_to_revenue": 4.115
+      },
+      "Quality": {
+        "operating_margin": 0.13689,
+        "fcf_margin": 0.20807934698542693
+      },
+      "Sentiment": {
+        "analyst_upside": 15.566052000836494,
+        "revisions_trend": 1.2218963831867047,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.677500017500003,
+        "insider_flow": -6175029840.0,
+        "low_short_interest": -1.09
+      }
+    },
+    "risks": [
+      "Forward valuation still embeds substantial execution and AWS growth expectations, leaving limited downside protection if growth normalizes.",
+      "The exceptional earnings-growth figure may partly reflect a low base or one-time effects and may not be sustainable.",
+      "Heavy insider selling is a modest governance and alignment concern."
+    ],
+    "reasoning": "Strong revenue and earnings growth, robust free-cash-flow and operating margins, positive revisions, and roughly 15.6% implied upside support a long view, although the valuation and sustainability of recent earnings growth temper conviction."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.8200000000000001,
+    "confidence_after": 0.8200000000000001
   }
 ]

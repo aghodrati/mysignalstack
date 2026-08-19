@@ -1,0 +1,21 @@
+[
+  {
+    "id": "0e6cd1357749dfb0",
+    "ticker": "TSLA",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-151/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "supply_chain",
+    "created": "2026-08-14",
+    "claim": "The rapid exhaustion of California\u2019s Tesla-specific $3,500 first-time-buyer rebate allocation is a modest bullish signal for Tesla\u2019s near-term vehicle demand in that market.",
+    "direction": "long",
+    "confidence": 0.94,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article reports that a new California EV program opened with a portion reserved for Tesla buyers, and consumers used up that allocation within five days. This indicates meaningful buyer uptake while the incentive was available, although the article does not quantify incremental deliveries or establish how much demand was pulled forward from future periods.",
+    "source": "Semiconductor Engineering"
+  }
+]

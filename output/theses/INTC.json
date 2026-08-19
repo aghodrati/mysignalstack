@@ -84,5 +84,91 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.636,
     "confidence_after": 0.636
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "Intel\u2019s near-term DCAI recovery and CPU scarcity-driven pricing provide upside, but persistent Foundry losses, weaker server performance, and accelerating AMD- and Arm-based competition make the risk-reward moderately bearish over the next several months.",
+    "direction": "short",
+    "confidence": 0.524,
+    "news_confidence": 0.68,
+    "fundamental_confidence": 0.29,
+    "pre_critic_confidence": 0.524,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": -12,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Intel Foundry continues posting large operating losses with growth dominated by internal transfers and limited external-customer contribution.",
+      "Server demand increasingly shifts to AMD and Arm-based CPUs, reducing Intel\u2019s x86 server revenue and market share despite strong overall server spending.",
+      "Intel continues to lag AMD in server performance and performance per watt, while lacking a competitive AI inference accelerator.",
+      "Processor scarcity eases before Intel can sustain pricing and shipment gains, exposing the incomplete nature of the DCAI recovery.",
+      "Intel\u2019s Fab 34 stake repurchase and heavy 14A/Terafab funding burden further weaken financial efficiency and increase execution risk."
+    ],
+    "invalidation": [
+      "DCAI delivers sustained earnings and cash-flow improvement through stronger revenue growth, yields, cost reductions, and pricing.",
+      "CPU supply remains below demand long enough for Intel to sustain materially higher shipments and pricing.",
+      "Intel\u2019s server-CPU recovery proves durable rather than scarcity-driven, with revenue moving materially back toward its prior peak.",
+      "A successful equity-funded Terafab and 14A expansion produces visible external foundry demand and narrows Foundry losses.",
+      "Intel materially closes its performance-per-watt gap with AMD, limits Arm share gains, or develops a competitive AI inference accelerator.",
+      "Strong 25.4% revenue growth and a 26.2% free-cash-flow margin provide fundamental support that may limit downside",
+      "Consensus fair value implies approximately 17% upside, while modest net analyst upgrades and positive institutional flows weigh against a sustained short",
+      "Low short interest may indicate the bearish thesis is not broadly reflected, though insider selling is a counterpoint"
+    ],
+    "reasoning": "The evidence supports a meaningful 120-to-270-day DCAI earnings rebound, but the higher-importance structural claims point to sustained competitive erosion and a financially burdensome, loss-making Foundry that outweigh the cyclical recovery.",
+    "claims_considered": 43
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "contradicts",
+    "thesis": "Intel\u2019s near-term DCAI recovery and CPU scarcity-driven pricing provide upside, but persistent Foundry losses, weaker server performance, and accelerating AMD- and Arm-based competition make the risk-reward moderately bearish over the next several months.",
+    "direction": "short",
+    "news_confidence": 0.68,
+    "fundamental_confidence": 0.29,
+    "blended_confidence": 0.524,
+    "fair_value_estimate": 115.26829,
+    "current_price": 98.315,
+    "implied_return_pct": 17.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.254
+      },
+      "Valuation": {
+        "forward_pe": 48.25608,
+        "peg_ratio": 1.36,
+        "ev_to_revenue": 8.687
+      },
+      "Quality": {
+        "operating_margin": 0.12189999,
+        "fcf_margin": 0.2618880741704077
+      },
+      "Sentiment": {
+        "analyst_upside": 17.243848853176004,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 19.89300001,
+        "insider_flow": -7623034.0,
+        "low_short_interest": -2.4
+      }
+    },
+    "risks": [
+      "Strong 25.4% revenue growth and a 26.2% free-cash-flow margin provide fundamental support that may limit downside",
+      "Consensus fair value implies approximately 17% upside, while modest net analyst upgrades and positive institutional flows weigh against a sustained short",
+      "Low short interest may indicate the bearish thesis is not broadly reflected, though insider selling is a counterpoint"
+    ],
+    "reasoning": "Although the elevated forward P/E and EV-to-revenue multiple support valuation-based downside, robust reported growth, strong cash generation, and consensus upside mean the available fundamentals only weakly support a short position."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.524,
+    "confidence_after": 0.524
   }
 ]

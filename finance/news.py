@@ -4,17 +4,24 @@ meant to grow), plus SEC EDGAR's per-company 8-K Atom feeds (material-event
 filings only -- earnings releases, guidance changes, M&A, leadership changes
 -- so unlike the newsletters, zero-noise by construction).
 
-No scraping of the newsletters: standard RSS already gives a title, the
-feed's own short teaser, a full-content field, a link, and a date for free,
-no API key or per-article cost required. `finance.summarize` optionally
-turns the full-content field into a richer AI-generated summary; this module
-has no opinion on that and works fine without it (the feed's own `summary`
-field is always there as a fallback). The 8-K feeds are the exception: SEC's
-feed only gives a one-line filing-type blurb (e.g. "Item 5.02: Departure of
+Mostly no scraping: standard RSS already gives a title, the feed's own short
+teaser, a full-content field, a link, and a date for free, no API key or
+per-article cost required. `finance.summarize` optionally turns the
+full-content field into a richer AI-generated summary; this module has no
+opinion on that and works fine without it (the feed's own `summary` field is
+always there as a fallback). The 8-K feeds are the exception: SEC's feed
+only gives a one-line filing-type blurb (e.g. "Item 5.02: Departure of
 Directors..."), not the filing's actual text -- that blurb is still useful
 as a "something material happened" signal, just much thinner than a
 newsletter article. Fetching the full filing document is a deliberately
 separate, bigger lift not done here.
+
+`fetch_full_page_text` is the one real exception to "no scraping" -- an
+opt-in, per-source fallback (see finance.loop_a_config.full_page_fetch_sources)
+for a source whose RSS is confirmed too thin (or empty) to classify from.
+Not blanket-enabled: some sites (confirmed: EE Times) actively bot-block
+this kind of fetch at the TLS/HTTP2 level, so it's only worth trying for a
+source specifically confirmed to cooperate (confirmed: Next Platform).
 """
 
 from __future__ import annotations
@@ -25,6 +32,7 @@ from pathlib import Path
 
 import pandas as pd
 import requests
+import trafilatura
 
 CACHE_DIR = Path(__file__).resolve().parent.parent / "cache" / "news"
 
@@ -34,7 +42,7 @@ CACHE_DIR = Path(__file__).resolve().parent.parent / "cache" / "news"
 NEWS_SOURCES: list[tuple[str, str]] = [
     ("SemiAnalysis", "https://newsletter.semianalysis.com/feed"),
     ("Stratechery", "https://stratechery.com/feed/"),
-    ("The Diff", "https://www.thediff.co/feed"),
+    ("The Diff", "https://www.thediff.co/archive/rss/"),
     ("Citrini Research", "https://citriniresearch.com/feed"),
     ("Cassandra Unchained (Michael Burry)", "https://michaeljburry.substack.com/feed"),
 ]
@@ -125,6 +133,28 @@ def get_news(source_name: str, feed_url: str, refresh: bool = False, headers: di
     df = df.sort_values("published", ascending=False).reset_index(drop=True)
     df.to_csv(cache_path, index=False)
     return df
+
+
+def fetch_full_page_text(url: str, timeout: int = 15) -> str:
+    """Fetches one article's own webpage and extracts its main body text via
+    trafilatura -- the fallback for a source whose RSS gives too little to
+    classify from (see finance.loop_a_config.full_page_fetch_sources).
+
+    Best-effort and silent: returns "" on any failure (network error,
+    timeout, no extractable content) rather than raising, so a caller falls
+    back to whatever RSS already gave it, same as any other empty-article
+    case -- one blocked/slow site should never take down the whole research
+    update. Deliberately not retried or escalated (e.g. no headless browser
+    fallback) -- a site actively bot-blocking a plain request (confirmed:
+    EE Times, a TLS/HTTP2-level connection reset) should just be left off
+    rather than worked around.
+    """
+    try:
+        response = requests.get(url, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"})
+        response.raise_for_status()
+    except requests.RequestException:
+        return ""
+    return trafilatura.extract(response.text) or ""
 
 
 def get_news_from_sources(

@@ -7,3 +7,5 @@ date,ticker,action,shares,price,note,rule
 2026-08-17,NVDA,BUY,1.1103215310618277,225.16000366210938,"loop_a 80d72b8fae3d6963 entry_conf=71% horizon=365d: NVIDIA remains structurally bullish as its integrated AI-factory systems, networ",loop_a
 2026-08-17,TSM,BUY,0.5864139512689434,426.32000732421875,"loop_a 50c2e7ef184b179d entry_conf=61% horizon=365d: TSM’s mature, high-volume CoWoS leadership and direct-to-silicon liquid-cooling ",loop_a
 2026-08-17,CRWV,BUY,2.375296912114014,105.25,"loop_a 2ff1195170b90161 entry_conf=63% horizon=270d: CoreWeave remains a moderately high-conviction long as accelerating Meta demand,",loop_a
+2026-08-19,INTC,SELL,2.4380729253742692,96.69000244140625,"loop_a 1cb8321dcea3bebc closed (invalidated, return=-5.7%)",loop_a
+2026-08-19,AMD,BUY,0.5119092593735306,484.67498779296875,loop_a 96a864c3bc15e3be entry_conf=75% horizon=365d: AMD presents a moderately high-conviction long opportunity as accelerating Data ,loop_a

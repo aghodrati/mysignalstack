@@ -1,0 +1,21 @@
+[
+  {
+    "id": "3b8e28553e991ea2",
+    "ticker": "PLTR",
+    "source_link": "https://www.nextplatform.com/compute/2026/05/19/dell-bulks-up-hardware-as-ai-infrastructure-shifts-to-on-premises/5242811",
+    "source_title": "Dell Bulks Up Hardware As AI Infrastructure Shifts To On-Premises",
+    "event_type": "product_launch",
+    "created": "2026-05-19",
+    "claim": "Dell\u2019s integration of Palantir Foundry and AIP into Dell AI Factory gives Palantir an additional enterprise distribution channel for on-premises and hybrid AI deployments, which is bullish for adoption and potentially future revenue.",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Dell said it will bring Palantir\u2019s Foundry and Artificial Intelligence Platform on premises through Dell AI Factory, alongside other enterprise AI models and tools. The move aligns Palantir\u2019s software with Dell\u2019s installed base of roughly 5,000 AI Factory customers and with the article\u2019s broader thesis that enterprises are shifting AI workloads outside public clouds for security, governance, data-control, and cost reasons. The article does not provide deal economics, customer commitments, or a timing estimate for material Palantir financial impact.",
+    "source": "Next Platform"
+  }
+]

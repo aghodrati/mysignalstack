@@ -36,13 +36,36 @@ def main():
     for entry in reviewed:
         print(f"[review] {entry}")
 
-    acted = run_loop_a(args.portfolio, include_sec_8k=args.include_sec_8k)
+    result = run_loop_a(args.portfolio, include_sec_8k=args.include_sec_8k)
+    acted = result["trades"]
     for entry in acted:
         print(f"[loop_a] {entry}")
 
     n_closed = sum(1 for e in reviewed + acted if e["action"] == "SELL")
     n_opened = sum(1 for e in acted if e["action"] == "BUY")
     print(f"Done for today: {n_closed} position(s) closed, {n_opened} opened.")
+
+    research = result["research"]
+    claims_by_source_ticker = research["claims_by_source_ticker"]
+    thesis_changes = research["thesis_changes"]
+    print("\n=== Research summary ===")
+    if not claims_by_source_ticker:
+        print("No new claims this run.")
+    else:
+        total_claims = sum(claims_by_source_ticker.values())
+        print(f"Claims added ({total_claims} total, {len(claims_by_source_ticker)} source/ticker pair(s)):")
+        for (source, ticker), count in sorted(claims_by_source_ticker.items()):
+            print(f"  {source} -> {ticker}: {count}")
+
+    if not thesis_changes:
+        print("No thesis updates this run.")
+    else:
+        print(f"Thesis confidence changes ({len(thesis_changes)} ticker(s)), sorted by updated confidence:")
+        ranked = sorted(thesis_changes.items(), key=lambda item: item[1]["after_confidence"], reverse=True)
+        for ticker, change in ranked:
+            before = change["before_confidence"]
+            before_str = f"{before:.0%}" if before is not None else "new"
+            print(f"  {ticker}: {before_str} -> {change['after_confidence']:.0%} ({change['direction']})")
 
 
 if __name__ == "__main__":

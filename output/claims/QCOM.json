@@ -1,0 +1,40 @@
+[
+  {
+    "id": "8ab073d80036d734",
+    "ticker": "QCOM",
+    "source_link": "https://semiengineering.com/chip-industry-earnings-roundup/",
+    "source_title": "Semiconductor Earnings Roundup: Revenue, Growth and Takeaways",
+    "event_type": "earnings",
+    "created": "2026-08-18",
+    "claim": "Qualcomm\u2019s near-term outlook is weakened by a sharp decline in handset demand, which drove a 20% year-over-year fall in handset revenue and contributed to a 4% decline in total quarterly revenue.",
+    "direction": "short",
+    "confidence": 0.99,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "In the roundup\u2019s Qualcomm entry, Q3 FY2026 revenue was reported at $9.95 billion, down 4% year over year, with handset revenue specifically down 20%. Because handsets are a major Qualcomm business, this indicates continued pressure on the company\u2019s largest or most established end-market and is a bearish factor for upcoming quarters.",
+    "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "655d1359fa66482f",
+    "ticker": "QCOM",
+    "source_link": "https://semiengineering.com/chip-industry-earnings-roundup/",
+    "source_title": "Semiconductor Earnings Roundup: Revenue, Growth and Takeaways",
+    "event_type": "earnings",
+    "created": "2026-08-18",
+    "claim": "Qualcomm\u2019s diversification into automotive and IoT is improving its growth profile and partially offsetting weakness in the handset business.",
+    "direction": "long",
+    "confidence": 0.96,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article states that Qualcomm\u2019s Automotive and IoT businesses each grew strongly during Q3 FY2026 even as handset revenue fell 20%. This supports a more favorable longer-term mix shift toward non-handset markets, although the article does not provide segment growth rates, dollar contributions, or enough detail to determine whether these businesses can fully replace the handset shortfall.",
+    "source": "Semiconductor Engineering"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-19",
+    "thesis": "QBTS has a favorable but execution-dependent outlook as completed Quantum Circuits integration, strong near-term bookings, and a broader annealing-plus-gate-model strategy expand its commercial opportunity, while prospective government funding remains an unconfirmed upside catalyst.",
+    "direction": "long",
+    "confidence": 0.47872000000000003,
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.1,
+    "pre_critic_confidence": 0.544,
+    "critic_multiplier": 0.88,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained system sales and recurring quantum-computing services bookings",
+      "Successful integration of Quantum Circuits and progress toward the gate-model product roadmap",
+      "Demonstrated dual-rail error-detection performance that reduces physical-qubit requirements",
+      "Completion of the proposed $100 million Commerce Department investment",
+      "Progress toward the targeted 100,000-qubit annealing and 10,000-qubit gate-model systems"
+    ],
+    "invalidation": [
+      "Delay, modification, or blocking of the proposed $100 million government investment combined with weaker commercial funding",
+      "Failure to execute the gate-model roadmap through 2028-2032",
+      "Evidence that the $550 million acquisition and dual-architecture development create unsustainable capital-allocation or execution burdens",
+      "Deterioration in system sales or recurring quantum-computing services bookings",
+      "Extremely elevated EV-to-revenue valuation leaves little room for execution setbacks or financing needs.",
+      "Severe revenue contraction indicates weak current commercial traction despite reported bookings.",
+      "Deeply negative operating and free-cash-flow margins imply ongoing cash burn and potential shareholder dilution.",
+      "Large insider selling and unfavorable short-interest positioning undermine alignment and market confidence."
+    ],
+    "reasoning": "The evidence is predominantly bullish and includes unusually strong near-term commercial traction plus strategic expansion into gate-model computing, but the long-term payoff depends on difficult execution and the proposed government funding is neither certain nor currently dependable.",
+    "claims_considered": 10
+  },
+  {
+    "event": "fundamental",
+    "date": "2026-08-19",
+    "assessment": "contradicts",
+    "thesis": "QBTS has a favorable but execution-dependent outlook as completed Quantum Circuits integration, strong near-term bookings, and a broader annealing-plus-gate-model strategy expand its commercial opportunity, while prospective government funding remains an unconfirmed upside catalyst.",
+    "direction": "long",
+    "news_confidence": 0.84,
+    "fundamental_confidence": 0.1,
+    "blended_confidence": 0.544,
+    "fair_value_estimate": 37.052,
+    "current_price": 20.661,
+    "implied_return_pct": 79.3,
+    "factors": {
+      "Growth": {
+        "revenue_growth": -0.809
+      },
+      "Valuation": {
+        "forward_pe": -53.06809,
+        "ev_to_revenue": 550.41
+      },
+      "Quality": {
+        "operating_margin": -19.14871,
+        "fcf_margin": -7.84819993571199
+      },
+      "Sentiment": {
+        "analyst_upside": 79.33304293112626,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 22.573999871,
+        "insider_flow": -329497275.0,
+        "low_short_interest": -20.020000000000003
+      }
+    },
+    "risks": [
+      "Extremely elevated EV-to-revenue valuation leaves little room for execution setbacks or financing needs.",
+      "Severe revenue contraction indicates weak current commercial traction despite reported bookings.",
+      "Deeply negative operating and free-cash-flow margins imply ongoing cash burn and potential shareholder dilution.",
+      "Large insider selling and unfavorable short-interest positioning undermine alignment and market confidence."
+    ],
+    "reasoning": "While consensus upside and institutional inflows offer some support, the combination of collapsing revenue, substantial losses and cash burn, and an exceptionally demanding valuation fundamentally argues against the long thesis."
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis says the Quantum Circuits integration was completed, but the claims establish only that the acquisition was completed; they do not explicitly establish integration completion.",
+      "The favorable outlook may slightly overstate the balance of evidence because the claims also identify material execution and capital-allocation burdens and a financial payoff dependent on successful execution through 2028\u20132032.",
+      "The funding catalyst is appropriately described as prospective and unconfirmed, but the thesis does not explicitly reflect the more specific risk that congressional objections could delay, modify, or block it."
+    ],
+    "llm_multiplier": 0.88,
+    "llm_reasoning": "The core direction is supported by the claims, but the wording upgrades a completed acquisition into completed integration and compresses meaningful execution, funding, and capital-allocation risks into a broadly favorable conclusion.",
+    "final_multiplier": 0.88,
+    "confidence_before": 0.544,
+    "confidence_after": 0.47872000000000003
+  }
+]

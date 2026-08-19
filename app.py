@@ -13,6 +13,7 @@ Run with: uv run streamlit run app.py
 from __future__ import annotations
 
 import datetime as dt
+import html
 import os
 
 import pandas as pd
@@ -43,6 +44,7 @@ from finance.momentum import (
     random_n_average_equity,
     top_n_momentum_weight_func,
 )
+from finance.loop_a_config import ticker_sectors, tracked_universe
 from finance.news import NEWS_SOURCES, get_all_news
 from finance.newsloop import CONCENTRATION_PROFILES, HORIZON_PROFILES, RISK_PROFILES, RULE_NAME
 from finance.overnight import decompose_returns, summarize as summarize_overnight
@@ -160,11 +162,17 @@ st.markdown(
     # stExpandSidebarButton (the only way to reopen a collapsed sidebar on a
     # phone) is rendered *inside* stHeader, so hiding stHeader unconditionally
     # was silently deleting a phone's only way to open the sidebar at all.
-    # Only strip these on wide (desktop) viewports, where the sidebar stays
-    # permanently visible and this chrome is genuinely unused.
+    # Only strip these on wide (desktop) viewports, where the sidebar (on the
+    # Explore page) stays permanently visible and this chrome is genuinely
+    # unused. stHeader itself is NOT hidden (unlike before this app had
+    # multiple pages) -- st.navigation(position="top")'s page switcher
+    # renders *inside* stHeader, so hiding it would hide the only way to
+    # switch pages on desktop. No custom block-container padding-top either
+    # (there used to be one, sized for a *hidden* header) -- Streamlit's own
+    # default padding already accounts for the header's real height now that
+    # it's visible again; a smaller custom value was making the page's own
+    # top content render underneath the header.
     "@media (min-width: 768px){"
-    "div.block-container{padding-top:1rem}"
-    "[data-testid='stHeader']{display:none}"
     "[data-testid='stSidebarHeader']{display:none}"
     "[data-testid='stSidebarCollapseButton']{display:none}"
     "[data-testid='stExpandSidebarButton']{display:none}"
@@ -173,95 +181,39 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# Module-level so every render_*_tab function below can read them as plain globals -- only
+# page_explore() (see bottom of file) ever assigns them, since only tabs living on that page
+# use them; page_home()'s tabs (Research/This Week/Portfolio) never touch sidebar state.
 picked_tickers: set[str] = set()
-with st.sidebar:
-    with st.expander("Return calculator", expanded=False):
-        calc_col0, calc_col1, calc_col2 = st.columns([1, 1, 1])
-        with calc_col0:
-            calc_ticker = st.text_input("Ticker", value="AAPL", key="calc_ticker").strip().upper()
-        with calc_col1:
-            calc_start = st.date_input(
-                "Start", value=dt.date(2026, 1, 1), max_value=dt.date.today(), key="calc_start"
-            )
-        with calc_col2:
-            calc_end = st.date_input("End", value=dt.date.today(), max_value=dt.date.today(), key="calc_end")
+tickers_input: str = ""
 
-        if calc_ticker and calc_start <= calc_end:
-            calc_fetch_end = calc_end + dt.timedelta(days=1)  # yfinance's end is exclusive
-            calc_prices = get_prices([calc_ticker], start=calc_start.isoformat(), end=calc_fetch_end.isoformat())
-            calc_prices = calc_prices.loc[
-                (calc_prices.index >= pd.Timestamp(calc_start)) & (calc_prices.index <= pd.Timestamp(calc_end))
-            ]
-            if calc_ticker not in calc_prices.columns or calc_prices[calc_ticker].dropna().empty:
-                st.caption(f"No data for {calc_ticker} in that range.")
-            else:
-                series = calc_prices[calc_ticker].dropna()
-                calc_return = series.iloc[-1] / series.iloc[0] - 1
-                st.metric(f"{calc_ticker} return", f"{calc_return:+.2%}")
-        elif calc_start > calc_end:
-            st.caption("Start date must be on/before end date.")
 
-    for category, options in QUICK_PICK_CATEGORIES.items():
-        with st.expander(category, expanded=True):
-            picked_tickers.update(
-                st.pills(
-                    category,
-                    options=list(options.values()),
-                    selection_mode="multi",
-                    default=[],
-                    key=f"pick_{category}",
-                    label_visibility="collapsed",
-                )
-            )
-    tickers_input = st.text_input(
-        "Other tickers (comma-separated)", value=", ".join(load_custom_tickers()),
-        help="Persisted -- still here next time you open the app.",
+def _render_equal_width_tab_css(key: str, n_tabs: int) -> None:
+    """Equal-width segments wrapped onto exactly two rows -- st.segmented_control otherwise
+    sizes each button to fit its own label (so "This Week" is visibly wider than "Rank") and
+    packs everything onto one line. A grid with ceil(n/2) columns fills row 1 first, then row 2,
+    regardless of how many tabs exist. Scoped to the widget's own .st-key-{key} class (the class
+    Streamlit adds for any widget created with an explicit key=) -- st.pills elsewhere (e.g. the
+    sidebar's ticker category pickers) render through this exact same stButtonGroup component, so
+    an unscoped rule here would squeeze those into the same grid too. Each page's own segmented
+    control passes its own key, since the two pages have different tab counts.
+    """
+    cols = -(-n_tabs // 2)  # ceil division
+    st.markdown(
+        f"""
+        <style>
+        .st-key-{key} div[data-testid="stButtonGroup"] > div {{
+            display: grid;
+            grid-template-columns: repeat({cols}, 1fr);
+            width: 100%;
+        }}
+        .st-key-{key} div[data-testid="stButtonGroup"] button[data-variant="segmented_control"] {{
+            width: 100%;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
     )
-    _typed_custom_tickers = sorted({t.strip().upper() for t in tickers_input.split(",") if t.strip()})
-    if _typed_custom_tickers != load_custom_tickers():
-        save_custom_tickers(_typed_custom_tickers)
-
-_tab_names = ["Research", "This Week"]
-if not HOSTED:
-    _tab_names += ["Portfolio", "Sim"]
-_tab_names += [
-    "Compare", "Corr", "Mom", "buy-dip", "Calendar",
-    "PEAD", "Insider", "Inst'", "Rank", "LT data",
-]
-# A plain st.tabs() computes every tab's content on every script run regardless of which is
-# visible (they're all rendered into the page, just CSS-hidden) -- with 13 tabs, several of
-# which fetch prices for a whole universe of tickers or build multi-year factor panels, a
-# full run can take well over a minute even before you can see anything past the first tab.
-# segmented_control instead reports only the *selected* section, so only that one render
-# function below actually runs each time -- switching sections is a fast, cheap rerun instead
-# of everything computing eagerly upfront.
-# Equal-width segments wrapped onto exactly two rows -- st.segmented_control otherwise sizes each
-# button to fit its own label (so "This Week" is visibly wider than "Rank") and packs everything
-# onto one line. A grid with ceil(n/2) columns fills row 1 first, then row 2, regardless of how
-# many tabs exist. Scoped to .st-key-active_tab (the class Streamlit adds for any widget created
-# with an explicit key=) -- st.pills elsewhere (e.g. the sidebar's ticker category pickers) render
-# through this exact same stButtonGroup component, so an unscoped rule here previously squeezed
-# those into the same grid too.
-_tab_grid_cols = -(-len(_tab_names) // 2)  # ceil division
-st.markdown(
-    f"""
-    <style>
-    .st-key-active_tab div[data-testid="stButtonGroup"] > div {{
-        display: grid;
-        grid-template-columns: repeat({_tab_grid_cols}, 1fr);
-        width: 100%;
-    }}
-    .st-key-active_tab div[data-testid="stButtonGroup"] button[data-variant="segmented_control"] {{
-        width: 100%;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-active_tab = st.segmented_control(
-    "Section", options=_tab_names, default=_tab_names[0], required=True,
-    key="active_tab", label_visibility="collapsed",
-)
 
 
 def render_compare_tab() -> None:
@@ -313,6 +265,10 @@ def render_compare_tab() -> None:
     summary[f"vs {SP500_BENCHMARK}"] = cumulative_return.iloc[-1] - cumulative_return[SP500_BENCHMARK].iloc[-1]
     summary = summary.sort_values("Total return", ascending=False)
     st.dataframe(summary.style.format("{:+.2%}"), width="stretch", key="table_compare")
+
+
+def _select_page_ticker(ticker: str) -> None:
+    st.session_state["ticker_page_selected_ticker"] = ticker
 
 
 def _create_portfolio_clicked() -> None:
@@ -403,6 +359,90 @@ _FUNDAMENTAL_STYLE: dict[str, tuple[str, str]] = {
 }
 
 
+# A single light, minimal neutral tint for every card regardless of direction -- direction is
+# carried by the arrow's own color instead (see _DIRECTION_ARROW), not the card background.
+# Low-alpha so it reads fine in both Streamlit's light and dark themes (a solid hex background
+# would only look right in one).
+_KEEP_CARD_BACKGROUND = "rgba(151,166,195,0.08)"
+
+# Minimal thin Unicode arrows (not emoji) colored to signal direction -- same green/red the rest
+# of the app already uses (PANEL_PALETTE, SP500_LINE_COLOR).
+_DIRECTION_ARROW = {
+    "long": '<span style="color:#1baf7a">↑</span>',
+    "short": '<span style="color:#e34948">↓</span>',
+}
+
+
+def _render_claim_keep_cards(claims: list) -> None:
+    """Renders claims as a Google-Keep-style masonry grid -- raw HTML/CSS (column-count flow,
+    not st.columns' rigid equal-width grid) since a real masonry look needs variable-height
+    cards packing tightly, which Streamlit has no native widget for. Display-only (no per-card
+    buttons/interactivity, same as the Claims dialog's cards) so embedding as one HTML block
+    costs nothing. Renders in whatever order `claims` is already sorted in -- see page_ticker's
+    own sort-by control. See page_ticker -- the one place this is used.
+    """
+    if not claims:
+        st.caption("No claims yet.")
+        return
+    cards_html = []
+    for c in claims:
+        arrow = _DIRECTION_ARROW.get(c.direction, "➖")
+        metrics_bits = [f"Importance {c.importance}/10", f"Confidence {c.confidence:.0%}"]
+        if c.trade_worthy:
+            metrics_bits.append(f"Return {c.expected_return_pct:+.1f}%")
+            metrics_bits.append(f"{c.expected_horizon_days}d horizon")
+        metrics_html = html.escape(" · ".join(metrics_bits))
+        context_html = (
+            f'<div class="keep-card-context">{html.escape(c.context)}</div>' if c.context else ""
+        )
+        # Native <details>/<summary> -- real click-to-expand with zero JS, since a card embedded
+        # in one big HTML block has no way to call back into Streamlit/Python the way a real
+        # st.button or st.dialog would. Only rendered if a summary is actually cached
+        # (finance.summarize) -- never generated on demand, that'd be a fresh LLM call per card.
+        article_summary = get_cached_summary(c.source_link)
+        summary_html = (
+            f"<details class='keep-card-summary'><summary>\U0001f4f0 Article summary</summary>"
+            f"<div>{html.escape(article_summary)}</div></details>"
+            if article_summary else ""
+        )
+        cards_html.append(
+            f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">'
+            f'<div class="keep-card-source">#{html.escape(c.source or "unknown")}</div>'
+            f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
+            f"{context_html}"
+            f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
+            f"{summary_html}"
+            f"</div>"
+        )
+    st.markdown(
+        """
+        <style>
+        .keep-grid { column-count: 1; column-gap: 1rem; }
+        @media (min-width: 640px) { .keep-grid { column-count: 2; } }
+        @media (min-width: 1100px) { .keep-grid { column-count: 3; } }
+        .keep-card {
+            break-inside: avoid;
+            display: inline-block;
+            width: 100%;
+            border-radius: 0.6rem;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
+        }
+        .keep-card-source { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.3rem; }
+        .keep-card-claim { font-size: 0.92rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.4rem; }
+        .keep-card-context { font-size: 0.82rem; opacity: 0.85; line-height: 1.4; margin-bottom: 0.5rem; }
+        .keep-card-meta { font-size: 0.72rem; opacity: 0.65; }
+        .keep-card-summary { margin-top: 0.5rem; font-size: 0.8rem; }
+        .keep-card-summary summary { cursor: pointer; color: #1baf7a; font-weight: 600; }
+        .keep-card-summary summary::marker { color: #1baf7a; }
+        .keep-card-summary div { margin-top: 0.4rem; opacity: 0.85; line-height: 1.4; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.markdown(f'<div class="keep-grid">{"".join(cards_html)}</div>', unsafe_allow_html=True)
+
+
 @st.dialog("Claims", width="medium")
 def _claims_dialog(ticker: str, claims: list) -> None:
     """Experimental alternative to nested expanders: every claim for `ticker`
@@ -422,6 +462,7 @@ def _claims_dialog(ticker: str, claims: list) -> None:
         with st.container(border=True, key=f"claim_card_{c.id}"):
             badge = {"long": "🔼", "short": "🔽"}.get(c.direction, "➖")
             st.markdown(f"**{badge} {_md(c.claim)}**")
+            st.markdown(f":green[#{c.source or 'unknown'}]")
             st.caption(
                 f"{c.created}  ·  importance {c.importance}/10  ·  "
                 f"[{c.source_title}]({c.source_link})  ·  event_type={c.event_type}"
@@ -590,6 +631,19 @@ def render_research_tab() -> None:
         st.caption("No theses yet -- run Loop A against any portfolio to populate this.")
         return
 
+    all_claims_by_ticker = {ticker: load_claims(ticker) for ticker in theses_tickers}
+    all_sources = sorted({c.source or "unknown" for claims in all_claims_by_ticker.values() for c in claims})
+    st.caption(
+        "Sources -- deselect a source to hide its claims from this view only, nothing is "
+        "deleted. Doesn't change a thesis's own confidence/direction (Stage C already synthesized "
+        "those from every claim, selected or not)."
+    )
+    selected_sources = st.pills(
+        "Sources", options=all_sources, default=all_sources, selection_mode="multi",
+        key="research_sources_selected", label_visibility="collapsed",
+    )
+    masked_sources = set(all_sources) - set(selected_sources)
+
     # Live price-action context (momentum, relative strength vs. S&P 500, relative volume) --
     # deterministic, no LLM, never cached/blended into the thesis itself (see finance.ranking's
     # own Momentum category, deliberately excluded from finance.fundamentals). Purely informational
@@ -619,17 +673,38 @@ def render_research_tab() -> None:
         tt = load_ticker_thesis(ticker)
         if tt is None:
             continue
-        claims = sorted(load_claims(ticker), key=lambda c: c.created, reverse=True)
+        visible = [c for c in all_claims_by_ticker[ticker] if (c.source or "unknown") not in masked_sources]
+        claims = sorted(visible, key=lambda c: c.created, reverse=True)
         theses_rows.append((ticker, tt, claims))
-    theses_rows.sort(key=lambda row: row[2][0].created if row[2] else dt.date.min, reverse=True)
+    # Most recently (re)aggregated first -- tt.updated is set to as_of every time run_loop_a
+    # touches this ticker (new claims or an earnings-window fundamentals-only refresh), so this
+    # surfaces whatever a run just acted on, unlike sorting by a claim's own article-publish date
+    # (which a backfilled old article would keep buried regardless of how recently it was added).
+    theses_rows.sort(key=lambda row: row[1].updated, reverse=True)
     for ticker, tt, claims in theses_rows:
-        n_aggregations = sum(1 for ev in tt.history if ev["event"] == "aggregated")
+        aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
+        # New-claims indicator: compares the latest aggregation's claims_considered against the
+        # one before it (0 if this is the ticker's first-ever aggregation -- every claim behind a
+        # brand-new thesis is new by definition). A jump means new claims actually fed this update,
+        # vs. an earnings-window fundamentals-only refresh (finance.tickerthesis.refresh_fundamentals
+        # also appends an "aggregated" event, re-using the same thesis text, but claims_considered
+        # stays flat). A real emoji (not markdown color syntax) so it renders green right in the
+        # expander title -- st.expander labels only support a narrow markdown subset that excludes
+        # color spans.
+        new_claims_badge = ""
+        if aggregated_events:
+            previous_considered = aggregated_events[-2].get("claims_considered", 0) if len(aggregated_events) >= 2 else 0
+            delta = aggregated_events[-1].get("claims_considered", 0) - previous_considered
+            if delta > 0:
+                new_claims_badge = f"  \U0001f7e2 +{delta}"
+        n_aggregations = len(aggregated_events)
         latest_claim_date = f", latest {claims[0].created.isoformat()}" if claims else ""
+        direction_arrow = {"long": "\U0001f53c", "short": "\U0001f53d"}.get(tt.direction, "➖")
         title = (
-            f"{ticker}  ·  {tt.direction}  ·  conf={tt.confidence:.0%}  ·  "
-            f"{n_aggregations} aggregation(s)  ·  {len(claims)} claim(s){latest_claim_date}"
+            f"{ticker}  ·  {direction_arrow}  ·  conf={tt.confidence:.0%}  ·  "
+            f"{n_aggregations} aggregation(s)  ·  {len(claims)} claim(s){latest_claim_date}{new_claims_badge}"
         )
-        with st.expander(title, expanded=False):
+        with st.expander(title, expanded=True):
             if context_portfolio:
                 held = open_positions(context_portfolio, ticker=ticker)
                 if held:
@@ -655,10 +730,7 @@ def render_research_tab() -> None:
                     parts.append(f"Volume: {tech['relative_volume']:.1f}x avg")
                 if parts:
                     st.caption("\U0001f4c8 " + "  ·  ".join(parts) + "  (context only, not used in the thesis)")
-            st.write(f"**Catalysts:** {_md(', '.join(tt.catalysts)) if tt.catalysts else '--'}")
-            st.write(f"**Invalidation:** {_md(', '.join(tt.invalidation)) if tt.invalidation else '--'}")
 
-            aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
             fundamental_events = [ev for ev in tt.history if ev["event"] == "fundamental"]
             critic_events = [ev for ev in tt.history if ev["event"] == "critic"]
 
@@ -2904,63 +2976,6 @@ def render_weekly_tab() -> None:
             blocks.append(block)
         st.markdown("\n\n---\n\n".join(blocks))
 
-    st.divider()
-    st.subheader("Compare")
-    st.caption("Cumulative return of your sidebar picks (plus SPY by default) vs. the S&P 500.")
-    compare_period = st.pills(
-        "Period",
-        options=["Last week", "1 month", "YTD"],
-        selection_mode="single",
-        default="Last week",
-        key="weekly_compare_period",
-    )
-    compare_typed = {t.strip().upper() for t in tickers_input.split(",") if t.strip()}
-    compare_tickers = sorted(picked_tickers | compare_typed | {SP500_BENCHMARK})
-    if not compare_period:
-        st.info("Pick a period above.")
-    else:
-        compare_start = {
-            "Last week": today - pd.Timedelta(days=7),
-            "1 month": today - pd.DateOffset(months=1),
-            "YTD": pd.Timestamp(dt.date(today.year, 1, 1)),
-        }[compare_period]
-
-        with st.spinner("Fetching prices..."):
-            compare_prices = get_prices(
-                compare_tickers, start=compare_start.date().isoformat(), refresh=weekly_refresh
-            )
-        compare_prices = compare_prices.loc[compare_prices.index >= compare_start].dropna(axis=1, how="all")
-
-        missing = set(compare_tickers) - set(compare_prices.columns)
-        if missing:
-            st.warning(f"No data found for: {', '.join(sorted(missing))}")
-
-        if compare_prices.empty:
-            st.error("No price data available for this selection/period.")
-        else:
-            compare_cumulative = compare_prices / compare_prices.bfill().iloc[0] - 1
-            fig_compare = go.Figure()
-            for col in compare_cumulative.columns:
-                is_benchmark = col == SP500_BENCHMARK
-                fig_compare.add_trace(
-                    go.Scatter(
-                        x=compare_cumulative.index,
-                        y=compare_cumulative[col],
-                        name=col,
-                        line=dict(width=3, color=SP500_LINE_COLOR) if is_benchmark else dict(width=2),
-                    )
-                )
-            fig_compare.update_layout(
-                yaxis_tickformat=".0%",
-                yaxis_title="Cumulative return",
-                xaxis_title="Date",
-                hovermode="x unified",
-                legend_title_text="",
-                height=400,
-                margin=dict(t=20, b=20),
-            )
-            st.plotly_chart(fig_compare, width="stretch", key="chart_weekly_compare")
-
 
 PANEL_CSV_PATH = "output/panel.csv"
 
@@ -3231,31 +3246,268 @@ def render_panel_tab() -> None:
         st.dataframe(raw.reset_index(drop=True), width=600, key="table_panel_factor_history", hide_index=True)
 
 
-if active_tab == "This Week":
-    render_weekly_tab()
-elif active_tab == "Research":
-    render_research_tab()
-elif active_tab == "Portfolio":
-    render_portfolio_tab()
-elif active_tab == "Sim":
-    render_simulation_tab()
-elif active_tab == "Compare":
-    render_compare_tab()
-elif active_tab == "Corr":
-    render_correlations_tab()
-elif active_tab == "Mom":
-    render_momentum_tab()
-elif active_tab == "buy-dip":
-    render_dip_tab()
-elif active_tab == "Calendar":
-    render_calendar_tab()
-elif active_tab == "PEAD":
-    render_pead_tab()
-elif active_tab == "Insider":
-    render_insider_tab()
-elif active_tab == "Inst'":
-    render_ownership_tab()
-elif active_tab == "Rank":
-    render_ranking_tab()
-elif active_tab == "LT data":
-    render_panel_tab()
+def page_ticker() -> None:
+    """One ticker at a time: pick from config_loop_a's full tracked universe
+    in the sidebar (every configured ticker, even ones with no claims/thesis
+    yet), then see that ticker's thesis as a summary card and every claim
+    behind it as a Google-Keep-style card grid. A focused alternative to
+    Research's browse-every-ticker list, for when you already know which
+    company you want to dig into.
+    """
+    universe = tracked_universe()
+    if not universe:
+        st.info("No tickers configured -- see config_loop_a.json.")
+        return
+
+    options = sorted(universe, key=lambda t: universe[t])  # by display name
+    sectors = ticker_sectors()
+    grouped: dict[str, list[str]] = {}
+    for t in options:
+        grouped.setdefault(sectors.get(t, "Other"), []).append(t)
+
+    if "ticker_page_selected_ticker" not in st.session_state:
+        st.session_state["ticker_page_selected_ticker"] = options[0]
+    with st.sidebar:
+        st.caption("Tracked universe (config_loop_a.json), by sector")
+        # Sector-grouped expanders of plain buttons, same visual structure the old sidebar's
+        # QUICK_PICK_CATEGORIES pickers used -- buttons instead of st.pills specifically because
+        # exactly one ticker must be selected *across every sector at once*; st.pills' selection
+        # is per-widget, so N independent single-select pills groups (one per sector) can't share
+        # one global "currently selected" without fighting each other. A button's on_click just
+        # writes the one shared session_state key directly, so highlighting always agrees.
+        for sector in sorted(grouped):
+            with st.expander(sector, expanded=True):
+                cols = st.columns(3)
+                for i, t in enumerate(grouped[sector]):
+                    is_selected = t == st.session_state["ticker_page_selected_ticker"]
+                    cols[i % 3].button(
+                        t, key=f"ticker_sector_btn_{t}",
+                        type="primary" if is_selected else "secondary",
+                        on_click=_select_page_ticker, args=(t,),
+                        width="stretch",
+                    )
+    selected_ticker = st.session_state["ticker_page_selected_ticker"]
+
+    tt = load_ticker_thesis(selected_ticker)
+    all_claims = load_claims(selected_ticker)
+
+    if tt is None and not all_claims:
+        st.info(f"No research yet for {selected_ticker} -- run Loop A to populate this.")
+        return
+
+    if tt is not None:
+        arrow = _DIRECTION_ARROW.get(tt.direction, "➖")
+        st.markdown(f"### {selected_ticker}  ·  {arrow}  ·  conf={tt.confidence:.0%}", unsafe_allow_html=True)
+        st.write(f"**Thesis:** {_md(tt.thesis)}")
+        m1, m2, m3, m4 = st.columns(4)
+        m1.metric("Direction", tt.direction)
+        m2.metric("Confidence", f"{tt.confidence:.0%}")
+        m3.metric("Expected return", f"{tt.expected_return_pct:+.1f}%")
+        m4.metric("Horizon", f"{tt.expected_horizon_days}d")
+        # No Catalysts/Invalidation here -- already shown per-aggregation inside the Theses
+        # dialog below (finance.tickerthesis.aggregate_claims's own catalysts/invalidation),
+        # same reasoning Research's cards already apply.
+
+        aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
+        fundamental_events = [ev for ev in tt.history if ev["event"] == "fundamental"]
+        critic_events = [ev for ev in tt.history if ev["event"] == "critic"]
+        btn_col1, btn_col2, btn_col3, btn_col4 = st.columns(4)
+        with btn_col1:
+            if st.button(f"Claims ({len(all_claims)})", key=f"ticker_page_claims_btn_{selected_ticker}"):
+                _claims_dialog(selected_ticker, sorted(all_claims, key=lambda c: c.created, reverse=True))
+        with btn_col2:
+            if critic_events and st.button(
+                f"Critic ({len(critic_events)})", key=f"ticker_page_critic_btn_{selected_ticker}"
+            ):
+                _critic_dialog(selected_ticker, critic_events)
+        with btn_col3:
+            if fundamental_events and st.button(
+                f"Fundamentals ({len(fundamental_events)})", key=f"ticker_page_fund_btn_{selected_ticker}"
+            ):
+                _fundamentals_dialog(selected_ticker, fundamental_events)
+        with btn_col4:
+            if aggregated_events and st.button(
+                f"Theses ({len(aggregated_events)})", key=f"ticker_page_agg_btn_{selected_ticker}"
+            ):
+                _aggregation_history_dialog(selected_ticker, aggregated_events)
+    else:
+        st.info(f"{selected_ticker} has claims but no synthesized thesis yet.")
+
+    st.divider()
+    all_sources = sorted({c.source or "unknown" for c in all_claims})
+    # Every filter widget's key includes selected_ticker -- otherwise switching tickers keeps the
+    # previous ticker's widget state (e.g. 2 sources selected out of its 5), which for a different
+    # ticker's different source list can silently filter down to zero claims. A fresh key per
+    # ticker makes each one start over at its own defaults: all sources, All dates, All importance.
+    # Two lines total: label beside its own pills (not above), so Sources fits one line and
+    # Dates+Importance share the second -- still pills throughout, same picking interaction.
+    sources_label_col, sources_pills_col = st.columns([1, 6], vertical_alignment="center")
+    with sources_label_col:
+        st.write("**Sources**")
+    with sources_pills_col:
+        selected_sources = st.pills(
+            "Sources", options=all_sources, default=all_sources, selection_mode="multi",
+            key=f"ticker_page_sources_{selected_ticker}", label_visibility="collapsed",
+        )
+
+    dates_label_col, dates_pills_col, importance_label_col, importance_pills_col = st.columns(
+        [1, 3, 1, 3], vertical_alignment="center"
+    )
+    with dates_label_col:
+        st.write("**Dates**")
+    with dates_pills_col:
+        date_filter = st.pills(
+            "Dates", options=["1 day", "1 week", "1 month", "All"], default="All",
+            selection_mode="single", key=f"ticker_page_date_filter_{selected_ticker}",
+            label_visibility="collapsed",
+        )
+    with importance_label_col:
+        st.write("**Importance**")
+    with importance_pills_col:
+        importance_filter = st.pills(
+            "Importance", options=["8+", "6+", "4+", "All"], default="All",
+            selection_mode="single", key=f"ticker_page_importance_filter_{selected_ticker}",
+            label_visibility="collapsed",
+        )
+
+    visible_claims = [c for c in all_claims if (c.source or "unknown") in selected_sources]
+    date_filter = date_filter or "All"  # single-select pills can be clicked off, leaving None
+    if date_filter != "All":
+        lookback_days = {"1 day": 1, "1 week": 7, "1 month": 30}[date_filter]
+        cutoff = dt.date.today() - dt.timedelta(days=lookback_days)
+        visible_claims = [c for c in visible_claims if c.created >= cutoff]
+    importance_filter = importance_filter or "All"
+    if importance_filter != "All":
+        threshold = int(importance_filter.rstrip("+"))
+        visible_claims = [c for c in visible_claims if c.importance >= threshold]
+    visible_claims.sort(key=lambda c: c.created, reverse=True)  # always by date, newest first
+
+    st.subheader(f"Claims ({len(visible_claims)})")
+    _render_claim_keep_cards(visible_claims)
+
+
+def page_home() -> None:
+    """Research + This Week + Portfolio -- the daily Loop A workflow: browse
+    theses, check what's new this week, manage paper-trading portfolios.
+    Deliberately no sidebar (see picked_tickers/tickers_input's module-level
+    comment) -- none of these three need a ticker picker, so this page stays
+    uncluttered.
+    """
+    tab_names = ["Research", "This Week"]
+    if not HOSTED:
+        tab_names.append("Portfolio")
+    _render_equal_width_tab_css("home_active_tab", len(tab_names))
+    active_tab = st.segmented_control(
+        "Section", options=tab_names, default=tab_names[0], required=True,
+        key="home_active_tab", label_visibility="collapsed",
+    )
+    if active_tab == "Research":
+        render_research_tab()
+    elif active_tab == "This Week":
+        render_weekly_tab()
+    elif active_tab == "Portfolio":
+        render_portfolio_tab()
+
+
+def page_explore() -> None:
+    """Every other tool -- comparisons, correlations, momentum, factor
+    ranking, calendars, backtesting/simulation -- all of which read from the
+    sidebar's ticker picker (picked_tickers/tickers_input, set here, read as
+    plain module globals by the render_*_tab functions below), so the picker
+    lives on this page only rather than cluttering Home.
+    """
+    global picked_tickers, tickers_input
+    with st.sidebar:
+        with st.expander("Return calculator", expanded=False):
+            calc_col0, calc_col1, calc_col2 = st.columns([1, 1, 1])
+            with calc_col0:
+                calc_ticker = st.text_input("Ticker", value="AAPL", key="calc_ticker").strip().upper()
+            with calc_col1:
+                calc_start = st.date_input(
+                    "Start", value=dt.date(2026, 1, 1), max_value=dt.date.today(), key="calc_start"
+                )
+            with calc_col2:
+                calc_end = st.date_input("End", value=dt.date.today(), max_value=dt.date.today(), key="calc_end")
+
+            if calc_ticker and calc_start <= calc_end:
+                calc_fetch_end = calc_end + dt.timedelta(days=1)  # yfinance's end is exclusive
+                calc_prices = get_prices([calc_ticker], start=calc_start.isoformat(), end=calc_fetch_end.isoformat())
+                calc_prices = calc_prices.loc[
+                    (calc_prices.index >= pd.Timestamp(calc_start)) & (calc_prices.index <= pd.Timestamp(calc_end))
+                ]
+                if calc_ticker not in calc_prices.columns or calc_prices[calc_ticker].dropna().empty:
+                    st.caption(f"No data for {calc_ticker} in that range.")
+                else:
+                    series = calc_prices[calc_ticker].dropna()
+                    calc_return = series.iloc[-1] / series.iloc[0] - 1
+                    st.metric(f"{calc_ticker} return", f"{calc_return:+.2%}")
+            elif calc_start > calc_end:
+                st.caption("Start date must be on/before end date.")
+
+        picked: set[str] = set()
+        for category, options in QUICK_PICK_CATEGORIES.items():
+            with st.expander(category, expanded=True):
+                picked.update(
+                    st.pills(
+                        category,
+                        options=list(options.values()),
+                        selection_mode="multi",
+                        default=[],
+                        key=f"pick_{category}",
+                        label_visibility="collapsed",
+                    )
+                )
+        picked_tickers = picked
+        tickers_input = st.text_input(
+            "Other tickers (comma-separated)", value=", ".join(load_custom_tickers()),
+            help="Persisted -- still here next time you open the app.",
+        )
+        _typed_custom_tickers = sorted({t.strip().upper() for t in tickers_input.split(",") if t.strip()})
+        if _typed_custom_tickers != load_custom_tickers():
+            save_custom_tickers(_typed_custom_tickers)
+
+    tab_names = []
+    if not HOSTED:
+        tab_names.append("Sim")
+    tab_names += [
+        "Compare", "Corr", "Mom", "buy-dip", "Calendar",
+        "PEAD", "Insider", "Inst'", "Rank", "LT data",
+    ]
+    _render_equal_width_tab_css("explore_active_tab", len(tab_names))
+    active_tab = st.segmented_control(
+        "Section", options=tab_names, default=tab_names[0], required=True,
+        key="explore_active_tab", label_visibility="collapsed",
+    )
+    if active_tab == "Sim":
+        render_simulation_tab()
+    elif active_tab == "Compare":
+        render_compare_tab()
+    elif active_tab == "Corr":
+        render_correlations_tab()
+    elif active_tab == "Mom":
+        render_momentum_tab()
+    elif active_tab == "buy-dip":
+        render_dip_tab()
+    elif active_tab == "Calendar":
+        render_calendar_tab()
+    elif active_tab == "PEAD":
+        render_pead_tab()
+    elif active_tab == "Insider":
+        render_insider_tab()
+    elif active_tab == "Inst'":
+        render_ownership_tab()
+    elif active_tab == "Rank":
+        render_ranking_tab()
+    elif active_tab == "LT data":
+        render_panel_tab()
+
+
+pg = st.navigation(
+    [
+        st.Page(page_home, title="Home", default=True),
+        st.Page(page_ticker, title="Ticker"),
+        st.Page(page_explore, title="Explore"),
+    ],
+    position="top",
+)
+pg.run()

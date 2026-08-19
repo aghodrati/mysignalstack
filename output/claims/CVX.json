@@ -1,0 +1,40 @@
+[
+  {
+    "id": "6c60f5b949e86073",
+    "ticker": "CVX",
+    "source_link": "https://newsletter.doomberg.com/p/over-target",
+    "source_title": "Over Target",
+    "event_type": "supply_chain",
+    "created": "2026-08-18",
+    "claim": "The CPC mooring damage and resulting halt in Kazakh crude loadings create a near-term bearish risk for Chevron by potentially disrupting exports from its Kazakhstan operations and related cash flows.",
+    "direction": "short",
+    "confidence": 0.88,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Chevron has major Kazakhstan exposure through its Tengiz-Korolev joint venture and other Western-partnered projects. The article says CPC carries most Kazakh crude exports, and that a November 29 Ukrainian attack made one of the terminal\u2019s three moorings inoperable, led tankers to withdraw, and stopped loading until security threats were addressed. Because the disruption affects the principal export route rather than merely an ancillary facility, it could temporarily constrain Chevron-linked crude sales, although the article does not quantify Chevron\u2019s share of the affected volumes or the duration of the outage.",
+    "source": "Doomberg"
+  },
+  {
+    "id": "03c39432ffbe2507",
+    "ticker": "CVX",
+    "source_link": "https://newsletter.doomberg.com/p/over-target",
+    "source_title": "Over Target",
+    "event_type": "supply_chain",
+    "created": "2026-08-18",
+    "claim": "The attack increases Chevron\u2019s longer-term geopolitical and supply-chain risk in Kazakhstan because continued regional conflict could repeatedly threaten the CPC route and its Black Sea export infrastructure.",
+    "direction": "short",
+    "confidence": 0.83,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article presents CPC as a strategically important corridor running through Russia to Novorossiysk, a port also central to Russian energy and grain exports, making it a target in the broader Ukraine conflict. The U.S. State Department\u2019s formal d\u00e9marche to Ukraine underscores the sensitivity of the infrastructure to U.S. energy interests. For Chevron, whose Kazakhstan investments depend on reliable takeaway capacity, the episode raises the possibility of recurring export interruptions, higher operating and security uncertainty, and adverse geopolitical exposure as the war continues, but no specific future attack or financial loss is established.",
+    "source": "Doomberg"
+  }
+]

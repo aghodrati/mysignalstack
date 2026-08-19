@@ -15,7 +15,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article says Nebius is building the New Jersey campus to its own compute design, using precast structural components for the shell and modularizing selected power and cooling infrastructure, with a phased development expandable to 300 MW. This positions Nebius to reduce on-site labor and construction complexity and to add capacity in repeatable increments, although the article does not provide a project-specific completion date or quantified savings for Nebius."
+    "context": "The article says Nebius is building the New Jersey campus to its own compute design, using precast structural components for the shell and modularizing selected power and cooling infrastructure, with a phased development expandable to 300 MW. This positions Nebius to reduce on-site labor and construction complexity and to add capacity in repeatable increments, although the article does not provide a project-specific completion date or quantified savings for Nebius.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "192b74bb4aa6e4b4",
@@ -33,7 +34,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "At B\u00e9thune, Nebius is reusing an existing industrial facility rather than constructing an entirely new datacenter shell. Azur Datacenter handles the land, utility intake, construction, and physical plant, while Nebius concentrates on GPUs, racks, networking, and software; this division allows Nebius to avoid part of the greenfield development burden and focus capital and execution on the compute platform."
+    "context": "At B\u00e9thune, Nebius is reusing an existing industrial facility rather than constructing an entirely new datacenter shell. Azur Datacenter handles the land, utility intake, construction, and physical plant, while Nebius concentrates on GPUs, racks, networking, and software; this division allows Nebius to avoid part of the greenfield development burden and focus capital and execution on the compute platform.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "6f685257e9b52119",
@@ -51,7 +53,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article says Meta has signed nearly 10GW of compute-capacity deals since early 2024, contracted more than 5GW across cloud and colocation providers in the first six months of the year, and now sources most incremental capacity through third parties. It specifically identifies Nebius among the providers expected to benefit from Meta\u2019s continued contracting, implying stronger future bookings and visibility for NBIS rather than an industry-wide overcapacity problem."
+    "context": "The article says Meta has signed nearly 10GW of compute-capacity deals since early 2024, contracted more than 5GW across cloud and colocation providers in the first six months of the year, and now sources most incremental capacity through third parties. It specifically identifies Nebius among the providers expected to benefit from Meta\u2019s continued contracting, implying stronger future bookings and visibility for NBIS rather than an industry-wide overcapacity problem.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "481fb9fbd785af90",
@@ -69,7 +72,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "The article argues that Meta can monetize compute through frontier-model work, advertising recommendation systems, model-serving services, and selective premium on-demand contracts. Because these uses are viewed as high value, Meta could afford to pay margins to neocloud providers while accelerating its fleet buildout; Nebius is named as one of the likely beneficiaries. This would support the quality and profitability of potential NBIS growth, although the article does not provide contract-specific pricing or margin terms."
+    "context": "The article argues that Meta can monetize compute through frontier-model work, advertising recommendation systems, model-serving services, and selective premium on-demand contracts. Because these uses are viewed as high value, Meta could afford to pay margins to neocloud providers while accelerating its fleet buildout; Nebius is named as one of the likely beneficiaries. This would support the quality and profitability of potential NBIS growth, although the article does not provide contract-specific pricing or margin terms.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "d4c59e223dc810f3",
@@ -87,7 +91,8 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": true,
-    "context": "The article says Nebius and developer DataOne initially targeted 25 MW by July 2025, 50 MW by September 2025, and 100 MW by year-end 2025, but supplier delays and longer-than-expected MEP installation and commissioning caused slippage. SemiAnalysis estimates the initial 50 MW phase was not fully complete until January or February 2026, while an April 2026 image still showed the project progressing. This implies less capacity was available than planned during the late-2025 and early-2026 ramp, creating execution risk around Nebius\u2019s growth plans, including its cited $7\u20139 billion year-end ARR guidance."
+    "context": "The article says Nebius and developer DataOne initially targeted 25 MW by July 2025, 50 MW by September 2025, and 100 MW by year-end 2025, but supplier delays and longer-than-expected MEP installation and commissioning caused slippage. SemiAnalysis estimates the initial 50 MW phase was not fully complete until January or February 2026, while an April 2026 image still showed the project progressing. This implies less capacity was available than planned during the late-2025 and early-2026 ramp, creating execution risk around Nebius\u2019s growth plans, including its cited $7\u20139 billion year-end ARR guidance.",
+    "source": "SemiAnalysis"
   },
   {
     "id": "8454031196252131",
@@ -105,6 +110,83 @@
     "catalysts": [],
     "invalidation": [],
     "trade_worthy": false,
-    "context": "SemiAnalysis characterizes the project\u2019s estimated 10\u201311 month delivery of the first 50 MW as very fast relative to normal datacenter construction timelines and explicitly congratulates Nebius and DataOne. The article attributes the delay to supplier timing and commissioning complexity rather than cancellation, and describes the campus as continuing to progress. Thus, while the original milestones were missed, the project remains an advancing asset that could support Nebius\u2019s later capacity and customer ramp."
+    "context": "SemiAnalysis characterizes the project\u2019s estimated 10\u201311 month delivery of the first 50 MW as very fast relative to normal datacenter construction timelines and explicitly congratulates Nebius and DataOne. The article attributes the delay to supplier timing and commissioning complexity rather than cancellation, and describes the campus as continuing to progress. Thus, while the original milestones were missed, the project remains an advancing asset that could support Nebius\u2019s later capacity and customer ramp.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "554b7c35da86281c",
+    "ticker": "NBIS",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "Nebius\u2019s aggressive datacenter buildout positions it for substantial AI-compute growth into 2027, but entails elevated execution and capital-spending risk relative to its current revenue base.",
+    "direction": "long",
+    "confidence": 0.96,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Nebius generates roughly one-tenth of CoreWeave\u2019s revenue while spending more than half as much on capital expenditures, indicating that it is in a hypergrowth investment phase rather than a mature operating phase. The spending is intended to capture the 2027 GenAI-systems opportunity, but the mismatch between current revenue and investment increases the risk that capacity is built ahead of realized demand or profitability.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "1f02ff6ed2531b30",
+    "ticker": "NBIS",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "Nebius has unusually strong future-demand visibility from nearly $6 billion of deferred revenue and more than $40 billion of reported customer capacity commitments.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Nebius\u2019s deferred revenue is described as just under $6 billion, while management has stated that customer capacity commitments exceed $40 billion. The article notes that these commitments have not been fully characterized and are widely believed to be anchored by Microsoft and Meta Platforms, so they support the growth outlook but should not be treated as equivalent to recognized revenue or firm backlog without more disclosure.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "9e1b39317d05ea63",
+    "ticker": "NBIS",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "Nebius\u2019s planned increase in contracted power to 5 GW by the end of 2026 materially expands its capacity to serve AI customers and supports a bullish medium-term growth outlook.",
+    "direction": "long",
+    "confidence": 0.98,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Nebius repeatedly raised its contracted-power target from more than 1 GW in August 2025 to more than 2.5 GW in November, more than 3 GW in February 2026, more than 4 GW in May, and finally 5 GW by the end of the June quarter. This accelerating power pipeline is the physical infrastructure behind its customer commitments and intended 2027 expansion, although it also increases buildout and execution requirements.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "636ca703d812b9c4",
+    "ticker": "NBIS",
+    "source_link": "https://www.nextplatform.com/cloud/2026/08/14/the-neoclouds-build-cash-hoards-faster-than-revenues/5288040",
+    "source_title": "The Neoclouds Build Cash Hoards Faster Than Revenues",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "Nebius\u2019s move into three- to six-month contracts creates an additional near-term monetization opportunity through potentially high $40 million to $50 million per MW pricing.",
+    "direction": "long",
+    "confidence": 0.84,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The company has begun signing shorter contracts in addition to its core one- to three-year agreements and cited a price opportunity of $40 million to $50 million per MW in its report to Wall Street. If realized, this could accelerate revenue generation and improve the economics of newly deployed capacity, but the article does not establish the volume, utilization, or sustainability of those prices.",
+    "source": "Next Platform"
   }
 ]
