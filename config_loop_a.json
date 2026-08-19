@@ -45,12 +45,12 @@
     "AMD": "Semiconductors", "ARM": "Semiconductors", "QCOM": "Semiconductors",
     "MU": "Semiconductors", "INTC": "Semiconductors", "AVGO": "Semiconductors",
     "SKHY": "Semiconductors", "TMSC": "Semiconductors",
-    "NBIS": "AI Infrastructure", "CRWV": "AI Infrastructure", "PLTR": "AI Infrastructure",
-    "XOM": "Energy", "CVX": "Energy", "OKLO": "Energy",
+    "NBIS": "AI Infrastructure", "CRWV": "AI Infrastructure", "PLTR": "AI Infrastructure", "IREN": "AI Infrastructure",
+    "XOM": "Energy", "CVX": "Energy",
     "LMT": "Defense & Aerospace", "SPCX": "Defense & Aerospace",
-    "QBTS": "Quantum Computing", "RGTI": "Quantum Computing",
-    "BTC-USD": "Crypto & Commodities", "GLD": "Crypto & Commodities",
-    "SLV": "Crypto & Commodities", "CPER": "Crypto & Commodities", "IREN": "Crypto & Commodities"
+    "QBTS": "Futuristic", "RGTI": "Futuristic", "OKLO": "Futuristic",
+    "GLD": "Commodities", "SLV": "Commodities", "CPER": "Commodities",
+    "BTC-USD": "Crypto"
   },
   "news_sources": [
     {"name": "SemiAnalysis", "url": "https://newsletter.semianalysis.com/feed", "active": true, "frequency": "~1-2 articles/week"},

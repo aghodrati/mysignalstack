@@ -399,21 +399,27 @@ def _render_claim_keep_cards(claims: list) -> None:
         # in one big HTML block has no way to call back into Streamlit/Python the way a real
         # st.button or st.dialog would. Only rendered if a summary is actually cached
         # (finance.summarize) -- never generated on demand, that'd be a fresh LLM call per card.
+        # The whole card (not just a small "Article summary" line) is the <summary> element, so
+        # tapping anywhere on the card reveals it -- a much bigger, thumb-friendly target on mobile
+        # than a single line of text would be.
         article_summary = get_cached_summary(c.source_link)
-        summary_html = (
-            f"<details class='keep-card-summary'><summary>\U0001f4f0 Article summary</summary>"
-            f"<div>{html.escape(article_summary)}</div></details>"
-            if article_summary else ""
-        )
-        cards_html.append(
-            f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">'
+        card_body = (
             f'<div class="keep-card-source">#{html.escape(c.source or "unknown")}</div>'
             f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
             f"{context_html}"
             f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
-            f"{summary_html}"
-            f"</div>"
         )
+        if article_summary:
+            cards_html.append(
+                f'<details class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">'
+                f"<summary>{card_body}</summary>"
+                f'<div class="keep-card-summary">\U0001f4f0 {html.escape(article_summary)}</div>'
+                f"</details>"
+            )
+        else:
+            cards_html.append(
+                f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
+            )
     st.markdown(
         """
         <style>
@@ -428,14 +434,17 @@ def _render_claim_keep_cards(claims: list) -> None:
             padding: 0.9rem 1rem;
             margin-bottom: 1rem;
         }
+        /* details-flavored cards (a cached summary exists) are tap/click-to-reveal on the whole
+           card -- <summary> covers all the always-visible content, so any tap on it toggles. */
+        details.keep-card { cursor: pointer; }
+        details.keep-card summary { list-style: none; }
+        details.keep-card summary::-webkit-details-marker { display: none; }
+        details.keep-card summary::marker { content: ""; }
         .keep-card-source { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.3rem; }
         .keep-card-claim { font-size: 0.92rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.4rem; }
         .keep-card-context { font-size: 0.82rem; opacity: 0.85; line-height: 1.4; margin-bottom: 0.5rem; }
         .keep-card-meta { font-size: 0.72rem; opacity: 0.65; }
-        .keep-card-summary { margin-top: 0.5rem; font-size: 0.8rem; }
-        .keep-card-summary summary { cursor: pointer; color: #1baf7a; font-weight: 600; }
-        .keep-card-summary summary::marker { color: #1baf7a; }
-        .keep-card-summary div { margin-top: 0.4rem; opacity: 0.85; line-height: 1.4; }
+        .keep-card-summary { margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.85; line-height: 1.4; cursor: default; }
         </style>
         """,
         unsafe_allow_html=True,
@@ -3265,6 +3274,15 @@ def page_ticker() -> None:
     for t in options:
         grouped.setdefault(sectors.get(t, "Other"), []).append(t)
 
+    # Fixed display order (not alphabetical) -- any sector not listed here (e.g. a new one added
+    # to config_loop_a.json's "sectors" mapping) still shows, just appended after these.
+    _SECTOR_ORDER = [
+        "Semiconductors", "Big Tech", "AI Infrastructure", "Futuristic",
+        "Energy", "Commodities", "Crypto", "Defense & Aerospace",
+    ]
+    ordered_sectors = [s for s in _SECTOR_ORDER if s in grouped]
+    ordered_sectors += [s for s in grouped if s not in _SECTOR_ORDER]
+
     if "ticker_page_selected_ticker" not in st.session_state:
         st.session_state["ticker_page_selected_ticker"] = options[0]
     with st.sidebar:
@@ -3275,7 +3293,7 @@ def page_ticker() -> None:
         # is per-widget, so N independent single-select pills groups (one per sector) can't share
         # one global "currently selected" without fighting each other. A button's on_click just
         # writes the one shared session_state key directly, so highlighting always agrees.
-        for sector in sorted(grouped):
+        for sector in ordered_sectors:
             with st.expander(sector, expanded=True):
                 cols = st.columns(3)
                 for i, t in enumerate(grouped[sector]):
@@ -3502,12 +3520,4 @@ def page_explore() -> None:
         render_panel_tab()
 
 
-pg = st.navigation(
-    [
-        st.Page(page_home, title="Home", default=True),
-        st.Page(page_ticker, title="Ticker"),
-        st.Page(page_explore, title="Explore"),
-    ],
-    position="top",
-)
-pg.run()
+page_ticker()
