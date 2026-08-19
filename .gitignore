@@ -20,14 +20,6 @@ cache/*
 # (Same "ignored parent dir" gotcha as output/* below -- cache/* not cache/.)
 !cache/thesis/
 !cache/thesis/**
-# ...and finance.summarize's AI article-summary cache -- small, and needed on a fresh (e.g.
-# hosted) checkout so claim cards (app.py's keep-card grid) have summaries to reveal on tap;
-# without it get_cached_summary always returns None there and every card silently renders as a
-# plain, non-interactive div. The rest of cache/news/ (per-feed RSS CSVs) stays ignored -- large
-# and freely re-fetchable, unlike this.
-!cache/news/
-cache/news/*
-!cache/news/summaries.json
 
 output/*
 # ...except the point-in-time factor panel: expensive to rebuild (SEC EDGAR +

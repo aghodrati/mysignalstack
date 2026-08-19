@@ -92,7 +92,6 @@ from finance.loop_a_config import (
 )
 from finance.news import SEC_8K_SOURCE_PREFIX, fetch_full_page_text, get_news_from_sources, get_sec_8k_news
 from finance.portfolio import append_trade, current_state, execution_price, load_meta, rule_positions
-from finance.summarize import cache_summary
 from finance.thesis import Position, append_closed, append_created, open_positions
 from finance.tickerthesis import (
     TickerThesis,
@@ -844,8 +843,6 @@ def _backfill_new_tickers(
                 event = extract_event(entry["title"], entry["text"], universe_map, article_date, debug=verbose)
                 if event is None:
                     continue
-                if event.get("summary"):
-                    cache_summary(link, event["summary"])
                 entry["event"] = event
                 _save_events(events_cache)
                 if ticker not in event["companies"] or not event["novel"] or event["importance"] < IMPORTANCE_MIN:
@@ -1019,11 +1016,6 @@ def update_research(
                     if verbose:
                         print(f"    [Stage A] classifying: {title[:60]}")
                     event = extract_event(title, article_text, universe_map, article_date, debug=verbose)
-                if event is not None and event.get("summary"):
-                    # Feeds finance.summarize's shared cache from Stage A's own general summary,
-                    # so claim cards (get_cached_summary) have one for every article Stage A ever
-                    # looks at, not just ones separately browsed in a summary-generating UI.
-                    cache_summary(row.link, event["summary"])
                 # Permanent global archive, independent of finance.news's rolling RSS cache
                 # (which is just a rolling window of whatever the feed currently contains --
                 # an old article can scroll out of it and disappear) -- keeps the full text

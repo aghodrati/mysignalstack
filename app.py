@@ -45,7 +45,7 @@ from finance.momentum import (
     top_n_momentum_weight_func,
 )
 from finance.loop_a_config import ticker_sectors, tracked_universe
-from finance.newsloop import CONCENTRATION_PROFILES, HORIZON_PROFILES, RISK_PROFILES, RULE_NAME
+from finance.newsloop import CONCENTRATION_PROFILES, HORIZON_PROFILES, RISK_PROFILES, RULE_NAME, get_article_archive
 from finance.overnight import decompose_returns, summarize as summarize_overnight
 from finance.panel import FACTOR_COLUMNS as PANEL_FACTOR_COLUMNS
 from finance.pead import Direction as PeadDirection, find_earnings_streak_trades, find_pead_trades
@@ -78,7 +78,6 @@ from finance.ranking import (
     composite_score,
     percentile_rank_table,
 )
-from finance.summarize import get_cached_summary
 from finance.thesis import open_positions
 from finance.tickerthesis import list_tickers_with_thesis, load_ticker_thesis
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
@@ -372,17 +371,56 @@ _DIRECTION_ARROW = {
 }
 
 
+def _article_summaries() -> dict[str, str]:
+    """link -> Stage A's own general one-paragraph summary (finance.newsloop.extract_event's
+    "summary" field), for every article that got one -- read straight from events.json (the
+    permanent Stage A archive, already committed/tracked), not a separate cache. An article
+    processed before this field existed, or whose Stage A call failed to produce one, is just
+    absent here.
+    """
+    return {
+        link: entry["event"]["summary"]
+        for link, entry in get_article_archive().items()
+        if entry.get("event") and entry["event"].get("summary")
+    }
+
+
+def _distribute_round_robin(items: list[str], n_cols: int) -> list[list[str]]:
+    """Splits `items` (already in the desired reading order) into `n_cols` fixed buckets,
+    round-robin -- item 0 -> column 0, item 1 -> column 1, ..., wrapping back to column 0. Each
+    card's column is then fixed at render time rather than left to the browser's own column-count
+    auto-balancing, which reflows -- and visibly reshuffles -- every card into different columns
+    whenever any single card's height changes (e.g. a <details> card expanding on tap).
+    """
+    cols: list[list[str]] = [[] for _ in range(n_cols)]
+    for i, item in enumerate(items):
+        cols[i % n_cols].append(item)
+    return cols
+
+
+def _keep_cols_html(cards_html: list[str], n_cols: int, css_class: str) -> str:
+    columns = _distribute_round_robin(cards_html, n_cols)
+    columns_html = "".join(f'<div class="keep-col">{"".join(col)}</div>' for col in columns)
+    return f'<div class="{css_class}">{columns_html}</div>'
+
+
 def _render_claim_keep_cards(claims: list) -> None:
-    """Renders claims as a Google-Keep-style masonry grid -- raw HTML/CSS (column-count flow,
-    not st.columns' rigid equal-width grid) since a real masonry look needs variable-height
-    cards packing tightly, which Streamlit has no native widget for. Display-only (no per-card
-    buttons/interactivity, same as the Claims dialog's cards) so embedding as one HTML block
-    costs nothing. Renders in whatever order `claims` is already sorted in -- see page_ticker's
-    own sort-by control. See page_ticker -- the one place this is used.
+    """Renders claims as a Google-Keep-style card grid -- raw HTML/CSS, since a real masonry look
+    needs variable-height cards packing tightly, which Streamlit has no native widget for. Each
+    card is assigned to a fixed column at render time (see _distribute_round_robin) rather than
+    via CSS column-count, whose browser-side auto-balancing reshuffles every card's screen
+    position whenever any single card's height changes -- notably, whenever a <details> card gets
+    tapped open. Three column-count variants (1/2/3) are all rendered, one shown at a time by
+    width via CSS -- Python has no way to know the actual viewport width, so this is done exactly
+    the way CSS media queries would pick a column-count, just with the column *assignment* fixed
+    in HTML instead of left to the browser. Display-only (no per-card buttons/interactivity, same
+    as the Claims dialog's cards). Renders in whatever order `claims` is already sorted in -- see
+    page_ticker's own sort-by control. See page_ticker -- the one place this is used.
     """
     if not claims:
         st.caption("No claims yet.")
         return
+    summaries = _article_summaries()
     cards_html = []
     for c in claims:
         arrow = _DIRECTION_ARROW.get(c.direction, "➖")
@@ -394,14 +432,12 @@ def _render_claim_keep_cards(claims: list) -> None:
         context_html = (
             f'<div class="keep-card-context">{html.escape(c.context)}</div>' if c.context else ""
         )
-        # Native <details>/<summary> -- real click-to-expand with zero JS, since a card embedded
-        # in one big HTML block has no way to call back into Streamlit/Python the way a real
-        # st.button or st.dialog would. Only rendered if a summary is actually cached
-        # (finance.summarize) -- never generated on demand, that'd be a fresh LLM call per card.
-        # The whole card (not just a small "Article summary" line) is the <summary> element, so
-        # tapping anywhere on the card reveals it -- a much bigger, thumb-friendly target on mobile
-        # than a single line of text would be.
-        article_summary = get_cached_summary(c.source_link)
+        # Native <details>/<summary>, zero JS -- <details>'s own open/closed state is exactly the
+        # boolean a CSS flip needs (see [open] below), and a card embedded in one big HTML block
+        # has no way to call back into Streamlit/Python the way a real st.button would anyway.
+        # Only rendered if Stage A produced a summary for this article -- never generated on
+        # demand, that'd be a fresh LLM call per card.
+        article_summary = summaries.get(c.source_link)
         card_body = (
             f'<div class="keep-card-source">#{html.escape(c.source or "unknown")}</div>'
             f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
@@ -409,10 +445,19 @@ def _render_claim_keep_cards(claims: list) -> None:
             f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
         )
         if article_summary:
+            # A 3D flip, not an accordion drop-down: both faces are always in the DOM, stacked via
+            # CSS (position: absolute + backface-visibility: hidden), and [open] on the wrapping
+            # <details> rotates .keep-flip-inner 180deg -- so tapping the card turns it over to
+            # reveal the summary "behind" it, rather than pushing content down below it.
             cards_html.append(
-                f'<details class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">'
-                f"<summary>{card_body}</summary>"
-                f'<div class="keep-card-summary">\U0001f4f0 {html.escape(article_summary)}</div>'
+                f'<details class="keep-card-flip">'
+                f'<summary class="keep-flip-summary"><div class="keep-flip-inner">'
+                f'<div class="keep-card keep-flip-front" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
+                f'<div class="keep-card keep-flip-back" style="background:{_KEEP_CARD_BACKGROUND}">'
+                f'<div class="keep-card-summary-title">\U0001f4f0 Article summary</div>'
+                f'<div class="keep-card-summary">{html.escape(article_summary)}</div>'
+                f"</div>"
+                f"</div></summary>"
                 f"</details>"
             )
         else:
@@ -422,44 +467,82 @@ def _render_claim_keep_cards(claims: list) -> None:
     st.markdown(
         """
         <style>
-        .keep-grid { column-count: 1; column-gap: 1rem; }
-        @media (min-width: 640px) { .keep-grid { column-count: 2; } }
-        @media (min-width: 1100px) { .keep-grid { column-count: 3; } }
+        .keep-cols-1, .keep-cols-2, .keep-cols-3 { gap: 1rem; }
+        .keep-cols-1 { display: flex; flex-direction: column; }
+        .keep-cols-2, .keep-cols-3 { display: none; }
+        @media (min-width: 640px) {
+            .keep-cols-1 { display: none; }
+            .keep-cols-2 { display: flex; }
+        }
+        @media (min-width: 1100px) {
+            .keep-cols-2 { display: none; }
+            .keep-cols-3 { display: flex; }
+        }
+        .keep-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex: 1;
+            min-width: 0;
+        }
         .keep-card {
-            break-inside: avoid;
-            display: inline-block;
-            width: 100%;
             border-radius: 0.6rem;
             padding: 0.9rem 1rem;
-            margin-bottom: 1rem;
         }
-        /* details-flavored cards (a cached summary exists) are tap/click-to-reveal on the whole
-           card -- <summary> covers all the always-visible content, so any tap on it toggles. */
-        details.keep-card { cursor: pointer; }
-        details.keep-card summary { list-style: none; }
-        details.keep-card summary::-webkit-details-marker { display: none; }
-        details.keep-card summary::marker { content: ""; }
         .keep-card-source { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.3rem; }
         .keep-card-claim { font-size: 0.92rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.4rem; }
         .keep-card-context { font-size: 0.82rem; opacity: 0.85; line-height: 1.4; margin-bottom: 0.5rem; }
         .keep-card-meta { font-size: 0.72rem; opacity: 0.65; }
-        .keep-card-summary { margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.85; line-height: 1.4; cursor: default; }
+
+        /* Flip cards -- a cached summary exists, tap/click turns the whole card over. Both faces
+           sit in the DOM at all times (see keep-flip-front/back below); [open] on <details> is
+           the only state, toggled purely by the browser's native <summary> click handling. */
+        details.keep-card-flip summary { list-style: none; cursor: pointer; display: block; }
+        details.keep-card-flip summary::-webkit-details-marker { display: none; }
+        details.keep-card-flip summary::marker { content: ""; }
+        .keep-flip-summary { perspective: 1200px; }
+        .keep-flip-inner {
+            position: relative;
+            width: 100%;
+            transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        details[open] .keep-flip-inner { transform: rotateY(180deg); }
+        .keep-flip-front, .keep-flip-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .keep-flip-front { position: relative; }
+        .keep-flip-back {
+            position: absolute;
+            inset: 0;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        .keep-card-summary-title { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.4rem; }
+        .keep-card-summary { font-size: 0.8rem; opacity: 0.85; line-height: 1.4; }
         </style>
         """,
         unsafe_allow_html=True,
     )
-    st.markdown(f'<div class="keep-grid">{"".join(cards_html)}</div>', unsafe_allow_html=True)
+    grid_html = (
+        _keep_cols_html(cards_html, 1, "keep-cols-1")
+        + _keep_cols_html(cards_html, 2, "keep-cols-2")
+        + _keep_cols_html(cards_html, 3, "keep-cols-3")
+    )
+    st.markdown(grid_html, unsafe_allow_html=True)
 
 
 @st.dialog("Claims", width="medium")
 def _claims_dialog(ticker: str, claims: list) -> None:
     """Experimental alternative to nested expanders: every claim for `ticker`
     shown as its own card in a scrollable modal, closeable without losing
-    your place in the Theses list underneath. Shows the source article's AI
-    summary if one's already cached (finance.summarize, e.g. from browsing
-    the This Week tab) -- never generates one on demand, that'd be a fresh
-    LLM call just to populate a claim card.
+    your place in the Theses list underneath. Shows the source article's own
+    Stage A summary if it has one (see _article_summaries) -- never
+    generates one on demand, that'd be a fresh LLM call just to populate a
+    claim card.
     """
+    summaries = _article_summaries()
     n_long = sum(1 for c in claims if c.direction == "long")
     n_short = sum(1 for c in claims if c.direction == "short")
     st.caption(
@@ -499,7 +582,7 @@ def _claims_dialog(ticker: str, claims: list) -> None:
                     "Not specific/actionable enough to size a trade on -- recorded as evidence "
                     "for the ticker's overall thesis only."
                 )
-            article_summary = get_cached_summary(c.source_link)
+            article_summary = summaries.get(c.source_link)
             if article_summary:
                 st.caption(f"\U0001f4f0 Summary of article: {_md(article_summary)}")
 
