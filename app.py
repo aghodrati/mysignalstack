@@ -45,7 +45,6 @@ from finance.momentum import (
     top_n_momentum_weight_func,
 )
 from finance.loop_a_config import ticker_sectors, tracked_universe
-from finance.news import NEWS_SOURCES, get_all_news
 from finance.newsloop import CONCENTRATION_PROFILES, HORIZON_PROFILES, RISK_PROFILES, RULE_NAME
 from finance.overnight import decompose_returns, summarize as summarize_overnight
 from finance.panel import FACTOR_COLUMNS as PANEL_FACTOR_COLUMNS
@@ -79,7 +78,7 @@ from finance.ranking import (
     composite_score,
     percentile_rank_table,
 )
-from finance.summarize import get_cached_summary, has_api_key, summarize_article
+from finance.summarize import get_cached_summary
 from finance.thesis import open_positions
 from finance.tickerthesis import list_tickers_with_thesis, load_ticker_thesis
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
@@ -2950,40 +2949,6 @@ def render_weekly_tab() -> None:
     else:
         st.caption("No insider filings of at least $100k in this universe over the last 7 days.")
 
-    st.divider()
-    st.subheader("Semiconductor news")
-    ai_summaries_on = has_api_key()
-    st.caption(
-        "Last 7 days from " + ", ".join(name for name, _ in NEWS_SOURCES) + (
-            " -- AI-summarized (OpenRouter free tier), falling back to the source's own teaser if a "
-            "summary isn't available." if ai_summaries_on else " (source's own teaser -- no OPENROUTER_API_KEY configured for AI summaries)."
-        )
-    )
-    with st.spinner("Fetching news..."):
-        news_df = get_all_news(refresh=weekly_refresh)
-    recent_news = news_df[news_df["published"] >= window_start] if not news_df.empty else news_df
-    if recent_news.empty:
-        st.caption("No new articles in the last 7 days.")
-    else:
-        blocks = []
-        for row in recent_news.itertuples():
-            meta_bits = [row.source]
-            if row.author:
-                meta_bits.append(row.author)
-            meta_bits.append(row.published.strftime("%Y-%m-%d"))
-            text, is_ai = row.summary, False
-            if ai_summaries_on:
-                ai_text = summarize_article(row.link, row.title, row.content)
-                if ai_text:
-                    text, is_ai = ai_text, True
-
-            block = f"**[{row.title}]({row.link})**  \n*{' · '.join(meta_bits)}*"
-            if text:
-                block += f"\n\n{text}"
-                if is_ai:
-                    block += "\n\n🤖 *AI summary*"
-            blocks.append(block)
-        st.markdown("\n\n---\n\n".join(blocks))
 
 
 PANEL_CSV_PATH = "output/panel.csv"

@@ -81,6 +81,22 @@ def get_cached_summary(link: str) -> str | None:
     return None
 
 
+def cache_summary(link: str, summary: str) -> None:
+    """Stores a summary produced elsewhere (Stage A's own classifier prompt, see
+    finance.newsloop.extract_event's "summary" field) into this same shared cache, so
+    get_cached_summary finds it without this module ever having made its own LLM call for it.
+    First writer wins (no-ops if `link` is already cached) -- a re-run over the permanent article
+    archive (e.g. finance.newsloop's backfill sweep) should never overwrite an existing summary.
+    """
+    if not summary:
+        return
+    cache = _load_cache()
+    if link in cache:
+        return
+    cache[link] = _normalize_text(summary)
+    _save_cache(cache)
+
+
 def summarize_article(link: str, title: str, html_content: str) -> str | None:
     """A 2-3 sentence summary of one article, cached by link. Returns None
     (never raises) if there's no API key configured, every candidate model's

@@ -92,6 +92,7 @@ from finance.loop_a_config import (
 )
 from finance.news import SEC_8K_SOURCE_PREFIX, fetch_full_page_text, get_news_from_sources, get_sec_8k_news
 from finance.portfolio import append_trade, current_state, execution_price, load_meta, rule_positions
+from finance.summarize import cache_summary
 from finance.thesis import Position, append_closed, append_created, open_positions
 from finance.tickerthesis import (
     TickerThesis,
@@ -375,7 +376,9 @@ def _extract_json(text: str) -> dict | None:
         return None
 
 
-_EVENT_REQUIRED_FIELDS = {"event", "companies", "event_type", "importance", "time_horizon", "key_facts", "type", "novel"}
+_EVENT_REQUIRED_FIELDS = {
+    "event", "companies", "event_type", "importance", "time_horizon", "key_facts", "type", "novel", "summary",
+}
 
 
 def extract_event(
@@ -424,7 +427,10 @@ def extract_event(
         f'"type": "news" or "analysis" (news = reporting a discrete event/fact; analysis = '
         f"commentary/opinion/synthesis), "
         f'"novel": true/false (genuinely new information, not a rehash of something already '
-        f"widely known/priced in)}}"
+        f"widely known/priced in), "
+        f'"summary": "a general one-paragraph (2-4 sentence) summary of the article as a whole, for '
+        f"a reader who hasn't read it -- write this regardless of which companies above are "
+        f'affected or how important the article is, purely a neutral summary of what it says"}}'
     )
 
     raw = complete(prompt, max_tokens=1500, **llm_config())
@@ -450,6 +456,8 @@ def extract_event(
         data["time_horizon"] = "months"
     if data["type"] not in ARTICLE_TYPES:
         data["type"] = "news"
+    if not isinstance(data["summary"], str):
+        data["summary"] = ""
     try:
         data["importance"] = max(0, min(10, int(data["importance"])))
     except (TypeError, ValueError):
@@ -836,6 +844,8 @@ def _backfill_new_tickers(
                 event = extract_event(entry["title"], entry["text"], universe_map, article_date, debug=verbose)
                 if event is None:
                     continue
+                if event.get("summary"):
+                    cache_summary(link, event["summary"])
                 entry["event"] = event
                 _save_events(events_cache)
                 if ticker not in event["companies"] or not event["novel"] or event["importance"] < IMPORTANCE_MIN:
@@ -1009,6 +1019,11 @@ def update_research(
                     if verbose:
                         print(f"    [Stage A] classifying: {title[:60]}")
                     event = extract_event(title, article_text, universe_map, article_date, debug=verbose)
+                if event is not None and event.get("summary"):
+                    # Feeds finance.summarize's shared cache from Stage A's own general summary,
+                    # so claim cards (get_cached_summary) have one for every article Stage A ever
+                    # looks at, not just ones separately browsed in a summary-generating UI.
+                    cache_summary(row.link, event["summary"])
                 # Permanent global archive, independent of finance.news's rolling RSS cache
                 # (which is just a rolling window of whatever the feed currently contains --
                 # an old article can scroll out of it and disappear) -- keeps the full text
