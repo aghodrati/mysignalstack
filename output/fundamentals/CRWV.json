@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.68,
+    "summary": "CRWV offers exceptional reported growth of 112.5% and constructive analyst sentiment, including an estimated 36.1% upside, but the valuation is demanding at 13.7x forward revenue and the company remains loss-making on an operating-margin basis. The unusually high 91.1% FCF margin appears inconsistent with negative operating margins and should be validated, while substantial insider selling adds caution despite positive institutional flows.",
+    "key_changes": [],
+    "risks": [
+      "High valuation leaves limited room for execution shortfalls or growth deceleration.",
+      "Negative operating margin and a negative forward P/E indicate unproven earnings profitability.",
+      "The reported FCF margin is unusually high relative to operating margins and may reflect nonrecurring or accounting-related factors.",
+      "Large insider selling could signal reduced management confidence or supply pressure.",
+      "Analyst fair value and positive revisions are consensus-based and may prove overly optimistic."
+    ],
+    "reasoning": "The exceptional growth and apparent upside support a bullish case, but rich valuation, unproven profitability, inconsistent cash-flow data, and insider selling make the fundamentals too mixed for a confident directional call.",
+    "fair_value_estimate": 143.25714,
+    "current_price": 105.26,
+    "implied_return_pct": 36.1,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 1.125
+      },
+      "Valuation": {
+        "forward_pe": -62.092236,
+        "ev_to_revenue": 13.719
+      },
+      "Quality": {
+        "operating_margin": -0.019030000000000002,
+        "fcf_margin": 0.9105401775297572
+      },
+      "Sentiment": {
+        "analyst_upside": 36.098365950978504,
+        "revisions_trend": 5.563909774436093,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 44.400999435,
+        "insider_flow": -1480896088.0,
+        "low_short_interest": -20.41
+      }
+    },
+    "trigger": "manual"
+  }
+]

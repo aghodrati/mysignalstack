@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.74,
+    "summary": "META shows strong underlying operating momentum, with 28% revenue growth, a 30.9% operating margin, and an exceptionally high 57.1% free-cash-flow margin. Valuation appears reasonable at 16.8x forward earnings with a PEG ratio below 1, while the roughly 30% consensus upside supports a constructive view despite declining earnings growth and weakening analyst revisions.",
+    "key_changes": [],
+    "risks": [
+      "Earnings growth is currently negative at -13.4%, creating a potential disconnect from strong revenue growth.",
+      "The negative revisions trend and lack of net upgrades could signal deteriorating near-term expectations.",
+      "Insider selling is a cautionary ownership signal, while the 6.7x EV-to-revenue valuation leaves room for multiple compression if growth slows."
+    ],
+    "reasoning": "The combination of strong growth, high margins, attractive earnings-based valuation, and substantial implied upside outweighs the negative earnings trajectory, revisions, and insider-flow signals, supporting a moderately confident long view.",
+    "fair_value_estimate": 759.40564,
+    "current_price": 584.63,
+    "implied_return_pct": 29.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.28,
+        "earnings_growth": -0.134
+      },
+      "Valuation": {
+        "forward_pe": 16.752144,
+        "peg_ratio": 0.8300000000000001,
+        "ev_to_revenue": 6.684
+      },
+      "Quality": {
+        "operating_margin": 0.30879,
+        "fcf_margin": 0.5708771839908303
+      },
+      "Sentiment": {
+        "analyst_upside": 29.895085780750218,
+        "revisions_trend": -0.35282258064516236,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.317500002500001,
+        "insider_flow": -202019380.0,
+        "low_short_interest": -1.72
+      }
+    },
+    "trigger": "manual"
+  }
+]

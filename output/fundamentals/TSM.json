@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.88,
+    "summary": "TSM presents a strong fundamental profile, combining 36% revenue growth, 77.4% earnings growth, exceptionally high operating and free-cash-flow margins, and a forward P/E near 19x. A PEG ratio below 1 and roughly 30% analyst-implied upside suggest the valuation is reasonable relative to growth, although the consensus fair value should be treated only as a directional anchor.",
+    "key_changes": [],
+    "risks": [
+      "The valuation still depends on continued elevated growth and could compress if semiconductor demand or earnings momentum normalizes.",
+      "TSM faces substantial geopolitical and supply-chain risk from its concentration in Taiwan.",
+      "Semiconductor cyclicality, customer concentration, and heavy capital requirements could pressure margins and free cash flow during a downturn.",
+      "Analyst upside and institutional flows are supportive but are not guarantees of future returns."
+    ],
+    "reasoning": "The combination of exceptional growth, profitability, cash generation, and growth-adjusted valuation supports a strong long view, with risks warranting some discount to maximum conviction.",
+    "fair_value_estimate": 540.20483,
+    "current_price": 415.575,
+    "implied_return_pct": 30.0,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.36,
+        "earnings_growth": 0.774
+      },
+      "Valuation": {
+        "forward_pe": 19.232382,
+        "peg_ratio": 0.98,
+        "ev_to_revenue": 3.233
+      },
+      "Quality": {
+        "operating_margin": 0.60344005,
+        "fcf_margin": 0.5933303319992628
+      },
+      "Sentiment": {
+        "analyst_upside": 29.989732298622407,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 5.7089999460000005,
+        "insider_flow": 346428,
+        "low_short_interest": -0.6900000000000001
+      }
+    },
+    "trigger": "manual"
+  }
+]

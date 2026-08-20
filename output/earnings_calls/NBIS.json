@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-08-20",
+    "transcript_date": "2026-08-19",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/08/19/nebius-nbis-q2-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.78,
+    "guidance_summary": "Management reaffirmed FY2026 revenue guidance of $3.0-$3.4 billion, ARR guidance of $7-$9 billion, approximately 40% group adjusted EBITDA margin, and CapEx guidance of $20-$25 billion. It also raised the year-end contracted power target to 5 gigawatts and expects to deploy more than 1 gigawatt of new capacity annually beginning in 2027.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On the delayed New Jersey/Vineland public hearing, management said the process was normal and expressed optimism for approval, but offered limited timing certainty; it emphasized that the switch to Bloom on-site power should not materially affect the timeline.",
+      "When asked whether debt markets and higher financing costs would force greater ATM equity or convertible issuance, the CFO avoided committing to a funding mix, emphasizing flexibility and saying the company was actively evaluating additional debt and equity-linked options.",
+      "On 2027 capacity allocation, management was unusually specific that it could sell all planned capacity today but is intentionally retaining some for shorter-duration contracts, citing $40-$50 million per megawatt pricing versus $20-$25 million for midterm contracts.",
+      "On the gap between connected power and revenue, management acknowledged that commissioning, cluster deployment, platform installation, and customer onboarding take several months, with 2026 connected-power guidance potentially contributing throughout the first half of 2027."
+    ],
+    "risks": [
+      "Execution and permitting risk could delay data-center capacity, particularly at the Vineland site and amid broader U.S. opposition and public debate over data centers.",
+      "Very high CapEx of $20-$25 billion for 2026 creates substantial funding and execution requirements; management may use additional debt, convertibles, or equity, creating leverage and dilution risk.",
+      "Connected power will not translate immediately into revenue because commissioning, GPU deployment, and customer onboarding create a multi-month lag.",
+      "The strategy relies on sustained AI compute demand and pricing, including premium short-term contracts; if pricing normalizes or customer commitments do not convert, expected 2027 economics could disappoint.",
+      "Capacity expansion depends on GPU availability, power procurement, construction, and deployment at gigawatt scale, creating significant operational concentration risk."
+    ],
+    "summary": "NBIS reported an exceptionally strong quarter, with revenue up 454% year over year to $582 million, 41% group adjusted EBITDA margin, $3 billion ARR, substantial customer prepayments, and multiple billion-dollar contracts. The Q&A reinforced strong demand and pricing power, while management presented short-term capacity deals, auctions, asset-light partnerships, and asset-backed financing as levers for higher returns and faster scaling. The bullish outlook is tempered by enormous CapEx needs, potential dilution or leverage, permitting and construction risk, and the lag between connected power and realized revenue."
+  }
+]

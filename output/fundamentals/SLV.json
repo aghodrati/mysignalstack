@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.5,
+    "summary": "No underlying growth, valuation, quality, or ownership data is available to establish a fundamental edge for SLV. Net analyst upgrades are flat, and no consensus fair value estimate is provided, so the current price of 61.51 offers no actionable valuation signal.",
+    "key_changes": [],
+    "risks": [
+      "Insufficient fundamental data limits confidence in any directional assessment.",
+      "Without a fair value estimate or operating metrics, SLV may be exposed to unassessed valuation and market risks.",
+      "As a silver-related vehicle, returns can be highly sensitive to silver prices, interest rates, the U.S. dollar, and investor flows."
+    ],
+    "reasoning": "Fundamentals are effectively unobservable here, so the absence of supporting evidence warrants a neutral view with low conviction.",
+    "fair_value_estimate": null,
+    "current_price": 61.51,
+    "implied_return_pct": null,
+    "factors": {
+      "Growth": {},
+      "Valuation": {},
+      "Quality": {},
+      "Sentiment": {
+        "net_upgrades": 0.0
+      },
+      "Ownership": {}
+    },
+    "trigger": "manual"
+  }
+]

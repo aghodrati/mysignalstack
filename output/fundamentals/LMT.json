@@ -1,0 +1,46 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "summary": "LMT presents a moderately attractive fundamental profile, combining strong 10.5% revenue growth, solid free-cash-flow generation, and a reasonable forward P/E of 17.8x with roughly 8.2% implied upside to the consensus fair value estimate. Positive revisions, net upgrades, and institutional buying support the view, although the very high reported earnings growth may reflect a favorable base effect and should be treated cautiously.",
+    "key_changes": [],
+    "risks": [
+      "Reported earnings growth may be unusually elevated or distorted by base effects and may not be sustainable.",
+      "Operating margins near 12% leave sensitivity to program execution, cost inflation, and defense-contract profitability.",
+      "Recent insider selling is a cautionary ownership signal.",
+      "The valuation is reasonable rather than deeply discounted, limiting downside protection if growth or estimates weaken.",
+      "Dependence on government defense budgets, procurement timing, and a concentrated contract base creates policy and execution risk."
+    ],
+    "reasoning": "The combination of healthy growth and cash generation, moderate valuation, constructive sentiment, and modest consensus upside supports a cautious long view, but mixed quality signals and execution risks keep conviction below high.",
+    "fair_value_estimate": 629.5263,
+    "current_price": 582.065,
+    "implied_return_pct": 8.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.105,
+        "earnings_growth": 4.438
+      },
+      "Valuation": {
+        "forward_pe": 17.793173,
+        "peg_ratio": 1.21,
+        "ev_to_revenue": 1.974
+      },
+      "Quality": {
+        "operating_margin": 0.11956999500000001,
+        "fcf_margin": 0.1350663505838611
+      },
+      "Sentiment": {
+        "analyst_upside": 8.15395187822665,
+        "revisions_trend": 4.761904761904762,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 8.79800000015,
+        "insider_flow": -14142284.0,
+        "low_short_interest": -1.6199999999999999
+      }
+    },
+    "trigger": "manual"
+  }
+]

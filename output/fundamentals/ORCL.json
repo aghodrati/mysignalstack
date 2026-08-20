@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.86,
+    "summary": "Oracle shows a strong fundamental profile, with roughly 20% revenue and earnings growth, a 36% operating margin, and an exceptionally high reported free-cash-flow margin. Valuation appears attractive on forward P/E and PEG, while the large analyst-implied upside and positive institutional flow reinforce the constructive view, although the EV-to-revenue multiple and insider selling warrant caution.",
+    "key_changes": [],
+    "risks": [
+      "The 8.16x EV-to-revenue valuation leaves less room for disappointment despite the low forward P/E and PEG ratio.",
+      "Very substantial reported insider selling could indicate executive concerns or create an overhang, even though institutional flows are positive.",
+      "Sustaining approximately 20% growth and the unusually high free-cash-flow margin may prove difficult as investment and competitive pressures evolve.",
+      "Analyst fair-value estimates and the implied 72% upside may be optimistic and should not be treated as a precise target."
+    ],
+    "reasoning": "The combination of strong growth, profitability, cash generation, and seemingly modest earnings-based valuation supports a long view with high, though not absolute, confidence.",
+    "fair_value_estimate": 248.14584,
+    "current_price": 144.09,
+    "implied_return_pct": 72.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.20600000000000002,
+        "earnings_growth": 0.219
+      },
+      "Valuation": {
+        "forward_pe": 13.231222,
+        "peg_ratio": 0.73,
+        "ev_to_revenue": 8.16
+      },
+      "Quality": {
+        "operating_margin": 0.36202,
+        "fcf_margin": 0.47473909336693304
+      },
+      "Sentiment": {
+        "analyst_upside": 72.21586508432229,
+        "revisions_trend": 0.36997885835095,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.812999896,
+        "insider_flow": -2763182523.0,
+        "low_short_interest": -2.91
+      }
+    },
+    "trigger": "manual"
+  }
+]

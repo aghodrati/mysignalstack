@@ -6,10 +6,7 @@ filings only -- earnings releases, guidance changes, M&A, leadership changes
 
 Mostly no scraping: standard RSS already gives a title, the feed's own short
 teaser, a full-content field, a link, and a date for free, no API key or
-per-article cost required. `finance.summarize` optionally turns the
-full-content field into a richer AI-generated summary; this module has no
-opinion on that and works fine without it (the feed's own `summary` field is
-always there as a fallback). The 8-K feeds are the exception: SEC's feed
+per-article cost required. The 8-K feeds are the exception: SEC's feed
 only gives a one-line filing-type blurb (e.g. "Item 5.02: Departure of
 Directors..."), not the filing's actual text -- that blurb is still useful
 as a "something material happened" signal, just much thinner than a

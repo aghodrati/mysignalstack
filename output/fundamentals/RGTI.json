@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.78,
+    "summary": "RGTI is exhibiting exceptionally high revenue growth, but that growth is paired with deeply negative operating and free-cash-flow margins and an extremely demanding valuation. A negative forward P/E and EV/revenue near 491 make the shares highly dependent on sustained execution and future profitability, while analyst upside is only a rough sentiment anchor rather than fundamental support.",
+    "key_changes": [],
+    "risks": [
+      "Revenue growth may not be durable or may reflect a very small base.",
+      "Persistent operating and free-cash-flow losses could require additional capital and shareholder dilution.",
+      "The extreme EV/revenue valuation leaves substantial downside if commercialization, technology development, or quantum-industry expectations disappoint.",
+      "Negative insider flow may indicate limited insider conviction, while analyst consensus can lag rapidly changing fundamentals."
+    ],
+    "reasoning": "Despite exceptional growth and positive institutional flow, the combination of severe losses and an extreme valuation implies a fundamentally unfavorable risk-reward profile.",
+    "fair_value_estimate": 29.64583,
+    "current_price": 16.735,
+    "implied_return_pct": 77.1,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 1.989
+      },
+      "Valuation": {
+        "forward_pe": -83.213165,
+        "ev_to_revenue": 490.572
+      },
+      "Quality": {
+        "operating_margin": -5.8979497,
+        "fcf_margin": -6.101038338658147
+      },
+      "Sentiment": {
+        "analyst_upside": 77.14867045115028,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 44.8989988305,
+        "insider_flow": -77200278,
+        "low_short_interest": -18.540001
+      }
+    },
+    "trigger": "manual"
+  }
+]

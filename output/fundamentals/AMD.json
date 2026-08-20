@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "summary": "AMD\u2019s fundamentals show strong momentum, with 37.8% revenue growth and 91.2% earnings growth, supported by substantial free-cash-flow generation and a rough 12.4% consensus upside. However, the valuation is demanding at roughly 37x forward earnings and 20.9x EV/revenue, while the 14.4% operating margin leaves limited room for execution disappointments.",
+    "key_changes": [],
+    "risks": [
+      "High valuation multiples leave the stock vulnerable to slower growth, weaker guidance, or multiple compression.",
+      "Operating margin is moderate relative to the company\u2019s premium valuation, creating execution and profitability risk.",
+      "Large negative insider flow may indicate some insider selling pressure or reduced alignment.",
+      "Consensus upside is only modest and should not be treated as a precise fair-value target."
+    ],
+    "reasoning": "The combination of exceptional growth, positive institutional flows, strong free cash flow, and modest estimated upside supports a long view, but elevated valuation and margin risks warrant only moderate conviction.",
+    "fair_value_estimate": 579.1064,
+    "current_price": 515.22,
+    "implied_return_pct": 12.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.378,
+        "earnings_growth": 0.912
+      },
+      "Valuation": {
+        "forward_pe": 37.019474,
+        "peg_ratio": 1.12,
+        "ev_to_revenue": 20.873
+      },
+      "Quality": {
+        "operating_margin": 0.14396,
+        "fcf_margin": 0.25965183015871646
+      },
+      "Sentiment": {
+        "analyst_upside": 12.399829199177038,
+        "revisions_trend": 0.0,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 12.067499836000001,
+        "insider_flow": -386507739.0,
+        "low_short_interest": -2.4500001
+      }
+    },
+    "trigger": "manual"
+  }
+]

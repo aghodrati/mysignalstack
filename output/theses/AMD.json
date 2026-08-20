@@ -31,50 +31,6 @@
     "claims_considered": 16
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "contradicts",
-    "thesis": "AMD\u2019s AI accelerator opportunity is expanding through hyperscaler deployments and improving software, but near-term returns are more likely constrained by persistent production distributed-inference gaps, limited internal validation capacity, and Helios execution and cost risks.",
-    "direction": "short",
-    "news_confidence": 0.62,
-    "fundamental_confidence": 0.36,
-    "blended_confidence": 0.516,
-    "fair_value_estimate": 579.1064,
-    "current_price": 515.22,
-    "implied_return_pct": 12.4,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.378,
-        "earnings_growth": 0.912
-      },
-      "Valuation": {
-        "forward_pe": 37.019474,
-        "peg_ratio": 1.12,
-        "ev_to_revenue": 20.873
-      },
-      "Quality": {
-        "operating_margin": 0.14396,
-        "fcf_margin": 0.25965183015871646
-      },
-      "Sentiment": {
-        "analyst_upside": 12.399829199177038,
-        "revisions_trend": 0.0,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 12.067499836000001,
-        "insider_flow": -386507739.0,
-        "low_short_interest": -2.4500001
-      }
-    },
-    "risks": [
-      "Robust revenue and earnings growth may justify the elevated forward valuation",
-      "A PEG ratio near 1.1 and 12.4% consensus upside suggest valuation is not clearly excessive relative to growth",
-      "Strong free-cash-flow generation and positive institutional flows could support continued fundamental momentum"
-    ],
-    "reasoning": "Although AMD\u2019s high EV-to-revenue multiple and modest operating margin provide some support for a short, strong growth, earnings acceleration, cash generation, and reasonable growth-adjusted valuation argue that fundamentals do not strongly validate the bearish direction."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -119,50 +75,6 @@
     ],
     "reasoning": "The evidence supports a Data Center-led long thesis with strong CPU fundamentals and credible late-2026 AI-system catalysts, but confidence is moderated by AMD\u2019s persistent CUDA/software gap, HBM constraints, hyperscaler custom silicon, and Helios execution risks.",
     "claims_considered": 100
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "AMD presents a moderately high-conviction long opportunity as accelerating Data Center growth, Epyc share gains, agentic-AI CPU demand, and Helios/Instinct adoption outweigh near-term HBM, software, execution, and custom-accelerator risks.",
-    "direction": "long",
-    "news_confidence": 0.79,
-    "fundamental_confidence": 0.68,
-    "blended_confidence": 0.746,
-    "fair_value_estimate": 579.1064,
-    "current_price": 515.22,
-    "implied_return_pct": 12.4,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.378,
-        "earnings_growth": 0.912
-      },
-      "Valuation": {
-        "forward_pe": 37.019474,
-        "peg_ratio": 1.12,
-        "ev_to_revenue": 20.873
-      },
-      "Quality": {
-        "operating_margin": 0.14396,
-        "fcf_margin": 0.25965183015871646
-      },
-      "Sentiment": {
-        "analyst_upside": 12.399829199177038,
-        "revisions_trend": 0.0,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 12.067499836000001,
-        "insider_flow": -386507739.0,
-        "low_short_interest": -2.4500001
-      }
-    },
-    "risks": [
-      "Premium valuation at roughly 37x forward earnings and 21x revenue leaves limited margin for execution disappointments or multiple compression.",
-      "Operating margin remains relatively modest despite strong growth, making profitability sensitive to product mix and competitive pricing.",
-      "Flat estimate revisions and substantial insider selling provide limited confirmation of further upside."
-    ],
-    "reasoning": "Exceptional revenue and earnings growth, strong free-cash-flow generation, and modest consensus upside support a long stance, but the elevated valuation and only moderate operating margin constrain conviction."
   },
   {
     "event": "critic",

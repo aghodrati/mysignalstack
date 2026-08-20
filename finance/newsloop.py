@@ -90,16 +90,11 @@ from finance.loop_a_config import (
     max_article_chars,
     tracked_universe,
 )
+from finance.fundamentals import refresh_fundamentals as refresh_fundamentals_fn
 from finance.news import SEC_8K_SOURCE_PREFIX, fetch_full_page_text, get_news_from_sources, get_sec_8k_news
 from finance.portfolio import append_trade, current_state, execution_price, load_meta, rule_positions
 from finance.thesis import Position, append_closed, append_created, open_positions
-from finance.tickerthesis import (
-    TickerThesis,
-    list_tickers_with_thesis,
-    load_ticker_thesis,
-    refresh_fundamentals,
-    update_ticker_thesis,
-)
+from finance.tickerthesis import TickerThesis, list_tickers_with_thesis, load_ticker_thesis, update_ticker_thesis
 from finance.xbrl import get_cik_map
 
 
@@ -117,7 +112,7 @@ CACHE_DIR = Path(__file__).resolve().parent.parent / "cache" / "thesis"
 # portfolio is asking, so it's wasteful (and costs Groq quota) to redo either per portfolio.
 EVENTS_CACHE_PATH = CACHE_DIR / "events.json"
 CLAIMS_ATTEMPTED_PATH = CACHE_DIR / "claims_attempted.json"
-# Tracks consecutive aggregation failures per ticker (aggregate_claims/fundamental_opinion returning
+# Tracks consecutive aggregation failures per ticker (aggregate_claims/fundamental_snapshot returning
 # nothing usable) -- lets the self-heal sweep in update_research back off a ticker that keeps failing
 # instead of blindly retrying it (2 real LLM calls) every single run forever. A ticker with a genuine
 # *new* claim always gets a fresh attempt regardless (see update_research) -- this only throttles
@@ -129,11 +124,11 @@ MAX_SELF_HEAL_RETRIES = 3
 # refresh per event, not one every run. Keyed on the earnings date itself (not a boolean) so a
 # *later* earnings event is always free to trigger again.
 EARNINGS_FUNDAMENTAL_CHECKS_PATH = CACHE_DIR / "earnings_fundamental_checks.json"
-# Fundamentals (compute_fundamental_factors + fundamental_opinion) are otherwise only refreshed as
+# Fundamentals (compute_fundamental_factors + fundamental_snapshot) are otherwise only refreshed as
 # a side effect of new news-driven claims -- a ticker with no news around its own earnings report
 # would go stale exactly when the underlying numbers are most likely to have moved. This forces a
 # refresh in a window around every scheduled/reported earnings date regardless of news.
-EARNINGS_WINDOW_BEFORE_DAYS = 2
+EARNINGS_WINDOW_BEFORE_DAYS = 1
 EARNINGS_WINDOW_AFTER_DAYS = 1
 
 RULE_NAME = "loop_a"
@@ -907,7 +902,9 @@ def _print_rate_limit_status() -> None:
 
 
 def update_research(
-    as_of: dt.date | None = None, verbose: bool = True, include_sec_8k: bool = False
+    as_of: dt.date | None = None, verbose: bool = True, include_sec_8k: bool = False,
+    refresh_fundamentals: bool = False, include_claims: bool = True,
+    news_source: str | None = None, fundamentals_ticker: str | None = None,
 ) -> dict:
     """Global, portfolio-independent research pass: Stage A -> Stage B ->
     ticker-thesis aggregation. Safe to call from every portfolio's
@@ -915,60 +912,175 @@ def update_research(
     third portfolio calling this the same day does no redundant LLM work
     beyond whatever's genuinely new since the last call.
 
+    `include_claims` (default True) gates the whole Stage A/B/C pass below --
+    False skips straight to the earnings-window/manual fundamentals sections,
+    for run_loop_a.py's --refresh-fundamental/--refresh-earning-call modes
+    where claims aren't wanted this run. `news_source` (only meaningful when
+    include_claims is True), if given, restricts the news fetch to just the
+    one active source with that name (config_loop_a.json's news_sources) --
+    run_loop_a.py's --source flag.
+
+    The earnings-window fundamentals check just below the Stage C loop always
+    runs regardless of `include_claims` -- it's cheap (skips instantly for
+    every ticker not currently in its own earnings window) and keeps
+    fundamentals from silently going stale around a report even on a
+    claims-only or earnings-call-only run.
+
+    `refresh_fundamentals` (default False, wired to run_loop_a.py's
+    --refresh-fundamental flag) additionally force-refreshes fundamentals
+    right now, on top of whatever the earnings-window trigger already does
+    automatically -- every tracked ticker, or just `fundamentals_ticker` if
+    given -- see the manual refresh pass near the end of this function.
+
     Returns a dict with "updated_tickers" (the set of tickers whose
     TickerThesis was actually updated this call), "claims_by_source_ticker"
     (every claim stored this call, trade-worthy or not, keyed by
     (source name, ticker) -> count), and "thesis_changes" (ticker ->
     {"before_confidence", "after_confidence", "direction"} for every ticker
     whose thesis was (re)aggregated this call) -- run_loop_a.py's end-of-run
-    summary is built from the latter two.
+    summary is built from the latter two. All empty when include_claims=False.
     """
     as_of = as_of or dt.date.today()
     if verbose:
         _print_rate_limit_status()
 
-    events_cache = _load_events()
-    claims_attempted = _load_claims_attempted()
-    universe_map = _universe_name_to_ticker()
-    tracked_company_pattern = _tracked_company_pattern(universe_map)
-    fetch_full_page_for = full_page_fetch_sources()
     updated_tickers: set[str] = set()
     claims_by_source_ticker: dict[tuple[str, str], int] = {}
+    thesis_changes: dict[str, dict] = {}
 
-    known_tickers = _load_known_universe_tickers()
-    newly_added = {t: n for t, n in tracked_universe().items() if t not in known_tickers}
-    if newly_added:
-        completed, backfill_touched, backfill_claims = _backfill_new_tickers(
-            events_cache, claims_attempted, universe_map, newly_added, as_of, verbose
+    if include_claims:
+        events_cache = _load_events()
+        claims_attempted = _load_claims_attempted()
+        universe_map = _universe_name_to_ticker()
+        tracked_company_pattern = _tracked_company_pattern(universe_map)
+        fetch_full_page_for = full_page_fetch_sources()
+
+        known_tickers = _load_known_universe_tickers()
+        newly_added = {t: n for t, n in tracked_universe().items() if t not in known_tickers}
+        if newly_added:
+            completed, backfill_touched, backfill_claims = _backfill_new_tickers(
+                events_cache, claims_attempted, universe_map, newly_added, as_of, verbose
+            )
+            if completed:
+                _save_known_universe_tickers(known_tickers | completed)
+            updated_tickers |= backfill_touched
+            for key, count in backfill_claims.items():
+                claims_by_source_ticker[key] = claims_by_source_ticker.get(key, 0) + count
+
+        sources = active_news_sources()
+        if news_source is not None:
+            sources = [(name, url) for name, url in sources if name.lower() == news_source.lower()]
+            if not sources and verbose:
+                print(f"No active news source named {news_source!r} -- nothing to fetch.")
+        # refresh=True -- finance.news's cache has no TTL/expiry (a feed once fetched is cached
+        # forever until something explicitly asks for a refresh), so without this Loop A would keep
+        # reprocessing whatever snapshot happened to be cached from its very first run, never seeing
+        # anything published since. Loop A is meant to run daily and see what's actually new, so every
+        # run refetches every source live.
+        articles = get_news_from_sources(sources, refresh=True)
+        if include_sec_8k:
+            tracked_tickers = sorted(set(universe_map.values()))
+            articles = pd.concat(
+                [articles, get_sec_8k_news(tracked_tickers, get_cik_map(), refresh=True)], ignore_index=True
+            )
+        # Skip anything older than 6 months -- a feed can carry a stale backlog entry (e.g. after a
+        # source is newly activated), and Stage A/B have no business spending a real LLM call
+        # classifying news that's no longer actionable. An article with no parseable published date
+        # is kept (falls back to as_of below), not dropped, since that's a feed-parsing gap, not staleness.
+        articles_cutoff = pd.Timestamp(as_of) - pd.DateOffset(months=6)
+        articles = articles[articles["published"].isna() | (articles["published"] >= articles_cutoff)]
+        # Grouped by source (config_loop_a.json's news_sources order; an 8-K filing's source starts
+        # with SEC_8K_SOURCE_PREFIX and always sorts last, after every real news source), newest first
+        # within each source -- rather than interleaving every source together purely by date, so a
+        # run works through one source's whole batch before moving to the next.
+        source_order = {name: i for i, (name, _url) in enumerate(sources)}
+        articles["_source_order"] = articles["source"].map(source_order).fillna(len(source_order))
+        articles = articles.sort_values(["_source_order", "published"], ascending=[True, False])
+        articles = articles.drop(columns="_source_order").reset_index(drop=True)
+        if verbose:
+            print(f"Research update: checking {len(articles)} article(s) as of {as_of.isoformat()}.")
+
+        updated_tickers, claims_by_source_ticker, thesis_changes = _run_claims_pipeline(
+            articles, events_cache, claims_attempted, universe_map, tracked_company_pattern,
+            fetch_full_page_for, as_of, verbose, updated_tickers, claims_by_source_ticker,
         )
-        if completed:
-            _save_known_universe_tickers(known_tickers | completed)
-        updated_tickers |= backfill_touched
-        for key, count in backfill_claims.items():
-            claims_by_source_ticker[key] = claims_by_source_ticker.get(key, 0) + count
 
-    sources = active_news_sources()
-    articles = get_news_from_sources(sources)
-    if include_sec_8k:
-        tracked_tickers = sorted(set(universe_map.values()))
-        articles = pd.concat([articles, get_sec_8k_news(tracked_tickers, get_cik_map())], ignore_index=True)
-    # Skip anything older than 6 months -- a feed can carry a stale backlog entry (e.g. after a
-    # source is newly activated), and Stage A/B have no business spending a real LLM call
-    # classifying news that's no longer actionable. An article with no parseable published date
-    # is kept (falls back to as_of below), not dropped, since that's a feed-parsing gap, not staleness.
-    articles_cutoff = pd.Timestamp(as_of) - pd.DateOffset(months=6)
-    articles = articles[articles["published"].isna() | (articles["published"] >= articles_cutoff)]
-    # Grouped by source (config_loop_a.json's news_sources order; an 8-K filing's source starts
-    # with SEC_8K_SOURCE_PREFIX and always sorts last, after every real news source), newest first
-    # within each source -- rather than interleaving every source together purely by date, so a
-    # run works through one source's whole batch before moving to the next.
-    source_order = {name: i for i, (name, _url) in enumerate(sources)}
-    articles["_source_order"] = articles["source"].map(source_order).fillna(len(source_order))
-    articles = articles.sort_values(["_source_order", "published"], ascending=[True, False])
-    articles = articles.drop(columns="_source_order").reset_index(drop=True)
-    if verbose:
-        print(f"Research update: checking {len(articles)} article(s) as of {as_of.isoformat()}.")
+    # Earnings-window fundamentals refresh: a ticker with no qualifying news around its own
+    # earnings report never gets its fundamentals reconsidered otherwise (fundamentals no longer
+    # refresh as a side effect of every new claim -- see update_ticker_thesis's own docstring) --
+    # but earnings is exactly when the underlying numbers most likely moved. Just a fresh
+    # standalone snapshot, stored in finance.fundamentals' own per-ticker file for display/next
+    # Stage C run -- doesn't touch thesis confidence itself. One refresh per earnings event
+    # (tracked by date, not a boolean), regardless of how many consecutive daily runs fall inside
+    # the window. Always runs regardless of include_claims -- cheap (an instant no-op for every
+    # ticker not currently in its own window) and shouldn't silently go stale on a claims-only or
+    # earnings-call-only run.
+    earnings_checks = _load_earnings_fundamental_checks()
+    for ticker in list_tickers_with_thesis():
+        earnings_date = _earnings_trigger_date(ticker, as_of)
+        if earnings_date is None:
+            continue
+        if earnings_checks.get(ticker) == earnings_date.isoformat():
+            continue
+        try:
+            fundamental = refresh_fundamentals_fn(ticker, as_of, trigger="earnings")
+            earnings_checks[ticker] = earnings_date.isoformat()
+            _save_earnings_fundamental_checks(earnings_checks)
+            if verbose:
+                if fundamental:
+                    print(
+                        f"  [earnings-fundamentals] {ticker}: refreshed around earnings "
+                        f"{earnings_date.isoformat()} (direction={fundamental['fundamental_direction']}, "
+                        f"confidence={fundamental['fundamental_confidence']:.0%})"
+                    )
+                else:
+                    print(f"  [earnings-fundamentals] {ticker}: refresh produced nothing usable")
+        except RateLimited as exc:
+            if verbose:
+                reason = f" ({exc.message})" if exc.message else ""
+                print(f"  [earnings-fundamentals] {ticker} -- rate limited{reason}, stopping here.")
+            break
 
+    # Manual, opt-in fundamentals refresh -- run_loop_a.py's --refresh-fundamental flag, for
+    # whenever you want fundamentals reconsidered right now rather than waiting for the earnings
+    # window. Every tracked ticker, or just `fundamentals_ticker` if given -- not restricted to
+    # tickers with a thesis already, since fundamentals are independent of whether Stage C has
+    # ever synthesized one.
+    if refresh_fundamentals:
+        targets = [fundamentals_ticker.upper()] if fundamentals_ticker else sorted(tracked_universe())
+        for ticker in targets:
+            try:
+                fundamental = refresh_fundamentals_fn(ticker, as_of, trigger="manual")
+                if verbose:
+                    if fundamental:
+                        print(
+                            f"  [fundamentals] {ticker}: refreshed (direction={fundamental['fundamental_direction']}, "
+                            f"confidence={fundamental['fundamental_confidence']:.0%})"
+                        )
+                    else:
+                        print(f"  [fundamentals] {ticker}: refresh produced nothing usable")
+            except RateLimited as exc:
+                if verbose:
+                    reason = f" ({exc.message})" if exc.message else ""
+                    print(f"  [fundamentals] {ticker} -- rate limited{reason}, stopping here.")
+                break
+
+    return {
+        "updated_tickers": updated_tickers,
+        "claims_by_source_ticker": claims_by_source_ticker,
+        "thesis_changes": thesis_changes,
+    }
+
+
+def _run_claims_pipeline(
+    articles, events_cache, claims_attempted, universe_map, tracked_company_pattern,
+    fetch_full_page_for, as_of, verbose, updated_tickers, claims_by_source_ticker,
+) -> tuple[set[str], dict[tuple[str, str], int], dict[str, dict]]:
+    """The Stage A/B per-article loop plus Stage C aggregation -- split out of update_research
+    purely so include_claims=False can skip straight past all of it without a giant indented
+    block. Takes/returns the same updated_tickers/claims_by_source_ticker accumulators
+    update_research already started (the new-ticker backfill sweep runs before this).
+    """
     for i, row in enumerate(articles.itertuples(index=False), 1):
         reset_usage_counter()  # measured per article -- includes Stage A (if not cached) + every Stage B call below
         title = _safe_text(row.title)
@@ -1120,41 +1232,7 @@ def update_research(
                 print(f"  [ticker-thesis] {ticker} -- rate limited{reason}, stopping here.")
             break
 
-    # Earnings-window fundamentals refresh: a ticker with no qualifying news around its own
-    # earnings report never gets its fundamentals reconsidered otherwise (fundamental_opinion
-    # is normally only a side effect of a new news-driven claim above) -- but earnings is exactly
-    # when the underlying numbers most likely moved. One refresh per earnings event (tracked by
-    # date, not a boolean), regardless of how many consecutive daily runs fall inside the window.
-    earnings_checks = _load_earnings_fundamental_checks()
-    for ticker in list_tickers_with_thesis():
-        earnings_date = _earnings_trigger_date(ticker, as_of)
-        if earnings_date is None:
-            continue
-        if earnings_checks.get(ticker) == earnings_date.isoformat():
-            continue
-        try:
-            tt = refresh_fundamentals(ticker, as_of)
-            earnings_checks[ticker] = earnings_date.isoformat()
-            _save_earnings_fundamental_checks(earnings_checks)
-            if verbose:
-                if tt:
-                    print(
-                        f"  [earnings-fundamentals] {ticker}: refreshed around earnings "
-                        f"{earnings_date.isoformat()} (confidence={tt.confidence:.0%})"
-                    )
-                else:
-                    print(f"  [earnings-fundamentals] {ticker}: refresh produced nothing usable")
-        except RateLimited as exc:
-            if verbose:
-                reason = f" ({exc.message})" if exc.message else ""
-                print(f"  [earnings-fundamentals] {ticker} -- rate limited{reason}, stopping here.")
-            break
-
-    return {
-        "updated_tickers": updated_tickers,
-        "claims_by_source_ticker": claims_by_source_ticker,
-        "thesis_changes": thesis_changes,
-    }
+    return updated_tickers, claims_by_source_ticker, thesis_changes
 
 
 def run_loop_a(
@@ -1162,6 +1240,10 @@ def run_loop_a(
     as_of: dt.date | None = None,
     verbose: bool = True,
     include_sec_8k: bool = False,
+    refresh_fundamentals: bool = False,
+    include_claims: bool = True,
+    news_source: str | None = None,
+    fundamentals_ticker: str | None = None,
 ) -> dict:
     """Two phases: first `update_research` -- global, shared, cached; then a
     thin, portfolio-specific, LLM-free trade-decision pass reacting to
@@ -1170,13 +1252,23 @@ def run_loop_a(
     one already held if its ticker-thesis no longer supports it. No position-
     size changes on reinforcement -- confidence moving up while already held
     doesn't add to the position, only a drop below the bar (or a direction
-    flip) closes it.
+    flip) closes it. This trade-decision pass always runs regardless of the
+    research-scoping params below -- it's LLM-free and just reacts to
+    whatever TickerThesis snapshots already exist.
+
+    `refresh_fundamentals`/`include_claims`/`news_source`/`fundamentals_ticker` are passed
+    straight through to update_research -- see its own docstring (run_loop_a.py's
+    --refresh-claims/--refresh-fundamental/--source/--ticker flags).
 
     Returns {"trades": [...], "research": update_research's own return dict}
     -- run_loop_a.py prints an end-of-run summary from "research".
     """
     as_of = as_of or dt.date.today()
-    research = update_research(as_of=as_of, verbose=verbose, include_sec_8k=include_sec_8k)
+    research = update_research(
+        as_of=as_of, verbose=verbose, include_sec_8k=include_sec_8k,
+        refresh_fundamentals=refresh_fundamentals, include_claims=include_claims,
+        news_source=news_source, fundamentals_ticker=fundamentals_ticker,
+    )
 
     strategy = _portfolio_strategy(portfolio_name)
     log: list[dict] = []

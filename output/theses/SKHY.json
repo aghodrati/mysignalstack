@@ -33,48 +33,6 @@
     "claims_considered": 16
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "SK Hynix remains strongly positioned for sustained earnings and pricing strength as HBM leadership, HBM4 mass shipments, constrained memory supply, and accelerating enterprise-SSD demand outweigh emerging commodity-DRAM and flash-substitution risks.",
-    "direction": "long",
-    "news_confidence": 0.93,
-    "fundamental_confidence": 0.84,
-    "blended_confidence": 0.8940000000000001,
-    "fair_value_estimate": 245.20824,
-    "current_price": 155.62,
-    "implied_return_pct": 57.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 2.568,
-        "earnings_growth": 12.736
-      },
-      "Valuation": {
-        "forward_pe": 4.841852,
-        "peg_ratio": 0.34,
-        "ev_to_revenue": -0.361
-      },
-      "Quality": {
-        "operating_margin": 0.76328003,
-        "fcf_margin": 0.6725323891700651
-      },
-      "Sentiment": {
-        "analyst_upside": 57.568590155506996,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 100.0
-      }
-    },
-    "risks": [
-      "Extremely strong margins and low forward valuation may reflect peak-cycle earnings and could compress sharply if memory pricing or HBM demand normalizes.",
-      "High customer concentration and dependence on a few hyperscale AI buyers create execution and demand-concentration risk.",
-      "Geopolitical tensions, export controls, and rapid technology transitions could disrupt HBM qualification, shipments, or addressable markets.",
-      "The negative EV-to-revenue figure and unusually high profitability measures suggest possible data-definition or accounting distortions, reducing valuation reliability."
-    ],
-    "reasoning": "Exceptional growth, profitability, cash generation, low forward P/E, and substantial implied upside strongly support a long position, although memory cyclicality, concentration, and potentially peak-cycle or noisy metrics prevent near-maximal confidence."
-  },
-  {
     "event": "critic",
     "date": "2026-08-19",
     "deterministic_flags": [],
@@ -85,5 +43,47 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.8940000000000001,
     "confidence_after": 0.8940000000000001
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-20",
+    "thesis": "SK Hynix remains a high-conviction long as constrained HBM capacity, HBM4 mass shipments, sold-out fabs, enterprise-SSD strength, and favorable memory pricing support sustained revenue and margin growth despite emerging custom-memory, conventional-DRAM, and valuation-quality risks.",
+    "direction": "long",
+    "confidence": 0.92,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.88,
+    "pre_critic_confidence": 0.92,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 30,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Continued AI-accelerator demand keeps HBM supply constrained and pricing elevated.",
+      "HBM4 mass shipments scale successfully and reinforce SK Hynix's AI-memory leadership.",
+      "Fabs remain sold out over the next 18 to 24 months, supporting HBM revenue and pricing.",
+      "Enterprise-SSD demand and tight NAND supply sustain NAND pricing and profitability.",
+      "CXMT capacity expansion fails to materially disrupt DRAM pricing over the next two years."
+    ],
+    "invalidation": [
+      "A sharp slowdown in AI-memory demand or customer migration to architectures requiring materially less HBM reduces utilization, pricing, or margins.",
+      "CXMT makes faster-than-expected progress into HBM or high-value server memory and materially pressures SK Hynix pricing.",
+      "Custom HBM4 and alternative stack-integration models divert opportunities because SK Hynix cannot provide sufficient design and manufacturing resources.",
+      "AMD's predictive flash-based memory extension materially reduces demand for conventional server DRAM.",
+      "NAND or DRAM capacity expansion triggers oversupply and a return of severe memory-market cyclicality.",
+      "Reported growth, margins, or forward valuation prove distorted by one-time items, accounting effects, an unusually low comparison base, or unreliable balance-sheet data, while growth normalizes materially."
+    ],
+    "reasoning": "The claims overwhelmingly support a durable AI-memory-led earnings upcycle, and the independent fundamental picture corroborates the long thesis through strong growth, margins, cash flow, and apparently inexpensive valuation, although data-quality and normalization risks limit confidence below certainty.",
+    "claims_considered": 19
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-20",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.92,
+    "confidence_after": 0.92
   }
 ]

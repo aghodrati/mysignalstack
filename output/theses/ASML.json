@@ -28,48 +28,6 @@
     "claims_considered": 1
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-18",
-    "assessment": "contradicts",
-    "thesis": "ASML faces a conditional long-term competitive risk if Huawei\u2019s non-EUV lithography approach succeeds, but the limited and non-trade-worthy evidence supports only a low-conviction bearish view.",
-    "direction": "short",
-    "news_confidence": 0.28,
-    "fundamental_confidence": 0.18,
-    "blended_confidence": 0.24,
-    "fair_value_estimate": 2140.0461,
-    "current_price": 1693.01,
-    "implied_return_pct": 26.4,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.213,
-        "earnings_growth": 0.28500000000000003
-      },
-      "Valuation": {
-        "forward_pe": 28.72925,
-        "peg_ratio": 1.98,
-        "ev_to_revenue": 991.974
-      },
-      "Quality": {
-        "operating_margin": 0.37057,
-        "fcf_margin": 0.32515462827416225
-      },
-      "Sentiment": {
-        "analyst_upside": 26.404811548661854,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 8.3284999355,
-        "low_short_interest": -0.33000002
-      }
-    },
-    "risks": [
-      "Strong revenue and earnings growth with exceptional operating and free-cash-flow margins could sustain premium valuation.",
-      "The implied 26.4% upside to consensus fair value and positive institutional flows weigh against a fundamentally supported short.",
-      "A forward P/E near 29 and PEG near 2 indicate valuation risk, but not enough by themselves to strongly support a short."
-    ],
-    "reasoning": "ASML's robust growth, profitability, shareholder demand, and substantial consensus upside outweigh its premium valuation, so the fundamentals argue clearly against the short direction."
-  },
-  {
     "event": "critic",
     "date": "2026-08-18",
     "deterministic_flags": [

@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.68,
+    "summary": "BRK-B shows strong business quality, with healthy operating and free-cash-flow margins, but underlying revenue growth is modest and the elevated earnings-growth figure may reflect a difficult-to-repeat base effect. At roughly 23.8x forward earnings with only about 2.2% implied upside to consensus fair value and no net analyst upgrades, valuation appears broadly full rather than clearly attractive. Positive institutional flows and low short interest are supportive, but insider selling and limited expected upside temper the case for a bullish fundamental stance.",
+    "key_changes": [],
+    "risks": [
+      "Modest revenue growth may constrain long-term earnings expansion.",
+      "The 119.6% earnings-growth rate may be unusually elevated and nonrecurring, making the PEG ratio of 10.06 a warning that valuation is demanding relative to sustainable growth.",
+      "Current valuation leaves limited margin of safety if earnings normalize or operating results disappoint.",
+      "Insurance underwriting losses, catastrophe exposure, investment-portfolio volatility, and succession or capital-allocation uncertainty could affect results.",
+      "Insider selling and stagnant analyst upgrade activity provide limited incremental fundamental support."
+    ],
+    "reasoning": "Solid margins and financial quality offset modest growth and a relatively full valuation, producing a neutral view with moderate conviction.",
+    "fair_value_estimate": 525.3333,
+    "current_price": 513.965,
+    "implied_return_pct": 2.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.044,
+        "earnings_growth": 1.196
+      },
+      "Valuation": {
+        "forward_pe": 23.826082,
+        "peg_ratio": 10.06,
+        "ev_to_revenue": -0.707
+      },
+      "Quality": {
+        "operating_margin": 0.14352,
+        "fcf_margin": 0.12121663878054308
+      },
+      "Sentiment": {
+        "analyst_upside": 2.21188213205179,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 14.497000060999998,
+        "insider_flow": -8179357.0,
+        "low_short_interest": -0.9599999500000002
+      }
+    },
+    "trigger": "manual"
+  }
+]

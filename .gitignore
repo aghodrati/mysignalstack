@@ -36,6 +36,10 @@ output/*
 !output/claims/**
 !output/theses/
 !output/theses/**
+!output/fundamentals/
+!output/fundamentals/**
+!output/earnings_calls/
+!output/earnings_calls/**
 !output/portfolios/
 !output/portfolios/**
 

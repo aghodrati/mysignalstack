@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.5,
+    "summary": "No underlying growth, valuation, quality, or ownership data is available, and there is no analyst fair-value estimate to establish a fundamental upside or downside anchor. Sentiment is neutral with net upgrades of 0, so the available evidence does not support a directional fundamental view.",
+    "key_changes": [],
+    "risks": [
+      "The absence of operating and valuation metrics makes intrinsic value difficult to assess.",
+      "Bitcoin remains exposed to regulatory changes, adoption uncertainty, network-security risks, and extreme price volatility.",
+      "At the current price of 72702.83, there is no independent fair-value estimate available to evaluate valuation support."
+    ],
+    "reasoning": "With all core fundamental factors unavailable and sentiment neutral, conviction is appropriately limited and the fundamentals alone imply a neutral stance.",
+    "fair_value_estimate": null,
+    "current_price": 72702.83,
+    "implied_return_pct": null,
+    "factors": {
+      "Growth": {},
+      "Valuation": {},
+      "Quality": {},
+      "Sentiment": {
+        "net_upgrades": 0.0
+      },
+      "Ownership": {}
+    },
+    "trigger": "manual"
+  }
+]

@@ -29,50 +29,6 @@
     "claims_considered": 3
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "TSM\u2019s mature, high-volume CoWoS leadership and direct-to-silicon liquid-cooling capabilities outweigh longer-term circular-wafer scaling constraints, supporting a cautiously bullish view.",
-    "direction": "long",
-    "news_confidence": 0.76,
-    "fundamental_confidence": 0.87,
-    "blended_confidence": 0.804,
-    "fair_value_estimate": 540.20483,
-    "current_price": 415.575,
-    "implied_return_pct": 30.0,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.36,
-        "earnings_growth": 0.774
-      },
-      "Valuation": {
-        "forward_pe": 19.232382,
-        "peg_ratio": 0.98,
-        "ev_to_revenue": 3.233
-      },
-      "Quality": {
-        "operating_margin": 0.60344005,
-        "fcf_margin": 0.5933303319992628
-      },
-      "Sentiment": {
-        "analyst_upside": 29.989732298622407,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 5.7089999460000005,
-        "insider_flow": 346428,
-        "low_short_interest": -0.6900000000000001
-      }
-    },
-    "risks": [
-      "High revenue and earnings growth may normalize from exceptionally elevated levels, making the forward valuation more demanding than it appears",
-      "Semiconductor demand remains cyclical and concentrated among a limited number of major customers",
-      "Taiwan geopolitical exposure and substantial capital-intensity create risks to cash-flow durability despite currently exceptional margins",
-      "A forward P/E near 19x leaves some sensitivity to estimate cuts if AI and advanced-node demand weakens"
-    ],
-    "reasoning": "Exceptional growth, industry-leading margins, strong free-cash-flow generation, reasonable PEG valuation, and roughly 30% indicated upside provide strong fundamental support for a long position, although cyclicality and concentration temper conviction."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [
@@ -123,50 +79,6 @@
     "claims_considered": 7
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-18",
-    "assessment": "supports",
-    "thesis": "TSM remains a high-conviction long because resilient AI infrastructure demand, advanced-node validation, and leading but increasingly scalable advanced-packaging capabilities should outweigh longer-term CoWoS wafer-utilization and package-size constraints.",
-    "direction": "long",
-    "news_confidence": 0.84,
-    "fundamental_confidence": 0.89,
-    "blended_confidence": 0.8600000000000001,
-    "fair_value_estimate": 540.20483,
-    "current_price": 415.575,
-    "implied_return_pct": 30.0,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.36,
-        "earnings_growth": 0.774
-      },
-      "Valuation": {
-        "forward_pe": 19.232382,
-        "peg_ratio": 0.98,
-        "ev_to_revenue": 3.233
-      },
-      "Quality": {
-        "operating_margin": 0.60344005,
-        "fcf_margin": 0.5933303319992628
-      },
-      "Sentiment": {
-        "analyst_upside": 29.989732298622407,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 5.7089999460000005,
-        "insider_flow": 346428,
-        "low_short_interest": -0.6900000000000001
-      }
-    },
-    "risks": [
-      "Taiwan geopolitical exposure and potential supply-chain disruption",
-      "Semiconductor cyclicality and the risk that elevated AI-related growth expectations normalize",
-      "High customer and industry concentration, including dependence on a limited number of leading chip designers",
-      "Large capital-expenditure requirements could pressure free cash flow if demand or technology transitions weaken"
-    ],
-    "reasoning": "Exceptional revenue and earnings growth, industry-leading margins, a reasonable PEG and forward P/E, and roughly 30% implied valuation upside strongly support the long direction despite meaningful geopolitical, cyclical, and concentration risks."
-  },
-  {
     "event": "critic",
     "date": "2026-08-18",
     "deterministic_flags": [],
@@ -215,49 +127,6 @@
     ],
     "reasoning": "The evidence is overwhelmingly bullish across near- and multi-year horizons, with record profitability, AI-led growth, advanced-node demand, and packaging advantages outweighing credible but mainly longer-dated execution, cash-flow, competitive, and geopolitical risks.",
     "claims_considered": 28
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "TSM remains a high-confidence long because accelerating AI infrastructure demand, strong advanced-node ramps, pricing power, and packaging leadership should support exceptional earnings growth despite capacity, capex, competition, and geopolitical risks.",
-    "direction": "long",
-    "news_confidence": 0.88,
-    "fundamental_confidence": 0.91,
-    "blended_confidence": 0.8920000000000001,
-    "fair_value_estimate": 540.20483,
-    "current_price": 415.575,
-    "implied_return_pct": 30.0,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.36,
-        "earnings_growth": 0.774
-      },
-      "Valuation": {
-        "forward_pe": 19.232382,
-        "peg_ratio": 0.98,
-        "ev_to_revenue": 3.233
-      },
-      "Quality": {
-        "operating_margin": 0.60344005,
-        "fcf_margin": 0.5933303319992628
-      },
-      "Sentiment": {
-        "analyst_upside": 29.989732298622407,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 5.7089999460000005,
-        "insider_flow": 346428,
-        "low_short_interest": -0.6900000000000001
-      }
-    },
-    "risks": [
-      "Exceptional recent earnings growth may normalize, making the PEG ratio less attractive if forward estimates are revised down.",
-      "The valuation remains sensitive to AI-related growth expectations and any compression in the semiconductor cycle multiple.",
-      "Consensus fair value and analyst upside may be overly dependent on optimistic long-term assumptions."
-    ],
-    "reasoning": "TSM\u2019s 36% revenue growth, 77% earnings growth, roughly 60% operating and free-cash-flow margins, and reasonable 19x forward P/E with a sub-1 PEG strongly support the long thesis, while the indicated 30% upside provides additional valuation backing."
   },
   {
     "event": "critic",

@@ -1,0 +1,39 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.45,
+    "summary": "The fundamental picture is mixed and difficult to underwrite: OKLO has a deeply negative forward P/E and zero operating margin, while growth data is unavailable, indicating an unprofitable business with limited demonstrated operating performance. The roughly 100% analyst-implied upside and positive institutional flow are constructive, but they are offset by substantial insider selling and the absence of earnings-based valuation support.",
+    "key_changes": [],
+    "risks": [
+      "Continued operating losses and lack of positive margins could require substantial future capital.",
+      "The negative forward P/E makes conventional earnings-based valuation unavailable and increases sensitivity to execution and financing assumptions.",
+      "Large insider selling may signal reduced insider conviction or create supply overhang.",
+      "Analyst fair-value estimates may rely heavily on long-term commercialization assumptions and may not be reliable for a pre-profit company.",
+      "Unavailable growth data limits confidence in assessing the underlying trajectory."
+    ],
+    "reasoning": "Neutral is appropriate because optimistic analyst and institutional signals are outweighed by unprofitable operations, insider selling, and insufficient growth data, leaving no strong fundamentals-only directional edge.",
+    "fair_value_estimate": 84.2,
+    "current_price": 42.17,
+    "implied_return_pct": 99.7,
+    "factors": {
+      "Growth": {},
+      "Valuation": {
+        "forward_pe": -49.988735
+      },
+      "Quality": {
+        "operating_margin": 0.0
+      },
+      "Sentiment": {
+        "analyst_upside": 99.66801043395779,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 30.17950008,
+        "insider_flow": -718916100.0,
+        "low_short_interest": -18.39
+      }
+    },
+    "trigger": "manual"
+  }
+]

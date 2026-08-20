@@ -53,7 +53,7 @@ def critic_review(
 ) -> dict | None:
     """One LLM call: red-teams `thesis` against the same claims Stage C used
     to produce it. Never raises for a genuine parse failure (returns None,
-    same fallback as finance.fundamentals.fundamental_opinion -- callers
+    same fallback as finance.fundamentals.fundamental_snapshot -- callers
     should fall back to the deterministic guardrails alone). Raises
     RateLimited (propagated from finance.llm.complete) if every model is
     currently out of quota, same as every other Stage call.

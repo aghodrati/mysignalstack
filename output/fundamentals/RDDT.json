@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.79,
+    "summary": "RDDT shows a strong fundamental profile, with 61.1% revenue growth, 177.8% earnings growth, a 28.8% operating margin, and a 36.9% free-cash-flow margin. Valuation appears reasonable relative to growth at 16.7x forward earnings and a 1.01 PEG ratio, while the consensus fair value implies meaningful upside, though negative revisions and substantial insider selling temper conviction.",
+    "key_changes": [],
+    "risks": [
+      "Negative analyst revision momentum could signal emerging concerns about growth, profitability, or forward guidance.",
+      "The 9.7x enterprise-value-to-revenue multiple leaves the stock sensitive to any slowdown in growth or margin expansion.",
+      "Large insider selling may indicate reduced internal conviction or create supply pressure.",
+      "The business may face volatility from advertising demand, user engagement trends, platform moderation costs, and competition for digital ad budgets."
+    ],
+    "reasoning": "The combination of exceptional growth, strong margins, attractive growth-adjusted valuation, and apparent upside supports a long view, but deteriorating revisions and insider selling keep confidence below the highest level.",
+    "fair_value_estimate": 218.16667,
+    "current_price": 160.82,
+    "implied_return_pct": 35.7,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.611,
+        "earnings_growth": 1.778
+      },
+      "Valuation": {
+        "forward_pe": 16.700174,
+        "peg_ratio": 1.01,
+        "ev_to_revenue": 9.716
+      },
+      "Quality": {
+        "operating_margin": 0.28788,
+        "fcf_margin": 0.3692537969307644
+      },
+      "Sentiment": {
+        "analyst_upside": 35.658916801392884,
+        "revisions_trend": -0.9191176470588203,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 15.591499975000003,
+        "insider_flow": -232130975.0,
+        "low_short_interest": -11.74
+      }
+    },
+    "trigger": "manual"
+  }
+]

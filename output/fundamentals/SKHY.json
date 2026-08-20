@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.88,
+    "summary": "SKHY presents a strongly favorable fundamental profile, combining exceptionally high reported revenue growth with solid earnings growth, very high operating and free-cash-flow margins, and seemingly inexpensive forward valuation. The analyst fair-value anchor implies substantial upside, while the negative EV-to-revenue figure is anomalous and reduces confidence in the valuation data's reliability.",
+    "key_changes": [],
+    "risks": [
+      "Reported growth and margin figures may be distorted by one-time items, acquisitions, accounting effects, or an unusually low comparison base.",
+      "The negative EV-to-revenue value is economically unusual and suggests possible data-quality or balance-sheet-definition issues.",
+      "Consensus fair value and analyst upside may be overly optimistic and should not be treated as a precise target.",
+      "Very high current growth may normalize, potentially undermining the low forward P/E and PEG-based valuation case."
+    ],
+    "reasoning": "The combination of strong growth, exceptional profitability, low apparent valuation, and positive directional sentiment supports a long view, though anomalous valuation data warrants some caution.",
+    "fair_value_estimate": 245.20824,
+    "current_price": 155.62,
+    "implied_return_pct": 57.6,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 2.568,
+        "earnings_growth": 12.736
+      },
+      "Valuation": {
+        "forward_pe": 4.841852,
+        "peg_ratio": 0.34,
+        "ev_to_revenue": -0.361
+      },
+      "Quality": {
+        "operating_margin": 0.76328003,
+        "fcf_margin": 0.6725323891700651
+      },
+      "Sentiment": {
+        "analyst_upside": 57.568590155506996,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 100.0
+      }
+    },
+    "trigger": "manual"
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.72,
+    "summary": "NBIS shows modest revenue growth and slightly positive free-cash-flow margin, but remains operationally loss-making with a -32.1% operating margin. The valuation is exceptionally demanding at roughly 62x revenue and a negative forward P/E, making the 17.4% consensus upside an insufficient fundamental offset without much stronger growth or a clear path to profitability.",
+    "key_changes": [],
+    "risks": [
+      "High valuation leaves substantial downside if growth, margins, or execution disappoint.",
+      "Operating losses indicate that profitability and cash generation are not yet well established.",
+      "Large negative insider flow may indicate selling pressure or reduced insider conviction.",
+      "Revenue growth of 6.8% appears modest relative to the premium EV-to-revenue multiple.",
+      "Consensus fair value and the PEG ratio may be unreliable while earnings remain negative."
+    ],
+    "reasoning": "The combination of extreme valuation and deeply negative operating margins outweighs modest growth, positive free cash flow, and mildly constructive analyst and institutional sentiment.",
+    "fair_value_estimate": 256.0,
+    "current_price": 217.97,
+    "implied_return_pct": 17.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 6.839
+      },
+      "Valuation": {
+        "forward_pe": -135.09895,
+        "peg_ratio": 0.63,
+        "ev_to_revenue": 62.263
+      },
+      "Quality": {
+        "operating_margin": -0.32080000000000003,
+        "fcf_margin": 3.235334239058326
+      },
+      "Sentiment": {
+        "analyst_upside": 17.447355140615684,
+        "revisions_trend": 1.1111111111111183,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 27.592999450000004,
+        "insider_flow": -158237228.0,
+        "low_short_interest": -28.000000000000004
+      }
+    },
+    "trigger": "manual"
+  }
+]

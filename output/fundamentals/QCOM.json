@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "summary": "Qualcomm presents a moderately attractive fundamental setup: revenue and earnings are contracting, but the stock trades at a reasonable forward P/E with a favorable PEG ratio, strong free-cash-flow generation, and an implied 23.5% upside to consensus fair value. Positive institutional flows and limited short interest support the case, although recent operating weakness and negative insider activity temper conviction.",
+    "key_changes": [],
+    "risks": [
+      "Revenue and earnings declines could persist or worsen, reducing the reliability of valuation-based upside.",
+      "Competitive pressure, smartphone market weakness, and customer concentration could pressure margins and royalties.",
+      "Negative insider flow may indicate reduced management or insider confidence.",
+      "Consensus fair value estimates may prove optimistic if growth fails to reaccelerate."
+    ],
+    "reasoning": "The attractive valuation, strong cash-flow margin, institutional support, and potential upside outweigh the current growth weakness, supporting a long bias with moderate confidence.",
+    "fair_value_estimate": 196.26666,
+    "current_price": 158.9816,
+    "implied_return_pct": 23.5,
+    "factors": {
+      "Growth": {
+        "revenue_growth": -0.04,
+        "earnings_growth": -0.23
+      },
+      "Valuation": {
+        "forward_pe": 15.441013,
+        "peg_ratio": 0.63,
+        "ev_to_revenue": 3.675
+      },
+      "Quality": {
+        "operating_margin": 0.18528000000000003,
+        "fcf_margin": 0.28139963879653496
+      },
+      "Sentiment": {
+        "analyst_upside": 23.45243726318016,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 36.485499989,
+        "insider_flow": -57207168.0,
+        "low_short_interest": -3.83
+      }
+    },
+    "trigger": "manual"
+  }
+]

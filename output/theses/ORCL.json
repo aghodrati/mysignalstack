@@ -26,50 +26,6 @@
     "claims_considered": 3
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "contradicts",
-    "thesis": "Oracle\u2019s AI-datacenter opportunity is outweighed by severe execution delays and weaker monetization versus leading competitors, creating a bearish near-to-medium-term setup.",
-    "direction": "short",
-    "news_confidence": 0.86,
-    "fundamental_confidence": 0.1,
-    "blended_confidence": 0.556,
-    "fair_value_estimate": 248.14584,
-    "current_price": 144.09,
-    "implied_return_pct": 72.2,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.20600000000000002,
-        "earnings_growth": 0.219
-      },
-      "Valuation": {
-        "forward_pe": 13.231222,
-        "peg_ratio": 0.73,
-        "ev_to_revenue": 8.16
-      },
-      "Quality": {
-        "operating_margin": 0.36202,
-        "fcf_margin": 0.47473909336693304
-      },
-      "Sentiment": {
-        "analyst_upside": 72.21586508432229,
-        "revisions_trend": 0.36997885835095,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.812999896,
-        "insider_flow": -2763182523.0,
-        "low_short_interest": -2.91
-      }
-    },
-    "risks": [
-      "EV-to-revenue of 8.16 leaves limited valuation support if growth decelerates",
-      "Large insider selling may signal reduced management conviction",
-      "Consensus fair value and PEG-based attractiveness depend on estimates that could prove too optimistic"
-    ],
-    "reasoning": "Strong 20.6% revenue growth, 21.9% earnings growth, robust operating and free-cash-flow margins, a 13.2x forward P/E, 0.73 PEG, positive revisions, and substantial implied upside fundamentally argue against a short thesis."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -119,51 +75,6 @@
     ],
     "reasoning": "Although the backlog, OCI demand, and utilization provide meaningful long-term upside, the higher-importance evidence points to a nearer-term combination of delayed capacity, pressured profitability, debt-funded expansion, weak relative monetization, and customer concentration risk.",
     "claims_considered": 13
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "contradicts",
-    "thesis": "Oracle\u2019s substantial AI backlog and OCI growth opportunity are outweighed near term by datacenter delays, heavy financing needs, uncertain monetization, and execution dependence on OpenAI, making the risk-reward bearish.",
-    "direction": "short",
-    "news_confidence": 0.86,
-    "fundamental_confidence": 0.14,
-    "blended_confidence": 0.5720000000000001,
-    "fair_value_estimate": 248.14584,
-    "current_price": 144.09,
-    "implied_return_pct": 72.2,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.20600000000000002,
-        "earnings_growth": 0.219
-      },
-      "Valuation": {
-        "forward_pe": 13.231222,
-        "peg_ratio": 0.73,
-        "ev_to_revenue": 8.16
-      },
-      "Quality": {
-        "operating_margin": 0.36202,
-        "fcf_margin": 0.47473909336693304
-      },
-      "Sentiment": {
-        "analyst_upside": 72.21586508432229,
-        "revisions_trend": 0.36997885835095,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.812999896,
-        "insider_flow": -2763182523.0,
-        "low_short_interest": -2.91
-      }
-    },
-    "risks": [
-      "Strong revenue and earnings growth could sustain upside despite near-term infrastructure concerns",
-      "Robust operating and free-cash-flow margins provide financial resilience for investment and financing needs",
-      "Forward P/E of 13.2 and PEG of 0.73 suggest valuation is not demanding relative to growth",
-      "Analyst fair value implies substantial upside, while positive revisions and institutional buying reinforce support"
-    ],
-    "reasoning": "The company\u2019s strong growth, profitability, cash generation, and relatively modest growth-adjusted valuation fundamentally argue against rather than support a short position, despite execution and financing risks."
   },
   {
     "event": "critic",

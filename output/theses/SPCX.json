@@ -29,47 +29,6 @@
     "claims_considered": 6
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "SPCX\u2019s datacenter opportunity could be transformative, but the highly speculative 10GW-by-2027 plan carries greater near-term execution and financing risk than the evidence supports, favoring a cautious short view.",
-    "direction": "short",
-    "news_confidence": 0.58,
-    "fundamental_confidence": 0.67,
-    "blended_confidence": 0.616,
-    "fair_value_estimate": 223.0,
-    "current_price": 113.82,
-    "implied_return_pct": 95.9,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.154
-      },
-      "Valuation": {
-        "forward_pe": 124.924545,
-        "ev_to_revenue": 38.372
-      },
-      "Quality": {
-        "operating_margin": -0.41627997,
-        "fcf_margin": 0.3681156542289117
-      },
-      "Sentiment": {
-        "analyst_upside": 95.92338780530663,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 100.0,
-        "insider_flow": -1199572.0,
-        "low_short_interest": -2.6700001
-      }
-    },
-    "risks": [
-      "Positive free-cash-flow margin suggests the business may be generating substantial cash despite reported operating losses, potentially reducing financing risk.",
-      "Consensus fair value implies significant upside, and institutional buying alongside low short interest provides signals that the market may see fundamental support for the shares.",
-      "Revenue growth of 15.4% offers a credible foundation for future operating leverage if datacenter expansion succeeds."
-    ],
-    "reasoning": "Extreme valuation multiples and a deeply negative operating margin materially support a short, although positive reported free cash flow, meaningful growth, and bullish consensus create countervailing fundamental risks."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [
@@ -119,48 +78,6 @@
     ],
     "reasoning": "The highest-confidence tradeable evidence favors SPCX through strong AI-infrastructure demand and improving product mix, but the thesis warrants only moderate confidence because several high-confidence structural risks and speculative datacenter assumptions could offset the growth opportunity.",
     "claims_considered": 15
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "contradicts",
-    "thesis": "SPCX has a moderately bullish medium-term outlook from sustained GenAI infrastructure demand, improving higher-value system mix, and potential datacenter expansion, although execution, Nvidia dependence, customer concentration, competition, and order-timing volatility materially temper the upside.",
-    "direction": "long",
-    "news_confidence": 0.64,
-    "fundamental_confidence": 0.24,
-    "blended_confidence": 0.48,
-    "fair_value_estimate": 223.0,
-    "current_price": 113.82,
-    "implied_return_pct": 95.9,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.154
-      },
-      "Valuation": {
-        "forward_pe": 124.924545,
-        "ev_to_revenue": 38.372
-      },
-      "Quality": {
-        "operating_margin": -0.41627997,
-        "fcf_margin": 0.3681156542289117
-      },
-      "Sentiment": {
-        "analyst_upside": 95.92338780530663,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 100.0,
-        "insider_flow": -1199572.0,
-        "low_short_interest": -2.6700001
-      }
-    },
-    "risks": [
-      "Extreme valuation multiples leave little room for execution misses or decelerating growth.",
-      "The deeply negative operating margin undermines the durability and quality of reported free cash flow.",
-      "Revenue growth of 15.4% appears insufficient on its own to justify the current earnings and sales multiples.",
-      "The large gap between positive free-cash-flow margin and negative operating margin raises questions about cash-flow sustainability or working-capital dependence."
-    ],
-    "reasoning": "Although positive free cash flow and moderate growth provide some support, the combination of a 124.9 forward P/E, 38.4 EV-to-revenue multiple, and deeply negative operating margin makes the fundamentals more cautionary than supportive of a long thesis."
   },
   {
     "event": "critic",

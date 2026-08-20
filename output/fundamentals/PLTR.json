@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.63,
+    "summary": "PLTR shows exceptional operating momentum and quality, with very strong revenue and earnings growth alongside operating and free-cash-flow margins above 46%. However, the valuation is demanding at roughly 72x forward earnings and 56x enterprise value to revenue, leaving limited room for execution disappointments despite positive sentiment and an estimated 18.7% upside to consensus fair value.",
+    "key_changes": [],
+    "risks": [
+      "High valuation multiples create significant downside risk if growth decelerates, margins compress, or investor expectations reset.",
+      "The stock\u2019s premium depends on sustaining unusually strong growth and profitability, which may become harder as the revenue base expands.",
+      "Very large net insider selling is a potential governance or signaling concern, even though institutional flows and analyst revisions are supportive."
+    ],
+    "reasoning": "Exceptional growth, margins, and constructive sentiment support the business, but extreme valuation and insider selling offset those strengths, resulting in a cautious neutral view.",
+    "fair_value_estimate": 185.68,
+    "current_price": 156.445,
+    "implied_return_pct": 18.7,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.847,
+        "earnings_growth": 3.25
+      },
+      "Valuation": {
+        "forward_pe": 72.232285,
+        "peg_ratio": 1.76,
+        "ev_to_revenue": 56.184
+      },
+      "Quality": {
+        "operating_margin": 0.46183997,
+        "fcf_margin": 0.5213025183111816
+      },
+      "Sentiment": {
+        "analyst_upside": 18.687078525999556,
+        "revisions_trend": 1.2096774193548376,
+        "net_upgrades": 3.0
+      },
+      "Ownership": {
+        "institutional_flow": 8.707000017699999,
+        "insider_flow": -2282662663.0,
+        "low_short_interest": -3.64
+      }
+    },
+    "trigger": "manual"
+  }
+]

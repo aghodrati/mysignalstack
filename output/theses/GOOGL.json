@@ -31,51 +31,6 @@
     "claims_considered": 12
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "GOOGL\u2019s weakening frontier-AI position is a meaningful strategic risk, but accelerating Google Cloud growth, external TPU demand, resilient multi-model enterprise monetization, and potential earnings uplift make the near- to medium-term risk-reward moderately favorable.",
-    "direction": "long",
-    "news_confidence": 0.72,
-    "fundamental_confidence": 0.79,
-    "blended_confidence": 0.748,
-    "fair_value_estimate": 428.04056,
-    "current_price": 377.53,
-    "implied_return_pct": 13.4,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.242,
-        "earnings_growth": 2.94
-      },
-      "Valuation": {
-        "forward_pe": 25.622301,
-        "peg_ratio": 0.97,
-        "ev_to_revenue": 10.013
-      },
-      "Quality": {
-        "operating_margin": 0.34033,
-        "fcf_margin": 0.4164368052620942
-      },
-      "Sentiment": {
-        "analyst_upside": 13.379217545625522,
-        "revisions_trend": 1.3942307692307643,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 11.031999997500002,
-        "insider_flow": -52482274.0,
-        "low_short_interest": -1.34000005
-      }
-    },
-    "risks": [
-      "Forward valuation remains demanding, making the thesis sensitive to any slowdown in revenue growth or margin expansion.",
-      "Reported earnings growth may be inflated by a favorable comparison base and may not persist at the current rate.",
-      "Sustaining strong free-cash-flow margins could become more difficult as AI infrastructure and capacity investments increase.",
-      "Insider selling and the absence of net analyst upgrades provide limited incremental confirmation despite positive institutional flows."
-    ],
-    "reasoning": "Strong revenue growth, exceptional operating and free-cash-flow margins, a reasonable PEG ratio, and roughly 13% indicated valuation upside materially support a long stance, although the absolute multiple and execution sensitivity temper conviction."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -120,50 +75,6 @@
     "claims_considered": 20
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "GOOGL is moderately attractive as a long because accelerating Google Cloud and TPU monetization, Anthropic demand, and stronger justification for AI infrastructure spending can outweigh weakening Gemini frontier competitiveness and rising financing and strategic risks.",
-    "direction": "long",
-    "news_confidence": 0.68,
-    "fundamental_confidence": 0.78,
-    "blended_confidence": 0.7200000000000001,
-    "fair_value_estimate": 428.04056,
-    "current_price": 377.53,
-    "implied_return_pct": 13.4,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.242,
-        "earnings_growth": 2.94
-      },
-      "Valuation": {
-        "forward_pe": 25.622301,
-        "peg_ratio": 0.97,
-        "ev_to_revenue": 10.013
-      },
-      "Quality": {
-        "operating_margin": 0.34033,
-        "fcf_margin": 0.4164368052620942
-      },
-      "Sentiment": {
-        "analyst_upside": 13.379217545625522,
-        "revisions_trend": 1.3942307692307643,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 11.031999997500002,
-        "insider_flow": -52482274.0,
-        "low_short_interest": -1.34000005
-      }
-    },
-    "risks": [
-      "The valuation is reasonable relative to growth but still elevated in absolute terms, leaving meaningful multiple-compression risk if growth normalizes.",
-      "Revenue and cash generation remain heavily dependent on the advertising business, which is exposed to macroeconomic and search-disruption risks.",
-      "Negative insider flow and flat net upgrades provide limited incremental confirmation despite favorable consensus revisions."
-    ],
-    "reasoning": "Strong revenue and earnings growth, exceptional operating and free-cash-flow margins, a sub-1 PEG ratio, and roughly 13% consensus upside provide solid fundamental support for a long position, although the valuation and business concentration prevent a higher score."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -203,49 +114,6 @@
     ],
     "reasoning": "The evidence favors a moderate long because high-confidence Cloud growth, TPU demand, infrastructure economics, and financial capacity outweigh the serious but partly offsetting risks from Gemini's competitive decline, talent disruption, financing intensity, and rising infrastructure competition.",
     "claims_considered": 49
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "GOOGL has a cautiously bullish, two-track AI thesis: Google Cloud and TPU infrastructure are emerging as durable monetization engines with strong demand and earnings support, but frontier-model weakness, talent losses, competitive pressure, and elevated financing intensity cap upside and execution certainty.",
-    "direction": "long",
-    "news_confidence": 0.7,
-    "fundamental_confidence": 0.84,
-    "blended_confidence": 0.756,
-    "fair_value_estimate": 428.04056,
-    "current_price": 377.53,
-    "implied_return_pct": 13.4,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.242,
-        "earnings_growth": 2.94
-      },
-      "Valuation": {
-        "forward_pe": 25.622301,
-        "peg_ratio": 0.97,
-        "ev_to_revenue": 10.013
-      },
-      "Quality": {
-        "operating_margin": 0.34033,
-        "fcf_margin": 0.4164368052620942
-      },
-      "Sentiment": {
-        "analyst_upside": 13.379217545625522,
-        "revisions_trend": 1.3942307692307643,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 11.031999997500002,
-        "insider_flow": -52482274.0,
-        "low_short_interest": -1.34000005
-      }
-    },
-    "risks": [
-      "The roughly 10x enterprise-value-to-revenue multiple leaves meaningful downside if exceptional earnings growth normalizes or AI monetization falls short.",
-      "The 25.6x forward P/E still embeds optimistic execution despite the attractive PEG ratio, while substantial insider selling may modestly weaken alignment."
-    ],
-    "reasoning": "Strong revenue and earnings growth, exceptional operating and free-cash-flow margins, reasonable growth-adjusted valuation, positive revisions, and an indicated 13.4% fair-value upside provide substantial fundamental support for the long thesis, though expectations remain elevated."
   },
   {
     "event": "critic",

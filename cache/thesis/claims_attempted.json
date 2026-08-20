@@ -1,6 +1,7 @@
 {
   "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia": [
-    "NVDA"
+    "NVDA",
+    "CBRS"
   ],
   "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real": [
     "MSFT",
@@ -28,7 +29,8 @@
     "MSFT",
     "NVDA",
     "AMD",
-    "TSM"
+    "TSM",
+    "CBRS"
   ],
   "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-vs-gb200-nvl72-inference": [
     "NVDA",
@@ -168,7 +170,8 @@
   ],
   "https://www.nextplatform.com/compute/2026/08/07/with-taalas-amd-can-bake-ai-inference-directly-into-its-chippery/5285060": [
     "AMD",
-    "NVDA"
+    "NVDA",
+    "CBRS"
   ],
   "https://www.nextplatform.com/cloud/2026/08/06/google-builds-a-new-gemini-model-team-as-ai-investments-accelerate/5284258": [
     "GOOGL"
@@ -303,7 +306,9 @@
     "GOOGL",
     "INTC",
     "MSFT",
-    "NVDA"
+    "NVDA",
+    "CBRS",
+    "AMD"
   ],
   "https://www.nextplatform.com/connect/2026/06/17/hpes-datacenter-networking-picture-comes-into-clearer-focus/5258015": [
     "AMD"
@@ -312,7 +317,8 @@
     "AMZN",
     "AVGO",
     "NVDA",
-    "TSM"
+    "TSM",
+    "CBRS"
   ],
   "https://www.nextplatform.com/compute/2026/06/16/queras-libra-fault-tolerant-quantum-system-heading-to-amazon-braket-service/5256477": [
     "AMZN"
@@ -360,7 +366,9 @@
     "NVDA"
   ],
   "https://www.nextplatform.com/compute/2026/05/28/gpus-and-ram-are-in-short-supply-but-the-real-bottleneck-for-ai-is-electricians/5247566": [
-    "AMD"
+    "AMD",
+    "CBRS",
+    "GOOGL"
   ],
   "https://www.nextplatform.com/compute/2026/05/27/uncle-sam-awards-2-billion-plus-to-quantum-companies-but-wants-a-cut/5247083": [
     "QBTS",
@@ -428,7 +436,8 @@
     "NVDA",
     "QCOM",
     "TSM",
-    "SKHY"
+    "SKHY",
+    "CBRS"
   ],
   "https://semiengineering.com/chip-industry-week-in-review-151/": [
     "ARM",
@@ -441,5 +450,47 @@
     "SKHY",
     "GOOGL",
     "MSFT"
+  ],
+  "https://newsletter.semianalysis.com/p/cerebrass-next-generation-cs-4-fast": [
+    "AMD",
+    "NVDA",
+    "CBRS",
+    "AMZN"
+  ],
+  "https://stratechery.com/2026/apple-settles-with-e-u-u-s-app-store-fees-att-rules-in-germany/": [
+    "AAPL"
+  ],
+  "https://stratechery.com/2026/nvidia-backs-openai-data-center-anthropic-news-google-buys-spirit-airlines-data/": [
+    "GOOGL",
+    "NVDA"
+  ],
+  "https://stratechery.com/2026/the-capex-train-keeps-rolling/": [
+    "AAPL",
+    "AMZN",
+    "GOOGL",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/08/19/cerebras-overclocks-wse-3-waferscale-engine-to-boost-inference-oomph-in-nexus-cs-4/5289400": [
+    "AMD",
+    "AMZN",
+    "NVDA",
+    "TSM",
+    "CBRS"
+  ],
+  "https://semiengineering.com/how-will-the-custom-hbm-business-work/": [
+    "SKHY",
+    "TSM"
+  ],
+  "https://semiengineering.com/cfets-forge-better-connections/": [
+    "INTC",
+    "TSM"
+  ],
+  "https://thequantuminsider.com/2026/08/20/rigetti-systems-delivery-quantum-system-deployments/": [
+    "RGTI"
+  ],
+  "https://thequantuminsider.com/2026/08/20/texas-quantum-strategy-takes-shape-at-ut-dallas-summit/": [
+    "NVDA",
+    "SPCX",
+    "TSLA"
   ]
 }

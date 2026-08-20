@@ -31,50 +31,6 @@
     "claims_considered": 6
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "contradicts",
-    "thesis": "Nebius remains a constructive long-term growth opportunity as Meta-driven backlog and potentially attractive AI-compute economics, combined with modular New Jersey and reused Bethune capacity strategies, should outweigh the near-term impact of New Jersey\u2019s delivery delay.",
-    "direction": "long",
-    "news_confidence": 0.79,
-    "fundamental_confidence": 0.38,
-    "blended_confidence": 0.626,
-    "fair_value_estimate": 256.0,
-    "current_price": 217.97,
-    "implied_return_pct": 17.4,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 6.839
-      },
-      "Valuation": {
-        "forward_pe": -135.09895,
-        "peg_ratio": 0.63,
-        "ev_to_revenue": 62.263
-      },
-      "Quality": {
-        "operating_margin": -0.32080000000000003,
-        "fcf_margin": 3.235334239058326
-      },
-      "Sentiment": {
-        "analyst_upside": 17.447355140615684,
-        "revisions_trend": 1.1111111111111183,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 27.592999450000004,
-        "insider_flow": -158237228.0,
-        "low_short_interest": -28.000000000000004
-      }
-    },
-    "risks": [
-      "Extremely elevated EV/revenue valuation leaves little room for execution misses or slower growth.",
-      "Negative operating margin and deeply negative forward P/E indicate profitability remains unproven despite modest positive free-cash-flow margin.",
-      "Large insider selling may signal reduced management confidence or create an overhang.",
-      "The PEG ratio is difficult to interpret while earnings are negative and could overstate fundamental attractiveness."
-    ],
-    "reasoning": "Although exceptional reported growth, positive free cash flow, improving revisions, and moderate consensus upside support a long, the very rich valuation, negative operating profitability, and insider selling make the fundamental case only weakly supportive."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],

@@ -1,0 +1,43 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.91,
+    "summary": "QBTS presents a severely challenged fundamental profile, with revenue growth of -80.9%, deeply negative operating and free-cash-flow margins, and an exceptionally high 550.4x EV-to-revenue valuation despite lacking profitability. Analyst-implied upside and positive institutional flows provide some support, but they are outweighed by the valuation, operating losses, weak growth, and substantial insider selling.",
+    "key_changes": [],
+    "risks": [
+      "The company may require additional capital, creating dilution and financing risk.",
+      "Quantum-computing adoption, commercialization, and revenue growth may develop much faster than current fundamentals imply.",
+      "The high valuation leaves substantial downside if investor enthusiasm or analyst expectations weaken.",
+      "Large insider selling is a negative signal, although the reported flow may include non-economic or transaction-related effects.",
+      "The negative forward P/E is not meaningful as a valuation support because the company remains unprofitable."
+    ],
+    "reasoning": "The combination of collapsing revenue, severe operating and cash-flow losses, extreme valuation, and insider selling strongly supports a short fundamental view despite optimistic analyst targets and institutional flows.",
+    "fair_value_estimate": 37.052,
+    "current_price": 20.661,
+    "implied_return_pct": 79.3,
+    "factors": {
+      "Growth": {
+        "revenue_growth": -0.809
+      },
+      "Valuation": {
+        "forward_pe": -53.06809,
+        "ev_to_revenue": 550.41
+      },
+      "Quality": {
+        "operating_margin": -19.14871,
+        "fcf_margin": -7.84819993571199
+      },
+      "Sentiment": {
+        "analyst_upside": 79.33304293112626,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 22.573999871,
+        "insider_flow": -329497275.0,
+        "low_short_interest": -20.020000000000003
+      }
+    },
+    "trigger": "manual"
+  }
+]

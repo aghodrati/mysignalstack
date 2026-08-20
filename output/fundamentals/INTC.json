@@ -1,0 +1,43 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.64,
+    "summary": "INTC shows strong underlying growth, with 25.4% revenue growth and a healthy 26.2% free-cash-flow margin, while operating profitability is positive but more moderate at 12.2%. The shares appear directionally attractive based on the 17.2% consensus upside and PEG of 1.36, although a 48.3x forward P/E and 8.7x EV/revenue indicate that substantial improvement is already priced in.",
+    "key_changes": [],
+    "risks": [
+      "Elevated valuation leaves limited room for execution misses or slower growth.",
+      "Operating margin remains modest relative to the premium valuation and may need to expand to support the investment case.",
+      "Material insider selling is a negative ownership signal.",
+      "The consensus fair-value estimate and analyst upside may prove optimistic if earnings expectations are revised downward."
+    ],
+    "reasoning": "The combination of strong growth, cash generation, positive but imperfect profitability, and moderate implied upside supports a cautiously bullish fundamental view, but premium valuation and execution risks limit conviction.",
+    "fair_value_estimate": 115.26829,
+    "current_price": 98.315,
+    "implied_return_pct": 17.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.254
+      },
+      "Valuation": {
+        "forward_pe": 48.25608,
+        "peg_ratio": 1.36,
+        "ev_to_revenue": 8.687
+      },
+      "Quality": {
+        "operating_margin": 0.12189999,
+        "fcf_margin": 0.2618880741704077
+      },
+      "Sentiment": {
+        "analyst_upside": 17.243848853176004,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 19.89300001,
+        "insider_flow": -7623034.0,
+        "low_short_interest": -2.4
+      }
+    },
+    "trigger": "manual"
+  }
+]

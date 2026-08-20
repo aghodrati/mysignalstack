@@ -31,50 +31,6 @@
     "claims_considered": 12
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "contradicts",
-    "thesis": "ARM has a moderately strong long-term bullish outlook as accelerating Arm-based server adoption, Graviton5 validation, and AI-hosting growth improve its competitive position, although limited CPU value capture and emerging RISC-V and power-efficiency risks constrain the upside.",
-    "direction": "long",
-    "news_confidence": 0.79,
-    "fundamental_confidence": 0.4,
-    "blended_confidence": 0.634,
-    "fair_value_estimate": 286.78918,
-    "current_price": 267.9375,
-    "implied_return_pct": 7.0,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.224,
-        "earnings_growth": 1.083
-      },
-      "Valuation": {
-        "forward_pe": 87.29426,
-        "peg_ratio": 1.97,
-        "ev_to_revenue": 48.858
-      },
-      "Quality": {
-        "operating_margin": 0.07603,
-        "fcf_margin": 0.40612880216620895
-      },
-      "Sentiment": {
-        "analyst_upside": 7.035849778399816,
-        "net_upgrades": -2.0
-      },
-      "Ownership": {
-        "institutional_flow": 282.20248620000007,
-        "insider_flow": -66380361.0,
-        "low_short_interest": -12.020000999999999
-      }
-    },
-    "risks": [
-      "Extremely elevated valuation leaves little room for execution disappointments or multiple compression",
-      "Low operating margin suggests limited current profitability despite strong revenue and earnings growth",
-      "Heavy insider selling and net analyst downgrades weaken alignment and near-term fundamental conviction",
-      "Consensus fair value implies only modest upside, limiting the margin of safety"
-    ],
-    "reasoning": "Strong growth and institutional inflows support a long thesis, but very high valuation, weak operating margins, insider selling, and limited implied upside make the fundamental support only modest."
-  },
-  {
     "event": "critic",
     "date": "2026-08-19",
     "deterministic_flags": [],

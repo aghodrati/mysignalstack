@@ -27,51 +27,6 @@
     "claims_considered": 1
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "contradicts",
-    "thesis": "Tesla has a modest near-term bullish demand signal in California from the rapid exhaustion of its first-time-buyer rebate allocation, but the evidence is too limited and explicitly non-trade-worthy for high conviction.",
-    "direction": "long",
-    "news_confidence": 0.2,
-    "fundamental_confidence": 0.22,
-    "blended_confidence": 0.20800000000000002,
-    "fair_value_estimate": 397.87274,
-    "current_price": 324.81,
-    "implied_return_pct": 22.5,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.255,
-        "earnings_growth": -0.03
-      },
-      "Valuation": {
-        "forward_pe": 146.36157,
-        "peg_ratio": 4.56,
-        "ev_to_revenue": 12.018
-      },
-      "Quality": {
-        "operating_margin": 0.014099999,
-        "fcf_margin": 0.1803240646309327
-      },
-      "Sentiment": {
-        "analyst_upside": 22.49399341153291,
-        "revisions_trend": 1.0195035460992874,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 11.242999985500003,
-        "insider_flow": 219916134.0,
-        "low_short_interest": -2.0
-      }
-    },
-    "risks": [
-      "Extremely demanding valuation with forward P/E of 146x, PEG of 4.56, and EV/revenue of 12x leaves little room for execution misses.",
-      "Earnings are declining despite strong revenue growth, while the 1.4% operating margin indicates significant profitability pressure.",
-      "The apparent free-cash-flow strength may be difficult to sustain if investment needs, pricing pressure, or product-transition costs increase.",
-      "Consensus upside and positive ownership/revision signals are supportive but insufficient to offset the valuation and weak earnings-quality concerns."
-    ],
-    "reasoning": "Fundamentals provide only limited support for a long position because solid revenue growth and modestly positive sentiment are overwhelmed by extreme valuation, declining earnings, and thin operating margins."
-  },
-  {
     "event": "critic",
     "date": "2026-08-19",
     "deterministic_flags": [

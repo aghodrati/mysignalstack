@@ -1,0 +1,43 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "summary": "ASML presents a strong underlying business profile, with 21.3% revenue growth, 28.5% earnings growth, and exceptional 37.1% operating and 32.5% free-cash-flow margins. The valuation is not cheap at 28.7x forward earnings and a 1.98 PEG, but the growth and quality profile, institutional buying, low short interest, and roughly 26% consensus upside support a positive fundamental bias.",
+    "key_changes": [],
+    "risks": [
+      "Premium valuation leaves the shares vulnerable to multiple compression if growth slows or earnings estimates disappoint.",
+      "The semiconductor equipment cycle is inherently cyclical, and customer capex reductions could pressure revenue and margins.",
+      "Export controls, geopolitical tensions, and customer concentration create material risks to shipments and long-term growth.",
+      "The reported EV-to-revenue figure is extremely elevated and may indicate a data-quality issue; if accurate, it would materially weaken the valuation case."
+    ],
+    "reasoning": "The combination of exceptional growth and profitability supports a long view, though elevated valuation, cyclical exposure, and a potentially anomalous EV-to-revenue metric warrant moderate rather than high conviction.",
+    "fair_value_estimate": 2140.0461,
+    "current_price": 1693.01,
+    "implied_return_pct": 26.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.213,
+        "earnings_growth": 0.28500000000000003
+      },
+      "Valuation": {
+        "forward_pe": 28.72925,
+        "peg_ratio": 1.98,
+        "ev_to_revenue": 991.974
+      },
+      "Quality": {
+        "operating_margin": 0.37057,
+        "fcf_margin": 0.32515462827416225
+      },
+      "Sentiment": {
+        "analyst_upside": 26.404811548661854,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 8.3284999355,
+        "low_short_interest": -0.33000002
+      }
+    },
+    "trigger": "manual"
+  }
+]

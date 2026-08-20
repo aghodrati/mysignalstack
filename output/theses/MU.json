@@ -29,51 +29,6 @@
     "claims_considered": 5
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "MU remains an attractive long because an undersupplied DRAM market should support pricing and earnings through at least 2027, while its server DRAM and HBM mix and CXMT\u2019s higher costs and immature HBM manufacturing limit near-term competitive pressure.",
-    "direction": "long",
-    "news_confidence": 0.84,
-    "fundamental_confidence": 0.78,
-    "blended_confidence": 0.8160000000000001,
-    "fair_value_estimate": 1507.7906,
-    "current_price": 873.5392,
-    "implied_return_pct": 72.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 3.457,
-        "earnings_growth": 13.685
-      },
-      "Valuation": {
-        "forward_pe": 5.615338,
-        "peg_ratio": 0.12,
-        "ev_to_revenue": 10.16
-      },
-      "Quality": {
-        "operating_margin": 0.80370003,
-        "fcf_margin": 0.5697321860019828
-      },
-      "Sentiment": {
-        "analyst_upside": 72.60709078653824,
-        "revisions_trend": 0.49407114624505644,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 7.4550000600000015,
-        "insider_flow": -377026209.0,
-        "low_short_interest": -3.2100000000000004
-      }
-    },
-    "risks": [
-      "The very low forward P/E and PEG may reflect peak-cycle earnings and could be misleading if DRAM pricing normalizes sooner than expected.",
-      "Revenue growth is modest relative to the earnings outlook, raising questions about the durability of margin expansion.",
-      "The elevated EV-to-revenue multiple leaves less valuation support if demand, pricing, or HBM/server execution disappoints.",
-      "Semiconductor capital intensity, customer concentration, and execution requirements could pressure free cash flow and returns across the cycle."
-    ],
-    "reasoning": "Strong projected earnings growth, exceptionally high margins, low forward valuation, positive revisions, and substantial consensus upside support a long, though cyclical-earnings and valuation-quality risks prevent a higher score."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [
@@ -119,51 +74,6 @@
     ],
     "reasoning": "The evidence is predominantly bullish across near-term earnings, pricing, supply tightness, customer visibility, and multi-year HBM growth, but the thesis remains exposed to AI-demand reversal, capacity limitations, and intensifying Chinese competition.",
     "claims_considered": 22
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "MU remains moderately bullish as AI-driven HBM and constrained DRAM supply support elevated pricing, margins, earnings momentum, and longer-term growth, although limited capacity, moderating AI-spending revisions, and increasing CXMT competition cap upside.",
-    "direction": "long",
-    "news_confidence": 0.86,
-    "fundamental_confidence": 0.74,
-    "blended_confidence": 0.812,
-    "fair_value_estimate": 1507.7906,
-    "current_price": 873.5392,
-    "implied_return_pct": 72.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 3.457,
-        "earnings_growth": 13.685
-      },
-      "Valuation": {
-        "forward_pe": 5.615338,
-        "peg_ratio": 0.12,
-        "ev_to_revenue": 10.16
-      },
-      "Quality": {
-        "operating_margin": 0.80370003,
-        "fcf_margin": 0.5697321860019828
-      },
-      "Sentiment": {
-        "analyst_upside": 72.60709078653824,
-        "revisions_trend": 0.49407114624505644,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 7.4550000600000015,
-        "insider_flow": -377026209.0,
-        "low_short_interest": -3.2100000000000004
-      }
-    },
-    "risks": [
-      "Reported growth and margin figures appear unusually extreme and may reflect cyclical recovery effects, low-base comparisons, or data-quality distortions rather than sustainable economics.",
-      "Semiconductor earnings are highly cyclical, so the very low forward P/E may understate normalized-cycle valuation risk.",
-      "Large insider selling and zero net upgrades weaken the otherwise favorable sentiment and valuation signals.",
-      "High EV-to-revenue relative to the low P/E suggests possible inconsistencies in the underlying financial or valuation data."
-    ],
-    "reasoning": "The long thesis is broadly supported by exceptionally strong reported growth, profitability, cash generation, low forward valuation, positive revisions, and substantial implied upside, but confidence is tempered by cyclical normalization risk, insider selling, stagnant upgrades, and questionable internal consistency in the reported metrics."
   },
   {
     "event": "critic",

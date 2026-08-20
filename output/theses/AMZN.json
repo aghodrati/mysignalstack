@@ -31,50 +31,6 @@
     "claims_considered": 8
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "Amazon has a moderately high-conviction long thesis as AI-driven AWS demand, improved power access, and modular datacenter construction should accelerate capacity and revenue growth, although interconnection and commissioning constraints may delay realization.",
-    "direction": "long",
-    "news_confidence": 0.86,
-    "fundamental_confidence": 0.79,
-    "blended_confidence": 0.8320000000000001,
-    "fair_value_estimate": 323.29083,
-    "current_price": 279.7455,
-    "implied_return_pct": 15.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.196,
-        "earnings_growth": 2.423
-      },
-      "Valuation": {
-        "forward_pe": 27.110668,
-        "peg_ratio": 1.46,
-        "ev_to_revenue": 4.115
-      },
-      "Quality": {
-        "operating_margin": 0.13689,
-        "fcf_margin": 0.20807934698542693
-      },
-      "Sentiment": {
-        "analyst_upside": 15.566052000836494,
-        "revisions_trend": 1.2218963831867047,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.677500017500003,
-        "insider_flow": -6175029840.0,
-        "low_short_interest": -1.09
-      }
-    },
-    "risks": [
-      "A forward P/E near 27 and PEG of 1.46 leave limited room for execution disappointments or slower AI monetization.",
-      "Heavy datacenter investment could pressure free cash flow and returns on capital if capacity is built ahead of demand.",
-      "The absence of net analyst upgrades and substantial insider selling may indicate limited incremental conviction despite institutional buying."
-    ],
-    "reasoning": "Strong revenue and earnings growth, healthy margins, positive revisions, and roughly 15.6% implied upside support a long stance, though valuation and capital-intensity risks prevent a higher-confidence assessment."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -124,50 +80,6 @@
     ],
     "reasoning": "The evidence shows a strong and increasingly monetizable AWS AI-infrastructure cycle with unusually visible demand and capacity support, while the main risks are substantial but appear more likely to moderate returns than overturn the underlying growth thesis.",
     "claims_considered": 36
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "AMZN has a favorable multi-quarter outlook as accelerating AWS demand, expanding profitability, custom silicon, modular datacenter deployment, and secured power capacity should outweigh near-term free-cash-flow pressure, debt sensitivity, infrastructure bottlenecks, and emerging cloud competition.",
-    "direction": "long",
-    "news_confidence": 0.84,
-    "fundamental_confidence": 0.79,
-    "blended_confidence": 0.8200000000000001,
-    "fair_value_estimate": 323.29083,
-    "current_price": 279.7455,
-    "implied_return_pct": 15.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.196,
-        "earnings_growth": 2.423
-      },
-      "Valuation": {
-        "forward_pe": 27.110668,
-        "peg_ratio": 1.46,
-        "ev_to_revenue": 4.115
-      },
-      "Quality": {
-        "operating_margin": 0.13689,
-        "fcf_margin": 0.20807934698542693
-      },
-      "Sentiment": {
-        "analyst_upside": 15.566052000836494,
-        "revisions_trend": 1.2218963831867047,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.677500017500003,
-        "insider_flow": -6175029840.0,
-        "low_short_interest": -1.09
-      }
-    },
-    "risks": [
-      "Forward valuation still embeds substantial execution and AWS growth expectations, leaving limited downside protection if growth normalizes.",
-      "The exceptional earnings-growth figure may partly reflect a low base or one-time effects and may not be sustainable.",
-      "Heavy insider selling is a modest governance and alignment concern."
-    ],
-    "reasoning": "Strong revenue and earnings growth, robust free-cash-flow and operating margins, positive revisions, and roughly 15.6% implied upside support a long view, although the valuation and sustainability of recent earnings growth temper conviction."
   },
   {
     "event": "critic",

@@ -32,48 +32,6 @@
     "claims_considered": 15
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "neutral",
-    "thesis": "INTC offers a moderately attractive long-term turnaround opportunity as 18A competitiveness, Terafab and 14A customer commitments, and EMIB-T packaging optionality support foundry growth, provided it secures substantial equity funding and executes through its funding and commercialization risks.",
-    "direction": "long",
-    "news_confidence": 0.7,
-    "fundamental_confidence": 0.54,
-    "blended_confidence": 0.636,
-    "fair_value_estimate": 115.26829,
-    "current_price": 98.315,
-    "implied_return_pct": 17.2,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.254
-      },
-      "Valuation": {
-        "forward_pe": 48.25608,
-        "peg_ratio": 1.36,
-        "ev_to_revenue": 8.687
-      },
-      "Quality": {
-        "operating_margin": 0.12189999,
-        "fcf_margin": 0.2618880741704077
-      },
-      "Sentiment": {
-        "analyst_upside": 17.243848853176004,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 19.89300001,
-        "insider_flow": -7623034.0,
-        "low_short_interest": -2.4
-      }
-    },
-    "risks": [
-      "Rich valuation multiples leave limited margin of safety if growth or foundry expectations disappoint",
-      "Operating margin remains weak for a semiconductor leader, raising concerns about sustainable profitability",
-      "Substantial insider selling is a negative alignment signal"
-    ],
-    "reasoning": "Strong reported growth, positive institutional flows, and roughly 17% consensus upside support a long stance, but high valuation and weak operating profitability make the fundamental case only moderately supportive."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -116,48 +74,6 @@
     ],
     "reasoning": "The evidence supports a meaningful 120-to-270-day DCAI earnings rebound, but the higher-importance structural claims point to sustained competitive erosion and a financially burdensome, loss-making Foundry that outweigh the cyclical recovery.",
     "claims_considered": 43
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "contradicts",
-    "thesis": "Intel\u2019s near-term DCAI recovery and CPU scarcity-driven pricing provide upside, but persistent Foundry losses, weaker server performance, and accelerating AMD- and Arm-based competition make the risk-reward moderately bearish over the next several months.",
-    "direction": "short",
-    "news_confidence": 0.68,
-    "fundamental_confidence": 0.29,
-    "blended_confidence": 0.524,
-    "fair_value_estimate": 115.26829,
-    "current_price": 98.315,
-    "implied_return_pct": 17.2,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.254
-      },
-      "Valuation": {
-        "forward_pe": 48.25608,
-        "peg_ratio": 1.36,
-        "ev_to_revenue": 8.687
-      },
-      "Quality": {
-        "operating_margin": 0.12189999,
-        "fcf_margin": 0.2618880741704077
-      },
-      "Sentiment": {
-        "analyst_upside": 17.243848853176004,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 19.89300001,
-        "insider_flow": -7623034.0,
-        "low_short_interest": -2.4
-      }
-    },
-    "risks": [
-      "Strong 25.4% revenue growth and a 26.2% free-cash-flow margin provide fundamental support that may limit downside",
-      "Consensus fair value implies approximately 17% upside, while modest net analyst upgrades and positive institutional flows weigh against a sustained short",
-      "Low short interest may indicate the bearish thesis is not broadly reflected, though insider selling is a counterpoint"
-    ],
-    "reasoning": "Although the elevated forward P/E and EV-to-revenue multiple support valuation-based downside, robust reported growth, strong cash generation, and consensus upside mean the available fundamentals only weakly support a short position."
   },
   {
     "event": "critic",

@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.72,
+    "summary": "XOM shows a strong fundamental profile, with robust revenue and earnings growth, healthy operating and free-cash-flow margins, and a relatively reasonable forward P/E of 14.3. The roughly 9.8% gap to consensus fair value supports upside, although negative analyst revisions and insider selling temper conviction.",
+    "key_changes": [],
+    "risks": [
+      "Commodity-price cyclicality could pressure revenue, earnings, and free cash flow.",
+      "The very strong recent earnings growth rate may be difficult to sustain, increasing the risk of an earnings-growth slowdown.",
+      "Negative revisions trend suggests analysts may be moderating expectations.",
+      "Insider selling is a modest sentiment and alignment concern."
+    ],
+    "reasoning": "The combination of strong growth, solid cash-generation quality, reasonable valuation, and moderate estimated upside supports a long view, but cyclical exposure and weakening revisions warrant less than high conviction.",
+    "fair_value_estimate": 167.0,
+    "current_price": 152.12,
+    "implied_return_pct": 9.8,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.441,
+        "earnings_growth": 1.1280000000000001
+      },
+      "Valuation": {
+        "forward_pe": 14.297301,
+        "peg_ratio": 1.32,
+        "ev_to_revenue": 1.873
+      },
+      "Quality": {
+        "operating_margin": 0.15859,
+        "fcf_margin": 0.16542125474773423
+      },
+      "Sentiment": {
+        "analyst_upside": 9.781751249013926,
+        "revisions_trend": -3.9999999999999982,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.294500041000001,
+        "insider_flow": -3102307.0,
+        "low_short_interest": -1.15
+      }
+    },
+    "trigger": "manual"
+  }
+]

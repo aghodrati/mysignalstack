@@ -26,49 +26,6 @@
     "claims_considered": 2
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "contradicts",
-    "thesis": "Qualcomm faces near-term downside pressure from sharply weakening handset demand, while automotive and IoT diversification provides only a partial offset.",
-    "direction": "short",
-    "news_confidence": 0.7,
-    "fundamental_confidence": 0.28,
-    "blended_confidence": 0.532,
-    "fair_value_estimate": 196.26666,
-    "current_price": 158.9816,
-    "implied_return_pct": 23.5,
-    "factors": {
-      "Growth": {
-        "revenue_growth": -0.04,
-        "earnings_growth": -0.23
-      },
-      "Valuation": {
-        "forward_pe": 15.441013,
-        "peg_ratio": 0.63,
-        "ev_to_revenue": 3.675
-      },
-      "Quality": {
-        "operating_margin": 0.18528000000000003,
-        "fcf_margin": 0.28139963879653496
-      },
-      "Sentiment": {
-        "analyst_upside": 23.45243726318016,
-        "net_upgrades": 1.0
-      },
-      "Ownership": {
-        "institutional_flow": 36.485499989,
-        "insider_flow": -57207168.0,
-        "low_short_interest": -3.83
-      }
-    },
-    "risks": [
-      "The low forward P/E and PEG ratio may already discount weaker handset conditions, while strong free-cash-flow generation provides valuation support.",
-      "Analyst fair value implies substantial upside, and automotive and IoT diversification could support recovery beyond the near-term handset slowdown.",
-      "Positive institutional flows and low short interest reduce evidence of broad fundamental conviction for a downside trade."
-    ],
-    "reasoning": "Although declining revenue and earnings support the bearish case, QCOM's modest valuation, strong cash generation, and meaningful consensus upside suggest its fundamentals more likely argue against than support a short."
-  },
-  {
     "event": "critic",
     "date": "2026-08-19",
     "deterministic_flags": [

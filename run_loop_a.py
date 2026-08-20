@@ -1,19 +1,37 @@
-"""Runs Loop A (News -> LLM -> trade) once against an existing paper-trading
-portfolio: first, the global research update (Stage A -> Stage B ->
-ticker-thesis aggregation -- shared by every portfolio, cached, so a second
-portfolio run the same day costs little extra), then closes any loop_a
-positions whose horizon has elapsed, then this portfolio's own thin,
-deterministic trade-decision pass (open/close positions reacting to current
-TickerThesis snapshots). Meant to be run once a day (cron or manual) --
-create the portfolio first via the Streamlit app (app.py).
+"""Runs Loop A (News -> LLM -> trade) once against an existing paper-trading portfolio, made up of
+three independently-scopable research stages -- claims (Stage A/B/C), fundamentals, earnings
+calls -- plus this portfolio's own thin, deterministic trade-decision pass (open/close positions
+reacting to current TickerThesis snapshots), which always runs regardless of which stages below
+are selected since it's LLM-free. Meant to be run once a day (cron or manual) -- create the
+portfolio first via the Streamlit app (app.py).
+
+With no --refresh-* flag, every stage runs at its default scope: claims for every active news
+source, plus earnings calls for the whole tracked universe (both cheap to check -- an article/
+transcript already on record costs no LLM call). The automatic earnings-window fundamentals check
+(a ticker within a day of its own earnings date) always runs too, regardless of flags -- it's an
+instant no-op for every ticker not currently in its own window. A *forced* fundamentals refresh
+(bypassing that window) only ever happens via an explicit --refresh-fundamental.
+
+Passing any of --refresh-claims / --refresh-fundamental / --refresh-earning-call narrows the run to
+just the stage(s) named (claims/earnings-window-fundamentals/trade-decisions still apply as above
+unless explicitly excluded by naming other stages instead). --source and --ticker further scope
+whichever stage they're relevant to.
 
 Usage:
     uv run run_loop_a.py my_portfolio
     uv run run_loop_a.py my_portfolio --include-sec-8k
+    uv run run_loop_a.py my_portfolio --refresh-claims
+    uv run run_loop_a.py my_portfolio --refresh-claims --source SemiAnalysis
+    uv run run_loop_a.py my_portfolio --refresh-fundamental --ticker AAPL
+    uv run run_loop_a.py my_portfolio --refresh-earning-call --ticker NBIS --transcript-url https://www.fool.com/earnings/call-transcripts/2026/.../nbis-...-earnings-call-transcript/
 """
 
 import argparse
+import datetime as dt
 
+from finance.earnings_calls import discover_recent_transcripts, refresh_earnings_call
+from finance.llm import RateLimited
+from finance.loop_a_config import active_news_sources, tracked_universe
 from finance.newsloop import review_loop_a, run_loop_a
 from finance.portfolio import list_portfolios
 
@@ -25,7 +43,76 @@ def main():
         "--include-sec-8k", action="store_true",
         help="Also check SEC 8-K filings for every tracked ticker (off by default -- higher token cost)",
     )
+    parser.add_argument(
+        "--refresh-claims", action="store_true",
+        help=(
+            "Run the claims stage (Stage A/B/C). With no other --refresh-* flag given, this is "
+            "already the default -- pass it explicitly to run ONLY claims this invocation "
+            "(skips fundamentals/earnings-calls entirely, aside from the always-on earnings-window "
+            "fundamentals check)."
+        ),
+    )
+    parser.add_argument(
+        "--source", default=None,
+        help=(
+            "Restrict --refresh-claims to just this news source (by name, as configured in "
+            "config_loop_a.json's news_sources), e.g. --source SemiAnalysis. Ignored otherwise."
+        ),
+    )
+    parser.add_argument(
+        "--refresh-fundamental", action="store_true",
+        help=(
+            "Force-refresh fundamentals right now (every tracked ticker, or just --ticker if given), "
+            "on top of whatever the always-on earnings-window trigger already covers. Passing this "
+            "alone (no --refresh-claims/--refresh-earning-call) runs ONLY this stage."
+        ),
+    )
+    parser.add_argument(
+        "--refresh-earning-call", action="store_true",
+        help=(
+            "Check for new earnings call transcripts (every tracked ticker, or just --ticker if "
+            "given) -- skipped entirely, no LLM cost, for a ticker whose latest transcript is "
+            "already on record. With no other --refresh-* flag given, this is already the default; "
+            "passing it alone (no --refresh-claims/--refresh-fundamental) runs ONLY this stage."
+        ),
+    )
+    parser.add_argument(
+        "--ticker", default=None,
+        help="Restrict --refresh-fundamental and/or --refresh-earning-call to just this ticker, e.g. --ticker AAPL.",
+    )
+    parser.add_argument(
+        "--transcript-url", default=None,
+        help=(
+            "Manual override for --refresh-earning-call: skip discovery (Fool's recent listing + "
+            "DuckDuckGo fallback) entirely and use this fool.com transcript URL directly. Useful "
+            "when a ticker isn't in Fool's ~20 sitewide-newest and DuckDuckGo's anti-bot check is "
+            "blocking the fallback search -- find the URL yourself in a browser. Requires --ticker."
+        ),
+    )
     args = parser.parse_args()
+
+    if args.transcript_url and not args.ticker:
+        raise SystemExit("--transcript-url requires --ticker.")
+    if args.transcript_url and not args.refresh_earning_call:
+        raise SystemExit("--transcript-url requires --refresh-earning-call.")
+
+    # Presence of any --refresh-* flag narrows this run to just the stage(s) named; with none
+    # given, claims and earnings-calls both run at their default (whole-universe) scope, same as
+    # before this flag ever existed. A forced fundamentals refresh is always purely opt-in --
+    # --refresh-fundamental is never implied by an all-stages default run.
+    any_stage_flag = args.refresh_claims or args.refresh_fundamental or args.refresh_earning_call
+    do_claims = args.refresh_claims or not any_stage_flag
+    do_fundamentals = args.refresh_fundamental
+    do_earning_call = args.refresh_earning_call or not any_stage_flag
+
+    if args.source is not None:
+        if not do_claims:
+            raise SystemExit("--source only applies to the claims stage -- pass --refresh-claims (or no --refresh-* flag) to use it.")
+        valid_sources = {name for name, _url in active_news_sources()}
+        if args.source not in valid_sources:
+            raise SystemExit(f"No active news source named {args.source!r}. Configured sources: {', '.join(sorted(valid_sources))}")
+    if args.ticker is not None and not (do_fundamentals or do_earning_call):
+        print("Note: --ticker only affects --refresh-fundamental/--refresh-earning-call -- ignored for this run.")
 
     if args.portfolio not in list_portfolios():
         existing = ", ".join(list_portfolios()) or "(none yet)"
@@ -36,7 +123,11 @@ def main():
     for entry in reviewed:
         print(f"[review] {entry}")
 
-    result = run_loop_a(args.portfolio, include_sec_8k=args.include_sec_8k)
+    result = run_loop_a(
+        args.portfolio, include_sec_8k=args.include_sec_8k,
+        include_claims=do_claims, news_source=args.source,
+        refresh_fundamentals=do_fundamentals, fundamentals_ticker=args.ticker,
+    )
     acted = result["trades"]
     for entry in acted:
         print(f"[loop_a] {entry}")
@@ -66,6 +157,33 @@ def main():
             before = change["before_confidence"]
             before_str = f"{before:.0%}" if before is not None else "new"
             print(f"  {ticker}: {before_str} -> {change['after_confidence']:.0%} ({change['direction']})")
+
+    if do_earning_call:
+        tickers = [args.ticker.upper()] if args.ticker else sorted(tracked_universe())
+        print(f"\n=== Earnings call refresh ({len(tickers)} ticker(s)) ===")
+        if args.transcript_url:
+            recent_index = None
+            print(f"Using manual transcript URL for {tickers[0]}, skipping discovery.")
+        else:
+            print("Scanning fool.com's recent transcript listing...")
+            recent_index = discover_recent_transcripts()
+        for ticker in tickers:
+            try:
+                snapshot = refresh_earnings_call(
+                    ticker, dt.date.today(), recent_index=recent_index,
+                    transcript_url=args.transcript_url,
+                )
+            except RateLimited as exc:
+                reason = f" ({exc.message})" if exc.message else ""
+                print(f"  {ticker} -- rate limited{reason}, stopping here.")
+                break
+            if snapshot:
+                print(
+                    f"  {ticker}: new transcript processed (direction={snapshot['earnings_direction']}, "
+                    f"confidence={snapshot['earnings_confidence']:.0%}, tone={snapshot['management_tone']})"
+                )
+            else:
+                print(f"  {ticker}: no new transcript found (or nothing usable)")
 
 
 if __name__ == "__main__":

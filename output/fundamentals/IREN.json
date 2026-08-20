@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "summary": "The picture is mixed but tilted toward caution: revenue growth is essentially flat, operating margin is deeply negative, and valuation is demanding at 22.5x revenue with a negative forward P/E. Strong reported free-cash-flow margin, institutional buying, positive estimate revisions, and substantial analyst-implied upside provide offsets, but these signals do not fully overcome the weak operating profitability and elevated valuation.",
+    "key_changes": [],
+    "risks": [
+      "Sustained operating losses and negative forward earnings could require additional capital or dilution.",
+      "The high EV-to-revenue multiple leaves limited room for execution disappointments or slower growth.",
+      "The unusually high free-cash-flow margin may be volatile, nonrecurring, or distorted by working-capital effects.",
+      "Business and valuation sensitivity to cryptocurrency, data-center demand, power costs, and financing conditions could be substantial.",
+      "Insider selling and the negative low-short-interest reading may indicate unfavorable alignment or unreliable sentiment signals."
+    ],
+    "reasoning": "Neutral is warranted because strong cash flow, institutional support, and bullish consensus are offset by flat growth, severe operating losses, negative earnings, and an expensive revenue multiple.",
+    "fair_value_estimate": 80.1875,
+    "current_price": 41.935,
+    "implied_return_pct": 91.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": -0.0
+      },
+      "Valuation": {
+        "forward_pe": -41.795822,
+        "peg_ratio": 3.11,
+        "ev_to_revenue": 22.536
+      },
+      "Quality": {
+        "operating_margin": -0.64468,
+        "fcf_margin": 0.5183998080694845
+      },
+      "Sentiment": {
+        "analyst_upside": 91.21855252175986,
+        "revisions_trend": 9.80392156862745,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 82.182998885,
+        "insider_flow": -66696315,
+        "low_short_interest": -28.389999999999997
+      }
+    },
+    "trigger": "manual"
+  }
+]

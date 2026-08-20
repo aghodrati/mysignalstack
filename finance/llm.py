@@ -1,17 +1,16 @@
-"""Shared chat-completion plumbing (OpenAI-compatible APIs), used by both
-finance.summarize (prose summaries) and finance.newsloop/tickerthesis/
-fundamentals/critic (structured thesis JSON). Callers own their own prompt,
-caching, and response post-processing -- this only owns the provider/API
-key, the model list, and the HTTP call.
+"""Shared chat-completion plumbing (OpenAI-compatible APIs), used by
+finance.newsloop/tickerthesis/fundamentals/critic (structured thesis JSON).
+Callers own their own prompt, caching, and response post-processing -- this
+only owns the provider/API key, the model list, and the HTTP call.
 
 Two providers are supported (both OpenAI-compatible chat-completion APIs,
 just a different base URL/API key): Groq and OpenRouter. `complete` defaults
-to Groq + MODEL_CANDIDATES below, unchanged -- that's what
-finance.summarize's article summaries still use. Loop A's own calls
-(finance.newsloop, finance.tickerthesis, finance.fundamentals,
-finance.critic) instead pass provider/models/reasoning_models sourced from
+to Groq + MODEL_CANDIDATES below if a caller doesn't pass its own models.
+Loop A's own calls (finance.newsloop, finance.tickerthesis,
+finance.fundamentals, finance.critic) instead pass
+provider/models/reasoning_models sourced from
 finance.loop_a_config.llm_config(), so config_loop_a.json's "llm" section
-controls Loop A specifically without affecting article summaries.
+controls all of Loop A from one place.
 """
 
 from __future__ import annotations
@@ -34,11 +33,10 @@ PROVIDERS: dict[str, dict[str, str]] = {
 }
 DEFAULT_PROVIDER = "groq"
 
-# Default model list, tried in order -- only used by callers that don't pass their own `models`
-# (namely finance.summarize). llama-3.3-70b-versatile is a plain instruct model -- no hidden
-# reasoning-token budget to manage, so it can't hit max_tokens with empty visible content the way
-# a reasoning model can (see gpt-oss below). gpt-oss-20b is kept as a fallback for resilience if
-# the first is down/rate-limited.
+# Default model list, tried in order -- only used by a caller that doesn't pass its own `models`.
+# llama-3.3-70b-versatile is a plain instruct model -- no hidden reasoning-token budget to manage,
+# so it can't hit max_tokens with empty visible content the way a reasoning model can (see gpt-oss
+# below). gpt-oss-20b is kept as a fallback for resilience if the first is down/rate-limited.
 MODEL_CANDIDATES = [
     "llama-3.3-70b-versatile",
     "openai/gpt-oss-20b",
@@ -183,11 +181,10 @@ def complete(
     prompt, is out of quota) -- callers that want to retry later rather than
     treat that as a permanent failure should catch it.
 
-    finance.summarize calls this with no provider/models/reasoning_models,
-    so it's unaffected by Loop A's own choice of either (see
-    finance.loop_a_config.llm_config, passed by finance.newsloop/
-    tickerthesis/fundamentals/critic) -- article summaries and Loop A's
-    thesis pipeline can point at different providers/models/quota pools.
+    A caller that doesn't pass provider/models/reasoning_models gets the Groq + MODEL_CANDIDATES
+    default above; Loop A's own calls (finance.newsloop/tickerthesis/fundamentals/critic) instead
+    pass finance.loop_a_config.llm_config()'s choice, so config_loop_a.json's "llm" section
+    controls all of them from one place.
     """
     models = models if models is not None else MODEL_CANDIDATES
     reasoning_models = reasoning_models if reasoning_models is not None else _REASONING_MODELS

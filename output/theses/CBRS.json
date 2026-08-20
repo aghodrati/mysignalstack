@@ -1,0 +1,42 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-20",
+    "thesis": "CBRS has a modestly bullish near-term setup as strong Q2 growth and the CS-4 launch may accelerate inference adoption, although memory, power, execution, and increasingly fungible GPU-based alternatives cap conviction.",
+    "direction": "long",
+    "confidence": 0.61,
+    "fundamental_direction": null,
+    "fundamental_confidence": null,
+    "pre_critic_confidence": 0.61,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "CS-4 achieves broad availability in Q3 2026 and delivers roughly twice CS-3 inference interactivity and token throughput at similar customer total cost of ownership.",
+      "Cerebras converts AMD, AWS Trainium, and hybrid-cluster relationships into material deployments using CS-4 as a decode component.",
+      "The Nexus rack design improves fulfillment speed, deployment scale, and product margins while strong cloud and services growth continues.",
+      "Accelerating Q2 revenue growth translates into sustained demand for Cerebras AI-computing systems."
+    ],
+    "invalidation": [
+      "TileRT and vLLM-based NVIDIA inference materially reduce the need for dedicated Cerebras capacity and weaken pricing power.",
+      "The unchanged 44GB-per-wafer SRAM capacity materially limits Cerebras adoption in large-model or long-context inference workloads.",
+      "CS-4's 125-135kW rack power requirement undermines customer economics or broad deployment despite higher throughput.",
+      "CS-4 availability slips, customer adoption disappoints, or the performance gain proves insufficient because it relies mainly on overclocking.",
+      "Disaggregated inference leaves customers with inefficient fixed prefill-to-decode resource mixes as workloads change, while Tensordyne's Napier reaches production with superior decode economics."
+    ],
+    "reasoning": "The near-term evidence leans bullish through strong Q2 growth, cloud expansion, and a high-impact CS-4 catalyst, but substantial competitive and scalability concerns warrant only moderate confidence, and no independent fundamental picture was provided to strengthen or contradict the news-driven view.",
+    "claims_considered": 23
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-20",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.61,
+    "confidence_after": 0.61
+  }
+]

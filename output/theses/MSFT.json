@@ -34,51 +34,6 @@
     "claims_considered": 13
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "Microsoft has a moderately bullish AI-infrastructure and monetization thesis: aggressive datacenter expansion, diversified accelerators, cooling advances, and default Copilot distribution could unlock substantial Azure and AI revenue growth, though execution, capacity constraints, and competitive erosion temper the upside.",
-    "direction": "long",
-    "news_confidence": 0.68,
-    "fundamental_confidence": 0.79,
-    "blended_confidence": 0.7240000000000001,
-    "fair_value_estimate": 562.72644,
-    "current_price": 495.3,
-    "implied_return_pct": 13.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.177,
-        "earnings_growth": 0.317
-      },
-      "Valuation": {
-        "forward_pe": 21.106365,
-        "peg_ratio": 1.52,
-        "ev_to_revenue": 11.069
-      },
-      "Quality": {
-        "operating_margin": 0.45111,
-        "fcf_margin": 0.5512763353686011
-      },
-      "Sentiment": {
-        "analyst_upside": 13.613252574197453,
-        "revisions_trend": 0.0,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 9.066499991000002,
-        "insider_flow": -282064983.0,
-        "low_short_interest": -1.2400000000000002
-      }
-    },
-    "risks": [
-      "The elevated EV/revenue and PEG multiples leave the shares sensitive to any slowdown in growth or weaker-than-expected AI monetization.",
-      "Heavy capital intensity from infrastructure investment could pressure free-cash-flow conversion despite currently strong margins.",
-      "Regulatory scrutiny and concentration of enterprise cloud spending could constrain longer-term monetization or pricing power.",
-      "Insider selling and stagnant analyst-revision trends provide limited incremental fundamental confirmation."
-    ],
-    "reasoning": "Strong double-digit revenue and earnings growth, exceptional profitability, substantial free-cash-flow generation, and roughly 14% indicated valuation upside support a long thesis, although the premium valuation and large investment requirements temper conviction."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -132,50 +87,6 @@
     "claims_considered": 41
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "Microsoft remains a high-confidence long as accelerating Azure demand, expanding AI capacity and monetization, strong backlog visibility, diversified accelerator supply, and substantial financial flexibility outweigh infrastructure execution, cost, competition, and customer-concentration risks.",
-    "direction": "long",
-    "news_confidence": 0.84,
-    "fundamental_confidence": 0.8,
-    "blended_confidence": 0.8240000000000001,
-    "fair_value_estimate": 562.72644,
-    "current_price": 495.3,
-    "implied_return_pct": 13.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.177,
-        "earnings_growth": 0.317
-      },
-      "Valuation": {
-        "forward_pe": 21.106365,
-        "peg_ratio": 1.52,
-        "ev_to_revenue": 11.069
-      },
-      "Quality": {
-        "operating_margin": 0.45111,
-        "fcf_margin": 0.5512763353686011
-      },
-      "Sentiment": {
-        "analyst_upside": 13.613252574197453,
-        "revisions_trend": 0.0,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 9.066499991000002,
-        "insider_flow": -282064983.0,
-        "low_short_interest": -1.2400000000000002
-      }
-    },
-    "risks": [
-      "Premium valuation, particularly an EV-to-revenue multiple above 11x, leaves meaningful sensitivity to slower growth or margin compression",
-      "Flat analyst revisions and net upgrades provide limited evidence of near-term estimate momentum",
-      "Substantial insider selling may modestly weaken alignment signals, despite strong institutional ownership flows"
-    ],
-    "reasoning": "Strong revenue and earnings growth, exceptional operating and free-cash-flow margins, and roughly 14% implied upside support the long thesis, although the premium valuation and muted estimate momentum limit the margin of safety."
-  },
-  {
     "event": "critic",
     "date": "2026-08-19",
     "deterministic_flags": [],
@@ -222,50 +133,6 @@
     ],
     "reasoning": "High-confidence bullish claims on Azure growth, backlog, capacity expansion, financial flexibility, supply diversification, and AI monetization form a stronger consensus than the credible but mostly execution- and timing-related risks.",
     "claims_considered": 44
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "Microsoft remains a fundamentally bullish, financially resilient AI-and-cloud compounder, with accelerating Azure demand, substantial backlog visibility, expanding infrastructure capacity, and improving AI monetization outweighing execution, capital-intensity, competition, and customer-concentration risks.",
-    "direction": "long",
-    "news_confidence": 0.84,
-    "fundamental_confidence": 0.8,
-    "blended_confidence": 0.8240000000000001,
-    "fair_value_estimate": 562.72644,
-    "current_price": 495.3,
-    "implied_return_pct": 13.6,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.177,
-        "earnings_growth": 0.317
-      },
-      "Valuation": {
-        "forward_pe": 21.106365,
-        "peg_ratio": 1.52,
-        "ev_to_revenue": 11.069
-      },
-      "Quality": {
-        "operating_margin": 0.45111,
-        "fcf_margin": 0.5512763353686011
-      },
-      "Sentiment": {
-        "analyst_upside": 13.613252574197453,
-        "revisions_trend": 0.0,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 9.066499991000002,
-        "insider_flow": -282064983.0,
-        "low_short_interest": -1.2400000000000002
-      }
-    },
-    "risks": [
-      "The elevated 11.1x EV/revenue multiple and 1.52 PEG leave the shares sensitive to any slowdown in AI/cloud growth or margin normalization.",
-      "Flat analyst revisions and no net upgrades provide limited evidence of further near-term estimate upside.",
-      "Substantial insider selling may indicate reduced insider conviction, although it is not necessarily operationally meaningful."
-    ],
-    "reasoning": "Strong double-digit revenue growth, faster earnings growth, exceptional margins, and roughly 14% consensus upside support a long thesis, while the premium valuation and lack of positive estimate revisions temper conviction."
   },
   {
     "event": "critic",

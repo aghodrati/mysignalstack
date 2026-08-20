@@ -1,0 +1,46 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.84,
+    "summary": "GOOGL presents a strong fundamental profile, combining 24.2% revenue growth, substantial earnings growth, and excellent operating and free-cash-flow margins. Valuation is not deeply discounted at 25.6x forward earnings, but a PEG ratio below 1 and roughly 13.4% implied upside support a favorable risk-reward profile. Positive analyst revisions and institutional flows further reinforce the constructive view.",
+    "key_changes": [],
+    "risks": [
+      "Forward valuation remains meaningful, leaving the stock vulnerable to a growth slowdown or multiple compression.",
+      "Earnings growth may be flattered by favorable comparisons and could normalize materially.",
+      "Regulatory and antitrust actions, particularly affecting search, advertising, data, or distribution practices, could pressure the business.",
+      "Large AI infrastructure investments may raise capital intensity and reduce free-cash-flow conversion if returns disappoint.",
+      "Negative insider flow is a modest governance and sentiment consideration."
+    ],
+    "reasoning": "The combination of strong growth, exceptional margins, reasonable growth-adjusted valuation, and moderate consensus upside supports a high-confidence long direction despite execution, regulatory, and valuation risks.",
+    "fair_value_estimate": 428.04056,
+    "current_price": 377.53,
+    "implied_return_pct": 13.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.242,
+        "earnings_growth": 2.94
+      },
+      "Valuation": {
+        "forward_pe": 25.622301,
+        "peg_ratio": 0.97,
+        "ev_to_revenue": 10.013
+      },
+      "Quality": {
+        "operating_margin": 0.34033,
+        "fcf_margin": 0.4164368052620942
+      },
+      "Sentiment": {
+        "analyst_upside": 13.379217545625522,
+        "revisions_trend": 1.3942307692307643,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 11.031999997500002,
+        "insider_flow": -52482274.0,
+        "low_short_interest": -1.34000005
+      }
+    },
+    "trigger": "manual"
+  }
+]

@@ -986,5 +986,43 @@
     "trade_worthy": false,
     "context": "UC Berkeley experts cited in the article argue that AI progress does not require ever-larger data centers because smaller open-source models are becoming capable enough for many tasks while using substantially less compute, energy, and water. If workloads migrate to local systems rather than hyperscale facilities, Google could face slower growth in AI-related cloud consumption and less need for incremental data-center capacity, though the article does not establish the magnitude or timing of that shift.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "1676bd4884029ff3",
+    "ticker": "GOOGL",
+    "source_link": "https://stratechery.com/2026/nvidia-backs-openai-data-center-anthropic-news-google-buys-spirit-airlines-data/",
+    "source_title": "Nvidia Backs OpenAI Data Center, Anthropic News, Google Buys Spirit Airlines Data",
+    "event_type": "capex",
+    "created": "2026-08-18",
+    "claim": "Google\u2019s acquisition of Spirit Airlines\u2019 data could strengthen its data assets and create a modest strategic advantage in advertising or artificial-intelligence applications.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article presents Google\u2019s purchase of Spirit Airlines data as evidence that proprietary information may be becoming an increasingly valuable resource\u2014possibly analogous to oil. It does not specify what data was acquired, how Google will use it, or the expected financial contribution, so the benefit to Google remains indirect and difficult to quantify.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "fc4f21475f144393",
+    "ticker": "GOOGL",
+    "source_link": "https://stratechery.com/2026/the-capex-train-keeps-rolling/",
+    "source_title": "2026.33: The CapEx Train Keeps Rolling",
+    "event_type": "capex",
+    "created": "2026-08-14",
+    "claim": "Google\u2019s effort to tap equity could help finance its AI infrastructure buildout until AI revenue becomes sustainable, supporting its longer-term growth outlook.",
+    "direction": "long",
+    "confidence": 0.85,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article contrasts Nvidia\u2019s newly announced mechanism for accessing long-duration capital with Google, which it says is leading efforts to tap equity. It presents these financing initiatives as a bridge between the enormous current cost of AI infrastructure and the point at which AI-generated revenue can sustainably fund that investment. The implication for Google is supportive of continued AI expansion, although the article does not specify the structure, scale, timing, or shareholder impact of the equity financing.",
+    "source": "Stratechery"
   }
 ]

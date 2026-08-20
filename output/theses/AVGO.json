@@ -28,50 +28,6 @@
     "claims_considered": 4
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "contradicts",
-    "thesis": "Broadcom\u2019s near-term AI-connectivity opportunity is weakened by lost Meta PCIe-switch demand and meaningful execution risks to AMD Helios, leaving the risk-reward modestly bearish despite potential Helios upside.",
-    "direction": "short",
-    "news_confidence": 0.57,
-    "fundamental_confidence": 0.18,
-    "blended_confidence": 0.414,
-    "fair_value_estimate": 527.88446,
-    "current_price": 408.91,
-    "implied_return_pct": 29.1,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.47900000000000004,
-        "earnings_growth": 0.854
-      },
-      "Valuation": {
-        "forward_pe": 20.978394,
-        "peg_ratio": 0.44,
-        "ev_to_revenue": 25.328
-      },
-      "Quality": {
-        "operating_margin": 0.48988000000000004,
-        "fcf_margin": 0.4455310422147721
-      },
-      "Sentiment": {
-        "analyst_upside": 29.0955124599545,
-        "net_upgrades": -2.0
-      },
-      "Ownership": {
-        "institutional_flow": 13.00750000985,
-        "insider_flow": -1405492295,
-        "low_short_interest": -1.4700000000000002
-      }
-    },
-    "risks": [
-      "Exceptional revenue and earnings growth may justify the premium valuation and sustain upside despite near-term execution concerns",
-      "Strong operating and free-cash-flow margins provide substantial financial resilience",
-      "Forward P/E near 21 and PEG of 0.44 suggest valuation is not obviously excessive relative to growth",
-      "Consensus fair value implies approximately 29% upside, while positive institutional flows may support demand"
-    ],
-    "reasoning": "Fundamentals largely argue against a short because AVGO combines rapid growth, exceptionally high margins, and a relatively moderate growth-adjusted valuation, although elevated EV-to-revenue and insider selling temper conviction."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -122,49 +78,6 @@
     ],
     "reasoning": "The evidence is weighted toward a durable, multi-year AI growth opportunity across custom silicon, packaging, and networking, with VMware providing support, while execution, supply, competitive, and leverage risks argue for a measured rather than maximum-conviction long stance.",
     "claims_considered": 27
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "AVGO has a moderately high-conviction long thesis because accelerating custom AI-accelerator, advanced-packaging, and Ethernet networking demand should make AI its dominant growth engine, although supply constraints, margin pressure, customer concentration, debt, and Nvidia\u2019s proprietary scale-up ecosystem limit upside.",
-    "direction": "long",
-    "news_confidence": 0.83,
-    "fundamental_confidence": 0.82,
-    "blended_confidence": 0.826,
-    "fair_value_estimate": 527.88446,
-    "current_price": 408.91,
-    "implied_return_pct": 29.1,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.47900000000000004,
-        "earnings_growth": 0.854
-      },
-      "Valuation": {
-        "forward_pe": 20.978394,
-        "peg_ratio": 0.44,
-        "ev_to_revenue": 25.328
-      },
-      "Quality": {
-        "operating_margin": 0.48988000000000004,
-        "fcf_margin": 0.4455310422147721
-      },
-      "Sentiment": {
-        "analyst_upside": 29.0955124599545,
-        "net_upgrades": -2.0
-      },
-      "Ownership": {
-        "institutional_flow": 13.00750000985,
-        "insider_flow": -1405492295,
-        "low_short_interest": -1.4700000000000002
-      }
-    },
-    "risks": [
-      "The elevated EV-to-revenue multiple leaves meaningful downside if exceptionally high AI-related growth normalizes faster than forecast",
-      "Forward earnings and PEG metrics may rely on unusually optimistic estimates, making valuation sensitive to execution disappointments",
-      "Semiconductor demand and earnings can remain cyclical despite currently strong growth and margins"
-    ],
-    "reasoning": "Fundamentals strongly support a long bias through exceptional revenue and earnings growth, very high operating and free-cash-flow margins, and apparently reasonable forward earnings valuation relative to growth, although the rich revenue multiple and dependence on sustained forecasts temper conviction."
   },
   {
     "event": "critic",

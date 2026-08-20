@@ -5,21 +5,24 @@ calls `update_ticker_thesis`). Portfolios don't run their own version of
 this; they just watch the shared snapshot and react deterministically
 (finance.newsloop.run_loop_a).
 
-Two LLM calls per update:
+One LLM call per update (plus the critic's own, see below):
 
 `aggregate_claims` (Stage C): given every claim ever collected for this
-ticker, synthesizes ONE current thesis/direction/confidence -- weighing each
-claim by its own confidence/importance rather than treating the list flatly,
-which is the (deliberately soft, not a hard numeric rule) protection against
-any single new or low-importance claim overriding an established consensus
-from many prior ones.
-
-`finance.fundamentals.fundamental_opinion`: the same fundamental second
-opinion used before, just now running once globally per ticker-thesis update
-instead of once per portfolio -- blended into confidence (News-weighted) and
-folded into invalidation, same as before, recorded as its own "fundamental"
-event for audit but never the source of truth for confidence (the preceding
-"aggregated" event already carries the final blended number).
+ticker, PLUS whichever independent fundamental snapshot is currently latest
+(see finance.fundamentals.load_fundamental_history/latest_fundamental -- NOT
+regenerated here; fundamentals refresh on their own schedule, either
+finance.newsloop's earnings-window trigger or a manual
+`--refresh-fundamentals` run_loop_a.py pass, since they don't meaningfully
+change often enough to justify a fresh LLM call on every single new claim),
+synthesizes ONE current thesis/direction/confidence -- weighing each claim by
+its own confidence/importance rather than treating the list flatly
+(deliberately soft, not a hard numeric rule), and weighing the fundamental
+picture in the same prompt rather than a separate numeric blend applied
+after the fact. The fundamental snapshot itself lives entirely in
+finance.fundamentals' own per-ticker store (output/fundamentals/{ticker}.json),
+genuinely separate from this module's own event log. It no longer carries a
+"confidence" that gets arithmetically combined with anything -- Stage C's own
+"aggregated" event here is the sole source of truth for confidence.
 
 Third and last: a critic pass on Stage C's own synthesis -- deterministic
 guardrails (`_deterministic_critic_flags`: source concentration, evidence
@@ -46,17 +49,11 @@ from pathlib import Path
 
 from finance.claims import ArticleClaim, Direction, HORIZON_MAX_DAYS, HORIZON_MIN_DAYS, load_claims
 from finance.critic import critic_review
-from finance.fundamentals import compute_fundamental_factors, fundamental_opinion
+from finance.fundamentals import latest_fundamental
 from finance.llm import complete
 from finance.loop_a_config import llm_config
 
 THESES_DIR = Path("output/theses")
-
-# Blend weights for the fundamental second opinion against the aggregator's own ("News") confidence
-# -- News-weighted since it's the primary, always-present signal; fundamentals are a corroborating/
-# contradicting check on top, not a replacement. Soft influence only, same as before.
-NEWS_CONFIDENCE_WEIGHT = 0.6
-FUNDAMENTAL_CONFIDENCE_WEIGHT = 0.4
 
 # Caps how many of a ticker's claims ever reach one aggregate_claims prompt -- claims accumulate
 # forever (finance.claims.append_claims is pure-append, nothing prunes it), so without a cap a
@@ -158,9 +155,15 @@ _AGGREGATE_REQUIRED_FIELDS = {
 }
 
 
-def aggregate_claims(ticker: str, claims: list[ArticleClaim], as_of: dt.date) -> dict | None:
+def aggregate_claims(
+    ticker: str, claims: list[ArticleClaim], as_of: dt.date, fundamental: dict | None = None
+) -> dict | None:
     """Stage C, one LLM call: synthesizes every claim ever collected for
-    `ticker` into one current thesis/direction/confidence. Never raises for a
+    `ticker` into one current thesis/direction/confidence, weighing in
+    `fundamental` (the latest finance.fundamentals.fundamental_snapshot, if
+    one exists) alongside the claims rather than blending a number in
+    afterward -- this call's own "confidence" is the final say, no further
+    arithmetic combination happens once it returns. Never raises for a
     genuine parse failure (returns None). Raises RateLimited (propagated from
     finance.llm.complete) if every model is currently out of quota, same as
     every other Stage call.
@@ -173,17 +176,31 @@ def aggregate_claims(ticker: str, claims: list[ArticleClaim], as_of: dt.date) ->
         }
         for c in sorted(claims, key=lambda c: c.created)
     ]
+    if fundamental is None:
+        fundamental_block = "No fundamental picture available for this ticker.\n\n"
+    else:
+        fundamental_block = (
+            f"Independent fundamental picture (from the company's underlying business/valuation "
+            f"data, NOT derived from the news claims above -- a corroborating or contradicting "
+            f"check, weigh it alongside the claims but don't let it alone override a strong, "
+            f"well-supported news consensus, and vice versa):\n"
+            f"{json.dumps({k: fundamental[k] for k in ('fundamental_direction', 'fundamental_confidence', 'summary', 'key_changes', 'risks')})}"
+            f"\n\n"
+        )
     prompt = (
         f"You are an investment research assistant synthesizing a single current thesis for {ticker} "
-        f"as of {as_of.isoformat()}, from every distinct claim collected about it so far. Reason only "
-        f"from the claims given -- no outside knowledge of what happened after {as_of.isoformat()}.\n\n"
+        f"as of {as_of.isoformat()}, from every distinct claim collected about it so far plus an "
+        f"independent fundamental picture. Reason only from what's given below -- no outside "
+        f"knowledge of what happened after {as_of.isoformat()}.\n\n"
         f"Claims (oldest first, each with its own confidence, importance, and expected horizon -- weigh "
         f"accordingly, don't treat them as equally significant, and don't let a single new or "
         f"low-importance claim override an established consensus from many prior claims):\n"
         f"{json.dumps(claim_summaries)}\n\n"
+        f"{fundamental_block}"
         f"Synthesize ONE current thesis, direction, and confidence for {ticker} that best reflects this "
-        f"whole body of evidence. If the claims genuinely conflict or are too thin to support a clear "
-        f"call, reflect that with a low confidence rather than picking a direction arbitrarily.\n\n"
+        f"whole body of evidence. If the claims genuinely conflict, are too thin to support a clear "
+        f"call, or the fundamental picture strongly contradicts the news-driven direction, reflect "
+        f"that with a low confidence rather than picking a direction arbitrarily.\n\n"
         f"Respond with ONLY a JSON object (no markdown fences, no commentary):\n"
         f'{{"thesis": "one sentence: the current synthesized view", '
         f'"direction": "long" or "short", '
@@ -195,8 +212,10 @@ def aggregate_claims(ticker: str, claims: list[ArticleClaim], as_of: dt.date) ->
         f"bearish, not a restatement of the bullish case), "
         f'"invalidation": ["...", ...] (the opposite standard -- events/developments that would '
         f'CONTRADICT or DISPROVE the direction you chose; for a "short" direction these are the '
-        f"bullish claims/outcomes that would prove it wrong), "
-        f'"reasoning": "one sentence explaining the synthesis"}}'
+        f"bullish claims/outcomes that would prove it wrong -- fold in any fundamental risks above "
+        f"that would count as invalidation too), "
+        f'"reasoning": "one sentence explaining the synthesis, including how the fundamental picture '
+        f'factored in if one was given"}}'
     )
 
     raw = complete(prompt, max_tokens=700, **llm_config())
@@ -250,73 +269,58 @@ def _deterministic_critic_flags(
 
 def update_ticker_thesis(ticker: str, as_of: dt.date) -> TickerThesis | None:
     """Recomputes `ticker`'s current synthesized view from every claim
-    collected so far, plus a fresh fundamental second opinion and a critic
-    pass (deterministic guardrails + one LLM red-team call, see
-    finance.critic), and appends all of it to the permanent, global
-    (portfolio-independent) log. Returns the updated TickerThesis, or None
-    if there are no claims yet or the aggregator produced nothing usable --
+    collected so far, plus whichever independent fundamental snapshot is
+    currently latest (finance.fundamentals.latest_fundamental -- a pure read,
+    NOT regenerated here; fundamentals don't meaningfully change often enough
+    to justify a fresh LLM call on every single new claim, so they refresh on
+    their own separate schedule -- see finance.fundamentals.refresh_fundamentals's
+    callers), fed into Stage C together, then a critic pass (deterministic
+    guardrails + one LLM red-team call, see finance.critic) on the result.
+    Appends the "aggregated"/"critic" events to the permanent, global
+    (portfolio-independent) log. Returns the updated TickerThesis, or None if
+    there are no claims yet or the aggregator produced nothing usable --
     callers should leave whatever the previous snapshot was in place rather
-    than losing it. Propagates RateLimited from any of the LLM calls, same
-    as every other Stage.
+    than losing it. Propagates RateLimited from any of the LLM calls, same as
+    every other Stage.
     """
     claims = load_claims(ticker)
     if not claims:
         return None
     if len(claims) > MAX_CLAIMS_FOR_AGGREGATION:
         claims = sorted(claims, key=lambda c: c.created, reverse=True)[:MAX_CLAIMS_FOR_AGGREGATION]
-    result = aggregate_claims(ticker, claims, as_of)
+
+    fundamental = latest_fundamental(ticker)
+
+    result = aggregate_claims(ticker, claims, as_of, fundamental=fundamental)
     if result is None:
         return None
 
-    news_confidence = result["confidence"]
+    pre_critic_confidence = result["confidence"]
     invalidation = list(result["invalidation"])
-    factors = compute_fundamental_factors(ticker)
-    fundamental = fundamental_opinion(ticker, result["thesis"], result["direction"], news_confidence, factors, as_of)
-    fundamental_confidence = fundamental["fundamental_confidence"] if fundamental is not None else None
-    if fundamental is not None:
-        blended_confidence = (
-            news_confidence * NEWS_CONFIDENCE_WEIGHT
-            + fundamental_confidence * FUNDAMENTAL_CONFIDENCE_WEIGHT
-        )
-        invalidation = list(dict.fromkeys(invalidation + fundamental["risks"]))
-    else:
-        blended_confidence = news_confidence
 
     deterministic_multiplier, deterministic_flags = _deterministic_critic_flags(
-        claims, blended_confidence, result["expected_horizon_days"], as_of
+        claims, pre_critic_confidence, result["expected_horizon_days"], as_of
     )
     critic = critic_review(
-        ticker, result["thesis"], result["direction"], claims, blended_confidence, deterministic_flags, as_of
+        ticker, result["thesis"], result["direction"], claims, pre_critic_confidence, deterministic_flags, as_of
     )
     llm_multiplier = critic["multiplier"] if critic is not None else None
     critic_multiplier = deterministic_multiplier * (llm_multiplier if llm_multiplier is not None else 1.0)
-    final_confidence = max(0.0, min(1.0, blended_confidence * critic_multiplier))
+    final_confidence = max(0.0, min(1.0, pre_critic_confidence * critic_multiplier))
 
     _append(
         ticker,
         {
             "event": "aggregated", "date": as_of.isoformat(), "thesis": result["thesis"],
             "direction": result["direction"], "confidence": final_confidence,
-            "news_confidence": news_confidence, "fundamental_confidence": fundamental_confidence,
-            "pre_critic_confidence": blended_confidence, "critic_multiplier": critic_multiplier,
+            "fundamental_direction": fundamental["fundamental_direction"] if fundamental else None,
+            "fundamental_confidence": fundamental["fundamental_confidence"] if fundamental else None,
+            "pre_critic_confidence": pre_critic_confidence, "critic_multiplier": critic_multiplier,
             "expected_return_pct": result["expected_return_pct"],
             "expected_horizon_days": result["expected_horizon_days"], "catalysts": result["catalysts"],
             "invalidation": invalidation, "reasoning": result["reasoning"], "claims_considered": len(claims),
         },
     )
-    if fundamental is not None:
-        _append(
-            ticker,
-            {
-                "event": "fundamental", "date": as_of.isoformat(), "assessment": fundamental["assessment"],
-                "thesis": result["thesis"], "direction": result["direction"],
-                "news_confidence": news_confidence, "fundamental_confidence": fundamental_confidence,
-                "blended_confidence": blended_confidence, "fair_value_estimate": factors["fair_value_estimate"],
-                "current_price": factors["current_price"], "implied_return_pct": factors["implied_return_pct"],
-                "factors": factors["factors"], "risks": fundamental["risks"],
-                "reasoning": fundamental["reasoning"],
-            },
-        )
     _append(
         ticker,
         {
@@ -326,70 +330,8 @@ def update_ticker_thesis(ticker: str, as_of: dt.date) -> TickerThesis | None:
             "llm_multiplier": llm_multiplier,
             "llm_reasoning": critic["reasoning"] if critic is not None else None,
             "final_multiplier": critic_multiplier,
-            "confidence_before": blended_confidence, "confidence_after": final_confidence,
+            "confidence_before": pre_critic_confidence, "confidence_after": final_confidence,
         },
     )
 
-    return load_ticker_thesis(ticker)
-
-
-def refresh_fundamentals(ticker: str, as_of: dt.date) -> TickerThesis | None:
-    """Re-runs only the fundamental second opinion for `ticker`'s current
-    thesis and re-blends it into confidence, without a new Stage C
-    aggregation -- for callers that want fundamentals refreshed independent
-    of whether any new claim has landed (namely finance.newsloop's
-    earnings-window trigger: the underlying numbers move around an earnings
-    report whether or not a qualifying news article does). Returns None if
-    there's no existing thesis to refresh, or the fundamental call itself
-    produced nothing usable. Propagates RateLimited, same as every other
-    Stage call.
-    """
-    events = _load_events(ticker)
-    latest = next((e for e in reversed(events) if e["event"] == "aggregated"), None)
-    if latest is None:
-        return None
-
-    news_confidence = float(latest["news_confidence"]) if latest.get("news_confidence") is not None else float(latest["confidence"])
-    thesis, direction = latest["thesis"], latest["direction"]
-    factors = compute_fundamental_factors(ticker)
-    fundamental = fundamental_opinion(ticker, thesis, direction, news_confidence, factors, as_of)
-    if fundamental is None:
-        return None
-
-    fundamental_confidence = fundamental["fundamental_confidence"]
-    blended_confidence = (
-        news_confidence * NEWS_CONFIDENCE_WEIGHT + fundamental_confidence * FUNDAMENTAL_CONFIDENCE_WEIGHT
-    )
-    invalidation = list(dict.fromkeys(list(latest["invalidation"]) + fundamental["risks"]))
-    # Carries forward the critic's last dampening rather than dropping it -- an earnings-only
-    # refresh doesn't re-run the critic (the underlying claims/thesis text haven't changed), but
-    # whatever structural concern it flagged last time (thin evidence, single source, staleness)
-    # still applies to the same thesis text now getting a fresh confidence number.
-    critic_multiplier = float(latest.get("critic_multiplier", 1.0))
-    final_confidence = max(0.0, min(1.0, blended_confidence * critic_multiplier))
-
-    _append(
-        ticker,
-        {
-            "event": "aggregated", "date": as_of.isoformat(), "thesis": thesis, "direction": direction,
-            "confidence": final_confidence, "news_confidence": news_confidence,
-            "fundamental_confidence": fundamental_confidence,
-            "pre_critic_confidence": blended_confidence, "critic_multiplier": critic_multiplier,
-            "expected_return_pct": latest["expected_return_pct"],
-            "expected_horizon_days": latest["expected_horizon_days"], "catalysts": latest["catalysts"],
-            "invalidation": invalidation, "reasoning": latest["reasoning"],
-            "claims_considered": latest.get("claims_considered", 0), "trigger": "earnings",
-        },
-    )
-    _append(
-        ticker,
-        {
-            "event": "fundamental", "date": as_of.isoformat(), "assessment": fundamental["assessment"],
-            "thesis": thesis, "direction": direction, "news_confidence": news_confidence,
-            "fundamental_confidence": fundamental_confidence, "blended_confidence": blended_confidence,
-            "fair_value_estimate": factors["fair_value_estimate"], "current_price": factors["current_price"],
-            "implied_return_pct": factors["implied_return_pct"], "factors": factors["factors"],
-            "risks": fundamental["risks"], "reasoning": fundamental["reasoning"], "trigger": "earnings",
-        },
-    )
     return load_ticker_thesis(ticker)

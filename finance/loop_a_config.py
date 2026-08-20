@@ -1,16 +1,13 @@
 """Loop A's own config: which tickers it tracks, which news sources it
 processes, which LLM provider/models it calls, and how much of an article's
-text it sends -- deliberately separate
-from finance.universe's QUICK_PICK_CATEGORIES/custom_tickers.json (the
-sidebar's comparison-tab ticker picker, free to browse -- just price
-charts), finance.news's NEWS_SOURCES (the "This Week" tab's full browsing
-list), and finance.llm's own defaults (still used unchanged by
-finance.summarize's article summaries). Every ticker/source/model
-configured here directly drives Stage A/B/C LLM cost, since Loop A spends a
-real call per (article, ticker) it decides to look at -- adding a ticker to
-a chart comparison shouldn't silently start spending quota tracking its
-news forever, and switching Loop A's model/provider for cost or quality
-reasons shouldn't also change what powers article summaries.
+text it sends -- deliberately separate from finance.universe's
+QUICK_PICK_CATEGORIES/custom_tickers.json (the sidebar's comparison-tab
+ticker picker, free to browse -- just price charts) and finance.news's
+NEWS_SOURCES (the "This Week" tab's full browsing list). Every
+ticker/source/model configured here directly drives Stage A/B/C LLM cost,
+since Loop A spends a real call per (article, ticker) it decides to look at
+-- adding a ticker to a chart comparison shouldn't silently start spending
+quota tracking its news forever.
 
 A plain, hand-editable JSON file rather than anything fancier -- everything
 else this app persists (portfolios, theses, claims) is JSON too, and this is
@@ -34,9 +31,11 @@ def _load() -> dict:
 def tracked_universe() -> dict[str, str]:
     """ticker -> display name, exactly as configured -- the set of companies
     Loop A looks for in every article and the only tickers its extracted
-    claims are ever validated against.
+    claims are ever validated against. "universe" entries are {"name",
+    "sector"} objects (see ticker_sectors for the latter); this reads just
+    the name.
     """
-    return dict(_load().get("universe", {}))
+    return {ticker: entry["name"] for ticker, entry in _load().get("universe", {}).items()}
 
 
 _UNCATEGORIZED_SECTOR = "Other"
@@ -46,12 +45,13 @@ def ticker_sectors() -> dict[str, str]:
     """ticker -> sector, for grouping the tracked universe in the UI (see
     app.py's page_ticker) the same way finance.universe's QUICK_PICK_CATEGORIES
     groups its own, separate ticker list. Display-only -- Stage A/B/C never
-    read this, so a ticker missing from "sectors" (e.g. one just added to
-    "universe" and not yet categorized) still works everywhere else, just
-    falls back to a catch-all "Other" group here.
+    read this, so a ticker missing a "sector" key falls back to a catch-all
+    "Other" group here rather than erroring.
     """
-    sectors = _load().get("sectors", {})
-    return {ticker: sectors.get(ticker, _UNCATEGORIZED_SECTOR) for ticker in tracked_universe()}
+    return {
+        ticker: entry.get("sector", _UNCATEGORIZED_SECTOR)
+        for ticker, entry in _load().get("universe", {}).items()
+    }
 
 
 def active_news_sources() -> list[tuple[str, str]]:
@@ -84,10 +84,9 @@ def llm_config() -> dict:
     expect (`complete(prompt, **llm_config())`) -- the config file itself
     stores "models" as a single ordered list of {"name", "reasoning"}
     objects (see _DEFAULT_LLM_CONFIG), not two parallel lists, so there's
-    nothing to keep in sync by hand. Separate from finance.llm's module-
-    level defaults, which finance.summarize's article summaries still use
-    unchanged -- switching Loop A's provider/models here doesn't touch
-    summaries, and vice versa.
+    nothing to keep in sync by hand. Separate from finance.llm's own
+    module-level defaults (Groq + MODEL_CANDIDATES), used by any other
+    caller of finance.llm.complete that doesn't pass its own models.
     """
     cfg = _load().get("llm", {})
     models = cfg.get("models", _DEFAULT_LLM_CONFIG["models"])

@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "summary": "Tesla has strong revenue growth and supportive analyst sentiment, but earnings are declining and operating profitability is very weak at roughly 1.4%. The valuation is highly demanding, with a forward P/E near 146, PEG of 4.56, and EV/revenue of about 12, making the fundamentals too mixed to support a clear long view despite the estimated 22.5% upside.",
+    "key_changes": [],
+    "risks": [
+      "Very elevated valuation leaves substantial downside if growth or future earnings expectations disappoint.",
+      "Negative earnings growth and a low operating margin indicate weak current profitability.",
+      "Revenue growth may not translate into durable earnings or cash-flow growth if pricing pressure and investment needs persist.",
+      "The consensus fair value estimate is a directional anchor only and may rely on optimistic long-term assumptions."
+    ],
+    "reasoning": "Strong revenue growth and positive sentiment are offset by declining earnings, weak operating margins, and an exceptionally expensive valuation, warranting a neutral fundamental stance.",
+    "fair_value_estimate": 397.87274,
+    "current_price": 324.81,
+    "implied_return_pct": 22.5,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.255,
+        "earnings_growth": -0.03
+      },
+      "Valuation": {
+        "forward_pe": 146.36157,
+        "peg_ratio": 4.56,
+        "ev_to_revenue": 12.018
+      },
+      "Quality": {
+        "operating_margin": 0.014099999,
+        "fcf_margin": 0.1803240646309327
+      },
+      "Sentiment": {
+        "analyst_upside": 22.49399341153291,
+        "revisions_trend": 1.0195035460992874,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 11.242999985500003,
+        "insider_flow": 219916134.0,
+        "low_short_interest": -2.0
+      }
+    },
+    "trigger": "manual"
+  }
+]

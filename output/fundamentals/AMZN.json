@@ -1,0 +1,45 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.8,
+    "summary": "AMZN shows a strong fundamental profile, combining 19.6% revenue growth, exceptionally high reported earnings growth, solid operating and free-cash-flow margins, and supportive analyst sentiment. Valuation is not inexpensive at 27.1x forward earnings and 4.1x EV/revenue, but a PEG of 1.46 and roughly 15.6% consensus upside suggest the premium is reasonably supported by growth and improving profitability.",
+    "key_changes": [],
+    "risks": [
+      "The exceptionally high earnings-growth rate may reflect a low comparison base and could normalize materially.",
+      "Valuation leaves room for downside if revenue growth, margin expansion, or cash-flow conversion disappoints.",
+      "Large insider net selling is a cautionary ownership signal, despite positive institutional flows.",
+      "Competitive intensity, regulatory scrutiny, and heavy investment requirements could pressure margins and free cash flow."
+    ],
+    "reasoning": "The combination of strong growth, improving profitability, positive revisions, and moderate implied upside outweighs the relatively full valuation and insider-selling concerns, supporting a confident long view.",
+    "fair_value_estimate": 323.29083,
+    "current_price": 279.7455,
+    "implied_return_pct": 15.6,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.196,
+        "earnings_growth": 2.423
+      },
+      "Valuation": {
+        "forward_pe": 27.110668,
+        "peg_ratio": 1.46,
+        "ev_to_revenue": 4.115
+      },
+      "Quality": {
+        "operating_margin": 0.13689,
+        "fcf_margin": 0.20807934698542693
+      },
+      "Sentiment": {
+        "analyst_upside": 15.566052000836494,
+        "revisions_trend": 1.2218963831867047,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.677500017500003,
+        "insider_flow": -6175029840.0,
+        "low_short_interest": -1.09
+      }
+    },
+    "trigger": "manual"
+  }
+]

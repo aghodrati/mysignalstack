@@ -32,48 +32,6 @@
     "claims_considered": 10
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "contradicts",
-    "thesis": "QBTS has a favorable but execution-dependent outlook as completed Quantum Circuits integration, strong near-term bookings, and a broader annealing-plus-gate-model strategy expand its commercial opportunity, while prospective government funding remains an unconfirmed upside catalyst.",
-    "direction": "long",
-    "news_confidence": 0.84,
-    "fundamental_confidence": 0.1,
-    "blended_confidence": 0.544,
-    "fair_value_estimate": 37.052,
-    "current_price": 20.661,
-    "implied_return_pct": 79.3,
-    "factors": {
-      "Growth": {
-        "revenue_growth": -0.809
-      },
-      "Valuation": {
-        "forward_pe": -53.06809,
-        "ev_to_revenue": 550.41
-      },
-      "Quality": {
-        "operating_margin": -19.14871,
-        "fcf_margin": -7.84819993571199
-      },
-      "Sentiment": {
-        "analyst_upside": 79.33304293112626,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 22.573999871,
-        "insider_flow": -329497275.0,
-        "low_short_interest": -20.020000000000003
-      }
-    },
-    "risks": [
-      "Extremely elevated EV-to-revenue valuation leaves little room for execution setbacks or financing needs.",
-      "Severe revenue contraction indicates weak current commercial traction despite reported bookings.",
-      "Deeply negative operating and free-cash-flow margins imply ongoing cash burn and potential shareholder dilution.",
-      "Large insider selling and unfavorable short-interest positioning undermine alignment and market confidence."
-    ],
-    "reasoning": "While consensus upside and institutional inflows offer some support, the combination of collapsing revenue, substantial losses and cash burn, and an exceptionally demanding valuation fundamentally argues against the long thesis."
-  },
-  {
     "event": "critic",
     "date": "2026-08-19",
     "deterministic_flags": [],

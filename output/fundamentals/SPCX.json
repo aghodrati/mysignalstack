@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.72,
+    "summary": "SPCX shows respectable 15.4% revenue growth and exceptionally strong reported free-cash-flow margin, but those positives are outweighed by a -41.6% operating margin and extreme valuation at roughly 125x forward earnings and 38x EV/revenue. The large analyst-implied upside is only a directional sentiment anchor, not sufficient fundamental support for the current valuation.",
+    "key_changes": [],
+    "risks": [
+      "Severe operating losses could persist or indicate that reported free cash flow is not sustainably representative of underlying earnings power.",
+      "Extreme valuation leaves substantial downside if growth slows, margins fail to improve, or investor expectations reset.",
+      "Insider selling is a negative alignment signal, despite positive institutional flow.",
+      "The business may need sustained execution and very strong long-term growth to justify its current revenue multiple."
+    ],
+    "reasoning": "The combination of negative operating profitability and exceptionally high valuation implies an unfavorable risk-reward profile despite solid growth and cash generation, warranting a moderately high-confidence short fundamental view.",
+    "fair_value_estimate": 223.0,
+    "current_price": 113.82,
+    "implied_return_pct": 95.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.154
+      },
+      "Valuation": {
+        "forward_pe": 124.924545,
+        "ev_to_revenue": 38.372
+      },
+      "Quality": {
+        "operating_margin": -0.41627997,
+        "fcf_margin": 0.3681156542289117
+      },
+      "Sentiment": {
+        "analyst_upside": 95.92338780530663,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 100.0,
+        "insider_flow": -1199572.0,
+        "low_short_interest": -2.6700001
+      }
+    },
+    "trigger": "manual"
+  }
+]

@@ -27,50 +27,6 @@
     "claims_considered": 3
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "contradicts",
-    "thesis": "Berkshire Hathaway\u2019s Google investment and substantial capital-allocation capacity modestly improve BRK-B\u2019s long-term outlook, though returns remain exposed to the risk that AI infrastructure demand disappoints.",
-    "direction": "long",
-    "news_confidence": 0.74,
-    "fundamental_confidence": 0.38,
-    "blended_confidence": 0.5960000000000001,
-    "fair_value_estimate": 525.3333,
-    "current_price": 513.965,
-    "implied_return_pct": 2.2,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.044,
-        "earnings_growth": 1.196
-      },
-      "Valuation": {
-        "forward_pe": 23.826082,
-        "peg_ratio": 10.06,
-        "ev_to_revenue": -0.707
-      },
-      "Quality": {
-        "operating_margin": 0.14352,
-        "fcf_margin": 0.12121663878054308
-      },
-      "Sentiment": {
-        "analyst_upside": 2.21188213205179,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 14.497000060999998,
-        "insider_flow": -8179357.0,
-        "low_short_interest": -0.9599999500000002
-      }
-    },
-    "risks": [
-      "Forward valuation is relatively demanding versus modest 4.4% revenue growth and the elevated PEG ratio suggests earnings growth may be nonrecurring",
-      "Consensus fair value implies only about 2.2% upside, leaving limited valuation margin of safety",
-      "Insurance, railroad, and utility earnings remain exposed to cyclical, catastrophe, regulatory, and operating risks",
-      "Future returns depend heavily on effective deployment of Berkshire\u2019s large cash holdings and succession execution"
-    ],
-    "reasoning": "Solid margins, balance-sheet flexibility, and a sharp reported earnings rebound provide some support, but modest underlying growth, limited implied upside, and a demanding valuation make the fundamentals only weakly supportive of a long position."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [

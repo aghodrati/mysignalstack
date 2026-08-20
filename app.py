@@ -79,6 +79,8 @@ from finance.ranking import (
     percentile_rank_table,
 )
 from finance.thesis import open_positions
+from finance.earnings_calls import load_earnings_call_history
+from finance.fundamentals import load_fundamental_history
 from finance.tickerthesis import list_tickers_with_thesis, load_ticker_thesis
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
 
@@ -351,8 +353,8 @@ _CATEGORY_HEADLINE_FACTOR: dict[str, str] = {
 }
 
 _FUNDAMENTAL_STYLE: dict[str, tuple[str, str]] = {
-    "supports": ("\U0001f7e2", "Fundamentals: Supports"),
-    "contradicts": ("\U0001f534", "Fundamentals: Contradicts"),
+    "long": ("\U0001f7e2", "Fundamentals: Long"),
+    "short": ("\U0001f534", "Fundamentals: Short"),
     "neutral": ("⚪", "Fundamentals: Neutral"),
 }
 
@@ -404,6 +406,48 @@ def _keep_cols_html(cards_html: list[str], n_cols: int, css_class: str) -> str:
     return f'<div class="{css_class}">{columns_html}</div>'
 
 
+def _flip_card_html(card_body: str, back_html: str | None) -> str:
+    """One card's outer HTML -- a plain div if there's nothing to flip to (`back_html` is None),
+    otherwise a <details>-based 3D flip card (see _inject_keep_card_css's own docstring for the
+    mechanism). Shared by claim cards and fundamental cards so both flip the same way.
+    """
+    if back_html is None:
+        return f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
+    return (
+        f'<details class="keep-card-flip">'
+        f'<summary class="keep-flip-summary"><div class="keep-flip-inner">'
+        f'<div class="keep-card keep-flip-front" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
+        f'<div class="keep-card keep-flip-back" style="background:{_KEEP_CARD_BACKGROUND}">{back_html}</div>'
+        f"</div></summary>"
+        f"</details>"
+    )
+
+
+def _claim_card_html(c, article_summary: str | None) -> str:
+    arrow = _DIRECTION_ARROW.get(c.direction, "➖")
+    metrics_bits = [f"Importance {c.importance}/10", f"Confidence {c.confidence:.0%}"]
+    if c.trade_worthy:
+        metrics_bits.append(f"Return {c.expected_return_pct:+.1f}%")
+        metrics_bits.append(f"{c.expected_horizon_days}d horizon")
+    metrics_html = html.escape(" · ".join(metrics_bits))
+    context_html = f'<div class="keep-card-context">{html.escape(c.context)}</div>' if c.context else ""
+    card_body = (
+        f'<div class="keep-card-source">#{html.escape(c.source or "unknown")}</div>'
+        f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
+        f"{context_html}"
+        f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
+    )
+    # Only flips if Stage A produced a summary for this article -- never generated on demand,
+    # that'd be a fresh LLM call per card.
+    back_html = None
+    if article_summary:
+        back_html = (
+            f'<div class="keep-card-summary-title">\U0001f4f0 Article summary</div>'
+            f'<div class="keep-card-summary">{html.escape(article_summary)}</div>'
+        )
+    return _flip_card_html(card_body, back_html)
+
+
 def _render_claim_keep_cards(claims: list) -> None:
     """Renders claims as a Google-Keep-style card grid -- raw HTML/CSS, since a real masonry look
     needs variable-height cards packing tightly, which Streamlit has no native widget for. Each
@@ -414,56 +458,36 @@ def _render_claim_keep_cards(claims: list) -> None:
     width via CSS -- Python has no way to know the actual viewport width, so this is done exactly
     the way CSS media queries would pick a column-count, just with the column *assignment* fixed
     in HTML instead of left to the browser. Display-only (no per-card buttons/interactivity, same
-    as the Claims dialog's cards). Renders in whatever order `claims` is already sorted in -- see
-    page_ticker's own sort-by control. See page_ticker -- the one place this is used.
+    as the Claims dialog's cards). Renders in whatever order `claims` is already sorted in.
     """
     if not claims:
         st.caption("No claims yet.")
         return
     summaries = _article_summaries()
-    cards_html = []
-    for c in claims:
-        arrow = _DIRECTION_ARROW.get(c.direction, "➖")
-        metrics_bits = [f"Importance {c.importance}/10", f"Confidence {c.confidence:.0%}"]
-        if c.trade_worthy:
-            metrics_bits.append(f"Return {c.expected_return_pct:+.1f}%")
-            metrics_bits.append(f"{c.expected_horizon_days}d horizon")
-        metrics_html = html.escape(" · ".join(metrics_bits))
-        context_html = (
-            f'<div class="keep-card-context">{html.escape(c.context)}</div>' if c.context else ""
-        )
-        # Native <details>/<summary>, zero JS -- <details>'s own open/closed state is exactly the
-        # boolean a CSS flip needs (see [open] below), and a card embedded in one big HTML block
-        # has no way to call back into Streamlit/Python the way a real st.button would anyway.
-        # Only rendered if Stage A produced a summary for this article -- never generated on
-        # demand, that'd be a fresh LLM call per card.
-        article_summary = summaries.get(c.source_link)
-        card_body = (
-            f'<div class="keep-card-source">#{html.escape(c.source or "unknown")}</div>'
-            f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
-            f"{context_html}"
-            f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
-        )
-        if article_summary:
-            # A 3D flip, not an accordion drop-down: both faces are always in the DOM, stacked via
-            # CSS (position: absolute + backface-visibility: hidden), and [open] on the wrapping
-            # <details> rotates .keep-flip-inner 180deg -- so tapping the card turns it over to
-            # reveal the summary "behind" it, rather than pushing content down below it.
-            cards_html.append(
-                f'<details class="keep-card-flip">'
-                f'<summary class="keep-flip-summary"><div class="keep-flip-inner">'
-                f'<div class="keep-card keep-flip-front" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
-                f'<div class="keep-card keep-flip-back" style="background:{_KEEP_CARD_BACKGROUND}">'
-                f'<div class="keep-card-summary-title">\U0001f4f0 Article summary</div>'
-                f'<div class="keep-card-summary">{html.escape(article_summary)}</div>'
-                f"</div>"
-                f"</div></summary>"
-                f"</details>"
-            )
-        else:
-            cards_html.append(
-                f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
-            )
+    cards_html = [_claim_card_html(c, summaries.get(c.source_link)) for c in claims]
+    _render_keep_card_grid(cards_html)
+
+
+def _render_keep_card_grid(cards_html: list[str]) -> None:
+    """The column-assignment + CSS injection shared by every keep-card grid on the Ticker page --
+    see _inject_keep_card_css and _keep_cols_html/_distribute_round_robin for the mechanism.
+    """
+    _inject_keep_card_css()
+    grid_html = (
+        _keep_cols_html(cards_html, 1, "keep-cols-1")
+        + _keep_cols_html(cards_html, 2, "keep-cols-2")
+        + _keep_cols_html(cards_html, 3, "keep-cols-3")
+    )
+    st.markdown(grid_html, unsafe_allow_html=True)
+
+
+def _inject_keep_card_css() -> None:
+    """The CSS shared by every Google-Keep-style card grid on the Ticker page (claim cards and
+    fundamental cards) -- column layout (see _distribute_round_robin/_keep_cols_html) and the flip
+    mechanism (see _render_claim_keep_cards's own docstring). Safe to call once per card grid
+    rendered on a page (Streamlit just injects another <style> tag, harmless) rather than needing
+    a single call site -- simpler than threading a "have we already injected this" flag through.
+    """
     st.markdown(
         """
         <style>
@@ -521,16 +545,165 @@ def _render_claim_keep_cards(claims: list) -> None:
         }
         .keep-card-summary-title { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.4rem; }
         .keep-card-summary { font-size: 0.8rem; opacity: 0.85; line-height: 1.4; }
+        .keep-card-risk-item { margin-bottom: 0.6rem; }
+        .keep-card-risk-item:last-child { margin-bottom: 0; }
         </style>
         """,
         unsafe_allow_html=True,
     )
-    grid_html = (
-        _keep_cols_html(cards_html, 1, "keep-cols-1")
-        + _keep_cols_html(cards_html, 2, "keep-cols-2")
-        + _keep_cols_html(cards_html, 3, "keep-cols-3")
+
+
+_FUNDAMENTAL_DIRECTION_ARROW = {
+    "long": _DIRECTION_ARROW["long"],
+    "short": _DIRECTION_ARROW["short"],
+    "neutral": "➖",
+}
+
+
+def _factor_headline_bits(factors: dict) -> list[str]:
+    """One formatted headline metric per category present in `factors` (Growth revenue_growth,
+    Valuation forward_pe, etc. -- see _CATEGORY_HEADLINE_FACTOR), for the fundamental card's front
+    face. Same headline-per-category the old Fundamentals dialog showed, just as inline text here
+    instead of st.metric widgets (a raw-HTML card can't embed those).
+    """
+    bits = []
+    for category, values in factors.items():
+        if not values:
+            continue
+        headline_factor = _CATEGORY_HEADLINE_FACTOR.get(category)
+        if headline_factor not in values:
+            headline_factor = next(iter(values))  # fallback: whatever's there
+        bits.append(f"{category} {_format_factor(headline_factor, values[headline_factor])}")
+    return bits
+
+
+def _fundamental_card_html(ev: dict) -> str:
+    direction = ev.get("fundamental_direction") or "neutral"
+    arrow = _FUNDAMENTAL_DIRECTION_ARROW.get(direction, "➖")
+    confidence = ev.get("fundamental_confidence")
+    confidence_text = f"{confidence:.0%}" if confidence is not None else "n/a"
+    summary_html = (
+        f'<div class="keep-card-context">{html.escape(ev["summary"])}</div>' if ev.get("summary") else ""
     )
-    st.markdown(grid_html, unsafe_allow_html=True)
+    changes = ev.get("key_changes") or []
+    if changes:
+        changes_html = "".join(
+            f'<div class="keep-card-context">\U0001f504 {html.escape(c)}</div>' for c in changes
+        )
+    else:
+        changes_html = '<div class="keep-card-context">No notable changes since the last check.</div>'
+    factor_bits = _factor_headline_bits(ev.get("factors") or {})
+    factors_html = (
+        f'<div class="keep-card-context">\U0001f4ca {html.escape(" · ".join(factor_bits))}</div>'
+        if factor_bits else ""
+    )
+    fv, cp, implied = ev.get("fair_value_estimate"), ev.get("current_price"), ev.get("implied_return_pct")
+    meta_bits = []
+    if cp:
+        meta_bits.append(f"price ${cp:,.2f}")
+    if fv:
+        meta_bits.append(f"fair value ${fv:,.2f}")
+    if implied is not None:
+        meta_bits.append(f"implied {implied:+.1f}%")
+    meta_html = html.escape(" · ".join(meta_bits)) if meta_bits else ""
+    # Summary/key_changes/factors all live on the front now -- risks are the only thing behind the
+    # flip, since they're the one part worth a deliberate second look rather than at-a-glance.
+    card_body = (
+        f'<div class="keep-card-source">#Fundamentals · {html.escape(ev["date"])}</div>'
+        f'<div class="keep-card-claim">{arrow} {direction.title()} · {confidence_text}</div>'
+        f"{summary_html}"
+        f"{changes_html}"
+        f"{factors_html}"
+        f'<div class="keep-card-meta">{meta_html}</div>'
+    )
+    risks = ev.get("risks") or []
+    back_bits = ['<div class="keep-card-summary-title">⚠️ Risks</div>']
+    if risks:
+        back_bits += [
+            f'<div class="keep-card-summary keep-card-risk-item">{html.escape(risk)}</div>' for risk in risks
+        ]
+    else:
+        back_bits.append('<div class="keep-card-summary">No risks flagged.</div>')
+    return _flip_card_html(card_body, "".join(back_bits))
+
+
+_EARNINGS_CALL_DIRECTION_ARROW = _FUNDAMENTAL_DIRECTION_ARROW
+_TONE_EMOJI = {"confident": "\U0001f4aa", "cautious": "\U0001f914", "defensive": "\U0001f6e1️", "evasive": "\U0001f440"}
+
+
+def _earnings_call_card_html(ev: dict) -> str:
+    """Opposite split from _fundamental_card_html: risks front-and-center on the front (summary,
+    guidance, management tone, risks), key Q&A highlights behind the flip.
+    """
+    direction = ev.get("earnings_direction") or "neutral"
+    arrow = _EARNINGS_CALL_DIRECTION_ARROW.get(direction, "➖")
+    confidence = ev.get("earnings_confidence")
+    confidence_text = f"{confidence:.0%}" if confidence is not None else "n/a"
+    summary_html = (
+        f'<div class="keep-card-context">{html.escape(ev["summary"])}</div>' if ev.get("summary") else ""
+    )
+    guidance_bits = []
+    if ev.get("guidance_summary"):
+        guidance_bits.append(f'<div class="keep-card-context">\U0001f4c8 {html.escape(ev["guidance_summary"])}</div>')
+    if ev.get("guidance_change"):
+        guidance_bits.append(f'<div class="keep-card-context">\U0001f504 {html.escape(ev["guidance_change"])}</div>')
+    guidance_html = "".join(guidance_bits)
+    risks = ev.get("risks") or []
+    if risks:
+        risks_html = "".join(
+            f'<div class="keep-card-context">⚠️ {html.escape(r)}</div>' for r in risks
+        )
+    else:
+        risks_html = '<div class="keep-card-context">No risks flagged.</div>'
+    tone = ev.get("management_tone")
+    tone_html = ""
+    if tone:
+        tone_emoji = _TONE_EMOJI.get(tone, "")
+        tone_html = f'<div class="keep-card-meta">{tone_emoji} Management tone: {html.escape(tone)}</div>'
+    card_body = (
+        f'<div class="keep-card-source">#Earnings Call · {html.escape(ev.get("transcript_date", ev["date"]))}</div>'
+        f'<div class="keep-card-claim">{arrow} {direction.title()} · {confidence_text}</div>'
+        f"{summary_html}"
+        f"{guidance_html}"
+        f"{risks_html}"
+        f"{tone_html}"
+    )
+    qa_moments = ev.get("key_qa_moments") or []
+    back_bits = ['<div class="keep-card-summary-title">\U0001f4ac Key Q&A moments</div>']
+    if qa_moments:
+        back_bits += [
+            f'<div class="keep-card-summary keep-card-risk-item">{html.escape(m)}</div>' for m in qa_moments
+        ]
+    else:
+        back_bits.append('<div class="keep-card-summary">No usable Q&A section for this call.</div>')
+    return _flip_card_html(card_body, "".join(back_bits))
+
+
+def _render_mixed_keep_cards(
+    claims: list, fundamental_events: list[dict], earnings_call_events: list[dict] | None = None,
+) -> None:
+    """Renders claim, fundamental, and earnings-call cards together in one grid, interleaved by
+    date (newest first) -- see page_ticker's "Cards" filter for choosing which type(s) show, and
+    Sources/Dates/Importance for the rest (Sources/Importance only apply to claims -- fundamental
+    and earnings-call snapshots have neither). All three card builders share the same flip
+    mechanism and column grid (_render_keep_card_grid), so any mix lays out identically to a
+    single type alone.
+    """
+    summaries = _article_summaries()
+    dated_html: list[tuple[dt.date, str]] = [
+        (c.created, _claim_card_html(c, summaries.get(c.source_link))) for c in claims
+    ]
+    dated_html += [
+        (dt.date.fromisoformat(ev["date"]), _fundamental_card_html(ev)) for ev in fundamental_events
+    ]
+    dated_html += [
+        (dt.date.fromisoformat(ev["date"]), _earnings_call_card_html(ev)) for ev in (earnings_call_events or [])
+    ]
+    if not dated_html:
+        st.caption("No cards to show.")
+        return
+    dated_html.sort(key=lambda item: item[0], reverse=True)
+    _render_keep_card_grid([card_html for _, card_html in dated_html])
 
 
 @st.dialog("Claims", width="medium")
@@ -598,20 +771,16 @@ def _aggregation_history_dialog(ticker: str, aggregated_events: list) -> None:
             st.markdown(f"**#{n}  \U0001f9e9  {ev['date']}  ·  {ev.get('claims_considered', '?')} claim(s) considered**")
             a1, a2, a3 = st.columns(3)
             a1.metric("Direction", ev["direction"])
-            a2.metric("Blended confidence", f"{ev['confidence']:.0%}")
+            a2.metric("Confidence", f"{ev['confidence']:.0%}")
             a3.metric(
                 "Expected return", f"{ev['expected_return_pct']:+.1f}%",
                 f"{ev['expected_horizon_days']}d horizon", delta_color="off",
             )
-            news_confidence = ev.get("news_confidence")
+            fundamental_direction = ev.get("fundamental_direction")
             fundamental_confidence = ev.get("fundamental_confidence")
-            with st.container(key=f"confidence_breakdown_{ticker}_{n}"):
-                b1, b2 = st.columns(2)
-                b1.metric("News confidence", f"{news_confidence:.0%}" if news_confidence is not None else "--")
-                b2.metric(
-                    "Fundamental support score",
-                    f"{fundamental_confidence:.0%}" if fundamental_confidence is not None else "--",
-                )
+            if fundamental_direction is not None:
+                conviction = f" ({fundamental_confidence:.0%} conviction)" if fundamental_confidence is not None else ""
+                st.caption(f"Fundamental picture Stage C weighed in: {fundamental_direction}{conviction}")
             st.write(f"Thesis: {_md(ev['thesis'])}")
             if ev.get("catalysts"):
                 st.write("Catalysts: " + _md(", ".join(ev["catalysts"])))
@@ -622,30 +791,33 @@ def _aggregation_history_dialog(ticker: str, aggregated_events: list) -> None:
 
 @st.dialog("Fundamentals", width="medium")
 def _fundamentals_dialog(ticker: str, fundamental_events: list) -> None:
-    """Same card-in-a-scrollable-modal treatment as the Claims dialog, for
-    the independent fundamental second opinion's history.
+    """Same card-in-a-scrollable-modal treatment as the Claims dialog, for the independent
+    fundamental snapshot history (finance.fundamentals.fundamental_snapshot) -- a standalone read
+    of the business/valuation picture, NOT scored against any particular thesis (see page_ticker's
+    own inline foldable card grid, _render_fundamental_keep_cards, for the primary way to browse
+    these; this dialog is the compact version used from Research's per-ticker Theses expander).
     """
     st.caption(f"{ticker}  ·  {len(fundamental_events)} check(s), newest first")
     for n, ev in reversed(list(enumerate(fundamental_events, 1))):
         with st.container(border=True, key=f"fund_card_{ticker}_{n}"):
-            icon, headline = _FUNDAMENTAL_STYLE.get(ev["assessment"], ("", ev["assessment"]))
+            icon, headline = _FUNDAMENTAL_STYLE.get(
+                ev.get("fundamental_direction"), ("", ev.get("fundamental_direction", "unknown"))
+            )
             st.markdown(f"**#{n}  {icon}  {headline}  ·  {ev['date']}**")
-            direction = ev.get("direction")
-            if ev.get("thesis"):
-                st.write(f"**Thesis scored:** {_md(ev['thesis'])}")
-            metric_label = f"Support for '{direction}'" if direction else "Fundamental confidence"
+            confidence = ev.get("fundamental_confidence")
             st.metric(
-                metric_label, f"{ev['fundamental_confidence']:.0%}",
-                help=(
-                    "0% = fundamentals strongly argue AGAINST this direction, 100% = fundamentals "
-                    "strongly SUPPORT it, 50% = no strong bearing either way."
-                ),
+                "Conviction", f"{confidence:.0%}" if confidence is not None else "--",
+                help="0% = no conviction, 100% = strong conviction in the direction above.",
             )
             fv, cp = ev.get("fair_value_estimate"), ev.get("current_price")
             if fv and cp:
                 implied = ev.get("implied_return_pct")
                 implied_text = f"  ·  implied return {implied:+.1f}%" if implied is not None else ""
                 st.caption(f"Analyst fair value estimate: \\${fv:.2f}  ·  Current price: \\${cp:.2f}{implied_text}")
+            if ev.get("summary"):
+                st.write(_md(ev["summary"]))
+            for change in ev.get("key_changes") or []:
+                st.write(f"\U0001f504 {_md(change)}")
             factors = ev.get("factors")
             if factors:
                 present = {c: v for c, v in factors.items() if v}
@@ -666,7 +838,7 @@ def _fundamentals_dialog(ticker: str, fundamental_events: list) -> None:
                             )
             for risk in ev.get("risks") or []:
                 st.write(f"⚠️ risk: {_md(risk)}")
-            st.caption(_md(ev["reasoning"]))
+            st.caption(_md(ev.get("reasoning", "")))
 
 
 @st.dialog("Critic", width="medium")
@@ -767,21 +939,22 @@ def render_research_tab() -> None:
         visible = [c for c in all_claims_by_ticker[ticker] if (c.source or "unknown") not in masked_sources]
         claims = sorted(visible, key=lambda c: c.created, reverse=True)
         theses_rows.append((ticker, tt, claims))
-    # Most recently (re)aggregated first -- tt.updated is set to as_of every time run_loop_a
-    # touches this ticker (new claims or an earnings-window fundamentals-only refresh), so this
-    # surfaces whatever a run just acted on, unlike sorting by a claim's own article-publish date
-    # (which a backfilled old article would keep buried regardless of how recently it was added).
+    # Most recently (re)aggregated first -- tt.updated is set to as_of every time Stage C
+    # (update_ticker_thesis) actually re-synthesizes this ticker's thesis, so this surfaces
+    # whatever a run just acted on, unlike sorting by a claim's own article-publish date (which a
+    # backfilled old article would keep buried regardless of how recently it was added). An
+    # earnings-window fundamentals-only refresh (finance.tickerthesis.refresh_fundamentals) does
+    # NOT touch this -- it only appends a "fundamental" event, no new "aggregated" one.
     theses_rows.sort(key=lambda row: row[1].updated, reverse=True)
     for ticker, tt, claims in theses_rows:
         aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
         # New-claims indicator: compares the latest aggregation's claims_considered against the
         # one before it (0 if this is the ticker's first-ever aggregation -- every claim behind a
-        # brand-new thesis is new by definition). A jump means new claims actually fed this update,
-        # vs. an earnings-window fundamentals-only refresh (finance.tickerthesis.refresh_fundamentals
-        # also appends an "aggregated" event, re-using the same thesis text, but claims_considered
-        # stays flat). A real emoji (not markdown color syntax) so it renders green right in the
-        # expander title -- st.expander labels only support a narrow markdown subset that excludes
-        # color spans.
+        # brand-new thesis is new by definition). Every "aggregated" event is now always a genuine
+        # new-claims-driven Stage C run (refresh_fundamentals no longer appends one), so a positive
+        # delta always means real new evidence fed this update. A real emoji (not markdown color
+        # syntax) so it renders green right in the expander title -- st.expander labels only
+        # support a narrow markdown subset that excludes color spans.
         new_claims_badge = ""
         if aggregated_events:
             previous_considered = aggregated_events[-2].get("claims_considered", 0) if len(aggregated_events) >= 2 else 0
@@ -3322,8 +3495,8 @@ def page_ticker() -> None:
     for t in options:
         grouped.setdefault(sectors.get(t, "Other"), []).append(t)
 
-    # Fixed display order (not alphabetical) -- any sector not listed here (e.g. a new one added
-    # to config_loop_a.json's "sectors" mapping) still shows, just appended after these.
+    # Fixed display order (not alphabetical) -- any sector not listed here (e.g. a new one used in
+    # config_loop_a.json's "universe" entries) still shows, just appended after these.
     _SECTOR_ORDER = [
         "Semiconductors", "Big Tech", "AI Infrastructure", "Futuristic",
         "Energy", "Commodities", "Crypto", "Defense & Aerospace",
@@ -3356,8 +3529,13 @@ def page_ticker() -> None:
 
     tt = load_ticker_thesis(selected_ticker)
     all_claims = load_claims(selected_ticker)
+    # Independent of tt/all_claims -- a fundamental snapshot can exist for a ticker with no claims
+    # or thesis at all (finance.tickerthesis.refresh_fundamentals doesn't need either), so this is
+    # its own guard input rather than gated behind `if tt is not None` below.
+    fundamental_history = load_fundamental_history(selected_ticker)
+    earnings_call_history = load_earnings_call_history(selected_ticker)
 
-    if tt is None and not all_claims:
+    if tt is None and not all_claims and not fundamental_history and not earnings_call_history:
         st.info(f"No research yet for {selected_ticker} -- run Loop A to populate this.")
         return
 
@@ -3375,9 +3553,8 @@ def page_ticker() -> None:
         # same reasoning Research's cards already apply.
 
         aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
-        fundamental_events = [ev for ev in tt.history if ev["event"] == "fundamental"]
         critic_events = [ev for ev in tt.history if ev["event"] == "critic"]
-        btn_col1, btn_col2, btn_col3, btn_col4 = st.columns(4)
+        btn_col1, btn_col2, btn_col3 = st.columns(3)
         with btn_col1:
             if st.button(f"Claims ({len(all_claims)})", key=f"ticker_page_claims_btn_{selected_ticker}"):
                 _claims_dialog(selected_ticker, sorted(all_claims, key=lambda c: c.created, reverse=True))
@@ -3387,11 +3564,6 @@ def page_ticker() -> None:
             ):
                 _critic_dialog(selected_ticker, critic_events)
         with btn_col3:
-            if fundamental_events and st.button(
-                f"Fundamentals ({len(fundamental_events)})", key=f"ticker_page_fund_btn_{selected_ticker}"
-            ):
-                _fundamentals_dialog(selected_ticker, fundamental_events)
-        with btn_col4:
             if aggregated_events and st.button(
                 f"Theses ({len(aggregated_events)})", key=f"ticker_page_agg_btn_{selected_ticker}"
             ):
@@ -3404,9 +3576,10 @@ def page_ticker() -> None:
     # Every filter widget's key includes selected_ticker -- otherwise switching tickers keeps the
     # previous ticker's widget state (e.g. 2 sources selected out of its 5), which for a different
     # ticker's different source list can silently filter down to zero claims. A fresh key per
-    # ticker makes each one start over at its own defaults: all sources, All dates, All importance.
-    # Two lines total: label beside its own pills (not above), so Sources fits one line and
-    # Dates+Importance share the second -- still pills throughout, same picking interaction.
+    # ticker makes each one start over at its own defaults: all sources, All dates, All importance,
+    # both card types. Two lines total: label beside its own pills (not above), so Sources fits one
+    # line and Dates+Importance+Cards share the second -- still pills throughout, same picking
+    # interaction.
     sources_label_col, sources_pills_col = st.columns([1, 6], vertical_alignment="center")
     with sources_label_col:
         st.write("**Sources**")
@@ -3416,9 +3589,10 @@ def page_ticker() -> None:
             key=f"ticker_page_sources_{selected_ticker}", label_visibility="collapsed",
         )
 
-    dates_label_col, dates_pills_col, importance_label_col, importance_pills_col = st.columns(
-        [1, 3, 1, 3], vertical_alignment="center"
-    )
+    (
+        dates_label_col, dates_pills_col, importance_label_col, importance_pills_col,
+        cards_label_col, cards_pills_col,
+    ) = st.columns([1, 2, 1, 2, 1, 2], vertical_alignment="center")
     with dates_label_col:
         st.write("**Dates**")
     with dates_pills_col:
@@ -3435,21 +3609,53 @@ def page_ticker() -> None:
             selection_mode="single", key=f"ticker_page_importance_filter_{selected_ticker}",
             label_visibility="collapsed",
         )
+    with cards_label_col:
+        st.write("**Cards**")
+    with cards_pills_col:
+        # Sources/Importance below only ever apply to claims (fundamental/earnings-call snapshots
+        # have neither), but Dates applies to all three -- so unchecking a type here is the only
+        # way to hide it, not the other filters.
+        selected_card_types = st.pills(
+            "Cards", options=["Claims", "Fundamentals", "Earnings Calls"],
+            default=["Claims", "Fundamentals", "Earnings Calls"],
+            selection_mode="multi", key=f"ticker_page_card_types_{selected_ticker}",
+            label_visibility="collapsed",
+        )
 
-    visible_claims = [c for c in all_claims if (c.source or "unknown") in selected_sources]
     date_filter = date_filter or "All"  # single-select pills can be clicked off, leaving None
+    cutoff = None
     if date_filter != "All":
         lookback_days = {"1 day": 1, "1 week": 7, "1 month": 30}[date_filter]
         cutoff = dt.date.today() - dt.timedelta(days=lookback_days)
-        visible_claims = [c for c in visible_claims if c.created >= cutoff]
-    importance_filter = importance_filter or "All"
-    if importance_filter != "All":
-        threshold = int(importance_filter.rstrip("+"))
-        visible_claims = [c for c in visible_claims if c.importance >= threshold]
-    visible_claims.sort(key=lambda c: c.created, reverse=True)  # always by date, newest first
 
-    st.subheader(f"Claims ({len(visible_claims)})")
-    _render_claim_keep_cards(visible_claims)
+    visible_claims: list = []
+    if "Claims" in selected_card_types:
+        visible_claims = [c for c in all_claims if (c.source or "unknown") in selected_sources]
+        if cutoff is not None:
+            visible_claims = [c for c in visible_claims if c.created >= cutoff]
+        importance_filter = importance_filter or "All"
+        if importance_filter != "All":
+            threshold = int(importance_filter.rstrip("+"))
+            visible_claims = [c for c in visible_claims if c.importance >= threshold]
+
+    visible_fundamentals: list = []
+    if "Fundamentals" in selected_card_types:
+        visible_fundamentals = fundamental_history
+        if cutoff is not None:
+            visible_fundamentals = [
+                ev for ev in visible_fundamentals if dt.date.fromisoformat(ev["date"]) >= cutoff
+            ]
+
+    visible_earnings_calls: list = []
+    if "Earnings Calls" in selected_card_types:
+        visible_earnings_calls = earnings_call_history
+        if cutoff is not None:
+            visible_earnings_calls = [
+                ev for ev in visible_earnings_calls if dt.date.fromisoformat(ev["date"]) >= cutoff
+            ]
+
+    st.subheader(f"Cards ({len(visible_claims) + len(visible_fundamentals) + len(visible_earnings_calls)})")
+    _render_mixed_keep_cards(visible_claims, visible_fundamentals, visible_earnings_calls)
 
 
 def page_home() -> None:

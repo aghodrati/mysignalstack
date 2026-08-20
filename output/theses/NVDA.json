@@ -34,49 +34,6 @@
     "claims_considered": 35
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "NVIDIA remains structurally bullish as its integrated AI-factory systems, networking, software, inference efficiency, financing mechanisms, and customer adoption should support substantial demand growth despite validation, execution, financing, and competitive risks.",
-    "direction": "long",
-    "news_confidence": 0.84,
-    "fundamental_confidence": 0.84,
-    "blended_confidence": 0.8400000000000001,
-    "fair_value_estimate": 302.82758,
-    "current_price": 209.805,
-    "implied_return_pct": 44.3,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.852,
-        "earnings_growth": 2.145
-      },
-      "Valuation": {
-        "forward_pe": 16.276028,
-        "peg_ratio": 0.55,
-        "ev_to_revenue": 19.568
-      },
-      "Quality": {
-        "operating_margin": 0.6559600000000001,
-        "fcf_margin": 0.49567046321441705
-      },
-      "Sentiment": {
-        "analyst_upside": 44.33763732990157,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.441499994499996,
-        "insider_flow": -2970151480,
-        "low_short_interest": -1.3900000000000001
-      }
-    },
-    "risks": [
-      "The very high 19.6x forward enterprise-value-to-revenue multiple leaves substantial downside if exceptional growth or margins normalize.",
-      "Revenue and earnings concentration among a small number of hyperscale customers could make results vulnerable to changes in their capital-spending cycles.",
-      "Large insider selling may modestly weaken alignment and signal that some holders view valuation as attractive for monetization."
-    ],
-    "reasoning": "Exceptional revenue and earnings growth, industry-leading margins, a low PEG ratio, and substantial implied fair-value upside strongly support the long thesis, although the revenue-based valuation and concentration risks warrant some caution."
-  },
-  {
     "event": "critic",
     "date": "2026-08-17",
     "deterministic_flags": [],
@@ -125,49 +82,6 @@
     ],
     "reasoning": "The evidence is predominantly and materially bullish on Nvidia\u2019s product competitiveness, system-level moat, customer demand, and financing-enabled addressable market, while the principal offsets are credible long-term ecosystem erosion and unusually significant credit, execution, and validation risks.",
     "claims_considered": 41
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-17",
-    "assessment": "supports",
-    "thesis": "Nvidia remains strongly positioned for continued AI infrastructure and inference growth through Rubin, integrated systems, networking, software, and expanded financing access, but the thesis is tempered by validation risk, alternative accelerators, and rising contingent exposure from financing backstops.",
-    "direction": "long",
-    "news_confidence": 0.78,
-    "fundamental_confidence": 0.86,
-    "blended_confidence": 0.812,
-    "fair_value_estimate": 302.82758,
-    "current_price": 209.805,
-    "implied_return_pct": 44.3,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.852,
-        "earnings_growth": 2.145
-      },
-      "Valuation": {
-        "forward_pe": 16.276028,
-        "peg_ratio": 0.55,
-        "ev_to_revenue": 19.568
-      },
-      "Quality": {
-        "operating_margin": 0.6559600000000001,
-        "fcf_margin": 0.49567046321441705
-      },
-      "Sentiment": {
-        "analyst_upside": 44.33763732990157,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.441499994499996,
-        "insider_flow": -2970151480,
-        "low_short_interest": -1.3900000000000001
-      }
-    },
-    "risks": [
-      "High customer concentration and dependence on sustained hyperscaler capital spending could make growth more cyclical than current results suggest.",
-      "The elevated EV-to-revenue multiple leaves meaningful sensitivity to any slowdown, margin normalization, or valuation compression despite the low PEG ratio.",
-      "Substantial insider selling and a lack of net analyst upgrades provide weaker incremental confirmation than the headline growth and profitability metrics."
-    ],
-    "reasoning": "Exceptional revenue and earnings growth, industry-leading margins, strong free-cash-flow generation, and apparently favorable growth-adjusted valuation metrics strongly support the long thesis, with the main offset being execution and multiple sensitivity."
   },
   {
     "event": "critic",
@@ -219,49 +133,6 @@
     "claims_considered": 49
   },
   {
-    "event": "fundamental",
-    "date": "2026-08-18",
-    "assessment": "supports",
-    "thesis": "NVDA remains a strong long as expanding AI infrastructure financing, superior integrated systems, improving inference economics, and sustained customer adoption are more likely to drive substantial growth than near-term credit, execution, or competitive risks are to disrupt it.",
-    "direction": "long",
-    "news_confidence": 0.81,
-    "fundamental_confidence": 0.84,
-    "blended_confidence": 0.8220000000000001,
-    "fair_value_estimate": 302.82758,
-    "current_price": 209.805,
-    "implied_return_pct": 44.3,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.852,
-        "earnings_growth": 2.145
-      },
-      "Valuation": {
-        "forward_pe": 16.276028,
-        "peg_ratio": 0.55,
-        "ev_to_revenue": 19.568
-      },
-      "Quality": {
-        "operating_margin": 0.6559600000000001,
-        "fcf_margin": 0.49567046321441705
-      },
-      "Sentiment": {
-        "analyst_upside": 44.33763732990157,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.441499994499996,
-        "insider_flow": -2970151480,
-        "low_short_interest": -1.3900000000000001
-      }
-    },
-    "risks": [
-      "The high EV-to-revenue multiple leaves valuation vulnerable if exceptionally rapid growth or margins normalize.",
-      "Customer concentration and hyperscaler capital-spending cyclicality could make results less durable than headline growth suggests.",
-      "Substantial insider selling and flat net upgrades may indicate limited incremental conviction among informed holders."
-    ],
-    "reasoning": "Exceptional revenue and earnings growth, very strong operating and free-cash-flow margins, an apparently favorable PEG ratio, and substantial implied upside strongly support the long thesis, although the premium sales multiple and concentration/cyclicality risks temper conviction."
-  },
-  {
     "event": "critic",
     "date": "2026-08-18",
     "deterministic_flags": [],
@@ -306,49 +177,6 @@
     ],
     "reasoning": "The evidence supports a high-conviction but not dominant long thesis: near-term demand, customer breadth, supply-constrained pricing, and ecosystem expansion are repeatedly confirmed, while credible custom-silicon, inference, networking, CPU, financing, and AI-monetization risks are more consequential over the medium to long term.",
     "claims_considered": 174
-  },
-  {
-    "event": "fundamental",
-    "date": "2026-08-19",
-    "assessment": "supports",
-    "thesis": "NVDA remains fundamentally bullish over the next year because exceptionally strong, broadening AI-infrastructure demand, expanding systems/software/networking reach, and Rubin-era efficiency gains outweigh intensifying competition, supply constraints, financing risk, and longer-term accelerator substitution threats.",
-    "direction": "long",
-    "news_confidence": 0.78,
-    "fundamental_confidence": 0.84,
-    "blended_confidence": 0.804,
-    "fair_value_estimate": 302.82758,
-    "current_price": 209.805,
-    "implied_return_pct": 44.3,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.852,
-        "earnings_growth": 2.145
-      },
-      "Valuation": {
-        "forward_pe": 16.276028,
-        "peg_ratio": 0.55,
-        "ev_to_revenue": 19.568
-      },
-      "Quality": {
-        "operating_margin": 0.6559600000000001,
-        "fcf_margin": 0.49567046321441705
-      },
-      "Sentiment": {
-        "analyst_upside": 44.33763732990157,
-        "net_upgrades": 0.0
-      },
-      "Ownership": {
-        "institutional_flow": 10.441499994499996,
-        "insider_flow": -2970151480,
-        "low_short_interest": -1.3900000000000001
-      }
-    },
-    "risks": [
-      "The valuation remains highly sensitive to any deceleration because expectations are concentrated in sustained exceptional AI spending and growth.",
-      "Revenue and bargaining power may be increasingly concentrated among a small number of hyperscale customers, creating customer-concentration and capital-allocation risk.",
-      "The large gap between strong operating performance and mixed market signals such as substantial insider selling and zero net upgrades may indicate execution or expectation risks not captured by headline growth."
-    ],
-    "reasoning": "Exceptional revenue and earnings growth, industry-leading margins, strong free-cash-flow generation, a low PEG ratio, and substantial implied upside provide strong fundamental support for a long stance despite meaningful expectation and concentration risks."
   },
   {
     "event": "critic",

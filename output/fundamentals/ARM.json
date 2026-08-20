@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-08-20",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "summary": "ARM has strong underlying growth, with revenue up 22.4% and earnings up 108.3%, alongside exceptionally high free-cash-flow margin. However, valuation is demanding at 87x forward earnings and nearly 49x EV/revenue, while the 7.6% operating margin, modest 7.0% consensus upside, negative net upgrades, and insider selling temper the growth case.",
+    "key_changes": [],
+    "risks": [
+      "Very elevated valuation leaves substantial downside if growth, licensing momentum, or AI-related expectations moderate.",
+      "Operating margin is relatively low despite strong reported free cash flow, raising questions about earnings quality and scalability.",
+      "Negative analyst revisions and substantial insider selling could signal weakening confidence among informed stakeholders.",
+      "ARM's business is exposed to semiconductor cycles, customer concentration, licensing disputes, and competitive architecture developments."
+    ],
+    "reasoning": "The strong growth and cash generation support a positive fundamental backdrop, but extreme valuation and mixed profitability and sentiment signals make the risk-reward balance too unclear for a directional long or short view.",
+    "fair_value_estimate": 286.78918,
+    "current_price": 267.9375,
+    "implied_return_pct": 7.0,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.224,
+        "earnings_growth": 1.083
+      },
+      "Valuation": {
+        "forward_pe": 87.29426,
+        "peg_ratio": 1.97,
+        "ev_to_revenue": 48.858
+      },
+      "Quality": {
+        "operating_margin": 0.07603,
+        "fcf_margin": 0.40612880216620895
+      },
+      "Sentiment": {
+        "analyst_upside": 7.035849778399816,
+        "net_upgrades": -2.0
+      },
+      "Ownership": {
+        "institutional_flow": 282.20248620000007,
+        "insider_flow": -66380361.0,
+        "low_short_interest": -12.020000999999999
+      }
+    },
+    "trigger": "manual"
+  }
+]
