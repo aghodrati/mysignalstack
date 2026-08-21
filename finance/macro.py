@@ -1,0 +1,714 @@
+"""A global macro dashboard: a handful of deterministic, LLM-free stat tiles -- level + period-
+over-period change -- covering rates, credit risk, volatility, commodities, inflation, and labor,
+plus (for the 10-Y Treasury yield so far) a weekly, LLM-grounded "why did this move" narrative.
+Not tied to any ticker -- computed and shown once, globally, not per-ticker.
+
+Two parts, deliberately kept separate in spirit even though they share this one file:
+
+1. The stat tiles (MACRO_SERIES/series_tile/macro_snapshot) are pure numbers -- every value comes
+   straight from FRED (official US macro series, via its public fredgraph.csv CSV export -- no API
+   key required) or yfinance (commodity/volatility prices, reusing finance.data's existing
+   get_prices), so there's no hallucination risk and no LLM cost here at all.
+
+   Two cadences, matching how often each series' underlying data actually changes:
+   - "weekly": 10Y yield, HY credit spread, VIX, oil/gold/silver/copper -- all daily-updating
+     market data. The period-over-period comparison is always against ~7 calendar days back
+     regardless of how often the dashboard itself happens to be viewed, since that's the cadence
+     that's actually informative for these (checking more often wouldn't show anything new day to
+     day; checking only monthly would smooth over -- and could entirely miss -- a fast risk-off
+     move, which is the whole point of tracking credit spreads/VIX at all).
+   - "monthly": core PCE, unemployment rate -- genuinely monthly-release government data. The
+     period-over-period comparison is against the previous published reading, not a fixed day
+     count.
+
+   FRED series have real publication lag/revisions (a payrolls-style report can be revised after
+   its initial release) -- fredgraph.csv always returns whatever FRED currently has on file for
+   each date, i.e. the latest vintage, not the as-originally-published one. Fine for "what's the
+   current macro picture" (this dashboard's only job), but note this is NOT leakage-safe the way
+   Stage A/B's as_of-grounded reasoning is -- don't reuse these series to backtest a historical
+   date without accounting for that.
+
+2. The weekly narrative (NARRATIVE_QUERIES/refresh_macro_narrative) is the one place this module
+   adds interpretation on top of the pure numbers above, and it's grounded the same way every
+   other LLM stage in this app is: real, dated evidence handed to the model, never left to
+   recall/guess from training data.
+
+   The evidence is real news headlines from GDELT's DOC 2.0 API (api.gdeltproject.org -- a global
+   news monitor, free, no API key required, confirmed live during development), not full article
+   text -- GDELT's articles endpoint only ever returns a pointer (title/url/domain/date), never
+   the article body, and a headline alone is enough for the LLM to judge relevance ("Fed Minutes
+   Signal Rate Hikes Unless Inflation Improves" tells you what happened without reading the
+   piece). Filtered to English-language US sources (a raw query otherwise mixes in e.g.
+   Arabic/Korean-market coverage, confirmed live), sorted by GDELT's own relevance ranking
+   ("hybridrel" -- GDELT has no popularity/pageview metric, just textual relevance to the query
+   blended with recency), then capped per-domain so one wire story echoed across a dozen
+   syndicated domains can't crowd out everything else that happened that week.
+
+   GDELT's own rate limit is one request every 5 seconds (confirmed live via its own 429 response
+   body) -- irrelevant in practice here (this makes at most one GDELT call per series per week,
+   via the dedup in refresh_macro_narrative), but _fetch_gdelt_headlines retries with backoff on a
+   429 regardless, in case of shared traffic from elsewhere hitting the same public endpoint.
+
+   One real LLM call per series per week, deduped by ISO week (not a rolling 7-day window) so a
+   mid-week rerun never reprocesses -- same "already on record, skip" contract every other Loop A
+   stage uses.
+"""
+
+from __future__ import annotations
+
+import datetime as dt
+import io
+import json
+import re
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from pathlib import Path
+
+import pandas as pd
+
+from finance.data import get_prices
+from finance.llm import complete
+from finance.loop_a_config import llm_config, max_article_chars
+
+CACHE_DIR = Path(__file__).resolve().parent.parent / "cache" / "macro"
+NARRATIVES_DIR = Path("output/macro")
+_FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv"
+_GDELT_DOC_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
+_USER_AGENT = {"User-Agent": "Mozilla/5.0"}
+
+# key -> (label, source, source_id, cadence, unit, transform, delta_format)
+# unit: "pct" | "usd" | "num" -- how to format the level.
+# transform: "level" (use the series as-is) | "yoy_pct" (year-over-year %% change -- PCE's raw
+#   value is an index level, meaningless on its own; the standard "inflation rate" reading is its
+#   12-months-back %% change).
+# delta_format: "bps" (basis points -- how yields/spreads are conventionally quoted) | "pp"
+#   (percentage points -- how a %% rate's own change is conventionally quoted) | "pct_change"
+#   (%% change in a price) | "points" (VIX's own unit, already an index).
+MACRO_SERIES: dict[str, dict] = {
+    "10y_yield": {
+        # ^TNX (CBOE's 10-Y Treasury yield index), not FRED's DGS10 -- a live market index rather
+        # than a government-published series, confirmed live to run about a day fresher than FRED
+        # (FRED's own additional publication step adds lag on top of the same underlying market
+        # data). Same percentage units as DGS10 (e.g. 4.65), no conversion needed -- confirmed live.
+        "label": "10-Y Treasury", "tag": "10-Y", "icon": "\U0001f3db️", "source": "yfinance", "source_id": "^TNX",
+        "cadence": "weekly", "unit": "pct", "transform": "level", "delta_format": "bps",
+        # Shown as a trend chart, not a plain tile -- the single number this week can hide whether
+        # it's accelerating, plateauing, or reversing, which matters more here than for the other
+        # series since 10Y is the discount rate behind every high-multiple name in the tracked
+        # universe. See _tile's "history" field, only ever populated when this is set. 7 days to
+        # match the card's own weekly cadence/narrative -- the chart shows exactly the window the
+        # narrative is explaining, not a longer lookback that would mix in an earlier week's move.
+        "chart_days": 7,
+        # A companion "bigger picture" mini-chart, no narrative attached -- see _tile's
+        # "history_extra"/app.py's _macro_mini_chart_card_html.
+        "extra_chart_days": 30,
+    },
+    "credit_spread": {
+        "label": "HY Credit Spread", "tag": "HY-Spread", "source": "fred", "source_id": "BAMLH0A0HYM2",
+        "cadence": "weekly", "unit": "pct", "transform": "level", "delta_format": "bps",
+        "chart_days": 7, "extra_chart_days": 30,
+    },
+    "vix": {
+        "label": "VIX", "tag": "VIX", "icon": "\U0001f628", "source": "yfinance", "source_id": "^VIX",
+        "cadence": "weekly", "unit": "num", "transform": "level", "delta_format": "points",
+        "chart_days": 7, "extra_chart_days": 30,
+    },
+    "oil": {
+        "label": "WTI Crude Oil", "tag": "Oil", "icon": "\U0001f6e2️", "source": "yfinance", "source_id": "CL=F",
+        "cadence": "weekly", "unit": "usd", "transform": "level", "delta_format": "pct_change",
+        "chart_days": 7, "extra_chart_days": 30,
+    },
+    "gold": {
+        # GC=F (COMEX gold futures), not the GLD ETF -- yfinance has no true spot forex-style
+        # ticker for metals (XAUUSD=X et al. confirmed 404/delisted live), and the front-month
+        # futures contract is the closest available proxy, and what "gold price" conventionally
+        # means in financial media anyway. Same reasoning as oil's CL=F, which already used futures.
+        "label": "Gold (Futures)", "tag": "Gold", "icon": "\U0001f947", "source": "yfinance", "source_id": "GC=F",
+        "cadence": "weekly", "unit": "usd", "transform": "level", "delta_format": "pct_change",
+        "chart_days": 7, "extra_chart_days": 30,
+    },
+    "silver": {
+        "label": "Silver (Futures)", "tag": "Silver", "icon": "\U0001f948", "source": "yfinance", "source_id": "SI=F",
+        "cadence": "weekly", "unit": "usd", "transform": "level", "delta_format": "pct_change",
+        "chart_days": 7, "extra_chart_days": 30,
+    },
+    "copper": {
+        "label": "Copper (Futures)", "tag": "Copper", "icon": "\U0001f949", "source": "yfinance", "source_id": "HG=F",
+        "cadence": "weekly", "unit": "usd", "transform": "level", "delta_format": "pct_change",
+        "chart_days": 7, "extra_chart_days": 30,
+    },
+    "pce": {
+        "label": "Core PCE (YoY)", "tag": "PCE", "source": "fred", "source_id": "PCEPILFE",
+        "cadence": "monthly", "unit": "pct", "transform": "yoy_pct", "delta_format": "pp",
+        # 365 days -> ~12 monthly readings, same "give the trend some room to show" reasoning as
+        # the weekly series' chart_days, just scaled to this series' own (much slower) cadence.
+        "chart_days": 365,
+    },
+    "unemployment": {
+        "label": "Unemployment Rate", "tag": "Unemployment", "source": "fred", "source_id": "UNRATE",
+        "cadence": "monthly", "unit": "pct", "transform": "level", "delta_format": "pp",
+        "chart_days": 365,
+    },
+    "bitcoin": {
+        # Same treatment as gold/silver/copper -- moved out of config_loop_a.json's tracked
+        # universe (no RSS source ever covered it, same as the metals) and into the Macro group
+        # instead, sourced from the same BTC-USD yfinance ticker it used there.
+        "label": "Bitcoin", "tag": "BTC", "icon": "\U0001fa99", "source": "yfinance", "source_id": "BTC-USD",
+        "cadence": "weekly", "unit": "usd", "transform": "level", "delta_format": "pct_change",
+        "chart_days": 7, "extra_chart_days": 30,
+    },
+}
+
+# Series where "direction" is a coherent concept at all -- a literal tradeable instrument price,
+# not a rate/spread/index/economic print (see the discussion behind this split: yields/spreads/VIX
+# naturally read as "rising"/"falling" trend, not a long/short call on something you can't actually
+# trade here). Only these five get the extra direction/confidence/trade_worthy fields below.
+DIRECTIONAL_SERIES = {"oil", "gold", "silver", "copper", "bitcoin"}
+
+# Series eligible for a *monthly* narrative in addition to the weekly one -- derived from
+# extra_chart_days (MACRO_SERIES' own "bigger picture" 1-month mini-chart window) rather than a
+# separately maintained list, so a series only ever gets a monthly narrative once it already has a
+# 1-month chart to pair it with (see app.py's _macro_mini_chart_card_html, which now shows this
+# narrative instead of being chart-only). PCE/unemployment are excluded since they're already
+# monthly-cadence at the tile level -- a second "monthly narrative" on top would be redundant.
+MONTHLY_NARRATIVE_SERIES = {key for key, config in MACRO_SERIES.items() if config.get("extra_chart_days")}
+
+# series key -> GDELT query terms. Only 10y_yield for now -- add an entry here (and nothing else)
+# to extend the weekly narrative to another series above, same reusable fetch/cache/prompt
+# machinery throughout.
+NARRATIVE_QUERIES: dict[str, str] = {
+    "10y_yield": (
+        '("Federal Reserve" OR "treasury yield" OR "treasury yields" OR "interest rate" OR '
+        '"interest rates" OR inflation) sourcelang:english sourcecountry:US'
+    ),
+    "credit_spread": (
+        '("high yield spread" OR "credit spread" OR "junk bond" OR "risk appetite") '
+        "sourcelang:english sourcecountry:US"
+    ),
+    "vix": (
+        '(VIX OR "volatility index" OR "market volatility" OR "stock market fear") '
+        "sourcelang:english sourcecountry:US"
+    ),
+    "oil": (
+        '("oil price" OR "crude oil" OR OPEC OR "WTI crude" OR "Brent crude") '
+        "sourcelang:english sourcecountry:US"
+    ),
+    "gold": (
+        '("gold price" OR "gold prices" OR "safe haven" OR "central bank gold buying") '
+        "sourcelang:english sourcecountry:US"
+    ),
+    # Silver has noticeably less dedicated news coverage than gold -- broadened with "precious
+    # metals" so a slow week for silver-specific headlines still surfaces something relevant,
+    # rather than routinely falling back to "no clear driver" purely for lack of query matches.
+    "silver": (
+        '("silver price" OR "silver prices" OR "precious metals") sourcelang:english sourcecountry:US'
+    ),
+    # "Dr. Copper" is the standard financial-media nickname for copper as an economic bellwether --
+    # included since a plain "copper price" query alone under-matches how it's actually covered.
+    "copper": (
+        '("copper price" OR "copper prices" OR "Dr. Copper" OR "copper demand") '
+        "sourcelang:english sourcecountry:US"
+    ),
+    "pce": (
+        '("PCE inflation" OR "core PCE" OR "personal consumption expenditures" OR '
+        '"Fed inflation gauge") sourcelang:english sourcecountry:US'
+    ),
+    "unemployment": (
+        '("unemployment rate" OR "jobs report" OR "nonfarm payrolls" OR "labor market") '
+        "sourcelang:english sourcecountry:US"
+    ),
+    "bitcoin": (
+        '("bitcoin price" OR "bitcoin ETF" OR "crypto market" OR cryptocurrency) '
+        "sourcelang:english sourcecountry:US"
+    ),
+}
+
+
+# ---------------------------------------------------------------------------
+# Stat tiles -- pure numbers, no LLM.
+# ---------------------------------------------------------------------------
+
+
+def _cache_path(source_id: str) -> Path:
+    return CACHE_DIR / f"{source_id.replace('=', '_').replace('^', '')}.csv"
+
+
+def _fetch_fred_series(source_id: str, refresh: bool) -> pd.Series:
+    """Full history of a FRED series, date-indexed -- FRED marks missing observations (e.g. a
+    holiday on a daily series) with "." rather than omitting the row, so those are dropped here
+    rather than left to become a NaN surprise downstream. Returns an empty series (never raises)
+    on any network failure -- same soft-failure contract as finance.news.fetch_full_page_text --
+    falling back to a stale cache if one exists rather than losing the tile entirely for what's
+    often a transient timeout.
+
+    Uses urllib rather than requests/urllib3 -- empirically, requests hangs for 20-30s+ against
+    fred.stlouisfed.org's Akamai-fronted endpoint (a TLS-handshake-fingerprinting quirk, most
+    likely) while urllib (and curl) connect in well under a second for the exact same URL,
+    confirmed directly during development. requests is used everywhere else in this codebase, but
+    this one host is a specific, verified exception.
+    """
+    cache_path = _cache_path(source_id)
+    if cache_path.exists() and not refresh:
+        raw = pd.read_csv(cache_path, index_col=0, parse_dates=True)
+        return raw["value"]
+
+    url = f"{_FRED_CSV_URL}?{urllib.parse.urlencode({'id': source_id})}"
+    try:
+        request = urllib.request.Request(url, headers=_USER_AGENT)
+        with urllib.request.urlopen(request, timeout=20) as response:
+            text = response.read().decode("utf-8")
+    except (urllib.error.URLError, TimeoutError):
+        if cache_path.exists():
+            raw = pd.read_csv(cache_path, index_col=0, parse_dates=True)
+            return raw["value"]
+        return pd.Series(dtype=float)
+    df = pd.read_csv(io.StringIO(text))
+    df.columns = ["date", "value"]
+    df["date"] = pd.to_datetime(df["date"])
+    df["value"] = pd.to_numeric(df["value"], errors="coerce")
+    df = df.dropna(subset=["value"]).set_index("date")
+
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(cache_path)
+    return df["value"]
+
+
+def _fetch_yfinance_series(source_id: str, refresh: bool) -> pd.Series:
+    """Full history of a yfinance-sourced series (commodity/volatility price), date-indexed --
+    reuses finance.data.get_prices' own disk cache, so this only adds the macro cache dir for
+    FRED series above; nothing new to invalidate for yfinance ones. Returns an empty series
+    (never raises) on any fetch failure, same soft-failure contract as _fetch_fred_series.
+    """
+    start = (dt.date.today() - dt.timedelta(days=400)).isoformat()
+    try:
+        prices = get_prices([source_id], start=start, refresh=refresh)
+    except Exception:
+        return pd.Series(dtype=float)
+    if source_id not in prices.columns:
+        return pd.Series(dtype=float)
+    return prices[source_id].dropna()
+
+
+def _value_on_or_before(series: pd.Series, target: pd.Timestamp) -> float | None:
+    eligible = series[series.index <= target]
+    return float(eligible.iloc[-1]) if not eligible.empty else None
+
+
+def _level_series(config: dict, refresh: bool) -> pd.Series:
+    if config["source"] == "fred":
+        raw = _fetch_fred_series(config["source_id"], refresh)
+    else:
+        raw = _fetch_yfinance_series(config["source_id"], refresh)
+    if config["transform"] == "yoy_pct":
+        return ((raw / raw.shift(12) - 1) * 100).dropna()
+    return raw
+
+
+def _tile(key: str, config: dict, refresh: bool) -> dict | None:
+    """One series' current level + its period-over-period change, or None if there's no usable
+    data at all (a fetch failure or an empty series -- soft failure, same as the rest of Loop A,
+    so one broken series doesn't take down the whole dashboard).
+    """
+    series = _level_series(config, refresh)
+    if series.empty:
+        return None
+
+    latest_date = series.index[-1]
+    latest_value = float(series.iloc[-1])
+    if config["cadence"] == "weekly":
+        prior_value = _value_on_or_before(series, latest_date - pd.Timedelta(days=7))
+    else:
+        prior_value = float(series.iloc[-2]) if len(series) >= 2 else None
+
+    delta = (latest_value - prior_value) if prior_value is not None else None
+    if delta is not None and config["delta_format"] == "pct_change" and prior_value:
+        delta = (latest_value / prior_value - 1) * 100
+
+    tile = {
+        "key": key, "label": config["label"], "tag": config.get("tag", config["label"]),
+        "icon": config.get("icon", ""),
+        "cadence": config["cadence"], "unit": config["unit"],
+        "delta_format": config["delta_format"], "value": latest_value, "delta": delta,
+        "as_of": latest_date.date().isoformat(),
+    }
+    chart_days = config.get("chart_days")
+    if chart_days:
+        tile["history"] = _history_pairs(series, latest_date, chart_days)
+    # A second, longer lookback for a companion "bigger picture" mini-chart (no narrative -- see
+    # app.py's _macro_mini_chart_card_html) -- kept separate from "history" above rather than just
+    # widening it, since the weekly narrative is grounded in exactly the "history" window and a
+    # longer one here would visually mismatch a chart with what the narrative text actually covers.
+    extra_chart_days = config.get("extra_chart_days")
+    if extra_chart_days:
+        tile["history_extra"] = _history_pairs(series, latest_date, extra_chart_days)
+    return tile
+
+
+def _history_pairs(series: pd.Series, latest_date: pd.Timestamp, days: int) -> list[list]:
+    """[date_str, value] pairs (not {"date":..., "value":...} dicts) for every point in `series`
+    newer than `latest_date - days` -- compact on purpose, since this gets persisted verbatim into
+    a narrative snapshot's JSON (finance.macro.refresh_macro_narrative): dropping the two repeated
+    key names per point roughly halves the stored size for a multi-week history with no loss of
+    information (position 0/1 is unambiguous once documented here).
+    """
+    cutoff = latest_date - pd.Timedelta(days=days)
+    recent = series[series.index > cutoff]
+    return [[d.date().isoformat(), float(v)] for d, v in recent.items()]
+
+
+def _value_delta_from_window(history: list[list], delta_format: str) -> tuple[float | None, float | None]:
+    """Latest value + change-over-the-window from a [date, value] pairs list (e.g. a tile's
+    "history_extra") -- same delta-computation rule as _tile above (raw difference, except
+    "pct_change" series which compare as a %% change), just applied across the full window instead
+    of a fixed 7-day lookback. Used for the monthly narrative's value/delta, since a tile's own
+    "value"/"delta" are always the *weekly* comparison (see MACRO_SERIES' cadence handling in
+    _tile) and would misrepresent a full month's move.
+    """
+    if not history:
+        return None, None
+    latest_value = history[-1][1]
+    prior_value = history[0][1] if len(history) > 1 else None
+    delta = (latest_value - prior_value) if prior_value is not None else None
+    if delta is not None and delta_format == "pct_change" and prior_value:
+        delta = (latest_value / prior_value - 1) * 100
+    return latest_value, delta
+
+
+def series_tile(key: str, refresh: bool = False) -> dict | None:
+    """One series' tile by key (see MACRO_SERIES), or None if it's unconfigured or its fetch
+    failed. Public single-series accessor for callers (refresh_macro_narrative below) that only
+    need one series' current value/delta rather than the whole dashboard.
+    """
+    config = MACRO_SERIES.get(key)
+    return _tile(key, config, refresh) if config is not None else None
+
+
+def macro_snapshot(refresh: bool = False) -> list[dict]:
+    """Every configured macro tile (see MACRO_SERIES), in insertion order -- skips a series
+    entirely (rather than raising) if its fetch fails or returns no usable data.
+    """
+    tiles = []
+    for key, config in MACRO_SERIES.items():
+        tile = _tile(key, config, refresh)
+        if tile is not None:
+            tiles.append(tile)
+    return tiles
+
+
+# ---------------------------------------------------------------------------
+# Weekly narrative -- the one part of this module that costs an LLM call.
+# ---------------------------------------------------------------------------
+
+
+def _fetch_gdelt_headlines(query: str, max_records: int = 100, timespan: str = "1week") -> list[dict] | None:
+    """Up to `max_records` {title, domain, date} dicts for `query` over the last `timespan`
+    ("1week" or "1month" -- GDELT's own timespan syntax), sorted by GDELT's own relevance ranking --
+    see module docstring re: why this is title/domain/date only (no article body) and why
+    hybridrel, not a popularity metric that doesn't exist.
+
+    Returns None (never raises) if the fetch itself failed (network error, or a 429 that outlasted
+    every retry -- confirmed live during development that shared-IP contention can outlast even a
+    15s backoff), as distinct from an empty list, which means the fetch succeeded but genuinely
+    found nothing relevant this period. That distinction matters to refresh_macro_narrative: a
+    failed fetch shouldn't spend an LLM call producing a hollow "no headlines" narrative, and
+    shouldn't count as this period being "done" (a later retry the same period should get a real
+    chance), while a genuine zero-results period is a legitimate, complete answer worth both an LLM
+    read and locking in.
+    """
+    params = {
+        "query": query, "mode": "artlist", "maxrecords": str(max_records),
+        "timespan": timespan, "sort": "hybridrel", "format": "json",
+    }
+    url = f"{_GDELT_DOC_URL}?{urllib.parse.urlencode(params)}"
+    backoffs = (6, 15)  # a 429 here is most likely shared-IP contention (confirmed live during
+    # development this can outlast a single 6s retry), not this module's own call rate -- one
+    # call/series/week is nowhere near GDELT's stated "one every 5 seconds" limit on its own.
+    data = None
+    for attempt in range(len(backoffs) + 1):
+        try:
+            request = urllib.request.Request(url, headers=_USER_AGENT)
+            with urllib.request.urlopen(request, timeout=20) as response:
+                data = json.loads(response.read().decode())
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 and attempt < len(backoffs):
+                time.sleep(backoffs[attempt])
+                continue
+            return None
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
+            return None
+    if data is None:
+        return None
+
+    articles = data.get("articles") or []
+    return [
+        {"title": a["title"], "domain": a["domain"], "date": a["seendate"][:8]}
+        for a in articles if a.get("title") and a.get("domain") and a.get("seendate")
+    ]
+
+
+def _select_diverse_headlines(headlines: list[dict], limit: int, max_per_domain: int) -> list[dict]:
+    """Keeps GDELT's own relevance order, but caps how many headlines from the same domain count
+    toward `limit` -- so a wire story syndicated across a dozen domains doesn't crowd out
+    everything else that happened this week (see module docstring).
+    """
+    selected: list[dict] = []
+    per_domain: dict[str, int] = {}
+    for h in headlines:
+        if len(selected) >= limit:
+            break
+        if per_domain.get(h["domain"], 0) >= max_per_domain:
+            continue
+        selected.append(h)
+        per_domain[h["domain"]] = per_domain.get(h["domain"], 0) + 1
+    return selected
+
+
+def _week_key(as_of: dt.date) -> str:
+    iso = as_of.isocalendar()
+    return f"{iso[0]}-W{iso[1]:02d}"
+
+
+def _period_group_key(as_of: dt.date, period: str) -> str:
+    """Which "bucket" `as_of` falls into for storage purposes -- ISO week for period="week",
+    calendar month for period="month". Used only to decide whether a fresh narrative replaces the
+    most recent stored one of the same period (still within the same bucket) or starts a new
+    history row (a new bucket) -- see _upsert_narrative. Not used for skipping work: both periods
+    now always regenerate a fresh LLM read on every refresh_macro_narrative call.
+    """
+    return _week_key(as_of) if period == "week" else f"{as_of.year}-{as_of.month:02d}"
+
+
+_JSON_BLOB = re.compile(r"\{.*\}", re.DOTALL)
+
+
+def _extract_json(text: str) -> dict | None:
+    match = _JSON_BLOB.search(text)
+    if not match:
+        return None
+    try:
+        return json.loads(match.group(0))
+    except json.JSONDecodeError:
+        return None
+
+
+def _truncate(text: str) -> str:
+    limit = max_article_chars()
+    return text[:limit] if limit is not None else text
+
+
+def macro_narrative_snapshot(
+    label: str, value: float, delta: float | None, unit: str, headlines: list[dict], as_of: dt.date,
+    include_direction: bool = False, period: str = "week",
+) -> dict | None:
+    """One LLM call: a 2-3 sentence explanation of this period's move in `label`, grounded in
+    `headlines` (real, dated GDELT results -- see module docstring) -- honestly says there's no
+    clear single driver rather than forcing a narrative onto an unrelated headline, same honesty
+    contract finance.earnings_calls/finance.fundamentals already use for a weak/absent signal.
+
+    `period` is "week" or "month" -- purely wording (the caller already picked headlines/value/delta
+    for the right window; this just makes the prompt/response describe them accurately).
+
+    `include_direction` (only ever True for DIRECTIONAL_SERIES -- see that set's comment) also asks
+    for a bullish/bearish/neutral price lean, a confidence in it, and whether there's enough signal
+    to have a view at all. Display-only -- no expected_return_pct/expected_horizon_days, since
+    nothing downstream (portfolio, thesis) consumes this; a fabricated-looking magnitude/timeframe
+    would just be noise without that.
+
+    Never raises for a parse failure (returns None); raises RateLimited if every model is out of
+    quota, same as every other Stage call in this app.
+    """
+    period_word = "week" if period == "week" else "month"
+    value_str = f"{value:.2f}{unit}"
+    delta_str = f"{delta:+.2f}{unit}" if delta is not None else "n/a (no prior reading on record)"
+    headlines_text = (
+        "\n".join(f"- [{h['date']}] ({h['domain']}) {h['title']}" for h in headlines)
+        if headlines else f"(no headlines found for this query this {period_word})"
+    )
+    direction_window = "coming week or two" if period == "week" else "coming month or so"
+    direction_instructions = (
+        "\n\nAlso give a directional read: \"direction\" is \"bullish\", \"bearish\", or \"neutral\" "
+        f"for the price over the {direction_window}; \"confidence\" is \"low\", \"medium\", or "
+        "\"high\", reflecting how strongly the headlines above actually support that lean (not how "
+        "large the move might be); \"trade_worthy\" is true only if there's a genuine, specific "
+        f"signal here, false if it's a quiet/noisy {period_word} where \"neutral\" would just mean "
+        "\"no real view\" rather than an actual balanced-forces call."
+        if include_direction else ""
+    )
+    direction_json = (
+        ', "direction": "bullish|bearish|neutral", "confidence": "low|medium|high", '
+        '"trade_worthy": true/false'
+        if include_direction else ""
+    )
+    prompt = (
+        f"You are a macro analyst. {label} is currently {value_str}, a change of {delta_str} over "
+        f"the past {period_word}, as of {as_of.isoformat()}.\n\n"
+        f"Below are the most relevant English-language US news headlines from the past {period_word} "
+        f"(via GDELT, sorted by relevance to Fed policy/rates/inflation):\n{_truncate(headlines_text)}\n\n"
+        f"In 2-3 sentences, explain what most plausibly drove this {period_word}'s move, citing "
+        f"specific headlines above by their content if they plausibly explain it. If nothing above "
+        f"offers a clear, specific driver, say so honestly (e.g. \"no clear single catalyst this "
+        f"{period_word} -- likely broad positioning/drift\") rather than forcing a narrative onto an "
+        f"unrelated headline -- an honest \"unclear\" is more useful than a fabricated-sounding "
+        f"explanation.{direction_instructions}\n\n"
+        f"Respond with ONLY a JSON object (no markdown fences, no commentary): "
+        f'{{"narrative": "...", "has_clear_driver": true/false{direction_json}}}'
+    )
+
+    raw = complete(prompt, max_tokens=400, **llm_config())
+    if not raw:
+        return None
+    data = _extract_json(raw)
+    if not data or "narrative" not in data:
+        return None
+    result = {
+        "narrative": str(data["narrative"]),
+        "has_clear_driver": bool(data.get("has_clear_driver", False)),
+    }
+    if include_direction:
+        direction = data.get("direction")
+        result["direction"] = direction if direction in ("bullish", "bearish", "neutral") else "neutral"
+        confidence = data.get("confidence")
+        result["confidence"] = confidence if confidence in ("low", "medium", "high") else "low"
+        result["trade_worthy"] = bool(data.get("trade_worthy", False))
+    return result
+
+
+def _narrative_path(series_key: str) -> Path:
+    return NARRATIVES_DIR / f"{series_key}.json"
+
+
+def load_narrative_history(series_key: str) -> list[dict]:
+    """Every weekly narrative snapshot ever stored for `series_key`, oldest first."""
+    path = _narrative_path(series_key)
+    return json.loads(path.read_text()) if path.exists() else []
+
+
+def latest_narrative(series_key: str, period: str = "week") -> dict | None:
+    """Most recent stored narrative for `series_key`, filtered to `period` ("week" or "month") --
+    a series' narratives file can hold both kinds interleaved (see refresh_macro_narrative), each
+    tagged with a "period" field. Entries predating this field default to "week" (every narrative
+    was weekly-only before monthly narratives existed), so old data keeps working with no migration.
+    """
+    history = [e for e in load_narrative_history(series_key) if e.get("period", "week") == period]
+    return history[-1] if history else None
+
+
+def _upsert_narrative(series_key: str, event: dict, period: str, as_of: dt.date) -> None:
+    """Stores `event` in `series_key`'s narratives file: appends a new history row only if `as_of`
+    falls in a different bucket (ISO week for period="week", calendar month for period="month" --
+    see _period_group_key) than the most recent stored entry of the same period type; otherwise
+    overwrites that entry in place.
+
+    This is what lets refresh_macro_narrative regenerate a fresh LLM read on *every* call -- no
+    skip-based dedup for either period anymore -- while storage still caps out at roughly one row
+    per week/month: several refreshes within the same week/month just keep updating that one
+    row's content (each one a strictly more current read than the last), and only crossing into a
+    new week/month starts a genuinely new history entry worth keeping around.
+    """
+    path = _narrative_path(series_key)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    history = load_narrative_history(series_key)
+    new_bucket = _period_group_key(as_of, period)
+    last_idx = next(
+        (i for i in range(len(history) - 1, -1, -1) if history[i].get("period", "week") == period), None,
+    )
+    serialized = json.loads(json.dumps(event, default=str))
+    if last_idx is not None:
+        last_date = dt.date.fromisoformat(history[last_idx]["date"])
+        if _period_group_key(last_date, period) == new_bucket:
+            history[last_idx] = serialized
+            path.write_text(json.dumps(history, indent=2))
+            return
+    history.append(serialized)
+    path.write_text(json.dumps(history, indent=2))
+
+
+def refresh_macro_narrative(series_key: str, as_of: dt.date, period: str = "week") -> dict:
+    """The one entry point every caller needs: always regenerates a fresh LLM+GDELT read for
+    `series_key`/`period` (no skip-based dedup for either period -- every call costs a real LLM
+    call, by design), pulling the series' current tile (series_tile above), fetching+filtering the
+    grounding headlines, running the LLM read, and persisting the result via _upsert_narrative.
+
+    `period` is "week" (every series in NARRATIVE_QUERIES) or "month" (only
+    MONTHLY_NARRATIVE_SERIES -- series with a 1-month mini-chart to ground it against). Both are
+    rolling reads as-of `as_of` ("this week"/"last 30 days"), not calendar-locked -- what IS
+    calendar-bucketed is storage: _upsert_narrative only starts a new history row when `as_of`
+    crosses into a new ISO week (period="week") or calendar month (period="month") since the last
+    stored entry of that type; multiple refreshes within the same bucket just update that one row
+    in place, so calling this repeatedly in the same week/month costs LLM calls but not JSON
+    clutter. Both kinds live in the same output/macro/{series_key}.json file, each entry tagged
+    "period": "week"/"month" -- see latest_narrative's filtering.
+
+    Always returns a dict with a "status" key, never bare None -- callers (run_loop_a.py) need to
+    tell "GDELT is unreachable right now" apart from a genuine LLM failure apart from a real
+    success, rather than all three collapsing into an equally uninformative None. "status" is one
+    of:
+      "generated"       -- a new/updated narrative was produced and stored; every other event field
+                            (see below) is also present.
+      "unknown_series"  -- series_key isn't in NARRATIVE_QUERIES.
+      "no_monthly_series" -- period="month" but series_key isn't in MONTHLY_NARRATIVE_SERIES.
+      "no_tile"         -- the underlying finance.macro series tile (or, for period="month", its
+                            30-day history_extra window) couldn't be fetched.
+      "gdelt_unavailable" -- the GDELT fetch itself failed (rate-limited or a network error that
+                            outlasted every retry -- see _fetch_gdelt_headlines) -- no LLM call was
+                            made, nothing was stored, and this can be retried anytime.
+      "llm_failed"      -- the LLM call ran but produced nothing usable.
+    Propagates RateLimited, same as every other Stage call.
+    """
+    query = NARRATIVE_QUERIES.get(series_key)
+    if query is None:
+        return {"status": "unknown_series"}
+    if period == "month" and series_key not in MONTHLY_NARRATIVE_SERIES:
+        return {"status": "no_monthly_series"}
+
+    tile = series_tile(series_key)
+    if tile is None:
+        return {"status": "no_tile"}
+
+    if period == "week":
+        value, delta, history = tile["value"], tile["delta"], tile.get("history", [])
+    else:
+        history = tile.get("history_extra", [])
+        value, delta = _value_delta_from_window(history, tile["delta_format"])
+        if value is None:
+            return {"status": "no_tile"}
+
+    unit_suffix = {"pct": "%", "usd": "", "num": ""}[tile["unit"]]
+    timespan = "1week" if period == "week" else "1month"
+    headline_limit, max_per_domain = (25, 2) if period == "week" else (35, 3)
+    raw_headlines = _fetch_gdelt_headlines(query, max_records=100, timespan=timespan)
+    if raw_headlines is None:
+        return {"status": "gdelt_unavailable"}  # no LLM call, no storage, free to retry
+    headlines = _select_diverse_headlines(raw_headlines, headline_limit, max_per_domain)
+
+    include_direction = series_key in DIRECTIONAL_SERIES
+    snapshot = macro_narrative_snapshot(
+        tile["label"], value, delta, unit_suffix, headlines, as_of,
+        include_direction=include_direction, period=period,
+    )
+    if snapshot is None:
+        return {"status": "llm_failed"}
+
+    event = {
+        "status": "generated", "period": period,
+        "date": as_of.isoformat(), "value": value, "delta": delta,
+        # The actual daily numbers behind this period's chart, not just the single value/delta --
+        # only present for a series configured with chart_days/extra_chart_days (see MACRO_SERIES).
+        # Storing it here means the record is self-contained (numbers + the narrative explaining
+        # them) and survives independent of finance.data/FRED's own rolling cache, which has no
+        # obligation to keep this exact window around.
+        "history": history,
+        "narrative": snapshot["narrative"], "has_clear_driver": snapshot["has_clear_driver"],
+        "headlines_used": headlines, "fetch_succeeded": True,
+    }
+    if period == "week":
+        event["week"] = _week_key(as_of)
+    if include_direction:
+        event["direction"] = snapshot["direction"]
+        event["confidence"] = snapshot["confidence"]
+        event["trade_worthy"] = snapshot["trade_worthy"]
+    _upsert_narrative(series_key, {k: v for k, v in event.items() if k != "status"}, period, as_of)
+    return event

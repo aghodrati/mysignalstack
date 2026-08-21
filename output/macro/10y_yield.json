@@ -1,0 +1,19 @@
+[
+  {
+    "week": "2026-W34",
+    "date": "2026-08-21",
+    "value": 4.5,
+    "delta": 0.02,
+    "history": [],
+    "narrative": "quiet week",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Fed holds rates",
+        "domain": "x.com",
+        "date": "20260820"
+      }
+    ],
+    "fetch_succeeded": true
+  }
+]

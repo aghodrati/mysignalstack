@@ -40,6 +40,8 @@ output/*
 !output/fundamentals/**
 !output/earnings_calls/
 !output/earnings_calls/**
+!output/macro/
+!output/macro/**
 !output/portfolios/
 !output/portfolios/**
 

@@ -81,6 +81,7 @@ from finance.ranking import (
 from finance.thesis import open_positions
 from finance.earnings_calls import load_earnings_call_history
 from finance.fundamentals import load_fundamental_history
+from finance.macro import MACRO_SERIES, MONTHLY_NARRATIVE_SERIES, NARRATIVE_QUERIES, latest_narrative, macro_snapshot
 from finance.tickerthesis import list_tickers_with_thesis, load_ticker_thesis
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
 
@@ -269,6 +270,21 @@ def render_compare_tab() -> None:
 
 def _select_page_ticker(ticker: str) -> None:
     st.session_state["ticker_page_selected_ticker"] = ticker
+    st.session_state["ticker_page_view"] = "ticker"
+
+
+def _select_recent_view() -> None:
+    st.session_state["ticker_page_view"] = "recent"
+
+
+def _select_macro_view(series_key: str | None = None) -> None:
+    """Switches to the Macro dashboard -- `series_key=None` (the "Macro"/"All" entries) shows
+    every series, exactly as before per-series filtering existed; a specific key (clicking e.g.
+    "Gold" in the sidebar's Macro expander) narrows the page down to just that series' own card(s).
+    See _render_macro_page's own use of "ticker_page_macro_series".
+    """
+    st.session_state["ticker_page_view"] = "macro"
+    st.session_state["ticker_page_macro_series"] = series_key
 
 
 def _create_portfolio_clicked() -> None:
@@ -432,7 +448,7 @@ def _claim_card_html(c, article_summary: str | None) -> str:
     metrics_html = html.escape(" · ".join(metrics_bits))
     context_html = f'<div class="keep-card-context">{html.escape(c.context)}</div>' if c.context else ""
     card_body = (
-        f'<div class="keep-card-source">#{html.escape(c.source or "unknown")}</div>'
+        f'<div class="keep-card-source">#{html.escape(c.source or "unknown")} #{html.escape(c.ticker)}</div>'
         f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
         f"{context_html}"
         f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
@@ -577,7 +593,7 @@ def _factor_headline_bits(factors: dict) -> list[str]:
     return bits
 
 
-def _fundamental_card_html(ev: dict) -> str:
+def _fundamental_card_html(ev: dict, ticker: str) -> str:
     direction = ev.get("fundamental_direction") or "neutral"
     arrow = _FUNDAMENTAL_DIRECTION_ARROW.get(direction, "➖")
     confidence = ev.get("fundamental_confidence")
@@ -598,6 +614,8 @@ def _fundamental_card_html(ev: dict) -> str:
         if factor_bits else ""
     )
     fv, cp, implied = ev.get("fair_value_estimate"), ev.get("current_price"), ev.get("implied_return_pct")
+    # Date goes last in the meta line, same convention as claim cards ("{metrics} · {date}") --
+    # ticker now identifies the card up top instead (see the source tag below).
     meta_bits = []
     if cp:
         meta_bits.append(f"price ${cp:,.2f}")
@@ -605,11 +623,12 @@ def _fundamental_card_html(ev: dict) -> str:
         meta_bits.append(f"fair value ${fv:,.2f}")
     if implied is not None:
         meta_bits.append(f"implied {implied:+.1f}%")
-    meta_html = html.escape(" · ".join(meta_bits)) if meta_bits else ""
+    meta_bits.append(ev["date"])
+    meta_html = html.escape(" · ".join(meta_bits))
     # Summary/key_changes/factors all live on the front now -- risks are the only thing behind the
     # flip, since they're the one part worth a deliberate second look rather than at-a-glance.
     card_body = (
-        f'<div class="keep-card-source">#Fundamentals · {html.escape(ev["date"])}</div>'
+        f'<div class="keep-card-source">#Fundamentals #{html.escape(ticker)}</div>'
         f'<div class="keep-card-claim">{arrow} {direction.title()} · {confidence_text}</div>'
         f"{summary_html}"
         f"{changes_html}"
@@ -628,10 +647,19 @@ def _fundamental_card_html(ev: dict) -> str:
 
 
 _EARNINGS_CALL_DIRECTION_ARROW = _FUNDAMENTAL_DIRECTION_ARROW
+# finance.macro only ever attaches direction to DIRECTIONAL_SERIES (oil/gold/silver/copper/
+# bitcoin -- literal tradeable instrument prices), using "bullish"/"bearish" rather than "long"/
+# "short" since there's no actual position/thesis behind it, just a display-only read -- see
+# finance.macro.macro_narrative_snapshot's own docstring for why no expected_return/horizon either.
+_MACRO_DIRECTION_ARROW = {
+    "bullish": _DIRECTION_ARROW["long"],
+    "bearish": _DIRECTION_ARROW["short"],
+    "neutral": "➖",
+}
 _TONE_EMOJI = {"confident": "\U0001f4aa", "cautious": "\U0001f914", "defensive": "\U0001f6e1️", "evasive": "\U0001f440"}
 
 
-def _earnings_call_card_html(ev: dict) -> str:
+def _earnings_call_card_html(ev: dict, ticker: str) -> str:
     """Opposite split from _fundamental_card_html: risks front-and-center on the front (summary,
     guidance, management tone, risks), key Q&A highlights behind the flip.
     """
@@ -660,13 +688,18 @@ def _earnings_call_card_html(ev: dict) -> str:
     if tone:
         tone_emoji = _TONE_EMOJI.get(tone, "")
         tone_html = f'<div class="keep-card-meta">{tone_emoji} Management tone: {html.escape(tone)}</div>'
+    # Date goes last, same convention as claim/fundamental cards -- ticker identifies the card up
+    # top instead (see the source tag below). Prefers the actual call date (transcript_date) over
+    # this snapshot's own generation date, same as before.
+    date_html = f'<div class="keep-card-meta">{html.escape(ev.get("transcript_date", ev["date"]))}</div>'
     card_body = (
-        f'<div class="keep-card-source">#Earnings Call · {html.escape(ev.get("transcript_date", ev["date"]))}</div>'
+        f'<div class="keep-card-source">#Earnings Call #{html.escape(ticker)}</div>'
         f'<div class="keep-card-claim">{arrow} {direction.title()} · {confidence_text}</div>'
         f"{summary_html}"
         f"{guidance_html}"
         f"{risks_html}"
         f"{tone_html}"
+        f"{date_html}"
     )
     qa_moments = ev.get("key_qa_moments") or []
     back_bits = ['<div class="keep-card-summary-title">\U0001f4ac Key Q&A moments</div>']
@@ -681,23 +714,27 @@ def _earnings_call_card_html(ev: dict) -> str:
 
 def _render_mixed_keep_cards(
     claims: list, fundamental_events: list[dict], earnings_call_events: list[dict] | None = None,
+    ticker: str = "",
 ) -> None:
     """Renders claim, fundamental, and earnings-call cards together in one grid, interleaved by
     date (newest first) -- see page_ticker's "Cards" filter for choosing which type(s) show, and
     Sources/Dates/Importance for the rest (Sources/Importance only apply to claims -- fundamental
     and earnings-call snapshots have neither). All three card builders share the same flip
     mechanism and column grid (_render_keep_card_grid), so any mix lays out identically to a
-    single type alone.
+    single type alone. `ticker` is only used by the fundamental/earnings-call cards (claims already
+    carry their own #source tag) -- it identifies which ticker a card belongs to, since neither
+    snapshot type stores its own ticker in its JSON.
     """
     summaries = _article_summaries()
     dated_html: list[tuple[dt.date, str]] = [
         (c.created, _claim_card_html(c, summaries.get(c.source_link))) for c in claims
     ]
     dated_html += [
-        (dt.date.fromisoformat(ev["date"]), _fundamental_card_html(ev)) for ev in fundamental_events
+        (dt.date.fromisoformat(ev["date"]), _fundamental_card_html(ev, ticker)) for ev in fundamental_events
     ]
     dated_html += [
-        (dt.date.fromisoformat(ev["date"]), _earnings_call_card_html(ev)) for ev in (earnings_call_events or [])
+        (dt.date.fromisoformat(ev["date"]), _earnings_call_card_html(ev, ticker))
+        for ev in (earnings_call_events or [])
     ]
     if not dated_html:
         st.caption("No cards to show.")
@@ -3476,6 +3513,431 @@ def render_panel_tab() -> None:
         st.dataframe(raw.reset_index(drop=True), width=600, key="table_panel_factor_history", hide_index=True)
 
 
+_MACRO_UNIT_FORMAT = {
+    "pct": lambda v: f"{v:.2f}%",
+    "usd": lambda v: f"${v:,.2f}",
+    "num": lambda v: f"{v:.2f}",
+}
+# For chart axis ticks specifically -- "usd" drops decimals (a commodity price's cents digit is
+# noise at a quick-glance axis scale, unlike the headline value line above the chart, which keeps
+# full precision). "pct" keeps 2 decimals even on the axis -- a rate/spread's whole weekly move is
+# often just a few basis points, so rounding to whole percent would flatten it to a flat line.
+_MACRO_AXIS_UNIT_FORMAT = {
+    "pct": _MACRO_UNIT_FORMAT["pct"],
+    "usd": lambda v: f"${v:,.0f}",
+    "num": _MACRO_UNIT_FORMAT["num"],
+}
+_MACRO_DELTA_FORMAT = {
+    "bps": lambda d: f"{d * 100:+.0f} bps",
+    "pp": lambda d: f"{d:+.2f} pp",
+    "pct_change": lambda d: f"{d:+.1f}%",
+    "points": lambda d: f"{d:+.2f} pts",
+}
+
+
+def _render_macro_tiles(tiles: list[dict]) -> None:
+    """A row of st.metric tiles -- delta_color="off" throughout since, unlike a portfolio P&L
+    number, a macro series moving up isn't uniformly good or bad (rising oil helps XOM, hurts
+    margin-sensitive names elsewhere) -- letting st.metric auto-color it green/red would silently
+    editorialize a plain data point.
+    """
+    cols = st.columns(len(tiles)) if tiles else []
+    for col, tile in zip(cols, tiles):
+        value_str = _MACRO_UNIT_FORMAT[tile["unit"]](tile["value"])
+        delta_str = _MACRO_DELTA_FORMAT[tile["delta_format"]](tile["delta"]) if tile["delta"] is not None else None
+        col.metric(tile["label"], value_str, delta_str, delta_color="off", help=f"As of {tile['as_of']}")
+
+
+def _macro_chart_html(history: list[list], unit: str, width: int = 300, height: int = 80) -> str:
+    """A compact inline SVG line+area chart with a 3-tick value axis (max/mid/min, stacked to the
+    chart's left, like a real y-axis) and a 3-tick date row below it (start/mid/end) --
+    deliberately not st.line_chart, which renders at full column width and native chart height
+    regardless of how little content it's showing; that's the right tool for a real
+    data-exploration chart, but wrong for a card-sized trend glance. Still no gridlines/full tick
+    marks -- just enough to read the chart's actual scale.
+
+    `history` is finance.macro's compact [date_str, value] pair format (see its _history_pairs
+    docstring), not {"date":..., "value":...} dicts.
+
+    The value/date labels are plain HTML, not SVG <text> elements inside the chart -- the SVG
+    itself uses preserveAspectRatio="none" (stretches non-uniformly to fill the card's actual
+    width, which is unknown at render time), and text inside a non-uniformly-scaled SVG renders
+    visibly warped (letters stretched or squished) whenever the real width differs from the 300px
+    viewBox. Plain HTML text has no such issue -- it just reflows normally.
+    """
+    values = [h[1] for h in history]
+    if len(values) < 2:
+        return ""
+    lo, hi = min(values), max(values)
+    span = (hi - lo) or 1.0
+    pad = 4
+    n = len(values)
+
+    def x(i: int) -> float:
+        return pad + (width - 2 * pad) * i / (n - 1)
+
+    def y(v: float) -> float:
+        return height - pad - (height - 2 * pad) * (v - lo) / span
+
+    points = " ".join(f"{x(i):.1f},{y(v):.1f}" for i, v in enumerate(values))
+    area = f"{x(0):.1f},{height - pad} {points} {x(n - 1):.1f},{height - pad}"
+    svg = (
+        f'<svg width="100%" height="{height}" viewBox="0 0 {width} {height}" '
+        f'preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;">'
+        f'<polyline points="{area}" fill="rgba(27,175,122,0.15)" stroke="none"/>'
+        f'<polyline points="{points}" fill="none" stroke="#1baf7a" stroke-width="2" '
+        f'stroke-linejoin="round" stroke-linecap="round"/>'
+        f"</svg>"
+    )
+
+    fmt = _MACRO_AXIS_UNIT_FORMAT[unit]
+    # Vertical axis ticks are evenly spaced between hi/lo (a real axis midpoint), not the value at
+    # whatever data point happens to sit at the middle index -- those two only coincide by chance.
+    hi_label = html.escape(fmt(hi))
+    mid_label = html.escape(fmt((hi + lo) / 2))
+    lo_label = html.escape(fmt(lo))
+    # Horizontal axis ticks, by contrast, use the *actual* middle data point's own date -- dates
+    # aren't an average to compute, they're calendar days from real data, same as start/end below.
+    mid_idx = n // 2
+    start_date = dt.date.fromisoformat(history[0][0]).strftime("%m/%d")
+    mid_date = dt.date.fromisoformat(history[mid_idx][0]).strftime("%m/%d")
+    end_date = dt.date.fromisoformat(history[-1][0]).strftime("%m/%d")
+    label_style = "font-size:0.68rem;opacity:0.55;line-height:1.1;white-space:nowrap;"
+    return (
+        f'<div style="display:flex;align-items:stretch;margin:0.4rem 0 0.1rem;">'
+        f'<div style="display:flex;flex-direction:column;justify-content:space-between;'
+        f'padding-right:0.3rem;text-align:right;{label_style}">'
+        f"<span>{hi_label}</span><span>{mid_label}</span><span>{lo_label}</span>"
+        f"</div>"
+        f'<div style="flex:1;min-width:0;">'
+        f"{svg}"
+        f'<div style="display:flex;justify-content:space-between;{label_style}margin-top:0.15rem;">'
+        f"<span>{start_date}</span><span>{mid_date}</span><span>{end_date}</span>"
+        f"</div>"
+        f"</div>"
+        f"</div>"
+    )
+
+
+def _chart_window_label(days: int) -> str:
+    """A short, human window label for a chart card's header -- derived from the actual configured
+    chart_days/extra_chart_days rather than hardcoded per card type, so a future MACRO_SERIES
+    tweak (or a new cadence) doesn't silently go stale against the label text.
+    """
+    if days <= 10:
+        return "1w"
+    if days <= 45:
+        return "1m"
+    return "1y"
+
+
+def _macro_card_source_html(tile: dict, window: str, mini: bool = False) -> str:
+    """The "{icon} #Macro #{tag} ({window})" header line shared by all three macro card types --
+    no leading-space artifact when a series has no icon configured (MACRO_SERIES' "icon" is
+    optional), and the 1-month companion mini-chart never shows an icon for 10y_yield specifically
+    (its own weekly narrative card keeps its icon -- this is a one-off per user request, not a
+    general "mini cards never get icons" rule, since other series' mini cards do still show one).
+    """
+    icon = "" if (mini and tile["key"] == "10y_yield") else tile["icon"]
+    icon_prefix = f"{icon} " if icon else ""
+    return f'<div class="keep-card-source">{icon_prefix}#Macro #{html.escape(tile["tag"])} ({window})</div>'
+
+
+def _macro_direction_badge_html(narrative: dict | None) -> str:
+    """The "↑ Bullish · High confidence" badge, shared by the weekly and monthly narrative cards --
+    only present for DIRECTIONAL_SERIES (see finance.macro.DIRECTIONAL_SERIES/_MACRO_DIRECTION_ARROW)
+    -- a rate/spread/index series' narrative dict simply has no "direction" key, same optional-field
+    convention as fundamental_direction/earnings_direction.
+    """
+    if not narrative or "direction" not in narrative:
+        return ""
+    direction = narrative["direction"]
+    arrow = _MACRO_DIRECTION_ARROW.get(direction, "➖")
+    confidence_label = str(narrative.get("confidence", "low")).title()
+    signal_note = "" if narrative.get("trade_worthy") else " (low signal)"
+    return (
+        f'<div class="keep-card-claim" style="font-size:1.05rem;">'
+        f"{arrow} {direction.title()} · {confidence_label} confidence{signal_note}</div>"
+    )
+
+
+def _macro_headlines_back_html(narrative: dict | None) -> str | None:
+    """Flip side: the actual GDELT headlines a narrative was grounded in (finance.macro's stored
+    "headlines_used" -- already fetched/persisted, so this is free, no new GDELT/LLM cost). Capped
+    at 8 -- enough to substantiate the narrative without turning the back of a card-sized tile into
+    a full article-list dump. None (no flip at all) if there's no narrative yet, or it genuinely
+    found no headlines for that period.
+    """
+    headlines = (narrative or {}).get("headlines_used") or []
+    if not headlines:
+        return None
+    back_bits = ['<div class="keep-card-summary-title">\U0001f4f0 Headlines behind this narrative</div>']
+    back_bits += [
+        f'<div class="keep-card-summary keep-card-risk-item">'
+        f'[{html.escape(h["date"])}] ({html.escape(h["domain"])}) {html.escape(h["title"])}</div>'
+        for h in headlines[:8]
+    ]
+    return "".join(back_bits)
+
+
+def _macro_narrative_card_html(tile: dict) -> str:
+    """Card-sized trend chart + narrative, same Keep-card visual language as claims/fundamentals/
+    earnings-calls (_flip_card_html/keep-card CSS) rather than a full-width native chart -- for a
+    series where finance.macro attached recent "history" (see MACRO_SERIES' chart_days). No flip
+    -- the narrative (finance.macro's weekly "why", grounded in real GDELT headlines) is
+    the reason this card exists, shown directly rather than hidden behind a tap.
+    """
+    value_str = _MACRO_UNIT_FORMAT[tile["unit"]](tile["value"])
+    delta_str = _MACRO_DELTA_FORMAT[tile["delta_format"]](tile["delta"]) if tile["delta"] is not None else "n/a"
+    chart_svg = _macro_chart_html(tile.get("history") or [], tile["unit"])
+    window = _chart_window_label(MACRO_SERIES[tile["key"]]["chart_days"])
+    narrative = latest_narrative(tile["key"])
+    if narrative:
+        icon = "\U0001f4f0" if narrative.get("has_clear_driver") else "\U0001f937"
+        narrative_html = f'<div class="keep-card-context">{icon} {html.escape(narrative["narrative"])}</div>'
+        meta_html = f'<div class="keep-card-meta">Narrative as of week {narrative["week"]}</div>'
+    else:
+        narrative_html = '<div class="keep-card-context">No weekly narrative generated yet.</div>'
+        meta_html = ""
+    direction_html = _macro_direction_badge_html(narrative)
+    card_body = (
+        f"{_macro_card_source_html(tile, window)}"
+        f'<div class="keep-card-claim">{html.escape(value_str)} '
+        f'<span style="opacity:0.7;font-weight:400;font-size:0.8rem;">({html.escape(delta_str)} this week)</span></div>'
+        f"{direction_html}"
+        f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
+        f"{chart_svg}"
+        f"{narrative_html}"
+        f"{meta_html}"
+    )
+    back_html = _macro_headlines_back_html(narrative)
+    return _flip_card_html(card_body, back_html)
+
+
+def _macro_chart_card_html(tile: dict) -> str:
+    """Same trend chart as _macro_narrative_card_html, minus the narrative -- for a series with
+    "history" (MACRO_SERIES' chart_days) but no entry in finance.macro.NARRATIVE_QUERIES
+    (currently everything except 10y_yield). No "no narrative yet" filler text, unlike
+    _macro_narrative_card_html's fallback -- these series were never going to have one, so that
+    text would read as a bug report rather than an honest "not generated yet" state. Used for both
+    weekly-cadence series (credit spread, VIX, commodities) and monthly-cadence ones (PCE,
+    unemployment) -- the window label just reflects each one's own configured chart_days.
+    """
+    value_str = _MACRO_UNIT_FORMAT[tile["unit"]](tile["value"])
+    delta_str = _MACRO_DELTA_FORMAT[tile["delta_format"]](tile["delta"]) if tile["delta"] is not None else "n/a"
+    chart_svg = _macro_chart_html(tile.get("history") or [], tile["unit"])
+    window = _chart_window_label(MACRO_SERIES[tile["key"]]["chart_days"])
+    period_label = "this week" if tile["cadence"] == "weekly" else "this reading"
+    card_body = (
+        f"{_macro_card_source_html(tile, window)}"
+        f'<div class="keep-card-claim">{html.escape(value_str)} '
+        f'<span style="opacity:0.7;font-weight:400;font-size:0.8rem;">({html.escape(delta_str)} {period_label})</span></div>'
+        f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
+        f"{chart_svg}"
+    )
+    return _flip_card_html(card_body, None)
+
+
+def _macro_mini_chart_card_html(tile: dict) -> str:
+    """A smaller companion card giving the bigger-picture context behind the main weekly card's
+    narrower window ("is this week's wiggle part of a bigger move, or just noise") -- chart over
+    "history_extra" (see MACRO_SERIES' extra_chart_days), plus, for MONTHLY_NARRATIVE_SERIES, a
+    real monthly narrative grounded in the past month's GDELT headlines (a separate LLM call/period
+    from the weekly one -- see finance.macro.refresh_macro_narrative's period="month"). Series
+    without a monthly narrative configured show the chart alone, same as before.
+    """
+    chart_svg = _macro_chart_html(tile.get("history_extra") or [], tile["unit"])
+    window = _chart_window_label(MACRO_SERIES[tile["key"]]["extra_chart_days"])
+    if tile["key"] not in MONTHLY_NARRATIVE_SERIES:
+        card_body = (
+            f"{_macro_card_source_html(tile, window, mini=True)}"
+            f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
+            f"{chart_svg}"
+            f'<div class="keep-card-meta">Bigger-picture context for the card above -- no narrative here.</div>'
+        )
+        return _flip_card_html(card_body, None)
+
+    narrative = latest_narrative(tile["key"], period="month")
+    if narrative:
+        icon = "\U0001f4f0" if narrative.get("has_clear_driver") else "\U0001f937"
+        narrative_html = f'<div class="keep-card-context">{icon} {html.escape(narrative["narrative"])}</div>'
+        meta_html = f'<div class="keep-card-meta">Narrative as of {narrative["date"]} (last 30 days)</div>'
+    else:
+        narrative_html = '<div class="keep-card-context">No monthly narrative generated yet.</div>'
+        meta_html = ""
+    direction_html = _macro_direction_badge_html(narrative)
+    card_body = (
+        f"{_macro_card_source_html(tile, window, mini=True)}"
+        f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
+        f"{direction_html}"
+        f"{chart_svg}"
+        f"{narrative_html}"
+        f"{meta_html}"
+    )
+    back_html = _macro_headlines_back_html(narrative)
+    return _flip_card_html(card_body, back_html)
+
+
+def _render_recent_page() -> None:
+    """A cross-universe "what's new" feed -- claims/fundamentals/earnings-calls (every tracked
+    ticker) and macro narratives (every configured series), filtered to a recent time window,
+    reusing every existing card renderer verbatim (_claim_card_html/_fundamental_card_html/
+    _earnings_call_card_html/_macro_narrative_card_html/_macro_mini_chart_card_html) -- no new
+    rendering logic, just a wider net across the whole universe plus a date filter over what's
+    already on disk/cached (macro tiles come from the same @st.cache_data _cached_macro_snapshot
+    the Macro page uses, so this costs no extra live FRED/yfinance fetches beyond that page's own).
+
+    Thesis and critic-review state are deliberately excluded -- both reflect current synthesized
+    state rather than a discrete new event, so "updated recently" wouldn't reliably mean "something
+    new happened" the way a fresh claim/fundamental/earnings-call/macro read does.
+    """
+    st.markdown("### Recent")
+    st.caption("All claims, fundamentals, earnings calls, and macro narratives in one place.")
+
+    # Same st.pills picking interaction as the Ticker page's own Dates/Cards filters (see
+    # page_ticker's "Dates"/"Cards" pills) -- Days is single-select (a card is either within the
+    # window or not), Card type is multi-select (any combination can show at once).
+    days_label_col, days_pills_col, types_label_col, types_pills_col = st.columns(
+        [1, 2, 1, 4], vertical_alignment="center",
+    )
+    with days_label_col:
+        st.write("**Days**")
+    with days_pills_col:
+        window_label = st.pills(
+            "Days", options=["1d", "1w"], default="1d", selection_mode="single",
+            key="recent_page_window", label_visibility="collapsed",
+        )
+    with types_label_col:
+        st.write("**Card type**")
+    with types_pills_col:
+        types = st.pills(
+            "Card type", options=["Claims", "Fundamentals", "Earnings calls", "Macro"],
+            default=["Claims", "Fundamentals", "Earnings calls", "Macro"], selection_mode="multi",
+            key="recent_page_types", label_visibility="collapsed",
+        )
+
+    window_label = window_label or "1d"  # single-select pills can be clicked off, leaving None
+    types = types or []
+    cutoff = dt.date.today() - dt.timedelta(days=1 if window_label == "1d" else 7)
+
+    dated_html: list[tuple[dt.date, str]] = []
+    summaries = _article_summaries() if "Claims" in types else {}
+    for ticker in tracked_universe():
+        if "Claims" in types:
+            dated_html += [
+                (c.created, _claim_card_html(c, summaries.get(c.source_link)))
+                for c in load_claims(ticker) if c.created >= cutoff
+            ]
+        if "Fundamentals" in types:
+            dated_html += [
+                (dt.date.fromisoformat(ev["date"]), _fundamental_card_html(ev, ticker))
+                for ev in load_fundamental_history(ticker) if dt.date.fromisoformat(ev["date"]) >= cutoff
+            ]
+        if "Earnings calls" in types:
+            dated_html += [
+                (dt.date.fromisoformat(ev["date"]), _earnings_call_card_html(ev, ticker))
+                for ev in load_earnings_call_history(ticker) if dt.date.fromisoformat(ev["date"]) >= cutoff
+            ]
+
+    if "Macro" in types:
+        for tile in _cached_macro_snapshot():
+            weekly = latest_narrative(tile["key"], period="week")
+            if weekly and dt.date.fromisoformat(weekly["date"]) >= cutoff:
+                dated_html.append((dt.date.fromisoformat(weekly["date"]), _macro_narrative_card_html(tile)))
+            if tile["key"] in MONTHLY_NARRATIVE_SERIES:
+                monthly = latest_narrative(tile["key"], period="month")
+                if monthly and dt.date.fromisoformat(monthly["date"]) >= cutoff:
+                    dated_html.append((dt.date.fromisoformat(monthly["date"]), _macro_mini_chart_card_html(tile)))
+
+    if not dated_html:
+        st.info("Nothing generated in this window for the selected card types.")
+        return
+    dated_html.sort(key=lambda item: item[0], reverse=True)
+    st.caption(f"{len(dated_html)} card(s)")
+    _render_keep_card_grid([card_html for _, card_html in dated_html])
+
+
+def _render_macro_page() -> None:
+    """The global macro dashboard -- deterministic FRED/yfinance stat tiles (finance.macro), not
+    tied to any ticker. See finance.macro's own module docstring for why nothing here costs an
+    LLM call or carries hallucination risk, unlike every other card type in this app.
+    """
+    st.markdown("### Macro")
+    st.caption("Data source:  GDELTS/FRED/Yfinance")
+    if st.button("Refresh now", key="macro_refresh_btn"):
+        _cached_macro_snapshot.clear()
+        st.rerun()
+
+    tiles = _cached_macro_snapshot()
+    if not tiles:
+        st.info("Macro data unavailable right now -- FRED/yfinance fetch failed for every series. Try again shortly.")
+        return
+
+    # Sidebar sub-selection (see page_ticker's Macro expander) -- clicking a specific series (e.g.
+    # "Gold") narrows this page down to just that series' own card(s); clicking "Macro" itself
+    # (or the "All" entry) leaves this unset, showing every series exactly as before that feature
+    # existed. Filtered up front so every grouping/splitting step below stays unchanged either way.
+    focused_series = st.session_state.get("ticker_page_macro_series")
+    if focused_series:
+        tiles = [t for t in tiles if t["key"] == focused_series]
+        if not tiles:
+            st.info(f"No data available right now for {focused_series!r}.")
+            return
+
+    weekly = [t for t in tiles if t["cadence"] == "weekly"]
+    monthly = [t for t in tiles if t["cadence"] == "monthly"]
+    weekly_charts = [t for t in weekly if "history" in t]
+    weekly_tiles = [t for t in weekly if "history" not in t]
+    monthly_charts = [t for t in monthly if "history" in t]
+    monthly_tiles = [t for t in monthly if "history" not in t]
+    # Only a series in finance.macro.NARRATIVE_QUERIES has a GDELT-grounded weekly narrative --
+    # everything else with a chart gets the plain trend card, no "no narrative yet" filler text
+    # (see _macro_chart_card_html's own docstring). Applies to both weekly- and monthly-cadence
+    # charts -- a monthly series (PCE, unemployment) can have a narrative just as well as a weekly
+    # one, the narrative's own "week" field just means "the week this read was generated," not
+    # anything about the underlying series' own release cadence.
+    weekly_narrative_charts = [t for t in weekly_charts if t["key"] in NARRATIVE_QUERIES]
+    weekly_plain_charts = [t for t in weekly_charts if t["key"] not in NARRATIVE_QUERIES]
+    monthly_narrative_charts = [t for t in monthly_charts if t["key"] in NARRATIVE_QUERIES]
+    monthly_plain_charts = [t for t in monthly_charts if t["key"] not in NARRATIVE_QUERIES]
+    # A weekly-cadence series' "bigger picture" mini-chart (history_extra) is shown down in the
+    # Monthly section instead of alongside its own weekly card -- it's a longer, slower-moving
+    # lookback (1 month), which fits better next to the genuinely monthly series than crowding the
+    # weekly card grid it has no narrative connection to.
+    mini_chart_tiles = [t for t in weekly_charts if "history_extra" in t]
+    if weekly_charts:
+        st.write("**Weekly**")
+        _render_keep_card_grid(
+            [_macro_narrative_card_html(t) for t in weekly_narrative_charts]
+            + [_macro_chart_card_html(t) for t in weekly_plain_charts]
+        )
+    if weekly_tiles:
+        if not weekly_charts:
+            st.write("**Weekly**")
+        _render_macro_tiles(weekly_tiles)
+    if monthly_charts or monthly_tiles or mini_chart_tiles:
+        st.write("**Monthly**")
+        if monthly_charts or mini_chart_tiles:
+            _render_keep_card_grid(
+                [_macro_narrative_card_html(t) for t in monthly_narrative_charts]
+                + [_macro_chart_card_html(t) for t in monthly_plain_charts]
+                + [_macro_mini_chart_card_html(t) for t in mini_chart_tiles]
+            )
+        if monthly_tiles:
+            _render_macro_tiles(monthly_tiles)
+
+
+@st.cache_data(ttl=3600)
+def _cached_macro_snapshot() -> list[dict]:
+    """Cached at the Streamlit layer (not finance.macro itself, which stays framework-agnostic
+    like every other finance.* module) -- macro_snapshot() does up to 9 live network fetches, too
+    slow to redo on every Streamlit rerun (a rerun happens on nearly every widget interaction).
+    1-hour TTL, since these are daily-cadence-or-slower series -- nothing meaningfully changes
+    within an hour. The Refresh button above clears this cache directly for an on-demand update.
+    """
+    return macro_snapshot()
+
+
 def page_ticker() -> None:
     """One ticker at a time: pick from config_loop_a's full tracked universe
     in the sidebar (every configured ticker, even ones with no claims/thesis
@@ -3506,7 +3968,39 @@ def page_ticker() -> None:
 
     if "ticker_page_selected_ticker" not in st.session_state:
         st.session_state["ticker_page_selected_ticker"] = options[0]
+    if "ticker_page_view" not in st.session_state:
+        st.session_state["ticker_page_view"] = "recent"
     with st.sidebar:
+        is_recent_view = st.session_state["ticker_page_view"] == "recent"
+        st.button(
+            "\U0001f195 Recent", key="ticker_page_recent_btn",
+            type="primary" if is_recent_view else "secondary",
+            on_click=_select_recent_view, width="stretch",
+        )
+        st.divider()
+        is_macro_view = st.session_state["ticker_page_view"] == "macro"
+        focused_series = st.session_state.get("ticker_page_macro_series")
+        with st.expander("\U0001f30d Macro", expanded=True):
+            st.button(
+                "All", key="ticker_page_macro_all_btn",
+                type="primary" if (is_macro_view and not focused_series) else "secondary",
+                on_click=_select_macro_view, width="stretch",
+            )
+            # 2 columns, not 3 (unlike the sector ticker grids below, which stay 3 -- short
+            # symbols like "AAPL" fit fine there) -- the longest tags here ("Unemployment",
+            # "HY-Spread") wrap onto two lines at 1/3 sidebar width, so this group needs the
+            # extra room a 2-column layout gives every button.
+            cols = st.columns(2)
+            for i, (series_key, config) in enumerate(MACRO_SERIES.items()):
+                is_selected = is_macro_view and focused_series == series_key
+                label = f'{config.get("icon", "")} {config["tag"]}'.strip()
+                cols[i % 2].button(
+                    label, key=f"ticker_page_macro_btn_{series_key}",
+                    type="primary" if is_selected else "secondary",
+                    on_click=_select_macro_view, args=(series_key,),
+                    width="stretch",
+                )
+        st.divider()
         st.caption("Tracked universe (config_loop_a.json), by sector")
         # Sector-grouped expanders of plain buttons, same visual structure the old sidebar's
         # QUICK_PICK_CATEGORIES pickers used -- buttons instead of st.pills specifically because
@@ -3525,6 +4019,13 @@ def page_ticker() -> None:
                         on_click=_select_page_ticker, args=(t,),
                         width="stretch",
                     )
+    if st.session_state["ticker_page_view"] == "recent":
+        _render_recent_page()
+        return
+    if st.session_state["ticker_page_view"] == "macro":
+        _render_macro_page()
+        return
+
     selected_ticker = st.session_state["ticker_page_selected_ticker"]
 
     tt = load_ticker_thesis(selected_ticker)
@@ -3554,16 +4055,13 @@ def page_ticker() -> None:
 
         aggregated_events = [ev for ev in tt.history if ev["event"] == "aggregated"]
         critic_events = [ev for ev in tt.history if ev["event"] == "critic"]
-        btn_col1, btn_col2, btn_col3 = st.columns(3)
+        btn_col1, btn_col2 = st.columns(2)
         with btn_col1:
-            if st.button(f"Claims ({len(all_claims)})", key=f"ticker_page_claims_btn_{selected_ticker}"):
-                _claims_dialog(selected_ticker, sorted(all_claims, key=lambda c: c.created, reverse=True))
-        with btn_col2:
             if critic_events and st.button(
                 f"Critic ({len(critic_events)})", key=f"ticker_page_critic_btn_{selected_ticker}"
             ):
                 _critic_dialog(selected_ticker, critic_events)
-        with btn_col3:
+        with btn_col2:
             if aggregated_events and st.button(
                 f"Theses ({len(aggregated_events)})", key=f"ticker_page_agg_btn_{selected_ticker}"
             ):
@@ -3577,9 +4075,9 @@ def page_ticker() -> None:
     # previous ticker's widget state (e.g. 2 sources selected out of its 5), which for a different
     # ticker's different source list can silently filter down to zero claims. A fresh key per
     # ticker makes each one start over at its own defaults: all sources, All dates, All importance,
-    # both card types. Two lines total: label beside its own pills (not above), so Sources fits one
-    # line and Dates+Importance+Cards share the second -- still pills throughout, same picking
-    # interaction.
+    # both card types. Three lines total: label beside its own pills (not above) -- Sources on its
+    # own line, Dates+Importance sharing the second, Cards on its own third line -- still pills
+    # throughout, same picking interaction.
     sources_label_col, sources_pills_col = st.columns([1, 6], vertical_alignment="center")
     with sources_label_col:
         st.write("**Sources**")
@@ -3589,15 +4087,14 @@ def page_ticker() -> None:
             key=f"ticker_page_sources_{selected_ticker}", label_visibility="collapsed",
         )
 
-    (
-        dates_label_col, dates_pills_col, importance_label_col, importance_pills_col,
-        cards_label_col, cards_pills_col,
-    ) = st.columns([1, 2, 1, 2, 1, 2], vertical_alignment="center")
+    dates_label_col, dates_pills_col, importance_label_col, importance_pills_col = st.columns(
+        [1, 2, 1, 2], vertical_alignment="center",
+    )
     with dates_label_col:
         st.write("**Dates**")
     with dates_pills_col:
         date_filter = st.pills(
-            "Dates", options=["1 day", "1 week", "1 month", "All"], default="All",
+            "Dates", options=["1d", "1w", "1m", "All"], default="All",
             selection_mode="single", key=f"ticker_page_date_filter_{selected_ticker}",
             label_visibility="collapsed",
         )
@@ -3609,10 +4106,12 @@ def page_ticker() -> None:
             selection_mode="single", key=f"ticker_page_importance_filter_{selected_ticker}",
             label_visibility="collapsed",
         )
+
+    cards_label_col, cards_pills_col = st.columns([1, 6], vertical_alignment="center")
     with cards_label_col:
         st.write("**Cards**")
     with cards_pills_col:
-        # Sources/Importance below only ever apply to claims (fundamental/earnings-call snapshots
+        # Sources/Importance above only ever apply to claims (fundamental/earnings-call snapshots
         # have neither), but Dates applies to all three -- so unchecking a type here is the only
         # way to hide it, not the other filters.
         selected_card_types = st.pills(
@@ -3625,7 +4124,7 @@ def page_ticker() -> None:
     date_filter = date_filter or "All"  # single-select pills can be clicked off, leaving None
     cutoff = None
     if date_filter != "All":
-        lookback_days = {"1 day": 1, "1 week": 7, "1 month": 30}[date_filter]
+        lookback_days = {"1d": 1, "1w": 7, "1m": 30}[date_filter]
         cutoff = dt.date.today() - dt.timedelta(days=lookback_days)
 
     visible_claims: list = []
@@ -3655,7 +4154,7 @@ def page_ticker() -> None:
             ]
 
     st.subheader(f"Cards ({len(visible_claims) + len(visible_fundamentals) + len(visible_earnings_calls)})")
-    _render_mixed_keep_cards(visible_claims, visible_fundamentals, visible_earnings_calls)
+    _render_mixed_keep_cards(visible_claims, visible_fundamentals, visible_earnings_calls, selected_ticker)
 
 
 def page_home() -> None:

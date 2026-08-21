@@ -1,21 +1,29 @@
 """Runs Loop A (News -> LLM -> trade) once against an existing paper-trading portfolio, made up of
-three independently-scopable research stages -- claims (Stage A/B/C), fundamentals, earnings
-calls -- plus this portfolio's own thin, deterministic trade-decision pass (open/close positions
-reacting to current TickerThesis snapshots), which always runs regardless of which stages below
-are selected since it's LLM-free. Meant to be run once a day (cron or manual) -- create the
-portfolio first via the Streamlit app (app.py).
+four independently-scopable research stages -- claims (Stage A/B/C), fundamentals, earnings calls,
+macro narratives -- plus this portfolio's own thin, deterministic trade-decision pass (open/close
+positions reacting to current TickerThesis snapshots), which always runs regardless of which
+stages below are selected since it's LLM-free. Meant to be run once a day (cron or manual) --
+create the portfolio first via the Streamlit app (app.py).
 
 With no --refresh-* flag, every stage runs at its default scope: claims for every active news
-source, plus earnings calls for the whole tracked universe (both cheap to check -- an article/
-transcript already on record costs no LLM call). The automatic earnings-window fundamentals check
-(a ticker within a day of its own earnings date) always runs too, regardless of flags -- it's an
-instant no-op for every ticker not currently in its own window. A *forced* fundamentals refresh
+source and earnings calls for the whole tracked universe (both cheap to check -- an
+article/transcript already on record costs no LLM call). Macro narratives are different: they
+always cost a real LLM call (see finance.macro.refresh_macro_narrative -- no skip-based dedup), so
+on a default (no-flag) run they're gated by today's date instead, to avoid spending on every single
+run of what's typically a daily cron -- weekly narratives only refresh on Saturdays, monthly
+narratives only on the last calendar day of the month. The automatic earnings-window fundamentals
+check (a ticker within a day of its own earnings date) always runs too, regardless of flags -- it's
+an instant no-op for every ticker not currently in its own window. A *forced* fundamentals refresh
 (bypassing that window) only ever happens via an explicit --refresh-fundamental.
 
-Passing any of --refresh-claims / --refresh-fundamental / --refresh-earning-call narrows the run to
-just the stage(s) named (claims/earnings-window-fundamentals/trade-decisions still apply as above
-unless explicitly excluded by naming other stages instead). --source and --ticker further scope
-whichever stage they're relevant to.
+Passing any of --refresh-claims / --refresh-fundamental / --refresh-earning-call / --refresh-macro
+narrows the run to just the stage(s) named (earnings-window-fundamentals/trade-decisions still
+apply as above unless explicitly excluded by naming other stages instead). An explicit
+--refresh-macro also bypasses the Saturday/month-end date gating above -- it always refreshes,
+regardless of today's date, since asking for it by name is itself the signal that a refresh is
+wanted right now. --source and --ticker further scope whichever stage they're relevant to -- for
+--refresh-macro, --ticker names a finance.macro.NARRATIVE_QUERIES key (e.g. "10y_yield"), not a
+stock ticker.
 
 Usage:
     uv run run_loop_a.py my_portfolio
@@ -24,6 +32,7 @@ Usage:
     uv run run_loop_a.py my_portfolio --refresh-claims --source SemiAnalysis
     uv run run_loop_a.py my_portfolio --refresh-fundamental --ticker AAPL
     uv run run_loop_a.py my_portfolio --refresh-earning-call --ticker NBIS --transcript-url https://www.fool.com/earnings/call-transcripts/2026/.../nbis-...-earnings-call-transcript/
+    uv run run_loop_a.py my_portfolio --refresh-macro --ticker 10y_yield
 """
 
 import argparse
@@ -32,6 +41,7 @@ import datetime as dt
 from finance.earnings_calls import discover_recent_transcripts, refresh_earnings_call
 from finance.llm import RateLimited
 from finance.loop_a_config import active_news_sources, tracked_universe
+from finance.macro import MONTHLY_NARRATIVE_SERIES, NARRATIVE_QUERIES, refresh_macro_narrative
 from finance.newsloop import review_loop_a, run_loop_a
 from finance.portfolio import list_portfolios
 
@@ -77,8 +87,21 @@ def main():
         ),
     )
     parser.add_argument(
+        "--refresh-macro", action="store_true",
+        help=(
+            "Refresh weekly macro narratives (every configured finance.macro.NARRATIVE_QUERIES "
+            "series, or just --ticker if given) -- skipped entirely, no LLM/GDELT cost, for a "
+            "series whose narrative for this ISO week is already on record. With no other "
+            "--refresh-* flag given, this is already the default; passing it alone runs ONLY this "
+            "stage."
+        ),
+    )
+    parser.add_argument(
         "--ticker", default=None,
-        help="Restrict --refresh-fundamental and/or --refresh-earning-call to just this ticker, e.g. --ticker AAPL.",
+        help=(
+            "Restrict --refresh-fundamental/--refresh-earning-call to just this stock ticker (e.g. "
+            "--ticker AAPL), or --refresh-macro to just this series key (e.g. --ticker 10y_yield)."
+        ),
     )
     parser.add_argument(
         "--transcript-url", default=None,
@@ -97,13 +120,16 @@ def main():
         raise SystemExit("--transcript-url requires --refresh-earning-call.")
 
     # Presence of any --refresh-* flag narrows this run to just the stage(s) named; with none
-    # given, claims and earnings-calls both run at their default (whole-universe) scope, same as
-    # before this flag ever existed. A forced fundamentals refresh is always purely opt-in --
-    # --refresh-fundamental is never implied by an all-stages default run.
-    any_stage_flag = args.refresh_claims or args.refresh_fundamental or args.refresh_earning_call
+    # given, claims/earnings-calls/macro-narratives all run at their default (whole-universe/
+    # every-series) scope, same as before this flag ever existed. A forced fundamentals refresh is
+    # always purely opt-in -- --refresh-fundamental is never implied by an all-stages default run.
+    any_stage_flag = (
+        args.refresh_claims or args.refresh_fundamental or args.refresh_earning_call or args.refresh_macro
+    )
     do_claims = args.refresh_claims or not any_stage_flag
     do_fundamentals = args.refresh_fundamental
     do_earning_call = args.refresh_earning_call or not any_stage_flag
+    do_macro = args.refresh_macro or not any_stage_flag
 
     if args.source is not None:
         if not do_claims:
@@ -111,8 +137,12 @@ def main():
         valid_sources = {name for name, _url in active_news_sources()}
         if args.source not in valid_sources:
             raise SystemExit(f"No active news source named {args.source!r}. Configured sources: {', '.join(sorted(valid_sources))}")
-    if args.ticker is not None and not (do_fundamentals or do_earning_call):
-        print("Note: --ticker only affects --refresh-fundamental/--refresh-earning-call -- ignored for this run.")
+    if do_macro and args.ticker is not None and args.ticker not in NARRATIVE_QUERIES:
+        raise SystemExit(
+            f"No macro series named {args.ticker!r}. Configured series: {', '.join(sorted(NARRATIVE_QUERIES))}"
+        )
+    if args.ticker is not None and not (do_fundamentals or do_earning_call or do_macro):
+        print("Note: --ticker only affects --refresh-fundamental/--refresh-earning-call/--refresh-macro -- ignored for this run.")
 
     if args.portfolio not in list_portfolios():
         existing = ", ".join(list_portfolios()) or "(none yet)"
@@ -184,6 +214,53 @@ def main():
                 )
             else:
                 print(f"  {ticker}: no new transcript found (or nothing usable)")
+
+    if do_macro:
+        # refresh_macro_narrative always regenerates a fresh LLM+GDELT read on every call for both
+        # periods -- no skip-based dedup (see its own docstring) -- so calling it costs real LLM
+        # calls every time, by design (both narratives are rolling "as of now" reads). On an
+        # explicit --refresh-macro that's exactly what's wanted (asking for it by name means "do it
+        # now"), but on a default no-flag run (typically a daily cron alongside claims/earnings
+        # calls, which stay cheap) that would mean spending on macro every single day for no
+        # benefit -- weekly/monthly narratives are only ever displayed once a week/month apart
+        # anyway. So a default run instead only refreshes weekly on Saturdays and monthly on the
+        # last calendar day of the month; --refresh-macro bypasses this gating entirely.
+        macro_explicit = args.refresh_macro
+        today = dt.date.today()
+        is_saturday = today.weekday() == 5
+        is_month_end = (today + dt.timedelta(days=1)).day == 1
+        series_keys = [args.ticker] if args.ticker else list(NARRATIVE_QUERIES)
+        print(f"\n=== Macro narratives ({len(series_keys)} series) ===")
+        if not macro_explicit:
+            print(
+                f"  (default run -- weekly only refreshes on Saturdays{' (today)' if is_saturday else ''}, "
+                f"monthly only on the last day of the month{' (today)' if is_month_end else ''}; "
+                f"pass --refresh-macro to force a refresh regardless of today's date)"
+            )
+        for series_key in series_keys:
+            eligible_periods = ["week", "month"] if series_key in MONTHLY_NARRATIVE_SERIES else ["week"]
+            periods = eligible_periods if macro_explicit else [
+                p for p in eligible_periods
+                if (p == "week" and is_saturday) or (p == "month" and is_month_end)
+            ]
+            for period in periods:
+                try:
+                    result = refresh_macro_narrative(series_key, dt.date.today(), period=period)
+                except RateLimited as exc:
+                    reason = f" ({exc.message})" if exc.message else ""
+                    print(f"  {series_key} ({period}) -- rate limited{reason}, stopping here.")
+                    return
+                status = result["status"]
+                if status == "generated":
+                    print(f"  {series_key} ({period}): refreshed as of {result['date']} -- {result['narrative'][:100]}")
+                elif status == "gdelt_unavailable":
+                    print(f"  {series_key} ({period}): GDELT is rate-limited or unreachable right now -- skipped, will retry next run.")
+                elif status == "no_tile":
+                    print(f"  {series_key} ({period}): couldn't fetch the underlying macro series -- skipped.")
+                elif status == "llm_failed":
+                    print(f"  {series_key} ({period}): LLM call produced nothing usable -- skipped.")
+                else:
+                    print(f"  {series_key} ({period}): unknown series key.")
 
 
 if __name__ == "__main__":

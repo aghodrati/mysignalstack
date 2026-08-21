@@ -1,0 +1,193 @@
+[
+  {
+    "week": "2026-W34",
+    "date": "2026-08-21",
+    "value": 4654.10009765625,
+    "delta": 6.248292425676838,
+    "history": [
+      [
+        "2026-08-17",
+        4417.7998046875
+      ],
+      [
+        "2026-08-18",
+        4366.0
+      ],
+      [
+        "2026-08-19",
+        4489.39990234375
+      ],
+      [
+        "2026-08-20",
+        4516.2998046875
+      ],
+      [
+        "2026-08-21",
+        4654.10009765625
+      ]
+    ],
+    "narrative": "Gold's modest weekly gain was most plausibly supported by softer US data\u2014especially the headline that it ticked up after lower retail sales\u2014and safe-haven demand linked to Hormuz risks. The reported dollar slide after a Treasury-bond move also favored gold, although the small advance and limited headline quality suggest no single decisive catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Gold prices today , Monday , August 17 , 2026 : Gold ticks up after lower retail sales report",
+        "domain": "finance.yahoo.com",
+        "date": "20260817"
+      },
+      {
+        "title": "Gold standard is reborn amid central bank surge",
+        "domain": "finance.yahoo.com",
+        "date": "20260818"
+      },
+      {
+        "title": "Gold and Silver Prices Are Rising . Here Which Precious Metal May Have More Upside",
+        "domain": "fool.com",
+        "date": "20260817"
+      },
+      {
+        "title": "Gold and Silver Prices Are Rising . Here Which Precious Metal May Have More Upside",
+        "domain": "fool.com",
+        "date": "20260818"
+      },
+      {
+        "title": "Gold Tops $4 , 500 as Dollar Slides After Treasury Bond Move",
+        "domain": "econotimes.com",
+        "date": "20260820"
+      },
+      {
+        "title": "Gold Prices Rise as Weak US Data and Hormuz Risks Boost Safe - Haven Demand",
+        "domain": "econotimes.com",
+        "date": "20260817"
+      },
+      {
+        "title": "Safe Haven Pet Sanctuary facing zoning hurdles while looking for permanent home",
+        "domain": "fox11online.com",
+        "date": "20260820"
+      },
+      {
+        "title": "First Safe Haven Baby Box installed in Camdenton",
+        "domain": "krcgtv.com",
+        "date": "20260820"
+      },
+      {
+        "title": "No Safe Haven | HISTORY",
+        "domain": "play.history.com",
+        "date": "20260820"
+      },
+      {
+        "title": "  We will likely be homeless again Oct 30  says Safe Haven Pet Sanctuary | 101 WIXX",
+        "domain": "wixx.com",
+        "date": "20260817"
+      },
+      {
+        "title": "Gold Price Hits Two - Month High Here Why",
+        "domain": "forbes.com",
+        "date": "20260819"
+      },
+      {
+        "title": "SC Congresswoman Proposes Death Penalty Return In DC",
+        "domain": "knst.iheart.com",
+        "date": "20260814"
+      },
+      {
+        "title": "SC Congresswoman Proposes Death Penalty Return In DC",
+        "domain": "wdov.iheart.com",
+        "date": "20260814"
+      },
+      {
+        "title": "SC Congresswoman Proposes Death Penalty Return In DC",
+        "domain": "wjdx.iheart.com",
+        "date": "20260814"
+      },
+      {
+        "title": "Maine Jewish leadership elects to turn a blind eye",
+        "domain": "centralmaine.com",
+        "date": "20260815"
+      },
+      {
+        "title": "Barrick Mining ( B ) Cleared Its IPO Hurdle . Why Did Shares Fall 6 %? ",
+        "domain": "insidermonkey.com",
+        "date": "20260814"
+      },
+      {
+        "title": "Republican lawmaker moves to bring death penalty back to DC",
+        "domain": "wlos.com",
+        "date": "20260814"
+      },
+      {
+        "title": "Availability in Memory Care",
+        "domain": "wiscassetnewspaper.com",
+        "date": "20260818"
+      },
+      {
+        "title": "Availability in Memory Care",
+        "domain": "wiscassetnewspaper.com",
+        "date": "20260818"
+      },
+      {
+        "title": "Availability in Memory Care",
+        "domain": "boothbayregister.com",
+        "date": "20260818"
+      },
+      {
+        "title": "Availability in Memory Care",
+        "domain": "boothbayregister.com",
+        "date": "20260818"
+      },
+      {
+        "title": "Republican lawmaker moves to bring death penalty back to DC",
+        "domain": "wwmt.com",
+        "date": "20260814"
+      },
+      {
+        "title": "Republican lawmaker moves to bring death penalty back to DC",
+        "domain": "wcyb.com",
+        "date": "20260814"
+      },
+      {
+        "title": "Republican lawmaker moves to bring death penalty back to DC",
+        "domain": "cbs12.com",
+        "date": "20260814"
+      },
+      {
+        "title": "Why are gold prices falling ? 4 factors that are impacting gold value",
+        "domain": "cbsnews.com",
+        "date": "20260814"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
+  },
+  {
+    "period": "month",
+    "month": "2026-08",
+    "date": "2026-08-21",
+    "value": 2050.0,
+    "delta": 7.8947368421052655,
+    "history": [
+      [
+        "2026-07-22",
+        1900.0
+      ],
+      [
+        "2026-08-21",
+        2050.0
+      ]
+    ],
+    "narrative": "gold up on Fed pivot bets over the month",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Gold surges on Fed pivot bets",
+        "domain": "x.com",
+        "date": "20260815"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
+  }
+]

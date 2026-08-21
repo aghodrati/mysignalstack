@@ -14,13 +14,16 @@ regenerated here; fundamentals refresh on their own schedule, either
 finance.newsloop's earnings-window trigger or a manual
 `--refresh-fundamentals` run_loop_a.py pass, since they don't meaningfully
 change often enough to justify a fresh LLM call on every single new claim),
-synthesizes ONE current thesis/direction/confidence -- weighing each claim by
-its own confidence/importance rather than treating the list flatly
-(deliberately soft, not a hard numeric rule), and weighing the fundamental
-picture in the same prompt rather than a separate numeric blend applied
-after the fact. The fundamental snapshot itself lives entirely in
-finance.fundamentals' own per-ticker store (output/fundamentals/{ticker}.json),
-genuinely separate from this module's own event log. It no longer carries a
+PLUS whichever earnings-call snapshot is currently latest (see
+finance.earnings_calls.latest_earnings_call -- also NOT regenerated here, same
+"refreshes on its own schedule" reasoning), synthesizes ONE current
+thesis/direction/confidence -- weighing each claim by its own
+confidence/importance rather than treating the list flatly (deliberately
+soft, not a hard numeric rule), and weighing the fundamental/earnings-call
+pictures in the same prompt rather than a separate numeric blend applied
+after the fact. Both snapshots live entirely in their own per-ticker stores
+(output/fundamentals/{ticker}.json, output/earnings_calls/{ticker}.json),
+genuinely separate from this module's own event log. Neither carries a
 "confidence" that gets arithmetically combined with anything -- Stage C's own
 "aggregated" event here is the sole source of truth for confidence.
 
@@ -49,6 +52,7 @@ from pathlib import Path
 
 from finance.claims import ArticleClaim, Direction, HORIZON_MAX_DAYS, HORIZON_MIN_DAYS, load_claims
 from finance.critic import critic_review
+from finance.earnings_calls import latest_earnings_call
 from finance.fundamentals import latest_fundamental
 from finance.llm import complete
 from finance.loop_a_config import llm_config
@@ -156,17 +160,19 @@ _AGGREGATE_REQUIRED_FIELDS = {
 
 
 def aggregate_claims(
-    ticker: str, claims: list[ArticleClaim], as_of: dt.date, fundamental: dict | None = None
+    ticker: str, claims: list[ArticleClaim], as_of: dt.date, fundamental: dict | None = None,
+    earnings_call: dict | None = None,
 ) -> dict | None:
     """Stage C, one LLM call: synthesizes every claim ever collected for
     `ticker` into one current thesis/direction/confidence, weighing in
     `fundamental` (the latest finance.fundamentals.fundamental_snapshot, if
-    one exists) alongside the claims rather than blending a number in
-    afterward -- this call's own "confidence" is the final say, no further
-    arithmetic combination happens once it returns. Never raises for a
-    genuine parse failure (returns None). Raises RateLimited (propagated from
-    finance.llm.complete) if every model is currently out of quota, same as
-    every other Stage call.
+    one exists) and `earnings_call` (the latest
+    finance.earnings_calls.latest_earnings_call, if one exists) alongside the
+    claims rather than blending a number in afterward -- this call's own
+    "confidence" is the final say, no further arithmetic combination happens
+    once it returns. Never raises for a genuine parse failure (returns None).
+    Raises RateLimited (propagated from finance.llm.complete) if every model
+    is currently out of quota, same as every other Stage call.
     """
     claim_summaries = [
         {
@@ -187,20 +193,31 @@ def aggregate_claims(
             f"{json.dumps({k: fundamental[k] for k in ('fundamental_direction', 'fundamental_confidence', 'summary', 'key_changes', 'risks')})}"
             f"\n\n"
         )
+    if earnings_call is None:
+        earnings_call_block = "No earnings-call picture available for this ticker.\n\n"
+    else:
+        earnings_call_block = (
+            f"Latest earnings-call picture (from the company's own most recent earnings call, NOT "
+            f"derived from the news claims above -- another independent corroborating or "
+            f"contradicting check, same weighing rule as the fundamental picture):\n"
+            f"{json.dumps({k: earnings_call[k] for k in ('earnings_direction', 'earnings_confidence', 'summary', 'guidance_summary', 'guidance_change', 'management_tone', 'risks')})}"
+            f"\n\n"
+        )
     prompt = (
         f"You are an investment research assistant synthesizing a single current thesis for {ticker} "
         f"as of {as_of.isoformat()}, from every distinct claim collected about it so far plus an "
-        f"independent fundamental picture. Reason only from what's given below -- no outside "
-        f"knowledge of what happened after {as_of.isoformat()}.\n\n"
+        f"independent fundamental picture and the latest earnings-call picture. Reason only from "
+        f"what's given below -- no outside knowledge of what happened after {as_of.isoformat()}.\n\n"
         f"Claims (oldest first, each with its own confidence, importance, and expected horizon -- weigh "
         f"accordingly, don't treat them as equally significant, and don't let a single new or "
         f"low-importance claim override an established consensus from many prior claims):\n"
         f"{json.dumps(claim_summaries)}\n\n"
         f"{fundamental_block}"
+        f"{earnings_call_block}"
         f"Synthesize ONE current thesis, direction, and confidence for {ticker} that best reflects this "
         f"whole body of evidence. If the claims genuinely conflict, are too thin to support a clear "
-        f"call, or the fundamental picture strongly contradicts the news-driven direction, reflect "
-        f"that with a low confidence rather than picking a direction arbitrarily.\n\n"
+        f"call, or the fundamental/earnings-call pictures strongly contradict the news-driven "
+        f"direction, reflect that with a low confidence rather than picking a direction arbitrarily.\n\n"
         f"Respond with ONLY a JSON object (no markdown fences, no commentary):\n"
         f'{{"thesis": "one sentence: the current synthesized view", '
         f'"direction": "long" or "short", '
@@ -212,10 +229,10 @@ def aggregate_claims(
         f"bearish, not a restatement of the bullish case), "
         f'"invalidation": ["...", ...] (the opposite standard -- events/developments that would '
         f'CONTRADICT or DISPROVE the direction you chose; for a "short" direction these are the '
-        f"bullish claims/outcomes that would prove it wrong -- fold in any fundamental risks above "
-        f"that would count as invalidation too), "
-        f'"reasoning": "one sentence explaining the synthesis, including how the fundamental picture '
-        f'factored in if one was given"}}'
+        f"bullish claims/outcomes that would prove it wrong -- fold in any fundamental/earnings-call "
+        f"risks above that would count as invalidation too), "
+        f'"reasoning": "one sentence explaining the synthesis, including how the fundamental and '
+        f'earnings-call pictures factored in if either was given"}}'
     )
 
     raw = complete(prompt, max_tokens=700, **llm_config())
@@ -269,19 +286,19 @@ def _deterministic_critic_flags(
 
 def update_ticker_thesis(ticker: str, as_of: dt.date) -> TickerThesis | None:
     """Recomputes `ticker`'s current synthesized view from every claim
-    collected so far, plus whichever independent fundamental snapshot is
-    currently latest (finance.fundamentals.latest_fundamental -- a pure read,
-    NOT regenerated here; fundamentals don't meaningfully change often enough
-    to justify a fresh LLM call on every single new claim, so they refresh on
-    their own separate schedule -- see finance.fundamentals.refresh_fundamentals's
-    callers), fed into Stage C together, then a critic pass (deterministic
-    guardrails + one LLM red-team call, see finance.critic) on the result.
-    Appends the "aggregated"/"critic" events to the permanent, global
-    (portfolio-independent) log. Returns the updated TickerThesis, or None if
-    there are no claims yet or the aggregator produced nothing usable --
-    callers should leave whatever the previous snapshot was in place rather
-    than losing it. Propagates RateLimited from any of the LLM calls, same as
-    every other Stage.
+    collected so far, plus whichever independent fundamental snapshot
+    (finance.fundamentals.latest_fundamental) and earnings-call snapshot
+    (finance.earnings_calls.latest_earnings_call) are currently latest -- both
+    pure reads, NOT regenerated here; neither meaningfully changes often
+    enough to justify a fresh LLM call on every single new claim, so they
+    refresh on their own separate schedules -- fed into Stage C together,
+    then a critic pass (deterministic guardrails + one LLM red-team call, see
+    finance.critic) on the result. Appends the "aggregated"/"critic" events to
+    the permanent, global (portfolio-independent) log. Returns the updated
+    TickerThesis, or None if there are no claims yet or the aggregator
+    produced nothing usable -- callers should leave whatever the previous
+    snapshot was in place rather than losing it. Propagates RateLimited from
+    any of the LLM calls, same as every other Stage.
     """
     claims = load_claims(ticker)
     if not claims:
@@ -290,8 +307,9 @@ def update_ticker_thesis(ticker: str, as_of: dt.date) -> TickerThesis | None:
         claims = sorted(claims, key=lambda c: c.created, reverse=True)[:MAX_CLAIMS_FOR_AGGREGATION]
 
     fundamental = latest_fundamental(ticker)
+    earnings_call = latest_earnings_call(ticker)
 
-    result = aggregate_claims(ticker, claims, as_of, fundamental=fundamental)
+    result = aggregate_claims(ticker, claims, as_of, fundamental=fundamental, earnings_call=earnings_call)
     if result is None:
         return None
 
@@ -315,6 +333,8 @@ def update_ticker_thesis(ticker: str, as_of: dt.date) -> TickerThesis | None:
             "direction": result["direction"], "confidence": final_confidence,
             "fundamental_direction": fundamental["fundamental_direction"] if fundamental else None,
             "fundamental_confidence": fundamental["fundamental_confidence"] if fundamental else None,
+            "earnings_direction": earnings_call["earnings_direction"] if earnings_call else None,
+            "earnings_confidence": earnings_call["earnings_confidence"] if earnings_call else None,
             "pre_critic_confidence": pre_critic_confidence, "critic_multiplier": critic_multiplier,
             "expected_return_pct": result["expected_return_pct"],
             "expected_horizon_days": result["expected_horizon_days"], "catalysts": result["catalysts"],

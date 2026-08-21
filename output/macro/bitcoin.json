@@ -1,0 +1,22 @@
+[
+  {
+    "week": "2026-W34",
+    "date": "2026-08-21",
+    "value": 100000.0,
+    "delta": 2.0,
+    "history": [],
+    "narrative": "up on ETF flows",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "BTC rallies",
+        "domain": "x.com",
+        "date": "20260820"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bullish",
+    "confidence": "high",
+    "trade_worthy": true
+  }
+]

@@ -1,0 +1,6 @@
+[client]
+# Hides Streamlit's dev-mode hamburger menu (Rerun/Clear cache/Settings/...) and, with it, the
+# global keyboard shortcuts tied to those menu items -- notably "C" for Clear cache, which doesn't
+# distinguish a bare C keypress from Cmd+C (copy) at the browser event level, so selecting text on
+# the page and copying it was intermittently triggering a cache clear instead of/alongside the copy.
+toolbarMode = "viewer"
