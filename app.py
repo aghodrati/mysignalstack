@@ -375,6 +375,64 @@ _FUNDAMENTAL_STYLE: dict[str, tuple[str, str]] = {
 }
 
 
+# Per-ticker company domain, for a real logo (via a free logo API keyed by domain, not ticker) --
+# covers config_loop_a.json's tracked universe as of this writing; a ticker added later or with no
+# entry here just shows its plain name, no logo (never an error -- see _ticker_logo_html's onerror
+# fallback). Only usable in raw-HTML contexts (st.markdown(unsafe_allow_html=True)), not native
+# st.button, which only supports an emoji/Material-icon glyph, not an arbitrary image.
+_TICKER_LOGO_DOMAINS = {
+    "AAPL": "apple.com",
+    "MSFT": "microsoft.com",
+    "GOOGL": "google.com",
+    "AMZN": "amazon.com",
+    "META": "meta.com",
+    "TSLA": "tesla.com",
+    "ORCL": "oracle.com",
+    "UBER": "uber.com",
+    "RDDT": "reddit.com",
+    # BRK-B (berkshirehathaway.com) omitted -- confirmed 404 against DuckDuckGo's icon index (that
+    # famously bare-bones site apparently has no crawlable favicon), same for CVX/IREN below.
+    "NVDA": "nvidia.com",
+    "TSM": "tsmc.com",
+    "ASML": "asml.com",
+    "AMD": "amd.com",
+    "ARM": "arm.com",
+    "QCOM": "qualcomm.com",
+    "MU": "micron.com",
+    "INTC": "intel.com",
+    "NBIS": "nebius.com",
+    "AVGO": "broadcom.com",
+    "XOM": "exxonmobil.com",
+    "PLTR": "palantir.com",
+    "LMT": "lockheedmartin.com",
+    "QBTS": "dwavesys.com",
+    "RGTI": "rigetti.com",
+    "OKLO": "oklo.com",
+    "SPCX": "spacex.com",
+    "CRWV": "coreweave.com",
+    "SKHY": "skhynix.com",
+    "TMSC": "tsmc.com",
+    "CBRS": "cerebras.ai",
+}
+
+
+def _ticker_logo_html(ticker: str, size_em: float = 1.3) -> str:
+    """A small inline <img> for `ticker`'s company logo (DuckDuckGo's free favicon-by-domain
+    service -- logo.clearbit.com, tried first, turned out to be dead: Clearbit shut down their free
+    public Logo API after the HubSpot acquisition, confirmed via DNS no longer resolving at all,
+    not just a sandbox networking quirk), or "" if no domain is mapped for it
+    (_TICKER_LOGO_DOMAINS) -- callers just prepend this, no conditional needed on their end.
+    `onerror` hides the tag entirely if the icon 404s, rather than showing a broken-image icon.
+    """
+    domain = _TICKER_LOGO_DOMAINS.get(ticker)
+    if not domain:
+        return ""
+    return (
+        f'<img src="https://icons.duckduckgo.com/ip3/{html.escape(domain)}.ico" '
+        f'style="height:{size_em}em;width:{size_em}em;object-fit:contain;vertical-align:middle;'
+        f'margin-right:0.35em;border-radius:0.25em;" onerror="this.style.display=\'none\'">'
+    )
+
 # A single light, minimal neutral tint for every card regardless of direction -- direction is
 # carried by the arrow's own color instead (see _DIRECTION_ARROW), not the card background.
 # Low-alpha so it reads fine in both Streamlit's light and dark themes (a solid hex background
@@ -447,8 +505,10 @@ def _claim_card_html(c, article_summary: str | None) -> str:
         metrics_bits.append(f"{c.expected_horizon_days}d horizon")
     metrics_html = html.escape(" · ".join(metrics_bits))
     context_html = f'<div class="keep-card-context">{html.escape(c.context)}</div>' if c.context else ""
+    logo_html = _ticker_logo_html(c.ticker, size_em=1.4)
     card_body = (
-        f'<div class="keep-card-source">#{html.escape(c.source or "unknown")} #{html.escape(c.ticker)}</div>'
+        f'<div class="keep-card-source">{logo_html}#{html.escape(c.source or "unknown")} '
+        f'#{html.escape(c.ticker)}</div>'
         f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
         f"{context_html}"
         f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
@@ -625,10 +685,11 @@ def _fundamental_card_html(ev: dict, ticker: str) -> str:
         meta_bits.append(f"implied {implied:+.1f}%")
     meta_bits.append(ev["date"])
     meta_html = html.escape(" · ".join(meta_bits))
+    logo_html = _ticker_logo_html(ticker, size_em=1.4)
     # Summary/key_changes/factors all live on the front now -- risks are the only thing behind the
     # flip, since they're the one part worth a deliberate second look rather than at-a-glance.
     card_body = (
-        f'<div class="keep-card-source">#Fundamentals #{html.escape(ticker)}</div>'
+        f'<div class="keep-card-source">{logo_html}#Fundamentals #{html.escape(ticker)}</div>'
         f'<div class="keep-card-claim">{arrow} {direction.title()} · {confidence_text}</div>'
         f"{summary_html}"
         f"{changes_html}"
@@ -692,8 +753,9 @@ def _earnings_call_card_html(ev: dict, ticker: str) -> str:
     # top instead (see the source tag below). Prefers the actual call date (transcript_date) over
     # this snapshot's own generation date, same as before.
     date_html = f'<div class="keep-card-meta">{html.escape(ev.get("transcript_date", ev["date"]))}</div>'
+    logo_html = _ticker_logo_html(ticker, size_em=1.4)
     card_body = (
-        f'<div class="keep-card-source">#Earnings Call #{html.escape(ticker)}</div>'
+        f'<div class="keep-card-source">{logo_html}#Earnings Call #{html.escape(ticker)}</div>'
         f'<div class="keep-card-claim">{arrow} {direction.title()} · {confidence_text}</div>'
         f"{summary_html}"
         f"{guidance_html}"
@@ -3977,7 +4039,6 @@ def page_ticker() -> None:
             type="primary" if is_recent_view else "secondary",
             on_click=_select_recent_view, width="stretch",
         )
-        st.divider()
         is_macro_view = st.session_state["ticker_page_view"] == "macro"
         focused_series = st.session_state.get("ticker_page_macro_series")
         with st.expander("\U0001f30d Macro", expanded=True):
@@ -4001,7 +4062,6 @@ def page_ticker() -> None:
                     width="stretch",
                 )
         st.divider()
-        st.caption("Tracked universe (config_loop_a.json), by sector")
         # Sector-grouped expanders of plain buttons, same visual structure the old sidebar's
         # QUICK_PICK_CATEGORIES pickers used -- buttons instead of st.pills specifically because
         # exactly one ticker must be selected *across every sector at once*; st.pills' selection
@@ -4019,6 +4079,7 @@ def page_ticker() -> None:
                         on_click=_select_page_ticker, args=(t,),
                         width="stretch",
                     )
+        st.divider()
     if st.session_state["ticker_page_view"] == "recent":
         _render_recent_page()
         return
@@ -4042,7 +4103,11 @@ def page_ticker() -> None:
 
     if tt is not None:
         arrow = _DIRECTION_ARROW.get(tt.direction, "➖")
-        st.markdown(f"### {selected_ticker}  ·  {arrow}  ·  conf={tt.confidence:.0%}", unsafe_allow_html=True)
+        logo_html = _ticker_logo_html(selected_ticker)
+        st.markdown(
+            f'<h3>{logo_html}{selected_ticker}  ·  {arrow}  ·  conf={tt.confidence:.0%}</h3>',
+            unsafe_allow_html=True,
+        )
         st.write(f"**Thesis:** {_md(tt.thesis)}")
         m1, m2, m3, m4 = st.columns(4)
         m1.metric("Direction", tt.direction)
