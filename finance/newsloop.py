@@ -1084,8 +1084,10 @@ def _run_claims_pipeline(
     for i, row in enumerate(articles.itertuples(index=False), 1):
         reset_usage_counter()  # measured per article -- includes Stage A (if not cached) + every Stage B call below
         title = _safe_text(row.title)
-        if verbose:
-            print(f"[{i}/{len(articles)}] ({row.source}) {title[:70]}")
+        # No unconditional per-article print here anymore -- most of `articles` on any given run
+        # are already cached (events_cache hit) or get pre-filtered out before ever reaching Stage
+        # A, so printing every single one drowned out the articles actually being processed. The
+        # [i/N] header below now only prints right before a real Stage A classification call.
         # The article's own publish date, not today -- reasoning/signals should reflect what was
         # actually knowable *when the article came out*, not the day this run happens to process it
         # (a rate-limit-delayed backlog article processed days late would otherwise get today's
@@ -1112,7 +1114,7 @@ def _run_claims_pipeline(
                     event = None
                 elif known_ticker:
                     if verbose:
-                        print(f"    [Stage A] classifying ({known_ticker}): {title[:60]}")
+                        print(f"[{i}/{len(articles)}] ({row.source}) [Stage A] classifying ({known_ticker}): {title[:60]}")
                     event = extract_event_known_company(title, article_text, known_ticker, article_date, debug=verbose)
                 elif not tracked_company_pattern.search(f"{title} {article_text}"):
                     # Free pre-filter: no tracked ticker/name appears anywhere in the article at
@@ -1126,7 +1128,7 @@ def _run_claims_pipeline(
                         print(f"    [pre-filter] no tracked company mentioned, skipping Stage A: {title[:60]}")
                 else:
                     if verbose:
-                        print(f"    [Stage A] classifying: {title[:60]}")
+                        print(f"[{i}/{len(articles)}] ({row.source}) [Stage A] classifying: {title[:60]}")
                     event = extract_event(title, article_text, universe_map, article_date, debug=verbose)
                 # Permanent global archive, independent of finance.news's rolling RSS cache
                 # (which is just a rolling window of whatever the feed currently contains --

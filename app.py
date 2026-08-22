@@ -567,6 +567,28 @@ _CARD_FEED_COMPONENT = components.declare_component(
 )
 
 
+def _inject_card_feed_iframe_css() -> None:
+    """Strips whatever default chrome Streamlit/the browser puts around a custom component's own
+    iframe (a border, a drop shadow, an opaque background) so the card_feed panel reads as part of
+    the page rather than a visibly separate box. Covers both the selector recent Streamlit versions
+    use (`data-testid="stCustomComponentV1"`) and a plain `iframe[title=...]` fallback, since the
+    exact wrapper markup isn't a documented/stable API -- belt and suspenders, not a real dependency
+    on either matching. Safe to call once per grid rendered (just another <style> tag).
+    """
+    st.markdown(
+        """
+        <style>
+        div[data-testid="stCustomComponentV1"], iframe[title*="card_feed"] {
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def _render_keep_card_grid(cards: list[tuple[str, str]], show_read: bool = False, key: str = "feed") -> None:
     """Renders (card_id, card_html) pairs, newest first, as a card grid -- via the card_feed custom
     component (components/card_feed/index.html) instead of st.columns + st.button. That split
@@ -597,6 +619,7 @@ def _render_keep_card_grid(cards: list[tuple[str, str]], show_read: bool = False
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
     if not visible:
         return
+    _inject_card_feed_iframe_css()
     action = "unread" if show_read else "read"
     payload = [{"id": cid, "html": card_html, "action": action} for cid, card_html in visible]
     result = _CARD_FEED_COMPONENT(cards=payload, key=key, default=None)

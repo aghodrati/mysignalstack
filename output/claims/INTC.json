@@ -986,5 +986,24 @@
     "trade_worthy": false,
     "context": "TSMC is developing backside gate contacts and vertical contact plugs, Samsung has demonstrated a dielectric-isolated stacked-gate structure, and IBM is pursuing staggered sequential stacking. Intel has demonstrated RibbonFET-related structures and is exploring multiple flows, but the cited imec roadmap projects initial CFET production around the A7 node in approximately 2031, leaving the commercial outcome and relative manufacturer position uncertain.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "4a21399e44c35743",
+    "ticker": "INTC",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-152/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "other",
+    "created": "2026-08-21",
+    "claim": "Socionext\u2019s adoption of Intel 18A-P for an AI and data-center HPC chiplet improves the near- to medium-term outlook for Intel Foundry by providing evidence of external customer traction on its leading-edge process.",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The roundup says Socionext added Intel 18A-P to its custom-SoC roadmap, beginning with a high-performance-computing chiplet aimed at AI and data-center applications. This is presented as another external customer win for Intel Foundry and supports the credibility of Intel\u2019s effort to attract outside customers, although the article does not specify production volumes, revenue timing, or commercial launch certainty.",
+    "source": "Semiconductor Engineering"
   }
 ]

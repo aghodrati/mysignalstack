@@ -93,5 +93,24 @@
     "trade_worthy": false,
     "context": "The article says displaced professionals initially downshifted into service and gig-economy roles such as driving for Uber, but then states that autonomous delivery and self-driving vehicles began to proliferate and that this technology would remove the demand for gig drivers. For Uber, this threatens the scale and relevance of its driver-based transportation model, although the article does not specify how much of any cost benefit would accrue to Uber versus vehicle owners or competing autonomous fleets.",
     "source": "Citrini Research"
+  },
+  {
+    "id": "bf3228e32f37bbd2",
+    "ticker": "UBER",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-152/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "other",
+    "created": "2026-08-21",
+    "claim": "Uber\u2019s launch of its first robotaxi service in Europe modestly improves its long-term growth outlook by expanding its autonomous-mobility business into a new geographic market.",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The roundup reports that Uber launched its first robotaxi service in Europe, alongside broader coverage of autonomous vehicles, including Waymo\u2019s custom in-vehicle compute architecture and European automotive technology developments. The article provides no information on the service\u2019s scale, economics, regulatory reach, or expected contribution to Uber\u2019s revenue, so the financial impact remains difficult to quantify.",
+    "source": "Semiconductor Engineering"
   }
 ]

@@ -492,5 +492,18 @@
     "NVDA",
     "SPCX",
     "TSLA"
+  ],
+  "https://stratechery.com/2026/app-snore/": [
+    "AAPL"
+  ],
+  "https://semiengineering.com/chip-industry-week-in-review-152/": [
+    "AMD",
+    "AVGO",
+    "CBRS",
+    "GOOGL",
+    "INTC",
+    "MU",
+    "NVDA",
+    "UBER"
   ]
 }

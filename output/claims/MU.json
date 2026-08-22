@@ -454,5 +454,43 @@
     "trade_worthy": false,
     "context": "Other memory-related companies also posted extraordinary growth: Kioxia revenue rose 415.5% on NAND pricing and AI/data-center demand, Nanya rose 684.2% as DRAM pricing surged, Sandisk rose 372% on NAND pricing and data-center demand, and SK hynix rose 257% on AI memory with HBM4 shipments beginning. These results corroborate strong memory demand and pricing conditions that are supportive of Micron, although the article does not provide Micron-specific forward guidance or valuation information.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "a33e7e1a6147cc7a",
+    "ticker": "MU",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-152/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "other",
+    "created": "2026-08-21",
+    "claim": "Micron\u2019s planned $10 billion Boise research laboratory should strengthen its long-term competitiveness in memory, advanced memory-compute architectures, packaging, and manufacturing.",
+    "direction": "long",
+    "confidence": 0.98,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Micron plans to invest approximately $10 billion over the next decade in a new Boise, Idaho research lab covering memory technologies, compute architectures, advanced packaging, and manufacturing. These areas are directly tied to the performance and integration demands of AI systems, so the facility could expand Micron\u2019s future technology pipeline and support its strategic position in high-value memory markets, although the benefits are distant and execution-dependent.",
+    "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "7ec53bbdfe07f3e3",
+    "ticker": "MU",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-152/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "other",
+    "created": "2026-08-21",
+    "claim": "YMTC\u2019s planned capital raise for NAND-line upgrades and advanced-memory R&D could increase future competitive pressure on Micron in NAND and broader memory markets.",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "CCSH, the parent of YMTC, filed for a Shanghai IPO seeking about $4.9 billion to fund NAND production-line upgrades and advanced-memory research. If the financing translates into additional competitive capacity or improved technology, it could pressure Micron\u2019s future NAND pricing, market share, or margins; however, the article provides no timing or scale for the resulting production impact.",
+    "source": "Semiconductor Engineering"
   }
 ]

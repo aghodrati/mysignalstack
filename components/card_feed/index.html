@@ -5,10 +5,14 @@
 <style>
   html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
   #feed {
-    /* A fixed px height, not vh -- vh here means "% of the IFRAME's own viewport", which starts
-       at a tiny default (a few px) before our first setFrameHeight() call ever runs, so vh would
-       lock in a razor-thin frame forever (the actual bug this fixed). */
-    height: 1400px;
+    /* max-height, not a fixed height -- with a fixed height the box always reserved 1400px even
+       for 2 cards, which is exactly what read as "a separate boxed panel" rather than something
+       that's part of the page. max-height + overflow-y:auto means the box shrinks to hug however
+       tall the actually-rendered cards are, and only becomes a scroll area once real content
+       exceeds the cap. Also not vh -- vh here would mean "% of the IFRAME's own viewport", which
+       starts at a tiny default (a few px) before our first setFrameHeight() call ever runs, so vh
+       would lock in a razor-thin frame forever (a bug hit earlier). */
+    max-height: 1400px;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 2px 6px 2px 2px;

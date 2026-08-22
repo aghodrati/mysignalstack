@@ -2031,5 +2031,24 @@
     "trade_worthy": false,
     "context": "GPU-accelerated servers generated $68.9 billion in Q1 revenue, or 56.2% of the server market, while GPU and other XPU systems together represented 70.2% of server revenue. This strongly validates the market for data-center accelerators relevant to AMD, but the article highlights Nvidia's position and gives no AMD-specific sales, share or design-win data, so the company-level benefit remains indirect.",
     "source": "Next Platform"
+  },
+  {
+    "id": "a0e39ed2fba3a965",
+    "ticker": "AMD",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-152/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "other",
+    "created": "2026-08-21",
+    "claim": "AMD is expanding its workforce and ecosystem development efforts in Mexico through a formal partnership focused on high-performance computing, AI, and semiconductor training.",
+    "direction": "long",
+    "confidence": 0.99,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article reports that AMD signed a memorandum of understanding with Mexico\u2019s science ministry to provide workforce training in HPC, AI, and semiconductors. The initiative may improve AMD\u2019s access to relevant technical talent and strengthen its regional semiconductor ecosystem over time, but it does not specify financial commitments, customer wins, or near-term revenue effects.",
+    "source": "Semiconductor Engineering"
   }
 ]

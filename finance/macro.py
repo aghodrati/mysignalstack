@@ -422,9 +422,11 @@ def _fetch_gdelt_headlines(query: str, max_records: int = 100, timespan: str = "
         "timespan": timespan, "sort": "hybridrel", "format": "json",
     }
     url = f"{_GDELT_DOC_URL}?{urllib.parse.urlencode(params)}"
-    backoffs = (6, 15)  # a 429 here is most likely shared-IP contention (confirmed live during
-    # development this can outlast a single 6s retry), not this module's own call rate -- one
-    # call/series/week is nowhere near GDELT's stated "one every 5 seconds" limit on its own.
+    backoffs = (8, 20, 40)  # a 429 here is most likely shared-IP contention (confirmed live, both
+    # during development and again later: a fresh, isolated process got an immediate 429 with zero
+    # prior calls of its own), not this module's own call rate -- one call/series/week is nowhere
+    # near GDELT's stated "one every 5 seconds" limit on its own. Widened from (6, 15) -- that gave
+    # up after ~21s total, which isn't always enough to outlast a shared-IP congestion window.
     data = None
     for attempt in range(len(backoffs) + 1):
         try:

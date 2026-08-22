@@ -530,5 +530,43 @@
     "trade_worthy": false,
     "context": "The roundup identifies Broadcom as one of the semiconductor companies benefiting most directly from the AI-infrastructure cycle. Its reported quarterly growth substantially exceeded the mixed handset and consumer trends described elsewhere in the article, indicating that demand for Broadcom\u2019s AI-related semiconductor products was supporting strong business momentum. The article does not provide specific forward guidance or quantify how much of future revenue will come from AI, so the implication is positive but not precisely measurable.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "378793d4ef0edf99",
+    "ticker": "AVGO",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-152/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "other",
+    "created": "2026-08-21",
+    "claim": "Broadcom\u2019s reported pursuit of $60 billion in debt financing signals a potentially substantial expansion of its AI-chip business through a new transaction.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The roundup cites Bloomberg reporting that Broadcom is seeking approximately $60 billion of debt funding to finance an AI chip deal. The article does not identify the target, transaction structure, or expected financial contribution, so the strategic upside depends on what Broadcom ultimately acquires or funds and whether the deal strengthens its position in AI infrastructure.",
+    "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "a3cbe41202134cf0",
+    "ticker": "AVGO",
+    "source_link": "https://semiengineering.com/chip-industry-week-in-review-152/",
+    "source_title": "Chip Industry Week In Review",
+    "event_type": "other",
+    "created": "2026-08-21",
+    "claim": "If Broadcom completes the reported debt-funded AI-chip transaction, the added borrowing would increase leverage and financial risk for AVGO shareholders.",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The reported financing is unusually large relative to the company\u2019s existing operations, but the article provides no details on the final debt amount, interest rate, repayment schedule, or transaction economics. Any increase in leverage could constrain financial flexibility and raise execution risk, although the eventual impact cannot be sized without those terms.",
+    "source": "Semiconductor Engineering"
   }
 ]

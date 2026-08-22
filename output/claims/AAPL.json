@@ -55,5 +55,43 @@
     "trade_worthy": false,
     "context": "The article\u2019s Apple-specific earnings update explicitly contrasts chip shortages with memory constraints, saying that the former\u2014not a shortage of memory\u2014is limiting Apple\u2019s results and share performance. This indicates that component availability is acting as a current operational bottleneck for Apple, although the article gives no details on the affected products, duration, or expected financial magnitude.",
     "source": "Stratechery"
+  },
+  {
+    "id": "2a8679c6177f680b",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/app-snore/",
+    "source_title": "2026.34: App Snore",
+    "event_type": "regulatory",
+    "created": "2026-08-21",
+    "claim": "Apple\u2019s EU App Store settlement is likely to reduce the fees and economic control it can extract from App Store transactions, creating a negative pressure on its services outlook.",
+    "direction": "short",
+    "confidence": 0.94,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Apple has finally been forced to compromise in the EU and specifically characterizes the development as the App Store facing the reality of lower fees. The settlement therefore represents more than a procedural resolution: it signals that regulatory intervention is beginning to constrain the commercial terms underlying Apple\u2019s platform business.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "596964b4807ded75",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/app-snore/",
+    "source_title": "2026.34: App Snore",
+    "event_type": "regulatory",
+    "created": "2026-08-21",
+    "claim": "Apple\u2019s adjustment of its App Tracking Transparency policies in Germany weakens its ability to apply uniform platform rules and reinforces the risk of further regulatory-driven concessions.",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Alongside the EU settlement, the article highlights changes to Apple\u2019s ATT policies in Germany and presents both developments as examples of the company being forced to compromise on long-standing platform policies. This indicates an erosion of Apple\u2019s discretion over how its ecosystem rules are designed and implemented, although the article does not quantify the direct financial effect of the German change.",
+    "source": "Stratechery"
   }
 ]
