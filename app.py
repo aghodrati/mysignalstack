@@ -13,12 +13,25 @@ Run with: uv run streamlit run app.py
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import html
 import os
+from pathlib import Path
 
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+import streamlit.components.v1 as components
+from dotenv import load_dotenv
+
+# Loads .env into os.environ explicitly -- `uv run` does NOT do this automatically (confirmed
+# live: `uv run python3 -c "import os; 'UPSTASH_REDIS_REST_URL' in os.environ"` prints False
+# without this), so every finance.* module reading its secrets via plain os.environ.get (the
+# convention finance.llm's OPENROUTER_API_KEY already uses) was silently getting nothing locally
+# unless the shell itself had sourced .env first. load_dotenv() never overrides a var that's
+# already set in the real environment, so this is safe layered under Streamlit Cloud's own
+# secrets-bridging below.
+load_dotenv()
 
 from finance.backtest import buy_and_hold, rebalance_dates, run_backtest
 from finance.claims import load_claims
@@ -82,6 +95,7 @@ from finance.thesis import open_positions
 from finance.earnings_calls import load_earnings_call_history
 from finance.fundamentals import load_fundamental_history
 from finance.macro import MACRO_SERIES, MONTHLY_NARRATIVE_SERIES, NARRATIVE_QUERIES, latest_narrative, macro_snapshot
+from finance import read_state
 from finance.tickerthesis import list_tickers_with_thesis, load_ticker_thesis
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
 
@@ -120,6 +134,23 @@ for _category, _options in QUICK_PICK_CATEGORIES.items():
         continue
     for _name, _ticker in _options.items():
         STOCK_TICKER_TO_NAME.setdefault(_ticker, _name)
+
+# Bridges Streamlit Cloud's secrets (st.secrets, set via the app's dashboard, not a real env var by
+# default) into plain os.environ -- every finance.* module (finance.llm's OPENROUTER_API_KEY,
+# finance.read_state's UPSTASH_REDIS_REST_URL/TOKEN) reads its secrets via os.environ.get, the same
+# convention whether running locally (via .env) or deployed, so those modules stay Streamlit-
+# agnostic. A key already set as a real env var (local dev) is left alone. st.secrets itself raises
+# (lazily, on first access -- not when the object is obtained) if there's no secrets.toml anywhere
+# (plain local dev via .env, no Streamlit secrets file at all) -- a normal, expected setup here,
+# not an error, so each access is individually guarded rather than one try around the whole loop.
+for _secret_key in ("OPENROUTER_API_KEY", "GROQ_API_KEY", "UPSTASH_REDIS_REST_URL", "UPSTASH_REDIS_REST_TOKEN"):
+    if _secret_key in os.environ:
+        continue
+    try:
+        _secret_value = st.secrets[_secret_key]
+    except Exception:
+        continue
+    os.environ[_secret_key] = _secret_value
 
 st.set_page_config(page_title="Market comparisons", layout="wide", initial_sidebar_state="expanded")
 
@@ -275,6 +306,10 @@ def _select_page_ticker(ticker: str) -> None:
 
 def _select_recent_view() -> None:
     st.session_state["ticker_page_view"] = "recent"
+
+
+def _select_read_view() -> None:
+    st.session_state["ticker_page_view"] = "read"
 
 
 def _select_macro_view(series_key: str | None = None) -> None:
@@ -461,29 +496,32 @@ def _article_summaries() -> dict[str, str]:
     }
 
 
-def _distribute_round_robin(items: list[str], n_cols: int) -> list[list[str]]:
-    """Splits `items` (already in the desired reading order) into `n_cols` fixed buckets,
-    round-robin -- item 0 -> column 0, item 1 -> column 1, ..., wrapping back to column 0. Each
-    card's column is then fixed at render time rather than left to the browser's own column-count
-    auto-balancing, which reflows -- and visibly reshuffles -- every card into different columns
-    whenever any single card's height changes (e.g. a <details> card expanding on tap).
+# Single hardcoded user for finance.read_state -- placeholder until real multi-user auth exists;
+# every "mark as read" call in this app is attributed to this one user for now.
+_CURRENT_USER = "amir"
+
+
+def _card_id(*parts: str) -> str:
+    """A stable id for a non-claim card (fundamental/earnings-call/macro), for finance.read_state
+    -- claims already have their own stable `c.id` (finance.claims.claim_id). Same recipe: a
+    truncated sha1 of whatever fields make one snapshot distinct from another (ticker+kind+date is
+    enough since each of those event types is generated at most once per ticker per day).
     """
-    cols: list[list[str]] = [[] for _ in range(n_cols)]
-    for i, item in enumerate(items):
-        cols[i % n_cols].append(item)
-    return cols
+    return hashlib.sha1("|".join(parts).encode()).hexdigest()[:16]
 
 
-def _keep_cols_html(cards_html: list[str], n_cols: int, css_class: str) -> str:
-    columns = _distribute_round_robin(cards_html, n_cols)
-    columns_html = "".join(f'<div class="keep-col">{"".join(col)}</div>' for col in columns)
-    return f'<div class="{css_class}">{columns_html}</div>'
+def _mark_card_read(card_id: str) -> None:
+    read_state.mark_read(_CURRENT_USER, card_id)
+
+
+def _mark_card_unread(card_id: str) -> None:
+    read_state.mark_unread(_CURRENT_USER, card_id)
 
 
 def _flip_card_html(card_body: str, back_html: str | None) -> str:
     """One card's outer HTML -- a plain div if there's nothing to flip to (`back_html` is None),
-    otherwise a <details>-based 3D flip card (see _inject_keep_card_css's own docstring for the
-    mechanism). Shared by claim cards and fundamental cards so both flip the same way.
+    otherwise a <details>-based 3D flip card (see components/card_feed/index.html for the CSS that
+    drives the flip). Shared by claim cards and fundamental cards so both flip the same way.
     """
     if back_html is None:
         return f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
@@ -524,109 +562,49 @@ def _claim_card_html(c, article_summary: str | None) -> str:
     return _flip_card_html(card_body, back_html)
 
 
-def _render_claim_keep_cards(claims: list) -> None:
-    """Renders claims as a Google-Keep-style card grid -- raw HTML/CSS, since a real masonry look
-    needs variable-height cards packing tightly, which Streamlit has no native widget for. Each
-    card is assigned to a fixed column at render time (see _distribute_round_robin) rather than
-    via CSS column-count, whose browser-side auto-balancing reshuffles every card's screen
-    position whenever any single card's height changes -- notably, whenever a <details> card gets
-    tapped open. Three column-count variants (1/2/3) are all rendered, one shown at a time by
-    width via CSS -- Python has no way to know the actual viewport width, so this is done exactly
-    the way CSS media queries would pick a column-count, just with the column *assignment* fixed
-    in HTML instead of left to the browser. Display-only (no per-card buttons/interactivity, same
-    as the Claims dialog's cards). Renders in whatever order `claims` is already sorted in.
+_CARD_FEED_COMPONENT = components.declare_component(
+    "card_feed", path=str(Path(__file__).parent / "components" / "card_feed"),
+)
+
+
+def _render_keep_card_grid(cards: list[tuple[str, str]], show_read: bool = False, key: str = "feed") -> None:
+    """Renders (card_id, card_html) pairs, newest first, as a card grid -- via the card_feed custom
+    component (components/card_feed/index.html) instead of st.columns + st.button. That split
+    exists because a real "mark as read" persist needs a genuine Python round-trip (finance.
+    read_state), but hiding the card, animating a swipe, and paginating a long list should NOT
+    force a full Streamlit rerun each time -- so the component owns all of that client-side (its
+    own DOM, its own revealed/hidden bookkeeping) and only calls back into Python (via
+    st.components' value-changed mechanism) to persist the read-mark in the background. See that
+    file's own comments for the wire protocol and reconcile() for why the round-trip it does
+    trigger doesn't cause a visible flicker: this function keeps passing the *same* filtered card
+    list across reruns (the component ignores ids it already hid itself), so nothing above the fold
+    visibly changes and there's no scroll jump.
+
+    `key` must be unique per simultaneous grid on a page (Streamlit requires unique component
+    instance keys) -- every call site below passes its own.
+
+    Cards the current user has already marked read (finance.read_state) are hidden by default
+    (`show_read=False`, every caller except the dedicated Read page -- see _render_read_page --
+    which passes `show_read=True` to show exactly the opposite set, with an "Unread" action
+    instead, rather than duplicating this grid's own logic).
     """
-    if not claims:
-        st.caption("No claims yet.")
+    if not cards:
         return
-    summaries = _article_summaries()
-    cards_html = [_claim_card_html(c, summaries.get(c.source_link)) for c in claims]
-    _render_keep_card_grid(cards_html)
-
-
-def _render_keep_card_grid(cards_html: list[str]) -> None:
-    """The column-assignment + CSS injection shared by every keep-card grid on the Ticker page --
-    see _inject_keep_card_css and _keep_cols_html/_distribute_round_robin for the mechanism.
-    """
-    _inject_keep_card_css()
-    grid_html = (
-        _keep_cols_html(cards_html, 1, "keep-cols-1")
-        + _keep_cols_html(cards_html, 2, "keep-cols-2")
-        + _keep_cols_html(cards_html, 3, "keep-cols-3")
-    )
-    st.markdown(grid_html, unsafe_allow_html=True)
-
-
-def _inject_keep_card_css() -> None:
-    """The CSS shared by every Google-Keep-style card grid on the Ticker page (claim cards and
-    fundamental cards) -- column layout (see _distribute_round_robin/_keep_cols_html) and the flip
-    mechanism (see _render_claim_keep_cards's own docstring). Safe to call once per card grid
-    rendered on a page (Streamlit just injects another <style> tag, harmless) rather than needing
-    a single call site -- simpler than threading a "have we already injected this" flag through.
-    """
-    st.markdown(
-        """
-        <style>
-        .keep-cols-1, .keep-cols-2, .keep-cols-3 { gap: 1rem; }
-        .keep-cols-1 { display: flex; flex-direction: column; }
-        .keep-cols-2, .keep-cols-3 { display: none; }
-        @media (min-width: 640px) {
-            .keep-cols-1 { display: none; }
-            .keep-cols-2 { display: flex; }
-        }
-        @media (min-width: 1100px) {
-            .keep-cols-2 { display: none; }
-            .keep-cols-3 { display: flex; }
-        }
-        .keep-col {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            flex: 1;
-            min-width: 0;
-        }
-        .keep-card {
-            border-radius: 0.6rem;
-            padding: 0.9rem 1rem;
-        }
-        .keep-card-source { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.3rem; }
-        .keep-card-claim { font-size: 0.92rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.4rem; }
-        .keep-card-context { font-size: 0.82rem; opacity: 0.85; line-height: 1.4; margin-bottom: 0.5rem; }
-        .keep-card-meta { font-size: 0.72rem; opacity: 0.65; }
-
-        /* Flip cards -- a cached summary exists, tap/click turns the whole card over. Both faces
-           sit in the DOM at all times (see keep-flip-front/back below); [open] on <details> is
-           the only state, toggled purely by the browser's native <summary> click handling. */
-        details.keep-card-flip summary { list-style: none; cursor: pointer; display: block; }
-        details.keep-card-flip summary::-webkit-details-marker { display: none; }
-        details.keep-card-flip summary::marker { content: ""; }
-        .keep-flip-summary { perspective: 1200px; }
-        .keep-flip-inner {
-            position: relative;
-            width: 100%;
-            transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transform-style: preserve-3d;
-        }
-        details[open] .keep-flip-inner { transform: rotateY(180deg); }
-        .keep-flip-front, .keep-flip-back {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-        .keep-flip-front { position: relative; }
-        .keep-flip-back {
-            position: absolute;
-            inset: 0;
-            transform: rotateY(180deg);
-            overflow-y: auto;
-        }
-        .keep-card-summary-title { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.4rem; }
-        .keep-card-summary { font-size: 0.8rem; opacity: 0.85; line-height: 1.4; }
-        .keep-card-risk-item { margin-bottom: 0.6rem; }
-        .keep-card-risk-item:last-child { margin-bottom: 0; }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    read_ids = read_state.read_ids(_CURRENT_USER)
+    visible = [(cid, body) for cid, body in cards if (cid in read_ids) == show_read]
+    hidden_count = len(cards) - len(visible)
+    if hidden_count and not show_read:
+        st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
+    if not visible:
+        return
+    action = "unread" if show_read else "read"
+    payload = [{"id": cid, "html": card_html, "action": action} for cid, card_html in visible]
+    result = _CARD_FEED_COMPONENT(cards=payload, key=key, default=None)
+    if result and result.get("acted_id"):
+        if result["action"] == "unread":
+            _mark_card_unread(result["acted_id"])
+        else:
+            _mark_card_read(result["acted_id"])
 
 
 _FUNDAMENTAL_DIRECTION_ARROW = {
@@ -788,21 +766,28 @@ def _render_mixed_keep_cards(
     snapshot type stores its own ticker in its JSON.
     """
     summaries = _article_summaries()
-    dated_html: list[tuple[dt.date, str]] = [
-        (c.created, _claim_card_html(c, summaries.get(c.source_link))) for c in claims
+    dated: list[tuple[dt.date, str, str]] = [
+        (c.created, c.id, _claim_card_html(c, summaries.get(c.source_link))) for c in claims
     ]
-    dated_html += [
-        (dt.date.fromisoformat(ev["date"]), _fundamental_card_html(ev, ticker)) for ev in fundamental_events
+    dated += [
+        (
+            dt.date.fromisoformat(ev["date"]), _card_id(ticker, "fundamental", ev["date"]),
+            _fundamental_card_html(ev, ticker),
+        )
+        for ev in fundamental_events
     ]
-    dated_html += [
-        (dt.date.fromisoformat(ev["date"]), _earnings_call_card_html(ev, ticker))
+    dated += [
+        (
+            dt.date.fromisoformat(ev["date"]), _card_id(ticker, "earnings_call", ev["date"]),
+            _earnings_call_card_html(ev, ticker),
+        )
         for ev in (earnings_call_events or [])
     ]
-    if not dated_html:
+    if not dated:
         st.caption("No cards to show.")
         return
-    dated_html.sort(key=lambda item: item[0], reverse=True)
-    _render_keep_card_grid([card_html for _, card_html in dated_html])
+    dated.sort(key=lambda item: item[0], reverse=True)
+    _render_keep_card_grid([(cid, card_html) for _, cid, card_html in dated], key=f"feed_ticker_{ticker}")
 
 
 @st.dialog("Claims", width="medium")
@@ -3757,20 +3742,17 @@ def _macro_narrative_card_html(tile: dict) -> str:
     if narrative:
         icon = "\U0001f4f0" if narrative.get("has_clear_driver") else "\U0001f937"
         narrative_html = f'<div class="keep-card-context">{icon} {html.escape(narrative["narrative"])}</div>'
-        meta_html = f'<div class="keep-card-meta">Narrative as of week {narrative["week"]}</div>'
     else:
         narrative_html = '<div class="keep-card-context">No weekly narrative generated yet.</div>'
-        meta_html = ""
     direction_html = _macro_direction_badge_html(narrative)
     card_body = (
         f"{_macro_card_source_html(tile, window)}"
         f'<div class="keep-card-claim">{html.escape(value_str)} '
         f'<span style="opacity:0.7;font-weight:400;font-size:0.8rem;">({html.escape(delta_str)} this week)</span></div>'
         f"{direction_html}"
-        f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
         f"{chart_svg}"
         f"{narrative_html}"
-        f"{meta_html}"
+        f'<div class="keep-card-meta">{html.escape(tile["as_of"])}</div>'
     )
     back_html = _macro_headlines_back_html(narrative)
     return _flip_card_html(card_body, back_html)
@@ -3794,8 +3776,8 @@ def _macro_chart_card_html(tile: dict) -> str:
         f"{_macro_card_source_html(tile, window)}"
         f'<div class="keep-card-claim">{html.escape(value_str)} '
         f'<span style="opacity:0.7;font-weight:400;font-size:0.8rem;">({html.escape(delta_str)} {period_label})</span></div>'
-        f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
         f"{chart_svg}"
+        f'<div class="keep-card-meta">{html.escape(tile["as_of"])}</div>'
     )
     return _flip_card_html(card_body, None)
 
@@ -3813,31 +3795,74 @@ def _macro_mini_chart_card_html(tile: dict) -> str:
     if tile["key"] not in MONTHLY_NARRATIVE_SERIES:
         card_body = (
             f"{_macro_card_source_html(tile, window, mini=True)}"
-            f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
             f"{chart_svg}"
             f'<div class="keep-card-meta">Bigger-picture context for the card above -- no narrative here.</div>'
+            f'<div class="keep-card-meta">{html.escape(tile["as_of"])}</div>'
         )
         return _flip_card_html(card_body, None)
 
     narrative = latest_narrative(tile["key"], period="month")
     if narrative:
         icon = "\U0001f4f0" if narrative.get("has_clear_driver") else "\U0001f937"
+        # The monthly narrative carries its own value/delta (finance.macro's
+        # _value_delta_from_window, computed over the same 30-day window as the chart below) --
+        # distinct from the tile's own "value"/"delta", which are always the *weekly* comparison.
+        monthly_value_str = _MACRO_UNIT_FORMAT[tile["unit"]](narrative["value"])
+        monthly_delta_str = (
+            _MACRO_DELTA_FORMAT[tile["delta_format"]](narrative["delta"])
+            if narrative.get("delta") is not None else "n/a"
+        )
+        value_html = (
+            f'<div class="keep-card-claim">{html.escape(monthly_value_str)} '
+            f'<span style="opacity:0.7;font-weight:400;font-size:0.8rem;">'
+            f'({html.escape(monthly_delta_str)} over last 30 days)</span></div>'
+        )
         narrative_html = f'<div class="keep-card-context">{icon} {html.escape(narrative["narrative"])}</div>'
         meta_html = f'<div class="keep-card-meta">Narrative as of {narrative["date"]} (last 30 days)</div>'
     else:
+        value_html = ""
         narrative_html = '<div class="keep-card-context">No monthly narrative generated yet.</div>'
         meta_html = ""
     direction_html = _macro_direction_badge_html(narrative)
     card_body = (
         f"{_macro_card_source_html(tile, window, mini=True)}"
-        f'<div class="keep-card-meta">As of {html.escape(tile["as_of"])}</div>'
+        f"{value_html}"
         f"{direction_html}"
         f"{chart_svg}"
         f"{narrative_html}"
         f"{meta_html}"
+        f'<div class="keep-card-meta">{html.escape(tile["as_of"])}</div>'
     )
     back_html = _macro_headlines_back_html(narrative)
     return _flip_card_html(card_body, back_html)
+
+
+def _macro_weekly_card_id(tile: dict) -> str:
+    """finance.read_state id for a weekly macro narrative card -- keyed by the narrative's own
+    "date" (when that read was actually generated/last refreshed), not the tile's daily price
+    date, so the card only counts as "new" again once the narrative itself changes, not every
+    time the underlying price ticks. Falls back to the tile's own as_of if there's no narrative yet
+    (still gives every card a stable id, even a plain/pre-narrative one).
+    """
+    narrative = latest_narrative(tile["key"])
+    date = narrative["date"] if narrative else tile["as_of"]
+    return _card_id(tile["key"], "macro_week", date)
+
+
+def _macro_chart_card_id(tile: dict) -> str:
+    return _card_id(tile["key"], "macro_chart", tile["as_of"])
+
+
+def _macro_mini_card_id(tile: dict) -> str:
+    """Same "keyed by narrative date, not price date" reasoning as _macro_weekly_card_id, for the
+    monthly companion card -- only for MONTHLY_NARRATIVE_SERIES; other series' mini-chart cards
+    have no narrative at all, so they fall back to the tile's own as_of like a plain chart card.
+    """
+    if tile["key"] in MONTHLY_NARRATIVE_SERIES:
+        narrative = latest_narrative(tile["key"], period="month")
+        date = narrative["date"] if narrative else tile["as_of"]
+        return _card_id(tile["key"], "macro_month", date)
+    return _card_id(tile["key"], "macro_mini_chart", tile["as_of"])
 
 
 def _render_recent_page() -> None:
@@ -3856,25 +3881,25 @@ def _render_recent_page() -> None:
     st.markdown("### Recent")
     st.caption("All claims, fundamentals, earnings calls, and macro narratives in one place.")
 
-    # Same st.pills picking interaction as the Ticker page's own Dates/Cards filters (see
-    # page_ticker's "Dates"/"Cards" pills) -- Days is single-select (a card is either within the
-    # window or not), Card type is multi-select (any combination can show at once).
-    days_label_col, days_pills_col, types_label_col, types_pills_col = st.columns(
+    # Same st.pills picking interaction, and the same labels/option text, as the Ticker page's own
+    # Dates/Cards filters (see page_ticker) -- Dates is single-select (a card is either within the
+    # window or not), Cards is multi-select (any combination can show at once).
+    dates_label_col, dates_pills_col, cards_label_col, cards_pills_col = st.columns(
         [1, 2, 1, 4], vertical_alignment="center",
     )
-    with days_label_col:
-        st.write("**Days**")
-    with days_pills_col:
+    with dates_label_col:
+        st.write("**Dates**")
+    with dates_pills_col:
         window_label = st.pills(
-            "Days", options=["1d", "1w"], default="1d", selection_mode="single",
+            "Dates", options=["1d", "1w"], default="1d", selection_mode="single",
             key="recent_page_window", label_visibility="collapsed",
         )
-    with types_label_col:
-        st.write("**Card type**")
-    with types_pills_col:
+    with cards_label_col:
+        st.write("**Cards**")
+    with cards_pills_col:
         types = st.pills(
-            "Card type", options=["Claims", "Fundamentals", "Earnings calls", "Macro"],
-            default=["Claims", "Fundamentals", "Earnings calls", "Macro"], selection_mode="multi",
+            "Cards", options=["Claims", "Fundamentals", "Earnings Calls", "Macro"],
+            default=["Claims", "Fundamentals", "Earnings Calls", "Macro"], selection_mode="multi",
             key="recent_page_types", label_visibility="collapsed",
         )
 
@@ -3882,22 +3907,28 @@ def _render_recent_page() -> None:
     types = types or []
     cutoff = dt.date.today() - dt.timedelta(days=1 if window_label == "1d" else 7)
 
-    dated_html: list[tuple[dt.date, str]] = []
+    dated: list[tuple[dt.date, str, str]] = []
     summaries = _article_summaries() if "Claims" in types else {}
     for ticker in tracked_universe():
         if "Claims" in types:
-            dated_html += [
-                (c.created, _claim_card_html(c, summaries.get(c.source_link)))
+            dated += [
+                (c.created, c.id, _claim_card_html(c, summaries.get(c.source_link)))
                 for c in load_claims(ticker) if c.created >= cutoff
             ]
         if "Fundamentals" in types:
-            dated_html += [
-                (dt.date.fromisoformat(ev["date"]), _fundamental_card_html(ev, ticker))
+            dated += [
+                (
+                    dt.date.fromisoformat(ev["date"]), _card_id(ticker, "fundamental", ev["date"]),
+                    _fundamental_card_html(ev, ticker),
+                )
                 for ev in load_fundamental_history(ticker) if dt.date.fromisoformat(ev["date"]) >= cutoff
             ]
-        if "Earnings calls" in types:
-            dated_html += [
-                (dt.date.fromisoformat(ev["date"]), _earnings_call_card_html(ev, ticker))
+        if "Earnings Calls" in types:
+            dated += [
+                (
+                    dt.date.fromisoformat(ev["date"]), _card_id(ticker, "earnings_call", ev["date"]),
+                    _earnings_call_card_html(ev, ticker),
+                )
                 for ev in load_earnings_call_history(ticker) if dt.date.fromisoformat(ev["date"]) >= cutoff
             ]
 
@@ -3905,18 +3936,79 @@ def _render_recent_page() -> None:
         for tile in _cached_macro_snapshot():
             weekly = latest_narrative(tile["key"], period="week")
             if weekly and dt.date.fromisoformat(weekly["date"]) >= cutoff:
-                dated_html.append((dt.date.fromisoformat(weekly["date"]), _macro_narrative_card_html(tile)))
+                dated.append((
+                    dt.date.fromisoformat(weekly["date"]), _macro_weekly_card_id(tile),
+                    _macro_narrative_card_html(tile),
+                ))
             if tile["key"] in MONTHLY_NARRATIVE_SERIES:
                 monthly = latest_narrative(tile["key"], period="month")
                 if monthly and dt.date.fromisoformat(monthly["date"]) >= cutoff:
-                    dated_html.append((dt.date.fromisoformat(monthly["date"]), _macro_mini_chart_card_html(tile)))
+                    dated.append((
+                        dt.date.fromisoformat(monthly["date"]), _macro_mini_card_id(tile),
+                        _macro_mini_chart_card_html(tile),
+                    ))
 
-    if not dated_html:
+    if not dated:
         st.info("Nothing generated in this window for the selected card types.")
         return
-    dated_html.sort(key=lambda item: item[0], reverse=True)
-    st.caption(f"{len(dated_html)} card(s)")
-    _render_keep_card_grid([card_html for _, card_html in dated_html])
+    dated.sort(key=lambda item: item[0], reverse=True)
+    # No st.caption count here -- the card_feed component shows its own live "N card(s)" line that
+    # decrements the instant a card is dismissed, which a caption computed here couldn't do without
+    # a full rerun (see components/card_feed/index.html's updateCountLine).
+    _render_keep_card_grid([(cid, card_html) for _, cid, card_html in dated], key="feed_recent")
+
+
+def _render_read_page() -> None:
+    """Every card, of any type, across the whole app that the current user has ever explicitly
+    marked read (finance.read_state) -- the counterpart to every other page hiding them by
+    default. Same whole-universe traversal as _render_recent_page, just inverted (only ids that
+    ARE in read_ids) and with no date cutoff, since a card can sit in the read pile indefinitely.
+    Reuses the exact same card renderers, and passes show_read=True into the shared grid so it
+    shows this page's cards rather than hiding them (the grid's default is "hide read cards" --
+    this is the one page where that default is flipped).
+    """
+    st.markdown("### Read")
+    st.caption("Every card you've marked as read, across the whole app.")
+
+    read_ids = read_state.read_ids(_CURRENT_USER)
+    if not read_ids:
+        st.info("No cards marked read yet.")
+        return
+
+    dated: list[tuple[dt.date, str, str]] = []
+    summaries = _article_summaries()
+    for ticker in tracked_universe():
+        dated += [
+            (c.created, c.id, _claim_card_html(c, summaries.get(c.source_link)))
+            for c in load_claims(ticker) if c.id in read_ids
+        ]
+        for ev in load_fundamental_history(ticker):
+            cid = _card_id(ticker, "fundamental", ev["date"])
+            if cid in read_ids:
+                dated.append((dt.date.fromisoformat(ev["date"]), cid, _fundamental_card_html(ev, ticker)))
+        for ev in load_earnings_call_history(ticker):
+            cid = _card_id(ticker, "earnings_call", ev["date"])
+            if cid in read_ids:
+                dated.append((dt.date.fromisoformat(ev["date"]), cid, _earnings_call_card_html(ev, ticker)))
+
+    for tile in _cached_macro_snapshot():
+        weekly_id = _macro_weekly_card_id(tile)
+        if weekly_id in read_ids:
+            weekly = latest_narrative(tile["key"])
+            if weekly:
+                dated.append((dt.date.fromisoformat(weekly["date"]), weekly_id, _macro_narrative_card_html(tile)))
+        if tile["key"] in MONTHLY_NARRATIVE_SERIES:
+            monthly_id = _macro_mini_card_id(tile)
+            if monthly_id in read_ids:
+                monthly = latest_narrative(tile["key"], period="month")
+                if monthly:
+                    dated.append((dt.date.fromisoformat(monthly["date"]), monthly_id, _macro_mini_chart_card_html(tile)))
+
+    if not dated:
+        st.info("No cards marked read yet.")
+        return
+    dated.sort(key=lambda item: item[0], reverse=True)
+    _render_keep_card_grid([(cid, card_html) for _, cid, card_html in dated], show_read=True, key="feed_read")
 
 
 def _render_macro_page() -> None:
@@ -3970,8 +4062,9 @@ def _render_macro_page() -> None:
     if weekly_charts:
         st.write("**Weekly**")
         _render_keep_card_grid(
-            [_macro_narrative_card_html(t) for t in weekly_narrative_charts]
-            + [_macro_chart_card_html(t) for t in weekly_plain_charts]
+            [(_macro_weekly_card_id(t), _macro_narrative_card_html(t)) for t in weekly_narrative_charts]
+            + [(_macro_chart_card_id(t), _macro_chart_card_html(t)) for t in weekly_plain_charts],
+            key="feed_macro_weekly",
         )
     if weekly_tiles:
         if not weekly_charts:
@@ -3981,9 +4074,10 @@ def _render_macro_page() -> None:
         st.write("**Monthly**")
         if monthly_charts or mini_chart_tiles:
             _render_keep_card_grid(
-                [_macro_narrative_card_html(t) for t in monthly_narrative_charts]
-                + [_macro_chart_card_html(t) for t in monthly_plain_charts]
-                + [_macro_mini_chart_card_html(t) for t in mini_chart_tiles]
+                [(_macro_weekly_card_id(t), _macro_narrative_card_html(t)) for t in monthly_narrative_charts]
+                + [(_macro_chart_card_id(t), _macro_chart_card_html(t)) for t in monthly_plain_charts]
+                + [(_macro_mini_card_id(t), _macro_mini_chart_card_html(t)) for t in mini_chart_tiles],
+                key="feed_macro_monthly",
             )
         if monthly_tiles:
             _render_macro_tiles(monthly_tiles)
@@ -4039,6 +4133,12 @@ def page_ticker() -> None:
             type="primary" if is_recent_view else "secondary",
             on_click=_select_recent_view, width="stretch",
         )
+        is_read_view = st.session_state["ticker_page_view"] == "read"
+        st.button(
+            "\U0001f4d6 Read", key="ticker_page_read_btn",
+            type="primary" if is_read_view else "secondary",
+            on_click=_select_read_view, width="stretch",
+        )
         is_macro_view = st.session_state["ticker_page_view"] == "macro"
         focused_series = st.session_state.get("ticker_page_macro_series")
         with st.expander("\U0001f30d Macro", expanded=True):
@@ -4082,6 +4182,9 @@ def page_ticker() -> None:
         st.divider()
     if st.session_state["ticker_page_view"] == "recent":
         _render_recent_page()
+        return
+    if st.session_state["ticker_page_view"] == "read":
+        _render_read_page()
         return
     if st.session_state["ticker_page_view"] == "macro":
         _render_macro_page()

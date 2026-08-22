@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  #feed {
+    /* A fixed px height, not vh -- vh here means "% of the IFRAME's own viewport", which starts
+       at a tiny default (a few px) before our first setFrameHeight() call ever runs, so vh would
+       lock in a razor-thin frame forever (the actual bug this fixed). */
+    height: 1400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2px 6px 2px 2px;
+  }
+  #count-line {
+    font-size: 0.8rem;
+    opacity: 0.65;
+    padding: 0 0 0.5rem 2px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.9rem;
+    align-items: start;
+  }
+  #sentinel { height: 1px; }
+  #empty-msg { font-size: 0.85rem; opacity: 0.65; padding: 0.5rem 0; font-family: "Source Sans Pro", sans-serif; }
+
+  .card-cell {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .card-cell.dragging { cursor: grabbing; }
+
+  body, .keep-card, .card-action-btn {
+    font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", sans-serif;
+    color: inherit;
+  }
+  body { color: #e8e8e8; }
+  @media (prefers-color-scheme: light) { body { color: #262730; } }
+
+  .keep-card {
+    border-radius: 0.6rem 0.6rem 0 0;
+    padding: 0.9rem 1rem;
+    background: rgba(151,166,195,0.08);
+    border: 1px solid rgba(151,166,195,0.15);
+    border-bottom: none;
+  }
+
+  .card-action-btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.4rem;
+    background: #d3d3d3;
+    color: #000000;
+    border-radius: 0 0 0.6rem 0.6rem;
+    cursor: pointer;
+  }
+  .card-action-btn:disabled { opacity: 0.6; cursor: default; }
+
+  .keep-card-source { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.3rem; }
+  .keep-card-claim { font-size: 0.92rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.4rem; }
+  .keep-card-context { font-size: 0.82rem; opacity: 0.85; line-height: 1.4; margin-bottom: 0.5rem; }
+  .keep-card-meta { font-size: 0.72rem; opacity: 0.65; }
+
+  details.keep-card-flip summary { list-style: none; cursor: pointer; display: block; }
+  details.keep-card-flip summary::-webkit-details-marker { display: none; }
+  details.keep-card-flip summary::marker { content: ""; }
+  .keep-flip-summary { perspective: 1200px; }
+  .keep-flip-inner {
+    position: relative;
+    width: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  details[open] .keep-flip-inner { transform: rotateY(180deg); }
+  .keep-flip-front, .keep-flip-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .keep-flip-front { position: relative; }
+  .keep-flip-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+  }
+  .keep-card-summary-title { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.4rem; }
+  .keep-card-summary { font-size: 0.8rem; opacity: 0.85; line-height: 1.4; }
+  .keep-card-risk-item { margin-bottom: 0.6rem; }
+  .keep-card-risk-item:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div id="feed"><div id="count-line"></div><div id="grid"></div><div id="sentinel"></div><div id="empty-msg" style="display:none;">No cards to show.</div></div>
+<script>
+/* Raw Streamlit bidirectional-component wire protocol (no build tooling / streamlit-component-lib
+   needed -- this is just window.postMessage with the message shapes Streamlit's frontend expects:
+   streamlit:componentReady on load, streamlit:render received per rerun, streamlit:setComponentValue
+   / streamlit:setFrameHeight sent back). See finance/../MEMORY.md's pending-swipeable-card-component
+   note for why this exists: a plain st.button forces a full-page rerun (and its scroll jump) just to
+   hide one card. Here, hiding is 100% client-side (DOM removal, no rerun) -- the rerun this component
+   does trigger (via setComponentValue, to persist the read-mark through finance.read_state) happens
+   in the background and is invisible to the user because this component's own args barely change
+   across it (see reconcile() below), so it doesn't touch cards this component already hid itself. */
+function sendToStreamlit(type, data) {
+  window.parent.postMessage(Object.assign({ isStreamlitMessage: true, type: type }, data), "*");
+}
+function setFrameHeight() {
+  sendToStreamlit("streamlit:setFrameHeight", { height: document.body.scrollHeight });
+}
+function reportAction(cardId, action) {
+  sendToStreamlit("streamlit:setComponentValue", { value: { acted_id: cardId, action: action, ts: Date.now() } });
+}
+
+const PAGE_SIZE = 15;
+const state = {
+  order: [],              // card ids in current prop order
+  dataById: new Map(),    // id -> {html, action}
+  elements: new Map(),    // id -> wrapper element
+  hiddenLocally: new Set(),// ids this component has already animated away (don't re-render even if
+                           // a stale render event still lists them before Python catches up)
+  revealed: 0,            // how many of `order` have been inserted into the DOM so far
+};
+
+const gridEl = document.getElementById("grid");
+const sentinelEl = document.getElementById("sentinel");
+const emptyMsgEl = document.getElementById("empty-msg");
+const countLineEl = document.getElementById("count-line");
+
+// Live "N card(s)" line -- updated the instant a card is dismissed (finalizeDismiss adds it to
+// hiddenLocally right away, before the fade-out timer or the background Python round-trip even
+// finish), not on the next Streamlit rerun. A plain st.caption computed in Python would only
+// reflect this after a full rerun, which defeats the point of hiding cards without one.
+function updateCountLine() {
+  const remaining = state.order.filter((id) => !state.hiddenLocally.has(id)).length;
+  countLineEl.textContent = `${remaining} card${remaining === 1 ? "" : "s"}`;
+}
+
+function buildCell(card) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "card-cell";
+  wrapper.dataset.id = card.id;
+
+  const body = document.createElement("div");
+  body.innerHTML = card.html;
+  wrapper.appendChild(body);
+
+  const btn = document.createElement("button");
+  btn.className = "card-action-btn";
+  btn.textContent = card.action === "unread" ? "Unread" : "Mark read";
+  btn.addEventListener("click", () => dismiss(card.id, card.action));
+  wrapper.appendChild(btn);
+
+  attachSwipe(wrapper, card.id, card.action);
+  return wrapper;
+}
+
+function attachSwipe(wrapper, cardId, action) {
+  const DRAG_THRESHOLD = 8;   // px of real movement before this becomes a drag, not a tap
+  let pointerDown = false;
+  let dragging = false;       // only true once movement has crossed DRAG_THRESHOLD
+  let pointerId = null;
+  let startX = 0;
+  let dx = 0;
+
+  // Swallows exactly the next click on this card -- used after a drag that crossed the threshold
+  // but snapped back (didn't reach the dismiss distance), so the browser's own click-after-drag
+  // doesn't also flip the card open/closed as an unwanted side effect.
+  function swallowNextClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    wrapper.removeEventListener("click", swallowNextClick, true);
+  }
+
+  wrapper.addEventListener("pointerdown", (e) => {
+    if (e.target.tagName === "BUTTON") return;
+    pointerDown = true;
+    dragging = false;
+    pointerId = e.pointerId;
+    startX = e.clientX;
+    dx = 0;
+    // Deliberately NOT calling setPointerCapture here -- capturing on every pointerdown (even a
+    // plain tap) retargets the resulting click event to this wrapper instead of the actual
+    // <summary> under the finger/cursor, which silently breaks the native flip-card toggle (see
+    // _flip_card_html) for any tap that happens to land inside one. Capture is deferred to
+    // pointermove, only once real drag movement is confirmed, so a plain tap is never touched and
+    // reaches <summary> exactly as the browser would handle it natively.
+  });
+  wrapper.addEventListener("pointermove", (e) => {
+    if (!pointerDown) return;
+    dx = e.clientX - startX;
+    if (!dragging) {
+      if (Math.abs(dx) < DRAG_THRESHOLD) return;
+      dragging = true;
+      wrapper.classList.add("dragging");
+      wrapper.setPointerCapture(pointerId);
+    }
+    wrapper.style.transform = `translateX(${dx}px)`;
+    wrapper.style.opacity = Math.max(1 - Math.abs(dx) / 220, 0.15);
+  });
+  function endDrag() {
+    pointerDown = false;
+    if (!dragging) return;   // plain tap -- nothing to undo, let the native click go through
+    dragging = false;
+    wrapper.classList.remove("dragging");
+    wrapper.style.transition = "transform 0.2s ease, opacity 0.2s ease";
+    if (dx <= -90) {
+      finalizeDismiss(wrapper, cardId, action, -1);
+    } else {
+      wrapper.style.transform = "translateX(0)";
+      wrapper.style.opacity = "1";
+      // A real drag happened but snapped back -- the browser still fires a click after this
+      // pointerup, which would otherwise flip the card open/closed as an unintended side effect.
+      wrapper.addEventListener("click", swallowNextClick, true);
+    }
+    dx = 0;
+  }
+  wrapper.addEventListener("pointerup", endDrag);
+  wrapper.addEventListener("pointercancel", endDrag);
+}
+
+function dismiss(cardId, action) {
+  const wrapper = state.elements.get(cardId);
+  if (!wrapper) return;
+  wrapper.style.transition = "transform 0.2s ease, opacity 0.2s ease";
+  finalizeDismiss(wrapper, cardId, action, -1);
+}
+
+function finalizeDismiss(wrapper, cardId, action, dir) {
+  wrapper.style.transform = `translateX(${dir * 130}%)`;
+  wrapper.style.opacity = "0";
+  state.hiddenLocally.add(cardId);
+  updateCountLine();
+  window.setTimeout(() => {
+    wrapper.remove();
+    state.elements.delete(cardId);
+    revealMore(1);   // pull in one more card from the queue to backfill the removed slot
+    setFrameHeight();
+  }, 200);
+  reportAction(cardId, action);
+}
+
+function revealMore(count) {
+  const limit = Math.min(count, PAGE_SIZE);
+  count = 0;
+  while (state.revealed < state.order.length && count < limit) {
+    const id = state.order[state.revealed];
+    state.revealed += 1;
+    if (state.hiddenLocally.has(id)) continue;
+    const card = state.dataById.get(id);
+    if (!card) continue;
+    const el = buildCell(card);
+    state.elements.set(id, el);
+    gridEl.appendChild(el);
+    count += 1;
+  }
+  emptyMsgEl.style.display = gridEl.children.length === 0 ? "block" : "none";
+  updateCountLine();
+  setFrameHeight();
+}
+
+const observer = new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (entry.isIntersecting && state.revealed < state.order.length) {
+      revealMore(PAGE_SIZE);
+    }
+  }
+}, { root: document.getElementById("feed"), rootMargin: "200px" });
+observer.observe(sentinelEl);
+
+function reconcile(cards) {
+  const incomingIds = new Set(cards.map((c) => c.id));
+
+  // Drop anything we're showing/queued that Python no longer sends (e.g. it got marked
+  // read/unread from a different tab, or the underlying data changed) -- but never touch an id
+  // we already animated away ourselves; that's just Python catching up to our own action.
+  for (const id of Array.from(state.elements.keys())) {
+    if (!incomingIds.has(id) && !state.hiddenLocally.has(id)) {
+      const el = state.elements.get(id);
+      el.remove();
+      state.elements.delete(id);
+    }
+  }
+  state.hiddenLocally.forEach((id) => {
+    if (!incomingIds.has(id)) state.hiddenLocally.delete(id);
+  });
+
+  const previousOrder = state.order;
+  const previouslyKnown = new Set(previousOrder);
+  state.order = cards.map((c) => c.id);
+  state.dataById = new Map(cards.map((c) => [c.id, c]));
+
+  // Recompute how many are "revealed": every id already on-screen still counts as revealed, plus
+  // keep revealing brand-new ids (appended cards from a fresh pipeline run) up to the same count
+  // so newly-added cards don't jump straight to the bottom of an unrevealed queue.
+  const stillOnScreen = state.order.filter((id) => state.elements.has(id)).length;
+  const newIds = state.order.filter((id) => !previouslyKnown.has(id));
+  state.revealed = Math.min(state.order.length, stillOnScreen + newIds.length);
+
+  for (const id of newIds) {
+    if (state.elements.has(id) || state.hiddenLocally.has(id)) continue;
+    const card = state.dataById.get(id);
+    const el = buildCell(card);
+    state.elements.set(id, el);
+    gridEl.appendChild(el);
+  }
+
+  if (gridEl.children.length === 0 && state.order.length > 0) {
+    revealMore(PAGE_SIZE);
+  }
+  emptyMsgEl.style.display = gridEl.children.length === 0 ? "block" : "none";
+  updateCountLine();
+  setFrameHeight();
+}
+
+function onMessage(event) {
+  const data = event.data;
+  if (!data || data.type !== "streamlit:render") return;
+  const cards = (data.args && data.args.cards) || [];
+  reconcile(cards);
+}
+
+window.addEventListener("message", onMessage);
+sendToStreamlit("streamlit:componentReady", { apiVersion: 1 });
+setFrameHeight();
+</script>
+</body>
+</html>

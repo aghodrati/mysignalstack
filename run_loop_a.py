@@ -16,14 +16,16 @@ check (a ticker within a day of its own earnings date) always runs too, regardle
 an instant no-op for every ticker not currently in its own window. A *forced* fundamentals refresh
 (bypassing that window) only ever happens via an explicit --refresh-fundamental.
 
-Passing any of --refresh-claims / --refresh-fundamental / --refresh-earning-call / --refresh-macro
-narrows the run to just the stage(s) named (earnings-window-fundamentals/trade-decisions still
-apply as above unless explicitly excluded by naming other stages instead). An explicit
---refresh-macro also bypasses the Saturday/month-end date gating above -- it always refreshes,
-regardless of today's date, since asking for it by name is itself the signal that a refresh is
-wanted right now. --source and --ticker further scope whichever stage they're relevant to -- for
---refresh-macro, --ticker names a finance.macro.NARRATIVE_QUERIES key (e.g. "10y_yield"), not a
-stock ticker.
+Passing any of --refresh-claims / --refresh-fundamental / --refresh-earning-call / --refresh-macro /
+--weekly / --monthly narrows the run to just the stage(s) named (earnings-window-fundamentals/
+trade-decisions still apply as above unless explicitly excluded by naming other stages instead).
+An explicit --refresh-macro (or --weekly/--monthly, scoped to just that one period) also bypasses
+the Saturday/month-end date gating above -- it always refreshes, regardless of today's date, since
+asking for it by name is itself the signal that a refresh is wanted right now. --weekly/--monthly
+are meant for a scheduler (e.g. two separate GitHub Actions cron entries) that already decides
+*when* to run each one, rather than relying on this script's own day-of-week/month-end check.
+--source and --ticker further scope whichever stage they're relevant to -- for --refresh-macro,
+--ticker names a finance.macro.NARRATIVE_QUERIES key (e.g. "10y_yield"), not a stock ticker.
 
 Usage:
     uv run run_loop_a.py my_portfolio
@@ -33,6 +35,8 @@ Usage:
     uv run run_loop_a.py my_portfolio --refresh-fundamental --ticker AAPL
     uv run run_loop_a.py my_portfolio --refresh-earning-call --ticker NBIS --transcript-url https://www.fool.com/earnings/call-transcripts/2026/.../nbis-...-earnings-call-transcript/
     uv run run_loop_a.py my_portfolio --refresh-macro --ticker 10y_yield
+    uv run run_loop_a.py my_portfolio --weekly   # e.g. a Saturday-only cron entry
+    uv run run_loop_a.py my_portfolio --monthly  # e.g. a month-end-only cron entry
 """
 
 import argparse
@@ -97,6 +101,24 @@ def main():
         ),
     )
     parser.add_argument(
+        "--weekly", action="store_true",
+        help=(
+            "Scope --refresh-macro (or a default no-flag run) to just the weekly macro narrative -- "
+            "also implies --refresh-macro's own \"run macro only\" scoping and its date-gating "
+            "bypass (see --refresh-macro's help), just narrowed to this one period. Meant for a "
+            "scheduler (e.g. a GitHub Actions cron firing only on Saturdays) that already decides "
+            "*when* to run this -- combine with --monthly to force both explicitly."
+        ),
+    )
+    parser.add_argument(
+        "--monthly", action="store_true",
+        help=(
+            "Same as --weekly, scoped to the monthly macro narrative instead (only "
+            "finance.macro.MONTHLY_NARRATIVE_SERIES) -- meant for a scheduler that only fires this "
+            "near month-end, rather than relying on this script's own month-end date check."
+        ),
+    )
+    parser.add_argument(
         "--ticker", default=None,
         help=(
             "Restrict --refresh-fundamental/--refresh-earning-call to just this stock ticker (e.g. "
@@ -123,13 +145,17 @@ def main():
     # given, claims/earnings-calls/macro-narratives all run at their default (whole-universe/
     # every-series) scope, same as before this flag ever existed. A forced fundamentals refresh is
     # always purely opt-in -- --refresh-fundamental is never implied by an all-stages default run.
+    # --weekly/--monthly count as a macro stage flag too (same "narrows to just this stage" effect
+    # as --refresh-macro) -- a scheduler invoking just `--weekly` shouldn't accidentally also kick
+    # off a full claims/earnings-call pass.
     any_stage_flag = (
-        args.refresh_claims or args.refresh_fundamental or args.refresh_earning_call or args.refresh_macro
+        args.refresh_claims or args.refresh_fundamental or args.refresh_earning_call
+        or args.refresh_macro or args.weekly or args.monthly
     )
     do_claims = args.refresh_claims or not any_stage_flag
     do_fundamentals = args.refresh_fundamental
     do_earning_call = args.refresh_earning_call or not any_stage_flag
-    do_macro = args.refresh_macro or not any_stage_flag
+    do_macro = args.refresh_macro or args.weekly or args.monthly or not any_stage_flag
 
     if args.source is not None:
         if not do_claims:
@@ -224,8 +250,17 @@ def main():
         # calls, which stay cheap) that would mean spending on macro every single day for no
         # benefit -- weekly/monthly narratives are only ever displayed once a week/month apart
         # anyway. So a default run instead only refreshes weekly on Saturdays and monthly on the
-        # last calendar day of the month; --refresh-macro bypasses this gating entirely.
-        macro_explicit = args.refresh_macro
+        # last calendar day of the month; --refresh-macro (or --weekly/--monthly, scoped to just
+        # that one period) bypasses this gating entirely -- naming a period explicitly is itself
+        # the "do it now" signal, same reasoning as --refresh-macro alone always had.
+        macro_explicit = args.refresh_macro or args.weekly or args.monthly
+        # With no --weekly/--monthly given, both periods are still eligible (subject to the
+        # gating below, or forced by a bare --refresh-macro); naming one or both explicitly
+        # narrows to exactly that set, forced regardless of gating.
+        periods_wanted = (
+            {p for p, flag in (("week", args.weekly), ("month", args.monthly)) if flag}
+            if (args.weekly or args.monthly) else {"week", "month"}
+        )
         today = dt.date.today()
         is_saturday = today.weekday() == 5
         is_month_end = (today + dt.timedelta(days=1)).day == 1
@@ -235,10 +270,13 @@ def main():
             print(
                 f"  (default run -- weekly only refreshes on Saturdays{' (today)' if is_saturday else ''}, "
                 f"monthly only on the last day of the month{' (today)' if is_month_end else ''}; "
-                f"pass --refresh-macro to force a refresh regardless of today's date)"
+                f"pass --refresh-macro/--weekly/--monthly to force a refresh regardless of today's date)"
             )
         for series_key in series_keys:
-            eligible_periods = ["week", "month"] if series_key in MONTHLY_NARRATIVE_SERIES else ["week"]
+            eligible_periods = [
+                p for p in (["week", "month"] if series_key in MONTHLY_NARRATIVE_SERIES else ["week"])
+                if p in periods_wanted
+            ]
             periods = eligible_periods if macro_explicit else [
                 p for p in eligible_periods
                 if (p == "week" and is_saturday) or (p == "month" and is_month_end)

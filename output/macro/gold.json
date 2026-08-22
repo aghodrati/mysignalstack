@@ -162,32 +162,105 @@
   },
   {
     "period": "month",
-    "month": "2026-08",
-    "date": "2026-08-21",
-    "value": 2050.0,
-    "delta": 7.8947368421052655,
+    "date": "2026-08-22",
+    "value": 4624.10009765625,
+    "delta": 14.27123970897155,
     "history": [
       [
-        "2026-07-22",
-        1900.0
+        "2026-07-23",
+        4046.60009765625
+      ],
+      [
+        "2026-07-24",
+        4067.60009765625
+      ],
+      [
+        "2026-07-27",
+        4074.5
+      ],
+      [
+        "2026-07-28",
+        4036.300048828125
+      ],
+      [
+        "2026-07-29",
+        4034.699951171875
+      ],
+      [
+        "2026-07-30",
+        4100.10009765625
+      ],
+      [
+        "2026-07-31",
+        4049.10009765625
+      ],
+      [
+        "2026-08-03",
+        4033.699951171875
+      ],
+      [
+        "2026-08-04",
+        4095.39990234375
+      ],
+      [
+        "2026-08-05",
+        4245.7998046875
+      ],
+      [
+        "2026-08-06",
+        4242.0
+      ],
+      [
+        "2026-08-07",
+        4340.7001953125
+      ],
+      [
+        "2026-08-10",
+        4361.7998046875
+      ],
+      [
+        "2026-08-11",
+        4383.0
+      ],
+      [
+        "2026-08-12",
+        4408.89990234375
+      ],
+      [
+        "2026-08-13",
+        4363.60009765625
+      ],
+      [
+        "2026-08-14",
+        4380.39990234375
+      ],
+      [
+        "2026-08-17",
+        4417.7998046875
+      ],
+      [
+        "2026-08-18",
+        4366.0
+      ],
+      [
+        "2026-08-19",
+        4489.39990234375
+      ],
+      [
+        "2026-08-20",
+        4516.2998046875
       ],
       [
         "2026-08-21",
-        2050.0
+        4624.10009765625
       ]
     ],
-    "narrative": "gold up on Fed pivot bets over the month",
-    "has_clear_driver": true,
-    "headlines_used": [
-      {
-        "title": "Gold surges on Fed pivot bets",
-        "domain": "x.com",
-        "date": "20260815"
-      }
-    ],
+    "narrative": "No clear single catalyst this month: the supplied news list contains no headlines, so there is no specific Fed, inflation, or rates story to explain the modest move to 4624.10. The gain most plausibly reflects broad positioning, market drift, or factors not captured by this headline set rather than a clearly identifiable macro impulse.",
+    "has_clear_driver": false,
+    "headlines_used": [],
     "fetch_succeeded": true,
-    "direction": "bullish",
-    "confidence": "medium",
-    "trade_worthy": true
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]
