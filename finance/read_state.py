@@ -1,8 +1,8 @@
-"""Which cards a user has explicitly marked "read" in the UI (app.py's keep-card grids) --
-deliberately separate from every other finance.* module's storage. Claims/fundamentals/
+"""Which cards a user has explicitly marked "read" or "favorite" in the UI (app.py's keep-card
+grids) -- deliberately separate from every other finance.* module's storage. Claims/fundamentals/
 earnings_calls/macro all hold slow-changing, batch-generated data that's fine to persist as
-per-ticker/per-series JSON files and commit to git. Read state is different: it's written live, by
-an interactive user click, from wherever app.py happens to be running (e.g. a cloud deployment
+per-ticker/per-series JSON files and commit to git. This is different: it's written live, by
+an interactive user gesture, from wherever app.py happens to be running (e.g. a cloud deployment
 whose filesystem isn't guaranteed to persist across restarts) -- so it needs a real always-on
 store, not a local file.
 
@@ -11,14 +11,19 @@ for a serverless/Streamlit-Cloud environment) when UPSTASH_REDIS_REST_URL/
 UPSTASH_REDIS_REST_TOKEN are set (same "read a plain env var" convention finance.llm's
 OPENROUTER_API_KEY already uses -- see app.py for how these get bridged in from st.secrets on
 Streamlit Cloud, where secrets aren't plain env vars by default). Falls back to a local JSON file
-(output/read_state.json) if those aren't configured, so local dev works with zero setup -- same
-"soft-degrade, never crash the page" contract finance.macro's FRED/GDELT fetches already use.
+per kind (output/read_state.json, output/favorite_state.json) if those aren't configured, so local
+dev works with zero setup -- same "soft-degrade, never crash the page" contract finance.macro's
+FRED/GDELT fetches already use.
 
-Each user's read ids live in one Redis Set, keyed "read:{user}" -- SADD to mark read, SMEMBERS to
-read the whole set back in one call (cheap local membership checks against a page's worth of
-cards, rather than one round-trip per card). "user" exists from day one, not bolted on later, so a
-future real multi-user setup is just a new value in this same key, not a schema change. Every
-caller today passes the single hardcoded user "amir" (see app.py).
+"Read" and "favorite" are two independent tags on the same card id, not mutually exclusive and not
+implying each other -- reading a card means "seen it, hide it from the normal feed"; favoriting one
+means "keep this visible/easy to find later" and does NOT hide it anywhere (see app.py's
+_render_keep_card_grid: only read status affects default-page visibility). Each lives in its own
+Redis Set, keyed "{kind}:{user}" ("read:amir", "favorite:amir") -- SADD to mark, SMEMBERS to read
+the whole set back in one call (cheap local membership checks against a page's worth of cards,
+rather than one round-trip per card). "user" exists from day one, not bolted on later, so a future
+real multi-user setup is just a new value in this same key, not a schema change. Every caller today
+passes the single hardcoded user CURRENT_USER.
 """
 
 from __future__ import annotations
@@ -30,7 +35,10 @@ from pathlib import Path
 
 import requests
 
-_STORE_PATH = Path("output/read_state.json")
+_STORE_PATHS = {
+    "read": Path("output/read_state.json"),
+    "favorite": Path("output/favorite_state.json"),
+}
 
 # The only user today -- see this module's own docstring re: why "user" exists as a real dimension
 # from day one anyway. Centralized here (rather than duplicated as a local constant in app.py and
@@ -59,8 +67,8 @@ def _upstash_config() -> tuple[str, str] | None:
 
 def _upstash_command(command: list[str]) -> dict | None:
     """One Redis command via Upstash's REST API, or None (never raises) on any failure -- a
-    network hiccup here should degrade to "treat as unread"/"drop this mark_read", not break the
-    page, same soft-failure contract as every other network call in this app.
+    network hiccup here should degrade to "treat as unread"/"drop this mark", not break the page,
+    same soft-failure contract as every other network call in this app.
     """
     config = _upstash_config()
     if config is None:
@@ -76,49 +84,77 @@ def _upstash_command(command: list[str]) -> dict | None:
         return None
 
 
-def _load_local() -> dict[str, list[str]]:
-    return json.loads(_STORE_PATH.read_text()) if _STORE_PATH.exists() else {}
+def _load_local(kind: str) -> dict[str, list[str]]:
+    path = _STORE_PATHS[kind]
+    return json.loads(path.read_text()) if path.exists() else {}
 
 
-def _save_local(data: dict[str, list[str]]) -> None:
-    _STORE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    _STORE_PATH.write_text(json.dumps(data, indent=2))
+def _save_local(kind: str, data: dict[str, list[str]]) -> None:
+    path = _STORE_PATHS[kind]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, indent=2))
+
+
+def _ids(kind: str, user: str) -> set[str]:
+    if _upstash_config() is not None:
+        result = _upstash_command(["SMEMBERS", f"{kind}:{user}"])
+        if result is not None:
+            return set(result.get("result") or [])
+        return set()  # Upstash configured but unreachable -- fail open (nothing hidden), not closed
+    return set(_load_local(kind).get(user, []))
+
+
+def _mark(kind: str, user: str, card_id: str) -> None:
+    """Idempotent -- SADD (and the local-file fallback's own dedup) both already no-op a repeat
+    mark on an already-marked card.
+    """
+    if _upstash_config() is not None:
+        _upstash_command(["SADD", f"{kind}:{user}", card_id])
+        return
+    data = _load_local(kind)
+    ids = data.setdefault(user, [])
+    if card_id not in ids:
+        ids.append(card_id)
+        _save_local(kind, data)
+
+
+def _unmark(kind: str, user: str, card_id: str) -> None:
+    """Actually removes the id (SREM/local-list removal), not just a display filter, so it's really
+    gone from the store, not merely hidden again. Idempotent, same as _mark.
+    """
+    if _upstash_config() is not None:
+        _upstash_command(["SREM", f"{kind}:{user}", card_id])
+        return
+    data = _load_local(kind)
+    ids = data.get(user, [])
+    if card_id in ids:
+        ids.remove(card_id)
+        _save_local(kind, data)
 
 
 def read_ids(user: str) -> set[str]:
     """Every card id `user` has ever explicitly marked read, as a set."""
-    if _upstash_config() is not None:
-        result = _upstash_command(["SMEMBERS", f"read:{user}"])
-        if result is not None:
-            return set(result.get("result") or [])
-        return set()  # Upstash configured but unreachable -- fail open (nothing hidden), not closed
-    return set(_load_local().get(user, []))
+    return _ids("read", user)
 
 
 def mark_read(user: str, card_id: str) -> None:
-    """Idempotent -- SADD (and the local-file fallback's own dedup) both already no-op a repeat
-    mark on an already-read card.
-    """
-    if _upstash_config() is not None:
-        _upstash_command(["SADD", f"read:{user}", card_id])
-        return
-    data = _load_local()
-    ids = data.setdefault(user, [])
-    if card_id not in ids:
-        ids.append(card_id)
-        _save_local(data)
+    _mark("read", user, card_id)
 
 
 def mark_unread(user: str, card_id: str) -> None:
-    """The Read page's own "Unread" action -- actually removes the id (SREM/local-list removal),
-    not just a display filter, so it's really gone from the store, not merely hidden again.
-    Idempotent, same as mark_read.
-    """
-    if _upstash_config() is not None:
-        _upstash_command(["SREM", f"read:{user}", card_id])
-        return
-    data = _load_local()
-    ids = data.get(user, [])
-    if card_id in ids:
-        ids.remove(card_id)
-        _save_local(data)
+    """The Read page's own "Unread" action."""
+    _unmark("read", user, card_id)
+
+
+def favorite_ids(user: str) -> set[str]:
+    """Every card id `user` has ever explicitly starred, as a set."""
+    return _ids("favorite", user)
+
+
+def mark_favorite(user: str, card_id: str) -> None:
+    _mark("favorite", user, card_id)
+
+
+def mark_unfavorite(user: str, card_id: str) -> None:
+    """The Favorites page's own "Unfavorite" action."""
+    _unmark("favorite", user, card_id)

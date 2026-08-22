@@ -33,6 +33,7 @@
   #empty-msg { font-size: 0.85rem; opacity: 0.65; padding: 0.5rem 0; font-family: "Source Sans Pro", sans-serif; }
 
   .card-cell {
+    position: relative;   /* containing block for .card-star's absolute positioning */
     touch-action: pan-y;
     user-select: none;
     -webkit-user-select: none;
@@ -41,6 +42,17 @@
     opacity: 1;
   }
   .card-cell.dragging { cursor: grabbing; }
+  .card-star {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.75rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: rgba(150,150,150,0.55);   /* empty/outline state */
+    cursor: pointer;
+    z-index: 1;
+  }
+  .card-star.filled { color: #f5c518; }   /* favorited */
   /* Ticker-logo <img> tags (front face only) are natively draggable by the browser by default --
      starting a swipe with the pointer over one could hijack the gesture into a native
      "drag this image" operation instead of delivering pointermove events to our own drag logic.
@@ -165,17 +177,35 @@ function buildCell(card) {
   body.innerHTML = card.html;
   wrapper.appendChild(body);
 
+  // Always present (not just when already favorited) -- an empty outline star you can click to
+  // favorite directly, as an alternative to swiping right (which only exists on some pages -- see
+  // _render_keep_card_grid's swipe_right_action -- while this click toggle works everywhere,
+  // including the Read/Favorites pages, independent of whichever swipe gestures a page offers).
+  let starred = !!card.starred;
+  const star = document.createElement("div");
+  star.className = "card-star" + (starred ? " filled" : "");
+  star.textContent = starred ? "★" : "☆";
+  star.addEventListener("click", (e) => {
+    e.stopPropagation();
+    starred = !starred;
+    star.textContent = starred ? "★" : "☆";
+    star.classList.toggle("filled", starred);
+    reportAction(card.id, starred ? "favorite" : "unfavorite");
+  });
+  wrapper.appendChild(star);
+
+  const btnLabel = { unread: "Unread", unfavorite: "Unfavorite" }[card.action] || "Mark read";
   const btn = document.createElement("button");
   btn.className = "card-action-btn";
-  btn.textContent = card.action === "unread" ? "Unread" : "Mark read";
+  btn.textContent = btnLabel;
   btn.addEventListener("click", () => dismiss(card.id, card.action));
   wrapper.appendChild(btn);
 
-  attachSwipe(wrapper, card.id, card.action);
+  attachSwipe(wrapper, card.id, card.action, card.swipe_right_action);
   return wrapper;
 }
 
-function attachSwipe(wrapper, cardId, action) {
+function attachSwipe(wrapper, cardId, action, swipeRightAction) {
   const DRAG_THRESHOLD = 10;  // px of real horizontal movement before this becomes a drag, not a tap
   let pointerDown = false;
   let dragging = false;       // only true once movement has crossed DRAG_THRESHOLD, horizontally-dominant
@@ -201,7 +231,7 @@ function attachSwipe(wrapper, cardId, action) {
   }
 
   wrapper.addEventListener("pointerdown", (e) => {
-    if (e.target.tagName === "BUTTON") return;
+    if (e.target.tagName === "BUTTON" || e.target.classList.contains("card-star")) return;
     pointerDown = true;
     dragging = false;
     pointerId = e.pointerId;
@@ -244,6 +274,8 @@ function attachSwipe(wrapper, cardId, action) {
     armClickSwallow();
     if (dx <= -90) {
       finalizeDismiss(wrapper, cardId, action, -1);
+    } else if (dx >= 90 && swipeRightAction) {
+      finalizeDismiss(wrapper, cardId, swipeRightAction, 1);
     } else {
       wrapper.style.transform = "translateX(0)";
       wrapper.style.opacity = "1";

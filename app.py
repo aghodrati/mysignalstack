@@ -358,6 +358,10 @@ def _select_read_view() -> None:
     st.session_state["ticker_page_view"] = "read"
 
 
+def _select_favorites_view() -> None:
+    st.session_state["ticker_page_view"] = "favorites"
+
+
 def _select_macro_view(series_key: str | None = None) -> None:
     """Switches to the Macro dashboard -- `series_key=None` (the "Macro"/"All" entries) shows
     every series, exactly as before per-series filtering existed; a specific key (clicking e.g.
@@ -558,6 +562,25 @@ def _mark_card_unread(card_id: str) -> None:
     read_state.mark_unread(_CURRENT_USER, card_id)
 
 
+def _mark_card_favorite(card_id: str) -> None:
+    read_state.mark_favorite(_CURRENT_USER, card_id)
+
+
+def _mark_card_unfavorite(card_id: str) -> None:
+    read_state.mark_unfavorite(_CURRENT_USER, card_id)
+
+
+# Dispatch table for whatever action the card_feed component reports back (see
+# _render_keep_card_grid) -- one shared table rather than an if/elif chain, since the set of
+# possible actions is closed and each is just a two-argument (user, card_id) call.
+_CARD_ACTIONS = {
+    "read": _mark_card_read,
+    "unread": _mark_card_unread,
+    "favorite": _mark_card_favorite,
+    "unfavorite": _mark_card_unfavorite,
+}
+
+
 def _flip_card_html(card_body: str, back_html: str | None) -> str:
     """One card's outer HTML -- a plain div if there's nothing to flip to (`back_html` is None),
     otherwise a <details>-based 3D flip card (see components/card_feed/index.html for the CSS that
@@ -629,45 +652,72 @@ def _inject_card_feed_iframe_css() -> None:
     )
 
 
-def _render_keep_card_grid(cards: list[tuple[str, str]], show_read: bool = False, key: str = "feed") -> None:
+def _render_keep_card_grid(
+    cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False, key: str = "feed",
+) -> None:
     """Renders (card_id, card_html) pairs, newest first, as a card grid -- via the card_feed custom
     component (components/card_feed/index.html) instead of st.columns + st.button. That split
-    exists because a real "mark as read" persist needs a genuine Python round-trip (finance.
-    read_state), but hiding the card, animating a swipe, and paginating a long list should NOT
-    force a full Streamlit rerun each time -- so the component owns all of that client-side (its
+    exists because a real "mark as read"/"favorite" persist needs a genuine Python round-trip
+    (finance.read_state), but hiding the card, animating a swipe, and paginating a long list should
+    NOT force a full Streamlit rerun each time -- so the component owns all of that client-side (its
     own DOM, its own revealed/hidden bookkeeping) and only calls back into Python (via
-    st.components' value-changed mechanism) to persist the read-mark in the background. See that
-    file's own comments for the wire protocol and reconcile() for why the round-trip it does
-    trigger doesn't cause a visible flicker: this function keeps passing the *same* filtered card
-    list across reruns (the component ignores ids it already hid itself), so nothing above the fold
+    st.components' value-changed mechanism) to persist the mark in the background. See that file's
+    own comments for the wire protocol and reconcile() for why the round-trip it does trigger
+    doesn't cause a visible flicker: this function keeps passing the *same* filtered card list
+    across reruns (the component ignores ids it already hid itself), so nothing above the fold
     visibly changes and there's no scroll jump.
 
     `key` must be unique per simultaneous grid on a page (Streamlit requires unique component
     instance keys) -- every call site below passes its own.
 
-    Cards the current user has already marked read (finance.read_state) are hidden by default
-    (`show_read=False`, every caller except the dedicated Read page -- see _render_read_page --
-    which passes `show_read=True` to show exactly the opposite set, with an "Unread" action
-    instead, rather than duplicating this grid's own logic).
+    At most one of `show_read`/`show_favorites` should be True. Default (both False, every caller
+    except the dedicated Read/Favorites pages): cards already marked read are hidden -- swiping/
+    tapping "Mark read" hides a card here; swiping right instead favorites it (a completely
+    independent tag -- see finance.read_state's own docstring -- so favoriting does NOT hide a card
+    from this default view, only read status does). Already-favorited cards still show here too,
+    just with a star badge, so favoriting something doesn't cost you easy access to it while it's
+    still unread.
+
+    `show_read=True` (the Read page) shows exactly the already-read set instead, with an "Unread"
+    action. `show_favorites=True` (the Favorites page) shows exactly the favorited set instead
+    (regardless of read status), with an "Unfavorite" action -- both dedicated pages get only their
+    own single swipe/button action, not the opposite-direction gesture too, since there's nothing
+    else useful to swipe toward there.
     """
     if not cards:
         return
     read_ids = read_state.read_ids(_CURRENT_USER)
-    visible = [(cid, body) for cid, body in cards if (cid in read_ids) == show_read]
+    favorite_ids = read_state.favorite_ids(_CURRENT_USER)
+    if show_favorites:
+        visible = [(cid, body) for cid, body in cards if cid in favorite_ids]
+        primary_action = "unfavorite"
+    elif show_read:
+        visible = [(cid, body) for cid, body in cards if cid in read_ids]
+        primary_action = "unread"
+    else:
+        visible = [(cid, body) for cid, body in cards if cid not in read_ids]
+        primary_action = "read"
     hidden_count = len(cards) - len(visible)
-    if hidden_count and not show_read:
+    if hidden_count and not show_read and not show_favorites:
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
     if not visible:
         return
     _inject_card_feed_iframe_css()
-    action = "unread" if show_read else "read"
-    payload = [{"id": cid, "html": card_html, "action": action} for cid, card_html in visible]
+    payload = [
+        {
+            "id": cid, "html": card_html, "action": primary_action,
+            "starred": cid in favorite_ids,
+            # Only the default view offers the opposite-direction (right-swipe) gesture, and only
+            # toward favoriting -- see this function's own docstring.
+            "swipe_right_action": "favorite" if primary_action == "read" else None,
+        }
+        for cid, card_html in visible
+    ]
     result = _CARD_FEED_COMPONENT(cards=payload, key=key, default=None)
     if result and result.get("acted_id"):
-        if result["action"] == "unread":
-            _mark_card_unread(result["acted_id"])
-        else:
-            _mark_card_read(result["acted_id"])
+        handler = _CARD_ACTIONS.get(result["action"])
+        if handler:
+            handler(result["acted_id"])
 
 
 _FUNDAMENTAL_DIRECTION_ARROW = {
@@ -4074,6 +4124,60 @@ def _render_read_page() -> None:
     _render_keep_card_grid([(cid, card_html) for _, cid, card_html in dated], show_read=True, key="feed_read")
 
 
+def _render_favorites_page() -> None:
+    """Every card, of any type, across the whole app that the current user has ever swiped right/
+    starred (finance.read_state's separate favorite_ids -- independent of read status, see that
+    module's own docstring). Same whole-universe traversal as _render_read_page, just filtered by
+    favorite_ids instead of read_ids, and passes show_favorites=True into the shared grid so it
+    shows this page's cards (with an "Unfavorite" action) rather than the grid's own default of
+    hiding already-read ones.
+    """
+    st.markdown("### Favorites")
+    st.caption("Every card you've starred, across the whole app.")
+
+    favorite_ids = read_state.favorite_ids(_CURRENT_USER)
+    if not favorite_ids:
+        st.info("No cards favorited yet -- swipe a card right to star it.")
+        return
+
+    dated: list[tuple[dt.date, str, str]] = []
+    summaries = _article_summaries()
+    for ticker in tracked_universe():
+        dated += [
+            (c.created, c.id, _claim_card_html(c, summaries.get(c.source_link)))
+            for c in load_claims(ticker) if c.id in favorite_ids
+        ]
+        for ev in load_fundamental_history(ticker):
+            cid = _card_id(ticker, "fundamental", ev["date"])
+            if cid in favorite_ids:
+                dated.append((dt.date.fromisoformat(ev["date"]), cid, _fundamental_card_html(ev, ticker)))
+        for ev in load_earnings_call_history(ticker):
+            cid = _card_id(ticker, "earnings_call", ev["date"])
+            if cid in favorite_ids:
+                dated.append((dt.date.fromisoformat(ev["date"]), cid, _earnings_call_card_html(ev, ticker)))
+
+    for tile in _cached_macro_snapshot():
+        weekly_id = _macro_weekly_card_id(tile)
+        if weekly_id in favorite_ids:
+            weekly = latest_narrative(tile["key"])
+            if weekly:
+                dated.append((dt.date.fromisoformat(weekly["date"]), weekly_id, _macro_narrative_card_html(tile)))
+        if tile["key"] in MONTHLY_NARRATIVE_SERIES:
+            monthly_id = _macro_mini_card_id(tile)
+            if monthly_id in favorite_ids:
+                monthly = latest_narrative(tile["key"], period="month")
+                if monthly:
+                    dated.append((dt.date.fromisoformat(monthly["date"]), monthly_id, _macro_mini_chart_card_html(tile)))
+
+    if not dated:
+        st.info("No cards favorited yet -- swipe a card right to star it.")
+        return
+    dated.sort(key=lambda item: item[0], reverse=True)
+    _render_keep_card_grid(
+        [(cid, card_html) for _, cid, card_html in dated], show_favorites=True, key="feed_favorites",
+    )
+
+
 def _render_macro_page() -> None:
     """The global macro dashboard -- deterministic FRED/yfinance stat tiles (finance.macro), not
     tied to any ticker. See finance.macro's own module docstring for why nothing here costs an
@@ -4202,6 +4306,12 @@ def page_ticker() -> None:
             type="primary" if is_read_view else "secondary",
             on_click=_select_read_view, width="stretch",
         )
+        is_favorites_view = st.session_state["ticker_page_view"] == "favorites"
+        st.button(
+            "⭐ Favorites", key="ticker_page_favorites_btn",
+            type="primary" if is_favorites_view else "secondary",
+            on_click=_select_favorites_view, width="stretch",
+        )
         is_macro_view = st.session_state["ticker_page_view"] == "macro"
         focused_series = st.session_state.get("ticker_page_macro_series")
         with st.expander("\U0001f30d Macro", expanded=True):
@@ -4254,6 +4364,9 @@ def page_ticker() -> None:
         return
     if st.session_state["ticker_page_view"] == "read":
         _render_read_page()
+        return
+    if st.session_state["ticker_page_view"] == "favorites":
+        _render_favorites_page()
         return
     if st.session_state["ticker_page_view"] == "macro":
         _render_macro_page()
