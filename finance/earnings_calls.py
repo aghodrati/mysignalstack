@@ -53,6 +53,7 @@ import trafilatura
 
 from finance.llm import complete
 from finance.loop_a_config import llm_config, max_article_chars
+from finance import read_state
 
 TRANSCRIPTS_DIR = Path("output/earnings_calls")
 
@@ -334,6 +335,10 @@ def _append(ticker: str, event: dict) -> None:
     path = _path(ticker)
     path.parent.mkdir(parents=True, exist_ok=True)
     history = load_earnings_call_history(ticker)
+    # Same reasoning as finance.fundamentals._append -- app.py's card id is keyed off ticker+date,
+    # so a second snapshot landing on the same date would otherwise inherit a stale read-mark.
+    if any(e.get("date") == event.get("date") for e in history):
+        read_state.mark_unread(read_state.CURRENT_USER, read_state.card_id(ticker, "earnings_call", event["date"]))
     history.append(json.loads(json.dumps(event, default=str)))
     path.write_text(json.dumps(history, indent=2))
 

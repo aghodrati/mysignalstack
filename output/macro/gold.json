@@ -255,9 +255,20 @@
         4624.10009765625
       ]
     ],
-    "narrative": "No clear single catalyst this month: the supplied news list contains no headlines, so there is no specific Fed, inflation, or rates story to explain the modest move to 4624.10. The gain most plausibly reflects broad positioning, market drift, or factors not captured by this headline set rather than a clearly identifiable macro impulse.",
+    "narrative": "Gold edged higher by 14.27 over the month, but the two listed headlines are duplicates and offer only a broad warning that Washington fiscal dysfunction is becoming a global risk. That theme could provide modest safe-haven support, yet there is no clear, specific rate, inflation, or fiscal catalyst here to explain the move or establish a strong forward signal.",
     "has_clear_driver": false,
-    "headlines_used": [],
+    "headlines_used": [
+      {
+        "title": "Column : Washington fiscal dysfunction is becoming a global risk",
+        "domain": "haitisun.com",
+        "date": "20260822"
+      },
+      {
+        "title": "Column : Washington fiscal dysfunction is becoming a global risk",
+        "domain": "bignewsnetwork.com",
+        "date": "20260822"
+      }
+    ],
     "fetch_succeeded": true,
     "direction": "neutral",
     "confidence": "low",

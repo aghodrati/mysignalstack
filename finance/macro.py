@@ -71,6 +71,7 @@ import pandas as pd
 from finance.data import get_prices
 from finance.llm import complete
 from finance.loop_a_config import llm_config, max_article_chars
+from finance import read_state
 
 CACHE_DIR = Path(__file__).resolve().parent.parent / "cache" / "macro"
 NARRATIVES_DIR = Path("output/macro")
@@ -609,6 +610,14 @@ def _upsert_narrative(series_key: str, event: dict, period: str, as_of: dt.date)
     per week/month: several refreshes within the same week/month just keep updating that one
     row's content (each one a strictly more current read than the last), and only crossing into a
     new week/month starts a genuinely new history entry worth keeping around.
+
+    Whenever this overwrites an existing row in place (the in-bucket branch below), also marks that
+    card unread again (finance.read_state) -- its id (app.py's _macro_weekly_card_id/
+    _macro_mini_card_id) is keyed off this event's own "date", so if a same-day refresh doesn't
+    change that date, the id is identical to the one the user may have already read; without this
+    the fresh content would silently stay hidden behind an old read-mark. A brand-new row (a new
+    week/month bucket, or a same-bucket refresh with an advanced date) gets a new id automatically
+    and needs no such nudge -- it was never marked read to begin with.
     """
     path = _narrative_path(series_key)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -623,6 +632,8 @@ def _upsert_narrative(series_key: str, event: dict, period: str, as_of: dt.date)
         if _period_group_key(last_date, period) == new_bucket:
             history[last_idx] = serialized
             path.write_text(json.dumps(history, indent=2))
+            kind = "macro_week" if period == "week" else "macro_month"
+            read_state.mark_unread(read_state.CURRENT_USER, read_state.card_id(series_key, kind, serialized["date"]))
             return
     history.append(serialized)
     path.write_text(json.dumps(history, indent=2))

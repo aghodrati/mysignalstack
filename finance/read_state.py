@@ -23,6 +23,7 @@ caller today passes the single hardcoded user "amir" (see app.py).
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -30,6 +31,24 @@ from pathlib import Path
 import requests
 
 _STORE_PATH = Path("output/read_state.json")
+
+# The only user today -- see this module's own docstring re: why "user" exists as a real dimension
+# from day one anyway. Centralized here (rather than duplicated as a local constant in app.py and
+# every finance.* module that needs to mark a card unread on overwrite) so there's exactly one
+# place to introduce real multi-user support later.
+CURRENT_USER = "amir"
+
+
+def card_id(*parts: str) -> str:
+    """A stable id for a non-claim card (fundamental/earnings-call/macro) -- claims already have
+    their own stable `c.id` (finance.claims.claim_id). Same recipe: a truncated sha1 of whatever
+    fields make one snapshot distinct from another (ticker/series+kind+date is enough since each of
+    these event types is generated at most once per ticker/series per day under normal use).
+    Shared by app.py (to render/look up a card's id) and finance.macro/fundamentals/earnings_calls
+    (to mark a card unread again when a fresh refresh overwrites what an id already pointed to --
+    see mark_unread's callers in those modules) so both sides always compute the exact same id.
+    """
+    return hashlib.sha1("|".join(parts).encode()).hexdigest()[:16]
 
 
 def _upstash_config() -> tuple[str, str] | None:

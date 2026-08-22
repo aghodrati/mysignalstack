@@ -13,7 +13,6 @@ Run with: uv run streamlit run app.py
 from __future__ import annotations
 
 import datetime as dt
-import hashlib
 import html
 import os
 from pathlib import Path
@@ -156,6 +155,14 @@ st.set_page_config(page_title="Market comparisons", layout="wide", initial_sideb
 
 st.markdown(
     "<style>"
+    # On a narrow (mobile) screen Streamlit's sidebar otherwise takes up the full viewport width
+    # while open, hiding all of the main content behind it -- half-width leaves the page context
+    # visible/reachable at a glance instead. `!important` on both width and min-width since
+    # Streamlit's own resize-drag feature sets an inline `style="width:...px"` on this element,
+    # which without `!important` here would otherwise win over a plain stylesheet rule.
+    "@media (max-width: 768px){"
+    "[data-testid='stSidebar']{width:50vw !important;min-width:50vw !important}"
+    "}"
     "[data-testid='stSidebar'] div.block-container{padding-top:0}"
     "[data-testid='stSidebarUserContent']{padding-top:0}"
     "[data-testid='stSidebar'] .stExpander{margin-bottom:0}"
@@ -302,6 +309,45 @@ def render_compare_tab() -> None:
 def _select_page_ticker(ticker: str) -> None:
     st.session_state["ticker_page_selected_ticker"] = ticker
     st.session_state["ticker_page_view"] = "ticker"
+    # Picked up once, right after this rerun, by _maybe_close_sidebar_on_mobile -- see that
+    # function for why this needs a real DOM click rather than anything Streamlit exposes directly.
+    st.session_state["_close_sidebar_after_ticker_pick"] = True
+
+
+def _maybe_close_sidebar_on_mobile() -> None:
+    """On a narrow (mobile) screen, closes the sidebar right after a ticker is picked from it --
+    Streamlit has no Python-level API to collapse the sidebar on demand (only
+    `initial_sidebar_state` at page load), so this reaches into the real page DOM the same
+    same-origin way components/card_feed/index.html does, and clicks the sidebar's own native
+    collapse button. Desktop is left alone (window.parent.innerWidth check) since there the sidebar
+    isn't in the way and closing it on every pick would just be annoying.
+
+    Fragile by nature -- `aria-label`/`data-testid` names are Streamlit-internal, not a public API,
+    and could rename on a future Streamlit upgrade. Tries a few known-shape selectors defensively;
+    if none match, this silently no-ops rather than breaking the page (see the try/catch in the JS).
+    Only fires once per ticker pick (session_state flag consumed here), not on every later rerun.
+    """
+    if not st.session_state.pop("_close_sidebar_after_ticker_pick", False):
+        return
+    components.html(
+        """
+        <script>
+        (function() {
+            try {
+                if (window.parent.innerWidth >= 768) return;  // desktop -- leave the sidebar open
+                var doc = window.parent.document;
+                var sidebar = doc.querySelector('[data-testid="stSidebar"]');
+                if (!sidebar) return;
+                var btn = sidebar.querySelector('button[aria-label*="lose sidebar" i]')
+                    || sidebar.querySelector('[data-testid="stSidebarCollapseButton"] button')
+                    || sidebar.querySelector('[data-testid="stSidebarCollapseButton"]');
+                if (btn) btn.click();
+            } catch (e) {}
+        })();
+        </script>
+        """,
+        height=0, width=0,
+    )
 
 
 def _select_recent_view() -> None:
@@ -496,18 +542,12 @@ def _article_summaries() -> dict[str, str]:
     }
 
 
-# Single hardcoded user for finance.read_state -- placeholder until real multi-user auth exists;
-# every "mark as read" call in this app is attributed to this one user for now.
-_CURRENT_USER = "amir"
-
-
-def _card_id(*parts: str) -> str:
-    """A stable id for a non-claim card (fundamental/earnings-call/macro), for finance.read_state
-    -- claims already have their own stable `c.id` (finance.claims.claim_id). Same recipe: a
-    truncated sha1 of whatever fields make one snapshot distinct from another (ticker+kind+date is
-    enough since each of those event types is generated at most once per ticker per day).
-    """
-    return hashlib.sha1("|".join(parts).encode()).hexdigest()[:16]
+# Both defined in finance.read_state now, not here -- finance.macro/fundamentals/earnings_calls
+# also need to compute a card's id (to mark it unread again when a refresh overwrites what that id
+# already pointed to), so the id recipe and the single hardcoded user live in one shared place
+# rather than being duplicated per module.
+_CURRENT_USER = read_state.CURRENT_USER
+_card_id = read_state.card_id
 
 
 def _mark_card_read(card_id: str) -> None:
@@ -4191,11 +4231,16 @@ def page_ticker() -> None:
         # is per-widget, so N independent single-select pills groups (one per sector) can't share
         # one global "currently selected" without fighting each other. A button's on_click just
         # writes the one shared session_state key directly, so highlighting always agrees.
+        is_ticker_view = st.session_state["ticker_page_view"] == "ticker"
         for sector in ordered_sectors:
             with st.expander(sector, expanded=True):
                 cols = st.columns(3)
                 for i, t in enumerate(grouped[sector]):
-                    is_selected = t == st.session_state["ticker_page_selected_ticker"]
+                    # Gated on is_ticker_view too, not just a ticker-name match -- otherwise
+                    # whichever ticker was last selected stayed highlighted "primary" even while
+                    # Recent/Read/Macro was the active page, which read as if a ticker were still
+                    # selected when it wasn't.
+                    is_selected = is_ticker_view and t == st.session_state["ticker_page_selected_ticker"]
                     cols[i % 3].button(
                         t, key=f"ticker_sector_btn_{t}",
                         type="primary" if is_selected else "secondary",
@@ -4203,6 +4248,7 @@ def page_ticker() -> None:
                         width="stretch",
                     )
         st.divider()
+    _maybe_close_sidebar_on_mobile()
     if st.session_state["ticker_page_view"] == "recent":
         _render_recent_page()
         return

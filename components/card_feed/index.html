@@ -41,6 +41,12 @@
     opacity: 1;
   }
   .card-cell.dragging { cursor: grabbing; }
+  /* Ticker-logo <img> tags (front face only) are natively draggable by the browser by default --
+     starting a swipe with the pointer over one could hijack the gesture into a native
+     "drag this image" operation instead of delivering pointermove events to our own drag logic.
+     pointer-events:none makes hit-testing skip the <img> entirely (the event lands on its parent
+     div instead, then bubbles to the card wrapper exactly as if the image weren't there). */
+  .card-cell img { pointer-events: none; -webkit-user-drag: none; user-drag: none; }
 
   body, .keep-card, .card-action-btn {
     font-family: -apple-system, BlinkMacSystemFont, "Source Sans Pro", sans-serif;
@@ -170,20 +176,28 @@ function buildCell(card) {
 }
 
 function attachSwipe(wrapper, cardId, action) {
-  const DRAG_THRESHOLD = 8;   // px of real movement before this becomes a drag, not a tap
+  const DRAG_THRESHOLD = 10;  // px of real horizontal movement before this becomes a drag, not a tap
   let pointerDown = false;
-  let dragging = false;       // only true once movement has crossed DRAG_THRESHOLD
+  let dragging = false;       // only true once movement has crossed DRAG_THRESHOLD, horizontally-dominant
   let pointerId = null;
   let startX = 0;
+  let startY = 0;
   let dx = 0;
 
   // Swallows exactly the next click on this card -- used after a drag that crossed the threshold
   // but snapped back (didn't reach the dismiss distance), so the browser's own click-after-drag
-  // doesn't also flip the card open/closed as an unwanted side effect.
+  // doesn't also flip the card open/closed as an unwanted side effect. { once: true } removes it
+  // as soon as that click arrives, but that click isn't guaranteed to fire at all after a captured
+  // pointer sequence (browser-dependent) -- without the timeout fallback below, a click that never
+  // arrives would leave this attached forever, silently eating some *later*, completely unrelated
+  // tap on the same card. That intermittent "clicking stopped working" symptom was a real bug here.
   function swallowNextClick(e) {
     e.preventDefault();
     e.stopPropagation();
-    wrapper.removeEventListener("click", swallowNextClick, true);
+  }
+  function armClickSwallow() {
+    wrapper.addEventListener("click", swallowNextClick, { capture: true, once: true });
+    window.setTimeout(() => wrapper.removeEventListener("click", swallowNextClick, true), 400);
   }
 
   wrapper.addEventListener("pointerdown", (e) => {
@@ -192,6 +206,7 @@ function attachSwipe(wrapper, cardId, action) {
     dragging = false;
     pointerId = e.pointerId;
     startX = e.clientX;
+    startY = e.clientY;
     dx = 0;
     // Deliberately NOT calling setPointerCapture here -- capturing on every pointerdown (even a
     // plain tap) retargets the resulting click event to this wrapper instead of the actual
@@ -203,8 +218,13 @@ function attachSwipe(wrapper, cardId, action) {
   wrapper.addEventListener("pointermove", (e) => {
     if (!pointerDown) return;
     dx = e.clientX - startX;
+    const dy = e.clientY - startY;
     if (!dragging) {
-      if (Math.abs(dx) < DRAG_THRESHOLD) return;
+      // Require the movement to actually be a horizontal swipe, not just "moved at least 10px in
+      // any direction" -- otherwise scrolling a flipped-open card's own scrollable back face
+      // (.keep-flip-back, overflow-y:auto) or ordinary tap jitter can needlessly commit to drag
+      // mode before the user meant to swipe at all.
+      if (Math.abs(dx) < DRAG_THRESHOLD || Math.abs(dx) <= Math.abs(dy)) return;
       dragging = true;
       wrapper.classList.add("dragging");
       wrapper.setPointerCapture(pointerId);
@@ -218,14 +238,15 @@ function attachSwipe(wrapper, cardId, action) {
     dragging = false;
     wrapper.classList.remove("dragging");
     wrapper.style.transition = "transform 0.2s ease, opacity 0.2s ease";
+    // A real drag happened -- the browser can still fire a click right after this pointerup
+    // regardless of which branch below runs, which would otherwise flip the card open/closed (or
+    // re-flip it right as it's flying off-screen) as an unintended side effect of the gesture.
+    armClickSwallow();
     if (dx <= -90) {
       finalizeDismiss(wrapper, cardId, action, -1);
     } else {
       wrapper.style.transform = "translateX(0)";
       wrapper.style.opacity = "1";
-      // A real drag happened but snapped back -- the browser still fires a click after this
-      // pointerup, which would otherwise flip the card open/closed as an unintended side effect.
-      wrapper.addEventListener("click", swallowNextClick, true);
     }
     dx = 0;
   }

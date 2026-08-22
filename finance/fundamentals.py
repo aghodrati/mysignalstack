@@ -44,6 +44,7 @@ from finance.data import get_stock_info
 from finance.llm import complete
 from finance.loop_a_config import llm_config
 from finance.ranking import FACTOR_CATEGORIES, build_factor_table
+from finance import read_state
 
 FUNDAMENTALS_DIR = Path("output/fundamentals")
 
@@ -205,6 +206,13 @@ def _append(ticker: str, event: dict) -> None:
     path = _path(ticker)
     path.parent.mkdir(parents=True, exist_ok=True)
     history = load_fundamental_history(ticker)
+    # app.py's card id for a fundamental snapshot is keyed off ticker+date (_card_id(ticker,
+    # "fundamental", ev["date"])), not its position in this list -- so a second refresh landing on
+    # the same date (e.g. a manual --refresh-fundamental re-run the same day as the earnings-window
+    # auto-refresh) produces fresh content under an id the user may have already marked read. Mark
+    # it unread again so the new content isn't silently hidden behind a stale read-mark.
+    if any(e.get("date") == event.get("date") for e in history):
+        read_state.mark_unread(read_state.CURRENT_USER, read_state.card_id(ticker, "fundamental", event["date"]))
     history.append(json.loads(json.dumps(event, default=str)))
     path.write_text(json.dumps(history, indent=2))
 
