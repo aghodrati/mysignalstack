@@ -258,17 +258,44 @@ def _fetch_fred_series(source_id: str, refresh: bool) -> pd.Series:
     return df["value"]
 
 
-def _fetch_yfinance_series(source_id: str, refresh: bool) -> pd.Series:
-    """Full history of a yfinance-sourced series (commodity/volatility price), date-indexed --
-    reuses finance.data.get_prices' own disk cache, so this only adds the macro cache dir for
-    FRED series above; nothing new to invalidate for yfinance ones. Returns an empty series
-    (never raises) on any fetch failure, same soft-failure contract as _fetch_fred_series.
+_YFINANCE_HISTORY_DAYS = 400
+
+
+def _yfinance_source_ids() -> list[str]:
+    return sorted({config["source_id"] for config in MACRO_SERIES.values() if config["source"] == "yfinance"})
+
+
+def _fetch_all_yfinance_series(refresh: bool) -> pd.DataFrame:
+    """Every yfinance-sourced macro series (^TNX, ^VIX, CL=F, GC=F, SI=F, HG=F, BTC-USD) in ONE
+    get_prices call instead of macro_snapshot's old one-call-per-series loop -- yf.download already
+    accepts a ticker list and batches them into a single request, so there's no reason to pay for 8
+    separate round-trips just because MACRO_SERIES happens to describe them one at a time. Returns
+    an empty frame (never raises) on any fetch failure, same soft-failure contract as
+    _fetch_fred_series -- callers already handle a missing column as "no data for this series."
     """
-    start = (dt.date.today() - dt.timedelta(days=400)).isoformat()
+    start = (dt.date.today() - dt.timedelta(days=_YFINANCE_HISTORY_DAYS)).isoformat()
     try:
-        prices = get_prices([source_id], start=start, refresh=refresh)
+        return get_prices(_yfinance_source_ids(), start=start, refresh=refresh)
     except Exception:
-        return pd.Series(dtype=float)
+        return pd.DataFrame()
+
+
+def _fetch_yfinance_series(source_id: str, refresh: bool, prices: pd.DataFrame | None = None) -> pd.Series:
+    """Full history of one yfinance-sourced series, date-indexed -- reuses finance.data.get_prices'
+    own disk cache, so this only adds the macro cache dir for FRED series above; nothing new to
+    invalidate for yfinance ones. Returns an empty series (never raises) on any fetch failure, same
+    soft-failure contract as _fetch_fred_series.
+
+    `prices` lets a caller that already has every yfinance series' data in hand (macro_snapshot, via
+    _fetch_all_yfinance_series) skip a redundant single-series fetch here -- series_tile's own
+    single-series lookups leave it unset and fall back to fetching just this one ticker.
+    """
+    if prices is None:
+        start = (dt.date.today() - dt.timedelta(days=_YFINANCE_HISTORY_DAYS)).isoformat()
+        try:
+            prices = get_prices([source_id], start=start, refresh=refresh)
+        except Exception:
+            return pd.Series(dtype=float)
     if source_id not in prices.columns:
         return pd.Series(dtype=float)
     return prices[source_id].dropna()
@@ -279,22 +306,22 @@ def _value_on_or_before(series: pd.Series, target: pd.Timestamp) -> float | None
     return float(eligible.iloc[-1]) if not eligible.empty else None
 
 
-def _level_series(config: dict, refresh: bool) -> pd.Series:
+def _level_series(config: dict, refresh: bool, yfinance_prices: pd.DataFrame | None = None) -> pd.Series:
     if config["source"] == "fred":
         raw = _fetch_fred_series(config["source_id"], refresh)
     else:
-        raw = _fetch_yfinance_series(config["source_id"], refresh)
+        raw = _fetch_yfinance_series(config["source_id"], refresh, prices=yfinance_prices)
     if config["transform"] == "yoy_pct":
         return ((raw / raw.shift(12) - 1) * 100).dropna()
     return raw
 
 
-def _tile(key: str, config: dict, refresh: bool) -> dict | None:
+def _tile(key: str, config: dict, refresh: bool, yfinance_prices: pd.DataFrame | None = None) -> dict | None:
     """One series' current level + its period-over-period change, or None if there's no usable
     data at all (a fetch failure or an empty series -- soft failure, same as the rest of Loop A,
     so one broken series doesn't take down the whole dashboard).
     """
-    series = _level_series(config, refresh)
+    series = _level_series(config, refresh, yfinance_prices)
     if series.empty:
         return None
 
@@ -371,10 +398,16 @@ def series_tile(key: str, refresh: bool = False) -> dict | None:
 def macro_snapshot(refresh: bool = False) -> list[dict]:
     """Every configured macro tile (see MACRO_SERIES), in insertion order -- skips a series
     entirely (rather than raising) if its fetch fails or returns no usable data.
+
+    Fetches every yfinance-sourced series' price history in one batched call up front (see
+    _fetch_all_yfinance_series) rather than letting each series' own _tile call trigger its own
+    round-trip -- cuts this from up to 9 sequential network fetches (2 FRED + 8 yfinance) down to 3
+    (2 FRED, still one each since FRED has no batch endpoint, + 1 batched yfinance call).
     """
+    yfinance_prices = _fetch_all_yfinance_series(refresh)
     tiles = []
     for key, config in MACRO_SERIES.items():
-        tile = _tile(key, config, refresh)
+        tile = _tile(key, config, refresh, yfinance_prices)
         if tile is not None:
             tiles.append(tile)
     return tiles

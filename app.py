@@ -190,7 +190,7 @@ st.markdown(
     # visible/reachable at a glance instead. `!important` on both width and min-width since
     # Streamlit's own resize-drag feature sets an inline `style="width:...px"` on this element,
     # which without `!important` here would otherwise win over a plain stylesheet rule.
-    "@media (max-width: 768px){"
+    "@media (max-width: 1024px){"
     "[data-testid='stSidebar']{width:50vw !important;min-width:50vw !important}"
     "}"
     "[data-testid='stSidebar'] div.block-container{padding-top:0}"
@@ -227,10 +227,11 @@ st.markdown(
     # Claim cards inside the Claims dialog -- lightly tinted to read as distinct cards while
     # scrolling, default size/spacing otherwise.
     "[class*='st-key-claim_card_']{background-color:rgba(151,166,195,0.10);border-radius:0.5rem}"
-    # Below 768px, keep Streamlit's native header/sidebar controls untouched --
-    # stExpandSidebarButton (the only way to reopen a collapsed sidebar on a
-    # phone) is rendered *inside* stHeader, so hiding stHeader unconditionally
-    # was silently deleting a phone's only way to open the sidebar at all.
+    # Below 1024px (phone and iPad-width tablets alike), keep Streamlit's
+    # native header/sidebar controls untouched -- stExpandSidebarButton (the
+    # only way to reopen a collapsed sidebar on a touch device) is rendered
+    # *inside* stHeader, so hiding stHeader unconditionally was silently
+    # deleting a touch device's only way to open the sidebar at all.
     # Only strip these on wide (desktop) viewports, where the sidebar (on the
     # Explore page) stays permanently visible and this chrome is genuinely
     # unused. stHeader itself is NOT hidden (unlike before this app had
@@ -241,7 +242,7 @@ st.markdown(
     # default padding already accounts for the header's real height now that
     # it's visible again; a smaller custom value was making the page's own
     # top content render underneath the header.
-    "@media (min-width: 768px){"
+    "@media (min-width: 1024px){"
     "[data-testid='stSidebarHeader']{display:none}"
     "[data-testid='stSidebarCollapseButton']{display:none}"
     "[data-testid='stExpandSidebarButton']{display:none}"
@@ -345,8 +346,8 @@ def _select_page_ticker(ticker: str) -> None:
 
 
 def _maybe_close_sidebar_on_mobile() -> None:
-    """On a narrow (mobile) screen, closes the sidebar right after a ticker is picked from it --
-    Streamlit has no Python-level API to collapse the sidebar on demand (only
+    """On a narrow (phone/iPad-width) screen, closes the sidebar right after a ticker is picked
+    from it -- Streamlit has no Python-level API to collapse the sidebar on demand (only
     `initial_sidebar_state` at page load), so this reaches into the real page DOM the same
     same-origin way components/card_feed/index.html does, and clicks the sidebar's own native
     collapse button. Desktop is left alone (window.parent.innerWidth check) since there the sidebar
@@ -364,7 +365,7 @@ def _maybe_close_sidebar_on_mobile() -> None:
         <script>
         (function() {
             try {
-                if (window.parent.innerWidth >= 768) return;  // desktop -- leave the sidebar open
+                if (window.parent.innerWidth >= 1024) return;  // desktop -- leave the sidebar open
                 var doc = window.parent.document;
                 var sidebar = doc.querySelector('[data-testid="stSidebar"]');
                 if (!sidebar) return;
@@ -859,7 +860,7 @@ _CARD_GRID_MODE = "native"  # "native" or "iframe"
 # version's real CSS grid adapted column count to available width automatically; this doesn't, so
 # it's user-adjustable instead via _render_card_display_settings' popover (st.session_state
 # "card_columns", falling back to this constant when unset).
-_NATIVE_GRID_COLUMNS = 3
+_NATIVE_GRID_COLUMNS = 2
 # How many cards _render_keep_card_grid_native renders up front before requiring a "Show more"
 # click -- see that function's own docstring for why a large page benefits from this (each card is
 # several real Streamlit widgets, and Streamlit streams them to the browser as the script runs).
