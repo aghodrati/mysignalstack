@@ -740,6 +740,13 @@ def _inject_native_card_css() -> None:
     st.markdown(
         """
         <style>
+        /* Chrome's scroll-anchoring feature repositions scroll on the FIRST layout shift it sees
+        near/above the viewport after a subtree mounts (confirmed empirically -- the first Fav/Read
+        click after navigating to a ticker page jumps ~100-500px even on an already-settled page,
+        every later click on the same mount is a no-op). The card grid gets fully remounted every
+        time you navigate away and back, so this isn't a one-time cost -- disabling anchoring here
+        is the fix, not working around one particular mutation. */
+        [data-testid="stMain"] { overflow-anchor: none; }
         .keep-card, .card-action-btn { color: inherit; }
         .keep-card {
             border-radius: 0.6rem 0.6rem 0 0;
@@ -811,9 +818,14 @@ def _inject_native_card_css() -> None:
         [class*="st-key-cardnative_"] [data-testid="stLayoutWrapper"] { margin: 0 !important; }
         [class*="st-key-cardnative_"] [data-testid="stHorizontalBlock"] {
             gap: 0 !important; column-gap: 0 !important; row-gap: 0 !important;
+            /* Streamlit stacks stHorizontalBlock columns vertically below its own mobile breakpoint
+            -- fine for the app's normal columns, but the Read/Fav pair must stay side-by-side at
+            any width (it's a single flush action bar, not two independent stacked controls). */
+            flex-direction: row !important; flex-wrap: nowrap !important;
         }
         [class*="st-key-cardnative_"] [data-testid="stColumn"] {
             padding: 0 !important; margin: 0 !important; gap: 0 !important;
+            width: auto !important; flex: 1 1 0 !important; min-width: 0 !important;
         }
         [class*="st-key-cardnative_"] [data-testid="stButton"] { margin: 0 !important; padding: 0 !important; }
         [class*="st-key-cardnative_"] [data-testid="stButton"] > button {
@@ -851,7 +863,7 @@ _NATIVE_GRID_COLUMNS = 3
 # How many cards _render_keep_card_grid_native renders up front before requiring a "Show more"
 # click -- see that function's own docstring for why a large page benefits from this (each card is
 # several real Streamlit widgets, and Streamlit streams them to the browser as the script runs).
-_NATIVE_PAGE_SIZE = 30
+_NATIVE_PAGE_SIZE = 20
 
 
 def _show_more_cards(shown_key: str, current_shown: int) -> None:
@@ -1389,8 +1401,14 @@ def _upcoming_earnings_cards(as_of: dt.date) -> list[tuple[str, str]]:
         # reminder window get the slower, tz-aware precise check below. +/-1 day of slack around
         # the window absorbs the exchange-local-vs-Amsterdam date-boundary shift that the naive
         # cached date doesn't account for.
+        # reported_eps.isna() alone isn't "future" -- yfinance sometimes leaves it NaN on old
+        # rows it never backfilled (seen for real: an IREN row from 2024 with no reported_eps),
+        # which .min()'d straight past the genuine upcoming date and skipped the ticker entirely.
+        # Require the date itself to actually be upcoming too.
         cached_history = get_earnings_history(ticker, limit=4)
-        future_rows = cached_history[cached_history["reported_eps"].isna()]
+        future_rows = cached_history[
+            cached_history["reported_eps"].isna() & (cached_history["earnings_date"].dt.date >= as_of)
+        ]
         if future_rows.empty:
             continue
         cached_next_date = future_rows["earnings_date"].min().date()
@@ -4726,7 +4744,11 @@ def _render_read_page() -> None:
         # below, and kept warm by run_loop_a) actually has a not-yet-reported row -- skips a live
         # per-ticker yfinance round-trip for every ticker with nothing scheduled.
         ticker_earnings_history = get_earnings_history(ticker, limit=6)
-        if not ticker_earnings_history[ticker_earnings_history["reported_eps"].isna()].empty:
+        has_upcoming = (
+            ticker_earnings_history["reported_eps"].isna()
+            & (ticker_earnings_history["earnings_date"].dt.date >= dt.date.today())
+        ).any()
+        if has_upcoming:
             info = _next_earnings_info(ticker)
             if info is not None:
                 cid = _earnings_reminder_card_id(ticker, info["when"])
@@ -4790,7 +4812,11 @@ def _render_favorites_page() -> None:
                 dated.append((dt.date.fromisoformat(ev["date"]), cid, _earnings_call_card_html(ev, ticker)))
         # See the matching comment in _render_read_page -- same reasoning, favorite_ids instead.
         ticker_earnings_history = get_earnings_history(ticker, limit=6)
-        if not ticker_earnings_history[ticker_earnings_history["reported_eps"].isna()].empty:
+        has_upcoming = (
+            ticker_earnings_history["reported_eps"].isna()
+            & (ticker_earnings_history["earnings_date"].dt.date >= dt.date.today())
+        ).any()
+        if has_upcoming:
             info = _next_earnings_info(ticker)
             if info is not None:
                 cid = _earnings_reminder_card_id(ticker, info["when"])

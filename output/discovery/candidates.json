@@ -1,1 +1,520 @@
-[]
+[
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "SemiAnalysis",
+    "article_title": "Ultra-High Interactivity on NVIDIA GPUs? - TileRT InferenceX",
+    "article_link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+    "name": "Groq",
+    "ticker_guess": null,
+    "why": "Purpose-built inference competitor using deterministic, compiler-orchestrated execution and on-chip SRAM; cited as a specialist chip whose ultra-low-latency market could be challenged by TileRT on NVIDIA GPUs"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "SemiAnalysis",
+    "article_title": "Ultra-High Interactivity on NVIDIA GPUs? - TileRT InferenceX",
+    "article_link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+    "name": "SambaNova Systems",
+    "ticker_guess": null,
+    "why": "Purpose-built inference competitor using reconfigurable dataflow units with SRAM, HBM, and DDR; compared directly with TileRT on latency, hardware specialization, and market positioning"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "SemiAnalysis",
+    "article_title": "Ultra-High Interactivity on NVIDIA GPUs? - TileRT InferenceX",
+    "article_link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Evaluating purpose-built inference systems including Cerebras and Groq for ultra-high-interactivity workloads; GPT-Live is cited as an example where full-duplex voice makes response latency especially noticeable"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "SemiAnalysis",
+    "article_title": "Ultra-High Interactivity on NVIDIA GPUs? - TileRT InferenceX",
+    "article_link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+    "name": "Xiaomi",
+    "ticker_guess": null,
+    "why": "Already deploying TileRT in production for MiMo V2.5 Pro UltraSpeed; cited as an example of carving a low-latency speed tier out of an existing accelerator cluster rather than buying dedicated dataflow hardware"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "SemiAnalysis",
+    "article_title": "Ultra-High Interactivity on NVIDIA GPUs? - TileRT InferenceX",
+    "article_link": "https://newsletter.semianalysis.com/p/ultra-high-interactivity-on-nvidia",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Already deploying TileRT in production for GLM-5.1 HighSpeed; uses TileRT for latency-sensitive decode alongside throughput-optimized inference infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "SemiAnalysis",
+    "article_title": "SpaceX 10GW in 2027 \u2013 Why It\u2019s Real, Will Drive $300B ARR for SpaceX, and Why Microsoft Will Be the Largest Offtaker",
+    "article_link": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Microsoft signed a $250B infrastructure agreement with OpenAI, estimated at roughly 7GW; OpenAI and Anthropic are described as capable of generating over $100B per GW annually from API inference; OpenAI\u2019s Codex demand and ARR acceleration are cited as drivers of Microsoft\u2019s compute needs"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "SemiAnalysis",
+    "article_title": "SpaceX 10GW in 2027 \u2013 Why It\u2019s Real, Will Drive $300B ARR for SpaceX, and Why Microsoft Will Be the Largest Offtaker",
+    "article_link": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic is identified as one of the few companies able to generate more than $100B per GW annually from frontier-model API inference; Anthropic is said to have SpaceX compute arrangements with 90-day cancellation terms; the article cites estimated inference gross margins above 85% for certain models"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "SemiAnalysis",
+    "article_title": "SpaceX 10GW in 2027 \u2013 Why It\u2019s Real, Will Drive $300B ARR for SpaceX, and Why Microsoft Will Be the Largest Offtaker",
+    "article_link": "https://newsletter.semianalysis.com/p/spacex-10gw-in-2027-why-its-real",
+    "name": "xAI",
+    "ticker_guess": null,
+    "why": "SpaceX\u2019s datacenter expansion is tied to compute needs for Grok and xAI teams; the article discusses xAI\u2019s Colossus 1 and Colossus 2 facilities, including their rapid construction timelines; xAI and SpaceX are described as having evaluated alternative accelerators before focusing exclusively on Nvidia"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "SemiAnalysis",
+    "article_title": "Gemini is Cooked but GCP is Cooking",
+    "article_link": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified as a leading competitor to Google\u2019s Gemini and a major user of Google Cloud; reportedly receives more than 20% of Google TPU shipments from 3Q26 to 4Q27 and has committed to rent hundreds of thousands more TPUs; Claude models are cited as a major driver of Google\u2019s Vertex Enterprise Agent Platform"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "SemiAnalysis",
+    "article_title": "Gemini is Cooked but GCP is Cooking",
+    "article_link": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Described as one of the leading frontier AI labs outperforming Google DeepMind; reportedly overcame pre-training issues and is developing a much larger model code-named \u201cDoug\u201d; recruited former Google/DeepMind researchers, including the head of its Codex coding-agent effort"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "SemiAnalysis",
+    "article_title": "Gemini is Cooked but GCP is Cooking",
+    "article_link": "https://newsletter.semianalysis.com/p/gemini-is-cooked-but-gcp-is-cooking",
+    "name": "Discovery Loop",
+    "ticker_guess": null,
+    "why": "New AI research lab founded by former Google leaders Jeff Dean, Sanjay Ghemawat, Quoc Le, and Oriol Vinyals; used as an example of top AI researchers leaving Google to raise external capital and purchase Nvidia GPUs through Google Cloud"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "SemiAnalysis",
+    "article_title": "Kimi K3, The Manos, The Mythos, The Legendos",
+    "article_link": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Developed the Kimi K3 model and its Kimi Delta Attention architecture; open-sourced the FlashKDA GPU kernels and manages recurrent-state prefix caching for KDA serving"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "SemiAnalysis",
+    "article_title": "Kimi K3, The Manos, The Mythos, The Legendos",
+    "article_link": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Its Multi-Head Latent Attention design is analyzed in detail, including MHA and MQA inference modes and their KV-cache and FLOP trade-offs; its newer sparse-attention approaches are compared with Moonshot\u2019s MLA strategy"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "SemiAnalysis",
+    "article_title": "Kimi K3, The Manos, The Mythos, The Legendos",
+    "article_link": "https://newsletter.semianalysis.com/p/kimi-k3-the-manos-the-mythos-the",
+    "name": "Zhipu AI",
+    "ticker_guess": null,
+    "why": "Uses DeepSeek Sparse Attention and related compressed sparse-attention designs; its architectural choices are compared with Moonshot\u2019s continued use of full-attention MLA layers"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-29",
+    "source": "SemiAnalysis",
+    "article_title": "The Wild Wild West Of LEGO Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+    "name": "Vertiv",
+    "ticker_guess": "VRT",
+    "why": "Offers integrated modular power, cooling, white-space, and whole-facility products including MegaMod and OneCore; estimated to increase content capture from about $3.5M/MW to roughly $7M/MW with full-stack modular solutions; cited vendor lead times exceeding 12 months and claims of up to 50% faster deployment"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-29",
+    "source": "SemiAnalysis",
+    "article_title": "The Wild Wild West Of LEGO Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+    "name": "Schneider Electric",
+    "ticker_guess": "SU.PA",
+    "why": "Provides modular power centers, EcoStruxure Pods, Easy Modular datacenters, and power-and-cooling modules; its solutions are used by Compass and are coordinated with Nvidia reference designs; cited claim of 60% faster deployment and 13% lower first cost, with module hardware around 40% above traditional installations before labor savings"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-29",
+    "source": "SemiAnalysis",
+    "article_title": "The Wild Wild West Of LEGO Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+    "name": "Flex",
+    "ticker_guess": "FLEX",
+    "why": "Through Anord Mardix, supplies modular power skids and enclosed power-module pods; its modules integrate electrical equipment, busway, cooling, and fire protection; article estimates moving power scope into factories can reduce IT-ready time by about 22% and cost by roughly 5% per MW"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-29",
+    "source": "SemiAnalysis",
+    "article_title": "The Wild Wild West Of LEGO Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+    "name": "Comfort Systems USA",
+    "ticker_guess": "FIX",
+    "why": "Acts as a system integrator that procures, assembles, wires, pipes, tests, and ships third-party datacenter equipment; operates more than 3.5 million square feet of modular manufacturing capacity through Environmental Air Systems and TAS Energy; highlighted as a major EPC-led modularization beneficiary"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-29",
+    "source": "SemiAnalysis",
+    "article_title": "The Wild Wild West Of LEGO Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/the-wild-wild-west-of-lego-datacenters",
+    "name": "Sterling Infrastructure",
+    "ticker_guess": "STRL",
+    "why": "Identified as a major EPC and system-integrator participant in datacenter modular construction; cited for expanding its addressable market through Texas, the Pacific Northwest, and the Midwest; its CEC-related capabilities are described as potentially doubling content per MW"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-25",
+    "source": "SemiAnalysis",
+    "article_title": "Can AMD break the CUDA Moat? AMD Advancing AI 2026",
+    "article_link": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Announced deployment of 2GW of AMD chips; its compute chief described using Claude agents to bring up an internal inference stack on AMD hardware; identified as a future AMD customer"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-25",
+    "source": "SemiAnalysis",
+    "article_title": "Can AMD break the CUDA Moat? AMD Advancing AI 2026",
+    "article_link": "https://newsletter.semianalysis.com/p/can-amd-break-the-cuda-moat-amd-advancing",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Expected to be the main end customer for Microsoft Azure\u2019s MI455X Helios racks; discussed as receiving a roughly 105% equity-rebate discount structure from AMD; characterized as potentially receiving Helios racks at extremely low effective cost"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "SemiAnalysis",
+    "article_title": "Meta\u2019s Infrastructure Team Needs A Culture Reset",
+    "article_link": "https://newsletter.semianalysis.com/p/metas-infrastructure-team-needs-a",
+    "name": "Rivos",
+    "ticker_guess": null,
+    "why": "Meta spent more than $2.5 billion acquiring the chip startup; Meta later cancelled the Olympus chip that was intended to use Rivos\u2019 GPU IP and reassigned or cut much of the acquired team; Meta\u2019s successor Phoebe project is planned to tape out in 2028 but may also be cancelled"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-09",
+    "source": "SemiAnalysis",
+    "article_title": "The Future of Meta Superintelligence: A 1 Year Progress Update",
+    "article_link": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Described as one of the two leading frontier AI labs alongside Anthropic; compared favorably against Meta, Google, and Microsoft on model and agentic coding capabilities; cited for GDPval and HealthBench RL-data examples"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-09",
+    "source": "SemiAnalysis",
+    "article_title": "The Future of Meta Superintelligence: A 1 Year Progress Update",
+    "article_link": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified as a leading frontier AI lab and Meta\u2019s primary target to catch; credited with aggressive purchases of coding data from RL-environment startups; its researchers and models are repeatedly used as benchmarks for Meta\u2019s progress"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-09",
+    "source": "SemiAnalysis",
+    "article_title": "The Future of Meta Superintelligence: A 1 Year Progress Update",
+    "article_link": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+    "name": "Scale AI",
+    "ticker_guess": null,
+    "why": "Meta made a reported $14.3B investment to recruit founder Alexandr Wang and key members of the SEAL team; Wang is described as leading Meta\u2019s employee-workflow data effort; the deal is presented as central to Meta\u2019s AI reorganization"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-09",
+    "source": "SemiAnalysis",
+    "article_title": "The Future of Meta Superintelligence: A 1 Year Progress Update",
+    "article_link": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+    "name": "Mercor",
+    "ticker_guess": null,
+    "why": "Named as one of the major human-data providers with more than $1B in ARR; disclosed 2.517 million expert hours logged in Q2 2026; its contractors and coding-task economics are used to illustrate the value and cost of RL training data"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-09",
+    "source": "SemiAnalysis",
+    "article_title": "The Future of Meta Superintelligence: A 1 Year Progress Update",
+    "article_link": "https://newsletter.semianalysis.com/p/the-future-of-meta-superintelligence",
+    "name": "Mechanize",
+    "ticker_guess": null,
+    "why": "Highlighted as a new RL-environment and human-data company approaching $100M ARR; software engineers reportedly earn more than $400,000 annually to create roughly one high-quality task per week; used as an example of the difficulty and value of producing realistic RL tasks"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-08",
+    "source": "SemiAnalysis",
+    "article_title": "Anthropic 3Q26 Profit Over $1B: The Anthropic IPO Financials Sneak Peak",
+    "article_link": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Confidentially filed for an IPO on June 1; projected to exceed $1 billion in third-quarter 2026 profit; described as leading the B2B AI market with superior margins and profitability"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-08",
+    "source": "SemiAnalysis",
+    "article_title": "Anthropic 3Q26 Profit Over $1B: The Anthropic IPO Financials Sneak Peak",
+    "article_link": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Compared extensively with Anthropic as a roughly $100 billion ARR combined market leader; characterized as unfocused and cash-burning; reportedly delaying its IPO until 2027 and needing substantial capital to fund AI infrastructure"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "Doomberg",
+    "article_title": "Marginal Rations",
+    "article_link": "https://newsletter.doomberg.com/p/marginal-rations",
+    "name": "diesel",
+    "why": "Diesel crack spread in the United States reached a record above $100 per barrel; Physical diesel tightness threatens food harvesting and long-distance freight; Stockouts and price surges could drive product shortages and inflation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "Doomberg",
+    "article_title": "Marginal Rations",
+    "article_link": "https://newsletter.doomberg.com/p/marginal-rations",
+    "name": "oil refining",
+    "why": "Refinery output reflects the molecular mix of crude oil cuts and the need to minimize waste; Refinery flexibility and trading arbitrage may be overwhelmed by major supply disruptions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "Doomberg",
+    "article_title": "Marginal Rations",
+    "article_link": "https://newsletter.doomberg.com/p/marginal-rations",
+    "name": "supply chain",
+    "why": "Diesel engines dominate heavy-duty transport and other key logistics applications because of their higher torque; Fuel shortages could impair agricultural production and the movement of goods"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "The Quantum Insider",
+    "article_title": "Brookhaven And Stony Brook Researchers Demonstrate \u2018Wireless\u2019 Capability for Quantum Network",
+    "article_link": "https://thequantuminsider.com/2026/08/23/wireless-capability-quantum-network/",
+    "name": "quantum communication",
+    "why": "first US free\u2011space entanglement link; 13\u2011mile open\u2011air quantum channel; extension to 30\u2011mile Yale link; satellite link goal"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "The Quantum Insider",
+    "article_title": "Brookhaven And Stony Brook Researchers Demonstrate \u2018Wireless\u2019 Capability for Quantum Network",
+    "article_link": "https://thequantuminsider.com/2026/08/23/wireless-capability-quantum-network/",
+    "name": "free\u2011space optical (FSO) network",
+    "why": "FSO link uses telescope optics; 21\u2011km link between Stony Brook and Brookhaven; integration of rooftop facilities"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "The Quantum Insider",
+    "article_title": "Brookhaven And Stony Brook Researchers Demonstrate \u2018Wireless\u2019 Capability for Quantum Network",
+    "article_link": "https://thequantuminsider.com/2026/08/23/wireless-capability-quantum-network/",
+    "name": "long\u2011range entanglement",
+    "why": "nighttime tests distributed entangled photons; measurement at distant detectors; enables ultra\u2011secure communication"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "The Quantum Insider",
+    "article_title": "Brookhaven And Stony Brook Researchers Demonstrate \u2018Wireless\u2019 Capability for Quantum Network",
+    "article_link": "https://thequantuminsider.com/2026/08/23/wireless-capability-quantum-network/",
+    "name": "quantum internet",
+    "why": "regional quantum network spans 161 miles; aims to connect quantum computers across institutions; supports distributed quantum systems"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-23",
+    "source": "The Quantum Insider",
+    "article_title": "Brookhaven And Stony Brook Researchers Demonstrate \u2018Wireless\u2019 Capability for Quantum Network",
+    "article_link": "https://thequantuminsider.com/2026/08/23/wireless-capability-quantum-network/",
+    "name": "research collaboration",
+    "why": "Brookhaven National Laboratory and Stony Brook University partnership; DOE Office of Science support; federal and state funding"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-16",
+    "source": "SemiAnalysis",
+    "article_title": "$12B of US ratepayers' money wasted on a modeling mistake and PJM wants to do it again",
+    "article_link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+    "name": "grid/energy",
+    "why": "PJM\u2019s capacity-market modeling allegedly overstated winter supply shortfalls by roughly 4 GW; the article estimates $11.57 billion in excess costs for the 2025/26 and 2026/27 auctions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-16",
+    "source": "SemiAnalysis",
+    "article_title": "$12B of US ratepayers' money wasted on a modeling mistake and PJM wants to do it again",
+    "article_link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+    "name": "electricity markets",
+    "why": "PJM\u2019s single marginal-priced auction reprices most existing and new generation together; four recent auctions procured only 4.8 GW of new capacity while costing about $63.6 billion"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-16",
+    "source": "SemiAnalysis",
+    "article_title": "$12B of US ratepayers' money wasted on a modeling mistake and PJM wants to do it again",
+    "article_link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+    "name": "energy regulation",
+    "why": "FERC is reviewing PJM\u2019s Reliability Backstop Auction filing, with comments due August 21, 2026; the proposed emergency auction could sign contracts through 2043 without committed large-load counterparties"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-16",
+    "source": "SemiAnalysis",
+    "article_title": "$12B of US ratepayers' money wasted on a modeling mistake and PJM wants to do it again",
+    "article_link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+    "name": "natural gas",
+    "why": "The article argues PJM fails to credit higher winter gas-turbine output from colder, denser air; it also says PJM\u2019s model does not adequately reflect winterization investments after Storm Elliott"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-16",
+    "source": "SemiAnalysis",
+    "article_title": "$12B of US ratepayers' money wasted on a modeling mistake and PJM wants to do it again",
+    "article_link": "https://newsletter.semianalysis.com/p/12b-of-us-ratepayers-money-wasted",
+    "name": "data centers",
+    "why": "PJM\u2019s emergency auction is intended to procure capacity for anticipated large loads including data centers; uncertain cost allocation and long-term liabilities may push developers toward self-supply or other power markets"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "Stratechery",
+    "article_title": "Stripe Acquiring OpenRouter, Aggregating AI?, Flipping the Business Model",
+    "article_link": "https://stratechery.com/2026/stripe-acquiring-openrouter-aggregating-ai-flipping-the-business-model/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "- Reportedly acquiring OpenRouter; - The deal would position Stripe around aggregating AI models"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "Stratechery",
+    "article_title": "Stripe Acquiring OpenRouter, Aggregating AI?, Flipping the Business Model",
+    "article_link": "https://stratechery.com/2026/stripe-acquiring-openrouter-aggregating-ai-flipping-the-business-model/",
+    "name": "OpenRouter",
+    "ticker_guess": null,
+    "why": "- Reportedly being acquired by Stripe; - Provides an aggregation platform for AI models"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-17",
+    "source": "Stratechery",
+    "article_title": "Stripe Acquiring OpenRouter, Aggregating AI?, Flipping the Business Model",
+    "article_link": "https://stratechery.com/2026/stripe-acquiring-openrouter-aggregating-ai-flipping-the-business-model/",
+    "name": "AI models",
+    "why": "- The reported acquisition reflects a bet on a future market for AI models; - OpenRouter is described as an aggregation platform for models"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-18",
+    "source": "Next Platform",
+    "article_title": "Quantum Startup Qarakal Takes Lessons From Classical Systems With Pangaea Architecture",
+    "article_link": "https://www.nextplatform.com/compute/2026/08/18/quantum-startup-qarakal-takes-lessons-from-classical-systems-with-pangaea-architecture/5289266",
+    "name": "Qarakal Quantum",
+    "ticker_guess": null,
+    "why": "Founded 2024 in Israel; developing Pangaea architecture and quantum bus; targeting 2028 deployments"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-18",
+    "source": "Next Platform",
+    "article_title": "Quantum Startup Qarakal Takes Lessons From Classical Systems With Pangaea Architecture",
+    "article_link": "https://www.nextplatform.com/compute/2026/08/18/quantum-startup-qarakal-takes-lessons-from-classical-systems-with-pangaea-architecture/5289266",
+    "name": "quantum computing architecture",
+    "why": "Focus on modular, scalable design; introduces Pangaea architecture; aims to reduce qubit count by factor of 10"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-18",
+    "source": "Next Platform",
+    "article_title": "Quantum Startup Qarakal Takes Lessons From Classical Systems With Pangaea Architecture",
+    "article_link": "https://www.nextplatform.com/compute/2026/08/18/quantum-startup-qarakal-takes-lessons-from-classical-systems-with-pangaea-architecture/5289266",
+    "name": "quantum bus",
+    "why": "Universal interface for quantum information; enables non-adjacent logical qubits; reduces wiring and noise"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-18",
+    "source": "Next Platform",
+    "article_title": "Quantum Startup Qarakal Takes Lessons From Classical Systems With Pangaea Architecture",
+    "article_link": "https://www.nextplatform.com/compute/2026/08/18/quantum-startup-qarakal-takes-lessons-from-classical-systems-with-pangaea-architecture/5289266",
+    "name": "error correction",
+    "why": "Discusses planar vs high-density codes; aims to lower logical qubit size; slower error accumulation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-18",
+    "source": "Next Platform",
+    "article_title": "Quantum Startup Qarakal Takes Lessons From Classical Systems With Pangaea Architecture",
+    "article_link": "https://www.nextplatform.com/compute/2026/08/18/quantum-startup-qarakal-takes-lessons-from-classical-systems-with-pangaea-architecture/5289266",
+    "name": "superconducting qubits",
+    "why": "Qarakal\u2019s platform uses superconducting technology; compares to D\u2011Wave dual\u2011rail architecture"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-18",
+    "source": "Next Platform",
+    "article_title": "Quantum Startup Qarakal Takes Lessons From Classical Systems With Pangaea Architecture",
+    "article_link": "https://www.nextplatform.com/compute/2026/08/18/quantum-startup-qarakal-takes-lessons-from-classical-systems-with-pangaea-architecture/5289266",
+    "name": "modularity in quantum systems",
+    "why": "Parallels classical Von Neumann modularity; seeks standard interfaces and composability"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Don\u2019t Scrap It, Save It: Feedforward Control For Modern Semiconductor Manufacturing",
+    "article_link": "https://semiengineering.com/dont-scrap-it-save-it-feedforward-control-for-modern-semiconductor-manufacturing/",
+    "name": "semiconductor manufacturing",
+    "why": "focus on advanced wafer production; discusses lithography, etch steps; highlights yield challenges"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Don\u2019t Scrap It, Save It: Feedforward Control For Modern Semiconductor Manufacturing",
+    "article_link": "https://semiengineering.com/dont-scrap-it-save-it-feedforward-control-for-modern-semiconductor-manufacturing/",
+    "name": "process control",
+    "why": "introduces feedforward vs. open-loop; details adjustment of etch recipe"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Don\u2019t Scrap It, Save It: Feedforward Control For Modern Semiconductor Manufacturing",
+    "article_link": "https://semiengineering.com/dont-scrap-it-save-it-feedforward-control-for-modern-semiconductor-manufacturing/",
+    "name": "yield improvement",
+    "why": "shows 60%+ Cpk gain; pass rate rises from 60% to 97%"
+  }
+]
