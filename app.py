@@ -185,13 +185,19 @@ st.set_page_config(page_title="Market comparisons", layout="wide", initial_sideb
 
 st.markdown(
     "<style>"
-    # On a narrow (mobile) screen Streamlit's sidebar otherwise takes up the full viewport width
-    # while open, hiding all of the main content behind it -- half-width leaves the page context
-    # visible/reachable at a glance instead. `!important` on both width and min-width since
+    # On a narrow (phone/iPad-width) screen Streamlit's sidebar otherwise takes up the full
+    # viewport width while open, hiding all of the main content behind it -- half-width leaves the
+    # page context visible/reachable at a glance instead. `!important` on width (only) since
     # Streamlit's own resize-drag feature sets an inline `style="width:...px"` on this element,
     # which without `!important` here would otherwise win over a plain stylesheet rule.
+    # Deliberately NOT forcing min-width/max-width here: Streamlit's collapse animation drives the
+    # sidebar closed by setting inline min-width/max-width to 0 (see its own collapsed-state
+    # styling), and the browser always clamps a used `width` between min-width and max-width
+    # regardless of `!important` on `width` itself -- forcing min-width to 50vw alongside it (as a
+    # previous version of this rule did) fought that clamp, leaving the sidebar stuck at 50vw and
+    # visible even when "collapsed", and starving the main content of the freed flexbox space.
     "@media (max-width: 1024px){"
-    "[data-testid='stSidebar']{width:50vw !important;min-width:50vw !important}"
+    "[data-testid='stSidebar']{width:50vw !important}"
     "}"
     "[data-testid='stSidebar'] div.block-container{padding-top:0}"
     "[data-testid='stSidebarUserContent']{padding-top:0}"
