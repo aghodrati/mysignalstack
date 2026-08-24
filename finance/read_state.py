@@ -31,6 +31,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import threading
 from pathlib import Path
 
 import requests
@@ -46,6 +47,34 @@ _STORE_PATHS = {
 # across the several read_state calls a single button click's rerun makes (see
 # _visible_cards_and_action), so only the first call in a run pays the handshake.
 _session = requests.Session()
+
+# In-process cache of each kind's full id set, keyed "{kind}:{user}" -- there's exactly one real
+# user today (CURRENT_USER, see below), so this is safe to share across every session/rerun in the
+# process rather than scoped per Streamlit session: on Streamlit Community Cloud specifically (the
+# deployment this was actually slow on -- confirmed fast on localhost, where the difference is
+# purely network latency to Upstash) a round trip to Upstash's REST API is the dominant cost of a
+# Fav/Unfav click, and _ids() gets called from several places on every page rerun (both the
+# page-level filter in _render_read_page/_render_favorites_page AND the shared grid's
+# _visible_cards_and_action). Fetching once per process lifetime and mutating the cache locally
+# afterward (see _mark/_unmark) turns every read after the first into a plain in-memory set lookup.
+# Self-heals across a Cloud redeploy/restart (empty cache -> refetched from Upstash on first use);
+# does NOT self-heal if Upstash's data changes from outside this process (e.g. a second instance)
+# while this one keeps running, but that's the same "single hardcoded user, no real concurrency"
+# assumption CURRENT_USER already bakes in everywhere else in this module.
+_cache: dict[str, set[str]] = {}
+
+
+def _upstash_command_async(command: list[str]) -> None:
+    """Fire-and-forget version of _upstash_command, for writes (SADD/SREM) whose HTTP response
+    nothing downstream reads. _mark/_unmark already update `_cache` synchronously before this is
+    called, so the UI-visible state is correct immediately -- waiting on Upstash's own round-trip
+    here too was pure added latency for a response nobody uses. Runs in a daemon thread so it can
+    never block process exit; genuinely fire-and-forget, not retried or awaited anywhere, matching
+    _upstash_command's own soft-failure contract (a lost write here just means this one mark doesn't
+    persist, same as any other network hiccup this module already tolerates).
+    """
+    threading.Thread(target=_upstash_command, args=(command,), daemon=True).start()
+
 
 # The only user today -- see this module's own docstring re: why "user" exists as a real dimension
 # from day one anyway. Centralized here (rather than duplicated as a local constant in app.py and
@@ -103,20 +132,31 @@ def _save_local(kind: str, data: dict[str, list[str]]) -> None:
 
 
 def _ids(kind: str, user: str) -> set[str]:
+    cache_key = f"{kind}:{user}"
+    if cache_key in _cache:
+        return _cache[cache_key]
     if _upstash_config() is not None:
-        result = _upstash_command(["SMEMBERS", f"{kind}:{user}"])
-        if result is not None:
-            return set(result.get("result") or [])
-        return set()  # Upstash configured but unreachable -- fail open (nothing hidden), not closed
-    return set(_load_local(kind).get(user, []))
+        result = _upstash_command(["SMEMBERS", cache_key])
+        # Upstash configured but unreachable -- fail open (nothing hidden), not closed. Not cached:
+        # a transient outage shouldn't get "frozen" as an empty set for the rest of the process.
+        ids = set(result.get("result") or []) if result is not None else set()
+        if result is None:
+            return ids
+    else:
+        ids = set(_load_local(kind).get(user, []))
+    _cache[cache_key] = ids
+    return ids
 
 
 def _mark(kind: str, user: str, card_id: str) -> None:
     """Idempotent -- SADD (and the local-file fallback's own dedup) both already no-op a repeat
-    mark on an already-marked card.
+    mark on an already-marked card. Updates `_cache` synchronously so every reader sees the new
+    state immediately, regardless of how long the actual Upstash write (fired async, see
+    _upstash_command_async) takes to land.
     """
+    _cache.setdefault(f"{kind}:{user}", set()).add(card_id)
     if _upstash_config() is not None:
-        _upstash_command(["SADD", f"{kind}:{user}", card_id])
+        _upstash_command_async(["SADD", f"{kind}:{user}", card_id])
         return
     data = _load_local(kind)
     ids = data.setdefault(user, [])
@@ -127,10 +167,12 @@ def _mark(kind: str, user: str, card_id: str) -> None:
 
 def _unmark(kind: str, user: str, card_id: str) -> None:
     """Actually removes the id (SREM/local-list removal), not just a display filter, so it's really
-    gone from the store, not merely hidden again. Idempotent, same as _mark.
+    gone from the store, not merely hidden again. Idempotent, same as _mark. Updates `_cache`
+    synchronously -- see _mark's docstring.
     """
+    _cache.setdefault(f"{kind}:{user}", set()).discard(card_id)
     if _upstash_config() is not None:
-        _upstash_command(["SREM", f"{kind}:{user}", card_id])
+        _upstash_command_async(["SREM", f"{kind}:{user}", card_id])
         return
     data = _load_local(kind)
     ids = data.get(user, [])

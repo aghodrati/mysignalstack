@@ -16,12 +16,28 @@ each needing its own directory:
     output/earnings_preview/) -- merged in here since it's the same underlying thing (a snapshot
     about a ticker's earnings call at a point in time) and having every caller import from two
     near-identical per-ticker-JSON modules was more indirection than the split bought.
+  - TYPE_REMINDER ("earnings_reminder"): the plain, deterministic numbers half of app.py's
+    earnings-reminder card (precise call date/time, consensus EPS estimate, last few reported
+    quarters' beat/miss streak) -- see refresh_earnings_reminder. A frozen point-in-time snapshot,
+    same spirit as TYPE_PREVIEW's own headlines_used field. Overwritten in place (one entry per
+    upcoming call, like TYPE_PREVIEW) rather than accumulated, since it only ever describes
+    whatever call hasn't happened yet. Written independently of whether TYPE_PREVIEW's own
+    generation succeeds for the same cycle -- a Finnhub/LLM hiccup shouldn't also blank out the
+    numbers half of the card.
+  - TYPE_RESULT ("earnings_result"): app.py's "results are in" card for a call that already
+    happened -- reported_eps/surprise_pct straight from finance.data.get_earnings_history, frozen
+    at generation time. Unlike TYPE_REMINDER, accumulates one entry per report_date forever (like
+    TYPE_TRANSCRIPT), since a past quarter's result stays exactly as true a year later as the day
+    it landed. See refresh_earnings_result for why generating this needs a retry window rather than
+    a single attempt right when the call happens (yfinance itself often lags a call by a day or two
+    before reported_eps actually populates).
 
-A ticker's *reported results* (beat/miss, surprise %) are deliberately NOT a third type here --
-those already come for free, always fresh, from finance.data.get_earnings_history's own yfinance-
-backed cache (see app.py's _latest_reported_earnings), with no LLM cost and nothing to dedupe/
-retry, so persisting a redundant copy here would just be a second, staler source of the same
-numbers to keep in sync.
+None of TYPE_REMINDER/TYPE_RESULT are a live mirror of finance.data.get_earnings_history in
+general -- that module's own cache stays the one live source of truth for anything needing the
+*full* history (backtests in finance.rules, the Weekly/Metrics tabs' multi-quarter views). These
+two types exist purely so the two specific, narrow things app.py's earnings cards need (the next
+call's tz-aware numbers, and the latest reported quarter's numbers) are precomputed once in the
+batch job, instead of the interactive app touching that cache live on every cold page load.
 
 Three transcript-side parts:
 
@@ -67,8 +83,10 @@ import time
 import urllib.parse
 from pathlib import Path
 
+import pandas as pd
 import requests
 import trafilatura
+import yfinance as yf
 
 from finance.data import get_earnings_history
 from finance.llm import complete
@@ -121,6 +139,16 @@ def needs_transcript_check(ticker: str, as_of: dt.date) -> bool:
 
 TYPE_TRANSCRIPT = "earnings_transcript"
 TYPE_PREVIEW = "earnings_preview"
+TYPE_REMINDER = "earnings_reminder"
+TYPE_RESULT = "earnings_result"
+
+# How long after a report date refresh_earnings_result keeps retrying (see its own docstring for
+# why a retry loop is needed at all: yfinance sometimes lags a day or two before reported_eps/
+# surprise_pct actually populate for a call that already happened). Wider than
+# app.py's own _EARNINGS_RESULT_WINDOW_DAYS (the "Just Reported" banner's display window) on
+# purpose -- same separation as TRANSCRIPT_WINDOW_AFTER_DAYS vs app.py's reminder window: the
+# generation side needs slack the display side doesn't.
+EARNINGS_RESULT_WINDOW_AFTER_DAYS = 7
 
 _PREVIEW_HEADLINE_LIMIT = 15
 _PREVIEW_MAX_PER_DOMAIN = 2
@@ -431,6 +459,31 @@ def latest_earnings_preview(ticker: str) -> dict | None:
     return history[-1] if history else None
 
 
+def load_earnings_reminder_history(ticker: str) -> list[dict]:
+    """Every earnings-reminder numbers snapshot ever stored for `ticker` (TYPE_REMINDER only),
+    oldest first.
+    """
+    return [e for e in _load_all(ticker) if _entry_type(e) == TYPE_REMINDER]
+
+
+def latest_earnings_reminder(ticker: str) -> dict | None:
+    history = load_earnings_reminder_history(ticker)
+    return history[-1] if history else None
+
+
+def load_earnings_result_history(ticker: str) -> list[dict]:
+    """Every reported-quarter snapshot ever stored for `ticker` (TYPE_RESULT only), oldest first --
+    one entry per report_date, accumulating forever like TYPE_TRANSCRIPT (unlike TYPE_REMINDER/
+    TYPE_PREVIEW, which only ever describe the single upcoming call and get overwritten in place).
+    """
+    return [e for e in _load_all(ticker) if _entry_type(e) == TYPE_RESULT]
+
+
+def latest_earnings_result(ticker: str) -> dict | None:
+    history = load_earnings_result_history(ticker)
+    return history[-1] if history else None
+
+
 def _append_transcript(ticker: str, event: dict) -> None:
     event = {**event, "type": TYPE_TRANSCRIPT}
     history = _load_all(ticker)
@@ -463,6 +516,156 @@ def _upsert_preview(ticker: str, event: dict) -> None:
     else:
         history.append(serialized)
     _save_all(ticker, history)
+
+
+def _upsert_reminder(ticker: str, event: dict) -> None:
+    """Same call_date-keyed upsert as _upsert_preview, kept as an entirely separate write (own
+    TYPE_REMINDER entries) so the preview's own success/failure never gates whether the reminder
+    card's numbers exist -- see refresh_earnings_reminder's docstring.
+    """
+    event = {**event, "type": TYPE_REMINDER}
+    history = _load_all(ticker)
+    serialized = json.loads(json.dumps(event, default=str))
+    existing_idx = next(
+        (i for i, e in enumerate(history)
+         if _entry_type(e) == TYPE_REMINDER and e.get("call_date") == event["call_date"]),
+        None,
+    )
+    if existing_idx is not None:
+        history[existing_idx] = serialized
+    else:
+        history.append(serialized)
+    _save_all(ticker, history)
+
+
+def _upsert_result(ticker: str, event: dict) -> None:
+    """Same call_date-keyed-upsert shape as _upsert_preview/_upsert_reminder, just keyed on
+    "report_date" instead -- re-running before/after the same report doesn't duplicate the entry
+    (e.g. a corrected surprise_pct a day later overwrites in place rather than appending a second
+    row for the same quarter).
+    """
+    event = {**event, "type": TYPE_RESULT}
+    history = _load_all(ticker)
+    serialized = json.loads(json.dumps(event, default=str))
+    existing_idx = next(
+        (i for i, e in enumerate(history)
+         if _entry_type(e) == TYPE_RESULT and e.get("report_date") == event["report_date"]),
+        None,
+    )
+    if existing_idx is not None:
+        history[existing_idx] = serialized
+    else:
+        history.append(serialized)
+    _save_all(ticker, history)
+
+
+def refresh_earnings_result(ticker: str, report_date: dt.date) -> dict:
+    """Precomputes app.py's "Just Reported" earnings-result card as a static TYPE_RESULT record --
+    a fast, LLM-free "results are in" read straight from finance.data.get_earnings_history's own
+    reported_eps/surprise_pct, same numbers that module already carries, just frozen into
+    output/earnings/{ticker}.json so app.py never has to touch that cache live at render time.
+
+    yfinance sometimes lags a day or two after a call before reported_eps/surprise_pct actually
+    populate for it -- calling this once, right when the call happens, could easily see NaNs and
+    have nothing to store. So this writes nothing (status "not_yet_reported") until real numbers
+    show up, and the caller (finance.newsloop's earnings-result loop) is meant to keep calling this
+    once per run for as long as no stored record exists for `report_date` -- the same "no dedup
+    file needed, the absence of stored data IS the retry signal" pattern refresh_earnings_call's own
+    transcript search already uses. Bounded by EARNINGS_RESULT_WINDOW_AFTER_DAYS on the caller's
+    side, not in here.
+
+    Always returns a dict with a "status" key: "generated", "not_yet_reported", or "no_tile" (no row
+    at all for `report_date` in finance.data.get_earnings_history -- shouldn't normally happen since
+    the caller only calls this for a date that module itself just reported).
+    """
+    history = get_earnings_history(ticker)
+    row = history[history["earnings_date"].dt.date == report_date]
+    if row.empty:
+        return {"status": "no_tile"}
+    row = row.iloc[0]
+    if pd.isna(row["reported_eps"]) or pd.isna(row["surprise_pct"]):
+        return {"status": "not_yet_reported"}
+    event = {
+        "report_date": report_date.isoformat(),
+        "eps_estimate": None if pd.isna(row["eps_estimate"]) else float(row["eps_estimate"]),
+        "reported_eps": float(row["reported_eps"]),
+        "surprise_pct": float(row["surprise_pct"]),
+    }
+    _upsert_result(ticker, event)
+    return {**event, "status": "generated"}
+
+
+def _precise_next_call(ticker: str) -> dict | None:
+    """{"when": tz-aware datetime, "eps_estimate": float | None} for `ticker`'s next scheduled (not
+    yet reported) earnings call, or None if yfinance has nothing queued. A live yfinance call --
+    meant to be used only here, once per ticker actually inside its earnings-reminder window (see
+    refresh_earnings_reminder), never on app.py's own request path. yfinance reports these in the
+    exchange's own local time (typically America/New_York) -- kept tz-aware here (unlike
+    finance.data.get_earnings_history's own cached "earnings_date" column, which strips tz on
+    purpose for its own callers) specifically so app.py's card can convert it to Amsterdam time
+    correctly.
+    """
+    try:
+        raw = yf.Ticker(ticker).get_earnings_dates(limit=6)
+    except Exception:
+        return None
+    if raw is None or raw.empty:
+        return None
+    now = pd.Timestamp.now(tz=raw.index.tz)
+    upcoming = raw[raw.index > now].sort_index()
+    if upcoming.empty:
+        return None
+    row = upcoming.iloc[0]
+    estimate = row.get("EPS Estimate")
+    return {
+        "when": upcoming.index[0].to_pydatetime(),
+        "eps_estimate": None if pd.isna(estimate) else float(estimate),
+    }
+
+
+def _reported_quarters_summary(ticker: str, n: int = 4) -> list[dict]:
+    """The last `n` *reported* quarters (date/estimate/actual/surprise), oldest first -- a frozen
+    snapshot of exactly what app.py's card needs for its beat/miss streak text, computed once here
+    rather than the card re-deriving it from a live finance.data.get_earnings_history read.
+    """
+    history = get_earnings_history(ticker).dropna(subset=["reported_eps", "surprise_pct"])
+    history = history.sort_values("earnings_date").tail(n)
+    return [
+        {
+            "earnings_date": row["earnings_date"].date().isoformat(),
+            "eps_estimate": None if pd.isna(row["eps_estimate"]) else float(row["eps_estimate"]),
+            "reported_eps": float(row["reported_eps"]),
+            "surprise_pct": float(row["surprise_pct"]),
+        }
+        for _, row in history.iterrows()
+    ]
+
+
+def refresh_earnings_reminder(ticker: str, call_date: dt.date) -> dict:
+    """Precomputes everything app.py's earnings-reminder card needs for its numbers half -- the
+    precise call date/time, consensus EPS estimate, and last few reported quarters' beat/miss
+    streak -- as a static TYPE_REMINDER record in output/earnings/{ticker}.json, keyed on call_date
+    same as refresh_earnings_preview's own TYPE_PREVIEW entries (see _upsert_reminder). Meant to be
+    called whenever a ticker enters its earnings-reminder window, independently of whether
+    refresh_earnings_preview succeeds for that same cycle -- a Finnhub outage or LLM failure on the
+    narrative side shouldn't also blank out the plain, deterministic numbers side of the card.
+
+    Always returns a dict with a "status" key: "generated", or "no_tile" if yfinance had nothing
+    queued for this ticker right now, or its live next-call date no longer matches `call_date`
+    (e.g. the call got rescheduled since `call_date` was computed) -- caller should just skip and
+    retry next run rather than store a mismatched record.
+    """
+    precise = _precise_next_call(ticker)
+    if precise is None or precise["when"].date() != call_date:
+        return {"status": "no_tile"}
+    event = {
+        "call_date": call_date.isoformat(),
+        "when": precise["when"].isoformat(),
+        "eps_estimate": precise["eps_estimate"],
+        "reported_quarters": _reported_quarters_summary(ticker),
+    }
+    _upsert_reminder(ticker, event)
+    return {**event, "status": "generated"}
 
 
 def refresh_earnings_call(

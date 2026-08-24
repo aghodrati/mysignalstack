@@ -16,5 +16,44 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "call_date": "2026-08-27",
+    "when": "2026-08-27T16:00:00-04:00",
+    "eps_estimate": -0.45,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-08-28",
+        "eps_estimate": 0.22,
+        "reported_eps": 0.21,
+        "surprise_pct": -2.54
+      },
+      {
+        "earnings_date": "2025-11-06",
+        "eps_estimate": 0.14,
+        "reported_eps": 0.01,
+        "surprise_pct": -94.38
+      },
+      {
+        "earnings_date": "2026-02-05",
+        "eps_estimate": -0.25,
+        "reported_eps": -0.03,
+        "surprise_pct": 88.44
+      },
+      {
+        "earnings_date": "2026-05-08",
+        "eps_estimate": -0.26,
+        "reported_eps": -0.16,
+        "surprise_pct": 38.42
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "report_date": "2026-05-08",
+    "eps_estimate": -0.26,
+    "reported_eps": -0.16,
+    "surprise_pct": 38.42,
+    "type": "earnings_result"
   }
 ]

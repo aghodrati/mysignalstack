@@ -24,7 +24,6 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import streamlit.components.v1 as components
-import yfinance as yf
 from dotenv import load_dotenv
 
 # Loads .env into os.environ explicitly -- `uv run` does NOT do this automatically (confirmed
@@ -105,7 +104,13 @@ from finance.ranking import (
     percentile_rank_table,
 )
 from finance.positions import open_positions
-from finance.earnings_calls import latest_earnings_preview, load_earnings_call_history
+from finance.earnings_calls import (
+    latest_earnings_preview,
+    latest_earnings_reminder,
+    latest_earnings_result,
+    load_earnings_call_history,
+    load_earnings_result_history,
+)
 from finance.fundamentals import load_fundamental_history
 from finance.macro import (
     FINNHUB_PROXY_SYMBOLS,
@@ -1296,76 +1301,50 @@ def _earnings_call_card_html(ev: dict, ticker: str) -> str:
 _EARNINGS_REMINDER_WINDOW_DAYS = 3
 
 
-@st.cache_data(ttl=3600)
-def _next_earnings_info(ticker: str) -> dict | None:
-    """{"when": tz-aware datetime, "eps_estimate": float | None} for `ticker`'s next scheduled (not
-    yet reported) earnings call, or None if yfinance has nothing queued. yfinance reports these in
-    the exchange's own local time (typically America/New_York) -- kept tz-aware here (unlike
-    finance.data.get_earnings_history's own cached "earnings_date" column, which strips tz on
-    purpose for its own callers) specifically so _earnings_reminder_card_html can convert it to
-    Amsterdam time correctly. A live yfinance call, not a batch-pipeline artifact -- cheap/
-    deterministic, no LLM involved -- so cached for an hour here (same convention as
-    _cached_macro_snapshot) rather than persisted to disk like finance.data's own caches.
-    """
-    try:
-        raw = yf.Ticker(ticker).get_earnings_dates(limit=6)
-    except Exception:
-        return None
-    if raw is None or raw.empty:
-        return None
-    now = pd.Timestamp.now(tz=raw.index.tz)
-    upcoming = raw[raw.index > now].sort_index()
-    if upcoming.empty:
-        return None
-    row = upcoming.iloc[0]
-    estimate = row.get("EPS Estimate")
-    return {
-        "when": upcoming.index[0].to_pydatetime(),
-        "eps_estimate": None if pd.isna(estimate) else float(estimate),
-    }
-
-
-def _earnings_reminder_card_id(ticker: str, next_dt: dt.datetime) -> str:
+def _earnings_reminder_card_id(ticker: str, call_date: dt.date) -> str:
     # Keyed on the report's own date, not the exact datetime -- an intraday time correction from
     # yfinance shouldn't spawn a second reminder for the same call. This naturally becomes a fresh
     # unread card again once next quarter's call enters the reminder window.
-    return _card_id(ticker, "earnings_reminder", next_dt.date().isoformat())
+    return _card_id(ticker, "earnings_reminder", call_date.isoformat())
 
 
-def _earnings_reminder_card_html(ticker: str, next_dt: dt.datetime, eps_estimate: float | None, as_of: dt.date) -> str:
-    """Styled identically to every other keep-card. Front face is all real numbers, zero LLM cost:
-    the next call's date/time converted to Amsterdam (yfinance's own timezone, typically
-    America/New_York, is also shown alongside since that's the "official" market-hours reference),
-    the consensus EPS estimate if yfinance has one, and last quarter's surprise plus a short
-    beat/miss streak over its last 4 *reported* quarters -- the same finance.data.get_earnings_history
-    every other earnings display in this app already reads from.
-
-    Back face is finance.earnings_calls' short, Finnhub-grounded "what to watch" read (see that
-    module's own docstring for why it's grounded rather than a bare LLM guess -- an ungrounded
-    version asked for "specific numbers" fabricated a confident table of numbers from a stale,
-    completely wrong training-data snapshot when tested live). Numbers never come from the LLM side
-    of this card at all -- only the front face's real data does.
+def _earnings_reminder_card_html(ticker: str, reminder: dict, as_of: dt.date) -> str:
+    """Styled identically to every other keep-card. Both faces are read straight from `reminder`
+    (finance.earnings_calls.latest_earnings_reminder's stored TYPE_REMINDER record) and
+    finance.earnings_calls.latest_earnings_preview -- entirely static, zero live yfinance/Finnhub/
+    LLM calls at render time. Front face: the next call's date/time converted to Amsterdam
+    (yfinance's own timezone, typically America/New_York, is also shown alongside since that's the
+    "official" market-hours reference), the consensus EPS estimate if one was available when the
+    batch job ran, and last quarter's surprise plus a short beat/miss streak over the last few
+    *reported* quarters (reminder["reported_quarters"], a frozen snapshot -- see
+    finance.earnings_calls.refresh_earnings_reminder). Back face is finance.earnings_calls' short,
+    Finnhub-grounded "what to watch" read (see that module's own docstring for why it's grounded
+    rather than a bare LLM guess -- an ungrounded version asked for "specific numbers" fabricated a
+    confident table of numbers from a stale, completely wrong training-data snapshot when tested
+    live).
     """
+    next_dt = dt.datetime.fromisoformat(reminder["when"])
     amsterdam = next_dt.astimezone(ZoneInfo("Europe/Amsterdam"))
     et = next_dt.astimezone(ZoneInfo("America/New_York"))
 
+    eps_estimate = reminder.get("eps_estimate")
     estimate_html = ""
     if eps_estimate is not None:
         estimate_html = f'<div class="keep-card-context">Consensus estimate: ${eps_estimate:.2f} EPS</div>'
 
-    reported = get_earnings_history(ticker).dropna(subset=["reported_eps", "surprise_pct"])
-    reported = reported.sort_values("earnings_date").tail(4)
+    reported_quarters = reminder.get("reported_quarters") or []
     streak_html = ""
-    if not reported.empty:
-        last = reported.iloc[-1]
+    if reported_quarters:
+        last = reported_quarters[-1]
         beat = last["surprise_pct"] >= 0
         arrow_html = '<span style="color:#1baf7a">▲ beat</span>' if beat else '<span style="color:#e34948">▼ missed</span>'
-        beats = int((reported["surprise_pct"] >= 0).sum())
-        avg_surprise = reported["surprise_pct"].mean()
+        beats = sum(1 for q in reported_quarters if q["surprise_pct"] >= 0)
+        avg_surprise = sum(q["surprise_pct"] for q in reported_quarters) / len(reported_quarters)
         streak_html = (
             f'<div class="keep-card-meta">Last quarter: {arrow_html} by {abs(last["surprise_pct"]):.1f}% '
             f'(${last["reported_eps"]:.2f} vs ${last["eps_estimate"]:.2f} est.) · '
-            f'Beat in {beats}/{len(reported)} of last {len(reported)} quarters, avg {avg_surprise:+.1f}%</div>'
+            f'Beat in {beats}/{len(reported_quarters)} of last {len(reported_quarters)} quarters, '
+            f'avg {avg_surprise:+.1f}%</div>'
         )
 
     logo_html = _ticker_logo_html(ticker, size_em=1.4)
@@ -1381,7 +1360,7 @@ def _earnings_reminder_card_html(ticker: str, next_dt: dt.datetime, eps_estimate
     )
 
     preview = latest_earnings_preview(ticker)
-    if preview and preview.get("call_date") == next_dt.date().isoformat():
+    if preview and preview.get("call_date") == reminder["call_date"]:
         back_html = (
             f'<div class="keep-card-summary-title">\U0001f4ac What to watch</div>'
             f'<div class="keep-card-summary">{html.escape(preview["narrative"])}</div>'
@@ -1400,43 +1379,31 @@ def _upcoming_earnings_cards(as_of: dt.date) -> list[tuple[str, str]]:
     _EARNINGS_REMINDER_WINDOW_DAYS of `as_of` -- pinned at the top of the Recent page's own
     "Upcoming" section (see _render_recent_page), independent of that page's own Dates/Cards
     filters (a reminder you're about to miss shouldn't be one pill-click away from disappearing).
+
+    Entirely a static read of finance.earnings_calls.latest_earnings_reminder -- no live yfinance
+    call on this (or any) app.py request path anymore; run_loop_a's earnings-preview stage
+    (finance.newsloop, refresh_earnings_reminder) precomputes and stores that record for every
+    tracked ticker once it enters the window, independent of app.py ever running.
     """
-    # _next_earnings_info is cached for up to an hour (see its own docstring), so its "next call"
-    # can lag up to that long after the call actually happens -- checked again here, against the
-    # real current moment (not the date-only comparison below), so a reminder never lingers past
-    # its own event even mid-cache-window.
+    # A stored reminder can still be in the past by the time this renders (the call already
+    # happened since the last run_loop_a pass, or its record simply lingers) -- checked against the
+    # real current moment, not just the date-only window comparison below, so a stale record never
+    # shows as if it were still upcoming.
     now = dt.datetime.now(ZoneInfo("Europe/Amsterdam"))
-    cards: list[tuple[str, str]] = []
+    cards: list[tuple[int, str, str]] = []
     for ticker in tracked_universe():
-        # Cheap pre-filter first, using finance.data's own disk-cached earnings history (kept warm
-        # by run_loop_a's daily needs_transcript_check pass over every tracked ticker) -- avoids a
-        # live, per-ticker yfinance round-trip via _next_earnings_info for the whole universe on
-        # every cold page load. Only tickers whose cached next date already looks close to the
-        # reminder window get the slower, tz-aware precise check below. +/-1 day of slack around
-        # the window absorbs the exchange-local-vs-Amsterdam date-boundary shift that the naive
-        # cached date doesn't account for.
-        # reported_eps.isna() alone isn't "future" -- yfinance sometimes leaves it NaN on old
-        # rows it never backfilled (seen for real: an IREN row from 2024 with no reported_eps),
-        # which .min()'d straight past the genuine upcoming date and skipped the ticker entirely.
-        # Require the date itself to actually be upcoming too.
-        cached_history = get_earnings_history(ticker)
-        future_rows = cached_history[
-            cached_history["reported_eps"].isna() & (cached_history["earnings_date"].dt.date >= as_of)
-        ]
-        if future_rows.empty:
+        reminder = latest_earnings_reminder(ticker)
+        if reminder is None:
             continue
-        cached_next_date = future_rows["earnings_date"].min().date()
-        days_until_cached = (cached_next_date - as_of).days
-        if not (-1 <= days_until_cached <= _EARNINGS_REMINDER_WINDOW_DAYS + 1):
+        next_dt = dt.datetime.fromisoformat(reminder["when"])
+        if next_dt <= now:
             continue
-        info = _next_earnings_info(ticker)
-        if info is None or info["when"] <= now:
-            continue
-        amsterdam_date = info["when"].astimezone(ZoneInfo("Europe/Amsterdam")).date()
+        amsterdam_date = next_dt.astimezone(ZoneInfo("Europe/Amsterdam")).date()
         days_until = (amsterdam_date - as_of).days
         if 0 <= days_until <= _EARNINGS_REMINDER_WINDOW_DAYS:
-            cid = _earnings_reminder_card_id(ticker, info["when"])
-            card_html = _earnings_reminder_card_html(ticker, info["when"], info["eps_estimate"], as_of)
+            call_date = dt.date.fromisoformat(reminder["call_date"])
+            cid = _earnings_reminder_card_id(ticker, call_date)
+            card_html = _earnings_reminder_card_html(ticker, reminder, as_of)
             cards.append((days_until, cid, card_html))
     cards.sort(key=lambda item: item[0])  # soonest first, not newest-first like every other grid
     return [(cid, card_html) for _, cid, card_html in cards]
@@ -1445,43 +1412,31 @@ def _upcoming_earnings_cards(as_of: dt.date) -> list[tuple[str, str]]:
 _EARNINGS_RESULT_WINDOW_DAYS = 3
 
 
-def _latest_reported_earnings(ticker: str) -> pd.Series | None:
-    """`ticker`'s most recently *reported* quarter (reported_eps/surprise_pct both non-null), or
-    None if finance.data.get_earnings_history has nothing reported yet. Shared by
-    _recent_earnings_result_cards (the Recent page's pinned window) and _render_mixed_keep_cards
-    (the Ticker page's own windowed inclusion) so both agree on exactly which quarter counts as
-    "the last one."
-    """
-    hist = get_earnings_history(ticker).dropna(subset=["reported_eps", "surprise_pct"])
-    return hist.sort_values("earnings_date").iloc[-1] if not hist.empty else None
-
-
 def _earnings_result_card_id(ticker: str, report_date: str) -> str:
     return _card_id(ticker, "earnings_result", report_date)
 
 
-def _earnings_result_card_html(ticker: str, row: pd.Series, as_of: dt.date) -> str:
-    """A fast, LLM-free "results are in" card -- built purely from finance.data.
-    get_earnings_history's own reported_eps/surprise_pct (already cached, zero extra cost), meant
-    to fire the moment those numbers land, well before finance.earnings_calls' own transcript-based
-    card (_earnings_call_card_html) can possibly be ready -- that one needs the full call
-    transcript fetched and summarized by an LLM, which lags the actual print by a while. Same
-    "#Earnings Call" tag as that card -- both describe the same real-world event, just at very
-    different latency/depth, so they're meant to be seen as a fast headline followed later by the
-    fuller read, not two unrelated things.
+def _earnings_result_card_html(ticker: str, result: dict, as_of: dt.date) -> str:
+    """A fast, LLM-free "results are in" card -- built entirely from `result`
+    (finance.earnings_calls.latest_earnings_result's stored TYPE_RESULT record, itself sourced from
+    finance.data.get_earnings_history's own reported_eps/surprise_pct at generation time), meant to
+    fire well before finance.earnings_calls' own transcript-based card (_earnings_call_card_html)
+    can possibly be ready -- that one needs the full call transcript fetched and summarized by an
+    LLM, which lags the actual print by a while. Same "#Earnings Call" tag as that card -- both
+    describe the same real-world event, just at very different latency/depth, so they're meant to
+    be seen as a fast headline followed later by the fuller read, not two unrelated things.
     """
-    beat = row["surprise_pct"] >= 0
+    surprise_pct = result["surprise_pct"]
+    beat = surprise_pct >= 0
     arrow_html = '<span style="color:#1baf7a">▲ beat</span>' if beat else '<span style="color:#e34948">▼ missed</span>'
     logo_html = _ticker_logo_html(ticker, size_em=1.4)
-    report_date = row["earnings_date"]
-    report_date = report_date.date() if hasattr(report_date, "date") else report_date
     card_body = (
         f'<div class="keep-card-source">{logo_html}#Earnings Call #{html.escape(ticker)}</div>'
         f'<div class="keep-card-claim">\U0001f4ca Earnings results are in</div>'
         f'<div class="keep-card-context">'
-        f'{arrow_html} estimates by {abs(row["surprise_pct"]):.1f}% '
-        f'(${row["reported_eps"]:.2f} reported vs ${row["eps_estimate"]:.2f} est.)</div>'
-        f'<div class="keep-card-meta">{report_date.isoformat()}</div>'
+        f'{arrow_html} estimates by {abs(surprise_pct):.1f}% '
+        f'(${result["reported_eps"]:.2f} reported vs ${result["eps_estimate"]:.2f} est.)</div>'
+        f'<div class="keep-card-meta">{result["report_date"]}</div>'
     )
     return _flip_card_html(card_body, None)
 
@@ -1489,18 +1444,20 @@ def _earnings_result_card_html(ticker: str, row: pd.Series, as_of: dt.date) -> s
 def _recent_earnings_result_cards(as_of: dt.date) -> list[tuple[str, str]]:
     """(card_id, card_html) for every tracked ticker whose latest reported quarter landed within
     _EARNINGS_RESULT_WINDOW_DAYS of `as_of` -- the Recent page's own pinned "Just Reported" section
-    (see _render_recent_page), the after-the-fact counterpart to _upcoming_earnings_cards.
+    (see _render_recent_page), the after-the-fact counterpart to _upcoming_earnings_cards. Entirely
+    a static read of finance.earnings_calls.latest_earnings_result -- see that module's
+    refresh_earnings_result for how/when this gets precomputed.
     """
     cards: list[tuple[int, str, str]] = []
     for ticker in tracked_universe():
-        row = _latest_reported_earnings(ticker)
-        if row is None:
+        result = latest_earnings_result(ticker)
+        if result is None:
             continue
-        report_date = row["earnings_date"].date()
+        report_date = dt.date.fromisoformat(result["report_date"])
         days_since = (as_of - report_date).days
         if 0 <= days_since <= _EARNINGS_RESULT_WINDOW_DAYS:
-            cid = _earnings_result_card_id(ticker, report_date.isoformat())
-            card_html = _earnings_result_card_html(ticker, row, as_of)
+            cid = _earnings_result_card_id(ticker, result["report_date"])
+            card_html = _earnings_result_card_html(ticker, result, as_of)
             cards.append((days_since, cid, card_html))
     cards.sort(key=lambda item: item[0])  # most recent first
     return [(cid, card_html) for _, cid, card_html in cards]
@@ -1543,12 +1500,12 @@ def _render_mixed_keep_cards(
     # reported quarter. Only _recent_earnings_result_cards (the Recent page's pinned "Just
     # Reported" section) applies a freshness window -- that's a temporary attention-grabbing
     # banner, a separate concern from this permanent per-ticker history entry.
-    report_row = _latest_reported_earnings(ticker) if ticker else None
-    if report_row is not None:
-        report_date = report_row["earnings_date"].date()
+    result = latest_earnings_result(ticker) if ticker else None
+    if result is not None:
+        report_date = dt.date.fromisoformat(result["report_date"])
         dated.append((
-            report_date, _earnings_result_card_id(ticker, report_date.isoformat()),
-            _earnings_result_card_html(ticker, report_row, dt.date.today()),
+            report_date, _earnings_result_card_id(ticker, result["report_date"]),
+            _earnings_result_card_html(ticker, result, dt.date.today()),
         ))
     if not dated:
         st.caption("No cards to show.")
@@ -4753,29 +4710,21 @@ def _render_read_page() -> None:
         # _upcoming_earnings_cards/_recent_earnings_result_cards), but their read-mark should still
         # be findable here indefinitely, same as every other card type -- scanned by id rather than
         # re-applying that window, since a card marked read while fresh should stay findable after
-        # its window has long since passed. Only bothers with the precise, tz-aware
-        # _next_earnings_info live call when finance.data's own disk-cached history (already fetched
-        # below, and kept warm by run_loop_a) actually has a not-yet-reported row -- skips a live
-        # per-ticker yfinance round-trip for every ticker with nothing scheduled.
-        ticker_earnings_history = get_earnings_history(ticker)
-        has_upcoming = (
-            ticker_earnings_history["reported_eps"].isna()
-            & (ticker_earnings_history["earnings_date"].dt.date >= dt.date.today())
-        ).any()
-        if has_upcoming:
-            info = _next_earnings_info(ticker)
-            if info is not None:
-                cid = _earnings_reminder_card_id(ticker, info["when"])
-                if cid in read_ids:
-                    dated.append((
-                        info["when"].date(), cid,
-                        _earnings_reminder_card_html(ticker, info["when"], info["eps_estimate"], dt.date.today()),
-                    ))
-        for _, row in ticker_earnings_history.dropna(subset=["reported_eps", "surprise_pct"]).iterrows():
-            report_date = row["earnings_date"].date()
-            cid = _earnings_result_card_id(ticker, report_date.isoformat())
+        # its window has long since passed. Reminder lookup is a plain static read (see
+        # finance.earnings_calls.latest_earnings_reminder) -- no live yfinance call here at all.
+        reminder = latest_earnings_reminder(ticker)
+        if reminder is not None:
+            call_date = dt.date.fromisoformat(reminder["call_date"])
+            cid = _earnings_reminder_card_id(ticker, call_date)
             if cid in read_ids:
-                dated.append((report_date, cid, _earnings_result_card_html(ticker, row, dt.date.today())))
+                dated.append((call_date, cid, _earnings_reminder_card_html(ticker, reminder, dt.date.today())))
+        for result in load_earnings_result_history(ticker):
+            cid = _earnings_result_card_id(ticker, result["report_date"])
+            if cid in read_ids:
+                dated.append((
+                    dt.date.fromisoformat(result["report_date"]), cid,
+                    _earnings_result_card_html(ticker, result, dt.date.today()),
+                ))
 
     # The monthly-period narrative is now the back face of the same weekly card (see
     # _macro_narrative_card_html), not a separate card/id -- one lookup per tile, not two.
@@ -4825,25 +4774,19 @@ def _render_favorites_page() -> None:
             if cid in favorite_ids:
                 dated.append((dt.date.fromisoformat(ev["date"]), cid, _earnings_call_card_html(ev, ticker)))
         # See the matching comment in _render_read_page -- same reasoning, favorite_ids instead.
-        ticker_earnings_history = get_earnings_history(ticker)
-        has_upcoming = (
-            ticker_earnings_history["reported_eps"].isna()
-            & (ticker_earnings_history["earnings_date"].dt.date >= dt.date.today())
-        ).any()
-        if has_upcoming:
-            info = _next_earnings_info(ticker)
-            if info is not None:
-                cid = _earnings_reminder_card_id(ticker, info["when"])
-                if cid in favorite_ids:
-                    dated.append((
-                        info["when"].date(), cid,
-                        _earnings_reminder_card_html(ticker, info["when"], info["eps_estimate"], dt.date.today()),
-                    ))
-        for _, row in ticker_earnings_history.dropna(subset=["reported_eps", "surprise_pct"]).iterrows():
-            report_date = row["earnings_date"].date()
-            cid = _earnings_result_card_id(ticker, report_date.isoformat())
+        reminder = latest_earnings_reminder(ticker)
+        if reminder is not None:
+            call_date = dt.date.fromisoformat(reminder["call_date"])
+            cid = _earnings_reminder_card_id(ticker, call_date)
             if cid in favorite_ids:
-                dated.append((report_date, cid, _earnings_result_card_html(ticker, row, dt.date.today())))
+                dated.append((call_date, cid, _earnings_reminder_card_html(ticker, reminder, dt.date.today())))
+        for result in load_earnings_result_history(ticker):
+            cid = _earnings_result_card_id(ticker, result["report_date"])
+            if cid in favorite_ids:
+                dated.append((
+                    dt.date.fromisoformat(result["report_date"]), cid,
+                    _earnings_result_card_html(ticker, result, dt.date.today()),
+                ))
 
     # The monthly-period narrative is now the back face of the same weekly card (see
     # _macro_narrative_card_html), not a separate card/id -- one lookup per tile, not two.

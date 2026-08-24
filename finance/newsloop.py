@@ -104,7 +104,15 @@ from finance.loop_a_config import (
     max_article_chars,
     tracked_universe,
 )
-from finance.earnings_calls import latest_earnings_preview, refresh_earnings_preview
+from finance.earnings_calls import (
+    EARNINGS_RESULT_WINDOW_AFTER_DAYS,
+    latest_earnings_preview,
+    latest_earnings_reminder,
+    latest_earnings_result,
+    refresh_earnings_preview,
+    refresh_earnings_reminder,
+    refresh_earnings_result,
+)
 from finance.fundamentals import refresh_fundamentals as refresh_fundamentals_fn
 from finance.news import SEC_8K_SOURCE_PREFIX, fetch_full_page_text, get_news_from_sources, get_sec_8k_news
 from finance.portfolio import append_trade, current_state, execution_price, load_meta, rule_positions
@@ -354,6 +362,27 @@ def _upcoming_earnings_date(ticker: str, as_of: dt.date) -> dt.date | None:
         if pd.isna(row["reported_eps"]) and row["earnings_date"].date() >= as_of
     ]
     return min(future_dates) if future_dates else None
+
+
+def _recent_earnings_date(ticker: str, as_of: dt.date) -> dt.date | None:
+    """The most recent *past* earnings date for `ticker` within
+    finance.earnings_calls.EARNINGS_RESULT_WINDOW_AFTER_DAYS of `as_of`, or None -- the backward
+    mirror of _upcoming_earnings_date, for the earnings-result refresh loop below (which only cares
+    about a call that's already happened, not one still upcoming).
+    """
+    earnings = get_earnings_history(ticker)
+    if earnings.empty:
+        return None
+    past_dates = [
+        row["earnings_date"].date() for _, row in earnings.iterrows()
+        if row["earnings_date"].date() <= as_of
+    ]
+    if not past_dates:
+        return None
+    latest = max(past_dates)
+    if (as_of - latest).days > EARNINGS_RESULT_WINDOW_AFTER_DAYS:
+        return None
+    return latest
 
 
 def _earnings_trigger_date(ticker: str, as_of: dt.date) -> dt.date | None:
@@ -1293,26 +1322,35 @@ def update_research(
                 print(f"  [earnings-fundamentals] {ticker} -- rate limited{reason}, stopping here.")
             break
 
-    # Earnings-preview refresh (finance.earnings_calls.refresh_earnings_preview) -- a short, Finnhub-grounded "what to
-    # watch" read for a ticker whose next call is within EARNINGS_PREVIEW_WINDOW_DAYS, shown as the
-    # back face of app.py's earnings-reminder card. Every tracked ticker (not just
-    # list_tickers_with_thesis(), unlike the fundamentals refresh above) -- the reminder card itself
-    # shows for the whole tracked universe, so this should be available for any of them, not just
-    # ones with a synthesized thesis. One refresh per upcoming call: skip if finance.earnings_calls
-    # already has a stored preview for this exact call_date (refresh_earnings_preview upserts keyed
-    # on call_date -- see _upsert_preview) -- no separate dedup file needed, the real stored data
-    # already says whether this call's preview exists. This also means clearing/losing that stored
-    # entry (e.g. by hand) makes the next run regenerate it, rather than silently staying skipped
-    # forever behind a shadow cache that's disconnected from the actual data. Always runs regardless
-    # of include_claims, same reasoning as the fundamentals block too.
+    # Earnings-reminder + earnings-preview refresh (finance.earnings_calls) -- the two halves of
+    # app.py's earnings-reminder card, for a ticker whose next call is within
+    # EARNINGS_PREVIEW_WINDOW_DAYS. Every tracked ticker (not just list_tickers_with_thesis(),
+    # unlike the fundamentals refresh above) -- the reminder card itself shows for the whole tracked
+    # universe, so this should be available for any of them, not just ones with a synthesized
+    # thesis. Deliberately two independent dedup checks/writes (refresh_earnings_reminder vs
+    # refresh_earnings_preview), not one combined step -- a Finnhub/LLM hiccup on the preview side
+    # shouldn't also block the plain, deterministic numbers side from being generated (and vice
+    # versa, a stale reminder shouldn't block a preview retry). Both skip if finance.earnings_calls
+    # already has a stored entry for this exact call_date -- no separate dedup file needed, the real
+    # stored data already says whether this call's version exists; clearing/losing an entry by hand
+    # makes the next run regenerate it, rather than silently staying skipped forever behind a shadow
+    # cache disconnected from the actual data. Always runs regardless of include_claims, same
+    # reasoning as the fundamentals block too.
     for ticker, company_name in tracked_universe().items():
         call_date = _upcoming_earnings_date(ticker, as_of)
         if call_date is None:
             continue
         if (call_date - as_of).days > EARNINGS_PREVIEW_WINDOW_DAYS:
             continue
-        existing = latest_earnings_preview(ticker)
-        if existing and existing.get("call_date") == call_date.isoformat():
+
+        existing_reminder = latest_earnings_reminder(ticker)
+        if not (existing_reminder and existing_reminder.get("call_date") == call_date.isoformat()):
+            reminder = refresh_earnings_reminder(ticker, call_date)
+            if verbose:
+                print(f"  [earnings-reminder] {ticker}: {reminder.get('status')}")
+
+        existing_preview = latest_earnings_preview(ticker)
+        if existing_preview and existing_preview.get("call_date") == call_date.isoformat():
             continue
         try:
             preview = refresh_earnings_preview(ticker, company_name, call_date, as_of)
@@ -1326,6 +1364,26 @@ def update_research(
                 reason = f" ({exc.message})" if exc.message else ""
                 print(f"  [earnings-preview] {ticker} -- rate limited{reason}, stopping here.")
             break
+
+    # Earnings-result refresh (finance.earnings_calls.refresh_earnings_result) -- the static,
+    # LLM-free "results are in" counterpart to the reminder/preview loop above, for a call that
+    # already happened. No LLM/RateLimited concern here at all, unlike the preview loop, so this
+    # doesn't need a break-on-rate-limit escape hatch. Dedup is "no stored TYPE_RESULT record for
+    # this exact report_date yet" (see latest_earnings_result), same pattern as everything else in
+    # this file -- and since refresh_earnings_result itself only writes once yfinance has actually
+    # populated reported_eps/surprise_pct (it can lag the call by a day or two), that same "nothing
+    # stored yet" check doubles as the retry signal: a ticker whose numbers weren't ready yesterday
+    # just gets tried again today, no separate retry-tracking file needed.
+    for ticker in tracked_universe():
+        report_date = _recent_earnings_date(ticker, as_of)
+        if report_date is None:
+            continue
+        existing_result = latest_earnings_result(ticker)
+        if existing_result and existing_result.get("report_date") == report_date.isoformat():
+            continue
+        result = refresh_earnings_result(ticker, report_date)
+        if verbose:
+            print(f"  [earnings-result] {ticker}: {result.get('status')}")
 
     # Manual, opt-in fundamentals refresh -- run_loop_a.py's --refresh-fundamental flag, for
     # whenever you want fundamentals reconsidered right now rather than waiting for the earnings
