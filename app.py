@@ -825,6 +825,16 @@ def _inject_card_feed_iframe_css() -> None:
     )
 
 
+# Reset to False at the top of every script execution -- Streamlit reruns the whole file top to
+# bottom on each interaction, so this plain module-level assignment re-executes (and hence resets)
+# every rerun, the same way any other top-level statement in this file does; only st.session_state
+# actually persists across reruns. Used by _inject_native_card_css below to inject its <style> block
+# at most once per rerun even though a single page (e.g. Recent's Upcoming/Just Reported/main feed
+# sections) can call it 2-3 times -- the CSS is identical every time within one run, so repeating it
+# was just redundant HTML sent to the browser, not a correctness issue, but still worth not doing.
+_card_css_injected = False
+
+
 def _inject_native_card_css() -> None:
     """The card visual language (.keep-card/.keep-card-source/.keep-card-claim/.keep-flip-* etc.)
     lives ONLY inside components/card_feed/index.html's own <style> tag today -- scoped to that
@@ -839,7 +849,14 @@ def _inject_native_card_css() -> None:
     that since its document has nothing to inherit from; here `color: inherit` alone already picks
     up Streamlit's own theme-correct text color from its real ancestor elements, light or dark).
     Idempotent/cheap -- safe to call once per grid rendered, same as _inject_card_feed_iframe_css.
+    Guarded by `_card_css_injected` (see above) to actually only run once per rerun, not once per
+    call -- the CSS itself doesn't change within a single run, so a page calling this 2-3 times (once
+    per card section) doesn't need to re-send it each time.
     """
+    global _card_css_injected
+    if _card_css_injected:
+        return
+    _card_css_injected = True
     # User-adjustable via _render_card_display_settings' popover -- every card font-size below is
     # expressed as calc(base * var(--card-font-scale)) rather than a plain rem value, so one number
     # rescales every card on the page at once. The variable itself is injected via a tiny separate
@@ -981,28 +998,28 @@ def _show_more_cards(shown_key: str, current_shown: int) -> None:
 
 
 def _render_card_display_settings() -> None:
-    """Small "⚙️ Display" popover, right-aligned at the top of whichever card-listing page calls
-    this (Recent/Read/Favorites/Discovery/ticker pages -- see the one call site right before their
-    shared dispatch) -- lets the user pick the native grid's column count and a font-size scale for
-    card text, both read back out of st.session_state by _render_keep_card_grid_native/
-    _inject_native_card_css. Only meaningful in native mode (_CARD_GRID_MODE == "native") -- the
-    iframe version's real CSS grid already adapts column count on its own and has no equivalent
-    font-scale knob, so this renders nothing there rather than offering controls that do nothing.
+    """"⚙️ Settings" expander at the end of the sidebar panel -- lets the user pick the native
+    grid's column count and a font-size scale for card text, both read back out of st.session_state
+    by _render_keep_card_grid_native/_inject_native_card_css. Only meaningful in native mode
+    (_CARD_GRID_MODE == "native") -- the iframe version's real CSS grid already adapts column count
+    on its own and has no equivalent font-scale knob, so this renders nothing there rather than
+    offering controls that do nothing. Was a right-aligned "⚙️ Display" popover above the card grid,
+    repeated on every card-listing page -- moved into the sidebar (called once, at the end of its
+    `with st.sidebar:` block) since it's one global display preference, not something tied to
+    whichever page happens to be showing cards right now.
     """
     if _CARD_GRID_MODE != "native":
         return
-    _, popover_col = st.columns([6, 1])
-    with popover_col:
-        with st.popover("⚙️ Display", width="content"):
-            st.segmented_control(
-                "Columns", options=[2, 3], default=st.session_state.get("card_columns", _NATIVE_GRID_COLUMNS),
-                key="card_columns", required=True,
-            )
-            st.segmented_control(
-                "Text size", options=[0.85, 1.0, 1.15, 1.3],
-                format_func=lambda s: {0.85: "Small", 1.0: "Normal", 1.15: "Large", 1.3: "X-Large"}[s],
-                default=st.session_state.get("card_font_scale", 1.0), key="card_font_scale", required=True,
-            )
+    with st.expander("⚙️ Settings"):
+        st.segmented_control(
+            "Columns", options=[2, 3], default=st.session_state.get("card_columns", _NATIVE_GRID_COLUMNS),
+            key="card_columns", required=True,
+        )
+        st.segmented_control(
+            "Text size", options=[0.85, 1.0, 1.15, 1.3],
+            format_func=lambda s: {0.85: "Small", 1.0: "Normal", 1.15: "Large", 1.3: "X-Large"}[s],
+            default=st.session_state.get("card_font_scale", 1.0), key="card_font_scale", required=True,
+        )
 
 
 def _visible_cards_and_action(
@@ -5225,7 +5242,6 @@ def page_ticker() -> None:
                     on_click=_select_macro_view, args=(series_key,),
                     width="stretch",
                 )
-        st.divider()
         # Sector-grouped expanders of plain buttons, same visual structure the old sidebar's
         # QUICK_PICK_CATEGORIES pickers used -- buttons instead of st.pills specifically because
         # exactly one ticker must be selected *across every sector at once*; st.pills' selection
@@ -5249,8 +5265,8 @@ def page_ticker() -> None:
                         width="stretch",
                     )
         st.divider()
+        _render_card_display_settings()
     _maybe_close_sidebar_on_mobile()
-    _render_card_display_settings()
     if st.session_state["ticker_page_view"] == "recent":
         _render_recent_page()
         return
