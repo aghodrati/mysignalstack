@@ -123,7 +123,6 @@ def earnings_streak_candidates(
     universe_tickers: list[str],
     low_pct: float = 0.0,
     high_pct: float = 2.0,
-    earnings_history_limit: int = 8,
 ) -> pd.DataFrame:
     """Mild-beat-streak candidates: a ticker qualifies only on the single
     trading day before its next scheduled earnings report, and only if its
@@ -150,7 +149,7 @@ def earnings_streak_candidates(
     half_range = max((high_pct - low_pct) / 2, 1e-9)
     rows = []
     for t in universe_tickers:
-        earnings = get_earnings_history(t, limit=earnings_history_limit)
+        earnings = get_earnings_history(t)
         if earnings.empty:
             continue
         earnings = earnings.sort_values("earnings_date").reset_index(drop=True)

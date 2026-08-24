@@ -346,7 +346,7 @@ def _upcoming_earnings_date(ticker: str, as_of: dt.date) -> dt.date | None:
     _earnings_trigger_date, only ever looks forward, since the earnings-preview refresh is only
     meaningful before a call happens, not after.
     """
-    earnings = get_earnings_history(ticker, limit=4)
+    earnings = get_earnings_history(ticker)
     if earnings.empty:
         return None
     future_dates = [
@@ -364,7 +364,7 @@ def _earnings_trigger_date(ticker: str, as_of: dt.date) -> dt.date | None:
     past ones), not just the upcoming one, so a report that already
     happened 1 day ago still triggers.
     """
-    earnings = get_earnings_history(ticker, limit=4)
+    earnings = get_earnings_history(ticker)
     if earnings.empty:
         return None
     for earnings_date in earnings["earnings_date"].dt.date:
@@ -435,7 +435,7 @@ def compute_signal_bundle(ticker: str, as_of: dt.date) -> dict:
         if len(series) >= 21:
             signals["trailing_return_1m_pct"] = round(last / float(series.iloc[-21]) - 1, 4) * 100
 
-    earnings = get_earnings_history(ticker, limit=4).dropna(subset=["reported_eps", "surprise_pct"])
+    earnings = get_earnings_history(ticker).dropna(subset=["reported_eps", "surprise_pct"])
     if not earnings.empty:
         last_report = earnings.sort_values("earnings_date").iloc[-1]
         days_since = (pd.Timestamp(as_of) - last_report["earnings_date"]).days

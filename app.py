@@ -904,17 +904,22 @@ def _render_card_display_settings() -> None:
 
 def _visible_cards_and_action(
     cards: list[tuple[str, str]], show_read: bool, show_favorites: bool, primary_action: str | None,
-) -> tuple[list[tuple[str, str]], str, int]:
+) -> tuple[list[tuple[str, str]], str, int, set[str]]:
     """Shared filtering logic both grid implementations need: which cards are visible right now,
-    what their primary action is, and how many were hidden (read cards not currently being shown).
+    what their primary action is, how many were hidden (read cards not currently being shown), and
+    the full favorite-id set (both grid renderers need it too, to badge/star already-favorited
+    cards -- returned from here rather than fetched a second time by each caller, since this
+    function already needs favorite_ids itself on the Favorites page; each read_state call is a
+    real network round-trip to Upstash, and duplicating it was adding a second ~seconds-scale delay
+    on top of the favorite/unfavorite button's own write on every click).
     See _render_keep_card_grid_native's docstring for what show_read/show_favorites/primary_action
     each mean -- unchanged from the iframe version, just factored out so both share one definition.
     """
     read_ids = read_state.read_ids(_CURRENT_USER)
+    favorite_ids = read_state.favorite_ids(_CURRENT_USER)
     if primary_action is not None:
         visible = cards
     elif show_favorites:
-        favorite_ids = read_state.favorite_ids(_CURRENT_USER)
         visible = [(cid, body) for cid, body in cards if cid in favorite_ids]
         primary_action = "unfavorite"
     elif show_read:
@@ -924,7 +929,7 @@ def _visible_cards_and_action(
         visible = [(cid, body) for cid, body in cards if cid not in read_ids]
         primary_action = "read"
     hidden_count = len(cards) - len(visible) if not show_read and not show_favorites else 0
-    return visible, primary_action, hidden_count
+    return visible, primary_action, hidden_count, favorite_ids
 
 
 _ACTION_BUTTON_LABEL = {
@@ -971,14 +976,15 @@ def _render_keep_card_grid_native(
     """
     if not cards:
         return
-    visible, primary_action, hidden_count = _visible_cards_and_action(cards, show_read, show_favorites, primary_action)
+    visible, primary_action, hidden_count, favorite_ids = _visible_cards_and_action(
+        cards, show_read, show_favorites, primary_action,
+    )
     if hidden_count:
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
     if not visible:
         return
     _inject_native_card_css()
     show_favorite_toggle = primary_action in ("read", "unread")
-    favorite_ids = read_state.favorite_ids(_CURRENT_USER)
     # Paginated, not all of `visible` at once -- Streamlit streams UI updates to the browser AS the
     # script executes (not batched at the end), and every card here is 3-4 separate real Streamlit
     # widgets (a container, the markdown, a button row), so a page with a couple hundred cards was
@@ -1076,8 +1082,9 @@ def _render_keep_card_grid_iframe(
     """
     if not cards:
         return
-    favorite_ids = read_state.favorite_ids(_CURRENT_USER)
-    visible, primary_action, hidden_count = _visible_cards_and_action(cards, show_read, show_favorites, primary_action)
+    visible, primary_action, hidden_count, favorite_ids = _visible_cards_and_action(
+        cards, show_read, show_favorites, primary_action,
+    )
     if hidden_count:
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
     if not visible:
@@ -1346,7 +1353,7 @@ def _earnings_reminder_card_html(ticker: str, next_dt: dt.datetime, eps_estimate
     if eps_estimate is not None:
         estimate_html = f'<div class="keep-card-context">Consensus estimate: ${eps_estimate:.2f} EPS</div>'
 
-    reported = get_earnings_history(ticker, limit=6).dropna(subset=["reported_eps", "surprise_pct"])
+    reported = get_earnings_history(ticker).dropna(subset=["reported_eps", "surprise_pct"])
     reported = reported.sort_values("earnings_date").tail(4)
     streak_html = ""
     if not reported.empty:
@@ -1412,7 +1419,7 @@ def _upcoming_earnings_cards(as_of: dt.date) -> list[tuple[str, str]]:
         # rows it never backfilled (seen for real: an IREN row from 2024 with no reported_eps),
         # which .min()'d straight past the genuine upcoming date and skipped the ticker entirely.
         # Require the date itself to actually be upcoming too.
-        cached_history = get_earnings_history(ticker, limit=4)
+        cached_history = get_earnings_history(ticker)
         future_rows = cached_history[
             cached_history["reported_eps"].isna() & (cached_history["earnings_date"].dt.date >= as_of)
         ]
@@ -1445,7 +1452,7 @@ def _latest_reported_earnings(ticker: str) -> pd.Series | None:
     (the Ticker page's own windowed inclusion) so both agree on exactly which quarter counts as
     "the last one."
     """
-    hist = get_earnings_history(ticker, limit=6).dropna(subset=["reported_eps", "surprise_pct"])
+    hist = get_earnings_history(ticker).dropna(subset=["reported_eps", "surprise_pct"])
     return hist.sort_values("earnings_date").iloc[-1] if not hist.empty else None
 
 
@@ -2965,7 +2972,7 @@ def render_pead_tab() -> None:
     universe_tickers = sorted(STOCK_TICKER_TO_NAME)
 
     with st.spinner("Fetching earnings history (one request per stock, cached after first run)..."):
-        earnings_by_ticker = {t: get_earnings_history(t, limit=EARNINGS_LOOKBACK_QUARTERS) for t in universe_tickers}
+        earnings_by_ticker = {t: get_earnings_history(t) for t in universe_tickers}
 
     col0, col1, col2, col3 = st.columns(4)
     with col0:
@@ -3185,7 +3192,7 @@ def render_pead_tab() -> None:
         for i, t in enumerate(sidebar_tickers):
             hist = earnings_by_ticker.get(t)
             if hist is None:  # a sidebar pick outside the fixed universe_tickers set (e.g. typed in)
-                hist = get_earnings_history(t, limit=EARNINGS_LOOKBACK_QUARTERS)
+                hist = get_earnings_history(t)
             hist = hist.dropna(subset=["reported_eps", "surprise_pct"])
             if hist.empty:
                 continue
@@ -3616,7 +3623,7 @@ def render_weekly_tab() -> None:
 
     st.subheader("Upcoming earnings (next 7 days)")
     with st.spinner("Fetching earnings calendar..."):
-        earnings_by_ticker = {t: get_earnings_history(t, limit=4, refresh=weekly_refresh) for t in universe_tickers}
+        earnings_by_ticker = {t: get_earnings_history(t, refresh=weekly_refresh) for t in universe_tickers}
     upcoming_rows = []
     for t, earnings in earnings_by_ticker.items():
         if earnings.empty:
@@ -4750,7 +4757,7 @@ def _render_read_page() -> None:
         # _next_earnings_info live call when finance.data's own disk-cached history (already fetched
         # below, and kept warm by run_loop_a) actually has a not-yet-reported row -- skips a live
         # per-ticker yfinance round-trip for every ticker with nothing scheduled.
-        ticker_earnings_history = get_earnings_history(ticker, limit=6)
+        ticker_earnings_history = get_earnings_history(ticker)
         has_upcoming = (
             ticker_earnings_history["reported_eps"].isna()
             & (ticker_earnings_history["earnings_date"].dt.date >= dt.date.today())
@@ -4818,7 +4825,7 @@ def _render_favorites_page() -> None:
             if cid in favorite_ids:
                 dated.append((dt.date.fromisoformat(ev["date"]), cid, _earnings_call_card_html(ev, ticker)))
         # See the matching comment in _render_read_page -- same reasoning, favorite_ids instead.
-        ticker_earnings_history = get_earnings_history(ticker, limit=6)
+        ticker_earnings_history = get_earnings_history(ticker)
         has_upcoming = (
             ticker_earnings_history["reported_eps"].isna()
             & (ticker_earnings_history["earnings_date"].dt.date >= dt.date.today())

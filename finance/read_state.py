@@ -40,6 +40,13 @@ _STORE_PATHS = {
     "favorite": Path("output/favorite_state.json"),
 }
 
+# Module-level, not created fresh per call: a plain requests.post() each time pays a new TCP+TLS
+# handshake per request, which is most of the latency to Upstash's REST endpoint given how small
+# the actual payload is. A shared Session keeps the underlying connection alive (HTTP keep-alive)
+# across the several read_state calls a single button click's rerun makes (see
+# _visible_cards_and_action), so only the first call in a run pays the handshake.
+_session = requests.Session()
+
 # The only user today -- see this module's own docstring re: why "user" exists as a real dimension
 # from day one anyway. Centralized here (rather than duplicated as a local constant in app.py and
 # every finance.* module that needs to mark a card unread on overwrite) so there's exactly one
@@ -75,7 +82,7 @@ def _upstash_command(command: list[str]) -> dict | None:
         return None
     url, token = config
     try:
-        response = requests.post(
+        response = _session.post(
             url, headers={"Authorization": f"Bearer {token}"}, json=command, timeout=10,
         )
         response.raise_for_status()

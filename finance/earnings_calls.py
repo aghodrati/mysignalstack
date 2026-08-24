@@ -101,7 +101,7 @@ def needs_transcript_check(ticker: str, as_of: dt.date) -> bool:
     empty earnings history, so a data gap means "check it" rather than silently never checking a
     ticker again.
     """
-    earnings = get_earnings_history(ticker, limit=4)
+    earnings = get_earnings_history(ticker)
     if earnings.empty:
         return True
     window_earnings_date = None

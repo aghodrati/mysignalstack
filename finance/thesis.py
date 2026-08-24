@@ -317,7 +317,7 @@ def _reported_earnings_dict(ticker: str) -> dict | None:
     yfinance-backed read, not persisted anywhere of its own -- cheap/deterministic, no LLM
     involved, so nothing to cache beyond finance.data's own.
     """
-    history = get_earnings_history(ticker, limit=6).dropna(subset=["reported_eps", "surprise_pct"])
+    history = get_earnings_history(ticker).dropna(subset=["reported_eps", "surprise_pct"])
     if history.empty:
         return None
     row = history.sort_values("earnings_date").iloc[-1]
