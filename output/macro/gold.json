@@ -1,9 +1,9 @@
 [
   {
-    "week": "2026-W34",
-    "date": "2026-08-21",
-    "value": 4654.10009765625,
-    "delta": 6.248292425676838,
+    "period": "week",
+    "date": "2026-08-23",
+    "value": 4680.60009765625,
+    "delta": 6.853260022033081,
     "history": [
       [
         "2026-08-17",
@@ -23,148 +23,44 @@
       ],
       [
         "2026-08-21",
-        4654.10009765625
+        4680.60009765625
       ]
     ],
-    "narrative": "Gold's modest weekly gain was most plausibly supported by softer US data\u2014especially the headline that it ticked up after lower retail sales\u2014and safe-haven demand linked to Hormuz risks. The reported dollar slide after a Treasury-bond move also favored gold, although the small advance and limited headline quality suggest no single decisive catalyst.",
-    "has_clear_driver": true,
+    "narrative": "Gold's modest weekly gain appears to reflect improving safe-haven and diversification sentiment rather than a decisive catalyst. The headlines \"Ray Dalio Says Dump Bonds, Buy Gold\" and \"Gold Hits 3-Month Highs\" are directionally supportive, but they describe sentiment and market performance more than a fresh fundamental driver; \"The Market Is Trying To Tell Us Something About 2027\" is too broad to explain this week's move.",
+    "has_clear_driver": false,
     "headlines_used": [
       {
-        "title": "Gold prices today , Monday , August 17 , 2026 : Gold ticks up after lower retail sales report",
-        "domain": "finance.yahoo.com",
-        "date": "20260817"
+        "title": "The Market Is Trying To Tell Us Something About 2027",
+        "domain": "SeekingAlpha",
+        "date": "20260822"
       },
       {
-        "title": "Gold standard is reborn amid central bank surge",
-        "domain": "finance.yahoo.com",
-        "date": "20260818"
+        "title": "Ray Dalio Says Dump Bonds, Buy Gold: 4 ETFs in Focus as US Debt Risks Rise",
+        "domain": "Benzinga",
+        "date": "20260821"
       },
       {
-        "title": "Gold and Silver Prices Are Rising . Here Which Precious Metal May Have More Upside",
-        "domain": "fool.com",
-        "date": "20260817"
+        "title": "Is Gold Back?",
+        "domain": "SeekingAlpha",
+        "date": "20260821"
       },
       {
-        "title": "Gold and Silver Prices Are Rising . Here Which Precious Metal May Have More Upside",
-        "domain": "fool.com",
-        "date": "20260818"
-      },
-      {
-        "title": "Gold Tops $4 , 500 as Dollar Slides After Treasury Bond Move",
-        "domain": "econotimes.com",
-        "date": "20260820"
-      },
-      {
-        "title": "Gold Prices Rise as Weak US Data and Hormuz Risks Boost Safe - Haven Demand",
-        "domain": "econotimes.com",
-        "date": "20260817"
-      },
-      {
-        "title": "Safe Haven Pet Sanctuary facing zoning hurdles while looking for permanent home",
-        "domain": "fox11online.com",
-        "date": "20260820"
-      },
-      {
-        "title": "First Safe Haven Baby Box installed in Camdenton",
-        "domain": "krcgtv.com",
-        "date": "20260820"
-      },
-      {
-        "title": "No Safe Haven | HISTORY",
-        "domain": "play.history.com",
-        "date": "20260820"
-      },
-      {
-        "title": "  We will likely be homeless again Oct 30  says Safe Haven Pet Sanctuary | 101 WIXX",
-        "domain": "wixx.com",
-        "date": "20260817"
-      },
-      {
-        "title": "Gold Price Hits Two - Month High Here Why",
-        "domain": "forbes.com",
-        "date": "20260819"
-      },
-      {
-        "title": "SC Congresswoman Proposes Death Penalty Return In DC",
-        "domain": "knst.iheart.com",
-        "date": "20260814"
-      },
-      {
-        "title": "SC Congresswoman Proposes Death Penalty Return In DC",
-        "domain": "wdov.iheart.com",
-        "date": "20260814"
-      },
-      {
-        "title": "SC Congresswoman Proposes Death Penalty Return In DC",
-        "domain": "wjdx.iheart.com",
-        "date": "20260814"
-      },
-      {
-        "title": "Maine Jewish leadership elects to turn a blind eye",
-        "domain": "centralmaine.com",
-        "date": "20260815"
-      },
-      {
-        "title": "Barrick Mining ( B ) Cleared Its IPO Hurdle . Why Did Shares Fall 6 %? ",
-        "domain": "insidermonkey.com",
-        "date": "20260814"
-      },
-      {
-        "title": "Republican lawmaker moves to bring death penalty back to DC",
-        "domain": "wlos.com",
-        "date": "20260814"
-      },
-      {
-        "title": "Availability in Memory Care",
-        "domain": "wiscassetnewspaper.com",
-        "date": "20260818"
-      },
-      {
-        "title": "Availability in Memory Care",
-        "domain": "wiscassetnewspaper.com",
-        "date": "20260818"
-      },
-      {
-        "title": "Availability in Memory Care",
-        "domain": "boothbayregister.com",
-        "date": "20260818"
-      },
-      {
-        "title": "Availability in Memory Care",
-        "domain": "boothbayregister.com",
-        "date": "20260818"
-      },
-      {
-        "title": "Republican lawmaker moves to bring death penalty back to DC",
-        "domain": "wwmt.com",
-        "date": "20260814"
-      },
-      {
-        "title": "Republican lawmaker moves to bring death penalty back to DC",
-        "domain": "wcyb.com",
-        "date": "20260814"
-      },
-      {
-        "title": "Republican lawmaker moves to bring death penalty back to DC",
-        "domain": "cbs12.com",
-        "date": "20260814"
-      },
-      {
-        "title": "Why are gold prices falling ? 4 factors that are impacting gold value",
-        "domain": "cbsnews.com",
-        "date": "20260814"
+        "title": "Bitcoin Jumps Above $77,000, Gold Hits 3-Month Highs: Stock Market Today",
+        "domain": "Benzinga",
+        "date": "20260821"
       }
     ],
     "fetch_succeeded": true,
+    "week": "2026-W34",
     "direction": "bullish",
-    "confidence": "medium",
-    "trade_worthy": true
+    "confidence": "low",
+    "trade_worthy": false
   },
   {
     "period": "month",
-    "date": "2026-08-22",
-    "value": 4624.10009765625,
-    "delta": 14.27123970897155,
+    "date": "2026-08-23",
+    "value": 4680.60009765625,
+    "delta": 15.667473550628497,
     "history": [
       [
         "2026-07-23",
@@ -252,26 +148,46 @@
       ],
       [
         "2026-08-21",
-        4624.10009765625
+        4680.60009765625
       ]
     ],
-    "narrative": "Gold edged higher by 14.27 over the month, but the two listed headlines are duplicates and offer only a broad warning that Washington fiscal dysfunction is becoming a global risk. That theme could provide modest safe-haven support, yet there is no clear, specific rate, inflation, or fiscal catalyst here to explain the move or establish a strong forward signal.",
-    "has_clear_driver": false,
+    "narrative": "Gold\u2019s sharp advance was most plausibly driven by renewed demand for a debt and currency hedge, with the \u201cRay Dalio Says Dump Bonds, Buy Gold\u201d headline and Pan American Silver\u2019s \u201cweak U.S. dollar\u201d hedge framing reinforcing that theme. Momentum likely amplified the move after gold broke above the closely watched 200-day moving average near $4,513, as noted by Benzinga; this is a clearer bullish setup than a purely headline-driven drift.",
+    "has_clear_driver": true,
     "headlines_used": [
       {
-        "title": "Column : Washington fiscal dysfunction is becoming a global risk",
-        "domain": "haitisun.com",
+        "title": "The Market Is Trying To Tell Us Something About 2027",
+        "domain": "SeekingAlpha",
         "date": "20260822"
       },
       {
-        "title": "Column : Washington fiscal dysfunction is becoming a global risk",
-        "domain": "bignewsnetwork.com",
-        "date": "20260822"
+        "title": "Ray Dalio Says Dump Bonds, Buy Gold: 4 ETFs in Focus as US Debt Risks Rise",
+        "domain": "Benzinga",
+        "date": "20260821"
+      },
+      {
+        "title": "Is Gold Back?",
+        "domain": "SeekingAlpha",
+        "date": "20260821"
+      },
+      {
+        "title": "Bitcoin Jumps Above $77,000, Gold Hits 3-Month Highs: Stock Market Today",
+        "domain": "Benzinga",
+        "date": "20260821"
+      },
+      {
+        "title": "BZ Analysis: Gold Surged Above $4,600 An Ounce On Friday And Is Up More Than 14% In August, Putting It On Track For Its Biggest Monthly Gain Since 1999; The Metal Is Also Trading Above All Key Moving Averages, Having Broken \u200babove The Closely Watched 200-Day Moving Average Of Around $4,513",
+        "domain": "Benzinga",
+        "date": "20260821"
+      },
+      {
+        "title": "Pan American Silver: Deep Value Gold & Silver As A Hedge Against A Weak U.S. Dollar",
+        "domain": "SeekingAlpha",
+        "date": "20260821"
       }
     ],
     "fetch_succeeded": true,
-    "direction": "neutral",
-    "confidence": "low",
-    "trade_worthy": false
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

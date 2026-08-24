@@ -1,6 +1,6 @@
 """An independent fundamental read on a company -- deliberately NOT scored against any particular
 news-driven thesis or direction (contrast the old design, where this judged "support" for a draft
-Stage B thesis). finance.tickerthesis instead feeds the latest snapshot straight into Stage C's own
+Stage B thesis). finance.thesis instead feeds the latest snapshot straight into Stage C's own
 aggregation prompt as context, so the thesis LLM weighs claims and fundamentals together itself,
 rather than a separate numeric blend applied after the fact. This also means a snapshot can be
 generated for any tracked ticker at any time, independent of whether it has any claims or a
@@ -23,11 +23,11 @@ the model as grounding, so "key_changes" narrates real numbers rather than guess
 JSON blobs.
 
 Persisted in this module's own per-ticker store (output/fundamentals/{ticker}.json), a plain
-append-only list same convention as finance.thesis/finance.tickerthesis/finance.portfolio -- but a
-genuinely separate file from finance.tickerthesis's own per-ticker event log, not just a different
+append-only list same convention as finance.positions/finance.thesis/finance.portfolio -- but a
+genuinely separate file from finance.thesis's own per-ticker event log, not just a different
 event type mixed into it. That split (not just the LLM call itself) is what makes fundamentals
 truly independent: they can be inspected, cleared, or backed up without touching a ticker's
-aggregated-thesis/critic history at all, and finance.tickerthesis never has to know this file
+aggregated-thesis/critic history at all, and finance.thesis never has to know this file
 exists to blend its result in -- it just calls `refresh_fundamentals`.
 """
 
@@ -191,7 +191,7 @@ def load_fundamental_history(ticker: str) -> list[dict]:
     """Every fundamental snapshot ever stored for `ticker`, oldest first -- independent of whether
     this ticker has any thesis/claims at all. The one place callers should read snapshots from;
     app.py's Ticker page renders these as their own foldable card grid, and
-    finance.tickerthesis.aggregate_claims takes the latest one as context (see refresh_fundamentals).
+    finance.thesis.aggregate_claims takes the latest one as context (see refresh_fundamentals).
     """
     path = _path(ticker)
     return json.loads(path.read_text()) if path.exists() else []
@@ -221,8 +221,8 @@ def refresh_fundamentals(ticker: str, as_of: dt.date, trigger: str | None = None
     """The one entry point every caller needs: computes `ticker`'s current factors, generates a
     fresh standalone fundamental_snapshot (grounded in deltas vs. the last stored one), persists it
     as the newest entry in this ticker's own fundamentals file, and returns it. Never touches
-    finance.tickerthesis's aggregated-thesis/critic log at all -- callers that want the result
-    folded into a thesis (finance.tickerthesis.update_ticker_thesis) pass the returned dict into
+    finance.thesis's aggregated-thesis/critic log at all -- callers that want the result
+    folded into a thesis (finance.thesis.update_ticker_thesis) pass the returned dict into
     aggregate_claims themselves; finance.newsloop's earnings-window trigger calls this directly and
     just lets the snapshot sit here for display/next Stage C run.
 

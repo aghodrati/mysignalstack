@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-08-23",
+    "transcript_date": "2026-08-11",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/08/11/amd-amd-q2-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "guidance_summary": "Q3 2026 revenue guided to approximately $13.0 billion, plus or minus $300 million, implying 41% year-over-year growth at the midpoint. Non-GAAP gross margin is expected to remain approximately 56%, with operating expenses of about $3.65 billion; management gave no specific capex guidance. Management expects server CPU revenue to grow more than 80% year over year in the second half of 2026, more than 70% in 2027, and total data center revenue to more than double year over year in 2027, while substantially exceeding its prior long-term targets of 35% revenue growth and $20 annual EPS.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "Analysts questioned whether data center growth and the implied 2027 GPU revenue trajectory were being understated. Su repeatedly emphasized that data center AI growth would be well above 100% in 2027, said the cited GPU revenue framework was too low, and characterized OpenAI, Meta, and Anthropic demand as very strong.",
+      "Analysts pressed on Helios gross margins during the initial ramp. Hu acknowledged that data center AI margins are slightly below the company average and avoided giving a quarterly margin profile, citing mix, improving yields, server CPU growth, and embedded recovery as offsets.",
+      "On supply constraints, Su gave unusually direct detail: server CPU supply is currently tight because demand was unforecasted, but 2027 supply should improve. She cited wafers, back-end capacity, packaging, substrates, and other components as potential constraints, while saying AMD has enough visibility to support the stated growth.",
+      "When asked about revenue per gigawatt and 2027 capacity, Su provided only a broad double-digit-billion-dollar monetization range and said AMD has supply to more than meet current guidance, with upside dependent on customer data-center build timing and additional capacity."
+    ],
+    "risks": [
+      "Server CPU and Helios ramps are dependent on tight supply chains spanning advanced-node wafers, packaging, substrates, HBM, and other system components.",
+      "Initial Helios products are highly complex and early yields are expected to improve over the next several quarters, creating execution and margin risk during ramp.",
+      "Data center AI margins are currently slightly below AMD's corporate average, and 2027 gross margin will depend heavily on the mix between accelerator and higher-margin CPU revenue.",
+      "Customer data-center readiness, power availability, and build-out timing could delay or change the cadence of the large 2027 deployments.",
+      "Management expects a softer PC market in the second half of 2026 as memory and component costs rise, while gaming remains pressured by the console cycle and higher component costs.",
+      "The very large 2027 outlook relies on successful execution with a limited group of strategic AI customers and continued ROCm ecosystem adoption."
+    ],
+    "summary": "AMD reported a highly bullish quarter, with 50% revenue growth, 56% gross margin, data center revenue above half of company sales, and major upward revisions to its long-term opportunity and earnings trajectory. The Q&A reinforced strong CPU demand and substantial Helios upside, although management was less specific on accelerator revenue cadence and margins and acknowledged supply, yield, customer build-out, and memory-cost risks.",
+    "type": "earnings_transcript"
+  }
+]

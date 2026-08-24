@@ -87,5 +87,50 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.746,
     "confidence_after": 0.746
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-08-24",
+    "thesis": "AMD has a bullish but execution-sensitive setup as accelerating server-CPU demand, Helios and MI455X adoption, and expanding inference opportunities support strong 2026-2027 growth, while software gaps, supply constraints, competitive custom silicon, and demanding valuation cap near-term upside.",
+    "direction": "long",
+    "confidence": 0.74,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.74,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Q3 2026 revenue of approximately $13.0 billion and 56% non-GAAP gross margin are achieved or exceeded.",
+      "Server CPU revenue grows more than 80% year over year in the second half of 2026 and more than 70% in 2027 as Turin and Venice gain share.",
+      "Microsoft's Azure Helios deployment and the planned Anthropic 2GW AMD deployment convert into material MI455X and platform revenue.",
+      "Helios and MI455X ramp successfully in late 2026, improving AMD's rack-scale AI share and supporting a more credible Nvidia alternative.",
+      "ROCm, vLLM, ATOM, and related upstream software work closes production gaps in long-context and distributed agentic inference.",
+      "HBM, wafer, packaging, substrate, and backend capacity expands sufficiently to support accelerator and CPU demand."
+    ],
+    "invalidation": [
+      "Helios ramps slowly because of yield, flyover-cabling, backplane, retimer, power, or reliability problems, with margins remaining below expectations.",
+      "AMD remains materially disadvantaged in production long-context agentic inference because ATOM lacks production features and key optimizations fail to reach mainstream software stacks.",
+      "HBM and broader supply constraints cap MI355X or MI455X shipments and prevent AMD from converting strong demand into revenue.",
+      "Hyperscalers increasingly shift AI and server spending to custom accelerators, internally designed Arm CPUs, Cerebras systems, or Broadcom and Marvell platforms.",
+      "Meta uses a customized cut-down MI455X configuration or favors Nvidia's standard systems, reducing expected AMD volume and strategic validation.",
+      "Customer data-center build-outs, power availability, or utilization fall short of the assumptions behind the large 2027 outlook, while high valuation multiples compress on slower growth or weaker margins."
+    ],
+    "reasoning": "The long direction is supported by the 50% revenue-growth earnings-call picture, confident guidance for 2026-2027 data-center growth, a real EPS beat of $1.66 versus $1.61 estimates (3.21%), and independently corroborated 37.8% revenue and 91.2% earnings growth, but confidence is moderated by roughly 37x forward earnings, 14.4% operating margin, supply and ramp risks, and persistent Nvidia-related software and competitive disadvantages.",
+    "claims_considered": 115
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-24",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.74,
+    "confidence_after": 0.74
   }
 ]

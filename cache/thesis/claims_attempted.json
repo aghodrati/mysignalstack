@@ -505,5 +505,13 @@
     "MU",
     "NVDA",
     "UBER"
+  ],
+  "https://newsletter.semianalysis.com/p/are-open-models-catching-up": [
+    "GOOGL",
+    "META"
+  ],
+  "https://newsletter.semianalysis.com/p/agentx-inferencexv3-does-cuda-moat": [
+    "AMD",
+    "NVDA"
   ]
 }

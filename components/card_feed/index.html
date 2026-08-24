@@ -99,22 +99,25 @@
   details.keep-card-flip summary::marker { content: ""; }
   .keep-flip-summary { perspective: 1200px; }
   .keep-flip-inner {
-    position: relative;
+    /* Both faces stacked in the same grid cell (grid-area: 1/1 below), not the more common
+       position:absolute-for-the-back approach -- that sizes the card to the FRONT face only
+       (back becomes an overlay matching that height, needing its own internal scrollbar whenever
+       its content is taller). A shared grid cell still accounts for both children's intrinsic
+       height when sizing the row, so the card is always exactly as tall as whichever face is
+       taller, and neither face ever needs to scroll internally. */
+    display: grid;
     width: 100%;
     transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-style: preserve-3d;
   }
   details[open] .keep-flip-inner { transform: rotateY(180deg); }
   .keep-flip-front, .keep-flip-back {
+    grid-area: 1 / 1;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
   }
-  .keep-flip-front { position: relative; }
   .keep-flip-back {
-    position: absolute;
-    inset: 0;
     transform: rotateY(180deg);
-    overflow-y: auto;
   }
   .keep-card-summary-title { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.4rem; }
   .keep-card-summary { font-size: 0.8rem; opacity: 0.85; line-height: 1.4; }
@@ -194,7 +197,7 @@ function buildCell(card) {
   });
   wrapper.appendChild(star);
 
-  const btnLabel = { unread: "Unread", unfavorite: "Unfavorite" }[card.action] || "Mark read";
+  const btnLabel = { unread: "Unread", unfavorite: "Unfavorite", discard: "Discard" }[card.action] || "Mark read";
   const btn = document.createElement("button");
   btn.className = "card-action-btn";
   btn.textContent = btnLabel;

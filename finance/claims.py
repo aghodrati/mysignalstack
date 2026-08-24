@@ -2,7 +2,7 @@
 (`extract_claims`): a permanent, global, immutable record of what each
 individual article implied about a ticker. One article can produce zero,
 one, or several distinct claims about the same ticker -- each stored here
-forever, never edited afterward. finance.tickerthesis's aggregator reads
+forever, never edited afterward. finance.thesis's aggregator reads
 across every claim ever collected for a ticker to synthesize the current
 tradable view; this module only owns the raw evidence, not the synthesis.
 
@@ -26,7 +26,7 @@ CLAIMS_DIR = Path("output/claims")
 Direction = Literal["long", "short"]
 
 # Valid range for any expected_horizon_days -- both a single claim's (finance.newsloop.extract_claims)
-# and a ticker-thesis's aggregate one (finance.tickerthesis.aggregate_claims). A claim's own horizon
+# and a ticker-thesis's aggregate one (finance.thesis.aggregate_claims). A claim's own horizon
 # is informational (fed to the aggregator as context), not used to route it anywhere -- every claim
 # for a ticker, regardless of horizon, feeds the same single TickerThesis.
 HORIZON_MIN_DAYS = 7
@@ -48,7 +48,7 @@ class ArticleClaim:
     expected_return_pct: float
     expected_horizon_days: int
     # No longer asked of Stage B (finance.newsloop.extract_claims) -- catalysts/invalidation only
-    # make sense relative to a chosen direction, and Stage C (finance.tickerthesis.aggregate_claims)
+    # make sense relative to a chosen direction, and Stage C (finance.thesis.aggregate_claims)
     # already synthesizes its own from the full claim set regardless of whether individual claims
     # have them, so this was redundant cost/complexity. Kept as dataclass fields (always empty for
     # any claim extracted from here on) only so older stored claims with real values still load.

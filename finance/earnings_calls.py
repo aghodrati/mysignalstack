@@ -1,10 +1,29 @@
-"""An independent read on a company's most recent earnings call -- same "standalone card, own
-per-ticker store" design as finance.fundamentals, but sourced from the call transcript itself
-(guidance, management tone, analyst Q&A) rather than yfinance factors. Deliberately NOT scored
-against any particular news thesis, for the same reason finance.fundamentals isn't: a single
-number tied to "does this support direction X" stops meaning anything once X changes.
+"""Everything this app knows about a ticker's earnings calls, past and upcoming, in one per-ticker
+store (output/earnings/{ticker}.json) -- a flat, date-ordered list of events, each tagged
+with a "type" so two genuinely different kinds of record can share one file/history instead of
+each needing its own directory:
 
-Three parts:
+  - TYPE_TRANSCRIPT ("earnings_transcript"): an independent read on a company's most recent
+    earnings call, sourced from the call transcript itself (guidance, management tone, analyst
+    Q&A) rather than yfinance factors. Deliberately NOT scored against any particular news thesis,
+    for the same reason finance.fundamentals isn't: a single number tied to "does this support
+    direction X" stops meaning anything once X changes. Entries from before this "type" field
+    existed have none -- treated as TYPE_TRANSCRIPT (see _entry_type), since that was the only
+    kind of entry this file ever held until preview events were folded in.
+  - TYPE_PREVIEW ("earnings_preview"): a short, news-grounded "what to watch" read ahead of a
+    ticker's *next* call -- forward-looking, unlike the transcript read above which only exists
+    *after* a call happened. Was previously its own module/directory (finance.earnings_preview,
+    output/earnings_preview/) -- merged in here since it's the same underlying thing (a snapshot
+    about a ticker's earnings call at a point in time) and having every caller import from two
+    near-identical per-ticker-JSON modules was more indirection than the split bought.
+
+A ticker's *reported results* (beat/miss, surprise %) are deliberately NOT a third type here --
+those already come for free, always fresh, from finance.data.get_earnings_history's own yfinance-
+backed cache (see app.py's _latest_reported_earnings), with no LLM cost and nothing to dedupe/
+retry, so persisting a redundant copy here would just be a second, staler source of the same
+numbers to keep in sync.
+
+Three transcript-side parts:
 
 `discover_recent_transcripts`/`_find_latest_transcript` (no LLM): locates the most recent
 transcript for a ticker on The Motley Fool (fool.com/earnings/call-transcripts/...), which
@@ -51,11 +70,60 @@ from pathlib import Path
 import requests
 import trafilatura
 
+from finance.data import get_earnings_history
 from finance.llm import complete
 from finance.loop_a_config import llm_config, max_article_chars
+from finance.news_sources import fetch_finnhub_headlines, select_diverse_headlines
 from finance import read_state
 
-TRANSCRIPTS_DIR = Path("output/earnings_calls")
+EARNINGS_DIR = Path("output/earnings")
+
+# Gates the discovery search (Fool listing lookup is free/sitewide, but a ticker not on it falls
+# back to a live per-ticker DuckDuckGo search -- real network cost, run-loop wall-clock time, and
+# the exact kind of repeated automated traffic that trips DDG's anti-bot check) to tickers actually
+# near an earnings date, same spirit as finance.newsloop's fundamentals earnings-window trigger.
+# No BEFORE window at all, unlike that one -- a transcript can't exist before the call happens, so
+# checking early would only ever waste a search. AFTER stays open for a week since Fool/DDG
+# sometimes lag the call itself by a few days before indexing it, but not the ~2 weeks an earlier
+# version of this gate allowed -- see needs_transcript_check below for what actually closes the
+# window early once the transcript's been found, rather than relying on a short AFTER alone.
+TRANSCRIPT_WINDOW_BEFORE_DAYS = 0
+TRANSCRIPT_WINDOW_AFTER_DAYS = 7
+
+
+def needs_transcript_check(ticker: str, as_of: dt.date) -> bool:
+    """True if `ticker` should get a live discovery search right now: `as_of` falls within
+    TRANSCRIPT_WINDOW_{BEFORE,AFTER}_DAYS of one of its last few scheduled/reported earnings dates
+    (checks every date get_earnings_history returns, not just the next upcoming one), AND the
+    transcript already on record (if any) predates *that* earnings date -- so once this cycle's
+    transcript has actually been found and stored, checking stops for the rest of the window instead
+    of re-searching every single day until AFTER_DAYS closes it. Fails open (returns True) on an
+    empty earnings history, so a data gap means "check it" rather than silently never checking a
+    ticker again.
+    """
+    earnings = get_earnings_history(ticker, limit=4)
+    if earnings.empty:
+        return True
+    window_earnings_date = None
+    for earnings_date in earnings["earnings_date"].dt.date:
+        window_start = earnings_date - dt.timedelta(days=TRANSCRIPT_WINDOW_BEFORE_DAYS)
+        window_end = earnings_date + dt.timedelta(days=TRANSCRIPT_WINDOW_AFTER_DAYS)
+        if window_start <= as_of <= window_end:
+            window_earnings_date = earnings_date
+            break
+    if window_earnings_date is None:
+        return False
+    previous = latest_earnings_call(ticker)
+    if previous is None:
+        return True
+    stored_date = dt.date.fromisoformat(previous["transcript_date"])
+    return stored_date < window_earnings_date
+
+TYPE_TRANSCRIPT = "earnings_transcript"
+TYPE_PREVIEW = "earnings_preview"
+
+_PREVIEW_HEADLINE_LIMIT = 15
+_PREVIEW_MAX_PER_DOMAIN = 2
 
 _USER_AGENT = {"User-Agent": "Mozilla/5.0"}
 _LISTING_URL = "https://www.fool.com/earnings-call-transcripts/"
@@ -299,7 +367,7 @@ def earnings_call_snapshot(
         f'"summary": "2-3 sentence overview of the whole call"}}'
     )
 
-    raw = complete(prompt, max_tokens=700, **llm_config())
+    raw = complete(prompt, max_tokens=1400, **llm_config())
     if not raw:
         return None
     data = _extract_json(raw)
@@ -317,13 +385,35 @@ def earnings_call_snapshot(
 
 
 def _path(ticker: str) -> Path:
-    return TRANSCRIPTS_DIR / f"{ticker}.json"
+    return EARNINGS_DIR / f"{ticker}.json"
+
+
+def _entry_type(event: dict) -> str:
+    """An entry predating the "type" field (every one stored before preview events were folded in
+    here) was always a transcript-read event -- see this module's own docstring.
+    """
+    return event.get("type", TYPE_TRANSCRIPT)
+
+
+def _load_all(ticker: str) -> list[dict]:
+    """Every event ever stored for `ticker`, of any type, oldest first -- internal; callers want
+    one of the type-filtered accessors below instead.
+    """
+    path = _path(ticker)
+    return json.loads(path.read_text()) if path.exists() else []
+
+
+def _save_all(ticker: str, history: list[dict]) -> None:
+    path = _path(ticker)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(history, indent=2))
 
 
 def load_earnings_call_history(ticker: str) -> list[dict]:
-    """Every earnings call snapshot ever stored for `ticker`, oldest first."""
-    path = _path(ticker)
-    return json.loads(path.read_text()) if path.exists() else []
+    """Every transcript-read snapshot ever stored for `ticker` (TYPE_TRANSCRIPT only -- excludes
+    any preview events in the same file), oldest first.
+    """
+    return [e for e in _load_all(ticker) if _entry_type(e) == TYPE_TRANSCRIPT]
 
 
 def latest_earnings_call(ticker: str) -> dict | None:
@@ -331,16 +421,48 @@ def latest_earnings_call(ticker: str) -> dict | None:
     return history[-1] if history else None
 
 
-def _append(ticker: str, event: dict) -> None:
-    path = _path(ticker)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    history = load_earnings_call_history(ticker)
+def load_earnings_preview_history(ticker: str) -> list[dict]:
+    """Every earnings-preview read ever stored for `ticker` (TYPE_PREVIEW only), oldest first."""
+    return [e for e in _load_all(ticker) if _entry_type(e) == TYPE_PREVIEW]
+
+
+def latest_earnings_preview(ticker: str) -> dict | None:
+    history = load_earnings_preview_history(ticker)
+    return history[-1] if history else None
+
+
+def _append_transcript(ticker: str, event: dict) -> None:
+    event = {**event, "type": TYPE_TRANSCRIPT}
+    history = _load_all(ticker)
     # Same reasoning as finance.fundamentals._append -- app.py's card id is keyed off ticker+date,
     # so a second snapshot landing on the same date would otherwise inherit a stale read-mark.
-    if any(e.get("date") == event.get("date") for e in history):
+    # Scoped to TYPE_TRANSCRIPT entries only -- a preview event sharing the same "date" (when it
+    # was generated, not the call date) is a coincidence, not the same card.
+    if any(_entry_type(e) == TYPE_TRANSCRIPT and e.get("date") == event.get("date") for e in history):
         read_state.mark_unread(read_state.CURRENT_USER, read_state.card_id(ticker, "earnings_call", event["date"]))
     history.append(json.loads(json.dumps(event, default=str)))
-    path.write_text(json.dumps(history, indent=2))
+    _save_all(ticker, history)
+
+
+def _upsert_preview(ticker: str, event: dict) -> None:
+    """Same "one row per real-world thing this describes" upsert finance.macro's narrative storage
+    uses, just keyed on "call_date" (the upcoming call this preview is *for*) rather than a week/
+    month bucket -- re-running before that call happens overwrites the same entry in place instead
+    of appending a fresh one every time.
+    """
+    event = {**event, "type": TYPE_PREVIEW}
+    history = _load_all(ticker)
+    serialized = json.loads(json.dumps(event, default=str))
+    existing_idx = next(
+        (i for i, e in enumerate(history)
+         if _entry_type(e) == TYPE_PREVIEW and e.get("call_date") == event["call_date"]),
+        None,
+    )
+    if existing_idx is not None:
+        history[existing_idx] = serialized
+    else:
+        history.append(serialized)
+    _save_all(ticker, history)
 
 
 def refresh_earnings_call(
@@ -397,7 +519,7 @@ def refresh_earnings_call(
     if snapshot is None:
         return None
 
-    _append(ticker, {
+    _append_transcript(ticker, {
         "date": as_of.isoformat(),
         "transcript_date": transcript_date.isoformat(),
         "transcript_url": url,
@@ -411,3 +533,59 @@ def refresh_earnings_call(
         "summary": snapshot["summary"],
     })
     return snapshot
+
+
+# ---------------------------------------------------------------------------
+# Earnings preview -- TYPE_PREVIEW, a forward-looking "what to watch" read ahead of a ticker's
+# *next* call (see module docstring). No transcript involved; grounded in real recent headlines
+# from finance.news_sources instead.
+# ---------------------------------------------------------------------------
+
+
+def _preview_prompt(ticker: str, company_name: str, call_date: dt.date, headlines_text: str) -> str:
+    return (
+        f"Real recent headlines mentioning {company_name} ({ticker}), via Finnhub, from the last 7 days:\n"
+        f"{headlines_text}\n\n"
+        f"{ticker} reports earnings on {call_date.isoformat()}. In 3-4 sentences, based only on the "
+        f"headlines above plus your own general knowledge of the company, what should investors be "
+        f"watching for in this call? What are your thoughts and expectations for the upcoming "
+        f"earnings? Be concrete and specific where the headlines actually support it. Do not state "
+        f"specific financial figures (revenue, EPS, price targets, etc.) unless they appear verbatim "
+        f"in a headline above -- if you don't have real numbers to cite, describe the dynamic in "
+        f"words instead of guessing a number."
+    )
+
+
+def refresh_earnings_preview(ticker: str, company_name: str, call_date: dt.date, as_of: dt.date) -> dict:
+    """The one entry point every caller needs: fetches this week's Finnhub company-news headlines
+    for `ticker`, asks the LLM for a short grounded preview of the `call_date` earnings call, and
+    upserts the result as a TYPE_PREVIEW entry (keyed on call_date -- see _upsert_preview).
+
+    Always returns a dict with a "status" key, same convention as finance.macro.
+    refresh_macro_narrative:
+      "generated"          -- a preview was produced and stored; "narrative"/"headlines_used" present.
+      "news_unavailable"   -- the Finnhub fetch itself failed (missing API key, rate-limited,
+                              network error) -- no LLM call was made, nothing was stored, safe to
+                              retry anytime.
+      "llm_failed"         -- the LLM call ran but produced nothing usable.
+    Propagates RateLimited, same as every other Stage call (via finance.llm.complete).
+    """
+    raw = fetch_finnhub_headlines(ticker, days=7)
+    if raw is None:
+        return {"status": "news_unavailable"}
+    headlines = select_diverse_headlines(raw, limit=_PREVIEW_HEADLINE_LIMIT, max_per_domain=_PREVIEW_MAX_PER_DOMAIN)
+    headlines_text = (
+        "\n".join(f'- ({h["date"]}, {h["domain"]}) {h["title"]}' for h in headlines)
+        if headlines else "(no relevant headlines found this week)"
+    )
+    prompt = _preview_prompt(ticker, company_name, call_date, headlines_text)
+    narrative = complete(prompt, max_tokens=400, **llm_config())
+    if narrative is None:
+        return {"status": "llm_failed"}
+
+    event = {
+        "status": "generated", "date": as_of.isoformat(), "call_date": call_date.isoformat(),
+        "narrative": narrative.strip(), "headlines_used": headlines,
+    }
+    _upsert_preview(ticker, {k: v for k, v in event.items() if k != "status"})
+    return event

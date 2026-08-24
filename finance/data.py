@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import time
 from pathlib import Path
 
 import pandas as pd
@@ -132,6 +133,8 @@ def get_intraday_closes(
     return closes
 
 
+_EARNINGS_CACHE_MAX_AGE_SECONDS = 20 * 3600  # see get_earnings_history
+
 def get_earnings_history(ticker: str, limit: int = 12, refresh: bool = False) -> pd.DataFrame:
     """EPS estimate/actual/surprise% for one ticker, oldest first. Columns:
     earnings_date (tz-naive), eps_estimate, reported_eps, surprise_pct.
@@ -142,12 +145,21 @@ def get_earnings_history(ticker: str, limit: int = 12, refresh: bool = False) ->
     `.dropna(subset=["reported_eps", "surprise_pct"])`.
 
     This is a per-ticker scrape (yfinance has no batched earnings endpoint), so
-    it's cached aggressively — each ticker is its own network round-trip.
+    it's cached aggressively — each ticker is its own network round-trip. Unlike
+    get_prices/get_volume, this cache also self-expires after
+    _EARNINGS_CACHE_MAX_AGE_SECONDS (~20h): a rescheduled or newly-announced call
+    date needs to surface within about a day on its own, not stay frozen at
+    whatever was true the first time this ticker was ever fetched -- callers like
+    run_loop_a's daily needs_transcript_check/_upcoming_earnings_date and app.py's
+    earnings-reminder card all read this same cache without passing refresh=True
+    themselves.
     """
     cache_path = _cache_key([ticker], str(limit), "", "earnings", label="earnings")
 
     if cache_path.exists() and not refresh:
-        return pd.read_csv(cache_path, index_col=0, parse_dates=["earnings_date"])
+        age_seconds = time.time() - cache_path.stat().st_mtime
+        if age_seconds < _EARNINGS_CACHE_MAX_AGE_SECONDS:
+            return pd.read_csv(cache_path, index_col=0, parse_dates=["earnings_date"])
 
     raw = yf.Ticker(ticker).get_earnings_dates(limit=limit)
     columns = ["earnings_date", "eps_estimate", "reported_eps", "surprise_pct"]

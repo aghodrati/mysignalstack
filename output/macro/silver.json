@@ -1,0 +1,198 @@
+[
+  {
+    "period": "month",
+    "date": "2026-08-23",
+    "value": 69.52999877929688,
+    "delta": 20.2982774065946,
+    "history": [
+      [
+        "2026-07-23",
+        57.79800033569336
+      ],
+      [
+        "2026-07-24",
+        58.65599822998047
+      ],
+      [
+        "2026-07-27",
+        58.47200012207031
+      ],
+      [
+        "2026-07-28",
+        57.29600143432617
+      ],
+      [
+        "2026-07-29",
+        57.862998962402344
+      ],
+      [
+        "2026-07-30",
+        58.814998626708984
+      ],
+      [
+        "2026-07-31",
+        57.59099960327149
+      ],
+      [
+        "2026-08-03",
+        57.66699981689453
+      ],
+      [
+        "2026-08-04",
+        60.055999755859375
+      ],
+      [
+        "2026-08-05",
+        62.0989990234375
+      ],
+      [
+        "2026-08-06",
+        61.43899917602539
+      ],
+      [
+        "2026-08-07",
+        63.332000732421875
+      ],
+      [
+        "2026-08-10",
+        65.10600280761719
+      ],
+      [
+        "2026-08-11",
+        64.76899719238281
+      ],
+      [
+        "2026-08-12",
+        65.55500030517578
+      ],
+      [
+        "2026-08-13",
+        64.87300109863281
+      ],
+      [
+        "2026-08-14",
+        64.98799896240234
+      ],
+      [
+        "2026-08-17",
+        66.12100219726562
+      ],
+      [
+        "2026-08-18",
+        63.94100189208984
+      ],
+      [
+        "2026-08-19",
+        65.73400115966797
+      ],
+      [
+        "2026-08-20",
+        68.0260009765625
+      ],
+      [
+        "2026-08-21",
+        69.52999877929688
+      ]
+    ],
+    "narrative": "The month\u2019s surge was most plausibly driven by a combination of strong precious-metals positioning around dollar/debt concerns and reported Chinese buying: headlines such as \u201cChinese Buying Lifts Gold And Silver From Technical Support\u201d and \u201cSilver: The Ultimate Asset To Own During The Upcoming Debt Crisis\u201d directly support that interpretation. However, the coverage is largely bullish commentary rather than a single definitive catalyst, so the persistence of the move is less certain after such a sharp advance.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Retirees Have A Dollar Problem, Here's The Trade",
+        "domain": "SeekingAlpha",
+        "date": "20260823"
+      },
+      {
+        "title": "Pan American Silver: Deep Value Gold & Silver As A Hedge Against A Weak U.S. Dollar",
+        "domain": "SeekingAlpha",
+        "date": "20260821"
+      },
+      {
+        "title": "Silver: The Ultimate Asset To Own During The Upcoming Debt Crisis",
+        "domain": "SeekingAlpha",
+        "date": "20260819"
+      },
+      {
+        "title": "Investors Are Betting Big on Gold Again, but Silver Is Still the Better Buy",
+        "domain": "Yahoo",
+        "date": "20260814"
+      },
+      {
+        "title": "Best-Performing ETF Areas of Last Week",
+        "domain": "Yahoo",
+        "date": "20260811"
+      },
+      {
+        "title": "Chinese Buying Lifts Gold And Silver From Technical Support; Jobs Report Shocker And Iran Hopium Trigger Aggressive Stock Buying",
+        "domain": "Benzinga",
+        "date": "20260807"
+      },
+      {
+        "title": "Gold\u2019s Historic Weekly Surge Has Only Seven Parallels in 40 Years",
+        "domain": "Benzinga",
+        "date": "20260807"
+      },
+      {
+        "title": "What's Behind the Silver Rally Wednesday?",
+        "domain": "Benzinga",
+        "date": "20260805"
+      },
+      {
+        "title": "Bullish on Silver? This 2X ETF Doubles Your Bet and Your Risk",
+        "domain": "Yahoo",
+        "date": "20260728"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-08-23",
+    "value": 69.52999877929688,
+    "delta": 6.9889824112329135,
+    "history": [
+      [
+        "2026-08-17",
+        66.12100219726562
+      ],
+      [
+        "2026-08-18",
+        63.94100189208984
+      ],
+      [
+        "2026-08-19",
+        65.73400115966797
+      ],
+      [
+        "2026-08-20",
+        68.0260009765625
+      ],
+      [
+        "2026-08-21",
+        69.52999877929688
+      ]
+    ],
+    "narrative": "Silver's sharp weekly gain was plausibly supported by renewed investment demand around dollar debasement and weakness: Seeking Alpha's \u201cRetirees Have A Dollar Problem, Here's The Trade\u201d and \u201cPan American Silver: Deep Value Gold & Silver As A Hedge Against A Weak U.S. Dollar\u201d both frame precious metals as beneficiaries of a weaker dollar. However, these are broad positioning narratives rather than a specific new catalyst, so the move may also reflect broader momentum and macro positioning.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Retirees Have A Dollar Problem, Here's The Trade",
+        "domain": "SeekingAlpha",
+        "date": "20260823"
+      },
+      {
+        "title": "Pan American Silver: Deep Value Gold & Silver As A Hedge Against A Weak U.S. Dollar",
+        "domain": "SeekingAlpha",
+        "date": "20260821"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W34",
+    "direction": "bullish",
+    "confidence": "low",
+    "trade_worthy": false
+  }
+]

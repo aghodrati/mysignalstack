@@ -31,19 +31,18 @@
     "CRWV": {"name": "CoreWeave", "sector": "AI Infrastructure"},
     "IREN": {"name": "IREN", "sector": "AI Infrastructure"},
     "SKHY": {"name": "SK Hynix", "sector": "Semiconductors"},
-    "TMSC": {"name": "TMSC", "sector": "Semiconductors"},
     "CBRS": {"name": "Cerebras", "sector": "AI Infrastructure"}
   },
   "news_sources": [
-    {"name": "SemiAnalysis", "url": "https://newsletter.semianalysis.com/feed", "active": true, "frequency": "~1-2 articles/week"},
-    {"name": "Stratechery", "url": "https://stratechery.com/feed/", "active": true, "frequency": "~1 free article/week (+3 paid Daily Updates/week)"},
+    {"name": "SemiAnalysis", "url": "https://newsletter.semianalysis.com/feed", "active": true, "frequency": "~1-2 articles/week", "discovery_model": "primary"},
+    {"name": "Stratechery", "url": "https://stratechery.com/feed/", "active": true, "frequency": "~1 free article/week (+3 paid Daily Updates/week)", "discovery_model": "primary"},
     {"name": "Next Platform", "url": "https://www.nextplatform.com/feed/", "active": true, "frequency": "unverified, trade press, likely several/day", "full_page_fetch": true},
-    {"name": "The Diff", "url": "https://www.thediff.co/archive/rss/", "active": true, "frequency": "~daily (5x/week) free tier"},
-    {"name": "Citrini Research", "url": "https://citriniresearch.com/feed", "active": true, "frequency": "~2-3 in-depth pieces/year (infrequent)"},
+    {"name": "The Diff", "url": "https://www.thediff.co/archive/rss/", "active": true, "frequency": "~daily (5x/week) free tier", "discovery_model": "primary"},
+    {"name": "Citrini Research", "url": "https://citriniresearch.com/feed", "active": true, "frequency": "~2-3 in-depth pieces/year (infrequent)", "discovery_model": "primary"},
     {"name": "Semiconductor Engineering", "url": "https://semiengineering.com/feed/", "active": true, "frequency": "unverified, ~weekly cadence per their own site"},
-    {"name": "Cassandra Unchained", "url": "https://michaeljburry.substack.com/feed", "active": true, "frequency": "major pieces ~every 2-3 weeks, plus more frequent short trading posts"},
-    {"name": "Doomberg", "url": "https://newsletter.doomberg.com/feed", "active": true, "frequency": "~1.5-2 articles/week (6-8/month)"},
-    {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": true, "frequency": "unverified, daily briefing, exact count unclear"}
+    {"name": "Cassandra Unchained", "url": "https://michaeljburry.substack.com/feed", "active": true, "frequency": "major pieces ~every 2-3 weeks, plus more frequent short trading posts", "discovery_model": "primary"},
+    {"name": "Doomberg", "url": "https://newsletter.doomberg.com/feed", "active": true, "frequency": "~1.5-2 articles/week (6-8/month)", "discovery_model": "primary"},
+    {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": true, "frequency": "unverified, daily briefing, exact count unclear", "discovery_model": "none"}
   ],
   "llm": {
     "provider": "openrouter",

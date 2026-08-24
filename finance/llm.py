@@ -6,7 +6,7 @@ only owns the provider/API key, the model list, and the HTTP call.
 Two providers are supported (both OpenAI-compatible chat-completion APIs,
 just a different base URL/API key): Groq and OpenRouter. `complete` defaults
 to Groq + MODEL_CANDIDATES below if a caller doesn't pass its own models.
-Loop A's own calls (finance.newsloop, finance.tickerthesis,
+Loop A's own calls (finance.newsloop, finance.thesis,
 finance.fundamentals, finance.critic) instead pass
 provider/models/reasoning_models sourced from
 finance.loop_a_config.llm_config(), so config_loop_a.json's "llm" section

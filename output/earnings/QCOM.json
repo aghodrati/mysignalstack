@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-08-23",
+    "transcript_date": "2026-08-07",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/qualcomm-qcom-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.78,
+    "guidance_summary": "Q4 revenue guided to $9.7-$10.5 billion and non-GAAP EPS to $2.05-$2.25 billion, with QCT revenue of $8.4-$9.0 billion and QCT EBT margin of 23%-25%. Handset revenue is expected at approximately $5.2 billion, with Android growth offsetting lower Apple revenue; IoT is expected to be roughly flat year over year and automotive to grow about 60% year over year. Management expects approximately $2.7 billion of non-GAAP operating expenses. Longer term, QCT non-handset revenue is targeted at over $40 billion by fiscal 2029, including $5 billion of data center revenue in fiscal 2027 and $15 billion in fiscal 2029, while automotive exits fiscal 2026 at an approximately $7 billion annualized run rate.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "Analysts pressed on whether double-digit pricing increases could damage already weak handset demand; management said the increases are broadly applied, largely pass through higher costs, and should be small relative to the memory bill-of-materials increase.",
+      "On the accelerated Apple decline, management rejected the characterization that Qualcomm is intentionally starving Apple, attributing the lower-than-20% share primarily to supply constraints and saying non-handset growth above 60% in fiscal 2027 should replace fiscal 2026 Apple product revenue.",
+      "On gross-margin recovery, management gave a relatively specific timeline of the next couple of quarters, but acknowledged contractual and product-cycle delays before pricing actions fully take effect; data center custom silicon is expected to create a 1.5%-2% QCT gross-margin drag.",
+      "When challenged on data center traction beyond the two hyperscalers, management emphasized that additional customers want to see HBC and CPU silicon before committing, making silicon demonstrations the next key proof point."
+    ],
+    "risks": [
+      "Global handset demand is expected to decline low teens in fiscal 2027, with QCT Android revenue down 20% year over year and an estimated greater than $1.50 EPS impact.",
+      "Apple product revenue is expected to decline approximately 50% sequentially from September to December, with fiscal 2027 revenue below the prior estimate of slightly over $2 billion.",
+      "Memory, wafer, assembly, testing, advanced packaging and other input-cost inflation is pressuring margins, while price increases may take multiple quarters to flow through and could challenge demand.",
+      "QCT gross margins are expected to remain below the historical range near term, with data center custom silicon adding a 1.5%-2% weighted-average margin drag.",
+      "The $5 billion fiscal 2027 and $15 billion fiscal 2029 data center targets remain execution-dependent, with broader customer adoption contingent on successful silicon demonstrations and significant incremental operating investment.",
+      "Supply is constrained across leading nodes at effectively 100% utilization, increasing execution and fulfillment risk despite Qualcomm's elevated inventory."
+    ],
+    "summary": "The call presents a mixed transition story: near-term earnings face a shrinking handset market, sharply accelerated Apple share loss, elevated costs and margin dilution, while automotive and IoT remain strong and data center creates a potentially substantial diversification opportunity. Management was direct and confident in the Q&A, but the aggressive non-handset targets rely on successful data center ramps, pricing actions and execution against supply constraints, making the call neutral overall rather than clearly bullish or bearish.",
+    "type": "earnings_transcript"
+  }
+]

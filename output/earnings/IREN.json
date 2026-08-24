@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-08-24",
+    "call_date": "2026-08-27",
+    "narrative": "Investors should watch whether IREN can translate its apparent advantage over CoreWeave on a key AI-related metric into durable customer demand, infrastructure utilization, and credible expansion plans. The \u201cWhat\u2019s Going On\u201d headline suggests the stock may be reacting to a specific catalyst or unusual trading dynamic, so management\u2019s explanation of recent momentum and the balance between its bitcoin-mining and AI data-center businesses will be important. My expectation is for an upbeat discussion of AI growth potential, but investors should look for concrete evidence\u2014customer commitments, deployment progress, capacity timing, and funding needs\u2014rather than relying solely on comparative headlines.",
+    "headlines_used": [
+      {
+        "title": "What's Going On With IREN Stock Wednesday?",
+        "domain": "Benzinga",
+        "date": "20260819"
+      },
+      {
+        "title": "IREN Is Quietly Outpacing CoreWeave on One AI Metric that Matters",
+        "domain": "Benzinga",
+        "date": "20260818"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

@@ -28,26 +28,21 @@ Two parts, deliberately kept separate in spirit even though they share this one 
    Stage A/B's as_of-grounded reasoning is -- don't reuse these series to backtest a historical
    date without accounting for that.
 
-2. The weekly narrative (NARRATIVE_QUERIES/refresh_macro_narrative) is the one place this module
-   adds interpretation on top of the pure numbers above, and it's grounded the same way every
-   other LLM stage in this app is: real, dated evidence handed to the model, never left to
-   recall/guess from training data.
+2. The weekly narrative (NARRATIVE_QUERIES/FINNHUB_PROXY_SYMBOLS/refresh_macro_narrative) is the
+   one place this module adds interpretation on top of the pure numbers above, and it's grounded
+   the same way every other LLM stage in this app is: real, dated evidence handed to the model,
+   never left to recall/guess from training data.
 
-   The evidence is real news headlines from GDELT's DOC 2.0 API (api.gdeltproject.org -- a global
-   news monitor, free, no API key required, confirmed live during development), not full article
-   text -- GDELT's articles endpoint only ever returns a pointer (title/url/domain/date), never
-   the article body, and a headline alone is enough for the LLM to judge relevance ("Fed Minutes
-   Signal Rate Hikes Unless Inflation Improves" tells you what happened without reading the
-   piece). Filtered to English-language US sources (a raw query otherwise mixes in e.g.
-   Arabic/Korean-market coverage, confirmed live), sorted by GDELT's own relevance ranking
-   ("hybridrel" -- GDELT has no popularity/pageview metric, just textual relevance to the query
-   blended with recency), then capped per-domain so one wire story echoed across a dozen
-   syndicated domains can't crowd out everything else that happened that week.
-
-   GDELT's own rate limit is one request every 5 seconds (confirmed live via its own 429 response
-   body) -- irrelevant in practice here (this makes at most one GDELT call per series per week,
-   via the dedup in refresh_macro_narrative), but _fetch_gdelt_headlines retries with backoff on a
-   429 regardless, in case of shared traffic from elsewhere hitting the same public endpoint.
+   The evidence is real news headlines from finance.news_sources -- two providers, chosen per
+   series (see that module's own docstring for the full "why," confirmed live via side-by-side
+   testing against GDELT, which this replaced entirely): Finnhub's per-symbol company-news feed
+   (FINNHUB_PROXY_SYMBOLS) for any series with a real, liquid ticker/ETF behind it (gold->GLD,
+   oil->USO, etc.), and GNews.io's keyword search (NARRATIVE_QUERIES) for the series with no clean
+   single instrument to proxy (VIX, credit spread, PCE, unemployment). Headlines are title/domain/
+   date only (no article body -- neither provider's search endpoint returns full text on the free
+   tier, and a headline alone is enough for the LLM to judge relevance), capped per-domain
+   (select_diverse_headlines) so one wire story echoed across a dozen syndicated domains can't
+   crowd out everything else that happened that period.
 
    One real LLM call per series per week, deduped by ISO week (not a rolling 7-day window) so a
    mid-week rerun never reprocesses -- same "already on record, skip" contract every other Loop A
@@ -60,7 +55,6 @@ import datetime as dt
 import io
 import json
 import re
-import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -71,12 +65,12 @@ import pandas as pd
 from finance.data import get_prices
 from finance.llm import complete
 from finance.loop_a_config import llm_config, max_article_chars
+from finance.news_sources import fetch_finnhub_headlines, fetch_gnews_headlines, select_diverse_headlines
 from finance import read_state
 
 CACHE_DIR = Path(__file__).resolve().parent.parent / "cache" / "macro"
 NARRATIVES_DIR = Path("output/macro")
 _FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv"
-_GDELT_DOC_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 _USER_AGENT = {"User-Agent": "Mozilla/5.0"}
 
 # key -> (label, source, source_id, cadence, unit, transform, delta_format)
@@ -176,55 +170,43 @@ DIRECTIONAL_SERIES = {"oil", "gold", "silver", "copper", "bitcoin"}
 # monthly-cadence at the tile level -- a second "monthly narrative" on top would be redundant.
 MONTHLY_NARRATIVE_SERIES = {key for key, config in MACRO_SERIES.items() if config.get("extra_chart_days")}
 
-# series key -> GDELT query terms. Only 10y_yield for now -- add an entry here (and nothing else)
-# to extend the weekly narrative to another series above, same reusable fetch/cache/prompt
-# machinery throughout.
-NARRATIVE_QUERIES: dict[str, str] = {
-    "10y_yield": (
-        '("Federal Reserve" OR "treasury yield" OR "treasury yields" OR "interest rate" OR '
-        '"interest rates" OR inflation) sourcelang:english sourcecountry:US'
-    ),
-    "credit_spread": (
-        '("high yield spread" OR "credit spread" OR "junk bond" OR "risk appetite") '
-        "sourcelang:english sourcecountry:US"
-    ),
-    "vix": (
-        '(VIX OR "volatility index" OR "market volatility" OR "stock market fear") '
-        "sourcelang:english sourcecountry:US"
-    ),
-    "oil": (
-        '("oil price" OR "crude oil" OR OPEC OR "WTI crude" OR "Brent crude") '
-        "sourcelang:english sourcecountry:US"
-    ),
-    "gold": (
-        '("gold price" OR "gold prices" OR "safe haven" OR "central bank gold buying") '
-        "sourcelang:english sourcecountry:US"
-    ),
-    # Silver has noticeably less dedicated news coverage than gold -- broadened with "precious
-    # metals" so a slow week for silver-specific headlines still surfaces something relevant,
-    # rather than routinely falling back to "no clear driver" purely for lack of query matches.
-    "silver": (
-        '("silver price" OR "silver prices" OR "precious metals") sourcelang:english sourcecountry:US'
-    ),
-    # "Dr. Copper" is the standard financial-media nickname for copper as an economic bellwether --
-    # included since a plain "copper price" query alone under-matches how it's actually covered.
-    "copper": (
-        '("copper price" OR "copper prices" OR "Dr. Copper" OR "copper demand") '
-        "sourcelang:english sourcecountry:US"
-    ),
-    "pce": (
-        '("PCE inflation" OR "core PCE" OR "personal consumption expenditures" OR '
-        '"Fed inflation gauge") sourcelang:english sourcecountry:US'
-    ),
-    "unemployment": (
-        '("unemployment rate" OR "jobs report" OR "nonfarm payrolls" OR "labor market") '
-        "sourcelang:english sourcecountry:US"
-    ),
-    "bitcoin": (
-        '("bitcoin price" OR "bitcoin ETF" OR "crypto market" OR cryptocurrency) '
-        "sourcelang:english sourcecountry:US"
-    ),
+# Series with a real, liquid ticker/ETF standing in for them -- routed through Finnhub's
+# per-symbol company-news feed (finance.news_sources.fetch_finnhub_headlines) rather than keyword
+# search. Confirmed live (side-by-side against GDELT and GNews.io, for gold/NVDA/VIX/credit-spread)
+# that a dedicated company/ETF news feed gives both higher volume and higher relevance than
+# guessing at search terms whenever a clean instrument actually exists -- e.g. Finnhub's GLD
+# coverage surfaced concrete technical levels and named analyst calls (Ray Dalio, Goldman's price
+# target) that a keyword search on "gold price" never found.
+FINNHUB_PROXY_SYMBOLS: dict[str, str] = {
+    "10y_yield": "IEF",   # iShares 7-10 Year Treasury Bond ETF
+    "oil": "USO",         # United States Oil Fund
+    "gold": "GLD",        # SPDR Gold Shares
+    "silver": "SLV",      # iShares Silver Trust
+    "copper": "CPER",     # United States Copper Index Fund
+    "bitcoin": "BITO",    # ProShares Bitcoin Strategy ETF
 }
+
+# Series with no single clean instrument to proxy (VIX/credit spread/PCE/unemployment are
+# concepts, not something with one ticker behind it -- confirmed live that Finnhub's own company-
+# news endpoint returns nothing at all for index tickers like ^VIX/^TNX, and an ETF proxy like HYG
+# returns news about the ETF issuer's own ticker mentions, not the credit-spread story). Routed
+# through GNews.io's keyword search instead (finance.news_sources.fetch_gnews_headlines). Kept as
+# specific, quoted multi-word phrases rather than single generic buzzwords -- confirmed live that a
+# looser query (bare "market volatility", "risk appetite") pulls in a lot of only-tangentially-
+# related noise (regional equity selloffs, unrelated Bitcoin rallies) that quoted, more specific
+# phrases mostly avoid.
+NARRATIVE_QUERIES: dict[str, str] = {
+    "vix": '"VIX" OR "Cboe Volatility Index" OR "volatility index" OR "market volatility spike"',
+    "credit_spread": '"credit spread" OR "high-yield spread" OR "junk bond spread" OR "high yield bond market"',
+    "pce": '"PCE inflation" OR "core PCE" OR "personal consumption expenditures" OR "Fed inflation gauge"',
+    "unemployment": '"unemployment rate" OR "jobs report" OR "nonfarm payrolls" OR "labor market"',
+}
+
+# Every series with *some* narrative source configured, regardless of which provider -- the
+# membership check app.py and refresh_macro_narrative actually care about ("does this series get a
+# weekly narrative at all"), since which of the two dicts above a series lives in is an
+# implementation detail of *how* it's grounded, not *whether* it is.
+NARRATIVE_SERIES = set(FINNHUB_PROXY_SYMBOLS) | set(NARRATIVE_QUERIES)
 
 
 # ---------------------------------------------------------------------------
@@ -403,70 +385,19 @@ def macro_snapshot(refresh: bool = False) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 
-def _fetch_gdelt_headlines(query: str, max_records: int = 100, timespan: str = "1week") -> list[dict] | None:
-    """Up to `max_records` {title, domain, date} dicts for `query` over the last `timespan`
-    ("1week" or "1month" -- GDELT's own timespan syntax), sorted by GDELT's own relevance ranking --
-    see module docstring re: why this is title/domain/date only (no article body) and why
-    hybridrel, not a popularity metric that doesn't exist.
-
-    Returns None (never raises) if the fetch itself failed (network error, or a 429 that outlasted
-    every retry -- confirmed live during development that shared-IP contention can outlast even a
-    15s backoff), as distinct from an empty list, which means the fetch succeeded but genuinely
-    found nothing relevant this period. That distinction matters to refresh_macro_narrative: a
-    failed fetch shouldn't spend an LLM call producing a hollow "no headlines" narrative, and
-    shouldn't count as this period being "done" (a later retry the same period should get a real
-    chance), while a genuine zero-results period is a legitimate, complete answer worth both an LLM
-    read and locking in.
+def _fetch_narrative_headlines(series_key: str, days: int) -> list[dict] | None:
+    """Routes to whichever of finance.news_sources' two providers `series_key` uses -- Finnhub
+    (FINNHUB_PROXY_SYMBOLS) or GNews.io (NARRATIVE_QUERIES), see the module docstring and each
+    dict's own comment for why. Same None-vs-[] contract as both underlying fetchers: None means
+    the fetch itself failed (network error, missing API key, rate limit that outlasted every
+    retry) -- distinct from an empty list, which means the fetch succeeded but genuinely found
+    nothing this period.
     """
-    params = {
-        "query": query, "mode": "artlist", "maxrecords": str(max_records),
-        "timespan": timespan, "sort": "hybridrel", "format": "json",
-    }
-    url = f"{_GDELT_DOC_URL}?{urllib.parse.urlencode(params)}"
-    backoffs = (8, 20, 40)  # a 429 here is most likely shared-IP contention (confirmed live, both
-    # during development and again later: a fresh, isolated process got an immediate 429 with zero
-    # prior calls of its own), not this module's own call rate -- one call/series/week is nowhere
-    # near GDELT's stated "one every 5 seconds" limit on its own. Widened from (6, 15) -- that gave
-    # up after ~21s total, which isn't always enough to outlast a shared-IP congestion window.
-    data = None
-    for attempt in range(len(backoffs) + 1):
-        try:
-            request = urllib.request.Request(url, headers=_USER_AGENT)
-            with urllib.request.urlopen(request, timeout=20) as response:
-                data = json.loads(response.read().decode())
-            break
-        except urllib.error.HTTPError as exc:
-            if exc.code == 429 and attempt < len(backoffs):
-                time.sleep(backoffs[attempt])
-                continue
-            return None
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
-            return None
-    if data is None:
-        return None
-
-    articles = data.get("articles") or []
-    return [
-        {"title": a["title"], "domain": a["domain"], "date": a["seendate"][:8]}
-        for a in articles if a.get("title") and a.get("domain") and a.get("seendate")
-    ]
-
-
-def _select_diverse_headlines(headlines: list[dict], limit: int, max_per_domain: int) -> list[dict]:
-    """Keeps GDELT's own relevance order, but caps how many headlines from the same domain count
-    toward `limit` -- so a wire story syndicated across a dozen domains doesn't crowd out
-    everything else that happened this week (see module docstring).
-    """
-    selected: list[dict] = []
-    per_domain: dict[str, int] = {}
-    for h in headlines:
-        if len(selected) >= limit:
-            break
-        if per_domain.get(h["domain"], 0) >= max_per_domain:
-            continue
-        selected.append(h)
-        per_domain[h["domain"]] = per_domain.get(h["domain"], 0) + 1
-    return selected
+    if series_key in FINNHUB_PROXY_SYMBOLS:
+        return fetch_finnhub_headlines(FINNHUB_PROXY_SYMBOLS[series_key], days)
+    if series_key in NARRATIVE_QUERIES:
+        return fetch_gnews_headlines(NARRATIVE_QUERIES[series_key], days)
+    return None
 
 
 def _week_key(as_of: dt.date) -> str:
@@ -507,7 +438,7 @@ def macro_narrative_snapshot(
     include_direction: bool = False, period: str = "week",
 ) -> dict | None:
     """One LLM call: a 2-3 sentence explanation of this period's move in `label`, grounded in
-    `headlines` (real, dated GDELT results -- see module docstring) -- honestly says there's no
+    `headlines` (real, dated results from finance.news_sources -- see module docstring) -- honestly says there's no
     clear single driver rather than forcing a narrative onto an unrelated headline, same honesty
     contract finance.earnings_calls/finance.fundamentals already use for a weak/absent signal.
 
@@ -548,8 +479,8 @@ def macro_narrative_snapshot(
     prompt = (
         f"You are a macro analyst. {label} is currently {value_str}, a change of {delta_str} over "
         f"the past {period_word}, as of {as_of.isoformat()}.\n\n"
-        f"Below are the most relevant English-language US news headlines from the past {period_word} "
-        f"(via GDELT, sorted by relevance to Fed policy/rates/inflation):\n{_truncate(headlines_text)}\n\n"
+        f"Below are the most relevant real news headlines from the past {period_word}:\n"
+        f"{_truncate(headlines_text)}\n\n"
         f"In 2-3 sentences, explain what most plausibly drove this {period_word}'s move, citing "
         f"specific headlines above by their content if they plausibly explain it. If nothing above "
         f"offers a clear, specific driver, say so honestly (e.g. \"no clear single catalyst this "
@@ -640,12 +571,12 @@ def _upsert_narrative(series_key: str, event: dict, period: str, as_of: dt.date)
 
 
 def refresh_macro_narrative(series_key: str, as_of: dt.date, period: str = "week") -> dict:
-    """The one entry point every caller needs: always regenerates a fresh LLM+GDELT read for
+    """The one entry point every caller needs: always regenerates a fresh LLM+news read for
     `series_key`/`period` (no skip-based dedup for either period -- every call costs a real LLM
     call, by design), pulling the series' current tile (series_tile above), fetching+filtering the
     grounding headlines, running the LLM read, and persisting the result via _upsert_narrative.
 
-    `period` is "week" (every series in NARRATIVE_QUERIES) or "month" (only
+    `period` is "week" (every series in NARRATIVE_SERIES) or "month" (only
     MONTHLY_NARRATIVE_SERIES -- series with a 1-month mini-chart to ground it against). Both are
     rolling reads as-of `as_of` ("this week"/"last 30 days"), not calendar-locked -- what IS
     calendar-bucketed is storage: _upsert_narrative only starts a new history row when `as_of`
@@ -656,23 +587,23 @@ def refresh_macro_narrative(series_key: str, as_of: dt.date, period: str = "week
     "period": "week"/"month" -- see latest_narrative's filtering.
 
     Always returns a dict with a "status" key, never bare None -- callers (run_loop_a.py) need to
-    tell "GDELT is unreachable right now" apart from a genuine LLM failure apart from a real
-    success, rather than all three collapsing into an equally uninformative None. "status" is one
-    of:
+    tell "the news source is unreachable right now" apart from a genuine LLM failure apart from a
+    real success, rather than all three collapsing into an equally uninformative None. "status" is
+    one of:
       "generated"       -- a new/updated narrative was produced and stored; every other event field
                             (see below) is also present.
-      "unknown_series"  -- series_key isn't in NARRATIVE_QUERIES.
+      "unknown_series"  -- series_key isn't in NARRATIVE_SERIES.
       "no_monthly_series" -- period="month" but series_key isn't in MONTHLY_NARRATIVE_SERIES.
       "no_tile"         -- the underlying finance.macro series tile (or, for period="month", its
                             30-day history_extra window) couldn't be fetched.
-      "gdelt_unavailable" -- the GDELT fetch itself failed (rate-limited or a network error that
-                            outlasted every retry -- see _fetch_gdelt_headlines) -- no LLM call was
-                            made, nothing was stored, and this can be retried anytime.
+      "news_unavailable" -- the Finnhub/GNews.io fetch itself failed (missing API key, rate-limited,
+                            or a network error that outlasted every retry -- see
+                            finance.news_sources) -- no LLM call was made, nothing was stored, and
+                            this can be retried anytime.
       "llm_failed"      -- the LLM call ran but produced nothing usable.
     Propagates RateLimited, same as every other Stage call.
     """
-    query = NARRATIVE_QUERIES.get(series_key)
-    if query is None:
+    if series_key not in NARRATIVE_SERIES:
         return {"status": "unknown_series"}
     if period == "month" and series_key not in MONTHLY_NARRATIVE_SERIES:
         return {"status": "no_monthly_series"}
@@ -690,12 +621,12 @@ def refresh_macro_narrative(series_key: str, as_of: dt.date, period: str = "week
             return {"status": "no_tile"}
 
     unit_suffix = {"pct": "%", "usd": "", "num": ""}[tile["unit"]]
-    timespan = "1week" if period == "week" else "1month"
+    days = 7 if period == "week" else 30
     headline_limit, max_per_domain = (25, 2) if period == "week" else (35, 3)
-    raw_headlines = _fetch_gdelt_headlines(query, max_records=100, timespan=timespan)
+    raw_headlines = _fetch_narrative_headlines(series_key, days)
     if raw_headlines is None:
-        return {"status": "gdelt_unavailable"}  # no LLM call, no storage, free to retry
-    headlines = _select_diverse_headlines(raw_headlines, headline_limit, max_per_domain)
+        return {"status": "news_unavailable"}  # no LLM call, no storage, free to retry
+    headlines = select_diverse_headlines(raw_headlines, headline_limit, max_per_domain)
 
     include_direction = series_key in DIRECTIONAL_SERIES
     snapshot = macro_narrative_snapshot(

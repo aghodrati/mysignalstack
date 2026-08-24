@@ -1,5 +1,5 @@
 """Per-portfolio positions Loop A opened, each referencing the global,
-shared TickerThesis (finance.tickerthesis) it was opened against -- an
+shared TickerThesis (finance.thesis) it was opened against -- an
 append-only event log (same replay-not-store convention as
 finance.portfolio's own trade log), so current position state is always
 derived from the log rather than mutated in place.
@@ -8,7 +8,7 @@ Unlike the old per-portfolio design, a position here carries almost no
 content of its own -- no claim/catalysts/invalidation, just the trading-
 relevant facts (which ticker, when opened, at what confidence, when/why
 closed). The actual investment thesis -- claim, direction, confidence, full
-evidence trail -- lives globally in finance.tickerthesis and finance.claims,
+evidence trail -- lives globally in finance.thesis and finance.claims,
 shared by every portfolio watching that ticker; this module only tracks
 whether *this* portfolio acted on it.
 

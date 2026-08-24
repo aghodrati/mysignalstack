@@ -41,7 +41,7 @@ NEWS_SOURCES: list[tuple[str, str]] = [
     ("Stratechery", "https://stratechery.com/feed/"),
     ("The Diff", "https://www.thediff.co/archive/rss/"),
     ("Citrini Research", "https://citriniresearch.com/feed"),
-    ("Cassandra Unchained (Michael Burry)", "https://michaeljburry.substack.com/feed"),
+    ("Cassandra Unchained", "https://michaeljburry.substack.com/feed"),
 ]
 
 # SEC requires a descriptive User-Agent identifying the requester (not a browser UA)

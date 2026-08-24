@@ -16,16 +16,23 @@ finance.newsloop's earnings-window trigger or a manual
 change often enough to justify a fresh LLM call on every single new claim),
 PLUS whichever earnings-call snapshot is currently latest (see
 finance.earnings_calls.latest_earnings_call -- also NOT regenerated here, same
-"refreshes on its own schedule" reasoning), synthesizes ONE current
-thesis/direction/confidence -- weighing each claim by its own
+"refreshes on its own schedule" reasoning, and now including that call's own
+key_qa_moments, not just its summary/guidance -- the Q&A highlights are where
+hedging/deflection signal actually lives, per finance.earnings_calls' own
+docstring), PLUS the last *reported* quarter's real numbers (finance.data.
+get_earnings_history's own reported_eps/eps_estimate/surprise_pct -- real,
+never LLM-guessed, same "only ever real numbers" discipline finance.
+earnings_calls.refresh_earnings_preview already uses), synthesizes ONE
+current thesis/direction/confidence -- weighing each claim by its own
 confidence/importance rather than treating the list flatly (deliberately
-soft, not a hard numeric rule), and weighing the fundamental/earnings-call
-pictures in the same prompt rather than a separate numeric blend applied
-after the fact. Both snapshots live entirely in their own per-ticker stores
-(output/fundamentals/{ticker}.json, output/earnings_calls/{ticker}.json),
-genuinely separate from this module's own event log. Neither carries a
-"confidence" that gets arithmetically combined with anything -- Stage C's own
-"aggregated" event here is the sole source of truth for confidence.
+soft, not a hard numeric rule), and weighing the fundamental/earnings-call/
+reported-earnings pictures in the same prompt rather than a separate numeric
+blend applied after the fact. The fundamental/earnings-call snapshots live
+entirely in their own per-ticker stores (output/fundamentals/{ticker}.json,
+output/earnings/{ticker}.json), genuinely separate from this module's own
+event log. None of the three carries a "confidence" that gets arithmetically
+combined with anything -- Stage C's own "aggregated" event here is the sole
+source of truth for confidence.
 
 Third and last: a critic pass on Stage C's own synthesis -- deterministic
 guardrails (`_deterministic_critic_flags`: source concentration, evidence
@@ -36,7 +43,7 @@ half always applies even if the LLM call is rate-limited or misses the
 issue.
 
 Stored as an append-only per-ticker event log, same convention as
-finance.thesis and finance.portfolio -- but simpler, since each update is a
+finance.positions and finance.portfolio -- but simpler, since each update is a
 full recompute (not an incremental merge): "aggregated" events are complete
 snapshots, the latest one is the current state, and every one ever appended
 is kept as history for display.
@@ -50,8 +57,11 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
+import pandas as pd
+
 from finance.claims import ArticleClaim, Direction, HORIZON_MAX_DAYS, HORIZON_MIN_DAYS, load_claims
 from finance.critic import critic_review
+from finance.data import get_earnings_history
 from finance.earnings_calls import latest_earnings_call
 from finance.fundamentals import latest_fundamental
 from finance.llm import complete
@@ -161,16 +171,19 @@ _AGGREGATE_REQUIRED_FIELDS = {
 
 def aggregate_claims(
     ticker: str, claims: list[ArticleClaim], as_of: dt.date, fundamental: dict | None = None,
-    earnings_call: dict | None = None,
+    earnings_call: dict | None = None, reported_earnings: dict | None = None,
 ) -> dict | None:
     """Stage C, one LLM call: synthesizes every claim ever collected for
     `ticker` into one current thesis/direction/confidence, weighing in
     `fundamental` (the latest finance.fundamentals.fundamental_snapshot, if
-    one exists) and `earnings_call` (the latest
-    finance.earnings_calls.latest_earnings_call, if one exists) alongside the
-    claims rather than blending a number in afterward -- this call's own
-    "confidence" is the final say, no further arithmetic combination happens
-    once it returns. Never raises for a genuine parse failure (returns None).
+    one exists), `earnings_call` (the latest
+    finance.earnings_calls.latest_earnings_call, if one exists), and
+    `reported_earnings` (the last actually-reported quarter's real
+    eps_estimate/reported_eps/surprise_pct -- see _reported_earnings_dict,
+    None if yfinance has nothing reported yet) alongside the claims rather
+    than blending a number in afterward -- this call's own "confidence" is
+    the final say, no further arithmetic combination happens once it
+    returns. Never raises for a genuine parse failure (returns None).
     Raises RateLimited (propagated from finance.llm.complete) if every model
     is currently out of quota, same as every other Stage call.
     """
@@ -199,14 +212,25 @@ def aggregate_claims(
         earnings_call_block = (
             f"Latest earnings-call picture (from the company's own most recent earnings call, NOT "
             f"derived from the news claims above -- another independent corroborating or "
-            f"contradicting check, same weighing rule as the fundamental picture):\n"
-            f"{json.dumps({k: earnings_call[k] for k in ('earnings_direction', 'earnings_confidence', 'summary', 'guidance_summary', 'guidance_change', 'management_tone', 'risks')})}"
+            f"contradicting check, same weighing rule as the fundamental picture; key_qa_moments is "
+            f"unscripted analyst Q&A, weight it for tone/hedging over the scripted guidance fields):\n"
+            f"{json.dumps({k: earnings_call[k] for k in ('earnings_direction', 'earnings_confidence', 'summary', 'guidance_summary', 'guidance_change', 'management_tone', 'key_qa_moments', 'risks')})}"
             f"\n\n"
+        )
+    if reported_earnings is None:
+        reported_earnings_block = "No reported quarterly earnings on record for this ticker.\n\n"
+    else:
+        reported_earnings_block = (
+            f"Last reported quarter's real numbers (yfinance, NOT an LLM estimate -- ground any "
+            f"beat/miss framing in these, don't restate a claim's own characterization of the "
+            f"quarter as if it were the number itself):\n"
+            f"{json.dumps(reported_earnings)}\n\n"
         )
     prompt = (
         f"You are an investment research assistant synthesizing a single current thesis for {ticker} "
         f"as of {as_of.isoformat()}, from every distinct claim collected about it so far plus an "
-        f"independent fundamental picture and the latest earnings-call picture. Reason only from "
+        f"independent fundamental picture, the latest earnings-call picture, and the last reported "
+        f"quarter's real numbers. Reason only from "
         f"what's given below -- no outside knowledge of what happened after {as_of.isoformat()}.\n\n"
         f"Claims (oldest first, each with its own confidence, importance, and expected horizon -- weigh "
         f"accordingly, don't treat them as equally significant, and don't let a single new or "
@@ -214,6 +238,7 @@ def aggregate_claims(
         f"{json.dumps(claim_summaries)}\n\n"
         f"{fundamental_block}"
         f"{earnings_call_block}"
+        f"{reported_earnings_block}"
         f"Synthesize ONE current thesis, direction, and confidence for {ticker} that best reflects this "
         f"whole body of evidence. If the claims genuinely conflict, are too thin to support a clear "
         f"call, or the fundamental/earnings-call pictures strongly contradict the news-driven "
@@ -231,8 +256,8 @@ def aggregate_claims(
         f'CONTRADICT or DISPROVE the direction you chose; for a "short" direction these are the '
         f"bullish claims/outcomes that would prove it wrong -- fold in any fundamental/earnings-call "
         f"risks above that would count as invalidation too), "
-        f'"reasoning": "one sentence explaining the synthesis, including how the fundamental and '
-        f'earnings-call pictures factored in if either was given"}}'
+        f'"reasoning": "one sentence explaining the synthesis, including how the fundamental, '
+        f'earnings-call, and reported-earnings pictures factored in if given"}}'
     )
 
     raw = complete(prompt, max_tokens=700, **llm_config())
@@ -284,21 +309,43 @@ def _deterministic_critic_flags(
     return multiplier, flags
 
 
+def _reported_earnings_dict(ticker: str) -> dict | None:
+    """The last actually-*reported* quarter's real numbers for `ticker` (eps_estimate,
+    reported_eps, surprise_pct, earnings_date), or None if yfinance has nothing reported yet --
+    same finance.data.get_earnings_history source, same dropna-on-reported-fields convention,
+    app.py's _latest_reported_earnings already uses for the "Just Reported" card. A live
+    yfinance-backed read, not persisted anywhere of its own -- cheap/deterministic, no LLM
+    involved, so nothing to cache beyond finance.data's own.
+    """
+    history = get_earnings_history(ticker, limit=6).dropna(subset=["reported_eps", "surprise_pct"])
+    if history.empty:
+        return None
+    row = history.sort_values("earnings_date").iloc[-1]
+    return {
+        "earnings_date": row["earnings_date"].date().isoformat(),
+        "eps_estimate": None if pd.isna(row["eps_estimate"]) else float(row["eps_estimate"]),
+        "reported_eps": float(row["reported_eps"]),
+        "surprise_pct": float(row["surprise_pct"]),
+    }
+
+
 def update_ticker_thesis(ticker: str, as_of: dt.date) -> TickerThesis | None:
     """Recomputes `ticker`'s current synthesized view from every claim
     collected so far, plus whichever independent fundamental snapshot
     (finance.fundamentals.latest_fundamental) and earnings-call snapshot
-    (finance.earnings_calls.latest_earnings_call) are currently latest -- both
-    pure reads, NOT regenerated here; neither meaningfully changes often
-    enough to justify a fresh LLM call on every single new claim, so they
-    refresh on their own separate schedules -- fed into Stage C together,
-    then a critic pass (deterministic guardrails + one LLM red-team call, see
-    finance.critic) on the result. Appends the "aggregated"/"critic" events to
-    the permanent, global (portfolio-independent) log. Returns the updated
-    TickerThesis, or None if there are no claims yet or the aggregator
-    produced nothing usable -- callers should leave whatever the previous
-    snapshot was in place rather than losing it. Propagates RateLimited from
-    any of the LLM calls, same as every other Stage.
+    (finance.earnings_calls.latest_earnings_call) are currently latest, plus
+    the last reported quarter's real numbers (_reported_earnings_dict) --
+    all three pure reads, NOT regenerated here; the fundamental/earnings-call
+    snapshots don't meaningfully change often enough to justify a fresh LLM
+    call on every single new claim, so they refresh on their own separate
+    schedules -- fed into Stage C together, then a critic pass (deterministic
+    guardrails + one LLM red-team call, see finance.critic) on the result.
+    Appends the "aggregated"/"critic" events to the permanent, global
+    (portfolio-independent) log. Returns the updated TickerThesis, or None if
+    there are no claims yet or the aggregator produced nothing usable --
+    callers should leave whatever the previous snapshot was in place rather
+    than losing it. Propagates RateLimited from any of the LLM calls, same as
+    every other Stage.
     """
     claims = load_claims(ticker)
     if not claims:
@@ -308,8 +355,12 @@ def update_ticker_thesis(ticker: str, as_of: dt.date) -> TickerThesis | None:
 
     fundamental = latest_fundamental(ticker)
     earnings_call = latest_earnings_call(ticker)
+    reported_earnings = _reported_earnings_dict(ticker)
 
-    result = aggregate_claims(ticker, claims, as_of, fundamental=fundamental, earnings_call=earnings_call)
+    result = aggregate_claims(
+        ticker, claims, as_of, fundamental=fundamental, earnings_call=earnings_call,
+        reported_earnings=reported_earnings,
+    )
     if result is None:
         return None
 

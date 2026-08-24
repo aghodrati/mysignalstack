@@ -1,0 +1,29 @@
+[
+  {
+    "date": "2026-08-23",
+    "transcript_date": "2026-08-07",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/apple-aapl-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.82,
+    "guidance_summary": "September-quarter revenue is guided to grow 9%-11% year over year, including a roughly 2.5 percentage-point sequential FX headwind and materially greater supply-constraint impact. iPhone growth is expected in the mid-teens, while Services growth should be broadly similar to the June quarter before the 2.5-point FX effect. Gross margin is guided to 47%-48%, including an approximately 1-point tariff-refund benefit; operating expenses are expected at $19.1-$19.4 billion, other income and expense around $350 million excluding investment mark-to-market effects, and the tax rate around 16.5%. No capex guidance was provided.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "cautious",
+    "key_qa_moments": [
+      "Analysts pressed on the sharp September growth deceleration and whether supply constraints would worsen into December. Management attributed the issue primarily to unexpectedly strong iPhone and Mac demand, limited advanced-node flexibility, and acknowledged that Apple would be 'scrambling' on supply, while refusing to provide December guidance.",
+      "On memory inflation, Cook said Apple expects even higher costs in September and continuing price increases beyond that quarter. He described the situation as a '100-year flood,' said carry-in inventory benefits will diminish, and offered no clear sourcing or pricing solution beyond evaluating all options.",
+      "On Apple Intelligence and Siri AI, management expressed strong enthusiasm but admitted it is too early to determine compute economics or whether iCloud+ upgrades will offset costs, signaling meaningful uncertainty around AI monetization and capital intensity.",
+      "On Services, management provided unusually specific detail that FX was the primary growth headwind, but also disclosed mobile-gaming softness and U.S. App Store legal changes; September faces another 2.5-point sequential FX headwind."
+    ],
+    "risks": [
+      "Advanced-node supply constraints are expected to affect iPhone, Mac, and iPad more severely in September, with no visibility beyond that quarter.",
+      "Memory prices are rising exponentially, pressuring product gross margins; management expects costs to increase further and inventory offsets to fade.",
+      "Foreign exchange is a disproportionate headwind to Services, amounting to roughly a 5-point impact to year-over-year growth from March through September.",
+      "AI infrastructure and compute costs could increase operating expense, cost of goods sold, and capital intensity, while monetization through iCloud+ remains unproven.",
+      "Services face mobile-gaming weakness, App Store business-model changes, and ongoing U.S. litigation exposure.",
+      "Siri AI rollout remains delayed or uncertain in the EU and China because of regulatory and approval requirements.",
+      "CEO succession introduces execution and strategic-transition risk as Tim Cook leaves the earnings-call role."
+    ],
+    "summary": "Apple delivered a very strong June quarter, with 16% revenue growth, 22% iPhone growth, 29% Mac growth, and record cash flow, but results and gross margin benefited from tariff refunds. The forward outlook is materially less robust: September growth decelerates to 9%-11% amid worsening supply constraints, higher memory costs, and FX pressure, while Q&A revealed limited visibility into December, uncertain AI economics, and regulatory delays for Siri AI. Overall, the call is balanced between exceptional current demand and increasingly significant near-term execution and margin risks.",
+    "type": "earnings_transcript"
+  }
+]

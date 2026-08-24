@@ -8,7 +8,18 @@ reprocesses anything):
 Stage A (`extract_event`, once per article, global): classifies the article
 -- what happened, which tracked-universe tickers it materially concerns, how
 important/novel it is, what kind of event it is. Company-agnostic and cheap
-regardless of how many companies get mentioned.
+regardless of how many companies get mentioned. Also flags, at near-zero
+marginal cost (same call, no new fetch), any company NOT in the tracked
+universe that the article discusses in real depth
+("other_companies_mentioned") -- a discovery signal for names worth a closer
+look, persisted to output/discovery/candidates.json
+(`_append_discovery_candidates`) rather than silently discarded the way it
+was before this field existed. Doesn't touch the tracked-company pre-filter
+just above Stage A (an article mentioning no tracked company at all still
+never reaches Stage A, so this only surfaces discovery candidates riding
+along inside articles that already passed that filter for an unrelated
+reason) -- a real fix for that would need its own lightweight triage pass,
+deliberately not built yet.
 
 Stage B (`extract_claims`, once per (article, ticker) Stage A flagged,
 global): every distinct, independent claim this article makes about that
@@ -18,7 +29,7 @@ claim is self-contained, permanent, and never revised afterward -- unlike
 the old design, this has no portfolio-specific "prior draft" to react to, so
 it's cacheable globally exactly like Stage A (see finance.claims).
 
-Stage C (`finance.tickerthesis.aggregate_claims`, whenever a new trade-
+Stage C (`finance.thesis.aggregate_claims`, whenever a new trade-
 worthy claim lands for a ticker, global): synthesizes every claim ever
 collected for that ticker into one current claim/direction/confidence.
 Weighs each claim by its own confidence/importance rather than treating the
@@ -42,10 +53,10 @@ happens to trigger it (`update_research`). Each portfolio then runs a thin,
 deterministic, LLM-free trade-decision pass (`run_loop_a`, after
 `update_research`): for every ticker with a TickerThesis, open a position if
 not already held and confidence clears the bar, or close one if already
-held and the current TickerThesis no longer supports it. finance.thesis
+held and the current TickerThesis no longer supports it. finance.positions
 tracks only these thin per-portfolio position records (opened/closed, at
 what confidence) -- the actual claim/catalysts/invalidation content lives in
-finance.tickerthesis and finance.claims, shared research any portfolio can
+finance.thesis and finance.claims, shared research any portfolio can
 inspect.
 
 Meant to run once a day, forward from today. Running forward (not against
@@ -70,6 +81,7 @@ import html
 import json
 import re
 from pathlib import Path
+from typing import NamedTuple
 
 import pandas as pd
 
@@ -85,16 +97,19 @@ from finance.data import get_earnings_history, get_prices
 from finance.llm import RateLimited, complete, get_rate_limit_status, get_usage_counter, reset_usage_counter
 from finance.loop_a_config import (
     active_news_sources,
+    discovery_disabled_sources,
+    discovery_primary_sources,
     full_page_fetch_sources,
     llm_config,
     max_article_chars,
     tracked_universe,
 )
+from finance.earnings_calls import latest_earnings_preview, refresh_earnings_preview
 from finance.fundamentals import refresh_fundamentals as refresh_fundamentals_fn
 from finance.news import SEC_8K_SOURCE_PREFIX, fetch_full_page_text, get_news_from_sources, get_sec_8k_news
 from finance.portfolio import append_trade, current_state, execution_price, load_meta, rule_positions
-from finance.thesis import Position, append_closed, append_created, open_positions
-from finance.tickerthesis import TickerThesis, list_tickers_with_thesis, load_ticker_thesis, update_ticker_thesis
+from finance.positions import Position, append_closed, append_created, open_positions
+from finance.thesis import TickerThesis, list_tickers_with_thesis, load_ticker_thesis, update_ticker_thesis
 from finance.xbrl import get_cik_map
 
 
@@ -130,6 +145,50 @@ EARNINGS_FUNDAMENTAL_CHECKS_PATH = CACHE_DIR / "earnings_fundamental_checks.json
 # refresh in a window around every scheduled/reported earnings date regardless of news.
 EARNINGS_WINDOW_BEFORE_DAYS = 1
 EARNINGS_WINDOW_AFTER_DAYS = 1
+# Matches app.py's own _EARNINGS_REMINDER_WINDOW_DAYS -- the preview should exist by the time the
+# reminder card itself starts showing, not some separate schedule of its own.
+EARNINGS_PREVIEW_WINDOW_DAYS = 3
+
+# Two kinds of discovery signal share this one file (candidates.json), each entry tagged "type":
+#   TYPE_COMPANY: extract_event's "other_companies_mentioned" -- a company NOT in the tracked
+#     universe that an article Stage A already classified (because it also mentioned a tracked
+#     company, or a known SEC 8-K filer) discussed in real depth.
+#   TYPE_THEME: extract_themes' output -- a macro/geopolitical/regulatory/industry theme (not tied
+#     to any company at all) found in an article the tracked-company pre-filter would otherwise
+#     have discarded for free (see extract_themes' own docstring). Entries predating this "type"
+#     field have none -- treated as TYPE_COMPANY, the only kind that existed before themes did.
+# Lives under output/ (git-tracked, meant to be reviewed) rather than cache/thesis alongside the
+# dedup/checks files above, since this is a discovery signal, not internal bookkeeping. Append-only;
+# no dedup against repeat mentions across articles -- curation is a later problem once there's real
+# output to look at.
+TYPE_COMPANY = "company"
+TYPE_THEME = "theme"
+DISCOVERY_DIR = Path("output/discovery")
+DISCOVERY_CANDIDATES_PATH = DISCOVERY_DIR / "candidates.json"
+
+
+def _append_discovery_candidates(entries: list[dict]) -> None:
+    DISCOVERY_DIR.mkdir(parents=True, exist_ok=True)
+    existing = json.loads(DISCOVERY_CANDIDATES_PATH.read_text()) if DISCOVERY_CANDIDATES_PATH.exists() else []
+    existing.extend(entries)
+    DISCOVERY_CANDIDATES_PATH.write_text(json.dumps(existing, indent=2))
+
+
+def load_discovery_candidates() -> list[dict]:
+    """Every discovery candidate ever recorded (see _append_discovery_candidates), oldest first,
+    or [] if none yet. Public read accessor -- app.py's Discovery page groups these by name.
+    """
+    return json.loads(DISCOVERY_CANDIDATES_PATH.read_text()) if DISCOVERY_CANDIDATES_PATH.exists() else []
+
+
+def save_discovery_candidates(candidates: list[dict]) -> None:
+    """Overwrites the whole file with `candidates` -- unlike _append_discovery_candidates (which
+    only ever adds), this is for app.py's Discovery page "Discard" action: permanently removing a
+    group's entries (not a read_state hide -- there's nothing left to un-discard). Public since
+    app.py needs to write, not just read.
+    """
+    DISCOVERY_DIR.mkdir(parents=True, exist_ok=True)
+    DISCOVERY_CANDIDATES_PATH.write_text(json.dumps(candidates, indent=2))
 
 RULE_NAME = "loop_a"
 
@@ -186,6 +245,18 @@ def _portfolio_strategy(portfolio_name: str) -> dict:
 # scale never reaches Stage B. Treat the score as a coarse noise filter, not
 # a precise ranking -- small free-tier models aren't well-calibrated on it.
 IMPORTANCE_MIN = 3
+
+
+class ExtractionUnavailable(Exception):
+    """Raised by extract_event/extract_event_known_company when the LLM call itself produced no
+    usable response at all (no API key configured, a request-level error, or every candidate
+    model's content came back empty/rejected) -- see complete()'s own "returns None" cases. This is
+    an infra-level hiccup, not a fact about the article, so unlike a genuine parse failure (bad
+    JSON, missing fields -- still returned as a plain None, since that WILL reproduce on retry) a
+    caller that permanently caches "no event" for an article should not do so on this exception; a
+    retry next run might well succeed. Distinct from RateLimited, which already signals "stop this
+    whole run" -- this is just "skip caching this one article's failure," nothing more.
+    """
 
 # Below this many characters, RSS's own title/summary/content is too thin for Stage A to
 # meaningfully judge importance/novelty from (a WordPress-style excerpt, not the real article --
@@ -268,6 +339,21 @@ def _load_earnings_fundamental_checks() -> dict:
 def _save_earnings_fundamental_checks(checks: dict) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     EARNINGS_FUNDAMENTAL_CHECKS_PATH.write_text(json.dumps(checks, indent=2))
+
+
+def _upcoming_earnings_date(ticker: str, as_of: dt.date) -> dt.date | None:
+    """The nearest *future* (not yet reported) earnings date for `ticker`, or None -- unlike
+    _earnings_trigger_date, only ever looks forward, since the earnings-preview refresh is only
+    meaningful before a call happens, not after.
+    """
+    earnings = get_earnings_history(ticker, limit=4)
+    if earnings.empty:
+        return None
+    future_dates = [
+        row["earnings_date"].date() for _, row in earnings.iterrows()
+        if pd.isna(row["reported_eps"]) and row["earnings_date"].date() >= as_of
+    ]
+    return min(future_dates) if future_dates else None
 
 
 def _earnings_trigger_date(ticker: str, as_of: dt.date) -> dt.date | None:
@@ -374,16 +460,51 @@ _EVENT_REQUIRED_FIELDS = {
     "event", "companies", "event_type", "importance", "time_horizon", "key_facts", "type", "novel", "summary",
 }
 
+# Caps how many discovery candidates one article's "other_companies_mentioned" can contribute --
+# a real find is a handful of names at most; a longer list is the model padding rather than
+# genuinely substantive coverage, so it's dropped rather than trusted wholesale.
+_MAX_OTHER_COMPANIES = 5
+
+
+def _sanitize_other_companies(raw: object, valid_tickers: set[str]) -> list[dict]:
+    """Validates/cleans extract_event's optional "other_companies_mentioned" -- a discovery signal
+    for companies NOT in the tracked universe that an article discussed in real depth (see
+    module-level discussion: the tracked-company pre-filter/extract_event's own "companies" field
+    both discard this info today, even though the article was already fetched and read). Drops any
+    entry whose ticker guess turns out to already be tracked (redundant with "companies" above,
+    not a discovery), any malformed entry, and caps the list -- never raises, worst case returns [].
+    """
+    if not isinstance(raw, list):
+        return []
+    cleaned = []
+    for entry in raw:
+        if not isinstance(entry, dict) or not entry.get("name"):
+            continue
+        ticker = entry.get("ticker")
+        ticker = str(ticker).upper() if isinstance(ticker, str) and ticker.strip() else None
+        if ticker in valid_tickers:
+            continue  # already tracked -- not a discovery, just a redundant mention
+        cleaned.append({
+            "name": str(entry["name"]), "ticker": ticker,
+            "why": str(entry.get("why") or ""),
+        })
+        if len(cleaned) >= _MAX_OTHER_COMPANIES:
+            break
+    return cleaned
+
 
 def extract_event(
     article_title: str, article_text: str, universe_map: dict[str, str], as_of: dt.date, debug: bool = False
 ) -> dict | None:
     """Stage A, one LLM call per article: classifies what happened, which
     tracked-universe tickers it materially concerns, how important/novel it
-    is, and what kind of event it is. Never raises; returns None on any
-    parse/validation failure -- pass debug=True to print *which* failure mode
-    it was (no response at all / unparseable JSON / missing fields), since
-    otherwise they're indistinguishable from the caller's side.
+    is, and what kind of event it is. Returns None on a genuine parse/
+    validation failure (unparseable JSON / missing fields) -- that's a fact
+    about this response, stable on retry, safe for a caller to cache as "no
+    event." Raises ExtractionUnavailable instead if the LLM produced no
+    response at all (see that exception's docstring) -- pass debug=True to
+    print *which* failure mode it was, since otherwise they're
+    indistinguishable from the caller's side.
     """
     # universe_map has two entries per ticker (its real display name -> ticker, and the bare
     # ticker -> itself, so a bare symbol mention also resolves -- see _universe_name_to_ticker).
@@ -410,6 +531,17 @@ def extract_event(
         f'{{"event": "one sentence describing what happened", '
         f'"companies": ["TICKER", ...] (only tickers from the tracked list above that are '
         f"materially and specifically affected, not passing mentions -- empty list if none), "
+        f'"other_companies_mentioned": [{{"name": "...", "ticker": "TICKER or null if you don\'t '
+        f'know it", "why": "1-3 short factual bullets, most important first, semicolon-separated -- '
+        f"don't compress multiple distinct facts into one sentence if the article genuinely gives "
+        f"more than one (e.g. Raised $200M Series C led by X; partnered with Y on Z; cited as the "
+        f"main threat to a tracked ticker's market share). Still just what's worth a closer look, "
+        f'not a full claims breakdown"}}, ...] (companies NOT in the tracked list above that this '
+        f"article discusses in real, specific depth -- not a passing name-drop, not a competitor "
+        f"mentioned only for context. This is a discovery signal for names outside my current "
+        f"universe, so only include ones the article gives genuine substance to; empty list if none. "
+        f"At most the 5 MOST significant such companies -- if more than 5 qualify, keep only the 5 "
+        f"most substantively covered, don't pad the list further), "
         f'"event_type": one of {list(EVENT_TYPES)}, '
         f'"importance": integer 0-10 (0 = pure noise, 10 = could plausibly change the affected '
         f"companies' multi-month outlook), "
@@ -431,7 +563,7 @@ def extract_event(
     if not raw:
         if debug:
             print("      [extract_event] no response from the LLM (rate limit or API failure)")
-        return None
+        raise ExtractionUnavailable("extract_event: no response from the LLM")
     data = _extract_json(raw)
     if data is None:
         if debug:
@@ -444,6 +576,9 @@ def extract_event(
 
     valid_tickers = set(universe_map.values())
     data["companies"] = sorted({t for t in data["companies"] if t in valid_tickers})
+    data["other_companies_mentioned"] = _sanitize_other_companies(
+        data.get("other_companies_mentioned"), valid_tickers
+    )
     if data["event_type"] not in EVENT_TYPES:
         data["event_type"] = "other"
     if data["time_horizon"] not in TIME_HORIZONS:
@@ -458,6 +593,106 @@ def extract_event(
         data["importance"] = 0
     data["novel"] = bool(data["novel"])
     return data
+
+
+# Caps how many themes one article's extract_themes call can contribute -- same reasoning as
+# _MAX_OTHER_COMPANIES: a real find is a handful at most, more than that is the model padding.
+_MAX_THEMES = 5
+
+
+def _sanitize_themes(raw: object) -> list[dict]:
+    """Validates/cleans extract_themes' "themes" response -- same shape/reasoning as
+    _sanitize_other_companies, just without a ticker field (a theme isn't a company). Never
+    raises; worst case returns [].
+    """
+    if not isinstance(raw, list):
+        return []
+    cleaned = []
+    for entry in raw:
+        if not isinstance(entry, dict) or not entry.get("name"):
+            continue
+        cleaned.append({"name": str(entry["name"]), "why": str(entry.get("why") or "")})
+        if len(cleaned) >= _MAX_THEMES:
+            break
+    return cleaned
+
+
+def extract_themes(
+    article_title: str, article_text: str, as_of: dt.date, source: str, valid_tickers: set[str],
+    debug: bool = False,
+) -> dict:
+    """The theme-discovery pass this module's docstring/DISCOVERY_* constants describe: runs on an
+    article the tracked-company pre-filter would otherwise discard for free (no tracked company
+    mentioned anywhere), asking instead for (a) any macro/geopolitical/regulatory/industry/
+    commodity/labor theme it discusses in real depth, with a concrete named anchor, and (b) any
+    untracked company it discusses in real depth -- deliberately not scoped to "does this affect my
+    tracked tickers", since these deep/technical sources (SemiAnalysis, Doomberg, etc.) regularly
+    cover real, substantive stories with no tracked-company angle at all, and that's exactly the
+    population this pass exists to stop discarding for free. The company half exists because a
+    concrete company mention (Stripe acquiring OpenRouter, D-Wave's bookings) is a far more useful
+    discovery signal than the vague business-narrative tag ("M&A", "business performance") the
+    theme half would otherwise be forced to compress it into.
+
+    Uses Loop A's real configured model (llm_config()) for a source in
+    finance.loop_a_config.discovery_primary_sources(), the module-level Groq default otherwise --
+    a deliberate cost split, since this pass now runs on articles that cost zero LLM calls before
+    it existed; see that function's own docstring for why the split is per-source and manual
+    rather than automatic/volume-based.
+
+    Returns {"themes": [...], "companies": [...]} -- never raises for a genuine parse failure (both
+    empty), this is a bonus signal, not something a claims/thesis input depends on, so a soft
+    failure should never break the run. Raises RateLimited (propagated from finance.llm.complete)
+    if every model is currently out of quota, same as every other Stage call, so the caller's
+    existing RateLimited handling covers this too.
+    """
+    prompt = (
+        f"You are a financial news classifier. Today's date is {as_of.isoformat()}. Reason only "
+        f"from the article text below -- do not rely on outside knowledge of what happened after "
+        f"{as_of.isoformat()}.\n\n"
+        f"Article title: {article_title}\n"
+        f"Article text: {_truncate_article(article_text)}\n\n"
+        f"This article doesn't mention any company I currently track. Extract ONLY a JSON object "
+        f"(no markdown fences, no commentary) with two lists:\n"
+        f'{{"themes": [{{"name": "a short 1-3 word topic tag, e.g. geopolitics, oil, unemployment, '
+        f"grid/energy, regulation, labor market, monetary policy, supply chain -- reuse a tag in "
+        f"that style if the topic fits one, invent a short new tag only if it genuinely doesn't fit "
+        f'any", "why": "1-3 short factual bullets, most important first, semicolon-separated -- '
+        f'don\'t compress multiple distinct facts into one sentence if the article genuinely gives '
+        f'more than one"}}, ...] (broader macro/geopolitical/regulatory/industry/commodity/labor '
+        f"themes discussed in real, specific depth -- not a passing mention. CRITICAL: the theme "
+        f"must have a concrete, nameable anchor (a specific technology, commodity, policy, "
+        f"regulation, or geography) -- do NOT emit a vague business-narrative label like "
+        f"'innovation', 'investment', 'M&A', 'business performance', 'market bubbles', or "
+        f"'adoption'; if the only thing you can say is one of those, either name the concrete thing "
+        f"underneath it instead (e.g. 'quantum computing', not 'business performance') or, if it's "
+        f"really about a specific company's action (an acquisition, funding round, earnings), leave "
+        f"it out of themes entirely and put the company in \"companies\" below instead. Empty list "
+        f"if this article has nothing substantive to flag. At most the 5 MOST significant themes -- "
+        f"if more than 5 qualify, keep only the 5 most substantively covered, don't pad further), "
+        f'"companies": [{{"name": "...", "ticker": "TICKER or null if you don\'t know it", "why": '
+        f'"1-3 short factual bullets, most important first, semicolon-separated -- don\'t compress '
+        f"multiple distinct facts into one sentence if the article genuinely gives more than one "
+        f'(e.g. Raised $200M Series C led by X; partnered with Y on Z)"}}, ...] (any company this '
+        f"article discusses in real, specific depth -- not a passing name-drop. Empty list if none. "
+        f"At most the 5 most significant such companies)}}"
+    )
+    if source in discovery_primary_sources():
+        raw = complete(prompt, max_tokens=900, **llm_config())
+    else:
+        raw = complete(prompt, max_tokens=900)  # no provider/models -- finance.llm's own Groq default
+    if not raw:
+        if debug:
+            print("      [extract_themes] no response from the LLM (rate limit or API failure)")
+        return {"themes": [], "companies": []}
+    data = _extract_json(raw)
+    if not data:
+        if debug:
+            print(f"      [extract_themes] response wasn't valid/parseable JSON: {raw[:200]!r}")
+        return {"themes": [], "companies": []}
+    return {
+        "themes": _sanitize_themes(data.get("themes")),
+        "companies": _sanitize_other_companies(data.get("companies"), valid_tickers),
+    }
 
 
 _KNOWN_COMPANY_EVENT_REQUIRED_FIELDS = {"event", "event_type", "importance", "time_horizon", "key_facts", "novel"}
@@ -494,7 +729,7 @@ def extract_event_known_company(
     if not raw:
         if debug:
             print("      [extract_event_known_company] no response from the LLM (rate limit or API failure)")
-        return None
+        raise ExtractionUnavailable("extract_event_known_company: no response from the LLM")
     data = _extract_json(raw)
     if data is None:
         if debug:
@@ -533,7 +768,7 @@ def extract_claims(
     Each claim is self-contained, carries its own confidence/importance, and
     is never revised afterward -- a pure function of the article alone, no
     portfolio-specific context, so it's cacheable globally (see
-    finance.claims). finance.tickerthesis's aggregator synthesizes across
+    finance.claims). finance.thesis's aggregator synthesizes across
     every claim collected over time.
 
     Returns None only for a genuine failure (no LLM response, unparseable
@@ -830,12 +1065,23 @@ def _backfill_new_tickers(
                 f"article(s) in the last {BACKFILL_LOOKBACK_DAYS}d mention it, re-classifying..."
             )
         try:
+            all_reclassified = True
             for link in candidates:
                 entry = events_cache[link]
                 article_date = dt.date.fromisoformat(entry["article_date"])
                 if verbose:
                     print(f"    [Stage A] re-classifying for {ticker}: {entry['title'][:60]}")
-                event = extract_event(entry["title"], entry["text"], universe_map, article_date, debug=verbose)
+                try:
+                    event = extract_event(entry["title"], entry["text"], universe_map, article_date, debug=verbose)
+                except ExtractionUnavailable:
+                    # Infra-level hiccup, not a fact about this article -- leave the cached event
+                    # untouched (don't overwrite a real one with None) and don't mark `ticker`
+                    # completed below, so this candidate gets a fresh shot on the next backfill
+                    # sweep instead of silently losing its one chance at reclassification forever.
+                    if verbose:
+                        print(f"      extraction unavailable (no LLM response), will retry next run")
+                    all_reclassified = False
+                    continue
                 if event is None:
                     continue
                 entry["event"] = event
@@ -852,7 +1098,8 @@ def _backfill_new_tickers(
                     claims_by_source_ticker[key] = claims_by_source_ticker.get(key, 0) + len(new_claims)
                     if any(c.trade_worthy for c in new_claims):
                         touched.add(ticker)
-            completed.add(ticker)
+            if all_reclassified:
+                completed.add(ticker)
         except RateLimited as exc:
             if verbose:
                 reason = f" ({exc.message})" if exc.message else ""
@@ -1024,8 +1271,13 @@ def update_research(
             continue
         try:
             fundamental = refresh_fundamentals_fn(ticker, as_of, trigger="earnings")
-            earnings_checks[ticker] = earnings_date.isoformat()
-            _save_earnings_fundamental_checks(earnings_checks)
+            if fundamental is not None:
+                # Only mark this earnings event "checked" once we actually got something usable --
+                # a None here means the LLM call itself failed (see refresh_fundamentals' own
+                # docstring), which is retriable, and marking it done anyway would silently skip
+                # this ticker for the rest of the earnings window with no fundamentals ever landing.
+                earnings_checks[ticker] = earnings_date.isoformat()
+                _save_earnings_fundamental_checks(earnings_checks)
             if verbose:
                 if fundamental:
                     print(
@@ -1039,6 +1291,40 @@ def update_research(
             if verbose:
                 reason = f" ({exc.message})" if exc.message else ""
                 print(f"  [earnings-fundamentals] {ticker} -- rate limited{reason}, stopping here.")
+            break
+
+    # Earnings-preview refresh (finance.earnings_calls.refresh_earnings_preview) -- a short, Finnhub-grounded "what to
+    # watch" read for a ticker whose next call is within EARNINGS_PREVIEW_WINDOW_DAYS, shown as the
+    # back face of app.py's earnings-reminder card. Every tracked ticker (not just
+    # list_tickers_with_thesis(), unlike the fundamentals refresh above) -- the reminder card itself
+    # shows for the whole tracked universe, so this should be available for any of them, not just
+    # ones with a synthesized thesis. One refresh per upcoming call: skip if finance.earnings_calls
+    # already has a stored preview for this exact call_date (refresh_earnings_preview upserts keyed
+    # on call_date -- see _upsert_preview) -- no separate dedup file needed, the real stored data
+    # already says whether this call's preview exists. This also means clearing/losing that stored
+    # entry (e.g. by hand) makes the next run regenerate it, rather than silently staying skipped
+    # forever behind a shadow cache that's disconnected from the actual data. Always runs regardless
+    # of include_claims, same reasoning as the fundamentals block too.
+    for ticker, company_name in tracked_universe().items():
+        call_date = _upcoming_earnings_date(ticker, as_of)
+        if call_date is None:
+            continue
+        if (call_date - as_of).days > EARNINGS_PREVIEW_WINDOW_DAYS:
+            continue
+        existing = latest_earnings_preview(ticker)
+        if existing and existing.get("call_date") == call_date.isoformat():
+            continue
+        try:
+            preview = refresh_earnings_preview(ticker, company_name, call_date, as_of)
+            if verbose:
+                if preview.get("status") == "generated":
+                    print(f"  [earnings-preview] {ticker}: refreshed ahead of {call_date.isoformat()}")
+                else:
+                    print(f"  [earnings-preview] {ticker}: {preview.get('status')}")
+        except RateLimited as exc:
+            if verbose:
+                reason = f" ({exc.message})" if exc.message else ""
+                print(f"  [earnings-preview] {ticker} -- rate limited{reason}, stopping here.")
             break
 
     # Manual, opt-in fundamentals refresh -- run_loop_a.py's --refresh-fundamental flag, for
@@ -1072,6 +1358,69 @@ def update_research(
     }
 
 
+class _Classification(NamedTuple):
+    """Result of a fresh (non-cached) Stage A classification attempt -- exactly one of `event`
+    (materially about a tracked company) or `no_tracked_company` (true, with any discovery
+    `themes`/`companies` found instead) describes what happened; both can be "empty" at once only
+    when `article_text` itself was empty, in which case neither branch ever ran.
+    """
+    event: dict | None
+    themes: list[dict]
+    companies: list[dict]
+    no_tracked_company: bool
+
+
+def _classify_article(
+    i: int, n: int, title: str, article_text: str, source: str, article_date: dt.date,
+    known_ticker: str | None, universe_map: dict[str, str], tracked_company_pattern: re.Pattern,
+    verbose: bool,
+) -> _Classification:
+    """One article's worth of Stage A, picking the right sub-path (known-ticker filing / tracked-
+    company classification / no-tracked-company theme check) and printing its own progress line --
+    the one place that decision lives, so `_run_claims_pipeline`'s loop body doesn't have to
+    interleave classification logic with verbose printing itself. Raises ExtractionUnavailable
+    (propagated from extract_event/extract_event_known_company) on an infra-level hiccup -- see
+    that exception's docstring; the caller decides what "don't cache this" means.
+    """
+    if not article_text:
+        return _Classification(event=None, themes=[], companies=[], no_tracked_company=False)
+
+    if known_ticker:
+        if verbose:
+            print(f"[{i}/{n}] ({source}) [Stage A] classifying ({known_ticker}): {title[:60]}")
+        event = extract_event_known_company(title, article_text, known_ticker, article_date, debug=verbose)
+        return _Classification(event=event, themes=[], companies=[], no_tracked_company=False)
+
+    if not tracked_company_pattern.search(f"{title} {article_text}"):
+        # Free pre-filter: no tracked ticker/name appears anywhere in the article at all, so Stage
+        # A couldn't possibly find a tracked company either -- skip the LLM call entirely. Loose by
+        # design (a real match can still slip through phrased around a nickname with no literal
+        # ticker/name, e.g. "Team Green" for Nvidia) -- the cost of that false negative is one
+        # skipped article, not a wrong claim, so erring toward cheap and slightly lossy is the right
+        # tradeoff. Doesn't mean zero LLM cost for this article though -- extract_themes runs here
+        # instead, a cheap/free-tier-by-default pass over exactly the population that used to get
+        # discarded entirely (see that function's own docstring).
+        if verbose:
+            print(f"[{i}/{n}] ({source}) {title[:60]}")
+        if source in discovery_disabled_sources():
+            if verbose:
+                print("    [pre-filter] no tracked company mentioned, discovery disabled for this source")
+            return _Classification(event=None, themes=[], companies=[], no_tracked_company=True)
+        if verbose:
+            print("    [pre-filter] no tracked company mentioned, checking for themes")
+        result = extract_themes(
+            title, article_text, article_date, source, set(universe_map.values()), debug=verbose,
+        )
+        return _Classification(
+            event=None, themes=result["themes"], companies=result["companies"], no_tracked_company=True,
+        )
+
+    if verbose:
+        print(f"[{i}/{n}] ({source}) [Stage A] classifying: {title[:60]}")
+    event = extract_event(title, article_text, universe_map, article_date, debug=verbose)
+    return _Classification(event=event, themes=[], companies=[], no_tracked_company=False)
+
+
 def _run_claims_pipeline(
     articles, events_cache, claims_attempted, universe_map, tracked_company_pattern,
     fetch_full_page_for, as_of, verbose, updated_tickers, claims_by_source_ticker,
@@ -1096,6 +1445,7 @@ def _run_claims_pipeline(
         article_date = row.published.date() if pd.notna(row.published) else as_of
         try:
             cached = events_cache.get(row.link)
+            no_tracked_company = False  # set below only on a fresh extraction that hit the pre-filter branch
             if cached is not None:
                 title, article_text, event = cached["title"], cached["text"], cached["event"]
                 if cached.get("article_date"):
@@ -1110,26 +1460,19 @@ def _run_claims_pipeline(
                             print(f"    [full-page fetch] {row.source}: got {len(fetched)} chars")
                         article_text = fetched
                 known_ticker = row.source[len(SEC_8K_SOURCE_PREFIX):] if row.source.startswith(SEC_8K_SOURCE_PREFIX) else None
-                if not article_text:
-                    event = None
-                elif known_ticker:
+                try:
+                    event, themes, theme_companies, no_tracked_company = _classify_article(
+                        i, len(articles), title, article_text, row.source, article_date,
+                        known_ticker, universe_map, tracked_company_pattern, verbose,
+                    )
+                except ExtractionUnavailable:
+                    # Infra-level hiccup (no API key, request error, every model's content empty/
+                    # rejected), not a fact about this article -- unlike a genuine parse failure,
+                    # don't cache "no event" for it, so it's retried fresh (not silently skipped
+                    # forever) the next time this article shows up in the feed window.
                     if verbose:
-                        print(f"[{i}/{len(articles)}] ({row.source}) [Stage A] classifying ({known_ticker}): {title[:60]}")
-                    event = extract_event_known_company(title, article_text, known_ticker, article_date, debug=verbose)
-                elif not tracked_company_pattern.search(f"{title} {article_text}"):
-                    # Free pre-filter: no tracked ticker/name appears anywhere in the article at
-                    # all, so Stage A couldn't possibly find a tracked company either -- skip the
-                    # LLM call entirely. Loose by design (a real match can still slip through
-                    # phrased around a nickname with no literal ticker/name, e.g. "Team Green" for
-                    # Nvidia) -- the cost of that false negative is one skipped article, not a
-                    # wrong claim, so erring toward cheap and slightly lossy is the right tradeoff.
-                    event = None
-                    if verbose:
-                        print(f"    [pre-filter] no tracked company mentioned, skipping Stage A: {title[:60]}")
-                else:
-                    if verbose:
-                        print(f"[{i}/{len(articles)}] ({row.source}) [Stage A] classifying: {title[:60]}")
-                    event = extract_event(title, article_text, universe_map, article_date, debug=verbose)
+                        print(f"  -- extraction unavailable (no LLM response), not caching -- will retry next run")
+                    continue
                 # Permanent global archive, independent of finance.news's rolling RSS cache
                 # (which is just a rolling window of whatever the feed currently contains --
                 # an old article can scroll out of it and disappear) -- keeps the full text
@@ -1140,9 +1483,42 @@ def _run_claims_pipeline(
                     "title": title, "text": article_text, "event": event, "source": row.source,
                 }
                 _save_events(events_cache)
+                # Only on a fresh extraction, never on a cache hit -- events_cache is permanent, so
+                # an article re-seen in a later day's feed window would otherwise re-append/re-print
+                # the same discovery candidates every time it's encountered again.
+                other_companies = ((event or {}).get("other_companies_mentioned") or []) + theme_companies
+                if other_companies and row.source not in discovery_disabled_sources():
+                    _append_discovery_candidates([
+                        {
+                            "type": TYPE_COMPANY,
+                            "date": article_date.isoformat(), "source": row.source, "article_title": title,
+                            "article_link": row.link, "name": c["name"], "ticker_guess": c["ticker"], "why": c["why"],
+                        }
+                        for c in other_companies
+                    ])
+                    if verbose:
+                        names = ", ".join(
+                            f"{c['name']} ({c['ticker']})" if c["ticker"] else c["name"] for c in other_companies
+                        )
+                        print(f"    [discovery] untracked companies mentioned: {names}")
+                if themes:
+                    _append_discovery_candidates([
+                        {
+                            "type": TYPE_THEME,
+                            "date": article_date.isoformat(), "source": row.source, "article_title": title,
+                            "article_link": row.link, "name": t["name"], "why": t["why"],
+                        }
+                        for t in themes
+                    ])
+                    if verbose:
+                        print(f"    [discovery] themes: {', '.join(t['name'] for t in themes)}")
 
             def _log(detail: str) -> None:
-                if verbose:
+                # Only on a fresh extraction, never on a cache hit -- same reasoning as the
+                # discovery-candidate append above: a cached article's verdict was already known
+                # (and already printed) on the run that first classified it, so reprinting it every
+                # time it's re-seen in a later day's feed window is pure noise.
+                if verbose and cached is None:
                     tokens = get_usage_counter()["total_tokens"]
                     print(f"  -- {detail} (tokens: {tokens})")
 
@@ -1150,7 +1526,10 @@ def _run_claims_pipeline(
                 _log("empty article, skipped")
                 continue
             if event is None:
-                _log("extraction failed")
+                if no_tracked_company:
+                    _log(f"no tracked company mentioned, {len(themes)} theme(s) found")
+                else:
+                    _log("extraction failed")
                 continue
 
             event_summary = f"importance={event['importance']}, companies={event['companies']}, novel={event['novel']}"
@@ -1161,7 +1540,6 @@ def _run_claims_pipeline(
             already_done = set(claims_attempted.get(row.link, []))
             new_tickers = [t for t in event["companies"] if t not in already_done]
             if not new_tickers:
-                _log(f"{event_summary} -- already processed")
                 continue
 
             for ticker in new_tickers:

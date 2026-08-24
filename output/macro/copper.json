@@ -1,0 +1,173 @@
+[
+  {
+    "period": "week",
+    "date": "2026-08-23",
+    "value": 6.586999893188477,
+    "delta": -0.18941261857254865,
+    "history": [
+      [
+        "2026-08-17",
+        6.604000091552734
+      ],
+      [
+        "2026-08-18",
+        6.482500076293945
+      ],
+      [
+        "2026-08-19",
+        6.487500190734863
+      ],
+      [
+        "2026-08-20",
+        6.460000038146973
+      ],
+      [
+        "2026-08-21",
+        6.586999893188477
+      ]
+    ],
+    "narrative": "Copper fell 0.19 over the week, but the listed headlines do not provide a clear, copper-specific catalyst. \u201cOil Advances As U.S. Tightens Pressure On Iran\u201d may have lifted broader commodity risk sentiment, while the \u201cCommodity Price Watch: August 2026\u201d headline is too general to explain copper\u2019s decline; the move was likely broad positioning or drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Commodities: Oil Advances As U.S. Tightens Pressure On Iran",
+        "domain": "SeekingAlpha",
+        "date": "20260820"
+      },
+      {
+        "title": "Commodity Price Watch: August 2026",
+        "domain": "SeekingAlpha",
+        "date": "20260820"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W34",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
+  },
+  {
+    "period": "month",
+    "date": "2026-08-23",
+    "value": 6.586999893188477,
+    "delta": 4.472641911620179,
+    "history": [
+      [
+        "2026-07-23",
+        6.304999828338623
+      ],
+      [
+        "2026-07-24",
+        6.320000171661377
+      ],
+      [
+        "2026-07-27",
+        6.339000225067139
+      ],
+      [
+        "2026-07-28",
+        6.322000026702881
+      ],
+      [
+        "2026-07-29",
+        6.273499965667725
+      ],
+      [
+        "2026-07-30",
+        6.444499969482422
+      ],
+      [
+        "2026-07-31",
+        6.435999870300293
+      ],
+      [
+        "2026-08-03",
+        6.513999938964844
+      ],
+      [
+        "2026-08-04",
+        6.618500232696533
+      ],
+      [
+        "2026-08-05",
+        6.703000068664551
+      ],
+      [
+        "2026-08-06",
+        6.686999797821045
+      ],
+      [
+        "2026-08-07",
+        6.570499897003174
+      ],
+      [
+        "2026-08-10",
+        6.5945000648498535
+      ],
+      [
+        "2026-08-11",
+        6.611999988555908
+      ],
+      [
+        "2026-08-12",
+        6.5970001220703125
+      ],
+      [
+        "2026-08-13",
+        6.59250020980835
+      ],
+      [
+        "2026-08-14",
+        6.5995001792907715
+      ],
+      [
+        "2026-08-17",
+        6.604000091552734
+      ],
+      [
+        "2026-08-18",
+        6.482500076293945
+      ],
+      [
+        "2026-08-19",
+        6.487500190734863
+      ],
+      [
+        "2026-08-20",
+        6.460000038146973
+      ],
+      [
+        "2026-08-21",
+        6.586999893188477
+      ]
+    ],
+    "narrative": "Copper's 4.47% monthly rise appears to reflect broad real-asset and commodity strength rather than a clear copper-specific catalyst. The SeekingAlpha headlines on oil advancing amid tighter U.S. pressure and conflict with Iran, along with Benzinga's July 27 report that real assets were outperforming tech, may have supported general commodity positioning, but they do not directly establish a durable copper demand or supply signal.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Commodities: Oil Advances As U.S. Tightens Pressure On Iran",
+        "domain": "SeekingAlpha",
+        "date": "20260820"
+      },
+      {
+        "title": "Commodity Price Watch: August 2026",
+        "domain": "SeekingAlpha",
+        "date": "20260820"
+      },
+      {
+        "title": "Commodities: Oil Rises Amid U.S.-Iran Conflict",
+        "domain": "SeekingAlpha",
+        "date": "20260819"
+      },
+      {
+        "title": "Real Assets Are Beating Tech Right Now. Here's the Proof.",
+        "domain": "Benzinga",
+        "date": "20260727"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
+  }
+]

@@ -111,6 +111,31 @@ def full_page_fetch_sources() -> set[str]:
     return {s["name"] for s in _load().get("news_sources", []) if s.get("full_page_fetch", False)}
 
 
+def discovery_primary_sources() -> set[str]:
+    """Names of every source configured with "discovery_model": "primary" -- finance.newsloop's
+    theme-discovery pass (the cheap triage run on articles the tracked-company pre-filter would
+    otherwise discard for free, see that module's own docstring) uses Loop A's real configured
+    model (llm_config()) for these, and the module-level Groq default for every other source. Off
+    by default (absent or any value other than "primary" means the cheap default) -- deliberately
+    opt-in per source, so a newly added source never silently starts spending the expensive model
+    without someone having chosen that on purpose. A manual judgment call (which sources are worth
+    the good model), not inferred from article volume -- see the design discussion this came from.
+    """
+    return {s["name"] for s in _load().get("news_sources", []) if s.get("discovery_model") == "primary"}
+
+
+def discovery_disabled_sources() -> set[str]:
+    """Names of every source configured with "discovery_model": "none" -- finance.newsloop skips
+    the theme-discovery pass (extract_themes) entirely for these sources and never persists their
+    other_companies_mentioned candidates either, so the source contributes nothing to
+    output/discovery/candidates.json. For a source that's noisy, off-topic, or otherwise not worth
+    mining for discovery (as opposed to just not worth the expensive model -- that's the
+    "primary"/absent split discovery_primary_sources() covers), rather than accumulating candidates
+    someone would just discard by hand on the Discovery page anyway.
+    """
+    return {s["name"] for s in _load().get("news_sources", []) if s.get("discovery_model") == "none"}
+
+
 def max_article_chars() -> int | None:
     """Cap on how many characters of an article's text Loop A sends to the
     LLM (Stage A, Stage B, the SEC 8-K classifier) -- None (the default,

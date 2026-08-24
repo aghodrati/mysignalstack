@@ -10,7 +10,7 @@ find new information (that's what Stage A/B are for; see finance.newsloop).
 Blended into confidence as a pure downward multiplier (never able to raise
 it), same soft-influence-only philosophy as finance.fundamentals -- this
 never vetoes a trade outright, just tempers the number that already gates
-one. finance.tickerthesis also runs a set of free, deterministic guardrails
+one. finance.thesis also runs a set of free, deterministic guardrails
 (source concentration, evidence thinness, staleness) independent of this
 LLM call, so a thesis with an obvious structural weakness still gets
 dampened even if this call is rate-limited or the LLM's own judgment misses

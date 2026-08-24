@@ -38,12 +38,14 @@ output/*
 !output/theses/**
 !output/fundamentals/
 !output/fundamentals/**
-!output/earnings_calls/
-!output/earnings_calls/**
+!output/earnings/
+!output/earnings/**
 !output/macro/
 !output/macro/**
 !output/portfolios/
 !output/portfolios/**
+!output/discovery/
+!output/discovery/**
 
 # OS files
 .DS_Store

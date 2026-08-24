@@ -13,7 +13,7 @@ OPENROUTER_API_KEY already uses -- see app.py for how these get bridged in from 
 Streamlit Cloud, where secrets aren't plain env vars by default). Falls back to a local JSON file
 per kind (output/read_state.json, output/favorite_state.json) if those aren't configured, so local
 dev works with zero setup -- same "soft-degrade, never crash the page" contract finance.macro's
-FRED/GDELT fetches already use.
+FRED/news-source fetches already use.
 
 "Read" and "favorite" are two independent tags on the same card id, not mutually exclusive and not
 implying each other -- reading a card means "seen it, hide it from the normal feed"; favoriting one

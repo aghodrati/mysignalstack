@@ -25,7 +25,7 @@ asking for it by name is itself the signal that a refresh is wanted right now. -
 are meant for a scheduler (e.g. two separate GitHub Actions cron entries) that already decides
 *when* to run each one, rather than relying on this script's own day-of-week/month-end check.
 --source and --ticker further scope whichever stage they're relevant to -- for --refresh-macro,
---ticker names a finance.macro.NARRATIVE_QUERIES key (e.g. "10y_yield"), not a stock ticker.
+--ticker names a finance.macro.NARRATIVE_SERIES key (e.g. "10y_yield"), not a stock ticker.
 
 Usage:
     uv run run_loop_a.py my_portfolio
@@ -42,10 +42,21 @@ Usage:
 import argparse
 import datetime as dt
 
-from finance.earnings_calls import discover_recent_transcripts, refresh_earnings_call
+from dotenv import load_dotenv
+
+# Loads .env into os.environ explicitly -- `uv run` does NOT do this automatically (same gotcha
+# app.py already works around). Every finance.* module reads its API keys via plain os.environ.get
+# (finance.llm._load_env_var, finance.news_sources' FINNHUB_API_KEY/GNEWS_API_KEY lookups, etc.),
+# so without this, a key that only exists in .env -- not already exported in the calling shell --
+# silently resolves to None here, one stage at a time, with no error: OPENROUTER_API_KEY still
+# working while a newly-added key like FINNHUB_API_KEY quietly doesn't is the exact symptom this
+# fixes. load_dotenv() never overrides a var the shell already has set for real.
+load_dotenv()
+
+from finance.earnings_calls import discover_recent_transcripts, needs_transcript_check, refresh_earnings_call
 from finance.llm import RateLimited
 from finance.loop_a_config import active_news_sources, tracked_universe
-from finance.macro import MONTHLY_NARRATIVE_SERIES, NARRATIVE_QUERIES, refresh_macro_narrative
+from finance.macro import MONTHLY_NARRATIVE_SERIES, NARRATIVE_SERIES, refresh_macro_narrative
 from finance.newsloop import review_loop_a, run_loop_a
 from finance.portfolio import list_portfolios
 
@@ -93,8 +104,8 @@ def main():
     parser.add_argument(
         "--refresh-macro", action="store_true",
         help=(
-            "Refresh weekly macro narratives (every configured finance.macro.NARRATIVE_QUERIES "
-            "series, or just --ticker if given) -- skipped entirely, no LLM/GDELT cost, for a "
+            "Refresh weekly macro narratives (every configured finance.macro.NARRATIVE_SERIES "
+            "series, or just --ticker if given) -- skipped entirely, no LLM/news-source cost, for a "
             "series whose narrative for this ISO week is already on record. With no other "
             "--refresh-* flag given, this is already the default; passing it alone runs ONLY this "
             "stage."
@@ -163,9 +174,9 @@ def main():
         valid_sources = {name for name, _url in active_news_sources()}
         if args.source not in valid_sources:
             raise SystemExit(f"No active news source named {args.source!r}. Configured sources: {', '.join(sorted(valid_sources))}")
-    if do_macro and args.ticker is not None and args.ticker not in NARRATIVE_QUERIES:
+    if do_macro and args.ticker is not None and args.ticker not in NARRATIVE_SERIES:
         raise SystemExit(
-            f"No macro series named {args.ticker!r}. Configured series: {', '.join(sorted(NARRATIVE_QUERIES))}"
+            f"No macro series named {args.ticker!r}. Configured series: {', '.join(sorted(NARRATIVE_SERIES))}"
         )
     if args.ticker is not None and not (do_fundamentals or do_earning_call or do_macro):
         print("Note: --ticker only affects --refresh-fundamental/--refresh-earning-call/--refresh-macro -- ignored for this run.")
@@ -215,14 +226,31 @@ def main():
             print(f"  {ticker}: {before_str} -> {change['after_confidence']:.0%} ({change['direction']})")
 
     if do_earning_call:
-        tickers = [args.ticker.upper()] if args.ticker else sorted(tracked_universe())
+        as_of = dt.date.today()
+        if args.ticker:
+            # Explicit --ticker is a deliberate manual check (also required for --transcript-url)
+            # -- always runs regardless of earnings window, same as --refresh-fundamental --ticker
+            # bypassing its own window trigger.
+            tickers = [args.ticker.upper()]
+            skipped = 0
+        else:
+            all_tickers = sorted(tracked_universe())
+            tickers = [t for t in all_tickers if needs_transcript_check(t, as_of)]
+            skipped = len(all_tickers) - len(tickers)
         print(f"\n=== Earnings call refresh ({len(tickers)} ticker(s)) ===")
+        if skipped:
+            print(
+                f"  ({skipped} ticker(s) outside their earnings window, skipped -- not near a "
+                f"reported/upcoming earnings date, no point spending a discovery search on them)"
+            )
         if args.transcript_url:
             recent_index = None
             print(f"Using manual transcript URL for {tickers[0]}, skipping discovery.")
-        else:
+        elif tickers:
             print("Scanning fool.com's recent transcript listing...")
             recent_index = discover_recent_transcripts()
+        else:
+            recent_index = None
         for ticker in tickers:
             try:
                 snapshot = refresh_earnings_call(
@@ -242,7 +270,7 @@ def main():
                 print(f"  {ticker}: no new transcript found (or nothing usable)")
 
     if do_macro:
-        # refresh_macro_narrative always regenerates a fresh LLM+GDELT read on every call for both
+        # refresh_macro_narrative always regenerates a fresh LLM+news read on every call for both
         # periods -- no skip-based dedup (see its own docstring) -- so calling it costs real LLM
         # calls every time, by design (both narratives are rolling "as of now" reads). On an
         # explicit --refresh-macro that's exactly what's wanted (asking for it by name means "do it
@@ -264,7 +292,7 @@ def main():
         today = dt.date.today()
         is_saturday = today.weekday() == 5
         is_month_end = (today + dt.timedelta(days=1)).day == 1
-        series_keys = [args.ticker] if args.ticker else list(NARRATIVE_QUERIES)
+        series_keys = [args.ticker] if args.ticker else list(NARRATIVE_SERIES)
         print(f"\n=== Macro narratives ({len(series_keys)} series) ===")
         if not macro_explicit:
             print(
@@ -291,8 +319,8 @@ def main():
                 status = result["status"]
                 if status == "generated":
                     print(f"  {series_key} ({period}): refreshed as of {result['date']} -- {result['narrative'][:100]}")
-                elif status == "gdelt_unavailable":
-                    print(f"  {series_key} ({period}): GDELT is rate-limited or unreachable right now -- skipped, will retry next run.")
+                elif status == "news_unavailable":
+                    print(f"  {series_key} ({period}): news source is rate-limited or unreachable right now -- skipped, will retry next run.")
                 elif status == "no_tile":
                     print(f"  {series_key} ({period}): couldn't fetch the underlying macro series -- skipped.")
                 elif status == "llm_failed":

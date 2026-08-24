@@ -1,0 +1,85 @@
+[
+  {
+    "date": "2026-08-23",
+    "call_date": "2026-08-26",
+    "narrative": "Investors should focus on whether Nvidia\u2019s data-center and cloud demand remains strong, particularly as the sector faces a \u201chigh-stakes AI demand test,\u201d and whether customers are absorbing reported AI-related price hikes above 15%. They should also watch management\u2019s commentary on the Rubin product ramp, which Bernstein\u2019s Stacy Rasgon specifically identified as a key issue, as well as signs that AMD\u2019s faster progress is intensifying competition. My expectation is for solid results and continued AI demand, but potentially cautious guidance or commentary could still pressure the stock\u2014consistent with the headline warning that Nvidia may fall even if it beats expectations. The call\u2019s market impact will likely depend less on the reported quarter than on the durability of customer spending, pricing power, and the pace of the next-generation product transition.",
+    "headlines_used": [
+      {
+        "title": "AMD Vs. NVDA: The Tortoise Keeps Pushing Ahead, Heedless Of The Hare's Rapid Pace",
+        "domain": "SeekingAlpha",
+        "date": "20260823"
+      },
+      {
+        "title": "Nvidia Stock May Plunge After Earnings, Even If It Beats",
+        "domain": "SeekingAlpha",
+        "date": "20260823"
+      },
+      {
+        "title": "Bloomberg Reported Earlier, Nvidia Customers Notified About AI-Related Price Hikes Above 15%",
+        "domain": "Benzinga",
+        "date": "20260822"
+      },
+      {
+        "title": "Elon Musk Doesn't 'Really Buy Stocks' \u2014 but He Named 3 Things He Looks For in a Company",
+        "domain": "Benzinga",
+        "date": "20260822"
+      },
+      {
+        "title": "Why Navitas Semiconductor Stock Sank This Week",
+        "domain": "Yahoo",
+        "date": "20260822"
+      },
+      {
+        "title": "The Target Turnaround Is Real. Here's What Investors Should Know.",
+        "domain": "Yahoo",
+        "date": "20260822"
+      },
+      {
+        "title": "Data Center and Cloud Infrastructure Earnings Face a High-Stakes AI Demand Test",
+        "domain": "ChartMill",
+        "date": "20260822"
+      },
+      {
+        "title": "The Look Ahead: August 21, 2026",
+        "domain": "CNBC",
+        "date": "20260822"
+      },
+      {
+        "title": "Discover which dow jones stocks are making waves on Friday.",
+        "domain": "ChartMill",
+        "date": "20260821"
+      },
+      {
+        "title": "Bernstein's Rasgon: Nvidia's numbers should be good, looking for commentary on Rubin ramp",
+        "domain": "CNBC",
+        "date": "20260821"
+      }
+    ],
+    "type": "earnings_preview"
+  },
+  {
+    "date": "2026-08-23",
+    "transcript_date": "2026-05-20",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/05/20/nvidia-nvda-q1-2027-earnings-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.92,
+    "guidance_summary": "Q2 revenue guided to $91 billion, plus or minus 2%, with sequential growth primarily from data center. GAAP gross margin guided to 74.9% and non-GAAP gross margin to 75%, each plus or minus 50 basis points; Q2 GAAP/non-GAAP OpEx expected at approximately $8.5 billion/$8.3 billion. Full-year OpEx growth is expected in the upper-40% range, tax rate at 16%-18%, and management reaffirmed roughly $1 trillion of combined Blackwell and Rubin revenue from 2025 through 2027. No China data-center compute revenue is included in the outlook, and no specific hyperscaler capex guidance was provided.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On whether NVIDIA can grow faster than hyperscaler capex, management said it expects to do so because ACIE\u2014including AI-native clouds, enterprises, industrial customers, and sovereign AI\u2014is a large and faster-growing second market beyond hyperscalers.",
+      "When asked about Vera's $20 billion revenue figure and possible GPU cannibalization, Jensen specified that the $20 billion is standalone CPU revenue, while Vera also contributes to VeraRubin systems and other networking, storage, security, and confidential-computing configurations.",
+      "On LPX and competing custom accelerators, management was notably specific that SRAM-based LPX has limited throughput and context capacity and should remain a niche product, with its addressable use case currently smaller than 20% of the market.",
+      "On the VeraRubin ramp, CFO Kress acknowledged it was too early to say whether the ramp would be faster than GB300, but said Q3 production shipments are planned, major customers already have purchase orders, and Q1 next year should be very large."
+    ],
+    "risks": [
+      "China data-center compute revenue remains excluded because H200 shipments have not occurred and future import approval is uncertain.",
+      "The company increased supply commitments, inventory commitments, and prepaids to $145 billion, increasing exposure to demand, supply-chain, and working-capital risk.",
+      "The VeraRubin ramp involves complex multi-chip, multi-rack systems; management's timing is confident but explicitly uncertain on the comparative ramp slope.",
+      "LPX and other custom or SRAM-based accelerators could capture premium low-latency inference workloads, although management characterized them as niche.",
+      "The growth thesis increasingly depends on agentic AI adoption, profitable token demand, and continued expansion of both hyperscaler and fragmented ACIE infrastructure spending."
+    ],
+    "summary": "This was an exceptionally strong call, with record $82 billion revenue, 85% year-over-year growth, 75% gross margins, record free cash flow, and Q2 guidance for another 11% sequential increase. The Q&A reinforced an unusually broad growth runway through hyperscalers, AI-native clouds, sovereign and industrial deployments, inference, physical AI, and standalone Vera CPUs, while management remained highly confident about share gains and the Rubin launch. The main offsets are China uncertainty, heavy supply commitments, execution complexity around VeraRubin, and dependence on continued agentic-AI-driven infrastructure spending.",
+    "type": "earnings_transcript"
+  }
+]

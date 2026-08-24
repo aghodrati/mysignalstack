@@ -986,5 +986,24 @@
     "trade_worthy": false,
     "context": "Broadcom says six companies are developing custom AI XPUs with 3.5D XDSiP, which places multiple compute chiplets and HBM stacks in one package and reduces die-to-die link energy to below 0.2 picojoules per bit versus roughly 3\u20135 picojoules for motherboard links. The article conjectures that Meta is one of those six customers and says MTIA 500 is expected in 2027, but neither the customer identification nor the product implementation is confirmed.",
     "source": "Next Platform"
+  },
+  {
+    "id": "483a8b309be8f18f",
+    "ticker": "META",
+    "source_link": "https://newsletter.semianalysis.com/p/are-open-models-catching-up",
+    "source_title": "Are Open Models Catching Up?",
+    "event_type": "competitive",
+    "created": "2026-08-21",
+    "claim": "Meta\u2019s Llama open-source AI effort has not sustained a durable competitive lead, as Llama-4 Maverick only temporarily countered DeepSeek R1\u2019s momentum before newer closed reasoning models and subsequent open models narrowed the gap again.",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article describes DeepSeek R1 as creating strong open-model momentum, followed by Llama-4 Maverick temporarily squashing that momentum. Google\u2019s Gemini 2.5 Pro and OpenAI\u2019s o3 then advanced the reasoning frontier, while later open models rapidly caught up. This suggests Meta\u2019s model releases may provide only temporary differentiation in a rapidly compressing AI race, potentially weakening the strategic value of its open-source lead relative to competitors\u2019 models and products.",
+    "source": "SemiAnalysis"
   }
 ]
