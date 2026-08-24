@@ -516,5 +516,610 @@
     "article_link": "https://semiengineering.com/dont-scrap-it-save-it-feedforward-control-for-modern-semiconductor-manufacturing/",
     "name": "yield improvement",
     "why": "shows 60%+ Cpk gain; pass rate rises from 60% to 97%"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-06",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia GPU Debt Backstop Unleashes the AI Project Trinity: Capital, Offtake and Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+    "name": "SharonAI",
+    "ticker_guess": null,
+    "why": "Announced a 72MW Australian AI factory scaling to as many as 40,000 GB300 GPUs under a six-year Nvidia backstop; disclosed $4.88 billion in total backstop value and plans to exceed 55,000 Nvidia GPUs by mid-2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-06",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia GPU Debt Backstop Unleashes the AI Project Trinity: Capital, Offtake and Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+    "name": "Firmus",
+    "ticker_guess": null,
+    "why": "Announced a 360MW AI cluster in Batam, Indonesia backed by Nvidia; expects $25 billion-$30 billion of customer revenue over six years and is targeting AI-native companies, enterprises and inference providers; previously deployed an 18,000-GB300 Melbourne cluster financed through a $10 billion facility"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-06",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia GPU Debt Backstop Unleashes the AI Project Trinity: Capital, Offtake and Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+    "name": "Gunvor Group",
+    "ticker_guess": null,
+    "why": "Signed a 600MW firm-energy deal with Firmus in South Australia; the agreement is expected to underwrite 1.2GW of new renewable development and 1.5GWh of storage by 2032"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-06",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia GPU Debt Backstop Unleashes the AI Project Trinity: Capital, Offtake and Datacenters",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidia-gpu-debt-backstop-unleashes",
+    "name": "Blackstone",
+    "ticker_guess": "BX",
+    "why": "Led the $10 billion financing facility for Firmus's 18,000-GB300 Melbourne cluster through its Tactical Opportunities, Credit and Insurance businesses; the financing enabled construction of one of Firmus's major GPU clusters"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "SemiAnalysis",
+    "article_title": "Meta Compute: Everyone Wants To Be A Neocloud",
+    "article_link": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Reportedly in final talks with Meta for private Claude instances; identified as the prime suspect for a potential Meta SpaceX-style compute deal; could have its models sold externally through a Meta Bedrock-like service"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "SemiAnalysis",
+    "article_title": "Meta Compute: Everyone Wants To Be A Neocloud",
+    "article_link": "https://newsletter.semianalysis.com/p/meta-compute-everyone-wants-to-be",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Named as a potential counterparty for a Meta large-scale compute deal; expected to potentially have its models served externally through Meta over time; cited as a frontier AI competitor that Meta Superintelligence Labs is trying to catch up with"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "SemiAnalysis",
+    "article_title": "EMIB-T Roadmap, Custom HBM, HBM4 Packaging Challenges, Microfluidic Cooling, Photonic Interconnects, and More",
+    "article_link": "https://newsletter.semianalysis.com/p/ectc2026",
+    "name": "Marvell Technology",
+    "ticker_guess": "MRVL",
+    "why": "Detailed custom HBM4E architecture that moves interface logic to an advanced base die, reducing host HBM-related footprint by about 60%; demonstrated OMIB and Photonic Fabric optical-interconnect packaging, including 1.8 Tbps/mm\u00b2 bandwidth density"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "SemiAnalysis",
+    "article_title": "EMIB-T Roadmap, Custom HBM, HBM4 Packaging Challenges, Microfluidic Cooling, Photonic Interconnects, and More",
+    "article_link": "https://newsletter.semianalysis.com/p/ectc2026",
+    "name": "Samsung Electronics",
+    "ticker_guess": "005930.KS",
+    "why": "Presented an 8-layer HBM4E silicon interposer design with ultra-high-density capacitors and analyzed signal integrity and power delivery; reported hybrid-copper-bonded HBM thermal-resistance improvements of up to 29.1% and introduced TSV-free Vertical Cu post Stack memory packaging"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "SemiAnalysis",
+    "article_title": "EMIB-T Roadmap, Custom HBM, HBM4 Packaging Challenges, Microfluidic Cooling, Photonic Interconnects, and More",
+    "article_link": "https://newsletter.semianalysis.com/p/ectc2026",
+    "name": "Lightmatter",
+    "ticker_guess": null,
+    "why": "Provided detailed assembly, fiber-attachment and reliability results for its Passage M1000 photonic interposer with 15 ASIC chiplets; reported roughly 59 \u00b5m package warpage at reflow and over 95% electrical assembly yield; demonstrated concentrated cooling of a 680 W photonic test chip"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "SemiAnalysis",
+    "article_title": "EMIB-T Roadmap, Custom HBM, HBM4 Packaging Challenges, Microfluidic Cooling, Photonic Interconnects, and More",
+    "article_link": "https://newsletter.semianalysis.com/p/ectc2026",
+    "name": "Corning",
+    "ticker_guess": "GLW",
+    "why": "Used finite-element analysis, peridynamics and fracture mechanics to model SeWaRe cracking in glass substrates; showed that copper stiffness, polymer compliance and glass/polymer CTE selection materially affect crack propagation and reliability"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "SemiAnalysis",
+    "article_title": "EMIB-T Roadmap, Custom HBM, HBM4 Packaging Challenges, Microfluidic Cooling, Photonic Interconnects, and More",
+    "article_link": "https://newsletter.semianalysis.com/p/ectc2026",
+    "name": "ASE Technology",
+    "ticker_guess": "3711.TW",
+    "why": "Demonstrated panel-level RDL processing on 600 mm \u00d7 600 mm panels before singulation for advanced packaging; through SPIL, evaluated gallium-based liquid-metal, silicone-based and carbon-fiber thermal-interface materials, with carbon-fiber TIM retaining 95% coverage after 1,000 hours at 150 \u00b0C"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-30",
+    "source": "SemiAnalysis",
+    "article_title": "TokenBudgeting: Our Conversations with Enterprises on Token Spend",
+    "article_link": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its Claude models and Claude Code are central to enterprise token spending; Meta was estimated to represent only 3\u20135% of Anthropic\u2019s customers, while Anthropic documentation cites average Claude Code usage of $150\u2013$250 per developer monthly and only 10% of users above $30 per day; Anthropic is expected to continue growing API revenue despite enterprise budget caps"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-30",
+    "source": "SemiAnalysis",
+    "article_title": "TokenBudgeting: Our Conversations with Enterprises on Token Spend",
+    "article_link": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "OpenAI and Anthropic together are estimated to derive over 70% of current ARR from coding use cases; OpenAI\u2019s revenue mix is described as roughly 60% business-to-business, versus over 90% for Anthropic; its API business is expected to keep growing at current monthly net-new rates"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-30",
+    "source": "SemiAnalysis",
+    "article_title": "TokenBudgeting: Our Conversations with Enterprises on Token Spend",
+    "article_link": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+    "name": "Workday",
+    "ticker_guess": "WDAY",
+    "why": "Employees reportedly have AI budgets of about $2,000 per month, placing the company among enterprises with higher token allowances; it is cited as an example of organizations adopting substantial but managed AI spending"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-30",
+    "source": "SemiAnalysis",
+    "article_title": "TokenBudgeting: Our Conversations with Enterprises on Token Spend",
+    "article_link": "https://newsletter.semianalysis.com/p/tokenbudgeting-our-conversations",
+    "name": "Stripe",
+    "ticker_guess": "STRP",
+    "why": "Employees reportedly have AI budgets of about $2,000 per month; it is cited alongside Workday as an enterprise using relatively high token allowances while moving toward formal budgeting"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-25",
+    "source": "SemiAnalysis",
+    "article_title": "US Grid Constraints: Towards 40GW+ of Behind-The-Meter Datacenter by 2028?",
+    "article_link": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+    "name": "Bloom Energy",
+    "ticker_guess": "BE",
+    "why": "Identified as a major beneficiary of the shift toward behind-the-meter datacenter power; cited as an early and especially strong beneficiary of onsite fuel-cell deployment"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-25",
+    "source": "SemiAnalysis",
+    "article_title": "US Grid Constraints: Towards 40GW+ of Behind-The-Meter Datacenter by 2028?",
+    "article_link": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+    "name": "GE Vernova",
+    "ticker_guess": "GEV",
+    "why": "Its turbine capacity constraints are discussed as a key factor driving datacenter operators toward alternative behind-the-meter equipment; Crusoe\u2019s Goodnight Campus is expected to use roughly 665 MW of GE Vernova LM2500 turbines"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-25",
+    "source": "SemiAnalysis",
+    "article_title": "US Grid Constraints: Towards 40GW+ of Behind-The-Meter Datacenter by 2028?",
+    "article_link": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+    "name": "Vistra",
+    "ticker_guess": "VST",
+    "why": "AWS\u2019s 1,200 MW Comanche Peak datacenter co-location project is described as being adjacent to Vistra\u2019s nuclear plant; the project uses a 20-year PPA and is expected to ramp to full capacity by 2032"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-25",
+    "source": "SemiAnalysis",
+    "article_title": "US Grid Constraints: Towards 40GW+ of Behind-The-Meter Datacenter by 2028?",
+    "article_link": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+    "name": "Calpine",
+    "ticker_guess": null,
+    "why": "Several major ERCOT co-location projects are tied to Calpine generation assets; CyrusOne\u2019s 400 MW Thad Hill campus is adjacent to Calpine\u2019s plant, while the CyrusOne/Constellation Freestone project involves up to 760 MW"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-25",
+    "source": "SemiAnalysis",
+    "article_title": "US Grid Constraints: Towards 40GW+ of Behind-The-Meter Datacenter by 2028?",
+    "article_link": "https://newsletter.semianalysis.com/p/us-grid-constraints-towards-40gw",
+    "name": "Constellation Energy",
+    "ticker_guess": "CEG",
+    "why": "Participates in the 760 MW CyrusOne/Constellation Freestone Energy Center project; also appears in the broader trend of existing-generation co-location arrangements that reduce datacenter reliance on grid interconnection"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-23",
+    "source": "SemiAnalysis",
+    "article_title": "China\u2019s CXMT Is Set to Challenge DRAM Incumbents",
+    "article_link": "https://newsletter.semianalysis.com/p/chinas-cxmt-is-set-to-challenge-dram",
+    "name": "ChangXin Memory Technologies (CXMT)",
+    "ticker_guess": null,
+    "why": "China\u2019s leading DRAM manufacturer preparing for a STAR Market IPO; grew revenue 156% YoY to about $8.6 billion in 2025 and is expanding wafer capacity toward 500 kwspm by 2028; developing HBM but currently focused primarily on commodity DDR and LPDDR products"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-23",
+    "source": "SemiAnalysis",
+    "article_title": "China\u2019s CXMT Is Set to Challenge DRAM Incumbents",
+    "article_link": "https://newsletter.semianalysis.com/p/chinas-cxmt-is-set-to-challenge-dram",
+    "name": "Qimonda",
+    "ticker_guess": null,
+    "why": "Defunct German DRAM manufacturer whose patents and technical documentation formed the foundation of CXMT\u2019s DRAM technology; CXMT licensed a large Qimonda patent portfolio and recruited former Qimonda engineering talent, including Karl-Heinz Kuesters"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-23",
+    "source": "SemiAnalysis",
+    "article_title": "China\u2019s CXMT Is Set to Challenge DRAM Incumbents",
+    "article_link": "https://newsletter.semianalysis.com/p/chinas-cxmt-is-set-to-challenge-dram",
+    "name": "GigaDevice",
+    "ticker_guess": "603986.SS",
+    "why": "Founded by CXMT founder Zhu Yiming and grew into a major SPI NOR flash and microcontroller supplier; remains connected to CXMT through Zhu Yiming\u2019s ownership and a roughly 1.8% stake in CXMT"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-23",
+    "source": "SemiAnalysis",
+    "article_title": "China\u2019s CXMT Is Set to Challenge DRAM Incumbents",
+    "article_link": "https://newsletter.semianalysis.com/p/chinas-cxmt-is-set-to-challenge-dram",
+    "name": "Huawei",
+    "ticker_guess": null,
+    "why": "A key potential adopter of CXMT HBM for China\u2019s domestic AI accelerators; faces severe HBM supply constraints from export controls and is reportedly developing custom HBM approaches with CXMT that may differ from standard JEDEC implementations"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-23",
+    "source": "SemiAnalysis",
+    "article_title": "China\u2019s CXMT Is Set to Challenge DRAM Incumbents",
+    "article_link": "https://newsletter.semianalysis.com/p/chinas-cxmt-is-set-to-challenge-dram",
+    "name": "Alibaba Group",
+    "ticker_guess": "BABA",
+    "why": "Alibaba Cloud is described as an anchor CXMT customer and holds nearly 4% of CXMT; its role as both customer, shareholder, and endorser provides CXMT with relatively guaranteed domestic demand"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-18",
+    "source": "SemiAnalysis",
+    "article_title": "Stop Saying Half of 2026 US Datacenter Capacity Is Canceled",
+    "article_link": "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter",
+    "name": "Core Scientific",
+    "ticker_guess": "CORZ",
+    "why": "Its Denton campus delays are analyzed in detail, including permitting, weather, construction, transformer, and GB200 redesign issues; the article says it correctly flagged missed CoreWeave delivery timelines ahead of earnings"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-18",
+    "source": "SemiAnalysis",
+    "article_title": "Stop Saying Half of 2026 US Datacenter Capacity Is Canceled",
+    "article_link": "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter",
+    "name": "STACK Infrastructure",
+    "ticker_guess": null,
+    "why": "Its Oracle-linked New Mexico campus is described as delayed to 2029; permitting, gas-pipeline, microgrid, and local-opposition problems are examined as the key causes"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-18",
+    "source": "SemiAnalysis",
+    "article_title": "Stop Saying Half of 2026 US Datacenter Capacity Is Canceled",
+    "article_link": "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter",
+    "name": "Bloom Energy",
+    "ticker_guess": "BE",
+    "why": "It stepped in with fuel-cell plans after Oracle/STACK withdrew gas-turbine applications; the article says Bloom\u2019s lower NOx profile did not resolve the binding gas-pipeline constraint"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-18",
+    "source": "SemiAnalysis",
+    "article_title": "Stop Saying Half of 2026 US Datacenter Capacity Is Canceled",
+    "article_link": "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter",
+    "name": "DataOne",
+    "ticker_guess": null,
+    "why": "Its development of Nebius\u2019s New Jersey campus is examined through construction and equipment-delivery timelines; the article attributes delays to supplier slippage and longer-than-expected commissioning and MEP installation"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-18",
+    "source": "SemiAnalysis",
+    "article_title": "Stop Saying Half of 2026 US Datacenter Capacity Is Canceled",
+    "article_link": "https://newsletter.semianalysis.com/p/stop-saying-half-of-2026-us-datacenter",
+    "name": "Transwestern",
+    "ticker_guess": null,
+    "why": "Its Green Chile Pipeline project is discussed in detail, including the failed August 2026 in-service target; state-land, SHPO, FERC, environmental, and alternative-route issues pushed the associated Oracle campus toward a 2029 first-power base case"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-16",
+    "source": "SemiAnalysis",
+    "article_title": "RL Systems Mind the Gap: Matching Trainer and Generator Throughput",
+    "article_link": "https://newsletter.semianalysis.com/p/rl-systems-mind-the-gap-matching",
+    "name": "Prime Intellect",
+    "ticker_guess": null,
+    "why": "Provided Prime RL training recipes, hardware resources, and the Prime Sandbox environment for multiple RL experiments; Prime RL is evaluated in detail, including its orchestrator design, environment hub, PD disaggregation support, usability, and sandbox reliability issues"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-16",
+    "source": "SemiAnalysis",
+    "article_title": "RL Systems Mind the Gap: Matching Trainer and Generator Throughput",
+    "article_link": "https://newsletter.semianalysis.com/p/rl-systems-mind-the-gap-matching",
+    "name": "Modal",
+    "ticker_guess": null,
+    "why": "Provided sandbox infrastructure and API credits for the experiments; Modal\u2019s Sandbox is used for SWE-bench-style RL environments and partial rollouts, with detailed discussion of startup latency, concurrency scaling, account resource limits, reliability, and observability"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-14",
+    "source": "SemiAnalysis",
+    "article_title": "Is SMIC N+3\u2019s Metal Pitch Smaller than Intel 18A\u2019s?",
+    "article_link": "https://newsletter.semianalysis.com/p/steel-smic-n3-teardown",
+    "name": "SMIC",
+    "ticker_guess": "0981.HK",
+    "why": "Developed and is shipping the N+3 process used in Huawei\u2019s Kirin 9030; reaches TSMC N6-class logic density through aggressive DUV multi-patterning and DTCO, but with higher complexity, cost and process-control challenges"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-14",
+    "source": "SemiAnalysis",
+    "article_title": "Is SMIC N+3\u2019s Metal Pitch Smaller than Intel 18A\u2019s?",
+    "article_link": "https://newsletter.semianalysis.com/p/steel-smic-n3-teardown",
+    "name": "Huawei",
+    "ticker_guess": null,
+    "why": "Designed the Kirin 9030, including its TaiShan CPU, Maleoon GPU and Ascend NPU; is pursuing \u03c4 scaling and LogicFolding, a 3D active-logic stacking strategy intended to recover density, performance and efficiency without EUV"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-14",
+    "source": "SemiAnalysis",
+    "article_title": "Is SMIC N+3\u2019s Metal Pitch Smaller than Intel 18A\u2019s?",
+    "article_link": "https://newsletter.semianalysis.com/p/steel-smic-n3-teardown",
+    "name": "MediaTek",
+    "ticker_guess": "2454.TW",
+    "why": "Its Helio G99, built on TSMC N6, serves as the article\u2019s process comparison baseline; the teardown compares its Cortex-A55 cells, SRAM and metal stack against Kirin 9030\u2019s SMIC N+3 implementation"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-14",
+    "source": "SemiAnalysis",
+    "article_title": "Is SMIC N+3\u2019s Metal Pitch Smaller than Intel 18A\u2019s?",
+    "article_link": "https://newsletter.semianalysis.com/p/steel-smic-n3-teardown",
+    "name": "Samsung Electronics",
+    "ticker_guess": "005930.KS",
+    "why": "Supplied the Kirin 9030 Pro\u2019s LPDDR5X memory using Samsung 1a DRAM; Samsung\u2019s 1a node and Samsung\u2019s leading-edge process-density position are used in the article\u2019s memory and technology comparisons"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-14",
+    "source": "SemiAnalysis",
+    "article_title": "Is SMIC N+3\u2019s Metal Pitch Smaller than Intel 18A\u2019s?",
+    "article_link": "https://newsletter.semianalysis.com/p/steel-smic-n3-teardown",
+    "name": "CXMT",
+    "ticker_guess": null,
+    "why": "Supplied LPDDR memory packages for some 16 GB Kirin 9030 Pro Max variants; its G4 DRAM process and package dimensions are analyzed and estimated to be roughly equivalent to other manufacturers\u2019 1z-class processes"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "SemiAnalysis",
+    "article_title": "Intel Should Raise Capital",
+    "article_link": "https://newsletter.semianalysis.com/p/intel-should-raise-capital",
+    "name": "Apollo Global Management",
+    "ticker_guess": "APO",
+    "why": "Invested $11.2 billion for 49% of Intel\u2019s Fab 34 joint venture; Intel agreed to buy Apollo\u2019s stake back for $14.2 billion, funded with approximately $7.7 billion in cash and a $6.5 billion bridge loan"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "SemiAnalysis",
+    "article_title": "Intel Should Raise Capital",
+    "article_link": "https://newsletter.semianalysis.com/p/intel-should-raise-capital",
+    "name": "SoftBank Group",
+    "ticker_guess": "SFTBY",
+    "why": "Made a strategic investment in Intel at $23 per share; cited as one of the major recent capital providers supporting Intel\u2019s turnaround"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "SemiAnalysis",
+    "article_title": "Intel Should Raise Capital",
+    "article_link": "https://newsletter.semianalysis.com/p/intel-should-raise-capital",
+    "name": "Altera",
+    "ticker_guess": null,
+    "why": "Intel sold 51% of Altera at an $8.75 billion enterprise value, generating approximately $4.3 billion; the transaction is cited as a major source of capital already monetized"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "SemiAnalysis",
+    "article_title": "Intel Should Raise Capital",
+    "article_link": "https://newsletter.semianalysis.com/p/intel-should-raise-capital",
+    "name": "Mobileye",
+    "ticker_guess": "MBLY",
+    "why": "Intel has monetized part of its Mobileye stake while retaining approximately 78%; further sales are identified as a possible but limited source of additional capital"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "SemiAnalysis",
+    "article_title": "Intel Should Raise Capital",
+    "article_link": "https://newsletter.semianalysis.com/p/intel-should-raise-capital",
+    "name": "Brookfield Asset Management",
+    "ticker_guess": "BAM",
+    "why": "Structured financing for Intel\u2019s Arizona fab construction; cited as an alternative capital source alongside the Fab 34 joint venture"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Research To Production: Collaboration Is Key For Semiconductor Innovation",
+    "article_link": "https://semiengineering.com/from-research-to-production-collaboration-is-key-for-semiconductor-innovation/",
+    "name": "semiconductor collaboration",
+    "why": "focuses on joint research between imec and Synopsys; highlights ecosystem partnerships for technology transfer"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Research To Production: Collaboration Is Key For Semiconductor Innovation",
+    "article_link": "https://semiengineering.com/from-research-to-production-collaboration-is-key-for-semiconductor-innovation/",
+    "name": "high-NA EUV lithography",
+    "why": "describes real-world development environments and tooling for high numerical aperture EUV; discusses source-mask optimization, ILT, OPC"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Three Strategic Imperatives For Energy-Efficient AI Computing",
+    "article_link": "https://semiengineering.com/three-strategic-imperatives-for-energy-efficient-ai-computing/",
+    "name": "grid/energy",
+    "why": "Data center energy consumption tripled in US over decade; projected to triple again in 5 years; IEA estimates global data center consumption more than doubles to 945 TWh by 2030; power demand exceeds Japan's total"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Three Strategic Imperatives For Energy-Efficient AI Computing",
+    "article_link": "https://semiengineering.com/three-strategic-imperatives-for-energy-efficient-ai-computing/",
+    "name": "AI inference cost",
+    "why": "AI inference at scale drives rising user cost; token usage projected to increase tenfold to ~2250 TUs/day by 2030; token prices falling slower than usage, pushing costs up"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Three Strategic Imperatives For Energy-Efficient AI Computing",
+    "article_link": "https://semiengineering.com/three-strategic-imperatives-for-energy-efficient-ai-computing/",
+    "name": "physical AI",
+    "why": "AI moving off screen to robots, drones, wearables; requires edge intelligence and autonomous operation; energy constraints limit battery life and duty cycle"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Three Strategic Imperatives For Energy-Efficient AI Computing",
+    "article_link": "https://semiengineering.com/three-strategic-imperatives-for-energy-efficient-ai-computing/",
+    "name": "data center investment",
+    "why": "Top players invested ~$100B in 2020; projected to reach ~$1 trillion by 2026; broader global investment even higher"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-20",
+    "source": "Semiconductor Engineering",
+    "article_title": "Three Strategic Imperatives For Energy-Efficient AI Computing",
+    "article_link": "https://semiengineering.com/three-strategic-imperatives-for-energy-efficient-ai-computing/",
+    "name": "energy efficiency innovation",
+    "why": "Energy efficiency cited as strategic priority; leadership can yield top line rewards; system-level optimization across AI stack needed"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-18",
+    "source": "Cassandra Unchained",
+    "article_title": "Acres of Diamonds",
+    "article_link": "https://michaeljburry.substack.com/p/acres-of-diamonds",
+    "name": "homelessness services",
+    "why": "Acres of Diamonds houses homeless mothers and children in Duvall, Washington; It served 44 families and 50 children in 2025"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-18",
+    "source": "Cassandra Unchained",
+    "article_title": "Acres of Diamonds",
+    "article_link": "https://michaeljburry.substack.com/p/acres-of-diamonds",
+    "name": "nonprofit finance",
+    "why": "Public support represented 94.5% of revenue and contributions reached $4 million in 2025; Fundraising costs were about $10.80 per $100 raised and the charity reported 79% efficiency"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-13",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 13, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-13-2026",
+    "name": "AI financing",
+    "why": "AI companies are funding each other\u2019s purchases, creating circular flows of capital and revenue; Increasingly, this financing is debt, creating a concrete cost of capital; The article\u2019s base case is that these dynamics put the AI bubble on a clock, potentially until 2028"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-12",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 12, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-12-2026",
+    "name": "Mercado Libre",
+    "ticker_guess": "MELI",
+    "why": "Added to a long position at $1,850"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "Stratechery",
+    "article_title": "Autonomy and Innovation",
+    "article_link": "https://stratechery.com/2026/autonomy-and-innovation/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "OpenAI agents discovered and exploited a package-manager vulnerability in a sandbox, causing the Hugging Face incident; OpenAI executives presented the incident and called for continuous agentic red teaming and automated defensive loops"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "Stratechery",
+    "article_title": "Autonomy and Innovation",
+    "article_link": "https://stratechery.com/2026/autonomy-and-innovation/",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Hugging Face was targeted through an exploit discovered by unconstrained OpenAI cybersecurity agents; the company reportedly relied on open-weight Chinese models to help fight off the attack"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "Stratechery",
+    "article_title": "Autonomy and Innovation",
+    "article_link": "https://stratechery.com/2026/autonomy-and-innovation/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic\u2019s release of the Fable model prompted restrictive Trump administration directives that reportedly prevented defenders from using Fable and Sol for cybersecurity"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "Stratechery",
+    "article_title": "Autonomy and Innovation",
+    "article_link": "https://stratechery.com/2026/autonomy-and-innovation/",
+    "name": "AI cybersecurity",
+    "why": "Autonomous AI agents demonstrated the ability to discover vulnerabilities and develop exploits; defenders may need fully automated vulnerability detection, patching, deployment, and rollback to match offensive capabilities"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "Stratechery",
+    "article_title": "Autonomy and Innovation",
+    "article_link": "https://stratechery.com/2026/autonomy-and-innovation/",
+    "name": "AI regulation",
+    "why": "Trump administration directives reportedly prevent defenders from using Anthropic\u2019s Fable and Sol models for cybersecurity; the restrictions push organizations toward models from countries viewed as cyber adversaries"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "Stratechery",
+    "article_title": "Autonomy and Innovation",
+    "article_link": "https://stratechery.com/2026/autonomy-and-innovation/",
+    "name": "Generative AI adoption",
+    "why": "Sam Altman said AI diffusion into the broader economy and software businesses has been slower than expected; incumbent companies retain humans in the loop because model errors create negative expected value"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "Stratechery",
+    "article_title": "Autonomy and Innovation",
+    "article_link": "https://stratechery.com/2026/autonomy-and-innovation/",
+    "name": "Open-weight models",
+    "why": "Open-weight Chinese models helped Hugging Face respond to a cyberattack; the article argues that broadly available defensive models are necessary because powerful offensive models are already widely accessible"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-11",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 11, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-11-2026",
+    "name": "Molina Healthcare",
+    "ticker_guess": "MOH",
+    "why": "Bought additional shares at $198; described as a full-sized position and a long-term investment; expects the upcoming political season could benefit the company"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-06",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 6, 2026 Two Shorts, 3 Earnings Reports with 1 Add & 2 Holds",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-862026-two-shorts-3",
+    "name": "lease liabilities",
+    "why": "Uncommenced leases reportedly extend as long as 11 years; Such lease obligations can total 18 times a company\u2019s entire sales; Backstops and purchase commitments add further off-balance-sheet liabilities"
   }
 ]
