@@ -208,6 +208,12 @@ function buildCell(card) {
   // _render_keep_card_grid's swipe_right_action -- while this click toggle works everywhere,
   // including the Read/Favorites pages, independent of whichever swipe gestures a page offers).
   let starred = !!card.starred;
+  // A favorited card means "keep this visible/easy to find" -- letting the discard action still
+  // delete it out from under that star would silently contradict what favoriting is for, so
+  // discard (button and left-swipe alike) is disabled for as long as a "discard"-action card
+  // stays starred. Only discard is gated this way -- favoriting never disables read/unread/
+  // unfavorite elsewhere, since those aren't destructive.
+  let discardDisabled = card.action === "discard" && starred;
   const star = document.createElement("div");
   star.className = "card-star" + (starred ? " filled" : "");
   star.textContent = starred ? "★" : "☆";
@@ -216,6 +222,11 @@ function buildCell(card) {
     starred = !starred;
     star.textContent = starred ? "★" : "☆";
     star.classList.toggle("filled", starred);
+    if (card.action === "discard") {
+      discardDisabled = starred;
+      btn.disabled = discardDisabled;
+      btn.title = discardDisabled ? "Unfavorite first to discard" : "";
+    }
     reportAction(card.id, starred ? "favorite" : "unfavorite");
   });
   wrapper.appendChild(star);
@@ -224,14 +235,16 @@ function buildCell(card) {
   const btn = document.createElement("button");
   btn.className = "card-action-btn";
   btn.textContent = btnLabel;
+  btn.disabled = discardDisabled;
+  btn.title = discardDisabled ? "Unfavorite first to discard" : "";
   btn.addEventListener("click", () => dismiss(card.id, card.action));
   wrapper.appendChild(btn);
 
-  attachSwipe(wrapper, card.id, card.action, card.swipe_right_action);
+  attachSwipe(wrapper, card.id, card.action, card.swipe_right_action, () => discardDisabled);
   return wrapper;
 }
 
-function attachSwipe(wrapper, cardId, action, swipeRightAction) {
+function attachSwipe(wrapper, cardId, action, swipeRightAction, isDiscardDisabled) {
   const DRAG_THRESHOLD = 10;  // px of real horizontal movement before this becomes a drag, not a tap
   let pointerDown = false;
   let dragging = false;       // only true once movement has crossed DRAG_THRESHOLD, horizontally-dominant
@@ -298,7 +311,7 @@ function attachSwipe(wrapper, cardId, action, swipeRightAction) {
     // regardless of which branch below runs, which would otherwise flip the card open/closed (or
     // re-flip it right as it's flying off-screen) as an unintended side effect of the gesture.
     armClickSwallow();
-    if (dx <= -90) {
+    if (dx <= -90 && !(action === "discard" && isDiscardDisabled())) {
       finalizeDismiss(wrapper, cardId, action, -1);
     } else if (dx >= 90 && swipeRightAction) {
       finalizeDismiss(wrapper, cardId, swipeRightAction, 1);

@@ -5155,16 +5155,17 @@ def _render_discovery_page() -> None:
     No read/favorite tracking at all for this page -- read_state has nothing to do with "should this
     still exist," and there's no undo once discarded, matching the swipe gesture's own permanence.
     """
-    st.markdown("<h3 style='margin-bottom:0.15rem'>Discovery</h3>", unsafe_allow_html=True)
     candidates = load_discovery_candidates()
     if not candidates:
+        st.markdown("<h3 style='margin-bottom:0.15rem'>Discovery</h3>", unsafe_allow_html=True)
         st.info("No discovery candidates recorded yet -- these accumulate as run_loop_a processes articles.")
         return
 
     groups = _group_discovery_candidates(candidates)
+    st.markdown(f"<h3 style='margin-bottom:0.15rem'>Discovery ({len(groups)})</h3>", unsafe_allow_html=True)
     _render_keep_card_grid(
         [(_discovery_card_id(g["type"], g["display_name"]), _discovery_card_html(g)) for g in groups],
-        primary_action="discard", key="feed_discovery",
+        primary_action="discard", key="feed_discovery", show_count=False,
     )
 
 
