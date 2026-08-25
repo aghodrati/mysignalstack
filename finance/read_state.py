@@ -73,8 +73,7 @@ _session = requests.Session()
 # same-rerun calls above into one real Upstash round trip.
 _cache: dict[str, set[str]] = {}
 _cache_fetched_at: dict[str, float] = {}
-_CACHE_TTL_SECONDS = 0.0  # temporarily disabled (every _ids() call is a live Redis round trip) so
-# the user can feel whether this introduces noticeable lag before picking a real TTL value.
+_CACHE_TTL_SECONDS = 5.0
 
 
 def _upstash_command_async(command: list[str]) -> None:
