@@ -2,49 +2,6 @@
   {
     "date": "2026-08-20",
     "fundamental_direction": "neutral",
-    "fundamental_confidence": 0.68,
-    "summary": "Apple shows strong underlying operating performance, with 16.4% revenue growth, 28.7% earnings growth, and exceptionally high operating and free-cash-flow margins. However, valuation is demanding at 32.2x forward earnings, a 2.46 PEG ratio, and 9.5x EV/revenue, while negative estimate revisions and only 5.8% consensus upside limit the fundamental risk-reward.",
-    "key_changes": [],
-    "risks": [
-      "Premium valuation leaves limited room for execution misses or slower growth.",
-      "Negative analyst revisions and net downgrades may signal weakening forward expectations.",
-      "Growth may decelerate from the current elevated earnings pace, pressuring the valuation multiple.",
-      "Substantial insider selling is a negative ownership signal, although institutional flows remain positive."
-    ],
-    "reasoning": "Exceptional growth and profitability support a constructive view, but rich valuation, weak sentiment, and limited implied upside make the fundamentals genuinely mixed rather than clearly bullish.",
-    "fair_value_estimate": 324.01367,
-    "current_price": 306.19,
-    "implied_return_pct": 5.8,
-    "factors": {
-      "Growth": {
-        "revenue_growth": 0.164,
-        "earnings_growth": 0.28700000000000003
-      },
-      "Valuation": {
-        "forward_pe": 32.186245,
-        "peg_ratio": 2.46,
-        "ev_to_revenue": 9.533
-      },
-      "Quality": {
-        "operating_margin": 0.32623002,
-        "fcf_margin": 0.31430327873742997
-      },
-      "Sentiment": {
-        "analyst_upside": 5.821114340768796,
-        "revisions_trend": -1.6304347826086918,
-        "net_upgrades": -3.0
-      },
-      "Ownership": {
-        "institutional_flow": 11.074000021499996,
-        "insider_flow": -420311137.0,
-        "low_short_interest": -1.0
-      }
-    },
-    "trigger": "manual"
-  },
-  {
-    "date": "2026-08-20",
-    "fundamental_direction": "neutral",
     "fundamental_confidence": 0.78,
     "summary": "Apple's fundamentals are strong, with robust revenue and earnings growth alongside exceptional operating and free-cash-flow margins. However, demanding valuation multiples, elevated PEG and EV/revenue, negative estimate-revision momentum, and only modest consensus upside create a mixed risk-reward profile.",
     "key_changes": [],

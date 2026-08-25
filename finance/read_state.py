@@ -153,8 +153,15 @@ def _mark(kind: str, user: str, card_id: str) -> None:
     mark on an already-marked card. Updates `_cache` synchronously so every reader sees the new
     state immediately, regardless of how long the actual Upstash write (fired async, see
     _upstash_command_async) takes to land.
+
+    Calls `_ids` first (not a blind `_cache.setdefault`) so a mark/unmark that happens to be the
+    very first read_state call in a process still gets the real existing set from Redis into the
+    cache before mutating it -- `_cache.setdefault(key, set())` used to silently fabricate an empty
+    "known" cache entry in that case, so a mark right after an unmark (or vice versa) with no
+    intervening real read would leave `_cache` claiming this key has only the marks made THIS
+    process, hiding whatever was already there until the next full process restart.
     """
-    _cache.setdefault(f"{kind}:{user}", set()).add(card_id)
+    _ids(kind, user).add(card_id)
     if _upstash_config() is not None:
         _upstash_command_async(["SADD", f"{kind}:{user}", card_id])
         return
@@ -168,9 +175,10 @@ def _mark(kind: str, user: str, card_id: str) -> None:
 def _unmark(kind: str, user: str, card_id: str) -> None:
     """Actually removes the id (SREM/local-list removal), not just a display filter, so it's really
     gone from the store, not merely hidden again. Idempotent, same as _mark. Updates `_cache`
-    synchronously -- see _mark's docstring.
+    synchronously -- see _mark's docstring for why this calls `_ids` first rather than mutating a
+    blind `_cache.setdefault`.
     """
-    _cache.setdefault(f"{kind}:{user}", set()).discard(card_id)
+    _ids(kind, user).discard(card_id)
     if _upstash_config() is not None:
         _upstash_command_async(["SREM", f"{kind}:{user}", card_id])
         return

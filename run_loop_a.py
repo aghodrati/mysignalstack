@@ -237,7 +237,7 @@ def main():
             all_tickers = sorted(tracked_universe())
             tickers = [t for t in all_tickers if needs_transcript_check(t, as_of)]
             skipped = len(all_tickers) - len(tickers)
-        print(f"\n=== Earnings call refresh ({len(tickers)} ticker(s)) ===")
+        print(f"\n=== Earnings call transcript refresh ({len(tickers)} ticker(s)) ===")
         if skipped:
             print(
                 f"  ({skipped} ticker(s) outside their earnings window, skipped -- not near a "

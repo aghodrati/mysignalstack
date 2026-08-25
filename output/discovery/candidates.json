@@ -1121,5 +1121,783 @@
     "article_link": "https://michaeljburry.substack.com/p/trading-post-862026-two-shorts-3",
     "name": "lease liabilities",
     "why": "Uncommenced leases reportedly extend as long as 11 years; Such lease obligations can total 18 times a company\u2019s entire sales; Backstops and purchase commitments add further off-balance-sheet liabilities"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-12",
+    "source": "Stratechery",
+    "article_title": "Anthropic\u2019s Watermarking, How It (Probably) Works, Worse Than It Seems",
+    "article_link": "https://stratechery.com/2026/anthropics-watermarking-how-it-probably-works-worse-than-it-seems/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Adding watermarking in response to the European Union\u2019s AI law; the article examines how Anthropic\u2019s watermarking probably works and argues it is a problematic idea"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-11",
+    "source": "Stratechery",
+    "article_title": "Nvidia\u2019s Risky Business",
+    "article_link": "https://stratechery.com/2026/nvidias-risky-business/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified as a major Google Cloud customer, likely driving much of its accelerated growth; committed to buying large volumes of Google TPUs and has already purchased TPUs for its own data centers; cited as a frontier AI competitor that has pulled ahead of Google and is less dependent on Nvidia CUDA"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-11",
+    "source": "Stratechery",
+    "article_title": "Nvidia\u2019s Risky Business",
+    "article_link": "https://stratechery.com/2026/nvidias-risky-business/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Described as one of the frontier AI labs pulling ahead of Google; reportedly moving away from Nvidia dependence for inference; its success, alongside Anthropic, is presented as a threat to Nvidia\u2019s long-term pricing power and margins"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "Stratechery",
+    "article_title": "2026.32: Earnings and Learnings",
+    "article_link": "https://stratechery.com/2026/earnings-and-learnings/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Responded to Apple\u2019s lawsuit alleging trade-secret theft by Apple veterans in OpenAI\u2019s hardware division; presented evidence intended to undermine Apple\u2019s narrative; developing competing hardware devices and facing Apple\u2019s effort to shut down the hardware division"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-05",
+    "source": "Stratechery",
+    "article_title": "Google Earnings, The Frontier Case, Amazon Earnings",
+    "article_link": "https://stratechery.com/2026/google-earnings-the-frontier-case-amazon-earnings/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Google's earnings were described as confirming an Anthropic hedge"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Stratechery",
+    "article_title": "2026.30: The Copium Wars",
+    "article_link": "https://stratechery.com/2026/the-copium-wars/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its cybersecurity snafu and accidental hacking of Hugging Face are analyzed in detail; The discussion covers sandboxing, alignment concerns, and the implications of an OpenAI model escaping its sandbox"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Stratechery",
+    "article_title": "2026.30: The Copium Wars",
+    "article_link": "https://stratechery.com/2026/the-copium-wars/",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Served as the platform involved in OpenAI\u2019s accidental hack; The incident is used to examine cybersecurity failures, sandboxing, and AI alignment"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Stratechery",
+    "article_title": "2026.30: The Copium Wars",
+    "article_link": "https://stratechery.com/2026/the-copium-wars/",
+    "name": "Netflix",
+    "ticker_guess": "NFLX",
+    "why": "Its earnings are reviewed as solid but indicative of a mature company; The analysis questions whether Netflix\u2019s most exciting growth phase is behind it"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Stratechery",
+    "article_title": "2026.30: The Copium Wars",
+    "article_link": "https://stratechery.com/2026/the-copium-wars/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified alongside OpenAI as a frontier AI lab that may need to fend for itself; The article argues frontier-lab advantages remain meaningful despite advances from Chinese models"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Stratechery",
+    "article_title": "2026.30: The Copium Wars",
+    "article_link": "https://stratechery.com/2026/the-copium-wars/",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Its Kimi K3 model is the central example of a strong Chinese AI model; Kimi\u2019s quality is described as driving concern on Wall Street and in the U.S. government about America\u2019s AI position"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "Stratechery",
+    "article_title": "OpenAI Hacks Hugging Face, What Happened, Alignment and Paper Clips",
+    "article_link": "https://stratechery.com/2026/openai-hacks-hugging-face-what-happened-alignment-and-paper-clips/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Accidentally hacked Hugging Face; the incident\u2019s takeaways are described as more encouraging than commonly perceived"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "Stratechery",
+    "article_title": "OpenAI Hacks Hugging Face, What Happened, Alignment and Paper Clips",
+    "article_link": "https://stratechery.com/2026/openai-hacks-hugging-face-what-happened-alignment-and-paper-clips/",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Was accidentally hacked by OpenAI; the incident is the central subject of the article"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-21",
+    "source": "Stratechery",
+    "article_title": "Netflix Earnings, Is Netflix Washed?, Additional Notes",
+    "article_link": "https://stratechery.com/2026/netflix-earnings-is-netflix-washed-additional-notes/",
+    "name": "Netflix",
+    "ticker_guess": "NFLX",
+    "why": "Reported earnings that were characterized as fine; portrayed as a mature company whose most exciting growth days may be behind it"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "The Diff",
+    "article_title": "Financial Entrepreneurship in the Indexing Era",
+    "article_link": "https://www.thediff.co/archive/financial-entrepreneurship-in-the-indexing-era/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Revenue rose 14x year over year and the company again reported an operating profit; The article argues Anthropic should be a net consumer of capital given its rapid growth and aggressive compute investment; Its profitability suggests it underestimated demand for software-development products"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "The Diff",
+    "article_title": "Financial Entrepreneurship in the Indexing Era",
+    "article_link": "https://www.thediff.co/archive/financial-entrepreneurship-in-the-indexing-era/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "The company has lost several senior executives and reshuffled others ahead of a potential IPO; Executive turnover is described as a recurring tech-company pattern before going public; OpenAI's rapid growth can push employees beyond the company scale at which they are most comfortable"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "The Diff",
+    "article_title": "Financial Entrepreneurship in the Indexing Era",
+    "article_link": "https://www.thediff.co/archive/financial-entrepreneurship-in-the-indexing-era/",
+    "name": "Mettler-Toledo International",
+    "ticker_guess": "MTD",
+    "why": "Used as a valuation comparison with Zoom; Generates roughly $4\u20135 billion in revenue, has about 30% EBITDA margins, and is growing revenue above 5% annually; Its enterprise value is about 30% higher than Zoom's despite slightly lower EBITDA"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "The Diff",
+    "article_title": "Financial Entrepreneurship in the Indexing Era",
+    "article_link": "https://www.thediff.co/archive/financial-entrepreneurship-in-the-indexing-era/",
+    "name": "Zoom Video Communications",
+    "ticker_guess": "ZM",
+    "why": "Used as a valuation comparison with Mettler-Toledo; Generates roughly $4\u20135 billion in revenue, has about 30% EBITDA margins, and is growing revenue above 5% annually; Its brand is synonymous with video chat, yet its enterprise value is lower than Mettler-Toledo's"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-15",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-195/",
+    "name": "Carl Marks & Co.",
+    "ticker_guess": null,
+    "why": "Identified as the brokerage used by investors trading repudiated Russian imperial bonds; noted that the brokerage still exists today."
+  },
+  {
+    "type": "company",
+    "date": "2026-08-15",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-195/",
+    "name": "Elliott Capital",
+    "ticker_guess": null,
+    "why": "Cited as an example of aggressive sovereign-debt collection; obtained a Ghanaian court order to seize an Argentine ship during debt negotiations."
+  },
+  {
+    "type": "company",
+    "date": "2026-08-13",
+    "source": "The Diff",
+    "article_title": "Holtec's Very Roundabout Drop-In Replacement Model",
+    "article_link": "https://www.thediff.co/archive/holtecs-very-roundabout-drop-in-replacement-model/",
+    "name": "Holtec International",
+    "ticker_guess": null,
+    "why": "Article focuses on Holtec's roundabout drop-in replacement model"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "The Diff",
+    "article_title": "FP&A as the Telemetry and Counterespionage",
+    "article_link": "https://www.thediff.co/archive/fp-a-as-the-telemetry-and-counterespionage/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Pausing internal tests of its Astra models until they are judged unlikely to launch a disastrous hack; cited as part of frontier AI labs indirectly coordinating to moderate development and emphasize defensive deployment"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "The Diff",
+    "article_title": "FP&A as the Telemetry and Counterespionage",
+    "article_link": "https://www.thediff.co/archive/fp-a-as-the-telemetry-and-counterespionage/",
+    "name": "Cloudflare",
+    "ticker_guess": "NET",
+    "why": "Described as an institution that identifies missing or mis-specified internet protocols; launched the Kitesurf browser for AI agents to collect public data more efficiently and address publisher and retailer incentives"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "The Diff",
+    "article_title": "FP&A as the Telemetry and Counterespionage",
+    "article_link": "https://www.thediff.co/archive/fp-a-as-the-telemetry-and-counterespionage/",
+    "name": "X",
+    "ticker_guess": null,
+    "why": "Revamping its revenue-sharing program to reward original content rather than reposts; raised usage thresholds to favor established accounts and encourage creators to invest effort before monetizing"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "The Diff",
+    "article_title": "FP&A as the Telemetry and Counterespionage",
+    "article_link": "https://www.thediff.co/archive/fp-a-as-the-telemetry-and-counterespionage/",
+    "name": "The Walt Disney Company",
+    "ticker_guess": "DIS",
+    "why": "Bob Iger was frustrated that Disney's planning team second-guessed operating decisions; its planning function imposed a slow and uncertain veto on decisions that business operators could have made directly"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "The Diff",
+    "article_title": "FP&A as the Telemetry and Counterespionage",
+    "article_link": "https://www.thediff.co/archive/fp-a-as-the-telemetry-and-counterespionage/",
+    "name": "General Electric",
+    "ticker_guess": "GE",
+    "why": "Used aggressive quarterly planning targets that encouraged value-destructive decisions; evolved into an over-leveraged specialty credit hedge fund with manufacturing businesses attached after its finance division expanded"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-08",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-194/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "An AI researcher agonizes over whether to accept an offer from an AI lab; a character described as leaving OpenAI to start the more safety-focused Noetic lab"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-08",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-194/",
+    "name": "Substack",
+    "ticker_guess": null,
+    "why": "Hosted a panel discussing a $2 million book deal that collapsed after allegations the author used AI to write it; cited as a platform where writers can serialize and publish creative work"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-08",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-194/",
+    "name": "General Motors",
+    "ticker_guess": "GM",
+    "why": "A former GM plant site is being considered for datacenter redevelopment; the company reportedly left behind heavy-metal and chemical contamination after leaving the town"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "The Diff",
+    "article_title": "Who Hedges Where?",
+    "article_link": "https://www.thediff.co/archive/who-hedges-where/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its relative AI slowdown and loss of leadership are discussed; highlighted as having strategic options to catch up by deploying more inference and launching products"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "The Diff",
+    "article_title": "Who Hedges Where?",
+    "article_link": "https://www.thediff.co/archive/who-hedges-where/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its concern that employees may be joining primarily for compensation is examined; described as potentially choosing mission alignment and safety over the most generous offers"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "The Diff",
+    "article_title": "Who Hedges Where?",
+    "article_link": "https://www.thediff.co/archive/who-hedges-where/",
+    "name": "Snap",
+    "ticker_guess": "SNAP",
+    "why": "Its decision not to prioritize purely AI-generated videos in Spotlight recommendations is discussed; positioned as pursuing authentic content and real-world social interaction"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "The Diff",
+    "article_title": "Who Hedges Where?",
+    "article_link": "https://www.thediff.co/archive/who-hedges-where/",
+    "name": "Boeing",
+    "ticker_guess": "BA",
+    "why": "Used as an example of a company that initially fell 19% after Liberation Day tariffs; later rose 25% above its pre-announcement price after investors anticipated tariff-related aircraft orders"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "The Diff",
+    "article_title": "Who Hedges Where?",
+    "article_link": "https://www.thediff.co/archive/who-hedges-where/",
+    "name": "Peloton Interactive",
+    "ticker_guess": "PTON",
+    "why": "Used as an example of a pandemic selloff beneficiary; its stock fell by one-third in a month after Covid hit and reached an all-time high by May 2020"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 5, 2026 - One Buy, One Sale, One Reason",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-5-2026-one-buy",
+    "name": "Flutter Entertainment",
+    "ticker_guess": "FLUT",
+    "why": "U.S. gambling weakness led the company to cut estimates; Full-year leverage is expected to rise from 3.7x to 4.3x versus a 2.5x target; CEO Peter Jackson is stepping down and will be succeeded by Dan Taylor"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 5, 2026 - One Buy, One Sale, One Reason",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-5-2026-one-buy",
+    "name": "DraftKings",
+    "ticker_guess": "DKNG",
+    "why": "The stock fell alongside Flutter; The article expects DraftKings could miss estimates when it reports after the close"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 5, 2026 - One Buy, One Sale, One Reason",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-5-2026-one-buy",
+    "name": "Kalshi",
+    "ticker_guess": null,
+    "why": "The prediction-market operator is described as running $39.7 billion in annual volume; Its growth is cited as pressuring incumbent gambling companies"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 5, 2026 - One Buy, One Sale, One Reason",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-5-2026-one-buy",
+    "name": "prediction markets",
+    "why": "Kalshi is running $39.7 billion in annual volume; Prediction markets are described as taking share from incumbent online gambling operators such as FanDuel and DraftKings"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 5, 2026 - One Buy, One Sale, One Reason",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-5-2026-one-buy",
+    "name": "online gambling",
+    "why": "Flutter's U.S. gambling EBITDA fell 70% to $119 million; U.S. revenue declined 6%, including a 15% sportsbook decline; Promotional spending increased 140 basis points"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-04",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 4, 2026 My Options",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-4-2026-my-options",
+    "name": "equity markets",
+    "why": "S&P 500 reached a new high; Equal Weight S&P 500 had already reached a new high; S&P 500 surged 5% over four trading days, a move occurring only three other times outside the article's date"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-04",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post August 4, 2026 My Options",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-august-4-2026-my-options",
+    "name": "semiconductors",
+    "why": "Article identifies the SOX semiconductor index as the key market focus; Notes the NASDAQ 100 remains below its all-time high"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-03",
+    "source": "Cassandra Unchained",
+    "article_title": "[Abridged] Foundations: Market Structure, Volatility Targeting, Pod Shops & Other Gremlins",
+    "article_link": "https://michaeljburry.substack.com/p/abridged-foundations-market-structure",
+    "name": "market volatility",
+    "why": "GJR analysis finds big down days now trigger about 4x as much volatility as in 1985-2000; markets show less next-day volatility memory and residual fear dissipates about twice as fast"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-03",
+    "source": "Cassandra Unchained",
+    "article_title": "[Abridged] Foundations: Market Structure, Volatility Targeting, Pod Shops & Other Gremlins",
+    "article_link": "https://michaeljburry.substack.com/p/abridged-foundations-market-structure",
+    "name": "equity dividends",
+    "why": "The 2011-2026 period delivered a 12.09% annualized real total return; dividends contributed only 1.76%, a 1st-percentile contribution across 145 years of 15-year periods"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-17",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post July 17, 2026 Plus Netflix & What's Up with the VIX",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-july-17-2026-plus-netflix",
+    "name": "Netflix",
+    "ticker_guess": "NFLX",
+    "why": "Closed yesterday at $74 after peaking at $134 in June 2025; traded down dramatically after reporting earnings; Has changed its production-expense amortization method three times"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Short Thoughts July 15, 2026 PYPL/IBM/HCA/More",
+    "article_link": "https://michaeljburry.substack.com/p/short-thoughts-july-15-2026-pyplibmhcamore",
+    "name": "PayPal",
+    "ticker_guess": "PYPL",
+    "why": "Stripe and Advent reportedly offered $60.50 per share for PayPal, versus a $47.37 closing price; the article argues the offer is too low and expects a higher bid, potentially near $100"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Short Thoughts July 15, 2026 PYPL/IBM/HCA/More",
+    "article_link": "https://michaeljburry.substack.com/p/short-thoughts-july-15-2026-pyplibmhcamore",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "The privately held payments firm reportedly joined Advent in offering $60.50 per share for PayPal"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Short Thoughts July 15, 2026 PYPL/IBM/HCA/More",
+    "article_link": "https://michaeljburry.substack.com/p/short-thoughts-july-15-2026-pyplibmhcamore",
+    "name": "Advent International",
+    "ticker_guess": null,
+    "why": "The private-equity firm reportedly partnered with Stripe on the PayPal buyout offer"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Short Thoughts July 15, 2026 PYPL/IBM/HCA/More",
+    "article_link": "https://michaeljburry.substack.com/p/short-thoughts-july-15-2026-pyplibmhcamore",
+    "name": "IBM",
+    "ticker_guess": "IBM",
+    "why": "IBM shares fell 26% at their July 14 intraday low, described as the company\u2019s largest daily decline in the author\u2019s data since at least 1968; the article traces IBM\u2019s repeated transitions from hardware and mainframes toward software and consulting"
+  },
+  {
+    "type": "theme",
+    "date": "2026-07-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Short Thoughts July 15, 2026 PYPL/IBM/HCA/More",
+    "article_link": "https://michaeljburry.substack.com/p/short-thoughts-july-15-2026-pyplibmhcamore",
+    "name": "antitrust regulation",
+    "why": "The U.S. Department of Justice pursued a 13-year antitrust case against IBM that was dropped in January 1982 as \u201cwithout merit\u201d; IBM\u2019s unbundling of software and hardware in 1968 may have been intended to stave off the investigation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-07-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Short Thoughts July 15, 2026 PYPL/IBM/HCA/More",
+    "article_link": "https://michaeljburry.substack.com/p/short-thoughts-july-15-2026-pyplibmhcamore",
+    "name": "enterprise computing",
+    "why": "IBM transitioned from a mainframe and hardware-centered business to a software- and consulting-led model; its historical shifts included mainframes, PCs, software, and enterprise consulting"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "Safeheron",
+    "ticker_guess": null,
+    "why": "Launched pilot; integrating NIST PQC with MPC; plans to open\u2011source code"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "Bison Bank",
+    "ticker_guess": null,
+    "why": "Supports pilot; emphasizes importance of post\u2011quantum security for institutional assets"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "Gelephu Financial Services Office",
+    "ticker_guess": null,
+    "why": "Supports initiative; highlights need to safeguard digital asset transactions"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "Malta Financial Services Authority",
+    "ticker_guess": null,
+    "why": "Welcomes pilot; provides supervisory perspective on quantum\u2011safe services"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "post-quantum cryptography",
+    "why": "MPC protocol using NIST ML-DSA-65; quantum-resistant NEAR testnet; cross-border interoperability"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "quantum computing threat",
+    "why": "Long\u2011term risk to public\u2011key cryptography; BIS 2025 paper on quantum-readiness"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "regulatory focus on AI/quantum cyber risk",
+    "why": "MAS/ABS ACT launch; HKMA quantum readiness in Fintech 2030; MFSA participation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "open\u2011source cryptography",
+    "why": "Safeheron plans to open\u2011source PQC code; independent security auditing"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
+    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
+    "name": "financial infrastructure resilience",
+    "why": "Pilot tests operational resilience, governance, and cross\u2011border interoperability for digital asset transactions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "China Puts Quantum Technology Among Priorities in New 2030 Cyber Industry Plan",
+    "article_link": "https://thequantuminsider.com/2026/08/24/china-puts-quantum-technology-among-priorities-in-new-2030-cyber-industry-plan/",
+    "name": "quantum technology",
+    "why": "China prioritizes quantum tech in 2026-2030 plan; aims to advance quantum computing, communications, sensing; no specific funding or milestones disclosed"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "China Puts Quantum Technology Among Priorities in New 2030 Cyber Industry Plan",
+    "article_link": "https://thequantuminsider.com/2026/08/24/china-puts-quantum-technology-among-priorities-in-new-2030-cyber-industry-plan/",
+    "name": "high-end chips",
+    "why": "Plan calls for advances in high-end chips; supports AI chips and conventional HPC"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "China Puts Quantum Technology Among Priorities in New 2030 Cyber Industry Plan",
+    "article_link": "https://thequantuminsider.com/2026/08/24/china-puts-quantum-technology-among-priorities-in-new-2030-cyber-industry-plan/",
+    "name": "artificial intelligence",
+    "why": "Detailed attention to AI; resources for high-end AI chips, large models, AI agents; encourages open-source participation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "China Puts Quantum Technology Among Priorities in New 2030 Cyber Industry Plan",
+    "article_link": "https://thequantuminsider.com/2026/08/24/china-puts-quantum-technology-among-priorities-in-new-2030-cyber-industry-plan/",
+    "name": "cybersecurity",
+    "why": "Plan aims to strengthen cybersecurity and information security; directs companies to improve risk identification, threat monitoring, and emergency response"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "China Puts Quantum Technology Among Priorities in New 2030 Cyber Industry Plan",
+    "article_link": "https://thequantuminsider.com/2026/08/24/china-puts-quantum-technology-among-priorities-in-new-2030-cyber-industry-plan/",
+    "name": "blockchain",
+    "why": "Blockchain listed among frontier technologies to pursue; part of broader strategic tech push"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "Hitachi",
+    "ticker_guess": null,
+    "why": "collaborating on software stack for Shunkai"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "Infleqtion",
+    "ticker_guess": null,
+    "why": "providing QPU stack for Shunkai"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "Yaqumo",
+    "ticker_guess": null,
+    "why": "partnering for social implementation and upgrade of the quantum computer"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "quantum computing",
+    "why": "first full-stack neutral-atom quantum computer; 50 qubits, scalable to 500 and 10,000; operational in Japan; aims for fault-tolerant QPU"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "neutral-atom technology",
+    "why": "uses laser\u2011controlled neutral atoms as qubits; optical tweezers; room\u2011temperature operation; easy qubit scaling"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "quantum error correction",
+    "why": "platform to develop and demonstrate error\u2011detection and correction; future 10,000\u2011qubit fault\u2011tolerant machine"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "Japan research initiatives",
+    "why": "Moonshot R&D Program; Cabinet Office/JST funding; national focus on quantum supremacy"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
+    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
+    "name": "industry\u2011academia collaboration",
+    "why": "Hitachi for software stack; Infleqtion for QPU stack; Yaqumo for social implementation"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-21",
+    "source": "The Quantum Insider",
+    "article_title": "Berkeley Lab-Led Project\u00a0Secures Funding to Develop\u00a0a\u00a0Transportable\u00a0Muon Imager",
+    "article_link": "https://thequantuminsider.com/2026/08/21/berkeley-lab-led-project-secures-funding-to-develop-a-transportable-muon-imager/",
+    "name": "Ideon Technologies",
+    "ticker_guess": null,
+    "why": "World leader in muon tomography; provides proprietary detector arrays and geological software; partners on the muon imaging project"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-21",
+    "source": "The Quantum Insider",
+    "article_title": "Berkeley Lab-Led Project\u00a0Secures Funding to Develop\u00a0a\u00a0Transportable\u00a0Muon Imager",
+    "article_link": "https://thequantuminsider.com/2026/08/21/berkeley-lab-led-project-secures-funding-to-develop-a-transportable-muon-imager/",
+    "name": "critical minerals",
+    "why": "Accelerates discovery of critical mineral deposits; reduces imaging time from months to hours; supports domestic supply chains"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-21",
+    "source": "The Quantum Insider",
+    "article_title": "Berkeley Lab-Led Project\u00a0Secures Funding to Develop\u00a0a\u00a0Transportable\u00a0Muon Imager",
+    "article_link": "https://thequantuminsider.com/2026/08/21/berkeley-lab-led-project-secures-funding-to-develop-a-transportable-muon-imager/",
+    "name": "laser-plasma accelerators",
+    "why": "Uses ultra-high gradient lasers to accelerate electrons to 12\u2011GeV over centimeters; enables portable muon source"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-21",
+    "source": "The Quantum Insider",
+    "article_title": "Berkeley Lab-Led Project\u00a0Secures Funding to Develop\u00a0a\u00a0Transportable\u00a0Muon Imager",
+    "article_link": "https://thequantuminsider.com/2026/08/21/berkeley-lab-led-project-secures-funding-to-develop-a-transportable-muon-imager/",
+    "name": "muon imaging",
+    "why": "Active muon beams can penetrate 50\u2011150 meters of rock; provides high-resolution 3D subsurface maps"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-21",
+    "source": "The Quantum Insider",
+    "article_title": "Berkeley Lab-Led Project\u00a0Secures Funding to Develop\u00a0a\u00a0Transportable\u00a0Muon Imager",
+    "article_link": "https://thequantuminsider.com/2026/08/21/berkeley-lab-led-project-secures-funding-to-develop-a-transportable-muon-imager/",
+    "name": "advanced sensing for mining",
+    "why": "Combines muon detectors with data-fusion software to visualize ore bodies at meter-scale resolution"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-21",
+    "source": "The Quantum Insider",
+    "article_title": "Berkeley Lab-Led Project\u00a0Secures Funding to Develop\u00a0a\u00a0Transportable\u00a0Muon Imager",
+    "article_link": "https://thequantuminsider.com/2026/08/21/berkeley-lab-led-project-secures-funding-to-develop-a-transportable-muon-imager/",
+    "name": "national security",
+    "why": "Ensures U.S. leadership in critical mineral resources; supports energy, industry, and infrastructure protection"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
+    "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
+    "name": "post-quantum cryptography",
+    "why": "TCG defines requirements for PQC-ready TPMs; PTP 1.07 baseline for PQC-ready TPMs; certification plans for PQC-ready TPMs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
+    "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
+    "name": "trusted platform module",
+    "why": "Guidance focuses on TPM 2.0 implementations; PTP 1.07 outlines PQC-specific elements for TPMs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
+    "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
+    "name": "security certification",
+    "why": "TCG plans to expand certification programs to certify TPMs meeting PTP 1.07 requirements; defines TCG PQC-ready and PQC-upgradable TPM designations"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-24",
+    "source": "The Quantum Insider",
+    "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
+    "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
+    "name": "quantum-safe identity",
+    "why": "TCG stresses quantum-safe identities, attestation, and hardware-anchored trust as critical for long-term security"
   }
 ]

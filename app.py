@@ -106,7 +106,8 @@ from finance.ranking import (
     percentile_rank_table,
 )
 from finance.positions import open_positions
-from finance.earnings_calls import EARNINGS_DIR, latest_earnings_preview, latest_earnings_result
+from finance.earnings_calls import EARNINGS_DIR, latest_earnings_preview
+from finance.earnings_calls import latest_earnings_result as _latest_earnings_result_uncached
 from finance.earnings_calls import latest_earnings_reminder as _latest_earnings_reminder_uncached
 from finance.earnings_calls import load_earnings_call_history as _load_earnings_call_history_uncached
 from finance.earnings_calls import load_earnings_result_history as _load_earnings_result_history_uncached
@@ -658,6 +659,20 @@ def load_earnings_result_history(ticker: str) -> list[dict]:
 
 
 @st.cache_data(show_spinner=False)
+def _cached_latest_earnings_result(ticker: str, _mtime: float) -> dict | None:
+    return _latest_earnings_result_uncached(ticker)
+
+
+def latest_earnings_result(ticker: str) -> dict | None:
+    """Cached read-side wrapper -- see the block comment above. finance.newsloop's run-loop
+    earnings-result refresh (the write-side caller, via run_loop_a.py -- it dedups against stored
+    data before deciding whether to write a fresh result) calls the real latest_earnings_result
+    directly, not this wrapper, so its dedup check always sees a live read.
+    """
+    return _cached_latest_earnings_result(ticker, _earnings_file_mtime(ticker))
+
+
+@st.cache_data(show_spinner=False)
 def _cached_latest_earnings_reminder(ticker: str, _mtime: float) -> dict | None:
     return _latest_earnings_reminder_uncached(ticker)
 
@@ -981,7 +996,7 @@ def _inject_native_card_css() -> None:
 # boundary at all); "iframe" is the original custom-component behavior, left fully intact below so
 # switching back is a one-line change, not a revert. See _render_keep_card_grid_native/_iframe's
 # own docstrings for what each actually does.
-_CARD_GRID_MODE = "native"  # "native" or "iframe"
+_CARD_GRID_MODE = "iframe"  # "native" or "iframe"
 # Default column count for the native grid (see _render_keep_card_grid_native) -- the iframe
 # version's real CSS grid adapted column count to available width automatically; this doesn't, so
 # it's user-adjustable instead via _render_card_display_settings' popover (st.session_state
@@ -1034,7 +1049,24 @@ def _visible_cards_and_action(
     on top of the favorite/unfavorite button's own write on every click).
     See _render_keep_card_grid_native's docstring for what show_read/show_favorites/primary_action
     each mean -- unchanged from the iframe version, just factored out so both share one definition.
+
+    Defensively deduped by id (first occurrence wins) before anything else -- the native grid uses
+    each card's id as a real st.container key, and two cards sharing an id is a hard
+    StreamlitDuplicateElementKey crash, not a cosmetic glitch (confirmed live: a data-layer bug
+    that let two same-date fundamental snapshots collide on one id took down the whole Read/Recent
+    page). That root cause is fixed at the source now, but this stays as a last line of defense
+    against any future id collision from anywhere -- degrading to "show one of them" beats crashing
+    the page.
     """
+    seen_ids: set[str] = set()
+    deduped_cards = []
+    for cid, body in cards:
+        if cid in seen_ids:
+            continue
+        seen_ids.add(cid)
+        deduped_cards.append((cid, body))
+    cards = deduped_cards
+
     read_ids = read_state.read_ids(_CURRENT_USER)
     favorite_ids = read_state.favorite_ids(_CURRENT_USER)
     if primary_action is not None:
@@ -1065,7 +1097,7 @@ _ACTION_BUTTON_LABEL = {
 
 def _render_keep_card_grid_native(
     cards: list[tuple[str, str]], show_read: bool, show_favorites: bool,
-    primary_action: str | None, key: str,
+    primary_action: str | None, key: str, show_hidden_count: bool = True,
 ) -> None:
     """Plain-Streamlit alternative to _render_keep_card_grid_iframe -- no custom component, no
     iframe, every card rendered directly into the page via st.container + st.markdown(unsafe_allow_
@@ -1099,7 +1131,7 @@ def _render_keep_card_grid_native(
     visible, primary_action, hidden_count, favorite_ids = _visible_cards_and_action(
         cards, show_read, show_favorites, primary_action,
     )
-    if hidden_count:
+    if hidden_count and show_hidden_count:
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
     if not visible:
         return
@@ -1163,7 +1195,7 @@ def _render_keep_card_grid_native(
 
 def _render_keep_card_grid_iframe(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
-    primary_action: str | None = None, key: str = "feed",
+    primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
 ) -> None:
     """Renders (card_id, card_html) pairs, newest first, as a card grid -- via the card_feed custom
     component (components/card_feed/index.html) instead of st.columns + st.button. That split
@@ -1205,7 +1237,7 @@ def _render_keep_card_grid_iframe(
     visible, primary_action, hidden_count, favorite_ids = _visible_cards_and_action(
         cards, show_read, show_favorites, primary_action,
     )
-    if hidden_count:
+    if hidden_count and show_hidden_count:
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
     if not visible:
         return
@@ -1229,15 +1261,18 @@ def _render_keep_card_grid_iframe(
 
 def _render_keep_card_grid(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
-    primary_action: str | None = None, key: str = "feed",
+    primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
 ) -> None:
     """Dispatches to _render_keep_card_grid_native or _render_keep_card_grid_iframe per
     _CARD_GRID_MODE -- every existing call site keeps calling this one function; only the module-
     level mode switch changes which implementation actually runs. See both implementations' own
-    docstrings for what each does differently.
+    docstrings for what each does differently. `show_hidden_count=False` suppresses the generic
+    "N read card(s) hidden" caption -- for a caller (e.g. _render_recent_page's main grid) that
+    already shows its own, more specific hidden/unread count, where the generic one would just be a
+    second, redundant line.
     """
     fn = _render_keep_card_grid_native if _CARD_GRID_MODE == "native" else _render_keep_card_grid_iframe
-    fn(cards, show_read, show_favorites, primary_action, key)
+    fn(cards, show_read, show_favorites, primary_action, key, show_hidden_count)
 
 
 _FUNDAMENTAL_DIRECTION_ARROW = {
@@ -1345,6 +1380,17 @@ _TONE_EMOJI = {"confident": "\U0001f4aa", "cautious": "\U0001f914", "defensive":
 
 
 _EARNINGS_CARD_FRONT_RISKS = 3  # rest overflow to the back face, alongside Key Q&A moments
+
+
+def _earnings_call_sort_date(ev: dict) -> dt.date:
+    """The date used to position an earnings-call transcript card in a feed and to test it against
+    a Dates window filter -- prefers the actual call date (transcript_date) over this snapshot's
+    own generation date ("date"), same preference _earnings_call_card_html's displayed text already
+    uses. Falls back to "date" when transcript_date is missing (entries stored before that field
+    existed). Deliberately NOT used for _card_id, which stays keyed on "date" alone -- switching the
+    id too would orphan every already-read/favorited transcript card under a new id.
+    """
+    return dt.date.fromisoformat(ev.get("transcript_date") or ev["date"])
 
 
 def _earnings_call_card_html(ev: dict, ticker: str) -> str:
@@ -1604,7 +1650,7 @@ def _render_mixed_keep_cards(
     ]
     dated += [
         (
-            dt.date.fromisoformat(ev["date"]), _card_id(ticker, "earnings_call", ev["date"]),
+            _earnings_call_sort_date(ev), _card_id(ticker, "earnings_call", ev["date"]),
             _earnings_call_card_html(ev, ticker),
         )
         for ev in (earnings_call_events or [])
@@ -4726,7 +4772,7 @@ def _render_recent_page() -> None:
         st.write("**Dates**")
     with dates_pills_col:
         window_label = st.pills(
-            "Dates", options=["1d", "1w"], default="1d", selection_mode="single",
+            "Dates", options=["1d", "1w", "1m"], default="1d", selection_mode="single",
             key="recent_page_window", label_visibility="collapsed",
         )
     with cards_label_col:
@@ -4740,16 +4786,18 @@ def _render_recent_page() -> None:
 
     window_label = window_label or "1d"  # single-select pills can be clicked off, leaving None
     types = types or []
-    cutoff = dt.date.today() - dt.timedelta(days=1 if window_label == "1d" else 7)
+    cutoff = dt.date.today() - dt.timedelta(days={"1d": 1, "1w": 7, "1m": 30}[window_label])
+
+    # Collected unconditionally (not gated on "Claims" in types) so the unread count below always
+    # reflects this window regardless of which Cards types happen to be toggled on -- only whether
+    # claims actually get ADDED to `dated` (further down) respects that toggle.
+    claims_in_window: list = [
+        c for ticker in tracked_universe() for c in load_claims(ticker) if c.created >= cutoff
+    ]
 
     dated: list[tuple[dt.date, str, str]] = []
     summaries = _article_summaries() if "Claims" in types else {}
     for ticker in tracked_universe():
-        if "Claims" in types:
-            dated += [
-                (c.created, c.id, _claim_card_html(c, summaries.get(c.source_link)))
-                for c in load_claims(ticker) if c.created >= cutoff
-            ]
         if "Fundamentals" in types:
             dated += [
                 (
@@ -4761,11 +4809,16 @@ def _render_recent_page() -> None:
         if "Earnings Calls" in types:
             dated += [
                 (
-                    dt.date.fromisoformat(ev["date"]), _card_id(ticker, "earnings_call", ev["date"]),
+                    _earnings_call_sort_date(ev), _card_id(ticker, "earnings_call", ev["date"]),
                     _earnings_call_card_html(ev, ticker),
                 )
-                for ev in load_earnings_call_history(ticker) if dt.date.fromisoformat(ev["date"]) >= cutoff
+                for ev in load_earnings_call_history(ticker) if _earnings_call_sort_date(ev) >= cutoff
             ]
+
+    if "Claims" in types:
+        dated += [
+            (c.created, c.id, _claim_card_html(c, summaries.get(c.source_link))) for c in claims_in_window
+        ]
 
     if "Macro" in types:
         # The monthly-period narrative is now the back face of the same weekly card (see
@@ -4783,10 +4836,20 @@ def _render_recent_page() -> None:
         st.info("Nothing generated in this window for the selected card types.")
         return
     dated.sort(key=lambda item: item[0], reverse=True)
-    # No st.caption count here -- the card_feed component shows its own live "N card(s)" line that
-    # decrements the instant a card is dismissed, which a caption computed here couldn't do without
-    # a full rerun (see components/card_feed/index.html's updateCountLine).
-    _render_keep_card_grid([(cid, card_html) for _, cid, card_html in dated], key="feed_recent")
+    # One unified count across every type currently shown (claims already counted in card units --
+    # a combined multi-ticker card is 1 -- not raw claims), computed here rather than left to the
+    # grid's own generic hidden-count caption (suppressed below via show_hidden_count=False) so
+    # there's exactly one line, not two saying almost the same thing.
+    all_ids = [cid for _, cid, _ in dated]
+    read_ids_final = read_state.read_ids(_CURRENT_USER)
+    unread_count = sum(1 for cid in all_ids if cid not in read_ids_final)
+    st.caption(
+        f"{unread_count} unread card(s) in this window "
+        f"({len(all_ids) - unread_count} already read)."
+    )
+    _render_keep_card_grid(
+        [(cid, card_html) for _, cid, card_html in dated], key="feed_recent", show_hidden_count=False,
+    )
 
 
 def _render_read_page() -> None:
@@ -4799,7 +4862,6 @@ def _render_read_page() -> None:
     this is the one page where that default is flipped).
     """
     st.markdown("### Read")
-    st.caption("Every card you've marked as read, across the whole app.")
 
     read_ids = read_state.read_ids(_CURRENT_USER)
     if not read_ids:
@@ -4820,7 +4882,7 @@ def _render_read_page() -> None:
         for ev in load_earnings_call_history(ticker):
             cid = _card_id(ticker, "earnings_call", ev["date"])
             if cid in read_ids:
-                dated.append((dt.date.fromisoformat(ev["date"]), cid, _earnings_call_card_html(ev, ticker)))
+                dated.append((_earnings_call_sort_date(ev), cid, _earnings_call_card_html(ev, ticker)))
         # Reminder/result cards are only ever *shown* within their own freshness window (see
         # _upcoming_earnings_cards/_recent_earnings_result_cards), but their read-mark should still
         # be findable here indefinitely, same as every other card type -- scanned by id rather than
@@ -4853,6 +4915,7 @@ def _render_read_page() -> None:
     if not dated:
         st.info("No cards marked read yet.")
         return
+    st.caption(f"{len(dated)} card(s) marked read, across the whole app.")
     dated.sort(key=lambda item: item[0], reverse=True)
     _render_keep_card_grid([(cid, card_html) for _, cid, card_html in dated], show_read=True, key="feed_read")
 
@@ -4866,7 +4929,6 @@ def _render_favorites_page() -> None:
     hiding already-read ones.
     """
     st.markdown("### Favorites")
-    st.caption("Every card you've starred, across the whole app.")
 
     favorite_ids = read_state.favorite_ids(_CURRENT_USER)
     if not favorite_ids:
@@ -4887,7 +4949,7 @@ def _render_favorites_page() -> None:
         for ev in load_earnings_call_history(ticker):
             cid = _card_id(ticker, "earnings_call", ev["date"])
             if cid in favorite_ids:
-                dated.append((dt.date.fromisoformat(ev["date"]), cid, _earnings_call_card_html(ev, ticker)))
+                dated.append((_earnings_call_sort_date(ev), cid, _earnings_call_card_html(ev, ticker)))
         # See the matching comment in _render_read_page -- same reasoning, favorite_ids instead.
         reminder = latest_earnings_reminder(ticker)
         if reminder is not None:
@@ -4915,6 +4977,7 @@ def _render_favorites_page() -> None:
     if not dated:
         st.info("No cards favorited yet -- swipe a card right to star it.")
         return
+    st.caption(f"{len(dated)} card(s) starred, across the whole app.")
     dated.sort(key=lambda item: item[0], reverse=True)
     _render_keep_card_grid(
         [(cid, card_html) for _, cid, card_html in dated], show_favorites=True, key="feed_favorites",
@@ -5411,7 +5474,7 @@ def page_ticker() -> None:
         visible_earnings_calls = earnings_call_history
         if cutoff is not None:
             visible_earnings_calls = [
-                ev for ev in visible_earnings_calls if dt.date.fromisoformat(ev["date"]) >= cutoff
+                ev for ev in visible_earnings_calls if _earnings_call_sort_date(ev) >= cutoff
             ]
 
     st.subheader(f"Cards ({len(visible_claims) + len(visible_fundamentals) + len(visible_earnings_calls)})")

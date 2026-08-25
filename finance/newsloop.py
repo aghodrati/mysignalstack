@@ -826,11 +826,20 @@ def extract_claims(
         f"an empty list.\n\n"
         f'Respond with ONLY a JSON object (no markdown fences, no commentary): {{"claims": [...]}} '
         f"where each item is:\n"
-        f'{{"claim": "one sentence: the specific claim", '
-        f'"context": "one paragraph, specific to THIS claim, giving a reader enough of the '
-        f"surrounding article context (what was said, why it matters) to understand the claim "
-        f"without re-reading the whole article -- not a restatement of the one-sentence claim, and "
-        f"not a summary of the whole article either, just this claim's own context, "
+        f'{{"claim": "one sentence: the specific INVESTMENT implication of this article for '
+        f"{ticker} -- what it means for the business (competitive position, margins, demand, "
+        f"capacity, risk), not a restatement of a technical/scientific fact by itself. A technical "
+        f"detail only qualifies as the claim if you also state its business consequence in the same "
+        f"sentence (e.g. not 'Uses microfluidic cooling' but 'New microfluidic cooling could let "
+        f"{ticker} push package power density past rivals stuck on air cooling'). If the article is "
+        f"too purely technical for you to honestly state a business consequence -- not just "
+        f"restate the technical fact and call it one -- that's exactly the 'too vague/indirect' case "
+        f'above: return an empty list rather than manufacturing a claim, '
+        f'"context": "one paragraph, specific to THIS claim -- this is where the technical detail '
+        f"itself belongs (specs, mechanism, how it works), plus enough surrounding article context "
+        f"to understand the claim without re-reading the whole article -- not a restatement of the "
+        f"one-sentence claim, and not a summary of the whole article either, just this claim's own "
+        f"context, "
         f'"trade_worthy": true only if you could also confidently give a specific '
         f"expected_return_pct and expected_horizon_days for this claim alone -- i.e. it names a "
         f"fairly direct mechanism and a plausible timeframe, not just a general risk/opportunity "

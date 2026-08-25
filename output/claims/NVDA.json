@@ -3779,5 +3779,43 @@
     "trade_worthy": false,
     "context": "The benchmark has already driven more than 50 upstream optimization pull requests across vLLM, SGLang, TensorRT-LLM, Dynamo, LMCache and related components. NVIDIA-linked work improved routing, KV-cache ownership, tokenization, disaggregated transfer, scheduling and context-parallel execution, while many changes transfer directly to production workloads. This broad ecosystem effect can increase the value of NVIDIA hardware and software together, although the article does not quantify the resulting revenue or market-share impact.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "f063df56c914e61c",
+    "ticker": "NVDA",
+    "source_link": "https://www.thediff.co/archive/ad-supported-platforms-are-a-unique-antitrust-problem/",
+    "source_title": "Ad-Supported Platforms are a Unique Antitrust Problem",
+    "event_type": "competitive",
+    "created": "2026-08-24",
+    "claim": "Nvidia\u2019s planned 17% price increases for Blackwell and Vera Rubin GPUs should improve per-unit revenue and potentially gross profit over the coming quarters, assuming demand and shipments remain intact.",
+    "direction": "long",
+    "confidence": 0.94,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article reports that Nvidia intends to raise prices for both its current Blackwell platform and the upcoming Vera Rubin platform by 17%. It presents this as a response to persistent GPU scarcity, implying that Nvidia has enough demand and pricing power to monetize constrained supply rather than compete primarily through higher volume. The article also notes that incremental GPU sales carry approximately 75% gross margins, making price realization economically significant, although it provides no forecast for volumes, customer acceptance, or the resulting stock-price impact.",
+    "source": "The Diff"
+  },
+  {
+    "id": "27e6234367261b7e",
+    "ticker": "NVDA",
+    "source_link": "https://www.thediff.co/archive/ad-supported-platforms-are-a-unique-antitrust-problem/",
+    "source_title": "Ad-Supported Platforms are a Unique Antitrust Problem",
+    "event_type": "competitive",
+    "created": "2026-08-24",
+    "claim": "The persistence of Nvidia\u2019s GPU shortage despite its ability to raise prices indicates that Nvidia places strategic value on controlling compute allocation, which supports the view that its market position is based on more than short-term scarcity pricing.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that Nvidia could have resolved the shortage earlier by charging a market-clearing price, but apparently judged that allowing the highest bidders unlimited access to compute would carry strategic costs greater than the forgone revenue. This suggests that Nvidia is managing supply and customer access deliberately, potentially to preserve ecosystem control or avoid creating an overly dominant centralized compute provider. The implication is favorable for Nvidia\u2019s strategic positioning, but the article does not establish how this policy affects future earnings or valuation.",
+    "source": "The Diff"
   }
 ]

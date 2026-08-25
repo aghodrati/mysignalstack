@@ -203,17 +203,28 @@ def latest_fundamental(ticker: str) -> dict | None:
 
 
 def _append(ticker: str, event: dict) -> None:
+    """Upserts by date, not a blind append -- app.py's card id for a fundamental snapshot is keyed
+    off ticker+date (_card_id(ticker, "fundamental", ev["date"])), not position in this list, so two
+    same-date entries (a manual --refresh-fundamental re-run the same day as the earnings-window
+    auto-refresh, say) would collide on the identical card id. Streamlit's own st.container(key=...)
+    treats that as a hard error (StreamlitDuplicateElementKey), confirmed live -- a second refresh
+    landing on the same date used to silently double up the stored history and crash the Read/Recent
+    page the next time both happened to render in the same batch (e.g. after "Show more"). The newer
+    refresh replaces the older same-date entry in place instead.
+    """
     path = _path(ticker)
     path.parent.mkdir(parents=True, exist_ok=True)
     history = load_fundamental_history(ticker)
-    # app.py's card id for a fundamental snapshot is keyed off ticker+date (_card_id(ticker,
-    # "fundamental", ev["date"])), not its position in this list -- so a second refresh landing on
-    # the same date (e.g. a manual --refresh-fundamental re-run the same day as the earnings-window
-    # auto-refresh) produces fresh content under an id the user may have already marked read. Mark
-    # it unread again so the new content isn't silently hidden behind a stale read-mark.
+    # Mark unread again regardless of whether this is a fresh date or an overwrite -- either way the
+    # content behind this id just changed, so a stale read-mark shouldn't silently hide it.
     if any(e.get("date") == event.get("date") for e in history):
         read_state.mark_unread(read_state.CURRENT_USER, read_state.card_id(ticker, "fundamental", event["date"]))
-    history.append(json.loads(json.dumps(event, default=str)))
+    serialized = json.loads(json.dumps(event, default=str))
+    existing_idx = next((i for i, e in enumerate(history) if e.get("date") == event.get("date")), None)
+    if existing_idx is not None:
+        history[existing_idx] = serialized
+    else:
+        history.append(serialized)
     path.write_text(json.dumps(history, indent=2))
 
 
