@@ -18,5 +18,184 @@
     "direction": "bullish",
     "confidence": "high",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-08-25",
+    "value": 78919.4765625,
+    "delta": 22.013928756532543,
+    "history": [
+      [
+        "2026-08-19",
+        69266.1875
+      ],
+      [
+        "2026-08-20",
+        73032.7578125
+      ],
+      [
+        "2026-08-21",
+        78335.1875
+      ],
+      [
+        "2026-08-22",
+        77083.4140625
+      ],
+      [
+        "2026-08-23",
+        77755.265625
+      ],
+      [
+        "2026-08-24",
+        78964.484375
+      ],
+      [
+        "2026-08-25",
+        78919.4765625
+      ]
+    ],
+    "narrative": "No clear single catalyst this week, as no relevant headlines were provided. Bitcoin's roughly $22 weekly gain appears most consistent with broad positioning and low-conviction drift rather than a news-driven move.",
+    "has_clear_driver": false,
+    "headlines_used": [],
+    "fetch_succeeded": true,
+    "week": "2026-W35",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
+  },
+  {
+    "period": "month",
+    "date": "2026-08-25",
+    "value": 78919.4765625,
+    "delta": 23.844020936184805,
+    "history": [
+      [
+        "2026-07-27",
+        63724.8984375
+      ],
+      [
+        "2026-07-28",
+        63871.36328125
+      ],
+      [
+        "2026-07-29",
+        63908.16796875
+      ],
+      [
+        "2026-07-30",
+        64725.30859375
+      ],
+      [
+        "2026-07-31",
+        62813.74609375
+      ],
+      [
+        "2026-08-01",
+        62763.3203125
+      ],
+      [
+        "2026-08-02",
+        63482.0
+      ],
+      [
+        "2026-08-03",
+        63460.8984375
+      ],
+      [
+        "2026-08-04",
+        64055.953125
+      ],
+      [
+        "2026-08-05",
+        64597.5
+      ],
+      [
+        "2026-08-06",
+        64262.11328125
+      ],
+      [
+        "2026-08-07",
+        64880.19140625
+      ],
+      [
+        "2026-08-08",
+        64904.6875
+      ],
+      [
+        "2026-08-09",
+        64844.88671875
+      ],
+      [
+        "2026-08-10",
+        63910.5859375
+      ],
+      [
+        "2026-08-11",
+        63551.875
+      ],
+      [
+        "2026-08-12",
+        63402.43359375
+      ],
+      [
+        "2026-08-13",
+        63402.171875
+      ],
+      [
+        "2026-08-14",
+        62975.59375
+      ],
+      [
+        "2026-08-15",
+        63024.3203125
+      ],
+      [
+        "2026-08-16",
+        62818.65234375
+      ],
+      [
+        "2026-08-17",
+        64506.25390625
+      ],
+      [
+        "2026-08-18",
+        64680.7109375
+      ],
+      [
+        "2026-08-19",
+        69266.1875
+      ],
+      [
+        "2026-08-20",
+        73032.7578125
+      ],
+      [
+        "2026-08-21",
+        78335.1875
+      ],
+      [
+        "2026-08-22",
+        77083.4140625
+      ],
+      [
+        "2026-08-23",
+        77755.265625
+      ],
+      [
+        "2026-08-24",
+        78964.484375
+      ],
+      [
+        "2026-08-25",
+        78919.4765625
+      ]
+    ],
+    "narrative": "No clear single catalyst this month\u2014there were no relevant headlines provided, and Bitcoin's small gain of 23.84 appears most plausibly driven by broad positioning or market drift rather than a specific news event.",
+    "has_clear_driver": false,
+    "headlines_used": [],
+    "fetch_succeeded": true,
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

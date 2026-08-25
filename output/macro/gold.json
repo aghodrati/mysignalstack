@@ -58,18 +58,10 @@
   },
   {
     "period": "month",
-    "date": "2026-08-23",
-    "value": 4680.60009765625,
-    "delta": 15.667473550628497,
+    "date": "2026-08-25",
+    "value": 4689.10009765625,
+    "delta": 15.084061790557124,
     "history": [
-      [
-        "2026-07-23",
-        4046.60009765625
-      ],
-      [
-        "2026-07-24",
-        4067.60009765625
-      ],
       [
         "2026-07-27",
         4074.5
@@ -148,46 +140,90 @@
       ],
       [
         "2026-08-21",
-        4680.60009765625
+        4624.10009765625
+      ],
+      [
+        "2026-08-24",
+        4640.7998046875
+      ],
+      [
+        "2026-08-25",
+        4689.10009765625
       ]
     ],
-    "narrative": "Gold\u2019s sharp advance was most plausibly driven by renewed demand for a debt and currency hedge, with the \u201cRay Dalio Says Dump Bonds, Buy Gold\u201d headline and Pan American Silver\u2019s \u201cweak U.S. dollar\u201d hedge framing reinforcing that theme. Momentum likely amplified the move after gold broke above the closely watched 200-day moving average near $4,513, as noted by Benzinga; this is a clearer bullish setup than a purely headline-driven drift.",
-    "has_clear_driver": true,
+    "narrative": "Gold's modest monthly gain appears to reflect a broad safe-haven and macro-volatility bid rather than one clearly identified catalyst. The headlines on rising cross-asset volatility and Treasury efforts to avert yield contagion, along with the reported Iran confrontation and tariff threats, plausibly supported demand for gold, but none provides a sufficiently specific explanation for the move.",
+    "has_clear_driver": false,
     "headlines_used": [
       {
-        "title": "The Market Is Trying To Tell Us Something About 2027",
+        "title": "Cross-Asset Volatilities Rise As Treasury Endeavors To Avert Yield Contagion",
         "domain": "SeekingAlpha",
-        "date": "20260822"
+        "date": "20260825"
       },
       {
-        "title": "Ray Dalio Says Dump Bonds, Buy Gold: 4 ETFs in Focus as US Debt Risks Rise",
-        "domain": "Benzinga",
-        "date": "20260821"
-      },
-      {
-        "title": "Is Gold Back?",
+        "title": "It's Real, And You Need To Be Ready For It",
         "domain": "SeekingAlpha",
-        "date": "20260821"
+        "date": "20260825"
       },
       {
-        "title": "Bitcoin Jumps Above $77,000, Gold Hits 3-Month Highs: Stock Market Today",
+        "title": "QUICK SPARK: Gold Eyes Best Month Since September 1999",
         "domain": "Benzinga",
-        "date": "20260821"
+        "date": "20260824"
       },
       {
-        "title": "BZ Analysis: Gold Surged Above $4,600 An Ounce On Friday And Is Up More Than 14% In August, Putting It On Track For Its Biggest Monthly Gain Since 1999; The Metal Is Also Trading Above All Key Moving Averages, Having Broken \u200babove The Closely Watched 200-Day Moving Average Of Around $4,513",
-        "domain": "Benzinga",
-        "date": "20260821"
-      },
-      {
-        "title": "Pan American Silver: Deep Value Gold & Silver As A Hedge Against A Weak U.S. Dollar",
+        "title": "The Economically Sensitive Materials Sector Is Breaking Out",
         "domain": "SeekingAlpha",
-        "date": "20260821"
+        "date": "20260824"
+      },
+      {
+        "title": "Bessent Launches Economic D-Day Against Iran: 5 Things to Know",
+        "domain": "Benzinga",
+        "date": "20260824"
+      },
+      {
+        "title": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
+        "domain": "Benzinga",
+        "date": "20260824"
       }
     ],
     "fetch_succeeded": true,
     "direction": "bullish",
-    "confidence": "medium",
-    "trade_worthy": true
+    "confidence": "low",
+    "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-08-25",
+    "value": 4689.10009765625,
+    "delta": 7.400368704907234,
+    "history": [
+      [
+        "2026-08-19",
+        4489.39990234375
+      ],
+      [
+        "2026-08-20",
+        4516.2998046875
+      ],
+      [
+        "2026-08-21",
+        4624.10009765625
+      ],
+      [
+        "2026-08-24",
+        4640.7998046875
+      ],
+      [
+        "2026-08-25",
+        4689.10009765625
+      ]
+    ],
+    "narrative": "No clear single catalyst this week\u2014there were no relevant headlines, so the modest gain was most plausibly broad positioning, macro drift, or technical factors rather than a specific news-driven move.",
+    "has_clear_driver": false,
+    "headlines_used": [],
+    "fetch_succeeded": true,
+    "week": "2026-W35",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

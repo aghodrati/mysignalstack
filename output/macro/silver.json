@@ -1,18 +1,10 @@
 [
   {
     "period": "month",
-    "date": "2026-08-23",
-    "value": 69.52999877929688,
-    "delta": 20.2982774065946,
+    "date": "2026-08-25",
+    "value": 67.83499908447266,
+    "delta": 16.012790639717256,
     "history": [
-      [
-        "2026-07-23",
-        57.79800033569336
-      ],
-      [
-        "2026-07-24",
-        58.65599822998047
-      ],
       [
         "2026-07-27",
         58.47200012207031
@@ -91,26 +83,39 @@
       ],
       [
         "2026-08-21",
-        69.52999877929688
+        69.46600341796875
+      ],
+      [
+        "2026-08-24",
+        68.54100036621094
+      ],
+      [
+        "2026-08-25",
+        67.83499908447266
       ]
     ],
-    "narrative": "The month\u2019s surge was most plausibly driven by a combination of strong precious-metals positioning around dollar/debt concerns and reported Chinese buying: headlines such as \u201cChinese Buying Lifts Gold And Silver From Technical Support\u201d and \u201cSilver: The Ultimate Asset To Own During The Upcoming Debt Crisis\u201d directly support that interpretation. However, the coverage is largely bullish commentary rather than a single definitive catalyst, so the persistence of the move is less certain after such a sharp advance.",
+    "narrative": "Silver's sharp monthly rally was most plausibly driven by safe-haven and monetary-debasement demand: headlines citing Treasury intervention shaking markets and a potential bond-market \u201cnightmare scenario\u201d point to falling confidence in Treasuries, while \u201cChinese Buying Lifts Gold And Silver From Technical Support\u201d provides a direct silver-specific catalyst. The move also fits the broader precious-metals surge highlighted by gold's historic weekly gain, though the headlines do not establish a durable supply-demand shock.",
     "has_clear_driver": true,
     "headlines_used": [
       {
-        "title": "Retirees Have A Dollar Problem, Here's The Trade",
+        "title": "It's Real, And You Need To Be Ready For It",
         "domain": "SeekingAlpha",
-        "date": "20260823"
+        "date": "20260825"
       },
       {
-        "title": "Pan American Silver: Deep Value Gold & Silver As A Hedge Against A Weak U.S. Dollar",
-        "domain": "SeekingAlpha",
-        "date": "20260821"
+        "title": "Samsung Crash Brings Semi Selling; Nvidia Earnings Ahead; $1T Treasury Firepower To Buy Bonds",
+        "domain": "Benzinga",
+        "date": "20260824"
       },
       {
-        "title": "Silver: The Ultimate Asset To Own During The Upcoming Debt Crisis",
+        "title": "Gold And Silver Surge As Treasury Intervention Shakes Markets",
         "domain": "SeekingAlpha",
-        "date": "20260819"
+        "date": "20260824"
+      },
+      {
+        "title": "Bessent Triggers The Nightmare Scenario For The Bond Market",
+        "domain": "SeekingAlpha",
+        "date": "20260824"
       },
       {
         "title": "Investors Are Betting Big on Gold Again, but Silver Is Still the Better Buy",
@@ -131,11 +136,6 @@
         "title": "Gold\u2019s Historic Weekly Surge Has Only Seven Parallels in 40 Years",
         "domain": "Benzinga",
         "date": "20260807"
-      },
-      {
-        "title": "What's Behind the Silver Rally Wednesday?",
-        "domain": "Benzinga",
-        "date": "20260805"
       },
       {
         "title": "Bullish on Silver? This 2X ETF Doubles Your Bet and Your Risk",
@@ -194,5 +194,57 @@
     "direction": "bullish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-08-25",
+    "value": 67.83499908447266,
+    "delta": 6.089984637642254,
+    "history": [
+      [
+        "2026-08-19",
+        65.73400115966797
+      ],
+      [
+        "2026-08-20",
+        68.0260009765625
+      ],
+      [
+        "2026-08-21",
+        69.46600341796875
+      ],
+      [
+        "2026-08-24",
+        68.54100036621094
+      ],
+      [
+        "2026-08-25",
+        67.83499908447266
+      ]
+    ],
+    "narrative": "The clearest stated driver is the Seeking Alpha report that \u201cGold And Silver Surge As Treasury Intervention Shakes Markets,\u201d suggesting Treasury-market intervention and potential lower yields/safe-haven demand lifted precious metals. The \u201c$1T Treasury Firepower To Buy Bonds\u201d angle in the Benzinga headline is consistent with that mechanism, while the Samsung/Nvidia story appears largely unrelated to silver.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "It's Real, And You Need To Be Ready For It",
+        "domain": "SeekingAlpha",
+        "date": "20260825"
+      },
+      {
+        "title": "Samsung Crash Brings Semi Selling; Nvidia Earnings Ahead; $1T Treasury Firepower To Buy Bonds",
+        "domain": "Benzinga",
+        "date": "20260824"
+      },
+      {
+        "title": "Gold And Silver Surge As Treasury Intervention Shakes Markets",
+        "domain": "SeekingAlpha",
+        "date": "20260824"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W35",
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

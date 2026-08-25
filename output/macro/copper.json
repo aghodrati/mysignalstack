@@ -48,18 +48,10 @@
   },
   {
     "period": "month",
-    "date": "2026-08-23",
-    "value": 6.586999893188477,
-    "delta": 4.472641911620179,
+    "date": "2026-08-25",
+    "value": 6.632500171661377,
+    "delta": 4.6300668271569645,
     "history": [
-      [
-        "2026-07-23",
-        6.304999828338623
-      ],
-      [
-        "2026-07-24",
-        6.320000171661377
-      ],
       [
         "2026-07-27",
         6.339000225067139
@@ -138,34 +130,57 @@
       ],
       [
         "2026-08-21",
-        6.586999893188477
+        6.579500198364258
+      ],
+      [
+        "2026-08-24",
+        6.598999977111816
+      ],
+      [
+        "2026-08-25",
+        6.632500171661377
       ]
     ],
-    "narrative": "Copper's 4.47% monthly rise appears to reflect broad real-asset and commodity strength rather than a clear copper-specific catalyst. The SeekingAlpha headlines on oil advancing amid tighter U.S. pressure and conflict with Iran, along with Benzinga's July 27 report that real assets were outperforming tech, may have supported general commodity positioning, but they do not directly establish a durable copper demand or supply signal.",
+    "narrative": "No clear single catalyst this month\u2014there were no relevant news headlines provided, so the +4.63 move was likely driven by broad positioning, technical momentum, or market drift rather than a verifiable fundamental development.",
     "has_clear_driver": false,
-    "headlines_used": [
-      {
-        "title": "Commodities: Oil Advances As U.S. Tightens Pressure On Iran",
-        "domain": "SeekingAlpha",
-        "date": "20260820"
-      },
-      {
-        "title": "Commodity Price Watch: August 2026",
-        "domain": "SeekingAlpha",
-        "date": "20260820"
-      },
-      {
-        "title": "Commodities: Oil Rises Amid U.S.-Iran Conflict",
-        "domain": "SeekingAlpha",
-        "date": "20260819"
-      },
-      {
-        "title": "Real Assets Are Beating Tech Right Now. Here's the Proof.",
-        "domain": "Benzinga",
-        "date": "20260727"
-      }
-    ],
+    "headlines_used": [],
     "fetch_succeeded": true,
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-08-25",
+    "value": 6.632500171661377,
+    "delta": 2.3139235418750292,
+    "history": [
+      [
+        "2026-08-19",
+        6.487500190734863
+      ],
+      [
+        "2026-08-20",
+        6.460000038146973
+      ],
+      [
+        "2026-08-21",
+        6.579500198364258
+      ],
+      [
+        "2026-08-24",
+        6.598999977111816
+      ],
+      [
+        "2026-08-25",
+        6.632500171661377
+      ]
+    ],
+    "narrative": "No clear single catalyst this week\u2014there were no relevant news headlines provided to explain copper's sharp move, so it most plausibly reflects broad positioning, macro sentiment, or market drift rather than a specific fundamental development.",
+    "has_clear_driver": false,
+    "headlines_used": [],
+    "fetch_succeeded": true,
+    "week": "2026-W35",
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false

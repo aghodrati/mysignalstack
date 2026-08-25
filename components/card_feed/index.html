@@ -25,6 +25,9 @@
   }
   #grid {
     display: grid;
+    /* Default: responsive auto-fill. Overridden inline (gridEl.style.gridTemplateColumns) by
+       applyDisplaySettings() below whenever Python passes an explicit column count -- see
+       app.py's _render_card_display_settings/_render_keep_card_grid_iframe. */
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 0.9rem;
     align-items: start;
@@ -80,7 +83,7 @@
     width: 100%;
     box-sizing: border-box;
     border: none;
-    font-size: 0.7rem;
+    font-size: calc(0.7rem * var(--card-font-scale, 1));
     padding: 0.3rem 0.4rem;
     background: #d3d3d3;
     color: #000000;
@@ -89,10 +92,22 @@
   }
   .card-action-btn:disabled { opacity: 0.6; cursor: default; }
 
-  .keep-card-source { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.3rem; }
-  .keep-card-claim { font-size: 0.92rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.4rem; }
-  .keep-card-context { font-size: 0.82rem; opacity: 0.85; line-height: 1.4; margin-bottom: 0.5rem; }
-  .keep-card-meta { font-size: 0.72rem; opacity: 0.65; }
+  /* Every size below is base * var(--card-font-scale, 1), matching _inject_native_card_css's own
+     scaling of the same classes in native mode -- see applyDisplaySettings() for where the variable
+     itself gets set (from Python's font_scale prop, via _render_card_display_settings). */
+  .keep-card-source {
+    font-size: calc(0.75rem * var(--card-font-scale, 1)); color: #1baf7a; font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .keep-card-claim {
+    font-size: calc(0.92rem * var(--card-font-scale, 1)); font-weight: 600; line-height: 1.35;
+    margin-bottom: 0.4rem;
+  }
+  .keep-card-context {
+    font-size: calc(0.82rem * var(--card-font-scale, 1)); opacity: 0.85; line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  .keep-card-meta { font-size: calc(0.72rem * var(--card-font-scale, 1)); opacity: 0.65; }
 
   details.keep-card-flip summary { list-style: none; cursor: pointer; display: block; }
   details.keep-card-flip summary::-webkit-details-marker { display: none; }
@@ -119,8 +134,11 @@
   .keep-flip-back {
     transform: rotateY(180deg);
   }
-  .keep-card-summary-title { font-size: 0.75rem; color: #1baf7a; font-weight: 600; margin-bottom: 0.4rem; }
-  .keep-card-summary { font-size: 0.8rem; opacity: 0.85; line-height: 1.4; }
+  .keep-card-summary-title {
+    font-size: calc(0.75rem * var(--card-font-scale, 1)); color: #1baf7a; font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .keep-card-summary { font-size: calc(0.8rem * var(--card-font-scale, 1)); opacity: 0.85; line-height: 1.4; }
   .keep-card-risk-item { margin-bottom: 0.6rem; }
   .keep-card-risk-item:last-child { margin-bottom: 0; }
 </style>
@@ -155,6 +173,7 @@ const state = {
   hiddenLocally: new Set(),// ids this component has already animated away (don't re-render even if
                            // a stale render event still lists them before Python catches up)
   revealed: 0,            // how many of `order` have been inserted into the DOM so far
+  showCount: true,        // false for callers (e.g. the Read page) that already show their own count
 };
 
 const gridEl = document.getElementById("grid");
@@ -167,6 +186,10 @@ const countLineEl = document.getElementById("count-line");
 // finish), not on the next Streamlit rerun. A plain st.caption computed in Python would only
 // reflect this after a full rerun, which defeats the point of hiding cards without one.
 function updateCountLine() {
+  if (!state.showCount) {
+    countLineEl.textContent = "";
+    return;
+  }
   const remaining = state.order.filter((id) => !state.hiddenLocally.has(id)).length;
   countLineEl.textContent = `${remaining} card${remaining === 1 ? "" : "s"}`;
 }
@@ -383,11 +406,25 @@ function reconcile(cards) {
   setFrameHeight();
 }
 
+// `columns` is null/undefined for "Auto" (responsive auto-fill, the CSS default left in place) or
+// an explicit int from the sidebar's Columns control; `font_scale` drives every calc(base *
+// var(--card-font-scale, 1)) size in the stylesheet above. Both come from app.py's
+// _render_card_display_settings by way of _render_keep_card_grid_iframe's component props -- see
+// that function's own comment for why native mode's equivalent (_inject_native_card_css) is a
+// separate implementation rather than shared code (this component's DOM has no access to it, being
+// a different document inside the iframe).
+function applyDisplaySettings(columns, fontScale) {
+  document.documentElement.style.setProperty("--card-font-scale", fontScale || 1);
+  gridEl.style.gridTemplateColumns = columns ? `repeat(${columns}, 1fr)` : "repeat(auto-fill, minmax(260px, 1fr))";
+}
+
 function onMessage(event) {
   const data = event.data;
   if (!data || data.type !== "streamlit:render") return;
-  const cards = (data.args && data.args.cards) || [];
-  reconcile(cards);
+  const args = data.args || {};
+  applyDisplaySettings(args.columns, args.font_scale);
+  state.showCount = args.show_count !== false;
+  reconcile(args.cards || []);
 }
 
 window.addEventListener("message", onMessage);

@@ -15,5 +15,200 @@
       }
     ],
     "fetch_succeeded": true
+  },
+  {
+    "period": "week",
+    "date": "2026-08-25",
+    "value": 4.665999889373779,
+    "delta": -0.039999961853027344,
+    "history": [
+      [
+        "2026-08-19",
+        4.6529998779296875
+      ],
+      [
+        "2026-08-20",
+        4.696000099182129
+      ],
+      [
+        "2026-08-21",
+        4.73799991607666
+      ],
+      [
+        "2026-08-24",
+        4.703999996185303
+      ],
+      [
+        "2026-08-25",
+        4.665999889373779
+      ]
+    ],
+    "narrative": "The modest 4 bp decline appears broadly consistent with renewed support for Treasuries amid volatility concerns, including the report that Bessent could use the Treasury General Account to fund bond buybacks. However, that proposal was speculative and the headlines provide no confirmed, single catalyst, so the move was likely a combination of positioning and modest safe-haven demand.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Cross-Asset Volatilities Rise As Treasury Endeavors To Avert Yield Contagion",
+        "domain": "SeekingAlpha",
+        "date": "20260825"
+      },
+      {
+        "title": "Cumberland's Monday Memo",
+        "domain": "SeekingAlpha",
+        "date": "20260825"
+      },
+      {
+        "title": "'Bessent could tap near $1 trillion Treasury General Account to fund bond buybacks' - CNBC",
+        "domain": "Benzinga",
+        "date": "20260824"
+      },
+      {
+        "title": "Dr.Copper Prescribes Lower Bond Yields",
+        "domain": "Benzinga",
+        "date": "20260821"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W35"
+  },
+  {
+    "period": "month",
+    "date": "2026-08-25",
+    "value": 4.665999889373779,
+    "delta": 0.02500009536743164,
+    "history": [
+      [
+        "2026-07-27",
+        4.640999794006348
+      ],
+      [
+        "2026-07-28",
+        4.604000091552734
+      ],
+      [
+        "2026-07-29",
+        4.622000217437744
+      ],
+      [
+        "2026-07-30",
+        4.663000106811523
+      ],
+      [
+        "2026-07-31",
+        4.744999885559082
+      ],
+      [
+        "2026-08-03",
+        4.685999870300293
+      ],
+      [
+        "2026-08-04",
+        4.626999855041504
+      ],
+      [
+        "2026-08-05",
+        4.617000102996826
+      ],
+      [
+        "2026-08-06",
+        4.670000076293945
+      ],
+      [
+        "2026-08-07",
+        4.659999847412109
+      ],
+      [
+        "2026-08-10",
+        4.698999881744385
+      ],
+      [
+        "2026-08-11",
+        4.684000015258789
+      ],
+      [
+        "2026-08-12",
+        4.682000160217285
+      ],
+      [
+        "2026-08-13",
+        4.640999794006348
+      ],
+      [
+        "2026-08-14",
+        4.696000099182129
+      ],
+      [
+        "2026-08-17",
+        4.723999977111816
+      ],
+      [
+        "2026-08-18",
+        4.705999851226807
+      ],
+      [
+        "2026-08-19",
+        4.6529998779296875
+      ],
+      [
+        "2026-08-20",
+        4.696000099182129
+      ],
+      [
+        "2026-08-21",
+        4.73799991607666
+      ],
+      [
+        "2026-08-24",
+        4.703999996185303
+      ],
+      [
+        "2026-08-25",
+        4.665999889373779
+      ]
+    ],
+    "narrative": "No clear single catalyst drove the modest 3 bp rise to 4.67%; the move appears to reflect competing forces, including concerns over Fed credibility and bond-vigilante pressure highlighted in the July 31 headlines. Treasury buyback support\u2014particularly the announced increase in long-end liquidity-support operations and reports that Bessent could use the TGA for buybacks\u2014likely helped contain the increase, while the recent volatility headlines point to broader positioning rather than a decisive fundamental repricing.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Cross-Asset Volatilities Rise As Treasury Endeavors To Avert Yield Contagion",
+        "domain": "SeekingAlpha",
+        "date": "20260825"
+      },
+      {
+        "title": "Cumberland's Monday Memo",
+        "domain": "SeekingAlpha",
+        "date": "20260825"
+      },
+      {
+        "title": "The 'Bessent Put'",
+        "domain": "SeekingAlpha",
+        "date": "20260825"
+      },
+      {
+        "title": "'Bessent could tap near $1 trillion Treasury General Account to fund bond buybacks' - CNBC",
+        "domain": "Benzinga",
+        "date": "20260824"
+      },
+      {
+        "title": "Dr.Copper Prescribes Lower Bond Yields",
+        "domain": "Benzinga",
+        "date": "20260821"
+      },
+      {
+        "title": "U.S. Treasury Announces Increased Sizes of Nominal Long-End Liquidity Support Buybacks, Effective September 9; Current Maximum Size Of $2B Per Operation Will Be At Least $4B Per Operation",
+        "domain": "Benzinga",
+        "date": "20260819"
+      },
+      {
+        "title": "A Credibility Gap at the Fed: Why Bond Yields Are Surging",
+        "domain": "Yahoo",
+        "date": "20260731"
+      },
+      {
+        "title": "Fed- Bond Vigilantes Don't Want Talk. They Want Action.",
+        "domain": "Yahoo",
+        "date": "20260731"
+      }
+    ],
+    "fetch_succeeded": true
   }
 ]

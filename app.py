@@ -259,6 +259,10 @@ st.markdown(
     "[data-testid='stSidebarCollapseButton']{display:none}"
     "[data-testid='stExpandSidebarButton']{display:none}"
     "}"
+    # Streamlit's default block-container padding-top (6rem/96px) is sized to clear the sticky
+    # header (60px) with a lot of room to spare -- shrinks it to just enough to clear the header
+    # plus a small gap, on every page.
+    "[data-testid='stMain'] div.block-container{padding-top:3.75rem;padding-bottom:2rem}"
     "</style>",
     unsafe_allow_html=True,
 )
@@ -1013,21 +1017,23 @@ def _show_more_cards(shown_key: str, current_shown: int) -> None:
 
 
 def _render_card_display_settings() -> None:
-    """"⚙️ Settings" expander at the end of the sidebar panel -- lets the user pick the native
-    grid's column count and a font-size scale for card text, both read back out of st.session_state
-    by _render_keep_card_grid_native/_inject_native_card_css. Only meaningful in native mode
-    (_CARD_GRID_MODE == "native") -- the iframe version's real CSS grid already adapts column count
-    on its own and has no equivalent font-scale knob, so this renders nothing there rather than
-    offering controls that do nothing. Was a right-aligned "⚙️ Display" popover above the card grid,
-    repeated on every card-listing page -- moved into the sidebar (called once, at the end of its
-    `with st.sidebar:` block) since it's one global display preference, not something tied to
-    whichever page happens to be showing cards right now.
+    """"⚙️ Settings" expander at the end of the sidebar panel -- lets the user pick the grid's column
+    count and a font-size scale for card text, both read back out of st.session_state by whichever
+    grid renderer is active (_render_keep_card_grid_native/_inject_native_card_css for "native",
+    _render_keep_card_grid_iframe for "iframe" -- the latter forwards both as component props and
+    components/card_feed/index.html applies them client-side via CSS custom properties). "Auto" (the
+    default) means "responsive CSS grid, adapt to width" in iframe mode and _NATIVE_GRID_COLUMNS
+    (currently 2) in native mode, which can't do a true responsive column count -- so the very first
+    render looks the same in both modes even though "Auto" resolves differently under the hood. Was a
+    right-aligned "⚙️ Display" popover above the card grid, repeated on every card-listing page --
+    moved into the sidebar (called once, at the end of its `with st.sidebar:` block) since it's one
+    global display preference, not something tied to whichever page happens to be showing cards right
+    now.
     """
-    if _CARD_GRID_MODE != "native":
-        return
     with st.expander("⚙️ Settings"):
         st.segmented_control(
-            "Columns", options=[2, 3], default=st.session_state.get("card_columns", _NATIVE_GRID_COLUMNS),
+            "Columns", options=["Auto", 2, 3],
+            default=st.session_state.get("card_columns", "Auto"),
             key="card_columns", required=True,
         )
         st.segmented_control(
@@ -1097,7 +1103,7 @@ _ACTION_BUTTON_LABEL = {
 
 def _render_keep_card_grid_native(
     cards: list[tuple[str, str]], show_read: bool, show_favorites: bool,
-    primary_action: str | None, key: str, show_hidden_count: bool = True,
+    primary_action: str | None, key: str, show_hidden_count: bool = True, show_count: bool = True,
 ) -> None:
     """Plain-Streamlit alternative to _render_keep_card_grid_iframe -- no custom component, no
     iframe, every card rendered directly into the page via st.container + st.markdown(unsafe_allow_
@@ -1161,7 +1167,9 @@ def _render_keep_card_grid_native(
     # actual rendered height (which Python can't do) -- not perfectly height-balanced across columns
     # since it doesn't know heights, but each column still flows continuously on its own, which is
     # the actual complaint being fixed here.
-    num_cols = st.session_state.get("card_columns", _NATIVE_GRID_COLUMNS)
+    num_cols = st.session_state.get("card_columns", "Auto")
+    if num_cols == "Auto":
+        num_cols = _NATIVE_GRID_COLUMNS
     columns = st.columns(num_cols)
     for i, (cid, card_html) in enumerate(page):
         with columns[i % num_cols]:
@@ -1196,6 +1204,7 @@ def _render_keep_card_grid_native(
 def _render_keep_card_grid_iframe(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
     primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
+    show_count: bool = True,
 ) -> None:
     """Renders (card_id, card_html) pairs, newest first, as a card grid -- via the card_feed custom
     component (components/card_feed/index.html) instead of st.columns + st.button. That split
@@ -1252,16 +1261,32 @@ def _render_keep_card_grid_iframe(
         }
         for cid, card_html in visible
     ]
-    result = _CARD_FEED_COMPONENT(cards=payload, key=key, default=None)
-    if result and result.get("acted_id"):
+    columns_setting = st.session_state.get("card_columns", "Auto")
+    result = _CARD_FEED_COMPONENT(
+        cards=payload,
+        columns=None if columns_setting == "Auto" else columns_setting,
+        font_scale=st.session_state.get("card_font_scale", 1.0),
+        show_count=show_count,
+        key=key, default=None,
+    )
+    if result and result.get("acted_id") and st.session_state.get(f"_card_feed_last_ts_{key}") != result.get("ts"):
+        st.session_state[f"_card_feed_last_ts_{key}"] = result.get("ts")
         handler = _CARD_ACTIONS.get(result["action"])
         if handler:
             handler(result["acted_id"])
+            # This function's caller (e.g. _render_read_page) already printed its own header/count
+            # text (e.g. "Read (111)") *above* this component, earlier in the very same script pass
+            # -- so persisting the mark here is too late to affect what already rendered this pass.
+            # Force one more rerun so the next pass recomputes that header from the now-updated
+            # read_state. Deduped by `ts` above so this fires exactly once per real click, not on
+            # every subsequent rerun that still carries the same last-known component value.
+            st.rerun()
 
 
 def _render_keep_card_grid(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
     primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
+    show_count: bool = True,
 ) -> None:
     """Dispatches to _render_keep_card_grid_native or _render_keep_card_grid_iframe per
     _CARD_GRID_MODE -- every existing call site keeps calling this one function; only the module-
@@ -1269,10 +1294,12 @@ def _render_keep_card_grid(
     docstrings for what each does differently. `show_hidden_count=False` suppresses the generic
     "N read card(s) hidden" caption -- for a caller (e.g. _render_recent_page's main grid) that
     already shows its own, more specific hidden/unread count, where the generic one would just be a
-    second, redundant line.
+    second, redundant line. `show_count=False` suppresses the iframe grid's own live "N card(s)"
+    line (see card_feed/index.html's updateCountLine) -- for a caller (e.g. the Read page) that
+    already puts the same count in its own page header.
     """
     fn = _render_keep_card_grid_native if _CARD_GRID_MODE == "native" else _render_keep_card_grid_iframe
-    fn(cards, show_read, show_favorites, primary_action, key, show_hidden_count)
+    fn(cards, show_read, show_favorites, primary_action, key, show_hidden_count, show_count)
 
 
 _FUNDAMENTAL_DIRECTION_ARROW = {
@@ -4760,7 +4787,6 @@ def _render_recent_page() -> None:
         _render_keep_card_grid(just_reported_cards, key="feed_just_reported")
 
     st.markdown("### Recent")
-    st.caption("All claims, fundamentals, earnings calls, and macro narratives in one place.")
 
     # Same st.pills picking interaction, and the same labels/option text, as the Ticker page's own
     # Dates/Cards filters (see page_ticker) -- Dates is single-select (a card is either within the
@@ -4849,6 +4875,7 @@ def _render_recent_page() -> None:
     )
     _render_keep_card_grid(
         [(cid, card_html) for _, cid, card_html in dated], key="feed_recent", show_hidden_count=False,
+        show_count=False,
     )
 
 
@@ -4861,10 +4888,9 @@ def _render_read_page() -> None:
     shows this page's cards rather than hiding them (the grid's default is "hide read cards" --
     this is the one page where that default is flipped).
     """
-    st.markdown("### Read")
-
     read_ids = read_state.read_ids(_CURRENT_USER)
     if not read_ids:
+        st.markdown("### Read")
         st.info("No cards marked read yet.")
         return
 
@@ -4912,12 +4938,14 @@ def _render_read_page() -> None:
             if weekly:
                 dated.append((dt.date.fromisoformat(weekly["date"]), weekly_id, _macro_narrative_card_html(tile)))
 
+    st.markdown(f"### Read ({len(dated)})")
     if not dated:
         st.info("No cards marked read yet.")
         return
-    st.caption(f"{len(dated)} card(s) marked read, across the whole app.")
     dated.sort(key=lambda item: item[0], reverse=True)
-    _render_keep_card_grid([(cid, card_html) for _, cid, card_html in dated], show_read=True, key="feed_read")
+    _render_keep_card_grid(
+        [(cid, card_html) for _, cid, card_html in dated], show_read=True, key="feed_read", show_count=False,
+    )
 
 
 def _render_favorites_page() -> None:
@@ -4928,10 +4956,9 @@ def _render_favorites_page() -> None:
     shows this page's cards (with an "Unfavorite" action) rather than the grid's own default of
     hiding already-read ones.
     """
-    st.markdown("### Favorites")
-
     favorite_ids = read_state.favorite_ids(_CURRENT_USER)
     if not favorite_ids:
+        st.markdown("### Favorites")
         st.info("No cards favorited yet -- swipe a card right to star it.")
         return
 
@@ -4974,13 +5001,14 @@ def _render_favorites_page() -> None:
             if weekly:
                 dated.append((dt.date.fromisoformat(weekly["date"]), weekly_id, _macro_narrative_card_html(tile)))
 
+    st.markdown(f"### Favorites ({len(dated)})")
     if not dated:
         st.info("No cards favorited yet -- swipe a card right to star it.")
         return
-    st.caption(f"{len(dated)} card(s) starred, across the whole app.")
     dated.sort(key=lambda item: item[0], reverse=True)
     _render_keep_card_grid(
         [(cid, card_html) for _, cid, card_html in dated], show_favorites=True, key="feed_favorites",
+        show_count=False,
     )
 
 
@@ -5127,12 +5155,7 @@ def _render_discovery_page() -> None:
     No read/favorite tracking at all for this page -- read_state has nothing to do with "should this
     still exist," and there's no undo once discarded, matching the swipe gesture's own permanence.
     """
-    st.markdown("### Discovery")
-    st.caption(
-        "Companies and themes outside your tracked coverage that your news sources discussed in "
-        "real depth -- not extracted claims, just a signal worth a closer look. Grouped by name, "
-        "most-mentioned first. Swipe or tap to discard permanently."
-    )
+    st.markdown("<h3 style='margin-bottom:0.15rem'>Discovery</h3>", unsafe_allow_html=True)
     candidates = load_discovery_candidates()
     if not candidates:
         st.info("No discovery candidates recorded yet -- these accumulate as run_loop_a processes articles.")
@@ -5151,7 +5174,6 @@ def _render_macro_page() -> None:
     LLM call or carries hallucination risk, unlike every other card type in this app.
     """
     st.markdown("### Macro")
-    st.caption("Data source: Finnhub/GNews/FRED/Yfinance")
     if st.button("Refresh now", key="macro_refresh_btn"):
         _cached_macro_snapshot.clear()
         st.rerun()
@@ -5193,15 +5215,12 @@ def _render_macro_page() -> None:
     # weekly card instead (see _macro_narrative_card_html/_macro_monthly_back_html), so there's
     # nothing left to render for it separately here.
     if weekly_charts:
-        st.write("**Weekly**")
         _render_keep_card_grid(
             [(_macro_weekly_card_id(t), _macro_narrative_card_html(t)) for t in weekly_narrative_charts]
             + [(_macro_chart_card_id(t), _macro_chart_card_html(t)) for t in weekly_plain_charts],
-            key="feed_macro_weekly",
+            key="feed_macro_weekly", show_hidden_count=False,
         )
     if weekly_tiles:
-        if not weekly_charts:
-            st.write("**Weekly**")
         _render_macro_tiles(weekly_tiles)
     if monthly_charts or monthly_tiles:
         st.write("**Monthly**")
@@ -5209,7 +5228,7 @@ def _render_macro_page() -> None:
             _render_keep_card_grid(
                 [(_macro_weekly_card_id(t), _macro_narrative_card_html(t)) for t in monthly_narrative_charts]
                 + [(_macro_chart_card_id(t), _macro_chart_card_html(t)) for t in monthly_plain_charts],
-                key="feed_macro_monthly",
+                key="feed_macro_monthly", show_hidden_count=False,
             )
         if monthly_tiles:
             _render_macro_tiles(monthly_tiles)

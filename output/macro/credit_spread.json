@@ -1,0 +1,135 @@
+[
+  {
+    "period": "week",
+    "date": "2026-08-25",
+    "value": 2.73,
+    "delta": 0.020000000000000018,
+    "history": [
+      [
+        "2026-08-13",
+        2.71
+      ],
+      [
+        "2026-08-14",
+        2.67
+      ],
+      [
+        "2026-08-17",
+        2.7
+      ],
+      [
+        "2026-08-18",
+        2.75
+      ],
+      [
+        "2026-08-19",
+        2.73
+      ]
+    ],
+    "narrative": "No clear single catalyst is evident this week because no relevant news headlines were provided. The modest 0.02 percentage-point widening to 2.73% most plausibly reflects broad positioning, modest risk-off drift, or normal market noise rather than a specific event.",
+    "has_clear_driver": false,
+    "headlines_used": [],
+    "fetch_succeeded": true,
+    "week": "2026-W35"
+  },
+  {
+    "period": "month",
+    "date": "2026-08-25",
+    "value": 2.73,
+    "delta": 0.040000000000000036,
+    "history": [
+      [
+        "2026-07-21",
+        2.69
+      ],
+      [
+        "2026-07-22",
+        2.68
+      ],
+      [
+        "2026-07-23",
+        2.77
+      ],
+      [
+        "2026-07-24",
+        2.79
+      ],
+      [
+        "2026-07-27",
+        2.81
+      ],
+      [
+        "2026-07-28",
+        2.84
+      ],
+      [
+        "2026-07-29",
+        2.87
+      ],
+      [
+        "2026-07-30",
+        2.84
+      ],
+      [
+        "2026-07-31",
+        2.85
+      ],
+      [
+        "2026-08-03",
+        2.78
+      ],
+      [
+        "2026-08-04",
+        2.73
+      ],
+      [
+        "2026-08-05",
+        2.75
+      ],
+      [
+        "2026-08-06",
+        2.71
+      ],
+      [
+        "2026-08-07",
+        2.7
+      ],
+      [
+        "2026-08-10",
+        2.7
+      ],
+      [
+        "2026-08-11",
+        2.72
+      ],
+      [
+        "2026-08-12",
+        2.71
+      ],
+      [
+        "2026-08-13",
+        2.71
+      ],
+      [
+        "2026-08-14",
+        2.67
+      ],
+      [
+        "2026-08-17",
+        2.7
+      ],
+      [
+        "2026-08-18",
+        2.75
+      ],
+      [
+        "2026-08-19",
+        2.73
+      ]
+    ],
+    "narrative": "No clear single catalyst this month\u2014there were no relevant headlines provided to explain the modest 0.04 percentage-point widening in HY credit spreads. The move most plausibly reflects broad positioning, risk sentiment, or normal market drift.",
+    "has_clear_driver": false,
+    "headlines_used": [],
+    "fetch_succeeded": true
+  }
+]

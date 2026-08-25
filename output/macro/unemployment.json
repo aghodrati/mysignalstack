@@ -1,0 +1,110 @@
+[
+  {
+    "period": "week",
+    "date": "2026-08-25",
+    "value": 4.1,
+    "delta": -0.10000000000000053,
+    "history": [
+      [
+        "2025-08-01",
+        4.3
+      ],
+      [
+        "2025-09-01",
+        4.4
+      ],
+      [
+        "2025-11-01",
+        4.5
+      ],
+      [
+        "2025-12-01",
+        4.4
+      ],
+      [
+        "2026-01-01",
+        4.3
+      ],
+      [
+        "2026-02-01",
+        4.4
+      ],
+      [
+        "2026-03-01",
+        4.3
+      ],
+      [
+        "2026-04-01",
+        4.3
+      ],
+      [
+        "2026-05-01",
+        4.3
+      ],
+      [
+        "2026-06-01",
+        4.2
+      ],
+      [
+        "2026-07-01",
+        4.1
+      ]
+    ],
+    "narrative": "No clear single catalyst this week. Although headlines such as \u201cUS just lost 23,000 jobs\u201d and reports of rising unemployment in San Diego and Oklahoma point to labor-market softness, they do not clearly explain the modest 0.10-point decline in the aggregate unemployment rate, which likely reflects normal statistical movement or broad positioning.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "ExplainSpeaking: The other \u2018NEET\u2019 that India policymakers need to address",
+        "domain": "The Indian Express",
+        "date": "20260825"
+      },
+      {
+        "title": "Crores trained under India\u2019s skilling programmes, but employment outcomes remain uneven: NITI Aayog report",
+        "domain": "The Hindu Business Line",
+        "date": "20260824"
+      },
+      {
+        "title": "Unemployment rate highest in 40 years; lots of unrest, frustration among youth: Priyanka Gandhi",
+        "domain": "The Hindu",
+        "date": "20260824"
+      },
+      {
+        "title": "American Staffing Association chief economist: The future of work is temporary, and that changes everything about the labor market",
+        "domain": "EUROPE SAYS",
+        "date": "20260824"
+      },
+      {
+        "title": "American Staffing Association chief economist: The future of work is temporary, and that changes everything about the labor market",
+        "domain": "Fortune",
+        "date": "20260824"
+      },
+      {
+        "title": "Oklahoma unemployment rate increase nation\u2019s second highest",
+        "domain": "Tulsa World",
+        "date": "20260824"
+      },
+      {
+        "title": "US just lost 23,000 jobs \u2014 Bessent says, \u2018we don\u2019t need as many jobs\u2019 amid deportations",
+        "domain": "The Financial Express",
+        "date": "20260824"
+      },
+      {
+        "title": "high unemployment rate, booming stock market",
+        "domain": "Hartford Courant",
+        "date": "20260823"
+      },
+      {
+        "title": "Charting the Global Economy: UK payrolls slide, inflation rises",
+        "domain": "The Economic Times",
+        "date": "20260823"
+      },
+      {
+        "title": "San Diego unemployment is on the rise. Here are the hard-hit industries",
+        "domain": "San Diego Union-Tribune",
+        "date": "20260821"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W35"
+  }
+]
