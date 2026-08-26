@@ -593,116 +593,38 @@ _DIRECTION_ARROW = {
 }
 
 
-# The Recent/Read/Favorites/ticker pages each loop the whole tracked universe (~32 tickers) calling
-# several of these per ticker, and Streamlit reruns the entire script on every widget interaction --
-# including a single card's Fav/Read button click -- so an uncached per-ticker JSON read here was
-# genuinely being paid 100+ times per click, not just once per page load. Cached here in app.py
-# (the read-only UI layer) rather than inside finance.claims/fundamentals/earnings_calls/newsloop
-# themselves, since those modules are also called from the write side (finance.thesis's aggregation,
-# finance.newsloop's/finance.earnings_calls's own run-loop refresh logic in run_loop_a.py) where a
-# stale cached read could feed a decision about whether to write -- see each loader's docstring
-# below for the specific write-side caller that ruled out caching at the source. Every wrapper takes
-# the underlying file's current mtime as an extra st.cache_data key: a fresh batch-run write
-# invalidates the cache immediately (new mtime -> cache miss) rather than waiting on a TTL or app
-# restart, while repeated reads of an unchanged file across reruns hit the cache.
-def _file_mtime(path: Path) -> float:
-    try:
-        return path.stat().st_mtime
-    except FileNotFoundError:
-        return 0.0
-
-
-@st.cache_data(show_spinner=False)
-def _cached_load_claims(ticker: str, _mtime: float) -> list[ArticleClaim]:
+# Caching removed (was st.cache_data, mtime-keyed) -- an external write (e.g. run_loop_a.py running
+# outside this process) wasn't reliably showing up in the UI even after a browser refresh, and a full
+# process restart was the only thing that consistently fixed it. Root cause wasn't pinned down, so
+# these are plain uncached reads for now: every rerun re-reads from disk directly, trading the
+# earlier "N calls per click across ~32 tickers" perf fix for always-correct freshness. Revisit if
+# this turns out to reintroduce the original lag.
+def load_claims(ticker: str) -> list[ArticleClaim]:
     return _load_claims_uncached(ticker)
 
 
-def load_claims(ticker: str) -> list[ArticleClaim]:
-    """Cached read-side wrapper -- see the block comment above. finance.thesis.aggregate_claims
-    (the write-side caller, via run_loop_a.py) calls finance.claims.load_claims directly, not this
-    wrapper, so its view is never affected by this cache.
-    """
-    return _cached_load_claims(ticker, _file_mtime(CLAIMS_DIR / f"{ticker}.json"))
-
-
-@st.cache_data(show_spinner=False)
-def _cached_load_fundamental_history(ticker: str, _mtime: float) -> list[dict]:
+def load_fundamental_history(ticker: str) -> list[dict]:
     return _load_fundamental_history_uncached(ticker)
 
 
-def load_fundamental_history(ticker: str) -> list[dict]:
-    """Cached read-side wrapper -- see the block comment above. finance.fundamentals' own
-    latest_fundamental/_append (the write-side callers, via run_loop_a.py) call the real
-    load_fundamental_history directly, not this wrapper.
-    """
-    return _cached_load_fundamental_history(ticker, _file_mtime(FUNDAMENTALS_DIR / f"{ticker}.json"))
-
-
-def _earnings_file_mtime(ticker: str) -> float:
-    return _file_mtime(EARNINGS_DIR / f"{ticker}.json")
-
-
-@st.cache_data(show_spinner=False)
-def _cached_load_earnings_call_history(ticker: str, _mtime: float) -> list[dict]:
+def load_earnings_call_history(ticker: str) -> list[dict]:
     return _load_earnings_call_history_uncached(ticker)
 
 
-def load_earnings_call_history(ticker: str) -> list[dict]:
-    """Cached read-side wrapper -- see the block comment above."""
-    return _cached_load_earnings_call_history(ticker, _earnings_file_mtime(ticker))
-
-
-@st.cache_data(show_spinner=False)
-def _cached_load_earnings_result_history(ticker: str, _mtime: float) -> list[dict]:
+def load_earnings_result_history(ticker: str) -> list[dict]:
     return _load_earnings_result_history_uncached(ticker)
 
 
-def load_earnings_result_history(ticker: str) -> list[dict]:
-    """Cached read-side wrapper -- see the block comment above."""
-    return _cached_load_earnings_result_history(ticker, _earnings_file_mtime(ticker))
-
-
-@st.cache_data(show_spinner=False)
-def _cached_latest_earnings_result(ticker: str, _mtime: float) -> dict | None:
+def latest_earnings_result(ticker: str) -> dict | None:
     return _latest_earnings_result_uncached(ticker)
 
 
-def latest_earnings_result(ticker: str) -> dict | None:
-    """Cached read-side wrapper -- see the block comment above. finance.newsloop's run-loop
-    earnings-result refresh (the write-side caller, via run_loop_a.py -- it dedups against stored
-    data before deciding whether to write a fresh result) calls the real latest_earnings_result
-    directly, not this wrapper, so its dedup check always sees a live read.
-    """
-    return _cached_latest_earnings_result(ticker, _earnings_file_mtime(ticker))
-
-
-@st.cache_data(show_spinner=False)
-def _cached_latest_earnings_reminder(ticker: str, _mtime: float) -> dict | None:
+def latest_earnings_reminder(ticker: str) -> dict | None:
     return _latest_earnings_reminder_uncached(ticker)
 
 
-def latest_earnings_reminder(ticker: str) -> dict | None:
-    """Cached read-side wrapper -- see the block comment above. finance.newsloop's run-loop
-    earnings-reminder refresh (the write-side caller, via run_loop_a.py -- it dedups against stored
-    data before deciding whether to write a fresh reminder) calls the real latest_earnings_reminder
-    directly, not this wrapper, so its dedup check always sees a live read.
-    """
-    return _cached_latest_earnings_reminder(ticker, _earnings_file_mtime(ticker))
-
-
-@st.cache_data(show_spinner=False)
-def _cached_article_archive(_mtime: float) -> dict:
-    return _get_article_archive_uncached()
-
-
 def get_article_archive() -> dict:
-    """Cached read-side wrapper -- see the block comment above. events.json is ~2.6MB and was being
-    fully re-read and re-parsed from disk on every rerun of any page that shows cards (Recent/Read/
-    Favorites/ticker), i.e. on every button click on those pages, not just once per page load.
-    finance.newsloop's own run-loop (via run_loop_a.py) calls _load_events directly, not this
-    wrapper, so its write-and-immediately-reread-in-the-same-run logic is never affected.
-    """
-    return _cached_article_archive(_file_mtime(EVENTS_CACHE_PATH))
+    return _get_article_archive_uncached()
 
 
 def _article_summaries() -> dict[str, str]:

@@ -54,41 +54,21 @@ _STORE_PATHS = {
 # _visible_cards_and_action), so only the first call in a run pays the handshake.
 _session = requests.Session()
 
-# In-process cache of each kind's full id set, keyed "{kind}:{user}" -- there's exactly one real
-# user today (CURRENT_USER, see below), so this is safe to share across every session/rerun in the
-# process rather than scoped per Streamlit session: on Streamlit Community Cloud specifically (the
-# deployment this was actually slow on -- confirmed fast on localhost, where the difference is
-# purely network latency to Upstash) a round trip to Upstash's REST API is the dominant cost of a
-# Fav/Unfav click, and _ids() gets called from several places on every page rerun (both the
-# page-level filter in _render_read_page/_render_favorites_page AND the shared grid's
-# _visible_cards_and_action -- and the latter runs once per grid on a page, so a page with several
-# grids, e.g. Recent's Upcoming/Just Reported/main sections, still means several calls per rerun).
-# Mutating the cache locally on every mark/unmark (see _mark/_unmark) turns every read after the
-# first into a plain in-memory set lookup.
-#
-# Bounded by _CACHE_TTL_SECONDS rather than cached for the whole process lifetime -- an unbounded
-# per-process cache does NOT self-heal if Upstash's data changes from outside this process (e.g. a
-# second real device/browser marking cards read against the same Redis, or a second localhost/Cloud
-# instance), which is exactly the "marked read on iPad, still shows unread on localhost" symptom
-# this was confirmed to cause live: two separate Python processes (the iPad's Streamlit Cloud pod
-# and the localhost dev server) each cached their own snapshot of read:amir once and never refreshed
-# it from Redis again for the rest of their process lifetime, so localhost kept serving a stale
-# snapshot from before the iPad's marks landed, indefinitely. A short TTL re-fetches periodically
-# instead, bounding cross-process staleness to _CACHE_TTL_SECONDS while still collapsing the several
-# same-rerun calls above into one real Upstash round trip.
-_cache: dict[str, set[str]] = {}
-_cache_fetched_at: dict[str, float] = {}
-_CACHE_TTL_SECONDS = 5.0
+# In-process TTL cache removed (was a plain dict + _CACHE_TTL_SECONDS): it was meant to bound
+# cross-process staleness (a second device marking cards against the same Redis) while still
+# collapsing the several _ids() calls a single page rerun makes into one Upstash round trip, but
+# after a run_loop_a-vs-app.py staleness bug that didn't clear even on browser refresh (root cause
+# not pinned down), caching anywhere in this read path is off the table for now -- every call below
+# hits Upstash (or the local-file fallback) directly, live.
 
 
 def _upstash_command_async(command: list[str]) -> None:
     """Fire-and-forget version of _upstash_command, for writes (SADD/SREM) whose HTTP response
-    nothing downstream reads. _mark/_unmark already update `_cache` synchronously before this is
-    called, so the UI-visible state is correct immediately -- waiting on Upstash's own round-trip
-    here too was pure added latency for a response nobody uses. Runs in a daemon thread so it can
-    never block process exit; genuinely fire-and-forget, not retried or awaited anywhere, matching
-    _upstash_command's own soft-failure contract (a lost write here just means this one mark doesn't
-    persist, same as any other network hiccup this module already tolerates).
+    nothing downstream reads -- waiting on Upstash's own round-trip here too was pure added latency
+    for a response nobody uses. Runs in a daemon thread so it can never block process exit; genuinely
+    fire-and-forget, not retried or awaited anywhere, matching _upstash_command's own soft-failure
+    contract (a lost write here just means this one mark doesn't persist, same as any other network
+    hiccup this module already tolerates).
     """
     threading.Thread(target=_upstash_command, args=(command,), daemon=True).start()
 
@@ -154,34 +134,21 @@ def _save_local(kind: str, data: dict[str, dict[str, float]]) -> None:
 
 def _ids(kind: str, user: str) -> set[str]:
     cache_key = f"{kind}:{user}"
-    if cache_key in _cache and time.time() - _cache_fetched_at.get(cache_key, 0.0) < _CACHE_TTL_SECONDS:
-        return _cache[cache_key]
     if _upstash_config() is not None:
         # ZRANGE (not SMEMBERS -- this key is a Sorted Set now, see this module's own docstring)
         # 0 -1 returns every member regardless of score; order doesn't matter here since this is
         # only used for membership checks -- see _ordered_ids for the newest-first display query.
         result = _upstash_command(["ZRANGE", cache_key, "0", "-1"])
-        # Upstash configured but unreachable -- fail open (nothing hidden), not closed. Keeps
-        # serving whatever was last cached (better than silently un-hiding every read card on a
-        # transient hiccup) rather than wiping it; only a real fetch refreshes _cache_fetched_at,
-        # so the very next call retries instead of trusting this failure for the rest of the TTL.
+        # Upstash configured but unreachable -- fail open (nothing hidden), not closed.
         if result is None:
-            return _cache.get(cache_key, set())
-        ids = set(result.get("result") or [])
-    else:
-        ids = set(_load_local(kind).get(user, {}).keys())
-    _cache[cache_key] = ids
-    _cache_fetched_at[cache_key] = time.time()
-    return ids
+            return set()
+        return set(result.get("result") or [])
+    return set(_load_local(kind).get(user, {}).keys())
 
 
 def _ordered_ids(kind: str, user: str) -> list[str]:
-    """Every id for `kind`/`user`, most-recently-marked first -- the one query `_ids`/`_cache`
-    can't answer, since that cache is a plain unordered set (membership checks don't care about
-    order, and collapsing it to a set is what makes those checks O(1)). Not cached/TTL'd like
-    `_ids` -- this is only called once per Read/Favorites page render (their own display order),
-    not from every card's per-card filter check, so a live call each time is cheap enough to always
-    be fresh rather than sharing `_ids`'s staleness budget.
+    """Every id for `kind`/`user`, most-recently-marked first -- the one query `_ids` can't answer,
+    since it collapses to an unordered set (fine for membership checks, not for display order).
     """
     key = f"{kind}:{user}"
     if _upstash_config() is not None:
@@ -205,24 +172,11 @@ def favorite_ids_ordered(user: str) -> list[str]:
 def _mark(kind: str, user: str, card_id: str) -> None:
     """Idempotent -- ZADD re-scores rather than duplicating on a repeat mark (and the local-file
     fallback's dict assignment is naturally the same), so marking an already-read card again just
-    bumps its timestamp to "now" rather than erroring or double-adding. Updates `_cache`
-    synchronously so every reader sees the new state immediately, regardless of how long the actual
-    Upstash write (fired async, see _upstash_command_async) takes to land.
-
-    Calls `_ids` first (not a blind `_cache.setdefault`) so a mark/unmark that happens to be the
-    very first read_state call in a process still gets the real existing set from Redis into the
-    cache before mutating it -- `_cache.setdefault(key, set())` used to silently fabricate an empty
-    "known" cache entry in that case, so a mark right after an unmark (or vice versa) with no
-    intervening real read would leave `_cache` claiming this key has only the marks made THIS
-    process, hiding whatever was already there until the next TTL-driven refetch (see _cache's own
-    docstring).
-
-    Also refreshes `_cache_fetched_at` to "now" -- otherwise a slow-arriving async Upstash write
-    (see _upstash_command_async) racing against the next TTL expiry could see this mutation
-    reverted by a refetch that ran before the write actually landed in Redis.
+    bumps its timestamp to "now" rather than erroring or double-adding. No in-process cache to keep
+    in sync anymore (see module-level comment above) -- the next `_ids`/`_ordered_ids` call, in this
+    process or any other, just re-fetches live, so the async Upstash write below racing a same-rerun
+    re-read is the one place this can show a stale value for a moment (acceptable for now).
     """
-    _ids(kind, user).add(card_id)
-    _cache_fetched_at[f"{kind}:{user}"] = time.time()
     marked_at = time.time()
     if _upstash_config() is not None:
         # ZADD score member -- score is when this mark happened, so ZREVRANGE (_ordered_ids) can
@@ -237,12 +191,9 @@ def _mark(kind: str, user: str, card_id: str) -> None:
 
 def _unmark(kind: str, user: str, card_id: str) -> None:
     """Actually removes the id (ZREM/local-dict removal), not just a display filter, so it's really
-    gone from the store, not merely hidden again. Idempotent, same as _mark. Updates `_cache`
-    synchronously -- see _mark's docstring for why this calls `_ids` first rather than mutating a
-    blind `_cache.setdefault`, and for why `_cache_fetched_at` is refreshed too.
+    gone from the store, not merely hidden again. Idempotent, same as _mark. See _mark's docstring
+    re: no in-process cache to keep in sync anymore.
     """
-    _ids(kind, user).discard(card_id)
-    _cache_fetched_at[f"{kind}:{user}"] = time.time()
     if _upstash_config() is not None:
         _upstash_command_async(["ZREM", f"{kind}:{user}", card_id])
         return
