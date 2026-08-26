@@ -120,5 +120,30 @@
     "reported_eps": 1.87,
     "surprise_pct": 5.54,
     "type": "earnings_result"
+  },
+  {
+    "date": "2026-08-26",
+    "transcript_date": "2025-11-19",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2025/11/19/nvidia-nvda-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.72,
+    "guidance_summary": "Management guided Q4 revenue to $65 billion, plus or minus 2%, implying approximately 14% sequential growth at the midpoint, driven by Blackwell momentum. GAAP and non-GAAP gross margins are each expected at 74.8%, plus or minus 50 basis points; fiscal 2027 margins are targeted to remain in the mid-seventies despite rising input costs. Q4 GAAP and non-GAAP operating expenses are expected at approximately $6.7 billion and $5.0 billion, respectively. No China data-center compute revenue is assumed.",
+    "guidance_change": "The current call's $65 billion Q4 revenue guide is below the prior call's $91 billion Q2 guide in absolute terms, although the periods are not directly comparable. More importantly, the prior roughly $1 trillion Blackwell-and-Rubin revenue framework for 2025-2027 was replaced by visibility to approximately $500 billion from the start of 2025 through the end of 2026, implying a shorter and lower stated opportunity framework. China assumptions remain unchanged at zero data-center compute revenue.",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On whether supply can catch up with demand within 12-18 months, Jensen did not identify a single bottleneck or provide a timeline; he acknowledged that power, financing, memory, and foundry capacity are all constraints but said they are solvable through planning and partnerships.",
+      "On the $500 billion Blackwell/Rubin opportunity, Colette specifically said NVIDIA is on track, has already shipped $50 billion in the quarter, and expects the number to grow through additional orders, citing 400,000-600,000 additional GPUs tied to a KSA agreement and Anthropic's initial one-gigawatt commitment.",
+      "On customer financing and ROI, Jensen asserted that hundreds of billions of dollars tied to accelerated computing and generative-AI workloads should be cash-flow funded, while characterizing agentic AI and industry deployments as incremental demand. He did not quantify vendor financing exposure.",
+      "On ASIC competition, Jensen responded with a broad platform defense rather than market-share or deployment data, emphasizing CUDA, model breadth, ecosystem reach, availability across clouds, and NVIDIA's ability to help customers with offtake. He did not concede meaningful ASIC share loss."
+    ],
+    "risks": [
+      "Power availability, data-center construction, financing, memory, foundry, and packaging constraints could limit growth despite strong demand.",
+      "Rising component and system input costs may pressure gross margins, requiring cost reductions, cycle-time improvements, mix, and potentially pricing to sustain mid-seventies margins.",
+      "China data-center compute revenue remains excluded from guidance, with geopolitical restrictions and increasing Chinese competition preventing sizable purchase orders.",
+      "The $500 billion Blackwell/Rubin outlook and large GPU project announcements depend on customer funding, deployment execution, and realized AI ROI.",
+      "Custom ASICs remain a competitive risk, particularly for hyperscaler workloads, although management relied primarily on qualitative platform advantages rather than quantified evidence."
+    ],
+    "summary": "The call supports a bullish earnings view: revenue growth remains exceptionally strong, Blackwell is ramping rapidly, networking is expanding, and management says demand materially exceeds supply with additional upside to the stated Blackwell/Rubin opportunity. The Q&A was notably confident but offered limited specificity on the key constraints\u2014power, financing, supply capacity, and ASIC competition\u2014while China remains structurally excluded and margin preservation depends on execution against rising costs.",
+    "type": "earnings_transcript"
   }
 ]

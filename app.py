@@ -743,6 +743,14 @@ def _mark_card_unfavorite(card_id: str) -> None:
     read_state.mark_unfavorite(_CURRENT_USER, card_id)
 
 
+def _mark_card_pin(card_id: str) -> None:
+    read_state.mark_pin(_CURRENT_USER, card_id)
+
+
+def _mark_card_unpin(card_id: str) -> None:
+    read_state.mark_unpin(_CURRENT_USER, card_id)
+
+
 # Dispatch table for whatever action the card_feed component reports back (see
 # _render_keep_card_grid) -- one shared table rather than an if/elif chain, since the set of
 # possible actions is closed and each is just a single-argument (card_id) call. "discard" is
@@ -752,6 +760,8 @@ _CARD_ACTIONS = {
     "read": _mark_card_read,
     "unread": _mark_card_unread,
     "favorite": _mark_card_favorite,
+    "pin": _mark_card_pin,
+    "unpin": _mark_card_unpin,
     "unfavorite": _mark_card_unfavorite,
 }
 
@@ -1045,14 +1055,16 @@ def _render_card_display_settings() -> None:
 
 def _visible_cards_and_action(
     cards: list[tuple[str, str]], show_read: bool, show_favorites: bool, primary_action: str | None,
+    toggle_kind: str = "favorite",
 ) -> tuple[list[tuple[str, str]], str, int, set[str]]:
     """Shared filtering logic both grid implementations need: which cards are visible right now,
     what their primary action is, how many were hidden (read cards not currently being shown), and
-    the full favorite-id set (both grid renderers need it too, to badge/star already-favorited
-    cards -- returned from here rather than fetched a second time by each caller, since this
-    function already needs favorite_ids itself on the Favorites page; each read_state call is a
-    real network round-trip to Upstash, and duplicating it was adding a second ~seconds-scale delay
-    on top of the favorite/unfavorite button's own write on every click).
+    the full toggle-id set for badging (favorite_ids normally, or pin_ids when toggle_kind="pin" --
+    see app.py's _render_discovery_page, the only caller that passes "pin") -- returned from here
+    rather than fetched a second time by each caller, since this function already needs it itself
+    on the Favorites page; each read_state call is a real network round-trip to Upstash, and
+    duplicating it was adding a second ~seconds-scale delay on top of the toggle button's own write
+    on every click.
     See _render_keep_card_grid_native's docstring for what show_read/show_favorites/primary_action
     each mean -- unchanged from the iframe version, just factored out so both share one definition.
 
@@ -1074,11 +1086,11 @@ def _visible_cards_and_action(
     cards = deduped_cards
 
     read_ids = read_state.read_ids(_CURRENT_USER)
-    favorite_ids = read_state.favorite_ids(_CURRENT_USER)
+    toggle_ids = read_state.pin_ids(_CURRENT_USER) if toggle_kind == "pin" else read_state.favorite_ids(_CURRENT_USER)
     if primary_action is not None:
         visible = cards
     elif show_favorites:
-        visible = [(cid, body) for cid, body in cards if cid in favorite_ids]
+        visible = [(cid, body) for cid, body in cards if cid in toggle_ids]
         primary_action = "unfavorite"
     elif show_read:
         visible = [(cid, body) for cid, body in cards if cid in read_ids]
@@ -1087,7 +1099,7 @@ def _visible_cards_and_action(
         visible = [(cid, body) for cid, body in cards if cid not in read_ids]
         primary_action = "read"
     hidden_count = len(cards) - len(visible) if not show_read and not show_favorites else 0
-    return visible, primary_action, hidden_count, favorite_ids
+    return visible, primary_action, hidden_count, toggle_ids
 
 
 _ACTION_BUTTON_LABEL = {
@@ -1104,6 +1116,7 @@ _ACTION_BUTTON_LABEL = {
 def _render_keep_card_grid_native(
     cards: list[tuple[str, str]], show_read: bool, show_favorites: bool,
     primary_action: str | None, key: str, show_hidden_count: bool = True, show_count: bool = True,
+    toggle_kind: str = "favorite",
 ) -> None:
     """Plain-Streamlit alternative to _render_keep_card_grid_iframe -- no custom component, no
     iframe, every card rendered directly into the page via st.container + st.markdown(unsafe_allow_
@@ -1135,7 +1148,7 @@ def _render_keep_card_grid_native(
     if not cards:
         return
     visible, primary_action, hidden_count, favorite_ids = _visible_cards_and_action(
-        cards, show_read, show_favorites, primary_action,
+        cards, show_read, show_favorites, primary_action, toggle_kind,
     )
     if hidden_count and show_hidden_count:
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
@@ -1204,7 +1217,7 @@ def _render_keep_card_grid_native(
 def _render_keep_card_grid_iframe(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
     primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
-    show_count: bool = True,
+    show_count: bool = True, toggle_kind: str = "favorite",
 ) -> None:
     """Renders (card_id, card_html) pairs, newest first, as a card grid -- via the card_feed custom
     component (components/card_feed/index.html) instead of st.columns + st.button. That split
@@ -1243,8 +1256,8 @@ def _render_keep_card_grid_iframe(
     """
     if not cards:
         return
-    visible, primary_action, hidden_count, favorite_ids = _visible_cards_and_action(
-        cards, show_read, show_favorites, primary_action,
+    visible, primary_action, hidden_count, toggle_ids = _visible_cards_and_action(
+        cards, show_read, show_favorites, primary_action, toggle_kind,
     )
     if hidden_count and show_hidden_count:
         st.caption(f"{hidden_count} read card(s) hidden -- see the Read page in the sidebar.")
@@ -1254,10 +1267,10 @@ def _render_keep_card_grid_iframe(
     payload = [
         {
             "id": cid, "html": card_html, "action": primary_action,
-            "starred": cid in favorite_ids,
+            "toggled": cid in toggle_ids, "toggle_kind": toggle_kind,
             # Only the default view offers the opposite-direction (right-swipe) gesture, and only
             # toward favoriting -- see this function's own docstring.
-            "swipe_right_action": "favorite" if primary_action == "read" else None,
+            "swipe_right_action": "favorite" if primary_action == "read" and toggle_kind == "favorite" else None,
         }
         for cid, card_html in visible
     ]
@@ -1286,7 +1299,7 @@ def _render_keep_card_grid_iframe(
 def _render_keep_card_grid(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
     primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
-    show_count: bool = True,
+    show_count: bool = True, toggle_kind: str = "favorite",
 ) -> None:
     """Dispatches to _render_keep_card_grid_native or _render_keep_card_grid_iframe per
     _CARD_GRID_MODE -- every existing call site keeps calling this one function; only the module-
@@ -1296,10 +1309,13 @@ def _render_keep_card_grid(
     already shows its own, more specific hidden/unread count, where the generic one would just be a
     second, redundant line. `show_count=False` suppresses the iframe grid's own live "N card(s)"
     line (see card_feed/index.html's updateCountLine) -- for a caller (e.g. the Read page) that
-    already puts the same count in its own page header.
+    already puts the same count in its own page header. `toggle_kind="pin"` swaps the card's
+    star-toggle for a pin-toggle backed by finance.read_state's separate pin_ids -- currently only
+    the Discovery page uses this (see _render_discovery_page); every other caller keeps the default
+    "favorite" toggle.
     """
     fn = _render_keep_card_grid_native if _CARD_GRID_MODE == "native" else _render_keep_card_grid_iframe
-    fn(cards, show_read, show_favorites, primary_action, key, show_hidden_count, show_count)
+    fn(cards, show_read, show_favorites, primary_action, key, show_hidden_count, show_count, toggle_kind)
 
 
 _FUNDAMENTAL_DIRECTION_ARROW = {
@@ -4942,7 +4958,11 @@ def _render_read_page() -> None:
     if not dated:
         st.info("No cards marked read yet.")
         return
-    dated.sort(key=lambda item: item[0], reverse=True)
+    # Most-recently-marked-read first (finance.read_state.read_ids_ordered -- a Redis Sorted Set
+    # keyed by mark timestamp), not sorted by each card's own date -- "when did I read this" and
+    # "when did this happen" are different questions, and this page answers the first one.
+    mark_rank = {cid: i for i, cid in enumerate(read_state.read_ids_ordered(_CURRENT_USER))}
+    dated.sort(key=lambda item: mark_rank.get(item[1], len(mark_rank)))
     _render_keep_card_grid(
         [(cid, card_html) for _, cid, card_html in dated], show_read=True, key="feed_read", show_count=False,
     )
@@ -5005,7 +5025,9 @@ def _render_favorites_page() -> None:
     if not dated:
         st.info("No cards favorited yet -- swipe a card right to star it.")
         return
-    dated.sort(key=lambda item: item[0], reverse=True)
+    # Most-recently-starred first -- see the matching comment in _render_read_page.
+    mark_rank = {cid: i for i, cid in enumerate(read_state.favorite_ids_ordered(_CURRENT_USER))}
+    dated.sort(key=lambda item: mark_rank.get(item[1], len(mark_rank)))
     _render_keep_card_grid(
         [(cid, card_html) for _, cid, card_html in dated], show_favorites=True, key="feed_favorites",
         show_count=False,
@@ -5030,11 +5052,12 @@ def _group_discovery_candidates(candidates: list[dict]) -> list[dict]:
     _normalize_discovery_name) -- type is part of the key so a company name and an unrelated theme
     tag that happen to normalize to the same string never merge into one group (a theme's "name" is
     a short reused tag like "oil"/"geopolitics", so a real collision with some company's name is
-    the one case worth guarding against even though it'd be rare). Newest-mention-count first (ties
-    broken by most recent mention) -- a name/tag several different sources keep independently
-    flagging is a much stronger signal than a single one-off mention, so that's what surfaces
-    first. Each group: "type", "display_name" (the most common raw spelling seen, so the page shows
-    real article wording rather than the stripped normalization key), "ticker_guess" (companies
+    the one case worth guarding against even though it'd be rare). Most-recently-mentioned group
+    first -- _render_discovery_page re-ranks this base order itself (pinned, then high-mention-count,
+    then plain recency; see that function's own docstring), so this is just the "everything else"
+    fallback order, not the final page order. Each group: "type", "display_name" (the most common
+    raw spelling seen, so the page shows real article wording rather than the stripped normalization
+    key), "ticker_guess" (companies
     only -- the most common non-null guess, or None if the LLM never offered one, typical for a
     private company; always None for a theme), "count"/"source_count", and "entries" (every
     underlying mention, newest first).
@@ -5057,7 +5080,7 @@ def _group_discovery_candidates(candidates: list[dict]) -> list[dict]:
             "source_count": len({c["source"] for c in entries}),
             "entries": entries,
         })
-    result.sort(key=lambda g: (g["count"], g["entries"][0]["date"]), reverse=True)
+    result.sort(key=lambda g: g["entries"][0]["date"], reverse=True)
     return result
 
 
@@ -5091,6 +5114,7 @@ _CARD_ACTIONS["discard"] = _discard_discovery_group
 
 
 _DISCOVERY_MENTIONS_SHOWN = 10  # total across both faces -- see _discovery_card_html
+_DISCOVERY_HIGH_MENTION_COUNT = 5  # min mention count to rank above plain recency -- see _render_discovery_page
 
 
 def _mention_item_html(e: dict) -> str:
@@ -5154,6 +5178,22 @@ def _render_discovery_page() -> None:
     its underlying entries from candidates.json (_discard_discovery_group), not a read_state flag.
     No read/favorite tracking at all for this page -- read_state has nothing to do with "should this
     still exist," and there's no undo once discarded, matching the swipe gesture's own permanence.
+
+    The one exception is "pin" (finance.read_state.pin_ids) -- a tag specific to this page, not the
+    same thing as favoriting elsewhere in the app (it doesn't show on the Favorites page and isn't
+    counted as a favorite): pinning a candidate protects it from the swipe/"Discard" action (see
+    _render_keep_card_grid's toggle_kind="pin") and keeps it sorted to the top of this page, for
+    candidates worth remembering even though there's no read/unread concept to otherwise keep them
+    visible with.
+
+    Sort order is three tiers, each internally most-recent-first: pinned candidates (most-recently-
+    pinned first), then candidates with a high mention count (>= _DISCOVERY_HIGH_MENTION_COUNT --
+    several independent sources repeatedly flagging the same name/tag is a strong enough signal to
+    stay near the top even once it's no longer the freshest thing on the page), then everyone else
+    ordered by plain recency of their most recent mention. Recency alone (not count) is the base
+    signal for that last tier because "was mentioned today" is what actually makes a discovery
+    candidate feel new/worth a look -- a candidate that's had a handful of mentions spread out over
+    months isn't more relevant than one just mentioned for the first time today.
     """
     candidates = load_discovery_candidates()
     if not candidates:
@@ -5161,11 +5201,24 @@ def _render_discovery_page() -> None:
         st.info("No discovery candidates recorded yet -- these accumulate as run_loop_a processes articles.")
         return
 
-    groups = _group_discovery_candidates(candidates)
+    groups = _group_discovery_candidates(candidates)  # already most-recent-mention-first
     st.markdown(f"<h3 style='margin-bottom:0.15rem'>Discovery ({len(groups)})</h3>", unsafe_allow_html=True)
+    cards = [(_discovery_card_id(g["type"], g["display_name"]), _discovery_card_html(g), g) for g in groups]
+    pin_rank = {cid: i for i, cid in enumerate(read_state.pin_ids_ordered(_CURRENT_USER))}
+
+    def sort_key(item: tuple[str, str, dict]) -> tuple[int, int]:
+        cid, _html, group = item
+        if cid in pin_rank:
+            return (0, pin_rank[cid])
+        recency_rank = -dt.date.fromisoformat(group["entries"][0]["date"]).toordinal()
+        if group["count"] >= _DISCOVERY_HIGH_MENTION_COUNT:
+            return (1, recency_rank)
+        return (2, recency_rank)
+
+    cards.sort(key=sort_key)
     _render_keep_card_grid(
-        [(_discovery_card_id(g["type"], g["display_name"]), _discovery_card_html(g)) for g in groups],
-        primary_action="discard", key="feed_discovery", show_count=False,
+        [(cid, card_html) for cid, card_html, _group in cards],
+        primary_action="discard", key="feed_discovery", show_count=False, toggle_kind="pin",
     )
 
 
@@ -5219,7 +5272,12 @@ def _render_macro_page() -> None:
         _render_keep_card_grid(
             [(_macro_weekly_card_id(t), _macro_narrative_card_html(t)) for t in weekly_narrative_charts]
             + [(_macro_chart_card_id(t), _macro_chart_card_html(t)) for t in weekly_plain_charts],
-            key="feed_macro_weekly", show_hidden_count=False,
+            # primary_action="read" (rather than leaving it unset) bypasses the grid's default
+            # "hide already-read cards" filtering -- see _visible_cards_and_action -- so a macro
+            # tile stays visible on its own dashboard page regardless of read status; read/unread
+            # still gets tracked underneath (Recent/Read pages still respect it), this page alone
+            # just doesn't hide on it.
+            primary_action="read", key="feed_macro_weekly", show_hidden_count=False,
         )
     if weekly_tiles:
         _render_macro_tiles(weekly_tiles)
@@ -5229,7 +5287,7 @@ def _render_macro_page() -> None:
             _render_keep_card_grid(
                 [(_macro_weekly_card_id(t), _macro_narrative_card_html(t)) for t in monthly_narrative_charts]
                 + [(_macro_chart_card_id(t), _macro_chart_card_html(t)) for t in monthly_plain_charts],
-                key="feed_macro_monthly", show_hidden_count=False,
+                primary_action="read", key="feed_macro_monthly", show_hidden_count=False,
             )
         if monthly_tiles:
             _render_macro_tiles(monthly_tiles)

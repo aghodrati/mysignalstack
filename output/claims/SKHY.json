@@ -359,5 +359,43 @@
     "trade_worthy": false,
     "context": "The article says custom HBM is primarily a mix shift from standard HBM rather than incremental industry memory demand, but forecasting the number of custom projects and where their manufacturing and assembly occur will be more difficult. It also cites TSMC's collaboration with Winbond, under which Winbond supplies memory wafers and TSMC assembles the stack, potentially easing customers' dependence on the three major HBM suppliers including SK hynix.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "1196224a216f2b6c",
+    "ticker": "SKHY",
+    "source_link": "https://www.nextplatform.com/store/2026/08/25/you-probably-forget-how-cheap-memory-used-to-be-and-is-not-so-now/5292363",
+    "source_title": "You Probably Forget How Cheap Memory Used To Be \u2013 And Is Not So Now",
+    "event_type": "supply_chain",
+    "created": "2026-08-25",
+    "claim": "SK Hynix should benefit from exceptionally tight DRAM, HBM and NAND markets through higher selling prices, revenue and potentially operating margins over the next several quarters.",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 9,
+    "expected_return_pct": 18.0,
+    "expected_horizon_days": 270,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article says DRAM, HBM and flash share manufacturing capacity, while spot prices have risen roughly sevenfold amid hyperscaler and cloud-builder AI demand; it identifies SK Hynix alongside Micron and Samsung as a major memory supplier benefiting from sharply higher industry revenues. The article expects shortages and elevated memory revenues to persist as generative-AI infrastructure expands through at least 2030.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "9a1307855d08b10b",
+    "ticker": "SKHY",
+    "source_link": "https://www.nextplatform.com/store/2026/08/25/you-probably-forget-how-cheap-memory-used-to-be-and-is-not-so-now/5292363",
+    "source_title": "You Probably Forget How Cheap Memory Used To Be \u2013 And Is Not So Now",
+    "event_type": "supply_chain",
+    "created": "2026-08-25",
+    "claim": "SK Hynix's AI-related growth remains constrained by available HBM manufacturing and packaging capacity, creating an execution and upside-limitation risk even while customer demand is strong.",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Nvidia's growth is described as limited by the amount of HBM it can obtain, and Broadcom has become a major HBM buyer competing for capacity on behalf of custom-XPU customers and AI startups. Because HBM, DRAM and flash draw on overlapping manufacturing capacity, SK Hynix may face difficult allocation choices and intense competition for output despite favorable pricing; the article also says GPU component allocations are effectively committed through 2027.",
+    "source": "Next Platform"
   }
 ]

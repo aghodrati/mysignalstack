@@ -19,11 +19,15 @@ FRED/news-source fetches already use.
 implying each other -- reading a card means "seen it, hide it from the normal feed"; favoriting one
 means "keep this visible/easy to find later" and does NOT hide it anywhere (see app.py's
 _render_keep_card_grid: only read status affects default-page visibility). Each lives in its own
-Redis Set, keyed "{kind}:{user}" ("read:amir", "favorite:amir") -- SADD to mark, SMEMBERS to read
-the whole set back in one call (cheap local membership checks against a page's worth of cards,
-rather than one round-trip per card). "user" exists from day one, not bolted on later, so a future
-real multi-user setup is just a new value in this same key, not a schema change. Every caller today
-passes the single hardcoded user CURRENT_USER.
+Redis Sorted Set, keyed "{kind}:{user}" ("read:amir", "favorite:amir") -- ZADD to mark (score = the
+Unix timestamp of when it was marked), ZRANGE to read the whole set back in one call for membership
+checks (cheap local checks against a page's worth of cards, rather than one round-trip per card),
+ZREVRANGE to read it back newest-marked-first for display order (see read_ids_ordered/
+favorite_ids_ordered). A plain Set (SADD/SMEMBERS) was used here originally, but Sets have no
+ordering at all -- SMEMBERS returns members in hash-bucket order, not insertion order, so "show my
+most recently read cards first" was structurally impossible without this. "user" exists from day
+one, not bolted on later, so a future real multi-user setup is just a new value in this same key,
+not a schema change. Every caller today passes the single hardcoded user CURRENT_USER.
 """
 
 from __future__ import annotations
@@ -40,6 +44,7 @@ import requests
 _STORE_PATHS = {
     "read": Path("output/read_state.json"),
     "favorite": Path("output/favorite_state.json"),
+    "pin": Path("output/pin_state.json"),
 }
 
 # Module-level, not created fresh per call: a plain requests.post() each time pays a new TCP+TLS
@@ -132,12 +137,16 @@ def _upstash_command(command: list[str]) -> dict | None:
         return None
 
 
-def _load_local(kind: str) -> dict[str, list[str]]:
+def _load_local(kind: str) -> dict[str, dict[str, float]]:
+    """{user: {card_id: marked_at_unix_timestamp}} -- a dict (not the old plain list of ids) so the
+    local-file fallback can answer "most recently marked first" the same way the Redis Sorted Set
+    backend does (see _ordered_ids), instead of relying on incidental list-append order.
+    """
     path = _STORE_PATHS[kind]
     return json.loads(path.read_text()) if path.exists() else {}
 
 
-def _save_local(kind: str, data: dict[str, list[str]]) -> None:
+def _save_local(kind: str, data: dict[str, dict[str, float]]) -> None:
     path = _STORE_PATHS[kind]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2))
@@ -148,7 +157,10 @@ def _ids(kind: str, user: str) -> set[str]:
     if cache_key in _cache and time.time() - _cache_fetched_at.get(cache_key, 0.0) < _CACHE_TTL_SECONDS:
         return _cache[cache_key]
     if _upstash_config() is not None:
-        result = _upstash_command(["SMEMBERS", cache_key])
+        # ZRANGE (not SMEMBERS -- this key is a Sorted Set now, see this module's own docstring)
+        # 0 -1 returns every member regardless of score; order doesn't matter here since this is
+        # only used for membership checks -- see _ordered_ids for the newest-first display query.
+        result = _upstash_command(["ZRANGE", cache_key, "0", "-1"])
         # Upstash configured but unreachable -- fail open (nothing hidden), not closed. Keeps
         # serving whatever was last cached (better than silently un-hiding every read card on a
         # transient hiccup) rather than wiping it; only a real fetch refreshes _cache_fetched_at,
@@ -157,17 +169,45 @@ def _ids(kind: str, user: str) -> set[str]:
             return _cache.get(cache_key, set())
         ids = set(result.get("result") or [])
     else:
-        ids = set(_load_local(kind).get(user, []))
+        ids = set(_load_local(kind).get(user, {}).keys())
     _cache[cache_key] = ids
     _cache_fetched_at[cache_key] = time.time()
     return ids
 
 
+def _ordered_ids(kind: str, user: str) -> list[str]:
+    """Every id for `kind`/`user`, most-recently-marked first -- the one query `_ids`/`_cache`
+    can't answer, since that cache is a plain unordered set (membership checks don't care about
+    order, and collapsing it to a set is what makes those checks O(1)). Not cached/TTL'd like
+    `_ids` -- this is only called once per Read/Favorites page render (their own display order),
+    not from every card's per-card filter check, so a live call each time is cheap enough to always
+    be fresh rather than sharing `_ids`'s staleness budget.
+    """
+    key = f"{kind}:{user}"
+    if _upstash_config() is not None:
+        result = _upstash_command(["ZREVRANGE", key, "0", "-1"])
+        return list(result.get("result") or []) if result is not None else []
+    # Local fallback stores {id: marked_at_timestamp} -- sort by that directly, newest first.
+    data = _load_local(kind).get(user, {})
+    return [cid for cid, _ in sorted(data.items(), key=lambda item: item[1], reverse=True)]
+
+
+def read_ids_ordered(user: str) -> list[str]:
+    """Every card id `user` has ever explicitly marked read, most-recently-marked first."""
+    return _ordered_ids("read", user)
+
+
+def favorite_ids_ordered(user: str) -> list[str]:
+    """Every card id `user` has ever explicitly starred, most-recently-marked first."""
+    return _ordered_ids("favorite", user)
+
+
 def _mark(kind: str, user: str, card_id: str) -> None:
-    """Idempotent -- SADD (and the local-file fallback's own dedup) both already no-op a repeat
-    mark on an already-marked card. Updates `_cache` synchronously so every reader sees the new
-    state immediately, regardless of how long the actual Upstash write (fired async, see
-    _upstash_command_async) takes to land.
+    """Idempotent -- ZADD re-scores rather than duplicating on a repeat mark (and the local-file
+    fallback's dict assignment is naturally the same), so marking an already-read card again just
+    bumps its timestamp to "now" rather than erroring or double-adding. Updates `_cache`
+    synchronously so every reader sees the new state immediately, regardless of how long the actual
+    Upstash write (fired async, see _upstash_command_async) takes to land.
 
     Calls `_ids` first (not a blind `_cache.setdefault`) so a mark/unmark that happens to be the
     very first read_state call in a process still gets the real existing set from Redis into the
@@ -183,18 +223,20 @@ def _mark(kind: str, user: str, card_id: str) -> None:
     """
     _ids(kind, user).add(card_id)
     _cache_fetched_at[f"{kind}:{user}"] = time.time()
+    marked_at = time.time()
     if _upstash_config() is not None:
-        _upstash_command_async(["SADD", f"{kind}:{user}", card_id])
+        # ZADD score member -- score is when this mark happened, so ZREVRANGE (_ordered_ids) can
+        # answer "most recently marked first". See this module's own docstring for why this is a
+        # Sorted Set rather than the plain Set (SADD) it used to be.
+        _upstash_command_async(["ZADD", f"{kind}:{user}", str(marked_at), card_id])
         return
     data = _load_local(kind)
-    ids = data.setdefault(user, [])
-    if card_id not in ids:
-        ids.append(card_id)
-        _save_local(kind, data)
+    data.setdefault(user, {})[card_id] = marked_at
+    _save_local(kind, data)
 
 
 def _unmark(kind: str, user: str, card_id: str) -> None:
-    """Actually removes the id (SREM/local-list removal), not just a display filter, so it's really
+    """Actually removes the id (ZREM/local-dict removal), not just a display filter, so it's really
     gone from the store, not merely hidden again. Idempotent, same as _mark. Updates `_cache`
     synchronously -- see _mark's docstring for why this calls `_ids` first rather than mutating a
     blind `_cache.setdefault`, and for why `_cache_fetched_at` is refreshed too.
@@ -202,12 +244,12 @@ def _unmark(kind: str, user: str, card_id: str) -> None:
     _ids(kind, user).discard(card_id)
     _cache_fetched_at[f"{kind}:{user}"] = time.time()
     if _upstash_config() is not None:
-        _upstash_command_async(["SREM", f"{kind}:{user}", card_id])
+        _upstash_command_async(["ZREM", f"{kind}:{user}", card_id])
         return
     data = _load_local(kind)
-    ids = data.get(user, [])
+    ids = data.get(user, {})
     if card_id in ids:
-        ids.remove(card_id)
+        del ids[card_id]
         _save_local(kind, data)
 
 
@@ -237,3 +279,27 @@ def mark_favorite(user: str, card_id: str) -> None:
 def mark_unfavorite(user: str, card_id: str) -> None:
     """The Favorites page's own "Unfavorite" action."""
     _unmark("favorite", user, card_id)
+
+
+def pin_ids(user: str) -> set[str]:
+    """Every card id `user` has ever explicitly pinned, as a set. A third, independent tag
+    alongside read/favorite -- currently only meaningful on the Discovery page (see app.py's
+    _render_discovery_page): pinning a discovery candidate keeps it from being discarded and sorts
+    it to the top there, but deliberately does NOT show up on the Favorites page or count as a
+    favorite -- "worth protecting from an accidental swipe" and "worth keeping visible everywhere
+    else in the app" are different things, so this doesn't reuse the favorite kind/Redis key.
+    """
+    return _ids("pin", user)
+
+
+def pin_ids_ordered(user: str) -> list[str]:
+    """Every card id `user` has ever explicitly pinned, most-recently-pinned first."""
+    return _ordered_ids("pin", user)
+
+
+def mark_pin(user: str, card_id: str) -> None:
+    _mark("pin", user, card_id)
+
+
+def mark_unpin(user: str, card_id: str) -> None:
+    _unmark("pin", user, card_id)

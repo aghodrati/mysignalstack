@@ -93,5 +93,43 @@
     "trade_worthy": false,
     "context": "Alongside the EU settlement, the article highlights changes to Apple\u2019s ATT policies in Germany and presents both developments as examples of the company being forced to compromise on long-standing platform policies. This indicates an erosion of Apple\u2019s discretion over how its ecosystem rules are designed and implemented, although the article does not quantify the direct financial effect of the German change.",
     "source": "Stratechery"
+  },
+  {
+    "id": "3dcd2fc7869b3d3c",
+    "ticker": "AAPL",
+    "source_link": "https://www.normaltech.ai/p/open-world-evaluations-for-measuring",
+    "source_title": "Open-world evaluations for measuring frontier AI capabilities",
+    "event_type": "regulatory",
+    "created": "2026-04-16",
+    "claim": "AI agents that can nearly autonomously create and submit apps could increase App Store spam, raising Apple\u2019s moderation burden and risking weaker ecosystem quality and user trust.",
+    "direction": "short",
+    "confidence": 0.91,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "CRUX researchers used Claude Opus 4.6 with the OpenClaw scaffold to build and submit a simple iOS app; it was approved after five total interventions, despite a fabricated review phone number, a nonworking sound toggle, and formatting errors. The researchers warned that agents could soon submit thousands of apps autonomously and noted that App Store reviews may already be taking longer, implying potential pressure on Apple\u2019s review infrastructure and platform quality.",
+    "source": "Normal Tech"
+  },
+  {
+    "id": "c59a3eb5c3585fb8",
+    "ticker": "AAPL",
+    "source_link": "https://www.normaltech.ai/p/open-world-evaluations-for-measuring",
+    "source_title": "Open-world evaluations for measuring frontier AI capabilities",
+    "event_type": "regulatory",
+    "created": "2026-04-16",
+    "claim": "Apple may need to impose stronger App Store policies and spam controls, potentially increasing platform-governance costs and adding friction to legitimate app submissions.",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article explicitly recommends that App Store operators prepare to police autonomous spam submissions as agents become capable of developing and publishing apps at very low marginal cost\u2014about $25 for development and submission in the test. Stronger screening, identity checks, monitoring, or review procedures could require additional operating resources and make the submission process more cumbersome, although the article does not establish the magnitude or timing of any financial effect.",
+    "source": "Normal Tech"
   }
 ]

@@ -682,5 +682,43 @@
     "trade_worthy": false,
     "context": "The article states that CFET fabrication requires atomic-level control over nanosheet formation, epitaxy, channel release, gate integration, contacts, wafer bonding, backside thinning, and frontside-to-backside alignment. Misalignment of only a few nanometers can cause major yield loss, while backside power delivery adds further warpage and process-variation exposure. TSMC is using simulation, virtual fabrication, and machine learning to compare process windows and reduce physical experimentation, but production is still projected several years away and the article does not quantify the effect on TSMC\u2019s earnings or valuation.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "c177452a60797e3f",
+    "ticker": "TSM",
+    "source_link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+    "source_title": "OpenAI Jalape\u00f1o: Better Than Nvidia Blackwell",
+    "event_type": "competitive",
+    "created": "2026-08-25",
+    "claim": "Jalape\u00f1o\u2019s planned 2027 production ramp should create incremental demand for TSM\u2019s N3P wafers and CoWoS advanced packaging, providing a positive medium-term catalyst for TSM revenue and utilization.",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 7,
+    "expected_return_pct": 3.0,
+    "expected_horizon_days": 450,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The compute die is manufactured on TSMC\u2019s N3P process, and OpenAI taped out the CoWoS design in November 2025. Engineering samples already exist, with production scheduled to ramp gradually through 2027 and most output planned for late 2027. The system is intended for high-volume deployment, with up to 2,048 ASICs connected across 16 racks, so a successful ramp would add a substantial custom-ASIC customer workload to TSMC\u2019s leading-edge manufacturing and packaging demand.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "7c0cfab61a42bca0",
+    "ticker": "TSM",
+    "source_link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+    "source_title": "OpenAI Jalape\u00f1o: Better Than Nvidia Blackwell",
+    "event_type": "competitive",
+    "created": "2026-08-25",
+    "claim": "OpenAI\u2019s successful custom ASIC program strengthens the outlook for TSM as the primary manufacturing and packaging beneficiary of accelerating hyperscaler-designed chips, while reducing the risk that industry diversification away from Nvidia GPUs would reduce TSM\u2019s overall AI-related demand.",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Jalape\u00f1o was developed from a blank slate with Broadcom and reportedly achieved competitive inference performance after a rapid design and bring-up cycle. Although the program could shift some accelerator demand away from merchant Nvidia GPUs, Jalape\u00f1o itself uses TSMC N3P and CoWoS, and the article characterizes it as a real high-volume ASIC. This supports TSM\u2019s role as a neutral foundry and advanced-packaging supplier across both Nvidia-class GPUs and customer-specific AI accelerators.",
+    "source": "SemiAnalysis"
   }
 ]

@@ -519,5 +519,78 @@
     "GOOGL",
     "META",
     "NVDA"
+  ],
+  "https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from": [
+    "GOOGL",
+    "MSFT"
+  ],
+  "https://www.normaltech.ai/p/did-googles-ai-agents-really-build": [
+    "GOOGL"
+  ],
+  "https://www.normaltech.ai/p/open-world-evaluations-for-measuring": [
+    "AAPL"
+  ],
+  "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia": [
+    "AMD",
+    "AVGO",
+    "GOOGL",
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/store/2026/08/25/you-probably-forget-how-cheap-memory-used-to-be-and-is-not-so-now/5292363": [
+    "AMD",
+    "AMZN",
+    "AVGO",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "MU",
+    "NVDA",
+    "SKHY"
+  ],
+  "https://thequantuminsider.com/2026/08/26/d-wave-cfo-john-markovich-retire-september/": [
+    "QBTS"
+  ],
+  "https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens": [
+    "META",
+    "NVDA"
+  ],
+  "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21": [
+    "AMD"
+  ],
+  "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3": [
+    "NVDA"
+  ],
+  "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation": [
+    "GOOGL",
+    "META"
+  ],
+  "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside": [
+    "NVDA"
+  ],
+  "https://www.interconnects.ai/p/frontier-post-training-recipe-review": [
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance": [
+    "AMZN"
+  ],
+  "https://importai.substack.com/p/import-ai-470-no-rights-for-machines": [
+    "AMD",
+    "GOOGL",
+    "NVDA"
+  ],
+  "https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator": [
+    "META"
+  ],
+  "https://importai.substack.com/p/import-ai-467-self-sustaining-ai": [
+    "GOOGL",
+    "META"
+  ],
+  "https://importai.substack.com/p/import-ai-465-open-vs-closed-gaps": [
+    "GOOGL"
+  ],
+  "https://importai.substack.com/p/import-ai-463-self-improving-robots": [
+    "NVDA"
   ]
 }

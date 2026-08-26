@@ -56,6 +56,7 @@
     z-index: 1;
   }
   .card-star.filled { color: #f5c518; }   /* favorited */
+  .card-star.pin.filled { color: #4a9eff; }   /* pinned -- distinct from the gold favorite star */
   /* Ticker-logo <img> tags (front face only) are natively draggable by the browser by default --
      starting a swipe with the pointer over one could hijack the gesture into a native
      "drag this image" operation instead of delivering pointermove events to our own drag logic.
@@ -203,31 +204,41 @@ function buildCell(card) {
   body.innerHTML = card.html;
   wrapper.appendChild(body);
 
-  // Always present (not just when already favorited) -- an empty outline star you can click to
-  // favorite directly, as an alternative to swiping right (which only exists on some pages -- see
+  // Always present (not just when already toggled on) -- an empty outline icon you can click to
+  // toggle directly, as an alternative to swiping right (which only exists on some pages -- see
   // _render_keep_card_grid's swipe_right_action -- while this click toggle works everywhere,
   // including the Read/Favorites pages, independent of whichever swipe gestures a page offers).
-  let starred = !!card.starred;
-  // A favorited card means "keep this visible/easy to find" -- letting the discard action still
-  // delete it out from under that star would silently contradict what favoriting is for, so
-  // discard (button and left-swipe alike) is disabled for as long as a "discard"-action card
-  // stays starred. Only discard is gated this way -- favoriting never disables read/unread/
+  // Two independent flavors share this one control: "favorite" (every page except Discovery) and
+  // "pin" (Discovery only -- see app.py's _render_discovery_page). They're deliberately separate
+  // read_state kinds/Redis keys, not the same tag reused -- pinning a discovery candidate has
+  // nothing to do with the Favorites page.
+  const TOGGLE_KINDS = {
+    favorite: { onIcon: "★", offIcon: "☆", onAction: "favorite", offAction: "unfavorite", cssClass: "" },
+    pin: { onIcon: "📌", offIcon: "📌", onAction: "pin", offAction: "unpin", cssClass: "pin" },
+  };
+  const toggleKind = TOGGLE_KINDS[card.toggle_kind] || TOGGLE_KINDS.favorite;
+  let toggled = !!card.toggled;
+  // A toggled-on card (favorited, or pinned on Discovery) means "keep this" -- letting the discard
+  // action still delete it out from under that would silently contradict the point of toggling it
+  // on, so discard (button and left-swipe alike) is disabled for as long as a "discard"-action card
+  // stays toggled on. Only discard is gated this way -- toggling never disables read/unread/
   // unfavorite elsewhere, since those aren't destructive.
-  let discardDisabled = card.action === "discard" && starred;
+  let discardDisabled = card.action === "discard" && toggled;
   const star = document.createElement("div");
-  star.className = "card-star" + (starred ? " filled" : "");
-  star.textContent = starred ? "★" : "☆";
+  const toggleCssClass = toggleKind.cssClass ? " " + toggleKind.cssClass : "";
+  star.className = "card-star" + toggleCssClass + (toggled ? " filled" : "");
+  star.textContent = toggled ? toggleKind.onIcon : toggleKind.offIcon;
   star.addEventListener("click", (e) => {
     e.stopPropagation();
-    starred = !starred;
-    star.textContent = starred ? "★" : "☆";
-    star.classList.toggle("filled", starred);
+    toggled = !toggled;
+    star.textContent = toggled ? toggleKind.onIcon : toggleKind.offIcon;
+    star.classList.toggle("filled", toggled);
     if (card.action === "discard") {
-      discardDisabled = starred;
+      discardDisabled = toggled;
       btn.disabled = discardDisabled;
-      btn.title = discardDisabled ? "Unfavorite first to discard" : "";
+      btn.title = discardDisabled ? "Unpin first to discard" : "";
     }
-    reportAction(card.id, starred ? "favorite" : "unfavorite");
+    reportAction(card.id, toggled ? toggleKind.onAction : toggleKind.offAction);
   });
   wrapper.appendChild(star);
 

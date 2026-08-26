@@ -1065,6 +1065,13 @@ def _save_known_universe_tickers(tickers: set[str]) -> None:
     KNOWN_UNIVERSE_TICKERS_PATH.write_text(json.dumps(sorted(tickers), indent=2))
 
 
+# How far back a freshly fetched feed is allowed to reach before Stage A/B stop bothering to
+# classify an article -- applies to every source alike. Only gates what gets fetched/processed on
+# a given run; never touches anything already written to events_cache/claims, so an article that
+# was inside this window on some earlier run and has since aged out stays exactly as recorded.
+MAX_ARTICLE_AGE_MONTHS = 2
+
+
 def _backfill_new_tickers(
     events_cache: dict, claims_attempted: dict, universe_map: dict[str, str],
     new_tickers: dict[str, str], as_of: dt.date, verbose: bool,
@@ -1268,11 +1275,14 @@ def update_research(
             articles = pd.concat(
                 [articles, get_sec_8k_news(tracked_tickers, get_cik_map(), refresh=True)], ignore_index=True
             )
-        # Skip anything older than 6 months -- a feed can carry a stale backlog entry (e.g. after a
-        # source is newly activated), and Stage A/B have no business spending a real LLM call
-        # classifying news that's no longer actionable. An article with no parseable published date
-        # is kept (falls back to as_of below), not dropped, since that's a feed-parsing gap, not staleness.
-        articles_cutoff = pd.Timestamp(as_of) - pd.DateOffset(months=6)
+        # Skip anything older than MAX_ARTICLE_AGE_MONTHS -- a feed can carry a stale backlog entry
+        # (e.g. after a source is newly activated), and Stage A/B have no business spending a real
+        # LLM call classifying news that's no longer actionable. An article with no parseable
+        # published date is kept (falls back to as_of below), not dropped, since that's a
+        # feed-parsing gap, not staleness. This only gates what this run fetches/processes --
+        # anything already in events_cache/claims from a wider window on some earlier run is
+        # untouched.
+        articles_cutoff = pd.Timestamp(as_of) - pd.DateOffset(months=MAX_ARTICLE_AGE_MONTHS)
         articles = articles[articles["published"].isna() | (articles["published"] >= articles_cutoff)]
         # Grouped by source (config_loop_a.json's news_sources order; an 8-K filing's source starts
         # with SEC_8K_SOURCE_PREFIX and always sorts last, after every real news source), newest first

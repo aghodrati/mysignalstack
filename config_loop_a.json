@@ -42,7 +42,10 @@
     {"name": "Semiconductor Engineering", "url": "https://semiengineering.com/feed/", "active": true, "frequency": "unverified, ~weekly cadence per their own site"},
     {"name": "Cassandra Unchained", "url": "https://michaeljburry.substack.com/feed", "active": true, "frequency": "major pieces ~every 2-3 weeks, plus more frequent short trading posts", "discovery_model": "primary"},
     {"name": "Doomberg", "url": "https://newsletter.doomberg.com/feed", "active": true, "frequency": "~1.5-2 articles/week (6-8/month)", "discovery_model": "primary"},
-    {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": true, "frequency": "unverified, daily briefing, exact count unclear", "discovery_model": "none"}
+    {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": true, "frequency": "unverified, daily briefing, exact count unclear", "discovery_model": "none"},
+    {"name": "Normal Tech", "url": "https://www.normaltech.ai/feed", "active": true, "frequency": "infrequent, roughly monthly (ex-AI Snake Oil)", "discovery_model": "primary"},
+    {"name": "Interconnects", "url": "https://interconnects.ai/feed", "active": true, "frequency": "~2x/week", "discovery_model": "primary"},
+    {"name": "Import AI", "url": "https://importai.substack.com/feed", "active": true, "frequency": "~weekly", "discovery_model": "primary"}
   ],
   "llm": {
     "provider": "openrouter",

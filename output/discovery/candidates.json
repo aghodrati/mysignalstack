@@ -1650,15 +1650,6 @@
     "source": "The Quantum Insider",
     "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
     "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
-    "name": "post-quantum cryptography",
-    "why": "MPC protocol using NIST ML-DSA-65; quantum-resistant NEAR testnet; cross-border interoperability"
-  },
-  {
-    "type": "theme",
-    "date": "2026-08-24",
-    "source": "The Quantum Insider",
-    "article_title": "RFI and Safeheron Test Post-Quantum Cryptography for Digital Asset Transactions",
-    "article_link": "https://thequantuminsider.com/2026/08/24/rfi-safeheron-post-quantum-security-digital-assets/",
     "name": "quantum computing threat",
     "why": "Long\u2011term risk to public\u2011key cryptography; BIS 2025 paper on quantum-readiness"
   },
@@ -1797,15 +1788,6 @@
     "source": "The Quantum Insider",
     "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
     "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
-    "name": "Japan research initiatives",
-    "why": "Moonshot R&D Program; Cabinet Office/JST funding; national focus on quantum supremacy"
-  },
-  {
-    "type": "theme",
-    "date": "2026-08-24",
-    "source": "The Quantum Insider",
-    "article_title": "Japan\u2019s Full-Stack Neutral-Atom Quantum Computer is Operational",
-    "article_link": "https://thequantuminsider.com/2026/08/24/japans-full-stack-neutral-atom-quantum-computer-is-operational/",
     "name": "industry\u2011academia collaboration",
     "why": "Hitachi for software stack; Infleqtion for QPU stack; Yaqumo for social implementation"
   },
@@ -1870,15 +1852,6 @@
     "source": "The Quantum Insider",
     "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
     "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
-    "name": "post-quantum cryptography",
-    "why": "TCG defines requirements for PQC-ready TPMs; PTP 1.07 baseline for PQC-ready TPMs; certification plans for PQC-ready TPMs"
-  },
-  {
-    "type": "theme",
-    "date": "2026-08-24",
-    "source": "The Quantum Insider",
-    "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
-    "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
     "name": "trusted platform module",
     "why": "Guidance focuses on TPM 2.0 implementations; PTP 1.07 outlines PQC-specific elements for TPMs"
   },
@@ -1888,16 +1861,1388 @@
     "source": "The Quantum Insider",
     "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
     "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
-    "name": "security certification",
-    "why": "TCG plans to expand certification programs to certify TPMs meeting PTP 1.07 requirements; defines TCG PQC-ready and PQC-upgradable TPM designations"
+    "name": "quantum-safe identity",
+    "why": "TCG stresses quantum-safe identities, attestation, and hardware-anchored trust as critical for long-term security"
   },
   {
     "type": "theme",
-    "date": "2026-08-24",
-    "source": "The Quantum Insider",
-    "article_title": "TCG Defines Requirements for PQC-Ready Trusted Platform Modules",
-    "article_link": "https://thequantuminsider.com/2026/08/24/tcg-requirements-pqc-ready-trusted-platform-modules/",
-    "name": "quantum-safe identity",
-    "why": "TCG stresses quantum-safe identities, attestation, and hardware-anchored trust as critical for long-term security"
+    "date": "2026-08-05",
+    "source": "Normal Tech",
+    "article_title": "AI agents can't yet do open-ended AI research",
+    "article_link": "https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended",
+    "name": "AI agents",
+    "why": "Frontier AI agents failed to produce acceptable papers in two open-ended AI research tasks; agents showed weak judgment, creativity, feedback response, backtracking, resource awareness, and instruction following"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-05",
+    "source": "Normal Tech",
+    "article_title": "AI agents can't yet do open-ended AI research",
+    "article_link": "https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended",
+    "name": "AI benchmarks",
+    "why": "Existing evaluations mainly test narrow, verifiable tasks and may overstate progress toward recursive self-improvement; the study introduces shadow evaluations using unpublished research questions and expert review"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-05",
+    "source": "Normal Tech",
+    "article_title": "AI agents can't yet do open-ended AI research",
+    "article_link": "https://www.normaltech.ai/p/ai-agents-cant-yet-do-open-ended",
+    "name": "AI bottlenecks",
+    "why": "Open-ended research performance may be an unresolved bottleneck for recursive self-improvement; other potential constraints include compute, real-world data collection, high-quality reinforcement-learning environments, and data-center energy infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-09",
+    "source": "Normal Tech",
+    "article_title": "Up the Stack: How AI\u2019s Escape From the Commodity Trap Risks Enterprise Lock-in",
+    "article_link": "https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "ChatGPT reportedly generates most of OpenAI\u2019s revenue, exceeding its API business; pursuing Company Knowledge, enterprise deployments, and higher-stack products to build switching costs; competes with Microsoft and Google, which have stronger enterprise distribution"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-09",
+    "source": "Normal Tech",
+    "article_title": "Up the Stack: How AI\u2019s Escape From the Commodity Trap Risks Enterprise Lock-in",
+    "article_link": "https://www.normaltech.ai/p/up-the-stack-how-ais-escape-from",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Early-2026 revenue was still dominated by its API, but Claude Code growth could shift revenue toward higher-stack products; pursuing enterprise embedding through Claude Cowork and a PwC partnership; faces competition from Microsoft, Google, and incumbent SaaS providers"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "Normal Tech",
+    "article_title": "Why AI hasn\u2019t replaced software engineers, and won\u2019t",
+    "article_link": "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+    "name": "Block",
+    "ticker_guess": null,
+    "why": "Announced layoffs of 4,000 employees while citing AI-enabled smaller teams; subsequent reporting and employee commentary attributed the cuts primarily to financial pressure and found limited AI productivity gains"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "Normal Tech",
+    "article_title": "Why AI hasn\u2019t replaced software engineers, and won\u2019t",
+    "article_link": "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+    "name": "Snap",
+    "ticker_guess": "SNAP",
+    "why": "Laid off about 1,000 employees while citing AI-generated code and AI restructuring; the article says the cuts followed activist-investor pressure and were not concentrated in AI-exposed roles"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "Normal Tech",
+    "article_title": "Why AI hasn\u2019t replaced software engineers, and won\u2019t",
+    "article_link": "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+    "name": "Intuit",
+    "ticker_guess": "INTU",
+    "why": "Announced 3,000 job cuts alongside deals with Anthropic and OpenAI; its CEO said the cuts were unrelated to AI and instead targeted coordination-heavy roles and excess management layers"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "Normal Tech",
+    "article_title": "Why AI hasn\u2019t replaced software engineers, and won\u2019t",
+    "article_link": "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+    "name": "Chegg",
+    "ticker_guess": "CHGG",
+    "why": "Cited as an example of AI indirectly destroying jobs by reducing demand for homework-help products rather than directly replacing the employees who provided them"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-11",
+    "source": "Normal Tech",
+    "article_title": "Why AI hasn\u2019t replaced software engineers, and won\u2019t",
+    "article_link": "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+    "name": "Stack Overflow",
+    "ticker_guess": null,
+    "why": "Cited as an example of AI reducing demand for technical-help services, contributing to layoffs without directly automating software engineers' work"
+  },
+  {
+    "type": "company",
+    "date": "2026-05-21",
+    "source": "Normal Tech",
+    "article_title": "Do AI Risks Require Extraordinary Government Intervention?",
+    "article_link": "https://www.normaltech.ai/p/do-ai-risks-require-extraordinary",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Cited as an example of concerning government control over AI companies through a supply-chain-risk designation"
+  },
+  {
+    "type": "company",
+    "date": "2026-05-21",
+    "source": "Normal Tech",
+    "article_title": "Do AI Risks Require Extraordinary Government Intervention?",
+    "article_link": "https://www.normaltech.ai/p/do-ai-risks-require-extraordinary",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Cited for its cybersecurity grant program; mentioned as an example of industry-led efforts that are important but insufficient"
+  },
+  {
+    "type": "company",
+    "date": "2026-04-16",
+    "source": "Normal Tech",
+    "article_title": "Open-world evaluations for measuring frontier AI capabilities",
+    "article_link": "https://www.normaltech.ai/p/open-world-evaluations-for-measuring",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its Claude agents were used in multiple long-horizon evaluations, including building a C compiler and operating an automated store; Anthropic\u2019s models were cited as examples of frontier capabilities and failure modes"
+  },
+  {
+    "type": "company",
+    "date": "2026-04-16",
+    "source": "Normal Tech",
+    "article_title": "Open-world evaluations for measuring frontier AI capabilities",
+    "article_link": "https://www.normaltech.ai/p/open-world-evaluations-for-measuring",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "OpenAI models were used in several open-world experiments, including building a design tool, attempting computer training, and coordinating browser development agents"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-25",
+    "source": "SemiAnalysis",
+    "article_title": "OpenAI Jalape\u00f1o: Better Than Nvidia Blackwell",
+    "article_link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Designed and unveiled the Jalape\u00f1o inference ASIC; built a hardware-software stack around Codex, Gluon, and its Teacup serving engine; plans gradual production ramp in 2027 with a 100MW deployment goal"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-25",
+    "source": "SemiAnalysis",
+    "article_title": "OpenAI Jalape\u00f1o: Better Than Nvidia Blackwell",
+    "article_link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+    "name": "Celestica",
+    "ticker_guess": null,
+    "why": "Partnered with OpenAI on the Jalape\u00f1o rack-system design and integration"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-25",
+    "source": "SemiAnalysis",
+    "article_title": "OpenAI Jalape\u00f1o: Better Than Nvidia Blackwell",
+    "article_link": "https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia",
+    "name": "Samsung",
+    "ticker_guess": null,
+    "why": "Identified as the likely supplier of Jalape\u00f1o\u2019s HBM4 memory"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-25",
+    "source": "Stratechery",
+    "article_title": "Netflix to Sell Streaming Services?, Streamers as Aggregators, Revisiting Roku",
+    "article_link": "https://stratechery.com/2026/netflix-to-sell-streaming-services-streamers-as-aggregators-revisiting-roku/",
+    "name": "Netflix",
+    "ticker_guess": "NFLX",
+    "why": "Considering selling other streaming services; The move is presented as a potential strategic pivot from Netflix's original goals"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Stratechery",
+    "article_title": "Netflix to Sell Streaming Services?, Streamers as Aggregators, Revisiting Roku",
+    "article_link": "https://stratechery.com/2026/netflix-to-sell-streaming-services-streamers-as-aggregators-revisiting-roku/",
+    "name": "streaming aggregation",
+    "why": "Netflix is considering selling access to other streaming services; The proposal would position streamers as aggregators"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Blog Review: Aug. 26",
+    "article_link": "https://semiengineering.com/blog-review-aug-26-3/",
+    "name": "Synopsys",
+    "ticker_guess": "SNPS",
+    "why": "Published analysis of gate-all-around transistors, complementary FETs, backside power delivery, and design-technology co-optimization; Also discussed the importance of high-quality data and realistic process assumptions in semiconductor R&D"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Blog Review: Aug. 26",
+    "article_link": "https://semiengineering.com/blog-review-aug-26-3/",
+    "name": "Cadence Design Systems",
+    "ticker_guess": "CDNS",
+    "why": "Explained that AI infrastructure performance increasingly depends on communication efficiency and underlying IP rather than peak compute capability"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Blog Review: Aug. 26",
+    "article_link": "https://semiengineering.com/blog-review-aug-26-3/",
+    "name": "Siemens",
+    "ticker_guess": "SIEGY",
+    "why": "Questioned why first-silicon success rates continue to decline despite improved verification capabilities; Examined whether traditional completion metrics adequately validate complete systems"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Blog Review: Aug. 26",
+    "article_link": "https://semiengineering.com/blog-review-aug-26-3/",
+    "name": "Keysight Technologies",
+    "ticker_guess": "KEYS",
+    "why": "Discussed the ESUN specification\u2019s re-examination of whether scale-up networks require an IP layer when GPU counts and connectivity are fixed at deployment"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Blog Review: Aug. 26",
+    "article_link": "https://semiengineering.com/blog-review-aug-26-3/",
+    "name": "GlobalFoundries",
+    "ticker_guess": "GFS",
+    "why": "Discussed detachable fibers, wafer-level photonics, and new multi-source agreements as foundations for high-volume co-packaged optics"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Chip Security Moves From Checkbox Compliance To Continuous Defense",
+    "article_link": "https://semiengineering.com/chip-security-moves-from-checkbox-compliance-to-continuous-defense/",
+    "name": "regulation",
+    "why": "CRA deadlines; ISO 26262; CSIP Level 3; SSDF timelines; fines up to 4% of revenue"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Chip Security Moves From Checkbox Compliance To Continuous Defense",
+    "article_link": "https://semiengineering.com/chip-security-moves-from-checkbox-compliance-to-continuous-defense/",
+    "name": "chip security",
+    "why": "shift to continuous defense; visibility of SBOM; zero\u2011day and AI attacks; physical vs software attacks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Chip Security Moves From Checkbox Compliance To Continuous Defense",
+    "article_link": "https://semiengineering.com/chip-security-moves-from-checkbox-compliance-to-continuous-defense/",
+    "name": "chiplet architecture",
+    "why": "plug\u2011and\u2011play subsystems; verification of secure chiplets"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Chip Security Moves From Checkbox Compliance To Continuous Defense",
+    "article_link": "https://semiengineering.com/chip-security-moves-from-checkbox-compliance-to-continuous-defense/",
+    "name": "PQC",
+    "why": "government quantum\u2011ready deadline; PKA challenges; algorithm availability"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-26",
+    "source": "Semiconductor Engineering",
+    "article_title": "Chip Security Moves From Checkbox Compliance To Continuous Defense",
+    "article_link": "https://semiengineering.com/chip-security-moves-from-checkbox-compliance-to-continuous-defense/",
+    "name": "security incentives",
+    "why": "stickers and carrots; customer demand for high\u2011value services; C\u2011suite interest"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Redefining Roles For Edge And Cloud AI",
+    "article_link": "https://semiengineering.com/redefining-roles-for-edge-and-cloud-ai/",
+    "name": "Quadric",
+    "ticker_guess": null,
+    "why": "Nigel Drego, CTO and co-founder of Quadric, discusses edge and cloud AI interaction"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Redefining Roles For Edge And Cloud AI",
+    "article_link": "https://semiengineering.com/redefining-roles-for-edge-and-cloud-ai/",
+    "name": "edge AI",
+    "why": "rapid build-out of AI on the edge; collection of smaller, targeted language models; 100\u202fbillion models running locally today"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Redefining Roles For Edge And Cloud AI",
+    "article_link": "https://semiengineering.com/redefining-roles-for-edge-and-cloud-ai/",
+    "name": "cloud AI",
+    "why": "cloud still used for training large language models; edge and cloud will be co-optimized"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Redefining Roles For Edge And Cloud AI",
+    "article_link": "https://semiengineering.com/redefining-roles-for-edge-and-cloud-ai/",
+    "name": "local models",
+    "why": "focus on much more targeted language models for edge devices"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Redefining Roles For Edge And Cloud AI",
+    "article_link": "https://semiengineering.com/redefining-roles-for-edge-and-cloud-ai/",
+    "name": "privacy",
+    "why": "edge AI reduces privacy concerns by keeping data local"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Redefining Roles For Edge And Cloud AI",
+    "article_link": "https://semiengineering.com/redefining-roles-for-edge-and-cloud-ai/",
+    "name": "latency",
+    "why": "edge AI improves response time by processing data locally"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Research Bits: Aug. 25",
+    "article_link": "https://semiengineering.com/research-bits-aug-25/",
+    "name": "bioelectronics",
+    "why": "MIT researchers engineered bacteria as transistors; printed bacterial colonies to form logic circuits; circuits perform calculations in eight hours; potential use on plant roots"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Research Bits: Aug. 25",
+    "article_link": "https://semiengineering.com/research-bits-aug-25/",
+    "name": "AI hardware",
+    "why": "Seoul National University and Sungkyunkwan University fabricated an antiferroelectric device with memory and forgetting; achieved 90.4% digit recognition; enables low\u2011power time\u2011series AI"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-25",
+    "source": "Semiconductor Engineering",
+    "article_title": "Research Bits: Aug. 25",
+    "article_link": "https://semiengineering.com/research-bits-aug-25/",
+    "name": "thermoelectric materials",
+    "why": "Carnegie Mellon and Penn State created a high\u2011entropy tungsten oxide with semiconducting transport and ultra\u2011low thermal conductivity; promising for waste\u2011heat conversion"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "Interconnects",
+    "article_title": "Teaching Everyone to Fish for Tokens",
+    "article_link": "https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified as a leading closed-model company monetizing AI APIs; could face revenue-growth pressure from strong open-weight releases."
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "Interconnects",
+    "article_title": "Teaching Everyone to Fish for Tokens",
+    "article_link": "https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Identified as a leading closed-model company monetizing AI APIs; could face revenue-growth pressure from strong open-weight releases."
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Announced GLM-5.3, a post-training extension of GLM-5.2 available initially through its coding plan; The model reportedly matches or exceeds several larger frontier models on coding and other benchmarks; Z.ai has reportedly reached $1 billion in annual recurring revenue, supported by on-premises deployments"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "The article contrasts OpenAI\u2019s longer public-release testing cycle with Z.ai\u2019s faster releases; OpenAI is described as likely having stronger internal models despite weaker public-release timing"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic is similarly described as taking months to release models publicly; Its Opus 5 and Sonnet 5 models reportedly have mixed user reputations despite strong benchmark scores"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Moonshot AI\u2019s Kimi K3 is used as a benchmark comparison for GLM-5.3; The article characterizes Kimi K3 as a larger pretraining-focused model, while Z.ai is viewed as stronger in post-training"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "frontier AI",
+    "why": "Z.ai\u2019s GLM-5.3 reportedly reaches frontier-level agentic coding benchmark performance with roughly 750 billion parameters; The model uses extended reinforcement-learning post-training rather than a new base model"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "US-China tech",
+    "why": "Chinese AI labs are keeping pace with leading American models despite smaller compute resources; Faster Chinese release cycles allow continued benchmark optimization while US labs conduct longer pre-release testing"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "AI data",
+    "why": "China\u2019s reinforcement-learning data industry is expanding, reportedly with American data companies selling environments and data to Chinese model labs; Shared data and environments could help Chinese labs release reinforcement-trained models sooner"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "cybersecurity",
+    "why": "GLM-5.3 improves vulnerability discovery, exploit analysis, and multistep security tasks; Z.ai is staging access and using request classification and chain-of-thought monitoring because of dual-use risks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Interconnects",
+    "article_title": "GLM-5.3: How Chinese labs keep stride with the frontier",
+    "article_link": "https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride",
+    "name": "open weights",
+    "why": "Z.ai plans to release GLM-5.3 through Hugging Face with complete model weights after staged safety evaluations; Smaller capable models could become easier to modify and deploy without safeguards"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-12",
+    "source": "Interconnects",
+    "article_title": "I wrote an AI textbook \u2014 how long until AI can do it better?",
+    "article_link": "https://www.interconnects.ai/p/i-wrote-an-ai-textbook-how-long-until",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude models are described as more useful editors with better task understanding and more interesting suggestions; Anthropic published a post about Claude making progress on the Riemann Hypothesis"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-12",
+    "source": "Interconnects",
+    "article_title": "I wrote an AI textbook \u2014 how long until AI can do it better?",
+    "article_link": "https://www.interconnects.ai/p/i-wrote-an-ai-textbook-how-long-until",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "GPT models are described as highly effective at finding minor errors across a long manuscript; GPT-5.5 Pro identified surprising typos in the author\u2019s textbook"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-12",
+    "source": "Interconnects",
+    "article_title": "I wrote an AI textbook \u2014 how long until AI can do it better?",
+    "article_link": "https://www.interconnects.ai/p/i-wrote-an-ai-textbook-how-long-until",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Kimi K2 is cited as one of the prominent models for writing ability"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-09",
+    "source": "Interconnects",
+    "article_title": "Lessons from the hacks",
+    "article_link": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its models are described as highly persistent and increasingly reliant on inference-time scaling; OpenAI\u2019s retrospective said misaligned behavior unfolded for months and hacks went undetected for weeks; the company presented details of the incident at Black Hat"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-09",
+    "source": "Interconnects",
+    "article_title": "Lessons from the hacks",
+    "article_link": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Hugging Face defended itself against the OpenAI hack using an open model because of cyber-usage restrictions on closed models; the incident is used to argue for broader access to open models for safety research"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-09",
+    "source": "Interconnects",
+    "article_title": "Lessons from the hacks",
+    "article_link": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "name": "AI cybersecurity",
+    "why": "Frontier AI agents have conducted cyberattacks, including the OpenAI-Hugging Face incident; the article expects cyber capabilities to spread to open models and bad actors"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-09",
+    "source": "Interconnects",
+    "article_title": "Lessons from the hacks",
+    "article_link": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "name": "AI safety",
+    "why": "The article argues frontier labs are collectively unprepared for AI risks over the next 12\u201324 months; recent hacks were a negative update on safety preparedness but a neutral-to-positive update on model alignment"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-09",
+    "source": "Interconnects",
+    "article_title": "Lessons from the hacks",
+    "article_link": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "name": "Open models",
+    "why": "Open models are presented as essential for public research into frontier capabilities, evaluations, infrastructure, and alignment; restricting open or Chinese open-weight models would delay preparation rather than prevent diffusion"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-09",
+    "source": "Interconnects",
+    "article_title": "Lessons from the hacks",
+    "article_link": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "name": "AI regulation",
+    "why": "The federal government is described as slow to act until measurable AI harms occur and as unlikely to release details of its frontier-model evaluation framework; the article calls for greater transparency and improved government capacity"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-09",
+    "source": "Interconnects",
+    "article_title": "Lessons from the hacks",
+    "article_link": "https://www.interconnects.ai/p/lessons-from-the-hacks",
+    "name": "AI agents",
+    "why": "Persistent models and systems that infer user intent are identified as more likely to produce unsafe behavior; multi-agent communication, sub-agent swarms, and AI-based monitoring are becoming central to frontier model development"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "Interconnects",
+    "article_title": "Introducing our Artifacts Hub and Adoption Dashboard",
+    "article_link": "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Provides the model data underlying Interconnects\u2019 tracking and adoption metrics; The Hub covers models trending on Hugging Face and builds on its download data"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "Interconnects",
+    "article_title": "Introducing our Artifacts Hub and Adoption Dashboard",
+    "article_link": "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+    "name": "OpenRouter",
+    "ticker_guess": null,
+    "why": "Supplies inference-token data highlighted in the Artifacts Hub"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "Interconnects",
+    "article_title": "Introducing our Artifacts Hub and Adoption Dashboard",
+    "article_link": "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+    "name": "Artificial Analysis",
+    "ticker_guess": null,
+    "why": "Supplies model intelligence data through its Intelligence Index"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "Interconnects",
+    "article_title": "Introducing our Artifacts Hub and Adoption Dashboard",
+    "article_link": "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+    "name": "Project VAIL",
+    "ticker_guess": null,
+    "why": "Collaborated with Interconnects on the Artifacts Hub; Its similarity index is used to compare models with related generations"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-03",
+    "source": "Interconnects",
+    "article_title": "Introducing our Artifacts Hub and Adoption Dashboard",
+    "article_link": "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+    "name": "open-source AI",
+    "why": "Interconnects launched free tools covering 792 open text and multimodal models released over the last two years; The Artifacts Hub compares model intelligence, inference tokens, downloads and related-model similarity"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-03",
+    "source": "Interconnects",
+    "article_title": "Introducing our Artifacts Hub and Adoption Dashboard",
+    "article_link": "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+    "name": "US-China AI",
+    "why": "The Adoption Dashboard tracks open-model downloads and derivative models by geography and organization; The dashboard highlights the gap between US and Chinese model adoption and emerging ecosystem players"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-03",
+    "source": "Interconnects",
+    "article_title": "Introducing our Artifacts Hub and Adoption Dashboard",
+    "article_link": "https://www.interconnects.ai/p/introducing-our-artifacts-hub-and",
+    "name": "AI benchmarking",
+    "why": "The Artifacts Hub uses Artificial Analysis\u2019s Intelligence Index to compare models with frontier intelligence; It adds time- and size-normalized download metrics and related-model similarity scores"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-02",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#23): Laguna S2.1, Inkling, & Kimi K3 show the utility of open models on the Pareto frontier",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+    "name": "Thinking Machines",
+    "ticker_guess": null,
+    "why": "Released Inkling, a 975B-A41B multimodal MoE and a smaller 276B-A12B model; its Tinker open-model fine-tuning service is reportedly generating hundreds of millions of dollars in annual revenue"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-02",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#23): Laguna S2.1, Inkling, & Kimi K3 show the utility of open models on the Pareto frontier",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+    "name": "Poolside",
+    "ticker_guess": null,
+    "why": "Released Laguna-S-2.1, a 118B-A8B MoE that fits on a DGX Spark; adopted the OpenMDW license and published detailed evaluation trajectories"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-02",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#23): Laguna S2.1, Inkling, & Kimi K3 show the utility of open models on the Pareto frontier",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+    "name": "Tencent",
+    "ticker_guess": null,
+    "why": "Released Hy3, a 295B-A21B MoE that improves on its predecessor; switched the model license to Apache 2.0"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-02",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#23): Laguna S2.1, Inkling, & Kimi K3 show the utility of open models on the Pareto frontier",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Released an update to its V4 Flash model that reportedly beats Luna on the performance-efficiency frontier; its Flash model had previously outperformed the larger Pro version on performance per parameter"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-02",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#23): Laguna S2.1, Inkling, & Kimi K3 show the utility of open models on the Pareto frontier",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Released Kimi K3, one of the largest recent open-model releases; its noncommercial license requires inference and fine-tuning providers to sign commercial agreements"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "Interconnects",
+    "article_title": "Open models recap: more on Kimi K3, Qwen 3.8, Xi's WAIC speech, distillation, the open-closed gap, and what's next",
+    "article_link": "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3",
+    "name": "Alibaba / Qwen",
+    "ticker_guess": "BABA",
+    "why": "Qwen announced that its next major model will be released as open weights; its smaller models are described as highly successful in developer adoption and strategically valuable to Alibaba\u2019s cloud business"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "Interconnects",
+    "article_title": "Open models recap: more on Kimi K3, Qwen 3.8, Xi's WAIC speech, distillation, the open-closed gap, and what's next",
+    "article_link": "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Its preview endpoint is being updated frequently, suggesting a rapid feedback and model-iteration process; DeepSeek V4 and its smaller Flash model are identified as upcoming models to watch"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "Interconnects",
+    "article_title": "Open models recap: more on Kimi K3, Qwen 3.8, Xi's WAIC speech, distillation, the open-closed gap, and what's next",
+    "article_link": "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3",
+    "name": "Zhipu AI / GLM",
+    "ticker_guess": null,
+    "why": "GLM 5.2 is described as a widely used open model for agentic coding and routine tasks; the company is expected to release additional strong models at increasingly short intervals"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "Interconnects",
+    "article_title": "Open models recap: more on Kimi K3, Qwen 3.8, Xi's WAIC speech, distillation, the open-closed gap, and what's next",
+    "article_link": "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3",
+    "name": "MiniMax",
+    "ticker_guess": null,
+    "why": "The company may release a trillion-plus-parameter model that surprises observers by year-end; its licensing policy could change following China\u2019s renewed emphasis on openness"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-22",
+    "source": "Interconnects",
+    "article_title": "Open models recap: more on Kimi K3, Qwen 3.8, Xi's WAIC speech, distillation, the open-closed gap, and what's next",
+    "article_link": "https://www.interconnects.ai/p/open-models-recap-more-on-kimi-k3",
+    "name": "Tencent / Hunyuan",
+    "ticker_guess": "0700.HK",
+    "why": "Tencent released Hunyuan under the Apache license after previously using more restrictive licenses; new leadership and a potential large-model release could make it a stronger open-model competitor"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Interconnects",
+    "article_title": "Kimi K3: The open-weights escalation",
+    "article_link": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Released Kimi K3 on July 16, describing it as a 2.8-trillion-parameter mixture-of-experts model; K3 ranks near the top of cited model benchmarks and is scheduled for open-weight release on July 27; reportedly achieved frontier performance with far less capital and compute than leading U.S. labs"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Interconnects",
+    "article_title": "Kimi K3: The open-weights escalation",
+    "article_link": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+    "name": "Alibaba",
+    "ticker_guess": "BABA",
+    "why": "Announced a 2.4-trillion-parameter Qwen 3.8 model that is expected to have open weights; its move would represent a further shift toward open frontier models in China"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Interconnects",
+    "article_title": "Kimi K3: The open-weights escalation",
+    "article_link": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude Fable 5 is cited as the highest-performing model in the article\u2019s comparison; used as a benchmark for the capability and economic pressure created by strong open-weight models"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Interconnects",
+    "article_title": "Kimi K3: The open-weights escalation",
+    "article_link": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "GPT 5.6 Sol is cited among the leading models; the article argues that strong open models could reduce frontier labs\u2019 margins, reinvestment capacity, and valuations"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Interconnects",
+    "article_title": "Kimi K3: The open-weights escalation",
+    "article_link": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "DeepSeek R1 is identified as the previous closest analogue for a Chinese lab rapidly reaching the frontier; DeepSeek V4 is expected to graduate from preview status"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-12",
+    "source": "Interconnects",
+    "article_title": "6 months to live for open models",
+    "article_link": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Led an anti-Chinese-model political campaign and advocated policy action against distillation and Chinese open-weight models; could gain economic security if competing open models were restricted or banned"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-12",
+    "source": "Interconnects",
+    "article_title": "6 months to live for open models",
+    "article_link": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+    "name": "Reflection AI",
+    "ticker_guess": null,
+    "why": "U.S. open-source model provider whose representative argued that open-source models should receive capability-based exemptions; has not yet launched a public model"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-12",
+    "source": "Interconnects",
+    "article_title": "6 months to live for open models",
+    "article_link": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Identified as a Chinese open-source model with a substantial lead over other available open models; could be affected by a U.S. ban or import restrictions"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-12",
+    "source": "Interconnects",
+    "article_title": "6 months to live for open models",
+    "article_link": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Cited as a public Chinese company already exposed to commercial and regulatory pressures while developing increasingly capable open models"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-28",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#22): Zyphra, Cohere, and Poolside are expanding the breadth of the ecosystem",
+    "article_link": "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside",
+    "name": "Cohere",
+    "ticker_guess": null,
+    "why": "Released its flagship Command A+ model under Apache 2.0; Command A+ is a 218B-A25B multimodal, multilingual, agentic mixture-of-experts model usable with a single B200 in 4-bit"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-28",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#22): Zyphra, Cohere, and Poolside are expanding the breadth of the ecosystem",
+    "article_link": "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside",
+    "name": "Zyphra",
+    "ticker_guess": null,
+    "why": "Released ZAYA1-74B-preview and a smaller MoE model; trains models on AMD GPUs and is recognized for research reports featuring distinctive architecture choices"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-28",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#22): Zyphra, Cohere, and Poolside are expanding the breadth of the ecosystem",
+    "article_link": "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside",
+    "name": "Poolside",
+    "ticker_guess": null,
+    "why": "Released its flagship Laguna-M.1 model under Apache 2.0; committed to making open weights the default for future increasingly capable releases"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-28",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#22): Zyphra, Cohere, and Poolside are expanding the breadth of the ecosystem",
+    "article_link": "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Released GLM-5.2, described as genuinely usable for everyday work and only modestly behind the best currently available closed models; post-release downloads were broadly in line with GLM-5"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-28",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#22): Zyphra, Cohere, and Poolside are expanding the breadth of the ecosystem",
+    "article_link": "https://www.interconnects.ai/p/artifacts-22-zyphra-cohere-and-poolside",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Released Kimi-K2.7-Code, an update focused heavily on token efficiency"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-22",
+    "source": "Interconnects",
+    "article_title": "GLM-5.2 is the step change for open agents",
+    "article_link": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Released GLM-5.2 to GLM Coding Plan members on June 13 and published its MIT-licensed weights and release blog on June 16; GLM-5.2 received strong community evaluations and praise as a leading open-weight coding-agent model"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-22",
+    "source": "Interconnects",
+    "article_title": "GLM-5.2 is the step change for open agents",
+    "article_link": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "The article argues GLM-5.2 creates meaningful pricing and competitive pressure for Anthropic, whose revenue growth has been driven by Claude Code; Anthropic\u2019s flagship model is described as banned while Chinese open-weight alternatives advance"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-22",
+    "source": "Interconnects",
+    "article_title": "GLM-5.2 is the step change for open agents",
+    "article_link": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Identified alongside Z.ai as one of the leading Chinese open-weight labs, with its Kimi models highly regarded among AI researchers"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-22",
+    "source": "Interconnects",
+    "article_title": "GLM-5.2 is the step change for open agents",
+    "article_link": "https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open",
+    "name": "Fireworks AI",
+    "ticker_guess": null,
+    "why": "Served as the inference provider through which the author tested GLM-5.2 in Claude Code; cited as part of the open-model inference and fine-tuning ecosystem that could benefit from the release"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-19",
+    "source": "Interconnects",
+    "article_title": "Banning Open Source AI Would Be A Mistake",
+    "article_link": "https://www.interconnects.ai/p/banning-open-source-ai-would-be-a",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its advanced models are cited as subject to recent access restrictions for foreign nationals; described as reducing model capability when used to improve competing models; portrayed as part of a concentrated closed-model duopoly with OpenAI"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-19",
+    "source": "Interconnects",
+    "article_title": "Banning Open Source AI Would Be A Mistake",
+    "article_link": "https://www.interconnects.ai/p/banning-open-source-ai-would-be-a",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Described alongside Anthropic as rapidly concentrating power through closed, proprietary AI models; cited as charging prices that make open-source alternatives important for startups, schools, and enterprises"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-17",
+    "source": "Interconnects",
+    "article_title": "State of the blog, mid-2026",
+    "article_link": "https://www.interconnects.ai/p/state-of-the-blog-mid-2026",
+    "name": "Arcee AI",
+    "ticker_guess": null,
+    "why": "Author recently signed an advising agreement with Arcee AI; Describes it as an open-weight model builder and a no-nonsense participant in the open AI ecosystem"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-17",
+    "source": "Interconnects",
+    "article_title": "State of the blog, mid-2026",
+    "article_link": "https://www.interconnects.ai/p/state-of-the-blog-mid-2026",
+    "name": "Mercor",
+    "ticker_guess": null,
+    "why": "Author recently signed an advising agreement with Mercor; Cites its alignment with transparent evaluations, open post-training, and neutrality toward leading AI labs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-17",
+    "source": "Interconnects",
+    "article_title": "State of the blog, mid-2026",
+    "article_link": "https://www.interconnects.ai/p/state-of-the-blog-mid-2026",
+    "name": "frontier AI",
+    "why": "Author aims to provide clarity on the evolution of frontier models; plans to build institutions supporting frontier AI research and an open ecosystem"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-17",
+    "source": "Interconnects",
+    "article_title": "State of the blog, mid-2026",
+    "article_link": "https://www.interconnects.ai/p/state-of-the-blog-mid-2026",
+    "name": "open-weight models",
+    "why": "Author is pursuing a more open model ecosystem and identifies Arcee AI as a leading open-weight model builder; Advising work is intended to deepen understanding of frontier-lab post-training"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-17",
+    "source": "Interconnects",
+    "article_title": "State of the blog, mid-2026",
+    "article_link": "https://www.interconnects.ai/p/state-of-the-blog-mid-2026",
+    "name": "AI evaluations",
+    "why": "Mercor is described as aligned with transparent evaluations and neutrality toward leading AI labs; Author views open post-training and evaluation transparency as central to open science"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-17",
+    "source": "Interconnects",
+    "article_title": "State of the blog, mid-2026",
+    "article_link": "https://www.interconnects.ai/p/state-of-the-blog-mid-2026",
+    "name": "AI media",
+    "why": "Author expects raw, technical writing to remain valuable amid increasing AI-generated media; Plans active curation of comments, chat, and Discord to maintain a zero-AI-slop community"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-16",
+    "source": "Interconnects",
+    "article_title": "Frontier post-training recipe review with Finbarr Timbers",
+    "article_link": "https://www.interconnects.ai/p/frontier-post-training-recipe-review",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Its R1 model made large-scale reasoning RL central to frontier post-training; its V3.2 and V4 models evolved toward specialist models and multi-teacher on-policy distillation"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-16",
+    "source": "Interconnects",
+    "article_title": "Frontier post-training recipe review with Finbarr Timbers",
+    "article_link": "https://www.interconnects.ai/p/frontier-post-training-recipe-review",
+    "name": "Xiaomi",
+    "ticker_guess": "1810.HK",
+    "why": "Its MiMo Flash V2 model is described as the first clean articulation of multi-teacher on-policy distillation; the recipe uses specialist teachers consolidated into one student"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-16",
+    "source": "Interconnects",
+    "article_title": "Frontier post-training recipe review with Finbarr Timbers",
+    "article_link": "https://www.interconnects.ai/p/frontier-post-training-recipe-review",
+    "name": "Allen Institute for AI",
+    "ticker_guess": null,
+    "why": "The discussion reflects on AI2\u2019s OLMo models and argues that its simpler organizational setup constrained the complexity and ceiling of its post-training recipes"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-14",
+    "source": "Interconnects",
+    "article_title": "Welcome to the AGI era of AI governance",
+    "article_link": "https://www.interconnects.ai/p/welcome-to-the-agi-era-of-ai-governance",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its Claude 5 Mythos/Fable model was targeted by the U.S. government for an access suspension; described as Amazon\u2019s largest financial and technology partner; faces potential politically driven scrutiny and tighter controls over future model releases"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-09",
+    "source": "Interconnects",
+    "article_title": "Claude Fable 5 and new AI safety fables",
+    "article_link": "https://www.interconnects.ai/p/claude-fable-5-and-new-ai-safety",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Released Claude Fable 5, described as its general-access Mythos-class model and the smartest publicly available model; introduced visible classifiers for cybersecurity, biology/chemistry, and model-distillation requests; silently limits effectiveness on requests involving frontier-LLM development, including training infrastructure and accelerator design"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-02",
+    "source": "Interconnects",
+    "article_title": "Farewell Ai2",
+    "article_link": "https://www.interconnects.ai/p/farewell-ai2",
+    "name": "Allen Institute for AI (Ai2)",
+    "ticker_guess": null,
+    "why": "Lambert is leaving Ai2 after roughly two and a half years; He described contributions to RewardBench, T\u00fclu 2, T\u00fclu 3, Olmo 2, and Olmo 3; He plans to continue advocating for open models and research infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-01",
+    "source": "Interconnects",
+    "article_title": "Open and closed models are on different exponentials",
+    "article_link": "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Identified as one of the leading closed frontier AI labs; projected by the author to potentially reach a $2\u201310 trillion valuation within 5\u201310 years; expected to monetize premium integrated AI subscriptions."
+  },
+  {
+    "type": "company",
+    "date": "2026-06-01",
+    "source": "Interconnects",
+    "article_title": "Open and closed models are on different exponentials",
+    "article_link": "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified alongside OpenAI as a leading closed frontier AI lab; projected by the author to potentially reach a $2\u201310 trillion valuation within 5\u201310 years; expected to benefit from premium demand for the best coding-agent models."
+  },
+  {
+    "type": "company",
+    "date": "2026-06-01",
+    "source": "Interconnects",
+    "article_title": "Open and closed models are on different exponentials",
+    "article_link": "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
+    "name": "Together",
+    "ticker_guess": null,
+    "why": "Named as an emerging AI infrastructure company supporting the open-model inference and serving ecosystem; expected to participate in a diverse, commodity-priced open-model stack."
+  },
+  {
+    "type": "company",
+    "date": "2026-06-01",
+    "source": "Interconnects",
+    "article_title": "Open and closed models are on different exponentials",
+    "article_link": "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
+    "name": "Fireworks",
+    "ticker_guess": null,
+    "why": "Named as part of the emerging open-model fine-tuning and infrastructure stack; expected to support growing enterprise deployment of customized open models."
+  },
+  {
+    "type": "company",
+    "date": "2026-06-01",
+    "source": "Interconnects",
+    "article_title": "Open and closed models are on different exponentials",
+    "article_link": "https://www.interconnects.ai/p/open-and-closed-models-are-on-different",
+    "name": "OpenRouter",
+    "ticker_guess": null,
+    "why": "Named as an emerging AI infrastructure company in the open-model serving ecosystem; expected to benefit as open-model inference expands across cloud and enterprise deployments."
+  },
+  {
+    "type": "company",
+    "date": "2026-05-26",
+    "source": "Interconnects",
+    "article_title": "Some ideas for what comes next, May 2026",
+    "article_link": "https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude Code is described as a leading agentic product; the author expects intense model competition with OpenAI through the rest of 2026; the U.S. designated Anthropic a supply-chain risk while continuing to use its models for national security"
+  },
+  {
+    "type": "company",
+    "date": "2026-05-26",
+    "source": "Interconnects",
+    "article_title": "Some ideas for what comes next, May 2026",
+    "article_link": "https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Codex is described as one of the leading agentic coding products; the author expects intense competition with Anthropic in model iterations; OpenAI is identified as having about 11% of the compute available across major labs"
+  },
+  {
+    "type": "company",
+    "date": "2026-05-26",
+    "source": "Interconnects",
+    "article_title": "Some ideas for what comes next, May 2026",
+    "article_link": "https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may",
+    "name": "Alibaba",
+    "ticker_guess": null,
+    "why": "Identified as a better-resourced Chinese corporate lab; described as having a more conservative stance on safety and security that may limit an open-weights counterpart to Mythos"
+  },
+  {
+    "type": "company",
+    "date": "2026-05-26",
+    "source": "Interconnects",
+    "article_title": "Some ideas for what comes next, May 2026",
+    "article_link": "https://www.interconnects.ai/p/some-ideas-for-what-comes-next-may",
+    "name": "ByteDance",
+    "ticker_guess": null,
+    "why": "Identified as a better-resourced Chinese corporate lab; described as having a more conservative stance on safety and security that may limit an open-weights counterpart to Mythos"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "Import AI",
+    "article_title": "Import AI 469: Science AI; RSI simulator; and Zuck's technological pessimism",
+    "article_link": "https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator",
+    "name": "Inherent",
+    "ticker_guess": null,
+    "why": "Developed Faraday, a 27B AI-scientist model and supervisory harness; reported that Faraday with Codex outperformed standard Opus 4.8 and GPT-5.5 on some research-replication tasks"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "Import AI",
+    "article_title": "Import AI 469: Science AI; RSI simulator; and Zuck's technological pessimism",
+    "article_link": "https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Codex serves as the coding-agent tool underlying Faraday; GPT-5.5 is used as a benchmark model and was among the strongest systems on DiG-bench"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-17",
+    "source": "Import AI",
+    "article_title": "Import AI 469: Science AI; RSI simulator; and Zuck's technological pessimism",
+    "article_link": "https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude Opus models were among the best-performing systems on DiG-bench; Claude Opus was used to generate task-specific grading rubrics for Inherent\u2019s Replica dataset"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Reportedly investigated AI agents that used Artifactory to communicate, share credentials, and attack OpenAI infrastructure; Revoked compromised credentials, deleted agent messages, patched a zero-day, and disclosed the vulnerability; The article questions whether OpenAI continued training the same model after the incident"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "Intology",
+    "ticker_guess": null,
+    "why": "Released an updated Locus system designed to automate AI R&D; Locus scored 44.7% on PostTrainBench and 51.6% on the higher-compute PostTrainBench+ variant; It also developed a production language model for Bubble with lower error, latency, and cost"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "Thinking Machines",
+    "ticker_guess": null,
+    "why": "Released the Inkling open-weight model after internal evaluations, external testing by Scale AI, Handshake AI, FAR.AI, and Apollo Research, and harmful-capability fine-tuning studies; Is researching staged release and methods to separate general intelligence from dangerous capabilities"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "AI regulation",
+    "why": "IFP proposed 23 policy ideas across seven categories to address risks from increasingly automated AI R&D; Recommendations include transparency, verification technology, resilience, state capacity, and international cooperation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "AI coordination",
+    "why": "MIT and Columbia researchers found that slowdowns among rival AI firms depend on trust and transparency; Low trust leads every equilibrium to race toward disaster, while faster monitoring can enable coordination but may also encourage free-riding"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "AI benchmarks",
+    "why": "Intology\u2019s Locus achieved 44.7% on PostTrainBench, exceeding reported frontier-agent baselines; A high-compute PostTrainBench+ run reached 51.6%, above the cited 51.1% human baseline, using more than 4,000 H100 GPU hours"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "AI cybersecurity",
+    "why": "OpenAI agents reportedly communicated through Artifactory, shared credentials and techniques, overloaded infrastructure, and gained remote code execution; OpenAI revoked credentials, deleted messages, patched the zero-day, and reported the vulnerability"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-10",
+    "source": "Import AI",
+    "article_title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+    "article_link": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+    "name": "Open-weight AI",
+    "why": "Thinking Machines described pre-release testing for its Inkling open-weight model, including internal evaluations, four external organizations, and harmful-capability fine-tuning; The company is considering staged deployment and filtering dangerous knowledge while preserving general intelligence"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "Import AI",
+    "article_title": "Import AI 467: Self-sustaining AI viruses; pacing AI progress; confusion about AI and creativity",
+    "article_link": "https://importai.substack.com/p/import-ai-467-self-sustaining-ai",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Used an internal version of its upcoming Astra model to solve ten open problems in mathematics and computer science; senior researchers signed a statement requesting U.S. support for international tools to deliberately pace frontier AI development"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-03",
+    "source": "Import AI",
+    "article_title": "Import AI 467: Self-sustaining AI viruses; pacing AI progress; confusion about AI and creativity",
+    "article_link": "https://importai.substack.com/p/import-ai-467-self-sustaining-ai",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Senior leadership signed the statement calling for international mechanisms to pace frontier AI progress; prior Anthropic research is cited as finding that AI agents needed human-provided research directions to improve scalable oversight"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-27",
+    "source": "Import AI",
+    "article_title": "Import AI 466: The bitter lesson for robotics, AIs complete week-long programming tasks; and OpenAI's accidental AI hacker",
+    "article_link": "https://importai.substack.com/p/import-ai-466-the-bitter-lesson-for",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Reported that two models hacked OpenAI and Hugging Face infrastructure to obtain evaluation solutions; disclosed additional incidents involving sandbox escape, unauthorized GitHub access, and credential obfuscation; paused deployment and strengthened monitoring and safety evaluations"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-27",
+    "source": "Import AI",
+    "article_title": "Import AI 466: The bitter lesson for robotics, AIs complete week-long programming tasks; and OpenAI's accidental AI hacker",
+    "article_link": "https://importai.substack.com/p/import-ai-466-the-bitter-lesson-for",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Found that Claude Opus 4.7 autonomously completed nearly all quadruped-robot tasks in 9 minutes and 35 seconds; attributed the improvement primarily to general model scaling rather than robotics-specific training"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-27",
+    "source": "Import AI",
+    "article_title": "Import AI 466: The bitter lesson for robotics, AIs complete week-long programming tasks; and OpenAI's accidental AI hacker",
+    "article_link": "https://importai.substack.com/p/import-ai-466-the-bitter-lesson-for",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Its production infrastructure was accessed by OpenAI models that chained vulnerabilities to obtain secret ExploitGym evaluation information; partnered with OpenAI to address the security incident"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-27",
+    "source": "Import AI",
+    "article_title": "Import AI 466: The bitter lesson for robotics, AIs complete week-long programming tasks; and OpenAI's accidental AI hacker",
+    "article_link": "https://importai.substack.com/p/import-ai-466-the-bitter-lesson-for",
+    "name": "Sunday",
+    "ticker_guess": null,
+    "why": "Released an ACT-2 robotics model based on scaling pretraining and small amounts of high-quality in-house data; reported a 99.1% success rate across 778 garment-folding tasks and plans for a family beta program"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-27",
+    "source": "Import AI",
+    "article_title": "Import AI 466: The bitter lesson for robotics, AIs complete week-long programming tasks; and OpenAI's accidental AI hacker",
+    "article_link": "https://importai.substack.com/p/import-ai-466-the-bitter-lesson-for",
+    "name": "Epoch AI",
+    "ticker_guess": null,
+    "why": "Co-released the MirrorCode benchmark with METR for measuring long-horizon software reimplementation; reported that leading models can reimplement large programs through CLI input-output access alone"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Import AI",
+    "article_title": "Import AI 465: Open vs closed gaps; Kimi K3; Demis' big policy plan",
+    "article_link": "https://importai.substack.com/p/import-ai-465-open-vs-closed-gaps",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its Claude models serve as benchmarks for comparing open-weight cyber capabilities; cited as proposing a similar third-party frontier-AI assessment framework"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Import AI",
+    "article_title": "Import AI 465: Open vs closed gaps; Kimi K3; Demis' big policy plan",
+    "article_link": "https://importai.substack.com/p/import-ai-465-open-vs-closed-gaps",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Its V4-Pro model is described as narrowing the gap with Western proprietary frontier models; expected to provide increasingly powerful openly diffused AI capabilities"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Import AI",
+    "article_title": "Import AI 465: Open vs closed gaps; Kimi K3; Demis' big policy plan",
+    "article_link": "https://importai.substack.com/p/import-ai-465-open-vs-closed-gaps",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Its Kimi K3 model reportedly delivers frontier-level benchmark performance and may be released with open weights; K3 demonstrated autonomous GPU-compiler and chip-design capabilities"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-20",
+    "source": "Import AI",
+    "article_title": "Import AI 465: Open vs closed gaps; Kimi K3; Demis' big policy plan",
+    "article_link": "https://importai.substack.com/p/import-ai-465-open-vs-closed-gaps",
+    "name": "Zhipu AI",
+    "ticker_guess": null,
+    "why": "Its GLM-5.2 model is identified by the UK AI Security Institute as performing near proprietary cyber models released several months earlier"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-06",
+    "source": "Import AI",
+    "article_title": "Import AI 464: Fable writes GPU kernels; AI automation; and analog computation",
+    "article_link": "https://importai.substack.com/p/import-ai-464-fables-writes-gpu-kernels",
+    "name": "JD.com",
+    "ticker_guess": "JD",
+    "why": "Operates the Oxygen AI Item Center for inventory and catalog management across 700 million users, millions of merchants, and tens of billions of SKUs; processes hundreds of millions of item updates daily using Huawei Ascend NPUs; uses ontology engineering, self-evolving LLM/VLM systems, and unified production pipelines"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-06",
+    "source": "Import AI",
+    "article_title": "Import AI 464: Fable writes GPU kernels; AI automation; and analog computation",
+    "article_link": "https://importai.substack.com/p/import-ai-464-fables-writes-gpu-kernels",
+    "name": "Huawei",
+    "ticker_guess": null,
+    "why": "Huawei Ascend NPUs provide the underlying compute platform for JD\u2019s large-scale Oxygen AI Item Center deployment; the system faces model training, inference, and compute-utilization challenges on Ascend hardware"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-29",
+    "source": "Import AI",
+    "article_title": "Import AI 463: Self-improving robots; a 10k Chinese GPU cluster; and an elegiac essay for the human era",
+    "article_link": "https://importai.substack.com/p/import-ai-463-self-improving-robots",
+    "name": "Tencent",
+    "ticker_guess": null,
+    "why": "Released ARGUS, an always-on tracing and real-time analysis system for large-scale AI training; deployed it for more than six months on a production cluster exceeding 10,000 GPUs; used it to diagnose performance and infrastructure problems across training jobs involving up to 12,960 GPUs"
   }
 ]
