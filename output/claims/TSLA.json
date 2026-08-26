@@ -17,5 +17,43 @@
     "trade_worthy": false,
     "context": "The article reports that a new California EV program opened with a portion reserved for Tesla buyers, and consumers used up that allocation within five days. This indicates meaningful buyer uptake while the incentive was available, although the article does not quantify incremental deliveries or establish how much demand was pulled forward from future periods.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "1d9f6dadbb13eb67",
+    "ticker": "TSLA",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "source_title": "Weekly Dose of Optimism #205",
+    "event_type": "other",
+    "created": "2026-08-07",
+    "claim": "Tesla\u2019s planned Terafab could improve its long-term competitive position by vertically integrating advanced-chip production and expanding access to the compute needed for its AI and autonomy businesses, potentially reducing dependence on ASML and TSMC.",
+    "direction": "long",
+    "confidence": 0.68,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Tesla selected Grimes County, Texas, for a facility described as the largest chip-manufacturing plant ever, with Tesla and SpaceX planning an initial $16.8 billion investment and targeting more than one terawatt of compute production annually. The proposed design appears to use a particle accelerator or free-electron laser to generate EUV lithography light, which the article presents as an attempt to challenge the established lithography and foundry supply chain.",
+    "source": "Not Boring"
+  },
+  {
+    "id": "904ff6839fdec1a1",
+    "ticker": "TSLA",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "source_title": "Weekly Dose of Optimism #205",
+    "event_type": "other",
+    "created": "2026-08-07",
+    "claim": "The Terafab commitment increases Tesla\u2019s capital-allocation and execution risk because the company is undertaking a massive, technically unproven semiconductor-manufacturing project outside its established vehicle business.",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Tesla and SpaceX reportedly plan to commit $16.8 billion to the initial Terafab buildout, including an apparently novel free-electron-laser-based EUV system rather than relying solely on conventional semiconductor equipment. The facility\u2019s scale and ambitious compute target create the possibility of delays, cost overruns, or inadequate returns before any competitive benefits materialize.",
+    "source": "Not Boring"
   }
 ]

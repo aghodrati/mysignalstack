@@ -55,5 +55,24 @@
     "trade_worthy": false,
     "context": "Unlike the article\u2019s merely historical revenue comparisons for many companies, ASML\u2019s entry explicitly states that demand for EUV tools and advanced nodes supported a higher full-year 2026 sales outlook. That forward guidance change indicates that the strength in AI-related and leading-edge semiconductor investment is expected to persist beyond the reported quarter and should support ASML\u2019s revenue visibility through the remainder of 2026.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "0a42e648e6bbb974",
+    "ticker": "ASML",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "source_title": "Weekly Dose of Optimism #205",
+    "event_type": "other",
+    "created": "2026-08-07",
+    "claim": "Tesla\u2019s proposed free-electron-laser EUV approach could create a long-term competitive threat to ASML\u2019s lithography position by introducing an alternative EUV light source and scanner architecture.",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Tesla\u2019s Terafab design appears to include a particle accelerator or free-electron laser to generate short-wavelength photons for lithography; the article says one synchrotron could provide ultra-bright EUV light to multiple scanners, with more photons and less contamination than current tin-plasma sources, and explicitly characterizes Tesla as going after ASML. However, the facility and technology remain proposed, with no demonstrated commercial manufacturing capability or established timeline.",
+    "source": "Not Boring"
   }
 ]

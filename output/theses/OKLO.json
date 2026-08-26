@@ -1,0 +1,46 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-08-26",
+    "thesis": "OKLO\u2019s first-criticality milestone and data-center opportunity improve its long-term prospects, but competitive deployment pressure, an earnings miss, persistent unprofitability, and valuation unsupported by operating results favor a cautious short-term bearish stance.",
+    "direction": "short",
+    "confidence": 0.4588,
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.45,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.62,
+    "critic_multiplier": 0.74,
+    "expected_return_pct": -15,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Advanced-nuclear peers continuing to reach criticality and move toward deployment ahead of OKLO, weakening its relative speed, pricing, and customer-adoption position.",
+      "Further operating losses, negative margins, or earnings misses requiring additional capital.",
+      "Continued substantial insider selling or declining investor support."
+    ],
+    "invalidation": [
+      "Successful advancement of Aurora from reported criticality toward commercial deployment with clear execution milestones.",
+      "Strong data-center customer adoption or binding demand that validates a substantial commercial opportunity.",
+      "Improving financial results, positive margins, or earnings materially better than the reported -0.28 EPS versus -0.16 estimated EPS.",
+      "A favorable valuation reset supported by credible commercialization economics rather than long-term analyst assumptions."
+    ],
+    "reasoning": "The bullish criticality milestone and potential data-center demand are meaningful but remain prospective, while the neutral fundamental picture, absence of an earnings-call signal, deeply negative valuation metrics, and 74.57% EPS miss provide stronger near-term caution despite the improved technical outlook.",
+    "claims_considered": 3
+  },
+  {
+    "event": "critic",
+    "date": "2026-08-26",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The synthesis introduces an earnings miss, persistent unprofitability, and valuation unsupported by operating results, none of which appear in the provided claims.",
+      "The claims support competitive pressure and a potentially substantial long-term opportunity, but do not establish a short-term bearish stance or imply that the opportunity outweighs the milestone.",
+      "First criticality was already reported on 2026-08-07, so it is a realized milestone rather than an unresolved future catalyst; the synthesis appropriately treats it as supportive, but should not imply it remains pending."
+    ],
+    "llm_multiplier": 0.74,
+    "llm_reasoning": "The core balance between competitive pressure, data-center opportunity, and first criticality follows the claims, but the stated short-term bearish conclusion relies materially on unsupported financial and valuation assertions and timing not established by the evidence.",
+    "final_multiplier": 0.74,
+    "confidence_before": 0.62,
+    "confidence_after": 0.4588
+  }
+]

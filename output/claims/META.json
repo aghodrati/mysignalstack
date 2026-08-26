@@ -1214,5 +1214,43 @@
     "trade_worthy": false,
     "context": "Meta is among the major AI companies whose senior representatives signed a statement asking the U.S. government to support international technical and governance mechanisms for deliberately pacing frontier automated AI development. The statement cites the possibility that AI research could accelerate beyond society\u2019s ability to control it and argues that companies need an option to buy time for safety measures and oversight; any resulting limits or delays would apply to Meta as a frontier AI developer, although no such policy has yet been adopted.",
     "source": "Import AI"
+  },
+  {
+    "id": "9ebcfa783db0a50c",
+    "ticker": "META",
+    "source_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "source_title": "AI is Oil, Not God",
+    "event_type": "competitive",
+    "created": "2026-07-25",
+    "claim": "The industry shift toward open-weight AI models should favor Meta\u2019s competitive position by reinforcing its relatively open-source-oriented strategy and limiting the ability of OpenAI and Anthropic to establish a durable model-layer duopoly.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Meta as more open-source-oriented than comparable American AI labs and argues that broader model availability commoditizes the model layer, increases competition, and benefits companies that use or build around models. This could help Meta\u2019s AI ecosystem and reduce the competitive threat from closed frontier-model providers, but the article provides no specific evidence about monetization, market share, or timing for Meta.",
+    "source": "Not Boring"
+  },
+  {
+    "id": "c43fc2447e97bdc1",
+    "ticker": "META",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-200",
+    "source_title": "Weekly Dose of Optimism #200",
+    "event_type": "product_launch",
+    "created": "2026-07-03",
+    "claim": "Meta\u2019s release of a more capable brain-decoding model modestly strengthens its AI leadership and creates future product optionality, but the article provides no evidence of near-term monetization or financial impact.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Meta released version 2 of a model that translates brain activity into words and is described as reading minds from outside the brain; it offers no information on commercialization, user adoption, revenue, costs, competitive response, or regulatory consequences.",
+    "source": "Not Boring"
   }
 ]

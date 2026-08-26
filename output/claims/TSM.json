@@ -720,5 +720,24 @@
     "trade_worthy": false,
     "context": "Jalape\u00f1o was developed from a blank slate with Broadcom and reportedly achieved competitive inference performance after a rapid design and bring-up cycle. Although the program could shift some accelerator demand away from merchant Nvidia GPUs, Jalape\u00f1o itself uses TSMC N3P and CoWoS, and the article characterizes it as a real high-volume ASIC. This supports TSM\u2019s role as a neutral foundry and advanced-packaging supplier across both Nvidia-class GPUs and customer-specific AI accelerators.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "8b1c3c87e9936d25",
+    "ticker": "TSM",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "source_title": "Weekly Dose of Optimism #205",
+    "event_type": "other",
+    "created": "2026-08-07",
+    "claim": "Tesla\u2019s planned Terafab could become a long-term competitive threat to TSMC by combining in-house chip manufacturing with a potentially lower-cost, higher-throughput EUV lithography system, reducing some demand for outsourced leading-edge foundry capacity.",
+    "direction": "short",
+    "confidence": 0.72,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Tesla selected Grimes County, Texas, for a proposed chip facility and Tesla and SpaceX reportedly plan to invest $16.8 billion in its initial buildout. The design appears to include a particle accelerator or free-electron laser to generate unusually bright, clean short-wavelength EUV photons for several lithography scanners, an approach the article characterizes as targeting both ASML\u2019s equipment position and TSMC\u2019s manufacturing role. However, the facility, process technology, production scale, and commercial viability remain unproven.",
+    "source": "Not Boring"
   }
 ]

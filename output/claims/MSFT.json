@@ -967,5 +967,43 @@
     "trade_worthy": false,
     "context": "The article describes MAI-Thinking-1 as using three specialist RL climbs, trace-distillation SFT, and a final RL climb, rather than the multi-teacher on-policy distillation used in NVIDIA\u2019s Nemotron 3 Ultra and other 2026 frontier recipes. The authors praise Microsoft\u2019s execution and caution against excessive recipe complexity, but say it remains unclear how trace-distillation SFT compares with on-policy distillation and suggest Microsoft may later adopt finer-grained teachers and on-policy methods.",
     "source": "Interconnects"
+  },
+  {
+    "id": "a41e1a1a5e9007aa",
+    "ticker": "MSFT",
+    "source_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "source_title": "AI is Oil, Not God",
+    "event_type": "competitive",
+    "created": "2026-07-25",
+    "claim": "Greater availability of cheaper, customizable open-weight models should improve the economics, capabilities, and adoption of Microsoft products that use AI, making the open-model trend moderately bullish for MSFT.",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article explicitly identifies Microsoft products as complementary to AI models and argues that open-weight models become cheaper, more plentiful, and easier to customize; because models power Microsoft products, commoditizing the model layer should reduce input costs and expand the usefulness of Microsoft\u2019s AI-enabled offerings.",
+    "source": "Not Boring"
+  },
+  {
+    "id": "8d3cc9bba222edae",
+    "ticker": "MSFT",
+    "source_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "source_title": "AI is Oil, Not God",
+    "event_type": "competitive",
+    "created": "2026-07-25",
+    "claim": "More competition from open-weight models should reduce Microsoft\u2019s dependence on a durable Anthropic-OpenAI duopoly and preserve access to competing AI models for its product ecosystem, modestly strengthening MSFT\u2019s strategic position.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The author argues that broad open-model availability prevents Anthropic and OpenAI from running away with the frontier and establishing a duopoly. Microsoft is described as a beneficiary because its products rely on models and would gain from a more competitive, widely available model layer.",
+    "source": "Not Boring"
   }
 ]

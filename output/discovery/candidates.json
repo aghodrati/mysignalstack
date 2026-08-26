@@ -3244,5 +3244,636 @@
     "name": "Tencent",
     "ticker_guess": null,
     "why": "Released ARGUS, an always-on tracing and real-time analysis system for large-scale AI training; deployed it for more than six months on a production cluster exceeding 10,000 GPUs; used it to diagnose performance and infrastructure problems across training jobs involving up to 12,960 GPUs"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-21",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #207",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-207",
+    "name": "Moderna",
+    "ticker_guess": null,
+    "why": "Its personalized mRNA cancer vaccine with Merck succeeded in a Phase III melanoma trial; the therapy significantly reduced recurrence or spread when combined with Keytruda; potential approval and launch are projected around 2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-21",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #207",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-207",
+    "name": "Merck",
+    "ticker_guess": null,
+    "why": "Partnered with Moderna on a personalized mRNA cancer vaccine; the vaccine succeeded in a Phase III melanoma trial when given with Keytruda"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-21",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #207",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-207",
+    "name": "OpenRouter",
+    "ticker_guess": null,
+    "why": "AI model-routing provider reportedly agreed to be acquired by Stripe; the reported transaction value was $7.5 billion; founded by OpenSea co-founder Alex Atallah"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-21",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #207",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-207",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Agreed to acquire OpenRouter; the reported acquisition price was $7.5 billion"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-21",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #207",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-207",
+    "name": "Zipline",
+    "ticker_guess": null,
+    "why": "Partnered with Uber, which will invest in the drone-delivery company; the companies announced a goal of 1 million deliveries per day"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "Avidrone",
+    "ticker_guess": null,
+    "why": "Its Katana uncrewed aircraft won DARPA\u2019s Heavy Lift Challenge; The drone carried 112.4 pounds through the course in 19 minutes and 17 seconds"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "Fuse Energy",
+    "ticker_guess": null,
+    "why": "Its FAETON-X device generated 1.27\u00d710\u00b9\u00b2 fusion neutrons in one shot; The company sells neutron shots for radiation testing while developing pulsed-power systems intended for fusion energy"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "Recast Systems",
+    "ticker_guess": null,
+    "why": "The weather startup came out of stealth after six months of development; It reported cheaper cloud-seeding material, an AI weather model, and more than 100 cloud-seeding flights"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "Matic",
+    "ticker_guess": null,
+    "why": "The home robot added voice commands for following users and cleaning specified rooms; The product vacuums, mops, and navigates using a map of the home"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "Thrive Capital",
+    "ticker_guess": null,
+    "why": "Josh Kushner and Bob Iger were reported to be buying the Los Angeles Lakers for $12.5 billion; The transaction was described as a record price for an NBA team"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "heavy-lift drones",
+    "why": "Avidrone\u2019s Katana completed DARPA\u2019s Heavy Lift Challenge course while carrying 112.4 pounds; The 29.3-pound aircraft achieved a 3.84:1 payload-to-weight ratio, the best performance in the competition"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "weather modification",
+    "why": "Recast Systems emerged from stealth after developing cloud-seeding materials and a high-resolution AI weather model; The company operated more than 100 cloud-seeding flights for Texas and New Mexico governments"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "fusion energy",
+    "why": "Fuse Energy\u2019s FAETON-X produced 1.27\u00d710\u00b9\u00b2 fusion neutrons in a single shot; The company reported 4.5 MA/MJ current efficiency, exceeding published peer results and improving neutron production per megajoule"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-14",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #206",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-206",
+    "name": "home robotics",
+    "why": "Matic added voice control that lets users direct the robot to follow them or clean mapped rooms; The robot combines vacuuming, mopping, voice interaction, and home navigation"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-12",
+    "source": "Not Boring",
+    "article_title": "Base Power Company: Chapter 3",
+    "article_link": "https://www.notboring.co/p/base-power-company-chapter-3",
+    "name": "Base Power Company",
+    "ticker_guess": null,
+    "why": "Raised $1 billion in a Series D round at a $13 billion post-money valuation; launched Illinois operations and expanded utility partnerships to five agreements totaling 220 MW; developed and began manufacturing its vertically integrated Base Core residential battery in Texas"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-12",
+    "source": "Not Boring",
+    "article_title": "Base Power Company: Chapter 3",
+    "article_link": "https://www.notboring.co/p/base-power-company-chapter-3",
+    "name": "Lennar",
+    "ticker_guess": null,
+    "why": "Base was available in 77 Lennar communities by March 2026; Base reported a take rate above 65% in those communities; Lennar homes represented roughly 2,500 of Base\u2019s 2025 installations"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #205",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "name": "Terraform Industries",
+    "ticker_guess": null,
+    "why": "Reportedly sustained production of more than 99.9% pure hydrogen from a solar-coupled, California-manufactured electrolyzer; aims to produce hydrocarbons from sunlight at low cost"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #205",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "name": "Base Power Company",
+    "ticker_guess": null,
+    "why": "Raised $1 billion at a $13 billion post-money valuation; launched Base Core"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #205",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "name": "Hadrian",
+    "ticker_guess": null,
+    "why": "Raised $1.37 billion at a $7.87 billion post-money valuation; is expanding advanced manufacturing for hard-tech companies"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #205",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "name": "Valar Atomics",
+    "ticker_guess": null,
+    "why": "Raised $1 billion from Sequoia; reportedly secured $200 billion in debt financing; plans to develop and deploy nuclear reactors"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-07",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #205",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-205",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its ChatGPT reportedly solved 10 major mathematics and computer-science problems; the capability may be released to users in the following week"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-31",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #204",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-204",
+    "name": "Zoox",
+    "ticker_guess": null,
+    "why": "Received U.S. approval for limited commercial deployment of steering-wheel-free robotaxis; its vehicles have no driver\u2019s seat or steering wheel and use inward-facing seats"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-31",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #204",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-204",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Announced free access to frontier models for tens of thousands of researchers; positioned the initiative as empowering scientists rather than trying to solve everything internally"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-31",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #204",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-204",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Described as OpenAI\u2019s market-leading rival; its more opinionated stance on AI risks and vertical applications is prompting counter-positioning by OpenAI"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-31",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #204",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-204",
+    "name": "DoorDash",
+    "ticker_guess": null,
+    "why": "DoorDash Labs obtained FAA Part 135 air carrier certification; launched DoorDash Air, an in-house drone delivery program"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-31",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #204",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-204",
+    "name": "Enigma",
+    "ticker_guess": null,
+    "why": "Emerged from stealth with a $71 million seed round led by Index Ventures and Ribbit Capital; opened access to more than 100 physical robots for real-time online control"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-25",
+    "source": "Not Boring",
+    "article_title": "AI is Oil, Not God",
+    "article_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified as one of the frontier model companies that could face greater competition from open-weight models; OpenAI and Anthropic are described as potentially forming a model duopoly if competition does not increase"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-25",
+    "source": "Not Boring",
+    "article_title": "AI is Oil, Not God",
+    "article_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Identified as one of the frontier model companies that could face greater competition from open-weight models; OpenAI and Anthropic are described as potentially forming a model duopoly if competition does not increase"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-25",
+    "source": "Not Boring",
+    "article_title": "AI is Oil, Not God",
+    "article_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Described as the platform where open models live; cited as a beneficiary of wider open-weight model availability"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #203",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-203",
+    "name": "Atoms",
+    "ticker_guess": null,
+    "why": "Raised $1.7 billion in equity led by Andreessen Horowitz, with Uber participating; merged seven operating companies spanning food, mining, transportation, real estate, software, and robotics"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #203",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-203",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Mathematician Levent Alp\u00f6ge used Claude Fable 5 while producing a purported counterexample to the Jacobian conjecture; the article presents this as evidence of AI models assisting with difficult mathematical discovery"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #203",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-203",
+    "name": "Skyroot Aerospace",
+    "ticker_guess": null,
+    "why": "Its Vikram-1 became India\u2019s first privately developed orbital rocket to reach orbit; carried customer payloads to a 450-kilometer orbit on its maiden flight"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #203",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-203",
+    "name": "Anduril Industries",
+    "ticker_guess": null,
+    "why": "Announced Thunder, a Group 5 autonomous attack rotorcraft; positions the aircraft as an autonomous wingman for Apache helicopters that can scout, attack threats, and absorb risk intended for human pilots"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-24",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #203",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-203",
+    "name": "Archer Aviation",
+    "ticker_guess": "ACHR",
+    "why": "Partnered with Anduril on the Thunder autonomous rotorcraft platform; introducing the commercial Archer Halo version for uncrewed search-and-rescue, logistics, offshore-energy, humanitarian, medical, and maritime missions"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-17",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #202",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-202",
+    "name": "Saronic",
+    "ticker_guess": null,
+    "why": "Selected Brownsville, Texas, for the Port Alpha shipyard, a planned investment exceeding $3 billion; Its autonomous Corsair boats were reportedly used in combat against an Iranian submarine and ship-maintenance facility"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-17",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #202",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-202",
+    "name": "Merck",
+    "ticker_guess": "MRK",
+    "why": "Received FDA approval for Lipfendra, described as the first oral PCSK9 inhibitor; The once-daily pill reportedly reduced LDL cholesterol by 56%-59% in clinical trials"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-17",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #202",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-202",
+    "name": "TerraFirma",
+    "ticker_guess": null,
+    "why": "Raised a $100 million Kleiner Perkins-led Series A; Developing vertically integrated robotic construction systems"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-17",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #202",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-202",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Released Kimi K3, an open-weight 2.8 trillion-parameter model with a one-million-token context window; The company claims competitive performance with leading closed models on selected coding and agentic evaluations"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-17",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #202",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-202",
+    "name": "Thinking Machines Lab",
+    "ticker_guess": null,
+    "why": "Released Inkling, a 975-billion-parameter mixture-of-experts model under an Apache 2.0 license; Made the model weights available for downloading and fine-tuning through its Tinker platform"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-16",
+    "source": "Not Boring",
+    "article_title": "Senra Systems: Harnessing Human Skill",
+    "article_link": "https://www.notboring.co/p/senra-systems-harnessing-human-skill",
+    "name": "Senra Systems",
+    "ticker_guess": null,
+    "why": "Raised a $65 million Series B led by Lowercarbon and Interlagos with participation from Sequoia, Founders Fund, General Catalyst, Andreessen Horowitz, and others; supplies wire harnesses to aerospace and defense customers including SpaceX and Anduril; claims four-week delivery times, 99% first-pass yield, and software-enabled technician productivity improvements"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-10",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #201",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-201",
+    "name": "Aalo Atomics",
+    "ticker_guess": null,
+    "why": "Reached criticality at 12:20 a.m. on July 4, 2026; cited as the fourth advanced nuclear company to meet the deadline"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-10",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #201",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-201",
+    "name": "American Turbine",
+    "ticker_guess": null,
+    "why": "Came out of stealth with small, manufacturable gas turbines designed to provide data centers with power quickly; plans to prioritize speed over efficiency initially"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-10",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #201",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-201",
+    "name": "1X",
+    "ticker_guess": null,
+    "why": "Announced 25-degree-of-freedom tendon-driven hands for its NEO humanoid platform; demonstrated near-human dexterity including handling wine glasses, LEGOs, and lightbulbs"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-10",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #201",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-201",
+    "name": "OXMAN",
+    "ticker_guess": null,
+    "why": "Announced Vigils capes whose colors are grown by engineered bacteria producing indigo and melanin pigments directly on silk textiles"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-10",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #201",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-201",
+    "name": "Mercury",
+    "ticker_guess": null,
+    "why": "Promoted Mercury Command, an AI product integrated into financial accounts; enables founders to analyze live account data and take actions such as following up on invoices or categorizing transactions"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-03",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #200",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-200",
+    "name": "Conception",
+    "ticker_guess": null,
+    "why": "Reportedly generated the first early human egg cells from reprogrammed blood-cell stem cells; says the cells underwent meiosis and developed within follicle-like structures; clinical use remains years away"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-03",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #200",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-200",
+    "name": "Aalo Atomics",
+    "ticker_guess": null,
+    "why": "Loaded a fuel bundle into its first reactor; began splitting atoms in pre-criticality operations; reportedly planned an attempt to reach criticality around July 3"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-03",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #200",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-200",
+    "name": "Radiant",
+    "ticker_guess": null,
+    "why": "Received 100 pounds of medium-enriched uranium TRISO fuel from Standard Nuclear; fuel is intended for its first reactor"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-03",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #200",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-200",
+    "name": "Standard Nuclear",
+    "ticker_guess": null,
+    "why": "Supplied Radiant with 100 pounds of medium-enriched uranium TRISO fuel for Radiant\u2019s first reactor"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-03",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #200",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-200",
+    "name": "Deployable Energy",
+    "ticker_guess": null,
+    "why": "Achieved criticality in its Unity demonstration reactor"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "Not Boring",
+    "article_title": "America's Next 250",
+    "article_link": "https://www.notboring.co/p/americas-next-250",
+    "name": "General Matter",
+    "ticker_guess": null,
+    "why": "Founded by Scott Nolan in late 2023 to enrich uranium in the United States; restoring domestic uranium-enrichment capabilities at facilities from California to Kentucky with Department of Energy support"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "Not Boring",
+    "article_title": "America's Next 250",
+    "article_link": "https://www.notboring.co/p/americas-next-250",
+    "name": "Radiant",
+    "ticker_guess": null,
+    "why": "Founded by former SpaceX engineer Doug Bernauer to develop containerized microreactors; received investment from Founders Fund in 2023 for applications including remote communities and military bases"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "Not Boring",
+    "article_title": "America's Next 250",
+    "article_link": "https://www.notboring.co/p/americas-next-250",
+    "name": "Waymo",
+    "ticker_guess": null,
+    "why": "Cited alongside Tesla as an autonomous-driving provider; the essay claims both systems are approximately 10 times safer per mile than manual driving"
+  },
+  {
+    "type": "company",
+    "date": "2026-07-02",
+    "source": "Not Boring",
+    "article_title": "America's Next 250",
+    "article_link": "https://www.notboring.co/p/americas-next-250",
+    "name": "Midjourney",
+    "ticker_guess": null,
+    "why": "Said to have announced an ultrasound-based body-scanning technology; presented as an example of expected medical and AI-enabled progress"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Launched Intercept, a $500 million philanthropic initiative focused on preventing respiratory infections; Stripe is funding the effort alongside Anthropic, the OpenAI Foundation, Flu Lab, and Jane Street participants"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "Westinghouse Electric Company",
+    "ticker_guess": null,
+    "why": "Plans to support construction of 10 AP1000 nuclear reactors through a DOE financing program; Has signed letters of intent with seven potential utility and energy-company partners; Each project is structured around $1 billion of upfront equity and $3.5 billion in DOE loans"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "Aalo Atomics",
+    "ticker_guess": null,
+    "why": "Received DOE approval to turn on its first nuclear reactor at the Aalo-X site; The company aims to become the third advanced-reactor company to reach criticality before July 4"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "Valar Atomics",
+    "ticker_guess": null,
+    "why": "Advanced reactor company that reportedly reached criticality; Subsequently generated power and demonstrated 24 hours of continuous operation at 100% power"
+  },
+  {
+    "type": "company",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "Aleph Neuro",
+    "ticker_guess": null,
+    "why": "Reportedly produced high-resolution 3D brain images from outside the skull using contrast-enhanced ultrasound; The founders used microbubbles, ultrafast ultrasound, and computational reconstruction to map brain vessels"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "housing regulation",
+    "why": "House passed the bipartisan 21st Century ROAD to Housing Act by 358\u201332; The bill would loosen federal building regulations, ease lending rules, reward communities that build, and limit institutional investors; President Trump has threatened not to sign it unless Congress also passes the SAVE America Act"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "nuclear power",
+    "why": "The Department of Energy conditionally committed $17.5 billion in low-cost loans to support 10 Westinghouse AP1000 reactors; Financing is intended to fund long-lead equipment and reduce construction and timeline risks; Advanced reactor companies are also progressing toward initial criticality and power generation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "respiratory health",
+    "why": "Stripe launched Intercept, a $500 million philanthropic initiative targeting respiratory infections including common colds, influenza, and pandemics; The initiative will fund broad-spectrum preventatives and air-cleaning technologies; Respiratory infections are described as causing major mortality, productivity losses, and recurring pandemic risks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "medical imaging",
+    "why": "Aleph Neuro reported high-resolution three-dimensional images of brain blood vessels obtained externally through the skull; The technique combines contrast microbubbles, ultrafast ultrasound, and computational processing; The work could expand noninvasive brain-imaging capabilities"
+  },
+  {
+    "type": "theme",
+    "date": "2026-06-26",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #199",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
+    "name": "scientific research",
+    "why": "Analogue Group launched a Revival Fund to restore neglected or difficult-to-access research; Its inaugural projects include translating 15,540 Soviet scientific papers from 1957\u20131970; Other projects target programmable biology, brain perfusion research, and historical anomalous-bodily-phenomena studies"
   }
 ]

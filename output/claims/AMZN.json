@@ -872,5 +872,24 @@
     "trade_worthy": false,
     "context": "The article argues that export bans on model weights would be a lasting negative policy for the United States, whether models are open or closed, and that limiting foreign nationals from building with frontier AI would undermine the domestic AI industry. Because Amazon is Anthropic\u2019s largest financial and technology partner, such restrictions could reduce the global reach of the models supporting Amazon\u2019s AI ecosystem and make its investment in Anthropic less economically productive.",
     "source": "Interconnects"
+  },
+  {
+    "id": "0c7e919f8136f496",
+    "ticker": "AMZN",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-204",
+    "source_title": "Weekly Dose of Optimism #204",
+    "event_type": "product_launch",
+    "created": "2026-07-31",
+    "claim": "Zoox\u2019s limited U.S. approval for commercial deployment advances Amazon\u2019s autonomous-vehicle strategy and modestly improves the long-term growth option associated with its mobility business, although the near-term financial contribution is likely limited.",
+    "direction": "long",
+    "confidence": 0.95,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Amazon\u2019s Zoox received U.S. approval for limited commercial deployment of a purpose-built robotaxi with no driver\u2019s seat or steering wheel and two rows of inward-facing seats. The approval enables Zoox to begin commercially deploying this vehicle design, but the article provides no scale, revenue, cost, or rollout targets, so the immediate effect on Amazon\u2019s consolidated business remains uncertain.",
+    "source": "Not Boring"
   }
 ]

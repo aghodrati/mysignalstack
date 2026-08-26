@@ -592,5 +592,40 @@
   ],
   "https://importai.substack.com/p/import-ai-463-self-improving-robots": [
     "NVDA"
+  ],
+  "https://stratechery.com/2026/apple-updates-mini-and-studio-ai-computers-openai-jalapeno/": [
+    "AAPL",
+    "NVDA"
+  ],
+  "https://www.notboring.co/p/weekly-dose-of-optimism-205": [
+    "ASML",
+    "OKLO",
+    "SPCX",
+    "TSLA",
+    "TSM"
+  ],
+  "https://www.notboring.co/p/weekly-dose-of-optimism-204": [
+    "AMZN",
+    "GOOGL"
+  ],
+  "https://www.notboring.co/p/ai-is-oil-not-god": [
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NVDA",
+    "PLTR"
+  ],
+  "https://www.notboring.co/p/weekly-dose-of-optimism-203": [
+    "UBER"
+  ],
+  "https://www.notboring.co/p/senra-systems-harnessing-human-skill": [
+    "SPCX"
+  ],
+  "https://www.notboring.co/p/weekly-dose-of-optimism-201": [
+    "OKLO"
+  ],
+  "https://www.notboring.co/p/weekly-dose-of-optimism-200": [
+    "META",
+    "NVDA"
   ]
 }

@@ -45,7 +45,8 @@
     {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": true, "frequency": "unverified, daily briefing, exact count unclear", "discovery_model": "none"},
     {"name": "Normal Tech", "url": "https://www.normaltech.ai/feed", "active": true, "frequency": "infrequent, roughly monthly (ex-AI Snake Oil)", "discovery_model": "primary"},
     {"name": "Interconnects", "url": "https://interconnects.ai/feed", "active": true, "frequency": "~2x/week", "discovery_model": "primary"},
-    {"name": "Import AI", "url": "https://importai.substack.com/feed", "active": true, "frequency": "~weekly", "discovery_model": "primary"}
+    {"name": "Import AI", "url": "https://importai.substack.com/feed", "active": true, "frequency": "~weekly", "discovery_model": "primary"},
+    {"name": "Not Boring", "url": "https://www.notboring.co/feed", "active": true, "frequency": "~weekly, mixes deep essays with a lighter weekly link roundup", "discovery_model": "primary"}
   ],
   "llm": {
     "provider": "openrouter",

@@ -17,5 +17,43 @@
     "trade_worthy": false,
     "context": "Dell said it will bring Palantir\u2019s Foundry and Artificial Intelligence Platform on premises through Dell AI Factory, alongside other enterprise AI models and tools. The move aligns Palantir\u2019s software with Dell\u2019s installed base of roughly 5,000 AI Factory customers and with the article\u2019s broader thesis that enterprises are shifting AI workloads outside public clouds for security, governance, data-control, and cost reasons. The article does not provide deal economics, customer commitments, or a timing estimate for material Palantir financial impact.",
     "source": "Next Platform"
+  },
+  {
+    "id": "c859024b7269d793",
+    "ticker": "PLTR",
+    "source_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "source_title": "AI is Oil, Not God",
+    "event_type": "competitive",
+    "created": "2026-07-25",
+    "claim": "Broader adoption of open-weight AI models should benefit Palantir by reducing its dependence on proprietary foundation-model providers and making enterprise AI deployments cheaper and easier to customize.",
+    "direction": "long",
+    "confidence": 0.95,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Palantir CEO Alex Karp as an advocate of open models because he wants to disintermediate foundation models in enterprise applications. It argues that open-weight models become cheaper, more plentiful, and easier to tailor, improving the position of complementary businesses that build products and services on top of them, including Palantir.",
+    "source": "Not Boring"
+  },
+  {
+    "id": "62faca3a3c41d342",
+    "ticker": "PLTR",
+    "source_link": "https://www.notboring.co/p/ai-is-oil-not-god",
+    "source_title": "AI is Oil, Not God",
+    "event_type": "competitive",
+    "created": "2026-07-25",
+    "claim": "Greater competition among AI model providers could improve Palantir\u2019s strategic position by limiting the ability of Anthropic or OpenAI to establish a durable model-layer duopoly and capture disproportionate value from enterprise AI.",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that increasing competition at the model layer prevents Anthropic and OpenAI from running away with the frontier and building a duopoly, and that the signatories\u2014including Palantir\u2014benefit from this outcome. For Palantir, this would preserve flexibility to select or integrate models rather than becoming dependent on a small number of dominant suppliers.",
+    "source": "Not Boring"
   }
 ]
