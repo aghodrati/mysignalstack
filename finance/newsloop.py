@@ -821,7 +821,16 @@ def extract_claims(
         f"List every distinct, independent investment claim this article makes about {ticker} -- a "
         f'claim is a specific, self-contained implication ("this changes the outlook up or down", '
         f'not just "this is relevant"). A single article can carry more than one: e.g. a positive '
-        f"near-term catalyst AND a separate longer-term risk are two claims, not one. If the article's "
+        f"near-term catalyst AND a separate longer-term risk are two claims, not one. But do NOT "
+        f"split one underlying implication into multiple claims just because the article restates "
+        f'it from different angles or with different supporting details -- e.g. "Rubin\'s cableless '
+        f"design gives it a manufacturability edge over Helios\" and \"Rubin's rack design should be "
+        f'easier to manufacture than Helios" are the SAME claim (same mechanism, same consequence), '
+        f"not two: pick one sentence and fold every supporting detail into that claim's own context "
+        f"instead. Two claims should differ in their actual investment consequence (a different "
+        f"catalyst, a different risk, a different timeframe) -- not just in which specific fact or "
+        f"quote from the article happens to support the same point. If you're not sure whether two "
+        f"candidate claims are really the same one restated, they are -- merge them. If the article's "
         f"relevance to {ticker} is too vague, mixed, or indirect to state as a specific claim, return "
         f"an empty list.\n\n"
         f'Respond with ONLY a JSON object (no markdown fences, no commentary): {{"claims": [...]}} '

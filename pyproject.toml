@@ -17,4 +17,5 @@ dependencies = [
     "streamlit>=1.59.1",
     "trafilatura>=2.2.0",
     "yfinance>=1.5.2",
+    "youtube-transcript-api>=1.2.4",
 ]

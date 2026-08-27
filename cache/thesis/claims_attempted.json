@@ -627,5 +627,28 @@
   "https://www.notboring.co/p/weekly-dose-of-optimism-200": [
     "META",
     "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/08/27/the-network-is-more-of-nvidias-computer-than-it-ever-was-at-sun/5292807": [
+    "AMD",
+    "INTC",
+    "NVDA"
+  ],
+  "https://semiengineering.com/issues-stack-up-with-more-hbm-layers/": [
+    "MU",
+    "SKHY"
+  ],
+  "https://semiengineering.com/agentic-ai-success-relies-on-excellent-human-scaffolding/": [
+    "MSFT",
+    "NVDA",
+    "TSM"
+  ],
+  "https://semiengineering.com/full-fidelity-thermal-simulation-at-floorplanning-speed-for-2-5d-ai-accelerator-packages/": [
+    "AMD",
+    "MU",
+    "NVDA",
+    "SKHY"
+  ],
+  "https://www.nextplatform.com/compute/2026/08/27/peeling-apart-that-supposed-120-billion-chip-deal-google-inked-with-marvell/5292984": [
+    "GOOGL"
   ]
 }

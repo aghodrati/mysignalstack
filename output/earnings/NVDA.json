@@ -145,5 +145,12 @@
     ],
     "summary": "The call supports a bullish earnings view: revenue growth remains exceptionally strong, Blackwell is ramping rapidly, networking is expanding, and management says demand materially exceeds supply with additional upside to the stated Blackwell/Rubin opportunity. The Q&A was notably confident but offered limited specificity on the key constraints\u2014power, financing, supply capacity, and ASIC competition\u2014while China remains structurally excluded and margin preservation depends on execution against rising costs.",
     "type": "earnings_transcript"
+  },
+  {
+    "report_date": "2026-08-26",
+    "eps_estimate": 2.09,
+    "reported_eps": 2.22,
+    "surprise_pct": 6.16,
+    "type": "earnings_result"
   }
 ]

@@ -55,10 +55,11 @@ load_dotenv()
 
 from finance.earnings_calls import discover_recent_transcripts, needs_transcript_check, refresh_earnings_call
 from finance.llm import RateLimited
-from finance.loop_a_config import active_news_sources, tracked_universe
+from finance.loop_a_config import active_news_sources, tracked_universe, youtube_sources
 from finance.macro import MONTHLY_NARRATIVE_SERIES, NARRATIVE_SERIES, refresh_macro_narrative
 from finance.newsloop import review_loop_a, run_loop_a
 from finance.portfolio import list_portfolios
+from finance.youtube import refresh_youtube_sources
 
 
 def main():
@@ -112,6 +113,18 @@ def main():
         ),
     )
     parser.add_argument(
+        "--refresh-youtube", action="store_true",
+        help=(
+            "Check every active finance.loop_a_config.youtube_sources() channel for new videos, "
+            "transcribe + summarize each one (finance.youtube.refresh_youtube_sources), and persist "
+            "the results to output/youtube_summaries.json for the Streamlit app's Interviews page. "
+            "With no other --refresh-* flag given, this is already the default (same as claims/"
+            "earnings-calls/macro); pass it explicitly to run ONLY this stage. Unrelated to the "
+            "portfolio/claims/fundamentals/earnings-call/macro stages above -- there's no ticker or "
+            "trade-decision link, it just needs *a* portfolio argument to invoke this script at all."
+        ),
+    )
+    parser.add_argument(
         "--weekly", action="store_true",
         help=(
             "Scope --refresh-macro (or a default no-flag run) to just the weekly macro narrative -- "
@@ -153,20 +166,21 @@ def main():
         raise SystemExit("--transcript-url requires --refresh-earning-call.")
 
     # Presence of any --refresh-* flag narrows this run to just the stage(s) named; with none
-    # given, claims/earnings-calls/macro-narratives all run at their default (whole-universe/
-    # every-series) scope, same as before this flag ever existed. A forced fundamentals refresh is
-    # always purely opt-in -- --refresh-fundamental is never implied by an all-stages default run.
-    # --weekly/--monthly count as a macro stage flag too (same "narrows to just this stage" effect
-    # as --refresh-macro) -- a scheduler invoking just `--weekly` shouldn't accidentally also kick
-    # off a full claims/earnings-call pass.
+    # given, claims/earnings-calls/macro-narratives/youtube all run at their default (whole-
+    # universe/every-series/every-channel) scope, same as before this flag ever existed. A forced
+    # fundamentals refresh is always purely opt-in -- --refresh-fundamental is never implied by an
+    # all-stages default run. --weekly/--monthly count as a macro stage flag too (same "narrows to
+    # just this stage" effect as --refresh-macro) -- a scheduler invoking just `--weekly` shouldn't
+    # accidentally also kick off a full claims/earnings-call pass.
     any_stage_flag = (
         args.refresh_claims or args.refresh_fundamental or args.refresh_earning_call
-        or args.refresh_macro or args.weekly or args.monthly
+        or args.refresh_macro or args.weekly or args.monthly or args.refresh_youtube
     )
     do_claims = args.refresh_claims or not any_stage_flag
     do_fundamentals = args.refresh_fundamental
     do_earning_call = args.refresh_earning_call or not any_stage_flag
     do_macro = args.refresh_macro or args.weekly or args.monthly or not any_stage_flag
+    do_youtube = args.refresh_youtube or not any_stage_flag
 
     if args.source is not None:
         if not do_claims:
@@ -327,6 +341,23 @@ def main():
                     print(f"  {series_key} ({period}): LLM call produced nothing usable -- skipped.")
                 else:
                     print(f"  {series_key} ({period}): unknown series key.")
+
+    if do_youtube:
+        channels = youtube_sources()
+        print(f"\n=== YouTube interview summaries ({len(channels)} channel(s)) ===")
+        try:
+            added = refresh_youtube_sources(dt.date.today())
+        except RateLimited as exc:
+            reason = f" ({exc.message})" if exc.message else ""
+            print(f"  rate limited{reason}, stopping here.")
+            return
+        # No per-video loop here -- refresh_youtube_sources already printed one line per video as
+        # it processed it (verbose=True, the default), so reprinting the same `added` list here
+        # would just be a second copy of the exact same lines.
+        if not added:
+            print("  No new videos summarized this run.")
+        else:
+            print(f"  {len(added)} video(s) summarized this run.")
 
 
 if __name__ == "__main__":

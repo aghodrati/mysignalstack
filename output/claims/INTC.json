@@ -1005,5 +1005,43 @@
     "trade_worthy": false,
     "context": "The roundup says Socionext added Intel 18A-P to its custom-SoC roadmap, beginning with a high-performance-computing chiplet aimed at AI and data-center applications. This is presented as another external customer win for Intel Foundry and supports the credibility of Intel\u2019s effort to attract outside customers, although the article does not specify production volumes, revenue timing, or commercial launch certainty.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "f34812ed83121e77",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/compute/2026/08/27/the-network-is-more-of-nvidias-computer-than-it-ever-was-at-sun/5292807",
+    "source_title": "The Network Is More Of Nvidia\u2019s Computer Than It Ever Was At Sun",
+    "event_type": "earnings",
+    "created": "2026-08-27",
+    "claim": "Intel\u2019s reported Xeon supply shortfall indicates strong server-CPU demand that could support near-term revenue and utilization, but the company is unable to fully capture that demand.",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article interprets Intel\u2019s statement that its overall CPU supply shortfall began with \u201cB\u201d as implying a Xeon server-CPU shortage of at least 20% and probably 25% or more; it also says OEM demand is roughly 25%\u201330% above available supply. This points to a favorable demand backdrop for Intel\u2019s datacenter business, although constrained shipments limit the immediate benefit.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "316796882295f21f",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/compute/2026/08/27/the-network-is-more-of-nvidias-computer-than-it-ever-was-at-sun/5292807",
+    "source_title": "The Network Is More Of Nvidia\u2019s Computer Than It Ever Was At Sun",
+    "event_type": "earnings",
+    "created": "2026-08-27",
+    "claim": "Intel\u2019s Xeon supply constraints, combined with AMD\u2019s stronger price/performance and estimated excess Epyc demand, risk accelerating server-CPU share loss to AMD.",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article contrasts Intel\u2019s estimated 20%\u201325% or greater Xeon shortage with AMD\u2019s roughly 30% demand-supply imbalance, attributing AMD\u2019s stronger excess demand partly to superior price/performance and growing agentic-AI capacity needs. If customers cannot obtain Intel CPUs, or view AMD as the better value, Intel may forfeit datacenter opportunities even though overall market demand is strong.",
+    "source": "Next Platform"
   }
 ]

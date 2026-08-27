@@ -24,13 +24,18 @@
     font-family: "Source Sans Pro", sans-serif;
   }
   #grid {
-    display: grid;
-    /* Default: responsive auto-fill. Overridden inline (gridEl.style.gridTemplateColumns) by
-       applyDisplaySettings() below whenever Python passes an explicit column count -- see
-       app.py's _render_card_display_settings/_render_keep_card_grid_iframe. */
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 0.9rem;
-    align-items: start;
+    /* CSS multi-column, not display:grid -- a real grid lays out in strict rows (a whole row of N
+       cards all start their next row together, at the tallest one's height), which is exactly what
+       left visible gaps under a short card whenever its row-mate was taller. Multi-column instead
+       flows each card immediately under whatever's above it IN THE SAME COLUMN, independent of the
+       other columns' heights -- true masonry packing, no cross-column alignment at all. Default:
+       responsive column-width (browser picks the count). Overridden inline (gridEl.style.
+       columnCount/columnWidth) by applyDisplaySettings() below whenever Python passes an explicit
+       column count -- see app.py's _render_card_display_settings/_render_keep_card_grid_iframe.
+       Trade-off: reading order becomes column-major (down a column, then the next), not row-major
+       left-to-right -- inherent to how column layout flows content, not a bug. */
+    column-width: 260px;
+    column-gap: 0.9rem;
   }
   #sentinel { height: 1px; }
   #empty-msg { font-size: 0.85rem; opacity: 0.65; padding: 0.5rem 0; font-family: "Source Sans Pro", sans-serif; }
@@ -43,6 +48,8 @@
     cursor: grab;
     transform: translateX(0);
     opacity: 1;
+    break-inside: avoid;  /* never split one card's content across two columns */
+    margin-bottom: 0.9rem;  /* multi-column has no row-gap equivalent -- this is the vertical gap */
   }
   .card-cell.dragging { cursor: grabbing; }
   .card-star {
@@ -56,7 +63,24 @@
     z-index: 1;
   }
   .card-star.filled { color: #f5c518; }   /* favorited */
-  .card-star.pin.filled { color: #4a9eff; }   /* pinned -- distinct from the gold favorite star */
+  /* Sits just to the left of .card-star, same top-right corner -- only rendered at all when the
+     card is actually read (see buildCell), so it never takes up space or needs an "unread" state. */
+  .card-read-badge {
+    position: absolute;
+    top: 0.65rem;
+    right: 2.15rem;
+    font-size: 0.95rem;
+    line-height: 1;
+    color: rgba(150,150,150,0.55);
+    z-index: 1;
+  }
+  /* Pin uses the same "📌" glyph for both on/off (see TOGGLE_KINDS below) -- color emoji ignore
+     the CSS `color` property entirely (unlike the plain-text ★/☆ favorite glyphs above), so a
+     color-only distinction here was invisible: pinned and unpinned looked identical. `filter`
+     DOES apply to emoji, so unpinned is desaturated/faded instead; pinned keeps the glyph's native
+     full-color rendering. */
+  .card-star.pin { filter: grayscale(1) opacity(0.5); }
+  .card-star.pin.filled { filter: none; }
   /* Ticker-logo <img> tags (front face only) are natively draggable by the browser by default --
      starting a swipe with the pointer over one could hijack the gesture into a native
      "drag this image" operation instead of delivering pointermove events to our own drag logic.
@@ -204,6 +228,26 @@ function buildCell(card) {
   body.innerHTML = card.html;
   wrapper.appendChild(body);
 
+  // app.py's _flip_card_html(favoritable=False) (currently only macro cards) wraps its HTML in this
+  // marker div -- macro cards aren't loaded on the Read/Favorites pages at all anymore (see
+  // _render_read_page/_render_favorites_page), so a favorite mark on one would have nowhere to ever
+  // surface; skip the star entirely and don't let swipe-right favorite it either. Left-swipe/tap
+  // still works normally (that's still the ordinary read-mark hide, deliberately unchanged).
+  const noFavorite = !!body.querySelector(".keep-card-no-favorite");
+
+  // Only rendered when the card is actually read (see app.py's _visible_cards_and_action/
+  // _render_keep_card_grid_iframe -- "read" is False for nearly every card in practice, since a
+  // read card is normally hidden already; this only ever shows on Favorites or search results,
+  // the two places a read and unread card can appear side by side). Static, not a toggle -- read
+  // status already has its own action/button elsewhere on the card.
+  if (card.read) {
+    const readBadge = document.createElement("div");
+    readBadge.className = "card-read-badge";
+    readBadge.textContent = "✓";
+    readBadge.title = "Already read";
+    wrapper.appendChild(readBadge);
+  }
+
   // Always present (not just when already toggled on) -- an empty outline icon you can click to
   // toggle directly, as an alternative to swiping right (which only exists on some pages -- see
   // _render_keep_card_grid's swipe_right_action -- while this click toggle works everywhere,
@@ -224,25 +268,29 @@ function buildCell(card) {
   // stays toggled on. Only discard is gated this way -- toggling never disables read/unread/
   // unfavorite elsewhere, since those aren't destructive.
   let discardDisabled = card.action === "discard" && toggled;
-  const star = document.createElement("div");
-  const toggleCssClass = toggleKind.cssClass ? " " + toggleKind.cssClass : "";
-  star.className = "card-star" + toggleCssClass + (toggled ? " filled" : "");
-  star.textContent = toggled ? toggleKind.onIcon : toggleKind.offIcon;
-  star.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggled = !toggled;
+  if (!noFavorite) {
+    const star = document.createElement("div");
+    const toggleCssClass = toggleKind.cssClass ? " " + toggleKind.cssClass : "";
+    star.className = "card-star" + toggleCssClass + (toggled ? " filled" : "");
     star.textContent = toggled ? toggleKind.onIcon : toggleKind.offIcon;
-    star.classList.toggle("filled", toggled);
-    if (card.action === "discard") {
-      discardDisabled = toggled;
-      btn.disabled = discardDisabled;
-      btn.title = discardDisabled ? "Unpin first to discard" : "";
-    }
-    reportAction(card.id, toggled ? toggleKind.onAction : toggleKind.offAction);
-  });
-  wrapper.appendChild(star);
+    star.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggled = !toggled;
+      star.textContent = toggled ? toggleKind.onIcon : toggleKind.offIcon;
+      star.classList.toggle("filled", toggled);
+      if (card.action === "discard") {
+        discardDisabled = toggled;
+        btn.disabled = discardDisabled;
+        btn.title = discardDisabled ? "Unpin first to discard" : "";
+      }
+      reportAction(card.id, toggled ? toggleKind.onAction : toggleKind.offAction);
+    });
+    wrapper.appendChild(star);
+  }
 
-  const btnLabel = { unread: "Unread", unfavorite: "Unfavorite", discard: "Discard" }[card.action] || "Mark read";
+  const btnLabel = {
+    unread: "Unread", unfavorite: "Unfavorite", discard: "Discard", acknowledge: "OK",
+  }[card.action] || "Mark read";
   const btn = document.createElement("button");
   btn.className = "card-action-btn";
   btn.textContent = btnLabel;
@@ -251,7 +299,7 @@ function buildCell(card) {
   btn.addEventListener("click", () => dismiss(card.id, card.action));
   wrapper.appendChild(btn);
 
-  attachSwipe(wrapper, card.id, card.action, card.swipe_right_action, () => discardDisabled);
+  attachSwipe(wrapper, card.id, card.action, noFavorite ? null : card.swipe_right_action, () => discardDisabled);
   return wrapper;
 }
 
@@ -430,8 +478,8 @@ function reconcile(cards) {
   setFrameHeight();
 }
 
-// `columns` is null/undefined for "Auto" (responsive auto-fill, the CSS default left in place) or
-// an explicit int from the sidebar's Columns control; `font_scale` drives every calc(base *
+// `columns` is null/undefined for "Auto" (responsive column-width, the CSS default left in place)
+// or an explicit int from the sidebar's Columns control; `font_scale` drives every calc(base *
 // var(--card-font-scale, 1)) size in the stylesheet above. Both come from app.py's
 // _render_card_display_settings by way of _render_keep_card_grid_iframe's component props -- see
 // that function's own comment for why native mode's equivalent (_inject_native_card_css) is a
@@ -439,7 +487,10 @@ function reconcile(cards) {
 // a different document inside the iframe).
 function applyDisplaySettings(columns, fontScale) {
   document.documentElement.style.setProperty("--card-font-scale", fontScale || 1);
-  gridEl.style.gridTemplateColumns = columns ? `repeat(${columns}, 1fr)` : "repeat(auto-fill, minmax(260px, 1fr))";
+  // column-width and column-count are mutually exclusive here -- an explicit count needs
+  // column-width cleared, or the browser keeps deferring to whichever produces MORE columns.
+  gridEl.style.columnCount = columns || "";
+  gridEl.style.columnWidth = columns ? "" : "260px";
 }
 
 function onMessage(event) {

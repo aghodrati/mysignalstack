@@ -2086,16 +2086,6 @@
     "source": "Semiconductor Engineering",
     "article_title": "Blog Review: Aug. 26",
     "article_link": "https://semiengineering.com/blog-review-aug-26-3/",
-    "name": "Keysight Technologies",
-    "ticker_guess": "KEYS",
-    "why": "Discussed the ESUN specification\u2019s re-examination of whether scale-up networks require an IP layer when GPU counts and connectivity are fixed at deployment"
-  },
-  {
-    "type": "company",
-    "date": "2026-08-26",
-    "source": "Semiconductor Engineering",
-    "article_title": "Blog Review: Aug. 26",
-    "article_link": "https://semiengineering.com/blog-review-aug-26-3/",
     "name": "GlobalFoundries",
     "ticker_guess": "GFS",
     "why": "Discussed detachable fibers, wafer-level photonics, and new multi-source agreements as foundations for high-volume co-packaged optics"
@@ -3875,5 +3865,398 @@
     "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-199",
     "name": "scientific research",
     "why": "Analogue Group launched a Revival Fund to restore neglected or difficult-to-access research; Its inaugural projects include translating 15,540 Soviet scientific papers from 1957\u20131970; Other projects target programmable biology, brain perfusion research, and historical anomalous-bodily-phenomena studies"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Issues Stack Up With More HBM Layers",
+    "article_link": "https://semiengineering.com/issues-stack-up-with-more-hbm-layers/",
+    "name": "Samsung Electronics",
+    "ticker_guess": null,
+    "why": "One of the three major DRAM vendors wrestling with HBM scaling tradeoffs; described its TSV and PHY I/O bandwidth bottlenecks; cited as working to increase TSV counts and reduce TSV pitch to achieve higher bandwidth"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "Synopsys",
+    "ticker_guess": null,
+    "why": "Director of applications engineering comments on spec quality and AI change management"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "Axiomise",
+    "ticker_guess": null,
+    "why": "CEO discusses AI generating first\u2011pass assertions and risks of incomplete coverage"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "Siemens EDA",
+    "ticker_guess": null,
+    "why": "SVP talks about contextual intelligence and change\u2011management in verification flow"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "Normal Computing",
+    "ticker_guess": null,
+    "why": "Design verification engineer explains auto\u2011formalization, ontology, and audit steps to mitigate AI risks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "formal verification",
+    "why": "AI can auto-generate SystemVerilog assertions; properties must be verified for correctness; formal tools used to prove design adherence"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "AI verification tools",
+    "why": "LLM-based agents can read specs and produce SVA; knowledge graph frameworks improve grounding; AI aids property creation and change management"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "knowledge graph",
+    "why": "KGs store signal, module, requirement relationships; contrast with RAG; used to avoid misreading spec"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "human\u2011in\u2011the\u2011loop",
+    "why": "AI outputs need review, vacuity and coverage checks; provenance gates recommended; reviewers trace specs back to properties"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "From Spec To Formal Properties",
+    "article_link": "https://semiengineering.com/from-spec-to-formal-properties/",
+    "name": "verification risk",
+    "why": "false confidence from vacuous proofs; AI may misinterpret specs; risk to safety cases like ISO 26262/21434"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Agentic AI Success Relies On Excellent Human Scaffolding",
+    "article_link": "https://semiengineering.com/agentic-ai-success-relies-on-excellent-human-scaffolding/",
+    "name": "Cadence",
+    "ticker_guess": "CDNS",
+    "why": "Its EDA leadership described agentic AI expanding from RTL and verification into analog, mixed-signal, custom design, implementation, packaging, circuit boards, and multiphysics; highlighted integration of AI with deterministic simulation and sign-off engines"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Agentic AI Success Relies On Excellent Human Scaffolding",
+    "article_link": "https://semiengineering.com/agentic-ai-success-relies-on-excellent-human-scaffolding/",
+    "name": "Synopsys",
+    "ticker_guess": "SNPS",
+    "why": "Its AI product leader said long-running agentic workflows are now demonstrated in secure end-to-end environments with minimal supervision; reported broad customer productivity gains, improved software quality, and positive ROI across verification, implementation, analog, and system applications"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Agentic AI Success Relies On Excellent Human Scaffolding",
+    "article_link": "https://semiengineering.com/agentic-ai-success-relies-on-excellent-human-scaffolding/",
+    "name": "Siemens EDA",
+    "ticker_guess": null,
+    "why": "Its EDA product leader said customers are using sub-flow agents in production for RTL generation, sign-off, and debugging; identified end-to-end push-button chip generation as the industry goal, though it is not yet achieved"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Agentic AI Success Relies On Excellent Human Scaffolding",
+    "article_link": "https://semiengineering.com/agentic-ai-success-relies-on-excellent-human-scaffolding/",
+    "name": "ChipAgents",
+    "ticker_guess": null,
+    "why": "Its business-development leader described push-button coverage closure using multi-agent swarms; emphasized customer-specific organizational context, specialized harnesses, and built-in gates to prevent critical verification errors"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Planning Your AI Design Journey: Start With What You\u2019d Lose",
+    "article_link": "https://semiengineering.com/planning-your-ai-design-journey-start-with-what-youd-lose/",
+    "name": "RF design",
+    "why": "Focus on RF and microwave design methodology; dependence on institutional knowledge; use of tools like schematics, layouts, Python scripts; emphasis on device characterization and power amplifier design"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Planning Your AI Design Journey: Start With What You\u2019d Lose",
+    "article_link": "https://semiengineering.com/planning-your-ai-design-journey-start-with-what-youd-lose/",
+    "name": "AI-enabled engineering",
+    "why": "Discussion of AI adoption in engineering; AI as solution for knowledge capture, orchestration, acceleration; use of large language models and specialized agents"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Planning Your AI Design Journey: Start With What You\u2019d Lose",
+    "article_link": "https://semiengineering.com/planning-your-ai-design-journey-start-with-what-youd-lose/",
+    "name": "Surrogate modeling",
+    "why": "Use of neural-network approximations to replace heavy EM runs; speed improvements of two to three orders of magnitude"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Planning Your AI Design Journey: Start With What You\u2019d Lose",
+    "article_link": "https://semiengineering.com/planning-your-ai-design-journey-start-with-what-youd-lose/",
+    "name": "AI optimization",
+    "why": "AI-enabled optimization handling many parameters simultaneously; faster discovery of optimal designs; fewer simulations needed"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Planning Your AI Design Journey: Start With What You\u2019d Lose",
+    "article_link": "https://semiengineering.com/planning-your-ai-design-journey-start-with-what-youd-lose/",
+    "name": "Python-based workflow automation",
+    "why": "Implementation of a fully code-defined, Python-based design flow (generate, simulate, rank, refine); yields 5\u201110x productivity, 6\u202fdB isolation, 30% smaller filter area"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Cache Coherency Simplifies AI Software",
+    "article_link": "https://semiengineering.com/how-cache-coherency-simplifies-ai-software/",
+    "name": "Arteris",
+    "ticker_guess": null,
+    "why": "Provides coherent and non\u2011coherent interconnect IP such as FlexNoC, FlexGen, and Ncore; highlighted as key technology supplier"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Cache Coherency Simplifies AI Software",
+    "article_link": "https://semiengineering.com/how-cache-coherency-simplifies-ai-software/",
+    "name": "cache coherency",
+    "why": "Central focus on reducing software complexity by moving data consistency to hardware; improves reliability and speed"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Cache Coherency Simplifies AI Software",
+    "article_link": "https://semiengineering.com/how-cache-coherency-simplifies-ai-software/",
+    "name": "AI accelerators",
+    "why": "Hardware designed to accelerate AI workloads; need for efficient data sharing between CPU and accelerator"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Cache Coherency Simplifies AI Software",
+    "article_link": "https://semiengineering.com/how-cache-coherency-simplifies-ai-software/",
+    "name": "SoC design",
+    "why": "Emphasis on heterogeneous systems-on-chip; integrating CPUs, accelerators, and chiplets"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Cache Coherency Simplifies AI Software",
+    "article_link": "https://semiengineering.com/how-cache-coherency-simplifies-ai-software/",
+    "name": "interconnect architecture",
+    "why": "Differentiation between coherent and non\u2011coherent NoC; importance of matching bandwidth, latency, power"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Cache Coherency Simplifies AI Software",
+    "article_link": "https://semiengineering.com/how-cache-coherency-simplifies-ai-software/",
+    "name": "edge AI",
+    "why": "Growing need for integrated processors and accelerators on the same die; challenges of scaling shared data"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Verified. Until It Isn\u2019t: Why Datapath Verification Needs A New Playbook",
+    "article_link": "https://semiengineering.com/verified-until-it-isnt-why-datapath-verification-needs-a-new-playbook/",
+    "name": "Axiomise",
+    "ticker_guess": null,
+    "why": "Developed the floatrix mathematically grounded verification-IP approach; reports integrating it with multiple independent RTL FPUs and finding public arithmetic and handshake bugs"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "Verified. Until It Isn\u2019t: Why Datapath Verification Needs A New Playbook",
+    "article_link": "https://semiengineering.com/verified-until-it-isnt-why-datapath-verification-needs-a-new-playbook/",
+    "name": "Tenstorrent",
+    "ticker_guess": null,
+    "why": "A Tenstorrent BOOM-fork vector implementation, identified as Ocelot, reportedly failed to raise the Invalid flag for signaling-NaN inputs in a widening vector add"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Agentic AI Turns IC Engineers Into Architects",
+    "article_link": "https://semiengineering.com/how-agentic-ai-turns-ic-engineers-into-architects/",
+    "name": "AI-powered chip design",
+    "why": "AI agents replace manual coding; shift to manager/architect roles; automated verification; large search space"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Agentic AI Turns IC Engineers Into Architects",
+    "article_link": "https://semiengineering.com/how-agentic-ai-turns-ic-engineers-into-architects/",
+    "name": "Semiconductor engineering tools",
+    "why": "Use of simulators, formal tools, physical-design tools; semantic reasoning with foundation models"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Agentic AI Turns IC Engineers Into Architects",
+    "article_link": "https://semiengineering.com/how-agentic-ai-turns-ic-engineers-into-architects/",
+    "name": "Engineering workflow transformation",
+    "why": "Move from single-threaded to multi-threaded AI workflows; engineer becomes system designer; focus on intent, decomposition, verification, judgment"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Agentic AI Turns IC Engineers Into Architects",
+    "article_link": "https://semiengineering.com/how-agentic-ai-turns-ic-engineers-into-architects/",
+    "name": "Automated verification",
+    "why": "Verifier acts as reviewer; auto-evaluate candidates; reduce manual inspection bottleneck"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Semiconductor Engineering",
+    "article_title": "How Agentic AI Turns IC Engineers Into Architects",
+    "article_link": "https://semiengineering.com/how-agentic-ai-turns-ic-engineers-into-architects/",
+    "name": "Search-space optimization in silicon",
+    "why": "Huge combinatorial spaces; AI can search semantics and structure; PPA optimization, debugging, architecture exploration"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Next Platform",
+    "article_title": "Peeling Apart That Supposed $120 Billion Chip Deal Google Inked With Marvell",
+    "article_link": "https://www.nextplatform.com/compute/2026/08/27/peeling-apart-that-supposed-120-billion-chip-deal-google-inked-with-marvell/5292984",
+    "name": "Marvell Technology",
+    "ticker_guess": "MRVL",
+    "why": "Entered an expanded custom-semiconductor development agreement with Google; may receive up to $120 billion in Google-related chip development, products, and services through 2033; received warrants that could give Google 6.3% of the company"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "The Diff",
+    "article_title": "Legislating from in Front of the Bench",
+    "article_link": "https://www.thediff.co/archive/legislating-from-in-front-of-the-bench/",
+    "name": "AI regulation",
+    "why": "Article title points to legislation being developed ahead of judicial precedent; accompanying topics include AI safety and privacy tradeoffs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "The Diff",
+    "article_title": "Legislating from in Front of the Bench",
+    "article_link": "https://www.thediff.co/archive/legislating-from-in-front-of-the-bench/",
+    "name": "data scraping",
+    "why": "Article explicitly flags scraping as a subject; scraping is linked to AI-related data and privacy concerns"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Citrini Research",
+    "article_title": "Macro Memo: Regime Change",
+    "article_link": "https://www.citriniresearch.com/p/macro-memo-regime-change",
+    "name": "JPMorgan Chase",
+    "ticker_guess": "JPM",
+    "why": "Has reduced its cash-asset ratio to 6%, with only $52 billion in Fed reserves, while increasing Treasury holdings; CEO Jamie Dimon said recognizing discount-window collateral could increase JPMorgan's lendable liquidity by almost $500 billion; The bank has committed up to $500 billion in additional financing for sectors targeted by the administration"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-27",
+    "source": "Citrini Research",
+    "article_title": "Macro Memo: Regime Change",
+    "article_link": "https://www.citriniresearch.com/p/macro-memo-regime-change",
+    "name": "Silicon Valley Bank",
+    "ticker_guess": null,
+    "why": "Had approximately $40 billion of deposit outflows on March 9, 2023 and expected another $100 billion the next day; Held about $120 billion of largely Treasury and MBS securities but lacked sufficient prepositioned borrowing capacity to access them quickly; The FDIC closed the bank on March 10, 2023"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Citrini Research",
+    "article_title": "Macro Memo: Regime Change",
+    "article_link": "https://www.citriniresearch.com/p/macro-memo-regime-change",
+    "name": "bank regulation",
+    "why": "Proposed liquidity-rule reforms could let banks count prepositioned discount-window and FHLB borrowing capacity as liquidity; Reform could free an estimated $500 billion-$1 trillion for lending, securities purchases, and higher leverage"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Citrini Research",
+    "article_title": "Macro Memo: Regime Change",
+    "article_link": "https://www.citriniresearch.com/p/macro-memo-regime-change",
+    "name": "monetary policy",
+    "why": "Article argues for a new Fed-Treasury Accord in which the Fed shrinks its balance sheet without tightening financial conditions; The proposed framework would shift more economic financing from the Fed to commercial banks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Citrini Research",
+    "article_title": "Macro Memo: Regime Change",
+    "article_link": "https://www.citriniresearch.com/p/macro-memo-regime-change",
+    "name": "Treasury market",
+    "why": "The Treasury and Fed are expected to reduce open-market duration by increasing Treasury-bill issuance; Lower coupon-bond supply could make long-duration paper scarcer and reduce long-term rates"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Citrini Research",
+    "article_title": "Macro Memo: Regime Change",
+    "article_link": "https://www.citriniresearch.com/p/macro-memo-regime-change",
+    "name": "bank credit",
+    "why": "Lower required cash buffers could allow banks to redirect liquidity into loans and higher-yielding securities; The article expects expanded bank leverage to increase money supply and support AI infrastructure, domestic supply chains, and defense"
+  },
+  {
+    "type": "theme",
+    "date": "2026-08-27",
+    "source": "Citrini Research",
+    "article_title": "Macro Memo: Regime Change",
+    "article_link": "https://www.citriniresearch.com/p/macro-memo-regime-change",
+    "name": "financial stability",
+    "why": "The 2023 Silicon Valley Bank failure exposed a gap between economic and regulatory liquidity; The article argues that access to Fed facilities and properly prepositioned collateral are central to preventing deposit-run failures"
   }
 ]

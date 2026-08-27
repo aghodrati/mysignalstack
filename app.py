@@ -14,8 +14,10 @@ from __future__ import annotations
 
 import datetime as dt
 import html
+import math
 import os
 import re
+import string
 from collections import Counter
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -132,6 +134,7 @@ _NARRATIVE_SOURCE_LABEL: dict[str, str] = {
 }
 from finance import read_state
 from finance.thesis import list_tickers_with_thesis, load_ticker_thesis
+from finance.youtube import load_youtube_summaries
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
 
 # Set on the hosted deployment only (e.g. a Streamlit Community Cloud secret).
@@ -413,6 +416,10 @@ def _select_discovery_view() -> None:
     st.session_state["ticker_page_view"] = "discovery"
 
 
+def _select_youtube_view() -> None:
+    st.session_state["ticker_page_view"] = "youtube"
+
+
 def _select_macro_view(series_key: str | None = None) -> None:
     """Switches to the Macro dashboard -- `series_key=None` (the "Macro"/"All" entries) shows
     every series, exactly as before per-series filtering existed; a specific key (clicking e.g.
@@ -648,9 +655,17 @@ def _article_summaries() -> dict[str, str]:
 _CURRENT_USER = read_state.CURRENT_USER
 _card_id = read_state.card_id
 
+# anchor claim id -> other claim ids folded into its card by _cluster_similar_claims (Recent page
+# only) -- rebuilt fresh every render (see _render_recent_page), never persisted. Marking the anchor
+# read also marks every id here read, so the whole group disappears together and none of the
+# individual claims linger as "unread" if you later hit them elsewhere (e.g. a ticker page).
+_CLUSTER_MEMBERS: dict[str, list[str]] = {}
+
 
 def _mark_card_read(card_id: str) -> None:
     read_state.mark_read(_CURRENT_USER, card_id)
+    for member_id in _CLUSTER_MEMBERS.get(card_id, []):
+        read_state.mark_read(_CURRENT_USER, member_id)
 
 
 def _mark_card_unread(card_id: str) -> None:
@@ -673,6 +688,17 @@ def _mark_card_unpin(card_id: str) -> None:
     read_state.mark_unpin(_CURRENT_USER, card_id)
 
 
+def _acknowledge_card(card_id: str) -> None:
+    """A genuine no-op -- see _upcoming_earnings_cards' primary_action="acknowledge". Deliberately
+    never calls read_state: an earnings reminder pinned in Recent's "Upcoming" section should never
+    be able to end up permanently hidden by an accidental swipe/tap (confirmed this actually
+    happened -- a reminder card marked read once stayed hidden from Upcoming for the rest of its
+    3-day window, via the same show_read=False default every other card type uses). Tapping/swiping
+    still hides the card client-side for this session (see components/card_feed/index.html), which
+    is fine/expected -- it just isn't permanent, since nothing here persists that dismissal.
+    """
+
+
 # Dispatch table for whatever action the card_feed component reports back (see
 # _render_keep_card_grid) -- one shared table rather than an if/elif chain, since the set of
 # possible actions is closed and each is just a single-argument (card_id) call. "discard" is
@@ -685,10 +711,11 @@ _CARD_ACTIONS = {
     "pin": _mark_card_pin,
     "unpin": _mark_card_unpin,
     "unfavorite": _mark_card_unfavorite,
+    "acknowledge": _acknowledge_card,
 }
 
 
-def _flip_card_html(card_body: str, back_html: str | None) -> str:
+def _flip_card_html(card_body: str, back_html: str | None, favoritable: bool = True) -> str:
     """One card's outer HTML -- a plain div if there's nothing to flip to (`back_html` is None),
     otherwise a <details>-based 3D flip card (see components/card_feed/index.html for the CSS that
     drives the flip). Shared by claim cards and fundamental cards so both flip the same way.
@@ -700,22 +727,38 @@ def _flip_card_html(card_body: str, back_html: str | None) -> str:
     `transform` is a real Chromium rendering bug (confirmed empirically -- content silently painted
     past its own clipped box instead of scrolling, with no visible box background for the
     overflow), so the scroll constraint has to live one level down from the transformed element.
+
+    favoritable=False (currently only _macro_narrative_card_html) wraps the whole result in a
+    "keep-card-no-favorite" marker div -- components/card_feed/index.html's buildCell() looks for
+    that class on the card's own HTML and, when present, skips adding the favorite star and disables
+    swipe-right-to-favorite for that card. Encoded as a marker in the HTML itself rather than a
+    separate field threaded through _render_keep_card_grid's (id, html) tuples/payload, since that
+    plumbing is generic across every card type and has no per-card metadata slot today.
     """
     if back_html is None:
-        return f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
-    return (
-        f'<details class="keep-card-flip">'
-        f'<summary class="keep-flip-summary"><div class="keep-flip-inner">'
-        f'<div class="keep-card keep-flip-front" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
-        f'<div class="keep-card keep-flip-back" style="background:{_KEEP_CARD_BACKGROUND}">'
-        f'<div class="keep-flip-back-scroll">{back_html}</div>'
-        f"</div>"
-        f"</div></summary>"
-        f"</details>"
-    )
+        result = f'<div class="keep-card" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
+    else:
+        result = (
+            f'<details class="keep-card-flip">'
+            f'<summary class="keep-flip-summary"><div class="keep-flip-inner">'
+            f'<div class="keep-card keep-flip-front" style="background:{_KEEP_CARD_BACKGROUND}">{card_body}</div>'
+            f'<div class="keep-card keep-flip-back" style="background:{_KEEP_CARD_BACKGROUND}">'
+            f'<div class="keep-flip-back-scroll">{back_html}</div>'
+            f"</div>"
+            f"</div></summary>"
+            f"</details>"
+        )
+    return result if favoritable else f'<div class="keep-card-no-favorite">{result}</div>'
 
 
-def _claim_card_html(c, article_summary: str | None) -> str:
+def _claim_card_html(c, article_summary: str | None, also_claims: list | None = None) -> str:
+    """`also_claims` (Recent page only -- see _cluster_similar_claims) is every other claim this
+    card's own claim `c` got grouped with: same article, a different ticker, similar enough text to
+    likely be the same underlying story told from another angle. Rather than a separate card per
+    ticker, they're folded onto this one -- the ticker tag gets a "+N" count so a cluster is visible
+    before ever flipping, and the back face lists each one's own ticker + claim so nothing is lost,
+    just one flip away instead of N-1 near-duplicate cards to scroll past.
+    """
     arrow = _DIRECTION_ARROW.get(c.direction, "➖")
     metrics_bits = [f"Importance {c.importance}/10", f"Confidence {c.confidence:.0%}"]
     if c.trade_worthy:
@@ -724,9 +767,10 @@ def _claim_card_html(c, article_summary: str | None) -> str:
     metrics_html = html.escape(" · ".join(metrics_bits))
     context_html = f'<div class="keep-card-context">{html.escape(c.context)}</div>' if c.context else ""
     logo_html = _ticker_logo_html(c.ticker, size_em=1.4)
+    ticker_tag = f"#{html.escape(c.ticker)}" + (f" +{len(also_claims)}" if also_claims else "")
     card_body = (
         f'<div class="keep-card-source">{logo_html}#{html.escape(c.source or "unknown")} '
-        f'#{html.escape(c.ticker)}</div>'
+        f'{ticker_tag}</div>'
         f'<div class="keep-card-claim">{arrow} {html.escape(c.claim)}</div>'
         f"{context_html}"
         f'<div class="keep-card-meta">{metrics_html} · {c.created.isoformat()}</div>'
@@ -735,6 +779,13 @@ def _claim_card_html(c, article_summary: str | None) -> str:
     # produced a summary (never generated on demand, that'd be a fresh LLM call per card); the
     # summary block above it is still conditional on that.
     back_bits = []
+    if also_claims:
+        back_bits.append('<div class="keep-card-summary-title">\U0001f517 Also relevant to</div>')
+        back_bits += [
+            f'<div class="keep-card-summary keep-card-risk-item">#{html.escape(oc.ticker)}: '
+            f'{html.escape(oc.claim)}</div>'
+            for oc in also_claims
+        ]
     if article_summary:
         back_bits.append(
             f'<div class="keep-card-summary-title">\U0001f4f0 Article summary</div>'
@@ -948,6 +999,10 @@ def _show_more_cards(shown_key: str, current_shown: int) -> None:
     st.session_state[shown_key] = current_shown + _NATIVE_PAGE_SIZE
 
 
+def _clear_recent_search() -> None:
+    st.session_state["recent_page_search"] = ""
+
+
 def _render_card_display_settings() -> None:
     """"⚙️ Settings" expander at the end of the sidebar panel -- lets the user pick the grid's column
     count and a font-size scale for card text, both read back out of st.session_state by whichever
@@ -978,15 +1033,18 @@ def _render_card_display_settings() -> None:
 def _visible_cards_and_action(
     cards: list[tuple[str, str]], show_read: bool, show_favorites: bool, primary_action: str | None,
     toggle_kind: str = "favorite",
-) -> tuple[list[tuple[str, str]], str, int, set[str]]:
+) -> tuple[list[tuple[str, str]], str, int, set[str], set[str]]:
     """Shared filtering logic both grid implementations need: which cards are visible right now,
-    what their primary action is, how many were hidden (read cards not currently being shown), and
-    the full toggle-id set for badging (favorite_ids normally, or pin_ids when toggle_kind="pin" --
-    see app.py's _render_discovery_page, the only caller that passes "pin") -- returned from here
-    rather than fetched a second time by each caller, since this function already needs it itself
-    on the Favorites page; each read_state call is a real network round-trip to Upstash, and
-    duplicating it was adding a second ~seconds-scale delay on top of the toggle button's own write
-    on every click.
+    what their primary action is, how many were hidden (read cards not currently being shown), the
+    full toggle-id set for badging (favorite_ids normally, or pin_ids when toggle_kind="pin" -- see
+    app.py's _render_discovery_page, the only caller that passes "pin"), and the full read-id set
+    (for the read badge -- see _render_keep_card_grid_iframe, mainly relevant wherever read and
+    unread cards can appear side by side, e.g. Favorites or a primary_action="acknowledge" caller
+    like search results, since everywhere else a read card is normally just hidden already) --
+    returned from here rather than fetched a second time by each caller, since this function already
+    needs it itself on the Favorites page; each read_state call is a real network round-trip to
+    Upstash, and duplicating it was adding a second ~seconds-scale delay on top of the toggle
+    button's own write on every click.
     See _render_keep_card_grid_native's docstring for what show_read/show_favorites/primary_action
     each mean -- unchanged from the iframe version, just factored out so both share one definition.
 
@@ -1021,7 +1079,7 @@ def _visible_cards_and_action(
         visible = [(cid, body) for cid, body in cards if cid not in read_ids]
         primary_action = "read"
     hidden_count = len(cards) - len(visible) if not show_read and not show_favorites else 0
-    return visible, primary_action, hidden_count, toggle_ids
+    return visible, primary_action, hidden_count, toggle_ids, read_ids
 
 
 _ACTION_BUTTON_LABEL = {
@@ -1032,13 +1090,14 @@ _ACTION_BUTTON_LABEL = {
     "favorite": "☆ Fav",  # not yet favorited -- plain outline star
     "unfavorite": "⭐ Unfav",  # already favorited -- filled star emoji, renders yellow
     "discard": "\U0001f5d1 Discard",
+    "acknowledge": "OK",  # _acknowledge_card's no-op action -- see _upcoming_earnings_cards
 }
 
 
 def _render_keep_card_grid_native(
     cards: list[tuple[str, str]], show_read: bool, show_favorites: bool,
     primary_action: str | None, key: str, show_hidden_count: bool = True, show_count: bool = True,
-    toggle_kind: str = "favorite",
+    toggle_kind: str = "favorite", columns_override: int | None = None,
 ) -> None:
     """Plain-Streamlit alternative to _render_keep_card_grid_iframe -- no custom component, no
     iframe, every card rendered directly into the page via st.container + st.markdown(unsafe_allow_
@@ -1069,7 +1128,7 @@ def _render_keep_card_grid_native(
     """
     if not cards:
         return
-    visible, primary_action, hidden_count, favorite_ids = _visible_cards_and_action(
+    visible, primary_action, hidden_count, favorite_ids, _read_ids = _visible_cards_and_action(
         cards, show_read, show_favorites, primary_action, toggle_kind,
     )
     if hidden_count and show_hidden_count:
@@ -1102,9 +1161,12 @@ def _render_keep_card_grid_native(
     # actual rendered height (which Python can't do) -- not perfectly height-balanced across columns
     # since it doesn't know heights, but each column still flows continuously on its own, which is
     # the actual complaint being fixed here.
-    num_cols = st.session_state.get("card_columns", "Auto")
-    if num_cols == "Auto":
-        num_cols = _NATIVE_GRID_COLUMNS
+    if columns_override is not None:
+        num_cols = columns_override
+    else:
+        num_cols = st.session_state.get("card_columns", "Auto")
+        if num_cols == "Auto":
+            num_cols = _NATIVE_GRID_COLUMNS
     columns = st.columns(num_cols)
     for i, (cid, card_html) in enumerate(page):
         with columns[i % num_cols]:
@@ -1139,7 +1201,7 @@ def _render_keep_card_grid_native(
 def _render_keep_card_grid_iframe(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
     primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
-    show_count: bool = True, toggle_kind: str = "favorite",
+    show_count: bool = True, toggle_kind: str = "favorite", columns_override: int | None = None,
 ) -> None:
     """Renders (card_id, card_html) pairs, newest first, as a card grid -- via the card_feed custom
     component (components/card_feed/index.html) instead of st.columns + st.button. That split
@@ -1178,7 +1240,7 @@ def _render_keep_card_grid_iframe(
     """
     if not cards:
         return
-    visible, primary_action, hidden_count, toggle_ids = _visible_cards_and_action(
+    visible, primary_action, hidden_count, toggle_ids, read_ids = _visible_cards_and_action(
         cards, show_read, show_favorites, primary_action, toggle_kind,
     )
     if hidden_count and show_hidden_count:
@@ -1190,6 +1252,12 @@ def _render_keep_card_grid_iframe(
         {
             "id": cid, "html": card_html, "action": primary_action,
             "toggled": cid in toggle_ids, "toggle_kind": toggle_kind,
+            # Only meaningful where a read and an unread card can actually appear side by side --
+            # everywhere else a read card is normally just hidden already (see this function's
+            # show_read/primary_action semantics above), so this is False for nearly every card in
+            # practice and the badge stays invisible; Favorites and any primary_action="acknowledge"
+            # caller (e.g. Recent's search results) are where it actually shows something.
+            "read": cid in read_ids,
             # Only the default view offers the opposite-direction (right-swipe) gesture, and only
             # toward favoriting -- see this function's own docstring.
             "swipe_right_action": "favorite" if primary_action == "read" and toggle_kind == "favorite" else None,
@@ -1199,7 +1267,9 @@ def _render_keep_card_grid_iframe(
     columns_setting = st.session_state.get("card_columns", "Auto")
     result = _CARD_FEED_COMPONENT(
         cards=payload,
-        columns=None if columns_setting == "Auto" else columns_setting,
+        columns=columns_override if columns_override is not None else (
+            None if columns_setting == "Auto" else columns_setting
+        ),
         font_scale=st.session_state.get("card_font_scale", 1.0),
         show_count=show_count,
         key=key, default=None,
@@ -1221,7 +1291,7 @@ def _render_keep_card_grid_iframe(
 def _render_keep_card_grid(
     cards: list[tuple[str, str]], show_read: bool = False, show_favorites: bool = False,
     primary_action: str | None = None, key: str = "feed", show_hidden_count: bool = True,
-    show_count: bool = True, toggle_kind: str = "favorite",
+    show_count: bool = True, toggle_kind: str = "favorite", columns_override: int | None = None,
 ) -> None:
     """Dispatches to _render_keep_card_grid_native or _render_keep_card_grid_iframe per
     _CARD_GRID_MODE -- every existing call site keeps calling this one function; only the module-
@@ -1234,10 +1304,16 @@ def _render_keep_card_grid(
     already puts the same count in its own page header. `toggle_kind="pin"` swaps the card's
     star-toggle for a pin-toggle backed by finance.read_state's separate pin_ids -- currently only
     the Discovery page uses this (see _render_discovery_page); every other caller keeps the default
-    "favorite" toggle.
+    "favorite" toggle. `columns_override` forces a specific column count for this one grid,
+    overriding the shared sidebar "Columns" display setting entirely -- currently only the
+    Interviews page uses this (see _render_youtube_page), whose long-form summary cards need a full
+    single column regardless of what the user has picked for every other (much shorter) card type.
     """
     fn = _render_keep_card_grid_native if _CARD_GRID_MODE == "native" else _render_keep_card_grid_iframe
-    fn(cards, show_read, show_favorites, primary_action, key, show_hidden_count, show_count, toggle_kind)
+    fn(
+        cards, show_read, show_favorites, primary_action, key, show_hidden_count, show_count,
+        toggle_kind, columns_override,
+    )
 
 
 _FUNDAMENTAL_DIRECTION_ARROW = {
@@ -4617,7 +4693,7 @@ def _macro_narrative_card_html(tile: dict) -> str:
         _macro_monthly_back_html(tile) if tile["key"] in MONTHLY_NARRATIVE_SERIES
         else _macro_headlines_back_html(narrative, source)
     )
-    return _flip_card_html(card_body, back_html)
+    return _flip_card_html(card_body, back_html, favoritable=False)
 
 
 def _macro_monthly_back_html(tile: dict) -> str:
@@ -4701,6 +4777,139 @@ def _macro_chart_card_id(tile: dict) -> str:
     return _card_id(tile["key"], "macro_chart", tile["as_of"])
 
 
+# Toggle for the whole "group similar claims" feature below -- flip to False to go back to one
+# card per claim, no clustering, if this turns out to be more trouble than it's worth. Nothing else
+# needs to change; _render_recent_page's Claims block checks this directly.
+_CLUSTER_SIMILAR_CLAIMS = True
+_CLAIM_SIMILARITY_THRESHOLD = 0.15
+
+_CLAIM_SIMILARITY_STOPWORDS = frozenset(
+    "the a an of to in for and is are was were be been being this that these those it its as by on "
+    "with from at into over under more most less than which who what how why when where not no nor "
+    "so if then else can could may might will would shall should must about across after before "
+    "during within without between".split()
+)
+
+
+def _claim_similarity_tokens(text: str) -> list[str]:
+    text = re.sub(r"[^a-z0-9 ]", " ", text.lower())
+    return [w for w in text.split() if w not in _CLAIM_SIMILARITY_STOPWORDS and len(w) > 2]
+
+
+def _claim_similarity_vector(text: str, doc_freq: Counter, corpus_size: int) -> dict[str, float]:
+    """TF-IDF vector over `text`'s tokens -- `doc_freq`/`corpus_size` come from whatever claim set
+    is being clustered right now (see _cluster_similar_claims), not the app's full claim history, so
+    "rare" means "rare among today's Recent claims", which is all this needs and is far cheaper than
+    scanning every claim ever recorded.
+    """
+    tf = Counter(_claim_similarity_tokens(text))
+    return {
+        w: cnt * (math.log((corpus_size + 1) / (doc_freq.get(w, 0) + 1)) + 1)
+        for w, cnt in tf.items()
+    }
+
+
+def _claim_similarity_cosine(v1: dict[str, float], v2: dict[str, float]) -> float:
+    common = set(v1) & set(v2)
+    if not common:
+        return 0.0
+    num = sum(v1[w] * v2[w] for w in common)
+    denom = math.sqrt(sum(x * x for x in v1.values())) * math.sqrt(sum(x * x for x in v2.values()))
+    return num / denom if denom else 0.0
+
+
+def _cluster_similar_claims(claims: list) -> list[list]:
+    """Groups `claims` (expected: already filtered to unread only -- see _render_recent_page) into
+    clusters of "probably the same underlying story" -- same article (source_link), sufficiently
+    similar `context` text, different tickers. Each returned cluster is a list of claims with the
+    highest-`importance` one first (the "anchor" -- see _render_recent_page for how its card ends up
+    representing the whole cluster). A claim with no match anywhere returns as its own 1-item
+    cluster, so callers don't need to special-case "wasn't grouped with anything".
+
+    Deliberately NOT transitive: a claim only joins a cluster by scoring above threshold against
+    that cluster's own anchor directly, never via a chain through some other member. Chaining was
+    tested and tends to collapse most of a deeply-reported article into one cluster (confirmed on
+    real data -- a 13-claim article collapsed to 1 survivor), which throws away far more than it
+    should; comparing only against the anchor keeps each cluster anchored to one actual sub-story.
+    """
+    by_source: dict[str, list] = {}
+    for c in claims:
+        by_source.setdefault(c.source_link, []).append(c)
+
+    clusters: list[list] = []
+    for same_source_claims in by_source.values():
+        if len({c.ticker for c in same_source_claims}) < 2:
+            # Single ticker (or single claim) -- no cross-ticker duplicate is even possible here.
+            clusters += [[c] for c in same_source_claims]
+            continue
+
+        doc_freq: Counter = Counter()
+        for c in same_source_claims:
+            doc_freq.update(set(_claim_similarity_tokens(c.context)))
+        vectors = [_claim_similarity_vector(c.context, doc_freq, len(same_source_claims)) for c in same_source_claims]
+
+        order = sorted(range(len(same_source_claims)), key=lambda i: -same_source_claims[i].importance)
+        assigned: set[int] = set()
+        for i in order:
+            if i in assigned:
+                continue
+            assigned.add(i)
+            members = [i]
+            for j in order:
+                if j in assigned or same_source_claims[j].ticker == same_source_claims[i].ticker:
+                    continue
+                if _claim_similarity_cosine(vectors[i], vectors[j]) > _CLAIM_SIMILARITY_THRESHOLD:
+                    members.append(j)
+                    assigned.add(j)
+            clusters.append([same_source_claims[m] for m in members])
+    return clusters
+
+
+_SEARCH_QUOTED_PHRASE_RE = re.compile(r'"([^"]+)"')
+
+
+def _parse_search_query(query: str) -> tuple[list[str], list[str]]:
+    """Splits a raw search box string into (exact phrases, loose words) -- a "quoted phrase" must
+    appear verbatim (case-insensitive) in a card, while a bare word just needs to appear somewhere,
+    independent of the others. A card counts as a match only if every phrase AND every word hits
+    (implicit AND, not OR) -- see _card_matches_search.
+
+    Each unquoted word gets its leading/trailing punctuation stripped (typing "(openai, nvidia)"
+    would otherwise search for the literal tokens "(openai," and "nvidia)", not "openai" and
+    "nvidia" -- confirmed live, that combination alone was enough to turn a 2-word search into two
+    oddly specific punctuation-glued substrings that almost never match). Only strips from the ends
+    of a token, not the middle, so a real hyphenated/apostrophe'd word (e.g. "co-pilot") survives
+    intact.
+    """
+    phrases = _SEARCH_QUOTED_PHRASE_RE.findall(query)
+    remainder = _SEARCH_QUOTED_PHRASE_RE.sub(" ", query)
+    words = [stripped for w in remainder.split() if (stripped := w.strip(string.punctuation))]
+    return phrases, words
+
+
+def _card_matches_search(searchable_text: str, phrases: list[str], words: list[str]) -> bool:
+    """Matches against `searchable_text` -- for most card types (fundamentals/earnings-calls/macro)
+    that's just the card's own already-rendered HTML (html.escape'd text still contains every real
+    word verbatim, just wrapped in tags, so a plain case-insensitive substring check already finds
+    anything a person would expect with no per-type field-mapping to maintain), but claims pass
+    _claim_search_text instead -- see that function's own docstring for why.
+    """
+    haystack = searchable_text.lower()
+    return all(p.lower() in haystack for p in phrases) and all(w.lower() in haystack for w in words)
+
+
+def _claim_search_text(c) -> str:
+    """What a claim actually gets matched against when searching (see _render_recent_page) --
+    ticker/source/claim/context, deliberately excluding Stage A's own article summary. That summary
+    is one general blurb shared across every ticker's claim pulled from the same article, not
+    specific to any one of them, so including it in search made unrelated claims from a
+    well-covered article match a search that had nothing to do with them. Still displayed normally
+    on the card either way (_claim_card_html) -- this only controls what search matches against,
+    not what's shown.
+    """
+    return f"{c.ticker} {c.source} {c.claim} {c.context}"
+
+
 def _render_recent_page() -> None:
     """A cross-universe "what's new" feed -- claims/fundamentals/earnings-calls (every tracked
     ticker) and macro narratives (every configured series), filtered to a recent time window,
@@ -4714,117 +4923,248 @@ def _render_recent_page() -> None:
     state rather than a discrete new event, so "updated recently" wouldn't reliably mean "something
     new happened" the way a fresh claim/fundamental/earnings-call/macro read does.
     """
-    upcoming_cards = _upcoming_earnings_cards(dt.date.today())
-    if upcoming_cards:
-        st.markdown("#### \U0001f4c5 Upcoming")
-        _render_keep_card_grid(upcoming_cards, key="feed_upcoming")
-
-    just_reported_cards = _recent_earnings_result_cards(dt.date.today())
-    if just_reported_cards:
-        st.markdown("#### \U0001f4ca Just Reported")
-        _render_keep_card_grid(just_reported_cards, key="feed_just_reported")
-
-    st.markdown("### Recent")
-
-    # Same st.pills picking interaction, and the same labels/option text, as the Ticker page's own
-    # Dates/Cards filters (see page_ticker) -- Dates is single-select (a card is either within the
-    # window or not), Cards is multi-select (any combination can show at once).
-    dates_label_col, dates_pills_col, cards_label_col, cards_pills_col = st.columns(
-        [1, 2, 1, 4], vertical_alignment="center",
-    )
-    with dates_label_col:
-        st.write("**Dates**")
-    with dates_pills_col:
-        window_label = st.pills(
-            "Dates", options=["1d", "1w", "1m"], default="1d", selection_mode="single",
-            key="recent_page_window", label_visibility="collapsed",
+    # Its own row, above everything else, and always visible (both modes need a way back out of
+    # search) -- see _parse_search_query's docstring for the quoting syntax. A search is "find this
+    # specific thing", a completely different mode from "what's new", not a filter layered on top of
+    # it -- so the moment there's a query, the whole rest of this page below switches to a dedicated
+    # search-results view instead of leaving the Dates/Cards pills visibly selected but silently
+    # ignored (confirmed that reads as broken/confusing, not just a cosmetic nit). Right-aligned,
+    # at most half-width -- a search box this size doesn't need to dominate the row the way the
+    # Dates/Cards pills below it do.
+    _, search_col = st.columns([1, 1])
+    with search_col:
+        input_col, clear_col = st.columns([6, 1], vertical_alignment="center")
+        with input_col:
+            search_query = st.text_input(
+                "Search", placeholder="Search cards...",
+                key="recent_page_search", label_visibility="collapsed",
+            )
+        with clear_col:
+            if search_query.strip():
+                st.button("✕", key="recent_page_search_clear", on_click=_clear_recent_search, help="Clear search")
+    is_searching = bool(search_query.strip())
+    if is_searching:
+        # Same window.parent.document technique as _maybe_close_sidebar_on_mobile -- reaches out of
+        # this component's own iframe into the real page to click the "✕" button above when Escape
+        # is pressed, since Streamlit has no Python-level keyboard-shortcut API. Bound once per real
+        # page load (doc.__recentSearchEscBound guard), not once per rerun -- this same components.
+        # html call re-runs on every rerun while searching, and would otherwise stack a fresh
+        # duplicate "keydown" listener each time, firing the click N times on the Nth Escape press.
+        components.html(
+            """
+            <script>
+            (function() {
+                try {
+                    var doc = window.parent.document;
+                    if (doc.__recentSearchEscBound) return;
+                    doc.__recentSearchEscBound = true;
+                    doc.addEventListener("keydown", function(e) {
+                        if (e.key !== "Escape") return;
+                        var buttons = doc.querySelectorAll("button");
+                        for (var i = 0; i < buttons.length; i++) {
+                            if (buttons[i].textContent.trim() === "✕") {
+                                buttons[i].click();
+                                return;
+                            }
+                        }
+                    });
+                } catch (e) {}
+            })();
+            </script>
+            """,
+            height=0, width=0,
         )
-    with cards_label_col:
-        st.write("**Cards**")
-    with cards_pills_col:
-        types = st.pills(
-            "Cards", options=["Claims", "Fundamentals", "Earnings Calls", "Macro"],
-            default=["Claims", "Fundamentals", "Earnings Calls", "Macro"], selection_mode="multi",
-            key="recent_page_types", label_visibility="collapsed",
-        )
 
-    window_label = window_label or "1d"  # single-select pills can be clicked off, leaving None
-    types = types or []
-    cutoff = dt.date.today() - dt.timedelta(days={"1d": 1, "1w": 7, "1m": 30}[window_label])
+    if is_searching:
+        search_phrases, search_words = _parse_search_query(search_query)
+        types = ["Claims", "Fundamentals", "Earnings Calls"]  # Macro has no meaningful full-history
+        # mode (see the Macro block below) -- excluded from search entirely rather than searching
+        # only its current live snapshot, which would be misleading (looks like "no macro match"
+        # regardless of whether one actually exists in older narrative history).
+        effective_cutoff = dt.date.min  # the whole point of search is finding something regardless
+        # of how old it is -- see _card_matches_search for how a hit is actually decided.
+        window_label = None
+    else:
+        upcoming_cards = _upcoming_earnings_cards(dt.date.today())
+        if upcoming_cards:
+            st.markdown("#### \U0001f4c5 Upcoming")
+            # primary_action="acknowledge" (a genuine no-op, see that function) instead of the
+            # default read/favorite semantics -- a reminder that gets accidentally marked read
+            # shouldn't vanish from this pinned section for the rest of its window; see
+            # _acknowledge_card's own docstring for the real incident this fixes.
+            _render_keep_card_grid(upcoming_cards, primary_action="acknowledge", key="feed_upcoming")
+
+        just_reported_cards = _recent_earnings_result_cards(dt.date.today())
+        if just_reported_cards:
+            st.markdown("#### \U0001f4ca Just Reported")
+            _render_keep_card_grid(just_reported_cards, key="feed_just_reported")
+
+        st.markdown("### Recent")
+
+        # Same st.pills picking interaction, and the same labels/option text, as the Ticker page's
+        # own Dates/Cards filters (see page_ticker) -- Dates is single-select (a card is either
+        # within the window or not), Cards is multi-select (any combination can show at once).
+        dates_label_col, dates_pills_col, cards_label_col, cards_pills_col = st.columns(
+            [1, 2, 1, 4], vertical_alignment="center",
+        )
+        with dates_label_col:
+            st.write("**Dates**")
+        with dates_pills_col:
+            window_label = st.pills(
+                "Dates", options=["1d", "1w", "1m"], default="1d", selection_mode="single",
+                key="recent_page_window", label_visibility="collapsed",
+            )
+        with cards_label_col:
+            st.write("**Cards**")
+        with cards_pills_col:
+            types = st.pills(
+                "Cards", options=["Claims", "Fundamentals", "Earnings Calls", "Macro"],
+                default=["Claims", "Fundamentals", "Earnings Calls", "Macro"], selection_mode="multi",
+                key="recent_page_types", label_visibility="collapsed",
+            )
+
+        window_label = window_label or "1d"  # single-select pills can be clicked off, leaving None
+        types = types or []
+        effective_cutoff = dt.date.today() - dt.timedelta(days={"1d": 1, "1w": 7, "1m": 30}[window_label])
+    cutoff = effective_cutoff
 
     # Collected unconditionally (not gated on "Claims" in types) so the unread count below always
     # reflects this window regardless of which Cards types happen to be toggled on -- only whether
     # claims actually get ADDED to `dated` (further down) respects that toggle.
     claims_in_window: list = [
-        c for ticker in tracked_universe() for c in load_claims(ticker) if c.created >= cutoff
+        c for ticker in tracked_universe() for c in load_claims(ticker) if c.created >= effective_cutoff
     ]
+    read_ids_now = read_state.read_ids(_CURRENT_USER)
 
-    dated: list[tuple[dt.date, str, str]] = []
+    # 4th element is what search actually matches against (see _card_matches_search) -- the same as
+    # the card's own html for every type except Claims, which uses _claim_search_text instead so a
+    # search doesn't match against the article summary (see that function's own docstring) while
+    # still showing it normally on the card.
+    dated: list[tuple[dt.date, str, str, str]] = []
     summaries = _article_summaries() if "Claims" in types else {}
     for ticker in tracked_universe():
         if "Fundamentals" in types:
             dated += [
                 (
                     dt.date.fromisoformat(ev["date"]), _card_id(ticker, "fundamental", ev["date"]),
-                    _fundamental_card_html(ev, ticker),
+                    (html_ := _fundamental_card_html(ev, ticker)), html_,
                 )
-                for ev in load_fundamental_history(ticker) if dt.date.fromisoformat(ev["date"]) >= cutoff
+                for ev in load_fundamental_history(ticker) if dt.date.fromisoformat(ev["date"]) >= effective_cutoff
             ]
         if "Earnings Calls" in types:
             dated += [
                 (
                     _earnings_call_sort_date(ev), _card_id(ticker, "earnings_call", ev["date"]),
-                    _earnings_call_card_html(ev, ticker),
+                    (html_ := _earnings_call_card_html(ev, ticker)), html_,
                 )
-                for ev in load_earnings_call_history(ticker) if _earnings_call_sort_date(ev) >= cutoff
+                for ev in load_earnings_call_history(ticker) if _earnings_call_sort_date(ev) >= effective_cutoff
             ]
 
     if "Claims" in types:
-        dated += [
-            (c.created, c.id, _claim_card_html(c, summaries.get(c.source_link))) for c in claims_in_window
-        ]
-
-    if "Macro" in types:
-        # The monthly-period narrative is now the back face of the same weekly card (see
-        # _macro_narrative_card_html), not a separate card/id -- no more separate MONTHLY_NARRATIVE_
-        # SERIES branch here.
-        for tile in _cached_macro_snapshot():
-            weekly = latest_narrative(tile["key"], period="week")
-            if weekly and dt.date.fromisoformat(weekly["date"]) >= cutoff:
+        if _CLUSTER_SIMILAR_CLAIMS and not is_searching:
+            _CLUSTER_MEMBERS.clear()  # stale entries from a previous render would just be dead weight, but clearing keeps this predictable
+            # Only cluster unread claims -- an already-read one would never show anyway (see the
+            # grid's default read-hiding below), and including it risks it winning as the anchor
+            # (highest importance) for a group whose OTHER members are still unread, which would
+            # wrongly resurrect it as a visible card. _CLUSTER_MEMBERS is rebuilt fresh here every
+            # render, read by _mark_card_read the moment this same render's grid reports an action.
+            unread_claims = [c for c in claims_in_window if c.id not in read_ids_now]
+            for cluster in _cluster_similar_claims(unread_claims):
+                anchor, *others = cluster
+                if others:
+                    _CLUSTER_MEMBERS[anchor.id] = [o.id for o in others]
+                search_text = " ".join(_claim_search_text(c) for c in cluster)
                 dated.append((
-                    dt.date.fromisoformat(weekly["date"]), _macro_weekly_card_id(tile),
-                    _macro_narrative_card_html(tile),
+                    anchor.created, anchor.id,
+                    _claim_card_html(anchor, summaries.get(anchor.source_link), also_claims=others),
+                    search_text,
                 ))
+        else:
+            dated += [
+                (
+                    c.created, c.id, _claim_card_html(c, summaries.get(c.source_link)),
+                    _claim_search_text(c),
+                )
+                for c in claims_in_window
+            ]
+
+    if "Macro" in types and window_label == "1d":
+        # Restricted to the 1d tab specifically (not just "within cutoff", which 1w/1m also satisfy)
+        # -- Macro otherwise doesn't belong on Recent at all (see _render_read_page/
+        # _render_favorites_page's own macro exclusion), it's only here as a same-day glance. Also
+        # gated on a cheap disk-only check (latest_narrative reads a small per-series JSON file, no
+        # network) *before* ever calling _cached_macro_snapshot() -- that snapshot does up to 9 live
+        # FRED/yfinance fetches on a cache miss (~30s the first time this process calls it), and
+        # there's no point paying that cost when nothing would even show. cutoff == today - 1 day
+        # here already, since window_label == "1d" is required above.
+        _has_recent_macro_narrative = any(
+            (w := latest_narrative(key, period="week")) and dt.date.fromisoformat(w["date"]) >= cutoff
+            for key in MACRO_SERIES
+        )
+        if _has_recent_macro_narrative:
+            # The monthly-period narrative is now the back face of the same weekly card (see
+            # _macro_narrative_card_html), not a separate card/id -- no more separate MONTHLY_
+            # NARRATIVE_SERIES branch here.
+            for tile in _cached_macro_snapshot():
+                weekly = latest_narrative(tile["key"], period="week")
+                if weekly and dt.date.fromisoformat(weekly["date"]) >= cutoff:
+                    narrative_html = _macro_narrative_card_html(tile)
+                    dated.append((
+                        dt.date.fromisoformat(weekly["date"]), _macro_weekly_card_id(tile),
+                        narrative_html, narrative_html,
+                    ))
+
+    if is_searching:
+        dated = [item for item in dated if _card_matches_search(item[3], search_phrases, search_words)]
 
     if not dated:
-        st.info("Nothing generated in this window for the selected card types.")
+        message = "No cards match that search." if is_searching else "Nothing generated in this window for the selected card types."
+        st.info(message)
         return
     dated.sort(key=lambda item: item[0], reverse=True)
+
+    if is_searching:
+        st.caption(f"{len(dated)} result(s) for {search_query!r}.")
+        # primary_action="acknowledge" here too (same no-op as Upcoming) -- search means "find this
+        # specific card", which should work regardless of whether it was already marked read; the
+        # grid's ordinary default (hide already-read cards) would otherwise make a real match look
+        # like it doesn't exist.
+        _render_keep_card_grid(
+            [(cid, card_html) for _, cid, card_html, _search_text in dated], primary_action="acknowledge",
+            key="feed_recent_search", show_count=False,
+        )
+        return
+
     # One unified count across every type currently shown (claims already counted in card units --
     # a combined multi-ticker card is 1 -- not raw claims), computed here rather than left to the
     # grid's own generic hidden-count caption (suppressed below via show_hidden_count=False) so
     # there's exactly one line, not two saying almost the same thing.
-    all_ids = [cid for _, cid, _ in dated]
-    read_ids_final = read_state.read_ids(_CURRENT_USER)
-    unread_count = sum(1 for cid in all_ids if cid not in read_ids_final)
+    all_ids = [cid for _, cid, _, _ in dated]
+    unread_count = sum(1 for cid in all_ids if cid not in read_ids_now)
     st.caption(
         f"{unread_count} unread card(s) in this window "
         f"({len(all_ids) - unread_count} already read)."
     )
     _render_keep_card_grid(
-        [(cid, card_html) for _, cid, card_html in dated], key="feed_recent", show_hidden_count=False,
-        show_count=False,
+        [(cid, card_html) for _, cid, card_html, _search_text in dated], key="feed_recent",
+        show_hidden_count=False, show_count=False,
     )
 
 
 def _render_read_page() -> None:
-    """Every card, of any type, across the whole app that the current user has ever explicitly
-    marked read (finance.read_state) -- the counterpart to every other page hiding them by
-    default. Same whole-universe traversal as _render_recent_page, just inverted (only ids that
+    """Every card, of any type EXCEPT macro, across the whole app that the current user has ever
+    explicitly marked read (finance.read_state) -- the counterpart to every other page hiding them
+    by default. Same whole-universe traversal as _render_recent_page, just inverted (only ids that
     ARE in read_ids) and with no date cutoff, since a card can sit in the read pile indefinitely.
     Reuses the exact same card renderers, and passes show_read=True into the shared grid so it
     shows this page's cards rather than hiding them (the grid's default is "hide read cards" --
     this is the one page where that default is flipped).
+
+    Macro is deliberately never loaded here -- doing so meant _cached_macro_snapshot() (up to 9 live
+    FRED/yfinance fetches, ~30s uncached) paid its first-load cost on THIS page too, just from
+    visiting it, regardless of whether any macro card was ever actually marked read. A macro card can
+    still be swiped left on Recent (reuses the ordinary read-mark mechanism to hide it there -- see
+    _render_recent_page), that mark just has nowhere to surface since macro is excluded here.
     """
     read_ids = read_state.read_ids(_CURRENT_USER)
     if not read_ids:
@@ -4867,15 +5207,6 @@ def _render_read_page() -> None:
                     _earnings_result_card_html(ticker, result, dt.date.today()),
                 ))
 
-    # The monthly-period narrative is now the back face of the same weekly card (see
-    # _macro_narrative_card_html), not a separate card/id -- one lookup per tile, not two.
-    for tile in _cached_macro_snapshot():
-        weekly_id = _macro_weekly_card_id(tile)
-        if weekly_id in read_ids:
-            weekly = latest_narrative(tile["key"])
-            if weekly:
-                dated.append((dt.date.fromisoformat(weekly["date"]), weekly_id, _macro_narrative_card_html(tile)))
-
     st.markdown(f"### Read ({len(dated)})")
     if not dated:
         st.info("No cards marked read yet.")
@@ -4897,6 +5228,10 @@ def _render_favorites_page() -> None:
     favorite_ids instead of read_ids, and passes show_favorites=True into the shared grid so it
     shows this page's cards (with an "Unfavorite" action) rather than the grid's own default of
     hiding already-read ones.
+
+    Macro is excluded entirely (never favoritable in the first place -- see
+    _macro_narrative_card_html's favoritable=False -- and this also skips paying
+    _cached_macro_snapshot()'s live-fetch cost on this page; same reasoning as _render_read_page).
     """
     favorite_ids = read_state.favorite_ids(_CURRENT_USER)
     if not favorite_ids:
@@ -4933,15 +5268,6 @@ def _render_favorites_page() -> None:
                     dt.date.fromisoformat(result["report_date"]), cid,
                     _earnings_result_card_html(ticker, result, dt.date.today()),
                 ))
-
-    # The monthly-period narrative is now the back face of the same weekly card (see
-    # _macro_narrative_card_html), not a separate card/id -- one lookup per tile, not two.
-    for tile in _cached_macro_snapshot():
-        weekly_id = _macro_weekly_card_id(tile)
-        if weekly_id in favorite_ids:
-            weekly = latest_narrative(tile["key"])
-            if weekly:
-                dated.append((dt.date.fromisoformat(weekly["date"]), weekly_id, _macro_narrative_card_html(tile)))
 
     st.markdown(f"### Favorites ({len(dated)})")
     if not dated:
@@ -5226,6 +5552,73 @@ def _cached_macro_snapshot() -> list[dict]:
     return macro_snapshot()
 
 
+def _youtube_summary_bullets_html(summary_text: str) -> str:
+    """LLM-generated markdown bullet list (finance.youtube's own prompt asks for exactly this
+    shape -- an optional leading "Guest: ..." line, then a plain "- **bold bit** rest of sentence"
+    list, nothing else) converted to real HTML rather than relying on Streamlit's markdown parser to
+    run inside a raw-HTML card body (unreliable -- see _flip_card_html's callers, every one of which
+    builds its own HTML directly instead). Escaped first, **bold** markers converted after -- safe
+    since html.escape never touches `*`.
+    """
+    def _bold(line: str) -> str:
+        return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", html.escape(line))
+
+    lines = [line.strip() for line in summary_text.strip().splitlines() if line.strip()]
+    intro_html = ""
+    if lines and lines[0].lower().startswith("guest:"):
+        intro_html = f'<div class="keep-card-context">{_bold(lines[0][len("guest:"):].strip())}</div>'
+        lines = lines[1:]
+
+    stripped_lines = [re.sub(r"^[-*]\s+", "", line) for line in lines]
+    items = [f'<li class="keep-card-summary">{_bold(line)}</li>' for line in stripped_lines]
+    return intro_html + f'<ul style="margin:0.3rem 0 0 1.1rem;padding:0">{"".join(items)}</ul>'
+
+
+def _youtube_card_id(video_id: str) -> str:
+    return _card_id("youtube", video_id)
+
+
+def _youtube_card_html(entry: dict) -> str:
+    """One video summary as a keep-card -- front face is the video's own metadata (channel/
+    interviewer, title, publish date, word count) plus the full bullet-point summary; no flip/back
+    face at all (unlike claim/fundamental cards) since there's no shorter "at a glance" version of
+    an interview summary worth splitting out -- the bullets ARE the glance. The YouTube link itself
+    lives at the bottom of the front face for the same reason: nothing here is worth hiding a tap
+    away.
+    """
+    card_body = (
+        f'<div class="keep-card-source">\U0001f3a5 #{html.escape(entry["channel"])}</div>'
+        f'<div class="keep-card-claim">{html.escape(entry["title"])}</div>'
+        f"{_youtube_summary_bullets_html(entry['summary'])}"
+        f'<div class="keep-card-meta">{entry["word_count"]:,} words · {html.escape(entry["published"])}</div>'
+        f'<div class="keep-card-summary"><a href="{html.escape(entry["link"])}" target="_blank" '
+        f'rel="noopener noreferrer">\U0001f517 Watch on YouTube</a></div>'
+    )
+    return _flip_card_html(card_body, None)
+
+
+def _render_youtube_page() -> None:
+    """Interview/podcast summaries -- a separate track from every other card type on this page:
+    generated by finance.youtube.refresh_youtube_sources (channel RSS -> transcript ->
+    one-shot LLM summary), not Stage A/B, and deliberately never ticker-scoped or run through the
+    claims pipeline (see that module's own docstring for why). Newest first, one column
+    (columns_override=1 on _render_keep_card_grid) -- these cards carry a full 5-10 bullet summary
+    each, long enough that the app's normal 2-3 column grid would either crop them or force every
+    other card in the row to match their height.
+    """
+    summaries = load_youtube_summaries()
+    st.markdown("### \U0001f3a5 Interviews", unsafe_allow_html=True)
+    if not summaries:
+        st.info(
+            "No interview summaries yet -- see config_loop_a.json's \"youtube_sources\" and "
+            "finance.youtube.refresh_youtube_sources to populate this."
+        )
+        return
+    ordered = sorted(summaries, key=lambda e: e["published"], reverse=True)
+    cards = [(_youtube_card_id(e["video_id"]), _youtube_card_html(e)) for e in ordered]
+    _render_keep_card_grid(cards, key="feed_youtube", columns_override=1)
+
+
 def page_ticker() -> None:
     """One ticker at a time: pick from config_loop_a's full tracked universe
     in the sidebar (every configured ticker, even ones with no claims/thesis
@@ -5282,6 +5675,12 @@ def page_ticker() -> None:
             "\U0001f50d Discovery", key="ticker_page_discovery_btn",
             type="primary" if is_discovery_view else "secondary",
             on_click=_select_discovery_view, width="stretch",
+        )
+        is_youtube_view = st.session_state["ticker_page_view"] == "youtube"
+        st.button(
+            "\U0001f3a5 Interviews", key="ticker_page_youtube_btn",
+            type="primary" if is_youtube_view else "secondary",
+            on_click=_select_youtube_view, width="stretch",
         )
         is_macro_view = st.session_state["ticker_page_view"] == "macro"
         focused_series = st.session_state.get("ticker_page_macro_series")
@@ -5341,6 +5740,9 @@ def page_ticker() -> None:
         return
     if st.session_state["ticker_page_view"] == "discovery":
         _render_discovery_page()
+        return
+    if st.session_state["ticker_page_view"] == "youtube":
+        _render_youtube_page()
         return
     if st.session_state["ticker_page_view"] == "macro":
         _render_macro_page()

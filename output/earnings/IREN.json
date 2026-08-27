@@ -55,5 +55,32 @@
     "reported_eps": -0.16,
     "surprise_pct": 38.42,
     "type": "earnings_result"
+  },
+  {
+    "date": "2026-08-27",
+    "transcript_date": "2026-05-08",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/05/08/iren-iren-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.74,
+    "guidance_summary": "Management reaffirmed a back-end-weighted ramp to $3.7 billion of ARR exiting 2026, up from $3.1 billion under contract, supported by 480 MW of AI cloud capacity and approximately 150,000 GPUs. It expects Microsoft revenue and revenue from an additional 50,000 GPUs to begin ramping in Q3 2026, with 1.21 GW of capacity targeted for 2027, including 730 MW under construction. No specific total CapEx or margin guidance was provided; funding is expected to rely on customer prepayments, GPU financing, operating cash flow, corporate financing, and later asset-level financing, with approximately 95% of Microsoft GPU-related CapEx expected to be funded externally.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "Goldman Sachs asked for GPU count and economics behind the 60 MW NVIDIA deployment; management declined to disclose the GPU count and provided no per-GPU pricing, emphasizing only the strategic relationship and managed-services nature of the contract.",
+      "Analysts pressed on whether Sweetwater, Oklahoma, and European capacity was actually marketable before construction and permitting were complete; management said demand materially exceeds supply and that capacity could be contracted today, but acknowledged contracts become easier as construction and delivery plans are defined.",
+      "On financing the broader NVIDIA-linked buildout, management gave unusually specific detail for the Microsoft template\u201495% of GPU CapEx financed at approximately 3% through prepayments and GPU financing\u2014but remained nonspecific on financing terms and sources for the wider 5 GW plan.",
+      "When asked about customer mix and margins across hyperscalers, enterprises, sovereign buyers, and AI natives, management said the mix would emerge organically and offered no target diversification or contract-margin framework."
+    ],
+    "risks": [
+      "The $3.7 billion ARR target is heavily back-end weighted and depends on timely commissioning of Microsoft and other GPU deployments; contracted demand does not generate revenue until compute is online.",
+      "The broader 5 GW platform requires substantial capital, while total CapEx, leverage, dilution, and financing terms remain unspecified despite reliance on prepayments, GPU financing, and supportive capital markets.",
+      "NVIDIA and Microsoft appear strategically important, creating customer concentration and execution dependencies, while the NVIDIA investment is milestone-based and conditional on GPU deployment.",
+      "Secured power in Spain and other regions still must pass through final design, permitting, construction, and commissioning before becoming revenue-producing compute.",
+      "The current business is still contracting in Bitcoin mining: revenue and adjusted EBITDA declined sequentially, and management expects additional noncash impairments as mining hardware is decommissioned.",
+      "Management's claims of sustained demand for all GPU generations and no idle GPUs could prove vulnerable to AI spending normalization, pricing pressure, or changes in workload economics.",
+      "Global expansion through Nostrum and Mirantis adds execution and integration complexity, particularly as IREN simultaneously scales construction, operations, and enterprise go-to-market capabilities."
+    ],
+    "summary": "The call presented a highly bullish AI infrastructure expansion story, with $3.1 billion of contracted ARR, a $3.7 billion year-end 2026 target, 480 MW scheduled for delivery in 2026, and a path to 1.21 GW in 2027. Q&A reinforced management's confidence in demand and air-cooled GPU economics, but also highlighted limited disclosure on GPU counts, unit economics, total financing needs, customer mix, and the conversion of secured power into operational compute. The call implies a positive earnings direction, tempered by execution, financing, customer concentration, and ongoing Bitcoin-mining transition risks.",
+    "type": "earnings_transcript"
   }
 ]

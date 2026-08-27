@@ -136,6 +136,19 @@ def discovery_disabled_sources() -> set[str]:
     return {s["name"] for s in _load().get("news_sources", []) if s.get("discovery_model") == "none"}
 
 
+def youtube_sources() -> list[dict]:
+    """{"name", "channel_id"} for every entry in "youtube_sources" with "active": true -- separate
+    top-level config key from "news_sources" since a YouTube channel is polled and processed
+    completely differently (channel RSS -> transcript fetch -> LLM summary, see finance.youtube)
+    rather than finance.news's RSS/Atom article fetch -- but same "active" opt-out-without-deleting
+    convention as news_sources.
+    """
+    return [
+        {"name": s["name"], "channel_id": s["channel_id"]}
+        for s in _load().get("youtube_sources", []) if s.get("active", False)
+    ]
+
+
 def max_article_chars() -> int | None:
     """Cap on how many characters of an article's text Loop A sends to the
     LLM (Stage A, Stage B, the SEC 8-K classifier) -- None (the default,

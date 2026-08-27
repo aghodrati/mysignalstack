@@ -109,26 +109,34 @@ TRANSCRIPT_WINDOW_BEFORE_DAYS = 0
 TRANSCRIPT_WINDOW_AFTER_DAYS = 7
 
 
-def needs_transcript_check(ticker: str, as_of: dt.date) -> bool:
-    """True if `ticker` should get a live discovery search right now: `as_of` falls within
-    TRANSCRIPT_WINDOW_{BEFORE,AFTER}_DAYS of one of its last few scheduled/reported earnings dates
-    (checks every date get_earnings_history returns, not just the next upcoming one), AND the
-    transcript already on record (if any) predates *that* earnings date -- so once this cycle's
-    transcript has actually been found and stored, checking stops for the rest of the window instead
-    of re-searching every single day until AFTER_DAYS closes it. Fails open (returns True) on an
-    empty earnings history, so a data gap means "check it" rather than silently never checking a
-    ticker again.
+def _open_transcript_window_date(ticker: str, as_of: dt.date) -> dt.date | None:
+    """Which of `ticker`'s last few scheduled/reported earnings dates (get_earnings_history) has a
+    TRANSCRIPT_WINDOW_{BEFORE,AFTER}_DAYS window currently covering `as_of`, or None if none does.
+    Shared by needs_transcript_check (whether to bother searching at all) and refresh_earnings_call
+    (to reject a find that isn't actually for this open cycle -- see that function).
     """
     earnings = get_earnings_history(ticker)
     if earnings.empty:
-        return True
-    window_earnings_date = None
+        return None
     for earnings_date in earnings["earnings_date"].dt.date:
         window_start = earnings_date - dt.timedelta(days=TRANSCRIPT_WINDOW_BEFORE_DAYS)
         window_end = earnings_date + dt.timedelta(days=TRANSCRIPT_WINDOW_AFTER_DAYS)
         if window_start <= as_of <= window_end:
-            window_earnings_date = earnings_date
-            break
+            return earnings_date
+    return None
+
+
+def needs_transcript_check(ticker: str, as_of: dt.date) -> bool:
+    """True if `ticker` should get a live discovery search right now: `as_of` falls within an open
+    transcript window (_open_transcript_window_date) AND the transcript already on record (if any)
+    predates *that* earnings date -- so once this cycle's transcript has actually been found and
+    stored, checking stops for the rest of the window instead of re-searching every single day until
+    AFTER_DAYS closes it. Fails open (returns True) on an empty earnings history, so a data gap means
+    "check it" rather than silently never checking a ticker again.
+    """
+    if get_earnings_history(ticker).empty:
+        return True
+    window_earnings_date = _open_transcript_window_date(ticker, as_of)
     if window_earnings_date is None:
         return False
     previous = latest_earnings_call(ticker)
@@ -136,6 +144,27 @@ def needs_transcript_check(ticker: str, as_of: dt.date) -> bool:
         return True
     stored_date = dt.date.fromisoformat(previous["transcript_date"])
     return stored_date < window_earnings_date
+
+
+def _is_current_cycle_transcript(ticker: str, as_of: dt.date, transcript_date: dt.date) -> bool:
+    """False if `transcript_date` clearly predates the earnings cycle currently open for `ticker`
+    (see _open_transcript_window_date). _find_latest_transcript's auto-discovery just returns
+    whichever transcript is most recently available for the ticker overall -- exactly right when
+    that's also the call the open window is watching for, but wrong the first time a newly tracked
+    ticker is ever checked and its real next call hasn't happened/been published yet: discovery then
+    falls back to whatever OLD transcript already existed, and treating that as fresh news is
+    misleading. Confirmed live: IREN's first-ever check found its ~3-month-old Q3 transcript instead
+    of correctly finding nothing yet for its actual upcoming call.
+
+    True (accept) whenever there's no open window at all -- an explicit manual --ticker check (see
+    run_loop_a.py) can run outside the normal window trigger and should keep accepting whatever it
+    finds, same as before this existed.
+    """
+    window_earnings_date = _open_transcript_window_date(ticker, as_of)
+    if window_earnings_date is None:
+        return True
+    window_start = window_earnings_date - dt.timedelta(days=TRANSCRIPT_WINDOW_BEFORE_DAYS)
+    return transcript_date >= window_start
 
 TYPE_TRANSCRIPT = "earnings_transcript"
 TYPE_PREVIEW = "earnings_preview"
@@ -703,6 +732,13 @@ def refresh_earnings_call(
             return None
     else:
         found = _find_latest_transcript(ticker, recent_index)
+        # Reject a stale find -- see _is_current_cycle_transcript's own docstring for the exact
+        # failure this closes (a first-ever check surfacing an old leftover transcript instead of
+        # correctly finding nothing for the call actually being watched for). Only applies to
+        # auto-discovery -- an explicit transcript_url is a deliberate manual override, always
+        # accepted regardless of cycle.
+        if found is not None and not _is_current_cycle_transcript(ticker, as_of, found[1]):
+            found = None
     if found is None:
         return None
     url, transcript_date = found

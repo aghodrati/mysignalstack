@@ -2354,5 +2354,43 @@
     "trade_worthy": false,
     "context": "Hawkeye was tested across NVIDIA Ampere, Hopper, and Blackwell GPUs and AMD MI350 hardware. For Linear Attention, the generated kernels reached 1.22\u00d7 the performance of Flash Linear Attention on Blackwell and matched it at 1.00\u00d7 on AMD MI350; the broader framework also operated across BF16, FP8, NVFP4, and MXFP4 precisions. This is a research result rather than evidence of customer deployments or revenue impact, but it indicates that curated tests and profiling feedback can help agents optimize kernels for AMD\u2019s newer accelerator hardware.",
     "source": "Import AI"
+  },
+  {
+    "id": "16fb33c82399181e",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/08/27/the-network-is-more-of-nvidias-computer-than-it-ever-was-at-sun/5292807",
+    "source_title": "The Network Is More Of Nvidia\u2019s Computer Than It Ever Was At Sun",
+    "event_type": "earnings",
+    "created": "2026-08-27",
+    "claim": "AMD\u2019s Epyc server CPUs are benefiting from strong demand and favorable price/performance, strengthening AMD\u2019s competitive position in AI datacenter infrastructure and supporting upside to future server-CPU revenue.",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article estimates that demand for AMD\u2019s current Epyc products exceeds available supply by approximately 30%, citing their superior price/performance and rising CPU requirements as agentic AI expands datacenter capacity. This indicates AMD is gaining substantial customer pull rather than merely relying on excess inventory or promotional pricing.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "d69e2d9122f6dbe4",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/08/27/the-network-is-more-of-nvidias-computer-than-it-ever-was-at-sun/5292807",
+    "source_title": "The Network Is More Of Nvidia\u2019s Computer Than It Ever Was At Sun",
+    "event_type": "earnings",
+    "created": "2026-08-27",
+    "claim": "AMD\u2019s server-CPU supply shortfall is constraining its ability to convert Epyc demand into near-term shipments and revenue, creating an execution and capacity risk despite strong market demand.",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article places AMD among multiple server suppliers whose demand is estimated to be roughly 25% to 30% above supply, with AMD\u2019s Epyc over-demand estimated at about 30% and growing. Nvidia\u2019s broader discussion also indicates that shortages of memory and other datacenter components are limiting system sales, implying that AMD may face similar supply-chain bottlenecks as AI-driven CPU demand rises.",
+    "source": "Next Platform"
   }
 ]
