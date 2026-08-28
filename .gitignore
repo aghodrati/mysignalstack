@@ -46,6 +46,8 @@ output/*
 !output/portfolios/**
 !output/discovery/
 !output/discovery/**
+!output/youtube/
+!output/youtube/**
 
 # OS files
 .DS_Store
