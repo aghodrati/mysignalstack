@@ -34,7 +34,7 @@
   },
   {
     "period": "month",
-    "date": "2026-08-25",
+    "date": "2026-08-31",
     "value": 2.73,
     "delta": 0.040000000000000036,
     "history": [
@@ -127,7 +127,7 @@
         2.73
       ]
     ],
-    "narrative": "No clear single catalyst this month\u2014there were no relevant headlines provided to explain the modest 0.04 percentage-point widening in HY credit spreads. The move most plausibly reflects broad positioning, risk sentiment, or normal market drift.",
+    "narrative": "HY credit spreads widened modestly by 4 basis points to 2.73% over the month. No clear single catalyst is identified because no relevant headlines were provided; the move most plausibly reflects broad positioning, risk repricing, or ordinary market drift.",
     "has_clear_driver": false,
     "headlines_used": [],
     "fetch_succeeded": true

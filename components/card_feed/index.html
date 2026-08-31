@@ -24,18 +24,26 @@
     font-family: "Source Sans Pro", sans-serif;
   }
   #grid {
-    /* CSS multi-column, not display:grid -- a real grid lays out in strict rows (a whole row of N
-       cards all start their next row together, at the tallest one's height), which is exactly what
-       left visible gaps under a short card whenever its row-mate was taller. Multi-column instead
-       flows each card immediately under whatever's above it IN THE SAME COLUMN, independent of the
-       other columns' heights -- true masonry packing, no cross-column alignment at all. Default:
-       responsive column-width (browser picks the count). Overridden inline (gridEl.style.
-       columnCount/columnWidth) by applyDisplaySettings() below whenever Python passes an explicit
-       column count -- see app.py's _render_card_display_settings/_render_keep_card_grid_iframe.
-       Trade-off: reading order becomes column-major (down a column, then the next), not row-major
-       left-to-right -- inherent to how column layout flows content, not a bug. */
-    column-width: 260px;
-    column-gap: 0.9rem;
+    /* A row of JS-managed column divs (.grid-col below), not CSS multi-column -- CSS multi-column
+       fills column 1 completely (to its balanced height) before starting column 2, which buries
+       most of the actual rank order inside column 1 alone: with a ranked feed, the card at the top
+       of column 2/3/4 could be #80 or #150 in rank, but LOOKS exactly as "top of the page" as the
+       real #1 card in column 1 -- a real bug for anything sorted (Discovery's pinned/mention-count/
+       recency order), not just a cosmetic quirk. JS assigns each card (in already-sorted order) to
+       whichever column is currently shortest instead (see appendToShortestColumn) -- keeps the
+       gapless packing a real CSS grid can't do (no row-locked alignment gaps under a short card),
+       while keeping reading order close to row-major: card #1 opens column 1, #2 goes to whichever
+       column is shortest next (usually column 2), and so on, only drifting from strict rank order
+       once card heights start actually varying. */
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+  .grid-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 0;
   }
   #sentinel { height: 1px; }
   #empty-msg { font-size: 0.85rem; opacity: 0.65; padding: 0.5rem 0; font-family: "Source Sans Pro", sans-serif; }
@@ -48,8 +56,7 @@
     cursor: grab;
     transform: translateX(0);
     opacity: 1;
-    break-inside: avoid;  /* never split one card's content across two columns */
-    margin-bottom: 0.9rem;  /* multi-column has no row-gap equivalent -- this is the vertical gap */
+    margin-bottom: 0.9rem;  /* vertical gap between stacked cards within one .grid-col */
   }
   .card-cell.dragging { cursor: grabbing; }
   .card-star {
@@ -199,8 +206,12 @@ const state = {
                            // a stale render event still lists them before Python catches up)
   revealed: 0,            // how many of `order` have been inserted into the DOM so far
   showCount: true,        // false for callers (e.g. the Read page) that already show their own count
+  columnEls: [],          // current .grid-col elements, left-to-right
+  columnCount: 0,         // 0 until the first applyDisplaySettings/rebuildColumns call
+  explicitColumns: null,  // last explicit column count from Python, or null for "Auto"
 };
 
+const feedEl = document.getElementById("feed");
 const gridEl = document.getElementById("grid");
 const sentinelEl = document.getElementById("sentinel");
 const emptyMsgEl = document.getElementById("empty-msg");
@@ -416,10 +427,10 @@ function revealMore(count) {
     if (!card) continue;
     const el = buildCell(card);
     state.elements.set(id, el);
-    gridEl.appendChild(el);
+    appendToShortestColumn(el);
     count += 1;
   }
-  emptyMsgEl.style.display = gridEl.children.length === 0 ? "block" : "none";
+  emptyMsgEl.style.display = state.elements.size === 0 ? "block" : "none";
   updateCountLine();
   setFrameHeight();
 }
@@ -467,19 +478,67 @@ function reconcile(cards) {
     const card = state.dataById.get(id);
     const el = buildCell(card);
     state.elements.set(id, el);
-    gridEl.appendChild(el);
+    appendToShortestColumn(el);
   }
 
-  if (gridEl.children.length === 0 && state.order.length > 0) {
+  if (state.elements.size === 0 && state.order.length > 0) {
     revealMore(PAGE_SIZE);
   }
-  emptyMsgEl.style.display = gridEl.children.length === 0 ? "block" : "none";
+  emptyMsgEl.style.display = state.elements.size === 0 ? "block" : "none";
   updateCountLine();
   setFrameHeight();
 }
 
-// `columns` is null/undefined for "Auto" (responsive column-width, the CSS default left in place)
-// or an explicit int from the sidebar's Columns control; `font_scale` drives every calc(base *
+const COLUMN_WIDTH_PX = 260;   // matches the old CSS column-width -- "Auto" fits as many of these as
+                                // the feed's own width allows, same visual density as before.
+const COLUMN_GAP_PX = 0.9 * 16; // #grid's gap: 0.9rem, approximated in px (root font-size assumed 16
+                                 // -- good enough for a column-count estimate, not a layout value).
+
+function computeAutoColumnCount() {
+  const width = feedEl.clientWidth || COLUMN_WIDTH_PX;
+  return Math.max(1, Math.floor((width + COLUMN_GAP_PX) / (COLUMN_WIDTH_PX + COLUMN_GAP_PX)));
+}
+
+// Appends `el` to whichever .grid-col is currently shortest -- the whole point of this rewrite (see
+// #grid's own CSS comment): called in already-sorted order, so this is what keeps the *visual* top
+// of the grid close to actual rank order instead of one column silently hoarding the first N/columns
+// items the way CSS multi-column's fill-column-1-first behavior did.
+function appendToShortestColumn(el) {
+  let shortest = state.columnEls[0];
+  for (const col of state.columnEls) {
+    if (col.offsetHeight < shortest.offsetHeight) shortest = col;
+  }
+  shortest.appendChild(el);
+}
+
+// Tears down and recreates the .grid-col divs, then re-distributes every currently-rendered card
+// (in state.order's sorted sequence) back across them via appendToShortestColumn -- appendChild
+// *moves* an existing element rather than recreating it, so a card's own DOM state (e.g. a flipped-
+// open <details>) survives a column-count change untouched. Only called when the column count
+// actually changes (see setColumnCount), not on every render.
+function rebuildColumns() {
+  const existing = state.order
+    .filter((id) => state.elements.has(id))
+    .map((id) => state.elements.get(id));
+  gridEl.innerHTML = "";
+  state.columnEls = [];
+  for (let i = 0; i < state.columnCount; i++) {
+    const col = document.createElement("div");
+    col.className = "grid-col";
+    gridEl.appendChild(col);
+    state.columnEls.push(col);
+  }
+  for (const el of existing) appendToShortestColumn(el);
+}
+
+function setColumnCount(n) {
+  if (n === state.columnCount) return;
+  state.columnCount = n;
+  rebuildColumns();
+}
+
+// `columns` is null/undefined for "Auto" (as many COLUMN_WIDTH_PX-wide columns as fit) or an
+// explicit int from the sidebar's Columns control; `font_scale` drives every calc(base *
 // var(--card-font-scale, 1)) size in the stylesheet above. Both come from app.py's
 // _render_card_display_settings by way of _render_keep_card_grid_iframe's component props -- see
 // that function's own comment for why native mode's equivalent (_inject_native_card_css) is a
@@ -487,11 +546,16 @@ function reconcile(cards) {
 // a different document inside the iframe).
 function applyDisplaySettings(columns, fontScale) {
   document.documentElement.style.setProperty("--card-font-scale", fontScale || 1);
-  // column-width and column-count are mutually exclusive here -- an explicit count needs
-  // column-width cleared, or the browser keeps deferring to whichever produces MORE columns.
-  gridEl.style.columnCount = columns || "";
-  gridEl.style.columnWidth = columns ? "" : "260px";
+  state.explicitColumns = columns || null;
+  setColumnCount(state.explicitColumns || computeAutoColumnCount());
 }
+
+// "Auto" mode needs to react to the iframe actually resizing (sidebar collapse/expand, window
+// resize) the same way CSS column-width used to for free; an explicit column count from Python
+// never changes because of a resize, so this is a no-op while state.explicitColumns is set.
+window.addEventListener("resize", () => {
+  if (!state.explicitColumns) setColumnCount(computeAutoColumnCount());
+});
 
 function onMessage(event) {
   const data = event.data;

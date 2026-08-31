@@ -2392,5 +2392,43 @@
     "trade_worthy": false,
     "context": "The article places AMD among multiple server suppliers whose demand is estimated to be roughly 25% to 30% above supply, with AMD\u2019s Epyc over-demand estimated at about 30% and growing. Nvidia\u2019s broader discussion also indicates that shortages of memory and other datacenter components are limiting system sales, implying that AMD may face similar supply-chain bottlenecks as AI-driven CPU demand rises.",
     "source": "Next Platform"
+  },
+  {
+    "id": "8b1affeb516199e8",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+    "source_title": "Most Neoclouds Suck At Security",
+    "event_type": "other",
+    "created": "2026-08-30",
+    "claim": "The rise in CVEs across AMD\u2019s AI software stack increases the security, patching and support burden for AMD and could modestly undermine customer confidence in deploying AMD-based infrastructure.",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "SemiAnalysis reports a clear increase in CVE counts in AMD and NVIDIA AI software stacks after capable coding models became available, although it says increased usage and software churn may be a more likely explanation than AI-driven attacks. For AMD customers, more disclosed issues in drivers, libraries and related software can require faster updates, create operational disruption and raise perceived platform risk, even though the article does not attribute the increase specifically to AMD engineering quality.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "f8df1d553d044ac3",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+    "source_title": "Most Neoclouds Suck At Security",
+    "event_type": "other",
+    "created": "2026-08-30",
+    "claim": "AMD\u2019s reported retroactive narrowing of its bug-bounty rules and 124-day embargo for a researcher\u2019s man-in-the-middle report could damage AMD\u2019s security-researcher and enterprise-customer reputation, weakening its competitive position in security-sensitive AI infrastructure.",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says AMD denied a $10,000 bounty by changing its rules retroactively to exclude MITM attacks and imposed a 124-day embargo, despite the researcher\u2019s exploit reportedly demonstrating remote code execution on AMD systems. SemiAnalysis contrasts this with its recommendation that infrastructure vendors support timely vulnerability disclosure and argues that such handling can discourage external researchers and reduce trust in AMD\u2019s security process.",
+    "source": "SemiAnalysis"
   }
 ]

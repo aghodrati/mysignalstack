@@ -39,7 +39,7 @@
     {"name": "Next Platform", "url": "https://www.nextplatform.com/feed/", "active": true, "full_page_fetch": true},
     {"name": "The Diff", "url": "https://www.thediff.co/archive/rss/", "active": true, "discovery_model": "primary"},
     {"name": "Citrini Research", "url": "https://citriniresearch.com/feed", "active": true, "discovery_model": "primary"},
-    {"name": "Semiconductor Engineering", "url": "https://semiengineering.com/feed/", "active": true},
+    {"name": "Semiconductor Engineering", "url": "https://semiengineering.com/feed/", "active": false},
     {"name": "Cassandra Unchained", "url": "https://michaeljburry.substack.com/feed", "active": true, "discovery_model": "primary"},
     {"name": "Doomberg", "url": "https://newsletter.doomberg.com/feed", "active": true, "discovery_model": "primary"},
     {"name": "The Quantum Insider", "url": "https://thequantuminsider.com/feed", "active": false, "discovery_model": "none"},

@@ -48,30 +48,10 @@
   },
   {
     "period": "month",
-    "date": "2026-08-25",
-    "value": 6.632500171661377,
-    "delta": 4.6300668271569645,
+    "date": "2026-08-31",
+    "value": 6.681000232696533,
+    "delta": 2.563713467860862,
     "history": [
-      [
-        "2026-07-27",
-        6.339000225067139
-      ],
-      [
-        "2026-07-28",
-        6.322000026702881
-      ],
-      [
-        "2026-07-29",
-        6.273499965667725
-      ],
-      [
-        "2026-07-30",
-        6.444499969482422
-      ],
-      [
-        "2026-07-31",
-        6.435999870300293
-      ],
       [
         "2026-08-03",
         6.513999938964844
@@ -138,12 +118,44 @@
       ],
       [
         "2026-08-25",
-        6.632500171661377
+        6.709499835968018
+      ],
+      [
+        "2026-08-26",
+        6.5945000648498535
+      ],
+      [
+        "2026-08-27",
+        6.586999893188477
+      ],
+      [
+        "2026-08-28",
+        6.561999797821045
+      ],
+      [
+        "2026-08-31",
+        6.681000232696533
       ]
     ],
-    "narrative": "No clear single catalyst this month\u2014there were no relevant news headlines provided, so the +4.63 move was likely driven by broad positioning, technical momentum, or market drift rather than a verifiable fundamental development.",
+    "narrative": "No clear single catalyst for copper is evident in the listed headlines: the reports focus primarily on oil, Iran-related supply pressure, inflation, and gold rather than copper-specific demand or supply. The sharp monthly gain therefore appears more likely to reflect broader commodity positioning or macro drift than a headline-supported copper thesis.",
     "has_clear_driver": false,
-    "headlines_used": [],
+    "headlines_used": [
+      {
+        "title": "What Tight Oil Supplies Could Mean For Inflation And Gold",
+        "domain": "SeekingAlpha",
+        "date": "20260828"
+      },
+      {
+        "title": "Commodities: Oil Shrugs Off Bessent's 'D-Day' Plan For Iran",
+        "domain": "SeekingAlpha",
+        "date": "20260825"
+      },
+      {
+        "title": "Commodities: Oil Advances As U.S. Tightens Pressure On Iran",
+        "domain": "SeekingAlpha",
+        "date": "20260820"
+      }
+    ],
     "fetch_succeeded": true,
     "direction": "neutral",
     "confidence": "low",

@@ -340,5 +340,24 @@
     "trade_worthy": false,
     "context": "The proposed Meta Compute effort would reportedly sell API access to Meta models and may also offer infrastructure-as-a-service products, while using Meta\u2019s Nvidia and AMD GPU clusters to host workloads. That would place Meta alongside CoreWeave as a neocloud provider and could compete for AI-compute customers, though the business is still being planned and its scale, timing, and ability to use excess capacity remain uncertain.",
     "source": "Next Platform"
+  },
+  {
+    "id": "2239b05401dfd1c4",
+    "ticker": "CRWV",
+    "source_link": "https://newsletter.semianalysis.com/p/most-neoclouds-suck-at-security",
+    "source_title": "Most Neoclouds Suck At Security",
+    "event_type": "other",
+    "created": "2026-08-30",
+    "claim": "CoreWeave\u2019s Gold standing in SemiAnalysis\u2019s NVIDIA security comparison modestly strengthens its competitive position with security-conscious AI customers versus weaker neocloud providers, though it does not eliminate broader platform-security risks.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "SemiAnalysis presented CoreWeave as a Gold provider in its comparison of NVIDIA security checks, while an unnamed Bronze provider failed checks covering outdated CUDA, Docker, runc, and ConnectX firmware. The article also emphasizes that neocloud customers increasingly need strong tenant isolation, rapid patching, and secure infrastructure designs, but it does not disclose a specific critical CoreWeave vulnerability or quantify the commercial impact of the rating.",
+    "source": "SemiAnalysis"
   }
 ]

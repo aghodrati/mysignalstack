@@ -149,30 +149,10 @@
   },
   {
     "period": "month",
-    "date": "2026-08-25",
-    "value": 15.770000457763672,
-    "delta": -2.8999996185302734,
+    "date": "2026-08-31",
+    "value": 15.40999984741211,
+    "delta": -0.4499998092651367,
     "history": [
-      [
-        "2026-07-27",
-        18.670000076293945
-      ],
-      [
-        "2026-07-28",
-        18.209999084472656
-      ],
-      [
-        "2026-07-29",
-        20.65999984741211
-      ],
-      [
-        "2026-07-30",
-        17.09000015258789
-      ],
-      [
-        "2026-07-31",
-        15.989999771118164
-      ],
       [
         "2026-08-03",
         15.859999656677246
@@ -187,11 +167,11 @@
       ],
       [
         "2026-08-06",
-        15.149999618530272
+        15.149999618530273
       ],
       [
         "2026-08-07",
-        14.899999618530272
+        14.899999618530273
       ],
       [
         "2026-08-10",
@@ -235,20 +215,61 @@
       ],
       [
         "2026-08-24",
-        15.850000381469728
+        15.850000381469727
       ],
       [
         "2026-08-25",
-        15.770000457763672
+        15.449999809265137
+      ],
+      [
+        "2026-08-26",
+        15.210000038146973
+      ],
+      [
+        "2026-08-27",
+        14.510000228881836
+      ],
+      [
+        "2026-08-28",
+        14.430000305175781
+      ],
+      [
+        "2026-08-31",
+        15.40999984741211
       ]
     ],
-    "narrative": "There is no clear single catalyst; the VIX\u2019s 2.90-point monthly decline most plausibly reflects broad risk-on positioning and volatility compression. Headlines such as CNBC\u2019s report that the fear gauge hit a 2026 low and Moneycontrol\u2019s discussion of a \u201clow VIX\u201d support that interpretation, while the oil-slip/equity-rise backdrop in The Economic Times may have modestly reinforced calm sentiment.",
+    "narrative": "There was no clear single catalyst for the modest monthly decline in VIX; the move appears to reflect broad market calm and range-bound positioning. Headlines such as \u201cStock traders warm up to Warsh as volatility index touches year-to-date low,\u201d \u201cScott Bessent Hasn't Crashed The Market,\u201d and the Nifty outlook describing a 23,900\u201324,750 range are consistent with subdued near-term risk pricing, while warnings about a possible autumn volatility increase did not yet alter positioning.",
     "has_clear_driver": false,
     "headlines_used": [
       {
-        "title": "Sensex rises 200 points, Nifty above 24,300 as oil prices slip ahead of US sanctions on Iran. What to expect?",
+        "title": "Pre-market action: Here's the trade setup for today's session",
         "domain": "The Economic Times",
-        "date": "20260824"
+        "date": "20260831"
+      },
+      {
+        "title": "Is Wall Street\u2019s calm about to end? What rising VIX means for S&P 500 stocks",
+        "domain": "Hindustan Times",
+        "date": "20260830"
+      },
+      {
+        "title": "Nifty weekly outlook: Nifty trapped in 23,900-24,750 range; fresh buying should remain selective",
+        "domain": "The Economic Times",
+        "date": "20260830"
+      },
+      {
+        "title": "Stock traders warm up to Warsh as volatility index touches year-to-date low",
+        "domain": "CNBC",
+        "date": "20260828"
+      },
+      {
+        "title": "Sensex records muted gains on expiry day, Nifty above 24,200. What lies ahead?",
+        "domain": "The Economic Times",
+        "date": "20260827"
+      },
+      {
+        "title": "Scott Bessent Hasn't Crashed The Market",
+        "domain": "Seeking Alpha",
+        "date": "20260826"
       },
       {
         "title": "Low VIX, big move ahead? Shubham Agarwal recommends trading Nifty with a long straddle",
@@ -259,41 +280,6 @@
         "title": "Is the VIX Inexpensive Going into the Historically Volatile Fall in 2026?",
         "domain": "Barchart",
         "date": "20260820"
-      },
-      {
-        "title": "Pre-market action: Here's the trade setup for today's session",
-        "domain": "The Economic Times",
-        "date": "20260820"
-      },
-      {
-        "title": "Wall Street's 'Fear Gauge' Just Hit A 2026 Low. Analysts Warn Investors Not To Get Too Comfortable.",
-        "domain": "International Business Times",
-        "date": "20260818"
-      },
-      {
-        "title": "Market Montions Amid U.S.-Iran Tensions and Tech Stocks' Downturn",
-        "domain": "Devdiscourse",
-        "date": "20260818"
-      },
-      {
-        "title": "'Fear Gauge' Falls To Year's Low. A Bad Sign For The Stock Market?",
-        "domain": "Investor's Business Daily",
-        "date": "20260817"
-      },
-      {
-        "title": "VIX: Wall Street\u2019s \u2018fear gauge\u2019 hits 2026 low",
-        "domain": "CNBC",
-        "date": "20260817"
-      },
-      {
-        "title": "Sensex Down 455 Points, Nifty Slips 0.4% As Iran War Concerns Keep Crude Oil Prices Elevated; India VIX Rises",
-        "domain": "Free Press Journal",
-        "date": "20260817"
-      },
-      {
-        "title": "Sensex Drops 300 Points As Iran War Fuels Crude Concerns; India VIX Jumps 2%",
-        "domain": "Outlook Business",
-        "date": "20260817"
       }
     ],
     "fetch_succeeded": true

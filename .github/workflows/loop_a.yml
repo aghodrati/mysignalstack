@@ -1,0 +1,46 @@
+name: Loop A daily
+
+on:
+  schedule:
+    # 06:00 UTC = 08:00 Amsterdam during CEST (summer). Cron is always UTC and
+    # doesn't follow DST, so this drifts to 07:00 local once CET (winter) kicks
+    # in -- nudge to "0 7 * * *" around the October/March DST switch if it matters.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run-loop-a:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run Loop A
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          GNEWS_API_KEY: ${{ secrets.GNEWS_API_KEY }}
+        run: uv run run_loop_a.py p_gpt_luna
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/claims output/theses output/fundamentals output/earnings output/macro output/portfolios output/discovery output/youtube cache/thesis
+          git diff --cached --quiet || git commit -m "Loop A daily run: $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push

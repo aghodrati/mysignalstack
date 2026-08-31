@@ -58,30 +58,10 @@
   },
   {
     "period": "month",
-    "date": "2026-08-25",
-    "value": 4689.10009765625,
-    "delta": 15.084061790557124,
+    "date": "2026-08-31",
+    "value": 4487.60009765625,
+    "delta": 11.252699803625887,
     "history": [
-      [
-        "2026-07-27",
-        4074.5
-      ],
-      [
-        "2026-07-28",
-        4036.300048828125
-      ],
-      [
-        "2026-07-29",
-        4034.699951171875
-      ],
-      [
-        "2026-07-30",
-        4100.10009765625
-      ],
-      [
-        "2026-07-31",
-        4049.10009765625
-      ],
       [
         "2026-08-03",
         4033.699951171875
@@ -148,45 +128,76 @@
       ],
       [
         "2026-08-25",
-        4689.10009765625
+        4638.10009765625
+      ],
+      [
+        "2026-08-26",
+        4598.2001953125
+      ],
+      [
+        "2026-08-27",
+        4609.7001953125
+      ],
+      [
+        "2026-08-28",
+        4478.10009765625
+      ],
+      [
+        "2026-08-31",
+        4487.60009765625
       ]
     ],
-    "narrative": "Gold's modest monthly gain appears to reflect a broad safe-haven and macro-volatility bid rather than one clearly identified catalyst. The headlines on rising cross-asset volatility and Treasury efforts to avert yield contagion, along with the reported Iran confrontation and tariff threats, plausibly supported demand for gold, but none provides a sufficiently specific explanation for the move.",
+    "narrative": "No clear single catalyst drove the modest monthly gain: fresh Persian Gulf strikes and oil's rally likely provided some safe-haven and inflation support, while the headlines on Kevin Warsh's hawkish speech and rising September rate-hike odds pressured gold. The conflicting signals, alongside reports that gold's rally had hit a wall, suggest broad positioning and volatility rather than a decisive fundamental move.",
     "has_clear_driver": false,
     "headlines_used": [
       {
-        "title": "Cross-Asset Volatilities Rise As Treasury Endeavors To Avert Yield Contagion",
+        "title": "Commodities: Oil Rallies On Fresh Persian Gulf Strikes",
         "domain": "SeekingAlpha",
+        "date": "20260831"
+      },
+      {
+        "title": "Jackson Hole Just Changed The Game",
+        "domain": "SeekingAlpha",
+        "date": "20260830"
+      },
+      {
+        "title": "SCHD And QQQ: The New 60-40 Portfolio (Bitcoin And Gold Edition)",
+        "domain": "SeekingAlpha",
+        "date": "20260830"
+      },
+      {
+        "title": "Gold, Bitcoin Sink: September Rate Hike Odds Jump to 60% After Warsh's Hawkish Speech",
+        "domain": "Benzinga",
+        "date": "20260828"
+      },
+      {
+        "title": "Warsh Says Inflation Too High: 2% Is a 'Firm, Fixed Target' (UPDATED)",
+        "domain": "Benzinga",
+        "date": "20260828"
+      },
+      {
+        "title": "\u201cIt\u2019s Not the Same Dollar\u201d: The Big Lie Behind the Stock Market Rally",
+        "domain": "Benzinga",
+        "date": "20260828"
+      },
+      {
+        "title": "Bitcoin's Correlation With Gold Is Suddenly on the Upswing. Are Investors About to See the Return of Bitcoin as \"Digital Gold\"?",
+        "domain": "Yahoo",
         "date": "20260825"
       },
       {
-        "title": "It's Real, And You Need To Be Ready For It",
-        "domain": "SeekingAlpha",
+        "title": "Is Gold\u2019s Best Month Since 2008 About to End? One Trader Just Bet $202 Million That It Is",
+        "domain": "Yahoo",
         "date": "20260825"
       },
       {
-        "title": "QUICK SPARK: Gold Eyes Best Month Since September 1999",
-        "domain": "Benzinga",
-        "date": "20260824"
-      },
-      {
-        "title": "The Economically Sensitive Materials Sector Is Breaking Out",
-        "domain": "SeekingAlpha",
-        "date": "20260824"
-      },
-      {
-        "title": "Bessent Launches Economic D-Day Against Iran: 5 Things to Know",
-        "domain": "Benzinga",
-        "date": "20260824"
-      },
-      {
-        "title": "Memory Stocks Slide as Trump Threatens 50% Tariffs on Canadian Autos, Steel in 2027: Stock Market Today",
-        "domain": "Benzinga",
-        "date": "20260824"
+        "title": "Gold's rally just hit a wall \u2014 how to play a tactical pullback with limited risk: Alpha Options Playbook",
+        "domain": "Yahoo",
+        "date": "20260825"
       }
     ],
     "fetch_succeeded": true,
-    "direction": "bullish",
+    "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
   },
