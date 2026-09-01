@@ -656,5 +656,21 @@
     "CRWV",
     "MSFT",
     "NVDA"
+  ],
+  "https://www.nextplatform.com/cloud/2026/09/01/vmware-intros-private-ai-cloud-ai-factory-as-workloads-shift-to-on-prem/5293559": [
+    "AMD",
+    "AVGO",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/connect/2026/08/31/in-the-long-run-nvidia-nvswitch-is-the-infiniband-of-scale-up-ai-networks/5293474": [
+    "AMD",
+    "AVGO",
+    "META",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://www.thediff.co/archive/the-surprisingly-weak-ipo-housing-effect/": [
+    "META",
+    "SPCX"
   ]
 }

@@ -1252,5 +1252,24 @@
     "trade_worthy": false,
     "context": "The article says Meta released version 2 of a model that translates brain activity into words and is described as reading minds from outside the brain; it offers no information on commercialization, user adoption, revenue, costs, competitive response, or regulatory consequences.",
     "source": "Not Boring"
+  },
+  {
+    "id": "7a638e00cbc03733",
+    "ticker": "META",
+    "source_link": "https://www.nextplatform.com/connect/2026/08/31/in-the-long-run-nvidia-nvswitch-is-the-infiniband-of-scale-up-ai-networks/5293474",
+    "source_title": "In The Long Run, Nvidia NVSwitch Is The InfiniBand Of Scale Up AI Networks",
+    "event_type": "competitive",
+    "created": "2026-08-31",
+    "claim": "META\u2019s support for UALink and ESUN/SUE-T could improve its long-term bargaining power and reduce dependence on Nvidia\u2019s proprietary NVLink/NVSwitch ecosystem, potentially lowering AI-cluster networking costs and increasing hardware interchangeability.",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "META is listed among the founders or supporters of both competing Ethernet-based scale-up efforts: UALink and ESUN/SUE-T. The article says hyperscalers and AI model builders generally prefer interoperable standards, and suggests these groups may eventually combine into UALink 2.0 to challenge Nvidia directly; it also notes that META previously used InfiniBand for AI clusters but is part of the industry shift toward Ethernet-based networking. Any benefit would depend on the standards reaching commercial maturity and matching NVLink performance, while Nvidia is attempting to preserve its position through NVLink Fusion.",
+    "source": "Next Platform"
   }
 ]

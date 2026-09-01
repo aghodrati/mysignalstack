@@ -30,5 +30,53 @@
       }
     ],
     "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-09-01",
+    "call_date": "2026-09-02",
+    "narrative": "Investors should watch whether Broadcom\u2019s AI-related demand\u2014especially custom accelerators and networking\u2014continues to support strong growth, following Nvidia\u2019s \u201cblockbuster earnings\u201d and the resulting broad AI bid. They should also listen for customer concentration, hyperscaler spending plans, and any indications that the Alphabet/Marvell discussion changes the competitive backdrop for custom silicon. The headlines suggest expectations are already elevated, with options activity focused on the report and one article warning that the quarter may \u201cnot change anything,\u201d so merely solid results could produce a muted reaction if the outlook is not raised. My base case is a strong operational update, but the key upside catalyst would be confident forward commentary on AI demand rather than the reported quarter alone.",
+    "headlines_used": [
+      {
+        "title": "Broadcom: Why Q3 Is Not Going To Change Anything",
+        "domain": "SeekingAlpha",
+        "date": "20260901"
+      },
+      {
+        "title": "Broadcom Could Swing $139 Billion In Value After Earnings",
+        "domain": "Benzinga",
+        "date": "20260831"
+      },
+      {
+        "title": "Marvell: Market's Myopia On Alphabet Deal's Potential Is Baffling",
+        "domain": "SeekingAlpha",
+        "date": "20260831"
+      },
+      {
+        "title": "10 Information Technology Stocks Whale Activity In Today\u2019s Session",
+        "domain": "Benzinga",
+        "date": "20260831"
+      },
+      {
+        "title": "Broadcom (NASDAQ:AVGO) Fits the Quality Investing Mold",
+        "domain": "ChartMill",
+        "date": "20260829"
+      },
+      {
+        "title": "Options Action: Broadcom and Dell report next week",
+        "domain": "CNBC",
+        "date": "20260828"
+      },
+      {
+        "title": "Nvidia's Guide Ignites a Broad AI Bid Ahead of Warsh's Jackson Hole Debut",
+        "domain": "ChartMill",
+        "date": "20260828"
+      },
+      {
+        "title": "Nvidia jumps nearly 10% after blockbuster earnings boost AI confidence",
+        "domain": "CNBC",
+        "date": "20260827"
+      }
+    ],
+    "type": "earnings_preview"
   }
 ]

@@ -4413,5 +4413,92 @@
     "name": "Hugging Face",
     "ticker_guess": null,
     "why": "Unveiled Microduck, a $399 reinforcement-learning robot capable of walking, sitting, crouching, roller-skating, picking up objects, and self-recovery; acquired Pollen Robotics in 2025"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-01",
+    "source": "Next Platform",
+    "article_title": "VMware Intros Private AI Cloud, AI Factory As Workloads Shift To On-Prem",
+    "article_link": "https://www.nextplatform.com/cloud/2026/09/01/vmware-intros-private-ai-cloud-ai-factory-as-workloads-shift-to-on-prem/5293559",
+    "name": "MetalSoft",
+    "ticker_guess": null,
+    "why": "Its platform orchestrates the hardware and software included in VMware AI Factory deployments; Provides unified operations for the underlying AI infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-31",
+    "source": "Next Platform",
+    "article_title": "In The Long Run, Nvidia NVSwitch Is The InfiniBand Of Scale Up AI Networks",
+    "article_link": "https://www.nextplatform.com/connect/2026/08/31/in-the-long-run-nvidia-nvswitch-is-the-infiniband-of-scale-up-ai-networks/5293474",
+    "name": "MediaTek",
+    "ticker_guess": "2454.TW",
+    "why": "Nvidia reportedly bought $3.5 billion of its convertible bonds; will gain access to Nvidia\u2019s NVLink Fusion stack for integrating custom chips into NVSwitch memory fabrics"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-31",
+    "source": "Next Platform",
+    "article_title": "In The Long Run, Nvidia NVSwitch Is The InfiniBand Of Scale Up AI Networks",
+    "article_link": "https://www.nextplatform.com/connect/2026/08/31/in-the-long-run-nvidia-nvswitch-is-the-infiniband-of-scale-up-ai-networks/5293474",
+    "name": "Cisco Systems",
+    "ticker_guess": "CSCO",
+    "why": "Participates in UALink and ESUN/SUE-T efforts targeting Ethernet-based scale-up networking; has Ethernet and historical InfiniBand switching exposure"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-31",
+    "source": "Next Platform",
+    "article_title": "In The Long Run, Nvidia NVSwitch Is The InfiniBand Of Scale Up AI Networks",
+    "article_link": "https://www.nextplatform.com/connect/2026/08/31/in-the-long-run-nvidia-nvswitch-is-the-infiniband-of-scale-up-ai-networks/5293474",
+    "name": "Arista Networks",
+    "ticker_guess": "ANET",
+    "why": "Participates in the ESUN/SUE-T Ethernet scale-up effort; previously worked with hyperscalers on faster Ethernet signaling standards"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-31",
+    "source": "The Diff",
+    "article_title": "The Surprisingly Weak IPO-Housing Effect",
+    "article_link": "https://www.thediff.co/archive/the-surprisingly-weak-ipo-housing-effect/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Considering outcome-based pricing in which customers pay for results rather than tokens; may stop supporting Cursor because of concerns about contractual adherence and possible model distillation"
+  },
+  {
+    "type": "company",
+    "date": "2026-08-31",
+    "source": "The Diff",
+    "article_title": "The Surprisingly Weak IPO-Housing Effect",
+    "article_link": "https://www.thediff.co/archive/the-surprisingly-weak-ipo-housing-effect/",
+    "name": "xAI",
+    "ticker_guess": null,
+    "why": "OpenAI\u2019s planned withdrawal of Cursor support may relate to concerns that Cursor could be used to distill and deploy xAI models"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-01",
+    "source": "Doomberg",
+    "article_title": "With American Characteristics",
+    "article_link": "https://newsletter.doomberg.com/p/with-american-characteristics",
+    "name": "oil geopolitics",
+    "why": "Trump announced a claimed U.S.-Venezuela agreement granting majority U.S. control of more than 65 billion barrels of proven Venezuelan oil reserves; the announcement says the deal would increase U.S. oil supply and lower gasoline prices"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-01",
+    "source": "Doomberg",
+    "article_title": "With American Characteristics",
+    "article_link": "https://newsletter.doomberg.com/p/with-american-characteristics",
+    "name": "US-Venezuela",
+    "why": "The article describes the agreement as a major expansion of U.S. influence in Venezuela; Venezuelan opposition figures criticized it as colonialist extraction, while supporters framed it as a strategic success"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-01",
+    "source": "Doomberg",
+    "article_title": "With American Characteristics",
+    "article_link": "https://newsletter.doomberg.com/p/with-american-characteristics",
+    "name": "US-China rivalry",
+    "why": "The article argues that U.S. government agencies may be using indirect financial resources to strengthen U.S. geopolitical power; it identifies Chinese influence as a longstanding threat to that position"
   }
 ]

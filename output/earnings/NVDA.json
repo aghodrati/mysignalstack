@@ -152,5 +152,33 @@
     "reported_eps": 2.22,
     "surprise_pct": 6.16,
     "type": "earnings_result"
+  },
+  {
+    "date": "2026-09-01",
+    "transcript_date": "2026-08-31",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/08/31/nvidia-nvda-q2-2027-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.78,
+    "guidance_summary": "Q3 revenue guided to $108.0 billion plus or minus 2%, with growth driven primarily by ACIE and Vera Rubin expected to contribute about 20% of data-center revenue. Management introduced a preliminary fiscal 2028 revenue outlook of approximately 70% year-over-year growth, explicitly supply constrained. Gross margin is guided to 74% plus or minus 50 basis points in Q3, bottoming at 71%-72% in Q4 and settling at 72%-73% in fiscal 2028; non-GAAP Q3 OpEx is expected at approximately $9.0 billion. Hyperscaler CapEx is expected at nearly $800 billion in 2026 and $1.3 trillion in 2027, while NVIDIA is arranging more than $500 billion of third-party infrastructure financing and providing selective guarantees or credit enhancement to some customers.",
+    "guidance_change": "Revenue guidance is materially higher than the prior call's Q4 $65 billion outlook, although the periods are not directly comparable; management now points to $108 billion for Q3 and approximately 70% growth for fiscal 2028. The margin outlook has weakened: prior Q4 guidance was 74.8% and fiscal 2027 margins were expected to remain in the mid-seventies, versus a new Q4 trough of 71%-72% and fiscal 2028 margins of 72%-73%. China data-center revenue remains excluded, consistent with the prior call.",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On the gap between roughly 100% demand growth and 70% guided growth, Huang was unusually specific that supply, not demand, is the constraint and said NVIDIA has visibility well upstream and downstream through land, power, shell, memory and other suppliers.",
+      "When asked to rank constraints such as power, data-center construction, DRAM and wafer capacity, Huang declined to prioritize them, saying the entire supply chain is challenged and running flat out; this was a broad answer rather than a quantified bottleneck analysis.",
+      "On roughly $500 billion of ecosystem commitments and investments in customers developing custom chips, Huang strongly defended the strategy and expressed '100% confidence' that frontier labs will remain long-term NVIDIA customers, but did not provide a detailed cash exposure or loss-severity framework.",
+      "On whether open-source models and customer-specific silicon threaten NVIDIA, Huang argued that NVIDIA's fungible, full-stack platform runs both open and closed models and across the full AI lifecycle, emphasizing breadth rather than addressing potential share loss directly."
+    ],
+    "risks": [
+      "Supply remains the binding constraint through at least fiscal 2028, with management unable to identify a single dominant bottleneck and acknowledging that it could disappoint customers.",
+      "Extreme memory pricing is exceeding prior expectations and is expected to rise further, driving gross margin down to 71%-72% in Q4 and potentially keeping fiscal 2028 margins below historical mid-seventies levels.",
+      "NVIDIA is assuming significant ecosystem and customer-financing exposure, including take-or-pay guarantees, revenue-sharing structures and selective credit enhancement; management's description of the arrangements as not being loans does not eliminate credit, utilization or concentration risk.",
+      "Frontier AI labs and NeoClouds may have strong demand but weaker balance sheets, raising counterparty and circular-financing concerns as NVIDIA invests in or supports their infrastructure.",
+      "Customers including major AI labs are developing custom silicon, creating a potential long-term threat to NVIDIA's inference share despite management's confidence in platform durability.",
+      "Inventory rose to approximately $32 billion and DSO increased to 60 days because of large multi-quarter shipments and extended payment terms, increasing working-capital and demand-forecast risk.",
+      "No China data-center compute revenue is included in the forward outlook, leaving material geopolitical and export-control downside.",
+      "The very large hyperscaler CapEx and AI infrastructure assumptions depend on continued profitable token demand and rapid adoption of agentic AI, which could slow if AI monetization or returns on invested capital disappoint."
+    ],
+    "summary": "The call was strongly bullish on demand, platform expansion and Vera Rubin, with management guiding to $108 billion of near-term revenue and approximately 70% fiscal 2028 growth despite saying unconstrained demand is substantially higher. The main deterioration is profitability and risk quality: memory inflation is expected to compress gross margin to 71%-72%, while NVIDIA is increasingly using guarantees, investments and financing support to enable customers and infrastructure partners. Q&A responses remained highly confident but were broad on supply prioritization and financial exposure, making the call directionally positive but with meaningful execution, credit and margin risks.",
+    "type": "earnings_transcript"
   }
 ]

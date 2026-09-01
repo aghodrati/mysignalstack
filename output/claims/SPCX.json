@@ -340,5 +340,24 @@
     "trade_worthy": false,
     "context": "The article identifies SpaceX as a Senra customer and says traditional aerospace wire-harness suppliers quote four-to-six-month lead times, while Senra claims four-week delivery and 99% first-pass yield versus roughly 75% for competitors. Because harnesses are required before aerospace systems can be powered on and tested, a more capable supplier could improve SpaceX\u2019s manufacturing throughput and reliability, although Senra\u2019s current capacity and contribution to SpaceX\u2019s total requirements are not disclosed.",
     "source": "Not Boring"
+  },
+  {
+    "id": "aa53abaec1a102ad",
+    "ticker": "SPCX",
+    "source_link": "https://www.thediff.co/archive/the-surprisingly-weak-ipo-housing-effect/",
+    "source_title": "The Surprisingly Weak IPO-Housing Effect",
+    "event_type": "other",
+    "created": "2026-08-31",
+    "claim": "SpaceX's reported entry into gas-turbine blade manufacturing could diversify the company into a bottlenecked component of the AI infrastructure supply chain and provide long-term exposure to the expanding AI capital-expenditure buildout.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says SpaceX is manufacturing gas-turbine blades, characterized as one of the most constrained parts of the infrastructure supply chain, and interprets this as consistent with Elon Musk using SpaceX's hardware-execution capabilities to invest materially\u2014potentially by many tens of billions of dollars\u2014in AI infrastructure. This could create a new growth avenue beyond SpaceX's traditional activities, although the scale, economics, and timing of the opportunity are not established.",
+    "source": "The Diff"
   }
 ]

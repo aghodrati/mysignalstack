@@ -132,5 +132,56 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.74,
     "confidence_after": 0.74
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-01",
+    "thesis": "AMD remains a moderately high-conviction long as accelerating EPYC demand, strong data-center momentum, and Helios/Instinct adoption can drive substantial growth, although execution, supply, software, competition, and premium valuation constrain upside.",
+    "direction": "long",
+    "confidence": 0.6215999999999999,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.74,
+    "critic_multiplier": 0.84,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Server CPU revenue growth above 80% year over year in the second half of 2026 and above 70% in 2027, supported by tight demand and Venice share gains.",
+      "Large-scale Microsoft Azure Helios deployments and planned OpenAI, Meta, and Anthropic capacity increases that convert into MI455X and related-system revenue.",
+      "Helios and MI450/MI455X ramp successfully with improving yields, adequate HBM and packaging supply, and competitive total cost of ownership.",
+      "ROCm, vLLM, ATOM, and related inference software close production-readiness gaps, improving AMD\u2019s position in long-context and agentic inference.",
+      "Enterprise adoption of MI350 through VMware\u2019s AI Factory architecture broadens AMD\u2019s customer base beyond hyperscalers."
+    ],
+    "invalidation": [
+      "Helios ramps slowly or suffers yield, reliability, power, manufacturing, or margin problems, delaying the expected 2027 data-center acceleration.",
+      "HBM, wafer, packaging, substrate, or server-CPU shortages prevent AMD from converting demand into shipments and revenue.",
+      "ROCm and mainstream serving stacks fail to close the distributed and long-context inference gap, while Nvidia, custom XPUs, Cerebras, or OpenAI ASICs capture incremental workloads.",
+      "Meta, Microsoft, OpenAI, or Anthropic deployments are delayed, reduced, customized toward lower-volume configurations, or constrained by customer build-out and power availability.",
+      "Revenue growth decelerates materially or operating margins fail to expand, making roughly 37x forward earnings and 20.9x EV/revenue vulnerable to multiple compression.",
+      "PC, gaming, and memory-cost pressure combine with lower-margin accelerator mix to weaken consolidated profitability."
+    ],
+    "reasoning": "The independent fundamentals and latest earnings call are bullish, with 37.8% fundamental revenue growth, 91.2% earnings growth, 50% reported call-quarter revenue growth, 56% gross margin, confident above-80% second-half server-CPU guidance, and a modest 3.21% EPS beat, but the demanding valuation and substantial supply, margin, customer-concentration, software, and competitive risks justify a moderate rather than maximal confidence.",
+    "claims_considered": 131
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-01",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis cites premium valuation as a constraint, but none of the supplied claims provides valuation evidence, so that qualifier is unsupported.",
+      "It treats Helios/Instinct adoption as a growth driver more confidently than the claims justify: major deployments are planned or prospective, while Helios is expected to ramp slowly and faces manufacturing, reliability, networking, software, and supply risks.",
+      "The bullish framing underweights high-importance counterclaims that AMD is currently disadvantaged in production long-context agentic inference, has material ROCm/vLLM gaps, and may not monetize MI355X's hardware advantages.",
+      "The thesis does not adequately reflect structural threats from custom accelerators, Arm CPUs, Cerebras, and OpenAI's potential Jalape\u00f1o ASIC, which challenge both the CPU and accelerator portions of the growth case.",
+      "Strong demand is repeatedly paired with HBM and server-CPU supply shortfalls, so demand acceleration does not necessarily translate into near-term shipment or revenue acceleration.",
+      "The Q1 2026 earnings catalyst is stale by the September 1 date, and the more recent Q2 catalyst supports operating momentum but does not by itself validate the forward Helios and Instinct adoption assumptions."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The claims support a bullish operating backdrop, but the synthesis overstates the certainty and timing of AI-system adoption, omits several high-importance competitive and software risks, and includes an unsupported valuation constraint.",
+    "final_multiplier": 0.84,
+    "confidence_before": 0.74,
+    "confidence_after": 0.6215999999999999
   }
 ]
