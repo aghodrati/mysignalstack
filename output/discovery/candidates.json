@@ -4500,5 +4500,92 @@
     "article_link": "https://newsletter.doomberg.com/p/with-american-characteristics",
     "name": "US-China rivalry",
     "why": "The article argues that U.S. government agencies may be using indirect financial resources to strengthen U.S. geopolitical power; it identifies Chinese influence as a longstanding threat to that position"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-01",
+    "source": "SemiAnalysis",
+    "article_title": "Korea\u2019s Trillion-Dollar Sovereign AI Investment: Nvidia Wins, Hynix Loses",
+    "article_link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+    "name": "Samsung Electronics",
+    "ticker_guess": "005930.KS",
+    "why": "Reportedly plans to build an Nvidia-powered AI factory using more than 50,000 GPUs; cited as a major Korean technology company committing resources to AI infrastructure and model development"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-01",
+    "source": "SemiAnalysis",
+    "article_title": "Korea\u2019s Trillion-Dollar Sovereign AI Investment: Nvidia Wins, Hynix Loses",
+    "article_link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+    "name": "SK Telecom",
+    "ticker_guess": "SKM",
+    "why": "Participated in South Korea\u2019s sovereign AI model tournament; announced a 2GW DSX AI factory expected to deploy Vera Rubin systems with SK Hynix HBM4"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-01",
+    "source": "SemiAnalysis",
+    "article_title": "Korea\u2019s Trillion-Dollar Sovereign AI Investment: Nvidia Wins, Hynix Loses",
+    "article_link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+    "name": "Naver",
+    "ticker_guess": "035420.KS",
+    "why": "Was disqualified from South Korea\u2019s sovereign AI tournament for using Alibaba Qwen encoders; separately received a 1GW allocation in the national data-center buildout and signed for 200MW of Nvidia capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-01",
+    "source": "SemiAnalysis",
+    "article_title": "Korea\u2019s Trillion-Dollar Sovereign AI Investment: Nvidia Wins, Hynix Loses",
+    "article_link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+    "name": "Motif Technologies",
+    "ticker_guess": null,
+    "why": "Tiny Korean startup whose Motif 3 model reportedly led Korean competitors and surpassed leading American open-source models; eliminated from the government tournament despite best benchmark performance"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-01",
+    "source": "SemiAnalysis",
+    "article_title": "Korea\u2019s Trillion-Dollar Sovereign AI Investment: Nvidia Wins, Hynix Loses",
+    "article_link": "https://newsletter.semianalysis.com/p/koreas-trillion-dollar-sovereign",
+    "name": "Upstage",
+    "ticker_guess": null,
+    "why": "One of the two startup-backed finalists in South Korea\u2019s sovereign AI tournament; its model significantly outperformed models backed by large Korean conglomerates"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-02",
+    "source": "Stratechery",
+    "article_title": "Fable 5.1, Enterprise Frontier Safeguards",
+    "article_link": "https://stratechery.com/2026/fable-5-1-enterprise-frontier-safeguards/",
+    "name": "Fable",
+    "ticker_guess": null,
+    "why": "Released Fable 5.1; removed its data retention policy; increased caching is highlighted"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-02",
+    "source": "Stratechery",
+    "article_title": "Fable 5.1, Enterprise Frontier Safeguards",
+    "article_link": "https://stratechery.com/2026/fable-5-1-enterprise-frontier-safeguards/",
+    "name": "AI safeguards",
+    "why": "Fable 5.1 introduces enterprise frontier safeguards"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-02",
+    "source": "Stratechery",
+    "article_title": "Fable 5.1, Enterprise Frontier Safeguards",
+    "article_link": "https://stratechery.com/2026/fable-5-1-enterprise-frontier-safeguards/",
+    "name": "data retention",
+    "why": "Fable's data retention policy is being entirely removed"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-02",
+    "source": "Stratechery",
+    "article_title": "Fable 5.1, Enterprise Frontier Safeguards",
+    "article_link": "https://stratechery.com/2026/fable-5-1-enterprise-frontier-safeguards/",
+    "name": "AI caching",
+    "why": "The article discusses increased caching as beneficial"
   }
 ]
