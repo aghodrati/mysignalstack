@@ -891,5 +891,24 @@
     "trade_worthy": false,
     "context": "Amazon\u2019s Zoox received U.S. approval for limited commercial deployment of a purpose-built robotaxi with no driver\u2019s seat or steering wheel and two rows of inward-facing seats. The approval enables Zoox to begin commercially deploying this vehicle design, but the article provides no scale, revenue, cost, or rollout targets, so the immediate effect on Amazon\u2019s consolidated business remains uncertain.",
     "source": "Not Boring"
+  },
+  {
+    "id": "aa6373e28783459c",
+    "ticker": "AMZN",
+    "source_link": "https://www.nextplatform.com/connect/2026/09/02/optics-still-driving-marvells-ai-business-more-than-custom-chips/5294018",
+    "source_title": "Optics Still Driving Marvell\u2019s AI Business More Than Custom Chips",
+    "event_type": "earnings",
+    "created": "2026-09-02",
+    "claim": "Marvell\u2019s expanding custom-CPU/XPU partnership with AWS should strengthen Amazon\u2019s ability to deploy differentiated AI infrastructure and potentially reduce reliance on merchant accelerators, modestly improving AWS\u2019s long-term competitive position and economics.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies AWS as one of the hyperscalers using Marvell\u2019s custom-chip offerings and says Marvell expects custom CPU and XPU revenue to reach about $2 billion in fiscal 2027, more than double in fiscal 2028, with growth partly driven by AWS projects. However, custom chips remain smaller than Marvell\u2019s AI electro-optics and switching business, so the implication for Amazon is supportive but indirect and depends on successful future AWS deployments.",
+    "source": "Next Platform"
   }
 ]

@@ -4587,5 +4587,25 @@
     "article_link": "https://stratechery.com/2026/fable-5-1-enterprise-frontier-safeguards/",
     "name": "AI caching",
     "why": "The article discusses increased caching as beneficial"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-02",
+    "source": "Next Platform",
+    "article_title": "Optics Still Driving Marvell\u2019s AI Business More Than Custom Chips",
+    "article_link": "https://www.nextplatform.com/connect/2026/09/02/optics-still-driving-marvells-ai-business-more-than-custom-chips/5294018",
+    "name": "Marvell Technology",
+    "ticker_guess": "MRVL",
+    "why": "AI datacenter revenue was estimated at $1.82 billion in Q2 fiscal 2027, up 90.9% year over year; raised fiscal 2027 revenue guidance to $12 billion and fiscal 2028 guidance to $18 billion; custom CPU/XPU and optical-component businesses are expected to accelerate through fiscal 2028 and 2029"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-02",
+    "source": "Next Platform",
+    "article_title": "Optics Still Driving Marvell\u2019s AI Business More Than Custom Chips",
+    "article_link": "https://www.nextplatform.com/connect/2026/09/02/optics-still-driving-marvells-ai-business-more-than-custom-chips/5294018",
+    "name": "Celestial AI",
+    "ticker_guess": null,
+    "why": "Its optical-interposer hardware is expected to generate about $150 million within roughly $300 million of Marvell network-component opportunities in fiscal 2028"
   }
 ]

@@ -739,5 +739,24 @@
     "trade_worthy": false,
     "context": "Although Broadcom supplies the Ethernet switching silicon used in AMD\u2019s UALink-based Helios design and participates in ESUN/SUE-T, the article states that Broadcom has walked away from UALink and, as far as known, does not want to support the NVLink/NVSwitch combination. If UALink ultimately wins without Broadcom\u2019s participation, or if another standard becomes dominant, Broadcom could lose share of the fastest-growing scale-up networking opportunity; the article also notes this stance could change if Broadcom\u2019s customer base demands support.",
     "source": "Next Platform"
+  },
+  {
+    "id": "a75b0f77c86332f7",
+    "ticker": "AVGO",
+    "source_link": "https://www.nextplatform.com/connect/2026/09/02/optics-still-driving-marvells-ai-business-more-than-custom-chips/5294018",
+    "source_title": "Optics Still Driving Marvell\u2019s AI Business More Than Custom Chips",
+    "event_type": "earnings",
+    "created": "2026-09-02",
+    "claim": "Marvell\u2019s accelerating AI optical-networking and custom-chip business strengthens it as a competitive counterbalance to Broadcom, increasing the risk that AVGO faces greater share and pricing pressure in hyperscaler AI infrastructure over the next several quarters.",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Marvell\u2019s datacenter sales reached $2.17 billion in fiscal Q2 2027, with estimated AI revenue of $1.82 billion; electro-optics contributed about $1.4 billion and custom CPUs/XPUs about $425 million. Marvell expects fiscal 2028 revenue of $18 billion, datacenter growth above 60%, and custom CPU/XPU revenue to more than double, supported by expanded AWS and Google programs. Because optical networking and custom accelerators are also important parts of Broadcom\u2019s AI infrastructure exposure, Marvell\u2019s rapid expansion gives hyperscalers another increasingly capable supplier and could intensify competition for those programs.",
+    "source": "Next Platform"
   }
 ]

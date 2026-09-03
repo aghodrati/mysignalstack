@@ -4520,5 +4520,43 @@
     "trade_worthy": false,
     "context": "The article links Korea\u2019s infrastructure expansion to closer Nvidia integration with SK Hynix and says Nvidia likely secured a long-term SOCAMM agreement, favorable HBM pricing, and large 2027 volume commitments, while acknowledging that final terms may differ from the estimate. SK Telecom\u2019s planned Vera Rubin deployment is specifically expected to use SK Hynix HBM4, making memory supply and roadmap coordination important to Nvidia\u2019s ability to fulfill Korean and broader accelerator demand.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "bbf35ff9439834bd",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/connect/2026/09/02/optics-still-driving-marvells-ai-business-more-than-custom-chips/5294018",
+    "source_title": "Optics Still Driving Marvell\u2019s AI Business More Than Custom Chips",
+    "event_type": "earnings",
+    "created": "2026-09-02",
+    "claim": "Marvell\u2019s rapid expansion in AI optical networking and switching makes it a stronger competitive counterbalance to Nvidia in AI infrastructure, potentially limiting Nvidia\u2019s share of networking-related spending and increasing competitive pressure over the next several quarters.",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Marvell\u2019s datacenter sales reached $2.17 billion in Q2 fiscal 2027, with estimated AI revenue of $1.82 billion; approximately $1.4 billion came from AI electro-optics, while custom XPU revenue was only about $425 million. The article explicitly characterizes Marvell as becoming a counterbalance to Nvidia and says its optical and switching products remain the larger part of its AI business, indicating that the most immediate competitive overlap is in the networking layer around AI clusters rather than in Nvidia\u2019s core GPU business.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "19b0e3794635c80a",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/connect/2026/09/02/optics-still-driving-marvells-ai-business-more-than-custom-chips/5294018",
+    "source_title": "Optics Still Driving Marvell\u2019s AI Business More Than Custom Chips",
+    "event_type": "earnings",
+    "created": "2026-09-02",
+    "claim": "Marvell\u2019s expanding custom CPU and XPU programs for AWS, Google, and other hyperscalers could strengthen non-Nvidia compute alternatives and create a longer-term risk to Nvidia\u2019s AI accelerator demand as hyperscalers deploy more internally designed chips.",
+    "direction": "short",
+    "confidence": 0.74,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Marvell expects custom CPUs and XPUs to generate about $2 billion in fiscal 2027 revenue, more than double in fiscal 2028, and grow even faster in 2029, supported by projects for Google, AWS, and other customers. The article presents these programs as part of Marvell\u2019s broader challenge to Nvidia in generative-AI infrastructure, although it also makes clear that custom chips are currently smaller than Marvell\u2019s optical business.",
+    "source": "Next Platform"
   }
 ]

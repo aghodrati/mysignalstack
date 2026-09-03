@@ -1594,5 +1594,24 @@
     "trade_worthy": false,
     "context": "The agreement names a product code-named Kestrel that may need to be qualified by November 10, 2027. The author speculates that it could combine memory, storage, networking, memory-expansion, or inference functionality and could be deployed in Google\u2019s Project Kestrel data centers from around 2028; neither the product\u2019s design nor its relationship to the data centers is confirmed in the filing.",
     "source": "Next Platform"
+  },
+  {
+    "id": "777c3d8d4849d0a5",
+    "ticker": "GOOGL",
+    "source_link": "https://www.nextplatform.com/connect/2026/09/02/optics-still-driving-marvells-ai-business-more-than-custom-chips/5294018",
+    "source_title": "Optics Still Driving Marvell\u2019s AI Business More Than Custom Chips",
+    "event_type": "earnings",
+    "created": "2026-09-02",
+    "claim": "GOOGL\u2019s expanded partnership with Marvell should improve its ability to scale internally customized AI CPUs/XPUs and diversify its accelerator supply, modestly strengthening Google\u2019s AI infrastructure position over the coming quarters.",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Marvell expects the first revenue from Google\u2019s expanded partnership in Q3 fiscal 2027 and attributes part of the more-than-doubling expected growth in Marvell\u2019s custom CPU/XPU business in fiscal 2028 to Google, alongside AWS and other hyperscaler projects. It does not disclose Google\u2019s spending, the economics of the arrangement, or the performance of the resulting chips, so the direct effect on GOOGL\u2019s revenue or margins is unclear.",
+    "source": "Next Platform"
   }
 ]
