@@ -4607,5 +4607,25 @@
     "name": "Celestial AI",
     "ticker_guess": null,
     "why": "Its optical-interposer hardware is expected to generate about $150 million within roughly $300 million of Marvell network-component opportunities in fiscal 2028"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Stratechery",
+    "article_title": "An Interview with OpenAI President Greg Brockman About Astra and Alignment",
+    "article_link": "https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Launched Astra, described as its most aligned model yet and trained using more than 100,000 GPUs; is expanding from chat into agentic, consumer, enterprise and health applications; is developing an in-house Jalape\u00f1o chip while continuing Nvidia as its preferred compute partner"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Stratechery",
+    "article_title": "An Interview with OpenAI President Greg Brockman About Astra and Alignment",
+    "article_link": "https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Brockman described his experience joining Stripe in 2010, becoming CTO and learning first-principles domain analysis, recruiting and company-building skills that he later applied at OpenAI"
   }
 ]

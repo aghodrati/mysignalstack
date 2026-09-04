@@ -4558,5 +4558,43 @@
     "trade_worthy": false,
     "context": "Marvell expects custom CPUs and XPUs to generate about $2 billion in fiscal 2027 revenue, more than double in fiscal 2028, and grow even faster in 2029, supported by projects for Google, AWS, and other customers. The article presents these programs as part of Marvell\u2019s broader challenge to Nvidia in generative-AI infrastructure, although it also makes clear that custom chips are currently smaller than Marvell\u2019s optical business.",
     "source": "Next Platform"
+  },
+  {
+    "id": "f18d0a3c0de73099",
+    "ticker": "NVDA",
+    "source_link": "https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/",
+    "source_title": "An Interview with OpenAI President Greg Brockman About Astra and Alignment",
+    "event_type": "product_launch",
+    "created": "2026-09-04",
+    "claim": "OpenAI\u2019s continued reliance on Nvidia for very large training systems and expanding inference capacity supports sustained high demand for NVDA accelerators and strengthens NVDA\u2019s strategic position as OpenAI\u2019s preferred compute partner over the coming months.",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 8,
+    "expected_return_pct": 4.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Brockman said Nvidia remains OpenAI\u2019s preferred compute partner, that Nvidia hardware is necessary for OpenAI\u2019s large training systems, and that OpenAI is building substantial training and inference capacity with Nvidia; Astra was trained using more than 100,000 GPUs. OpenAI also expects to work even more closely with Nvidia and is able to provide feedback from pushing Nvidia hardware in demanding ways, supporting a durable supplier relationship rather than an imminent shift away from Nvidia.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "7315b232898ce222",
+    "ticker": "NVDA",
+    "source_link": "https://stratechery.com/2026/an-interview-with-openai-president-greg-brockman-about-astra-and-alignment/",
+    "source_title": "An Interview with OpenAI President Greg Brockman About Astra and Alignment",
+    "event_type": "product_launch",
+    "created": "2026-09-04",
+    "claim": "OpenAI\u2019s in-house Jalape\u00f1o chip creates a longer-term risk that some of its accelerator demand could shift away from NVDA and that OpenAI may gain greater bargaining power over Nvidia, although the article indicates this is intended to complement rather than replace Nvidia systems.",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "OpenAI is investing in an internally developed chip to build hardware expertise and optimize compute for the direction it expects AI technology to take. Brockman described the internal program as additive and reiterated that Nvidia remains essential for the largest training computers and much inference capacity, but successful proprietary hardware could eventually enable partial workload substitution and reduce OpenAI\u2019s dependence on Nvidia.",
+    "source": "Stratechery"
   }
 ]
