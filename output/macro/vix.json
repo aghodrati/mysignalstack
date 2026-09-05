@@ -283,5 +283,79 @@
       }
     ],
     "fetch_succeeded": true
+  },
+  {
+    "period": "week",
+    "date": "2026-09-05",
+    "value": 14.529999732971191,
+    "delta": 0.09999942779541016,
+    "history": [
+      [
+        "2026-08-31",
+        14.920000076293945
+      ],
+      [
+        "2026-09-01",
+        16.34000015258789
+      ],
+      [
+        "2026-09-02",
+        15.199999809265137
+      ],
+      [
+        "2026-09-03",
+        14.319999694824219
+      ],
+      [
+        "2026-09-04",
+        14.529999732971191
+      ]
+    ],
+    "narrative": "The VIX was essentially unchanged, rising only 0.10, with no clear single catalyst in the listed headlines. Articles warning about September risks, a possible end to Wall Street\u2019s calm, and October volatility likely supported modest hedging, but the broader move appears to reflect routine positioning and market drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Julio C\u00e9sar Ch\u00e1vez Opens Up About His Toughest Fight In New ViX Docuseries",
+        "domain": "Forbes",
+        "date": "20260904"
+      },
+      {
+        "title": "Sensex rises 350 pts from day's low, Nifty near 23,900: Key reasons behind partial market recovery",
+        "domain": "Moneycontrol",
+        "date": "20260902"
+      },
+      {
+        "title": "October Volatility Warning: How Options Traders Can Prepare",
+        "domain": "Barchart",
+        "date": "20260901"
+      },
+      {
+        "title": "S&P 500 September outlook: Key risks investors should watch as stocks near record high",
+        "domain": "Hindustan Times",
+        "date": "20260831"
+      },
+      {
+        "title": "Moneycontrol Pro Panorama | Venezuela's oil unlocked, structural shift set in motion",
+        "domain": "Moneycontrol",
+        "date": "20260831"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20260831"
+      },
+      {
+        "title": "Is Wall Street\u2019s calm about to end? What rising VIX means for S&P 500 stocks",
+        "domain": "Hindustan Times",
+        "date": "20260830"
+      },
+      {
+        "title": "Nifty weekly outlook: Nifty trapped in 23,900-24,750 range; fresh buying should remain selective",
+        "domain": "The Economic Times",
+        "date": "20260830"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W36"
   }
 ]

@@ -197,5 +197,70 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-05",
+    "value": 79660.6015625,
+    "delta": 1.8081339017343545,
+    "history": [
+      [
+        "2026-08-30",
+        77667.5703125
+      ],
+      [
+        "2026-08-31",
+        78548.6328125
+      ],
+      [
+        "2026-09-01",
+        77403.625
+      ],
+      [
+        "2026-09-02",
+        77300.4765625
+      ],
+      [
+        "2026-09-03",
+        81271.7421875
+      ],
+      [
+        "2026-09-04",
+        79671.96875
+      ],
+      [
+        "2026-09-05",
+        79660.6015625
+      ]
+    ],
+    "narrative": "Bitcoin's modest 1.81% weekly gain has no clear single catalyst in the listed headlines. The Fed-hold discussion could have modestly supported risk assets, while the Iran-related attacks and rising oil prices pointed to risk-off pressure; the opposing forces suggest broad positioning or drift rather than a headline-driven move.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Unhinged Friday",
+        "domain": "SeekingAlpha",
+        "date": "20260905"
+      },
+      {
+        "title": "Whale's Insight: Rate Hike? 6 Reasons The Fed Holds In September",
+        "domain": "SeekingAlpha",
+        "date": "20260904"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Oil Prices Advance",
+        "domain": "Yahoo",
+        "date": "20260901"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Monday as US, Iran Exchange Attacks",
+        "domain": "Yahoo",
+        "date": "20260831"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W36",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

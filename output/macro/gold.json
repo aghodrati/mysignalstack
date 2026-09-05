@@ -236,5 +236,72 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-05",
+    "value": 4429.7998046875,
+    "delta": -1.0785889532489379,
+    "history": [
+      [
+        "2026-08-31",
+        4431.10009765625
+      ],
+      [
+        "2026-09-01",
+        4348.0
+      ],
+      [
+        "2026-09-02",
+        4366.2998046875
+      ],
+      [
+        "2026-09-03",
+        4491.7001953125
+      ],
+      [
+        "2026-09-04",
+        4429.7998046875
+      ]
+    ],
+    "narrative": "No clear single catalyst explains the essentially flat weekly move: headlines such as \u201c$5.3B Flows Into ETFs\u201d with GLD among the leaders and analyst comments that the gold rally is driven by investment demand are supportive, while elevated energy prices and Middle East dynamics could also underpin safe-haven demand. However, these are broad background signals rather than a specific new trigger, so the week most plausibly reflects positioning and drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Unhinged Friday",
+        "domain": "SeekingAlpha",
+        "date": "20260905"
+      },
+      {
+        "title": "Energy Prices May Remain Elevated Amid New Middle East Dynamics",
+        "domain": "SeekingAlpha",
+        "date": "20260904"
+      },
+      {
+        "title": "The Best Gold ETF Is SPDR Gold Shares (GLD): Here's Why I'm Holding It in 2026",
+        "domain": "Yahoo",
+        "date": "20260904"
+      },
+      {
+        "title": "QUICK SPARK: $5.3B Flows Into ETFs. VOO, SGOV and GLD Lead Investor Demand",
+        "domain": "Benzinga",
+        "date": "20260904"
+      },
+      {
+        "title": "Billionaire Activist Investor Dan Loeb Bought Gold, Then Dumped It 3 Months Later \u2014 Timing Hasn't Paid Off Yet",
+        "domain": "Benzinga",
+        "date": "20260904"
+      },
+      {
+        "title": "Gold rally driven by investment demand, not just Treasury move, says analyst",
+        "domain": "Yahoo",
+        "date": "20260903"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W36",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

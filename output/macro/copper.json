@@ -196,5 +196,52 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-05",
+    "value": 6.5970001220703125,
+    "delta": 0.5333789291016133,
+    "history": [
+      [
+        "2026-08-31",
+        6.593500137329102
+      ],
+      [
+        "2026-09-01",
+        6.506499767303467
+      ],
+      [
+        "2026-09-02",
+        6.500999927520752
+      ],
+      [
+        "2026-09-03",
+        6.577000141143799
+      ],
+      [
+        "2026-09-04",
+        6.5970001220703125
+      ]
+    ],
+    "narrative": "No clear single catalyst for the +0.53 weekly move: \u201cWeekly Commentary: Unhinged Friday\u201d is too vague to explain copper specifically. \u201cCopper Discoveries 2026 - Expansion Over Addition As New Discoveries Lag\u201d is a longer-term bullish supply backdrop, but it does not clearly account for this week\u2019s price action, which was likely broad positioning or drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Unhinged Friday",
+        "domain": "SeekingAlpha",
+        "date": "20260905"
+      },
+      {
+        "title": "Copper Discoveries 2026 - Expansion Over Addition As New Discoveries Lag",
+        "domain": "SeekingAlpha",
+        "date": "20260904"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W36",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

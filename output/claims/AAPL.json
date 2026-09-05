@@ -131,5 +131,24 @@
     "trade_worthy": false,
     "context": "The article explicitly recommends that App Store operators prepare to police autonomous spam submissions as agents become capable of developing and publishing apps at very low marginal cost\u2014about $25 for development and submission in the test. Stronger screening, identity checks, monitoring, or review procedures could require additional operating resources and make the submission process more cumbersome, although the article does not establish the magnitude or timing of any financial effect.",
     "source": "Normal Tech"
+  },
+  {
+    "id": "02a3d5d43494de87",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/friction-and-feedback/",
+    "source_title": "2026.36: Friction and Feedback",
+    "event_type": "other",
+    "created": "2026-09-04",
+    "claim": "Apple\u2019s successful immersive Friday Night Baseball broadcast improves the credibility of Vision Pro as a compelling live-event platform, which could support future adoption and ecosystem demand.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Apple executed well on an immersive Friday Night Baseball broadcast, contrasting with prior criticism of Apple\u2019s approach to producing live events in immersive video. The experience is presented as evidence that Apple can deliver a high-quality use case for Vision Pro, although no sales, subscriber, or revenue impact is quantified.",
+    "source": "Stratechery"
   }
 ]

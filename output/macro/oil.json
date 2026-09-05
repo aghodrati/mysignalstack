@@ -137,5 +137,62 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-05",
+    "value": 91.4800033569336,
+    "delta": 9.688251418733461,
+    "history": [
+      [
+        "2026-08-31",
+        85.76000213623047
+      ],
+      [
+        "2026-09-01",
+        90.22000122070312
+      ],
+      [
+        "2026-09-02",
+        91.01000213623047
+      ],
+      [
+        "2026-09-03",
+        91.30000305175781
+      ],
+      [
+        "2026-09-04",
+        91.4800033569336
+      ]
+    ],
+    "narrative": "The sharp weekly rally was most plausibly driven by heightened Middle East supply-risk concerns, reflected in the headline that energy prices may remain elevated amid new regional dynamics. Mike Pompeo\u2019s call for Trump to cut off China\u2019s Iranian oil lifeline adds a specific potential tightening of Iranian exports, though the headlines do not establish that policy has actually changed.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Energy Prices May Remain Elevated Amid New Middle East Dynamics",
+        "domain": "SeekingAlpha",
+        "date": "20260904"
+      },
+      {
+        "title": "Repo Market Update - Maturity Wall Expansion Signals Higher Yields And Increased Future Volatility",
+        "domain": "SeekingAlpha",
+        "date": "20260904"
+      },
+      {
+        "title": "Mike Pompeo Wants Trump to Cut Off China\u2019s Iranian Oil Lifeline Before Xi Jinping\u2019s Washington Visit: \u2018They Have Picked the Losing Horse\u2019",
+        "domain": "Benzinga",
+        "date": "20260904"
+      },
+      {
+        "title": "President Trump Posts On Truth Social \"... Hundreds of Billions of Dollars was given to Ukraine and NATO, free of charge, that Europe would have paid for \u2014 If they were only asked, but we will be asking for that money, though somewhat belatedly!\"",
+        "domain": "Benzinga",
+        "date": "20260903"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W36",
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

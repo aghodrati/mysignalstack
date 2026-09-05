@@ -1271,5 +1271,24 @@
     "trade_worthy": false,
     "context": "META is listed among the founders or supporters of both competing Ethernet-based scale-up efforts: UALink and ESUN/SUE-T. The article says hyperscalers and AI model builders generally prefer interoperable standards, and suggests these groups may eventually combine into UALink 2.0 to challenge Nvidia directly; it also notes that META previously used InfiniBand for AI clusters but is part of the industry shift toward Ethernet-based networking. Any benefit would depend on the standards reaching commercial maturity and matching NVLink performance, while Nvidia is attempting to preserve its position through NVLink Fusion.",
     "source": "Next Platform"
+  },
+  {
+    "id": "f2e549a90b51c513",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/friction-and-feedback/",
+    "source_title": "2026.36: Friction and Feedback",
+    "event_type": "other",
+    "created": "2026-09-04",
+    "claim": "Meta\u2019s settlement-driven restrictions on teens\u2019 use of Instagram and other Meta services could reduce teen engagement and future user monetization, creating a bearish risk to advertising growth over the longer term.",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Meta agreed with 29 states to make sweeping changes restricting teens\u2019 use of Instagram and Meta services, framing the move as part of a broader debate over regulation of technology that removes friction. It does not specify the restrictions\u2019 implementation, affected user volumes, or financial impact, so the effect on engagement and advertising demand remains difficult to quantify.",
+    "source": "Stratechery"
   }
 ]

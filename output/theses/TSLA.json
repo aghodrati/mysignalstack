@@ -42,5 +42,50 @@
     "final_multiplier": 0.774,
     "confidence_before": 0.20800000000000002,
     "confidence_after": 0.16099200000000002
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-05",
+    "thesis": "Tesla's ambitious Cybercab and Terafab plans offer substantial long-term optionality, but weak current profitability, a severe latest-quarter EPS miss, execution risk, and an exceptionally demanding valuation make modest downside more likely before those projects are proven.",
+    "direction": "short",
+    "confidence": 0.44839999999999997,
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.59,
+    "critic_multiplier": 0.76,
+    "expected_return_pct": -14,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Cybercab fleet expansion remains materially behind established robotaxi operators or public rides fail to demonstrate scalable demand and economics.",
+      "Terafab development requires larger-than-expected capital commitments, encounters technical delays, or distracts from the vehicle business.",
+      "Earnings continue to disappoint, with profitability remaining near the roughly 1.4% operating margin and investment needs failing to translate revenue growth into earnings or cash flow."
+    ],
+    "invalidation": [
+      "Austin Cybercab public rides rapidly scale and validate the stated sub-$30,000 build cost and roughly $0.20-per-mile operating target.",
+      "Tesla demonstrates a credible path to closing its robotaxi scale gap and converts autonomy into material mobility revenue.",
+      "Terafab expands reliable access to advanced compute while improving Tesla's competitive position without impairing capital efficiency.",
+      "Vehicle demand remains strong, including sustained benefits from incentives such as California's first-time-buyer rebate, and earnings rebound materially from the reported $0.33 EPS versus the $0.54 estimate."
+    ],
+    "reasoning": "The bullish commercialization catalysts are important but largely prospective and offset by the small initial fleet and execution risks, while the neutral fundamental picture, approximately 146 forward P/E, weak operating profitability, and 39.15% latest-quarter EPS miss support a cautious short despite the absence of an earnings-call picture.",
+    "claims_considered": 6
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-05",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis introduces weak current profitability and a severe latest-quarter EPS miss, neither of which appears in the supplied claims, so those are unsupported premises rather than evidence-based synthesis.",
+      "The assertion that Tesla has an exceptionally demanding valuation is entirely absent from the claims and materially drives the stated downside conclusion.",
+      "The claims support execution and competitive risks, but do not establish that modest downside is more likely than upside; the long-term Terafab and Cybercab opportunities remain explicitly conditional rather than disproven.",
+      "The California rebate signal was described on 2026-08-14 as near-term demand support and may be partly stale by the 2026-09-05 framing, though its omission is less consequential than the unsupported profitability, EPS, and valuation assertions."
+    ],
+    "llm_multiplier": 0.76,
+    "llm_reasoning": "The risk framing is partly grounded in the Terafab and Cybercab execution claims, but the confidence and downside conclusion overreach by relying on major financial and valuation premises not included in the evidence.",
+    "final_multiplier": 0.76,
+    "confidence_before": 0.59,
+    "confidence_after": 0.44839999999999997
   }
 ]

@@ -1613,5 +1613,24 @@
     "trade_worthy": false,
     "context": "The article says Marvell expects the first revenue from Google\u2019s expanded partnership in Q3 fiscal 2027 and attributes part of the more-than-doubling expected growth in Marvell\u2019s custom CPU/XPU business in fiscal 2028 to Google, alongside AWS and other hyperscaler projects. It does not disclose Google\u2019s spending, the economics of the arrangement, or the performance of the resulting chips, so the direct effect on GOOGL\u2019s revenue or margins is unclear.",
     "source": "Next Platform"
+  },
+  {
+    "id": "6027b33fb72dee0b",
+    "ticker": "GOOGL",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-209",
+    "source_title": "Weekly Dose of Optimism #209",
+    "event_type": "product_launch",
+    "created": "2026-09-04",
+    "claim": "GOOGL\u2019s Fervo agreement improves its ability to expand power-intensive AI data-center capacity by securing dedicated, around-the-clock carbon-free electricity, reducing the risk that power availability constrains future growth.",
+    "direction": "long",
+    "confidence": 0.96,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google signed a 396 MW enhanced-geothermal power purchase agreement with Fervo for its Cape Station project in Utah, beginning in 2028, with an option for roughly 600 MW more by June 2030. The article says the power could serve a potential Google data center and follows earlier Google-Fervo projects in Nevada and through NV Energy, giving Google a long-term source of firm clean power as its world models and other AI systems increase electricity demand.",
+    "source": "Not Boring"
   }
 ]

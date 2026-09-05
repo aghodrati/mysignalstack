@@ -210,5 +210,59 @@
       }
     ],
     "fetch_succeeded": true
+  },
+  {
+    "period": "week",
+    "date": "2026-09-05",
+    "value": 4.783999919891357,
+    "delta": 0.06400012969970703,
+    "history": [
+      [
+        "2026-08-31",
+        4.757999897003174
+      ],
+      [
+        "2026-09-01",
+        4.796000003814697
+      ],
+      [
+        "2026-09-02",
+        4.796000003814697
+      ],
+      [
+        "2026-09-03",
+        4.76200008392334
+      ],
+      [
+        "2026-09-04",
+        4.783999919891357
+      ]
+    ],
+    "narrative": "No clear single catalyst this week\u2014Treasury yields likely drifted higher amid mixed labor-market signals, with \u201cJobs Growth Update: Modest Improvement In August\u201d and \u201cRising Vacancies and Falling Payrolls Box in the Fed\u201d suggesting less certainty about near-term policy easing. The move also appears influenced by positioning, as \u201c7 Reasons To Avoid Benchmark Treasuries\u201d contrasted with reported ETF inflows into Treasurys.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "7 Reasons To Avoid Benchmark Treasuries",
+        "domain": "SeekingAlpha",
+        "date": "20260905"
+      },
+      {
+        "title": "Jobs Growth Update: Modest Improvement In August",
+        "domain": "SeekingAlpha",
+        "date": "20260904"
+      },
+      {
+        "title": "Rising Vacancies and Falling Payrolls Box in the Fed",
+        "domain": "Benzinga",
+        "date": "20260904"
+      },
+      {
+        "title": "QUICK SPARK: QQQ, VOO Lead ETF Inflows as Investors Rotate Into Gold and Treasurys",
+        "domain": "Benzinga",
+        "date": "20260903"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W36"
   }
 ]

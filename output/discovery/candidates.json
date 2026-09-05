@@ -4627,5 +4627,102 @@
     "name": "Stripe",
     "ticker_guess": null,
     "why": "Brockman described his experience joining Stripe in 2010, becoming CTO and learning first-principles domain analysis, recruiting and company-building skills that he later applied at OpenAI"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Stratechery",
+    "article_title": "2026.36: Friction and Feedback",
+    "article_link": "https://stratechery.com/2026/friction-and-feedback/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Released Fable 5.1; removed its controversial data-retention policy after backlash; changed the policy partly because it needs to monetize amid competition from OpenAI"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Stratechery",
+    "article_title": "2026.36: Friction and Feedback",
+    "article_link": "https://stratechery.com/2026/friction-and-feedback/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Released a competing model; President Greg Brockman discussed Astra, alignment, and the company\u2019s history in a Stratechery interview"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-05",
+    "source": "Doomberg",
+    "article_title": "Necessary Inventions",
+    "article_link": "https://newsletter.doomberg.com/p/necessary-inventions",
+    "name": "oil",
+    "why": "Global primary energy consumption is described as a long-term upward trend; the Permian Basin is approaching 7 million barrels per day of crude production"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-05",
+    "source": "Doomberg",
+    "article_title": "Necessary Inventions",
+    "article_link": "https://newsletter.doomberg.com/p/necessary-inventions",
+    "name": "Permian Basin",
+    "why": "The basin has driven a large share of global crude-production growth over the past decade; ongoing claims that Permian output will soon peak are presented as recurring energy pessimism"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-05",
+    "source": "Doomberg",
+    "article_title": "Necessary Inventions",
+    "article_link": "https://newsletter.doomberg.com/p/necessary-inventions",
+    "name": "produced water",
+    "why": "Permian oil production brings roughly 3 to 4 barrels of highly contaminated, hypersaline water to the surface per barrel of crude; the scale of the water-disposal challenge is prompting scientists and entrepreneurs to seek new solutions"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #209",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-209",
+    "name": "Fervo Energy",
+    "ticker_guess": null,
+    "why": "Signed a 396 MW enhanced-geothermal power purchase agreement with Google for a potential Utah data center; Google has an option for roughly 600 MW more, potentially bringing the deal to 1 GW"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #209",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-209",
+    "name": "Runway",
+    "ticker_guess": null,
+    "why": "Released Solaris, an interface world model that generates interactive applications frame by frame without conventional code; released GWM World 2 for real-time interactive video-environment simulation"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #209",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-209",
+    "name": "World Labs",
+    "ticker_guess": null,
+    "why": "Released Atlas, an omni world model trained on text, images, video, camera poses, depth maps, and 3D data; generates 1440p video, reconstructs scenes in 3D, and supports camera control"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #209",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-209",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Released Astra 6, whose demonstrations reportedly show agents coordinating inside simulated worlds and performing more tasks for users"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-04",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #209",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-209",
+    "name": "Sami Robotics",
+    "ticker_guess": null,
+    "why": "Robotically harvested and picked an iceberg lettuce head at a 40-acre agricultural robotics test farm; the event was described as a milestone because leafy-greens harvesting is particularly difficult to automate"
   }
 ]
