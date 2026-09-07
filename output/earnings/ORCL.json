@@ -1,0 +1,92 @@
+[
+  {
+    "call_date": "2026-09-10",
+    "when": "2026-09-10T16:00:00-04:00",
+    "eps_estimate": 1.74,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-09-09",
+        "eps_estimate": 1.48,
+        "reported_eps": 1.47,
+        "surprise_pct": -0.62
+      },
+      {
+        "earnings_date": "2025-12-10",
+        "eps_estimate": 1.64,
+        "reported_eps": 2.26,
+        "surprise_pct": 38.04
+      },
+      {
+        "earnings_date": "2026-03-10",
+        "eps_estimate": 1.69,
+        "reported_eps": 1.79,
+        "surprise_pct": 5.69
+      },
+      {
+        "earnings_date": "2026-06-10",
+        "eps_estimate": 1.96,
+        "reported_eps": 2.11,
+        "surprise_pct": 7.52
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-09-07",
+    "call_date": "2026-09-10",
+    "narrative": "Investors should focus on whether Oracle\u2019s cloud infrastructure and AI-related demand are accelerating, and whether management can demonstrate that its AI backlog is converting into revenue and durable growth. The call should also clarify the outlook for capital spending, data-center capacity, margins, and the timing of large cloud or AI customer commitments\u2014particularly because CNBC describes the report as a test for the broader AI trade. Expectations appear constructive but not risk-free: Oracle has attracted a Morgan Stanley price-target increase, yet the upcoming report is prominent enough to feature in options coverage and could face a high bar. Management\u2019s tone on demand, execution, and sensitivity to macro conditions\u2014including inflation and business spending\u2014may matter as much as the headline results.",
+    "headlines_used": [
+      {
+        "title": "Hewlett Packard Enterprise: Surging Revenue Backlog, Massive AI Catalyst, 11.4x P/E",
+        "domain": "SeekingAlpha",
+        "date": "20260907"
+      },
+      {
+        "title": "Inflation, Apple, Adobe, Oracle, Macy\u2019s, and More to Watch This Week",
+        "domain": "Yahoo",
+        "date": "20260906"
+      },
+      {
+        "title": "Short Trading Week, CPI and Other Key Things to Watch this Week",
+        "domain": "Yahoo",
+        "date": "20260906"
+      },
+      {
+        "title": "Wall Street Brunch: Make Or Break Inflation For The Fed",
+        "domain": "SeekingAlpha",
+        "date": "20260906"
+      },
+      {
+        "title": "Live On CNBC, Josh Brown Hosts Segment Titled \"Josh's Best Stocks In The Market: KLA Corp\"",
+        "domain": "Benzinga",
+        "date": "20260904"
+      },
+      {
+        "title": "Stay updated with the S&P500 stocks that are on the move in today's pre-market session.",
+        "domain": "ChartMill",
+        "date": "20260904"
+      },
+      {
+        "title": "Morgan Stanley Maintains Equal-Weight on Oracle, Raises Price Target to $210",
+        "domain": "Benzinga",
+        "date": "20260904"
+      },
+      {
+        "title": "Options Action: Oracle reports next week",
+        "domain": "CNBC",
+        "date": "20260904"
+      },
+      {
+        "title": "Thursday's session: top gainers and losers in the S&P500 index",
+        "domain": "ChartMill",
+        "date": "20260903"
+      },
+      {
+        "title": "AI trade faces test with next week's Oracle earnings",
+        "domain": "CNBC",
+        "date": "20260902"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]
