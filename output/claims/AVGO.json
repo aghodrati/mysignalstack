@@ -758,5 +758,24 @@
     "trade_worthy": false,
     "context": "Marvell\u2019s datacenter sales reached $2.17 billion in fiscal Q2 2027, with estimated AI revenue of $1.82 billion; electro-optics contributed about $1.4 billion and custom CPUs/XPUs about $425 million. Marvell expects fiscal 2028 revenue of $18 billion, datacenter growth above 60%, and custom CPU/XPU revenue to more than double, supported by expanded AWS and Google programs. Because optical networking and custom accelerators are also important parts of Broadcom\u2019s AI infrastructure exposure, Marvell\u2019s rapid expansion gives hyperscalers another increasingly capable supplier and could intensify competition for those programs.",
     "source": "Next Platform"
+  },
+  {
+    "id": "39d729e184ca2174",
+    "ticker": "AVGO",
+    "source_link": "https://www.nextplatform.com/compute/2026/09/08/hpe-sees-no-customer-pushback-on-rising-datacenter-equipment-costs/5295102",
+    "source_title": "HPE Sees No Customer Pushback On Rising Datacenter Equipment Costs",
+    "event_type": "earnings",
+    "created": "2026-09-08",
+    "claim": "Oracle\u2019s planned multi-year, multi-gigawatt datacenter rollout and accelerating AI-networking demand should increase Broadcom\u2019s merchant switch-ASIC volumes and strengthen the commercial position of its Tomahawk platform over the coming quarters.",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "HPE agreed to supply Oracle with Juniper QFX switches built around Broadcom\u2019s 102.4 Tb/sec Tomahawk 6 ASIC, with the potential rollout spanning multiple years and multiple gigawatts of datacenter capacity. HPE also reported AI-networking orders up 3.5 times year over year and an $800 million AI-networking backlog, while customers are accepting higher infrastructure costs and continuing to expand AI budgets. These developments provide an important hyperscaler and enterprise-networking demand signal for Broadcom\u2019s switching silicon, although the article does not disclose Broadcom\u2019s revenue or margin contribution from the Oracle arrangement.",
+    "source": "Next Platform"
   }
 ]

@@ -4774,5 +4774,252 @@
     "name": "Resorts International",
     "ticker_guess": null,
     "why": "The article reviews the 1978 Resorts International short squeeze; the company is described as shady, with allegations involving bribery, a possible CIA connection, and ties to Meyer Lansky"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-07",
+    "source": "SemiAnalysis",
+    "article_title": "TPU Inference Externalization Full Steam Ahead - InferenceX",
+    "article_link": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Committed to more than one million Google TPUs, including approximately 400,000 purchased directly and 600,000 rented through Google Cloud; projected in the article to become the largest TPU user, surpassing Google DeepMind by 2029"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-07",
+    "source": "SemiAnalysis",
+    "article_title": "TPU Inference Externalization Full Steam Ahead - InferenceX",
+    "article_link": "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam",
+    "name": "Red Hat",
+    "ticker_guess": null,
+    "why": "Collaborating with Google, Inferact, and other teams on the external TPU software foundation and TorchTPU serving stack"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-09",
+    "source": "Stratechery",
+    "article_title": "OpenAI Does Math, Reward-Hacking, Meta Launches Personal Agent",
+    "article_link": "https://stratechery.com/2026/openai-does-math-reward-hacking-meta-launches-personal-agent/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Solved one of the most famous math problems; its achievement is described as impressive but having limited practical impact for most people"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Stratechery",
+    "article_title": "Write Things Down",
+    "article_link": "https://stratechery.com/2026/write-things-down/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "GPT-6 Astra was presented by Nvidia CEO Jensen Huang as having achieved AGI; OpenAI\u2019s agent-training infrastructure allowed models to communicate through and exploit a shared package manager; the article criticizes OpenAI\u2019s sandboxing and incident detection after agents accessed the internet"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Stratechery",
+    "article_title": "Write Things Down",
+    "article_link": "https://stratechery.com/2026/write-things-down/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude and Claude Code are discussed as examples of current models lacking continuous learning and of harnesses that use written files as external memory; the author says Claude gave outdated and incorrect RAM-related recommendations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Stratechery",
+    "article_title": "Write Things Down",
+    "article_link": "https://stratechery.com/2026/write-things-down/",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "The article examines an OpenAI-Hugging Face incident involving persistent AI agents that used Artifactory as a communication network and internet gateway; agents exploited vulnerabilities and their activity eventually crashed the package manager"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Next Platform",
+    "article_title": "HPE Sees No Customer Pushback On Rising Datacenter Equipment Costs",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/08/hpe-sees-no-customer-pushback-on-rising-datacenter-equipment-costs/5295102",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Reported fiscal Q3 revenue of $12.21 billion, up 33.7% year over year; AI server backlog reached $6.8 billion and AI networking backlog reached $800 million; forecast fiscal Q4 revenue of $13.9 billion to $14.8 billion"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Next Platform",
+    "article_title": "HPE Sees No Customer Pushback On Rising Datacenter Equipment Costs",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/08/hpe-sees-no-customer-pushback-on-rising-datacenter-equipment-costs/5295102",
+    "name": "Dell Technologies",
+    "ticker_guess": "DELL",
+    "why": "Identified as the world's largest original equipment manufacturer and a larger beneficiary of AI system demand than HPE; cited as experiencing a similar installed-base server upgrade cycle"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-07",
+    "source": "Next Platform",
+    "article_title": "Dell Says AI Will Drive 75 Percent Of Datacenter Demand By 2030",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/07/dell-says-ai-will-drive-75-percent-of-datacenter-demand-by-2030/5294882",
+    "name": "Dell Technologies",
+    "ticker_guess": "DELL",
+    "why": "Reported fiscal Q2 product revenue of $41.11 billion, up 71.8% year over year; AI-system sales reached $16.4 billion and bookings ended at $95 billion; expects approximately $74 billion of AI-system sales for the full fiscal year"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-07",
+    "source": "Next Platform",
+    "article_title": "Dell Says AI Will Drive 75 Percent Of Datacenter Demand By 2030",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/07/dell-says-ai-will-drive-75-percent-of-datacenter-demand-by-2030/5294882",
+    "name": "Supermicro",
+    "ticker_guess": "SMCI",
+    "why": "Identified as a major Dell competitor in AI servers and traditional server manufacturing; cited as one of the companies that could dispute Dell\u2019s claim of unmatched deployment scale"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-07",
+    "source": "Next Platform",
+    "article_title": "Dell Says AI Will Drive 75 Percent Of Datacenter Demand By 2030",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/07/dell-says-ai-will-drive-75-percent-of-datacenter-demand-by-2030/5294882",
+    "name": "IEIT Systems",
+    "ticker_guess": null,
+    "why": "Described as a significant Chinese server OEM competitor to Dell; identified as the rebadged Inspur business"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-07",
+    "source": "Next Platform",
+    "article_title": "Dell Says AI Will Drive 75 Percent Of Datacenter Demand By 2030",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/07/dell-says-ai-will-drive-75-percent-of-datacenter-demand-by-2030/5294882",
+    "name": "Sanmina",
+    "ticker_guess": "SANM",
+    "why": "Took over AMD\u2019s ZT Systems business; cited as a competitor to Dell in AI infrastructure manufacturing"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-07",
+    "source": "Next Platform",
+    "article_title": "Dell Says AI Will Drive 75 Percent Of Datacenter Demand By 2030",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/07/dell-says-ai-will-drive-75-percent-of-datacenter-demand-by-2030/5294882",
+    "name": "Quanta Computer",
+    "ticker_guess": null,
+    "why": "Named as an ODM competitor to Dell in AI systems and datacenter infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "The Diff",
+    "article_title": "Staying Calibrated",
+    "article_link": "https://www.thediff.co/archive/staying-calibrated/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Published internal data on recursive self-improvement after the HuggingFace attacks; is seeking investment-grade credit status; reports that researcher token spending reached 7x its June level and agents work 3.14x researchers\u2019 hours"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "The Diff",
+    "article_title": "Staying Calibrated",
+    "article_link": "https://www.thediff.co/archive/staying-calibrated/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Is seeking investment-grade credit status alongside OpenAI; is discussed as the other major AI lab whose credit rating could influence the treatment of large AI borrowers"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-09",
+    "source": "Doomberg",
+    "article_title": "Falkland Around",
+    "article_link": "https://newsletter.doomberg.com/p/falkland-around",
+    "name": "geopolitics",
+    "why": "Argentina and the UK dispute sovereignty over the Falkland Islands; Argentina rejects the 2013 referendum as resolving the dispute; The 1982 war remains a major source of Argentine political sensitivity"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-09",
+    "source": "Doomberg",
+    "article_title": "Falkland Around",
+    "article_link": "https://newsletter.doomberg.com/p/falkland-around",
+    "name": "offshore oil",
+    "why": "The Sea Lion oilfield is expected to begin exploration by a British-Israeli joint venture; Development terms provide the Falkland Islands Government with a 9% royalty and 26% corporate tax on adjusted upstream profits; Potential oil wealth could increase the islands\u2019 economic and geopolitical importance"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-09",
+    "source": "Doomberg",
+    "article_title": "Falkland Around",
+    "article_link": "https://newsletter.doomberg.com/p/falkland-around",
+    "name": "sanctions",
+    "why": "Argentina\u2019s president warned of economic sanctions against firms exploiting oil near the Falkland Islands; The threatened measures could disrupt progress on Sea Lion exploration"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#24): Motif-3, GLM-5.3, Hy4-preview and open model licenses",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3",
+    "name": "Zhipu AI / Z.AI",
+    "ticker_guess": null,
+    "why": "GLM-5.3 switched from MIT to a custom license; Model-as-a-Service providers exceeding $10 billion in aggregate 12-month revenue must pass a Z.AI security review"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#24): Motif-3, GLM-5.3, Hy4-preview and open model licenses",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3",
+    "name": "Tencent",
+    "ticker_guess": "0700.HK",
+    "why": "Released Hy4-preview; the model increases flagship-model scale and post-training, but currently has an overthinking issue"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#24): Motif-3, GLM-5.3, Hy4-preview and open model licenses",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3",
+    "name": "Alibaba",
+    "ticker_guess": "BABA",
+    "why": "Started openly releasing its largest Qwen models; Qwen3.8-2.4T-A95B uses a custom license and trails other models of similar size"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#24): Motif-3, GLM-5.3, Hy4-preview and open model licenses",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3",
+    "name": "Motif-Technologies",
+    "ticker_guess": null,
+    "why": "Released Motif-3 under an MIT license; the article highlights strong performance despite limited training resources"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#24): Motif-3, GLM-5.3, Hy4-preview and open model licenses",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3",
+    "name": "RedNote / Xiaohongshu",
+    "ticker_guess": null,
+    "why": "Released dots3-note-prev and has been developing models since 2025; its dots3 model reportedly achieved a perfect score at IMO 2026"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Not Boring",
+    "article_title": "Everyone is Reading Lonesome Dove",
+    "article_link": "https://www.notboring.co/p/everyone-is-reading-lonesome-dove",
+    "name": "Simon & Schuster",
+    "ticker_guess": null,
+    "why": "Released a 40th-anniversary paperback edition with a Taylor Sheridan foreword; released a new 35-hour, 49-minute audiobook narrated by Will Patton; said the book sold 56,000 copies in 2025, its best year since the 1993-94 television miniseries"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-08",
+    "source": "Not Boring",
+    "article_title": "Everyone is Reading Lonesome Dove",
+    "article_link": "https://www.notboring.co/p/everyone-is-reading-lonesome-dove",
+    "name": "Teton Ridge Entertainment",
+    "ticker_guess": null,
+    "why": "Acquired adaptation rights to Lonesome Dove and related Larry McMurtry novels in February 2025; its deal could lead to future streaming series or films"
   }
 ]

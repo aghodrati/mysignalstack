@@ -183,5 +183,54 @@
     "final_multiplier": 0.84,
     "confidence_before": 0.74,
     "confidence_after": 0.6215999999999999
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-09",
+    "thesis": "AMD is a fundamentally supported, high-conviction but execution-sensitive long as accelerating server-CPU demand and emerging Helios/Instinct deployments can sustain strong data-center growth, while supply, software, competition, and valuation constrain upside.",
+    "direction": "long",
+    "confidence": 0.6478,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.79,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": 14,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Server CPU revenue grows more than 80% year over year in the second half of 2026 and more than 70% in 2027 as Turin and Venice gain share.",
+      "Helios and MI455X deployments at Microsoft, OpenAI, Anthropic, and other hyperscalers ramp successfully, validating AMD as a credible rack-scale alternative to Nvidia.",
+      "ROCm, vLLM, ATOM, and related inference software close production-readiness gaps, improving AMD's position in long-context and agentic inference.",
+      "AMD converts constrained GPU allocations and strong HPE, OEM, neocloud, and enterprise demand into higher accelerator shipments without material margin erosion.",
+      "AI infrastructure spending, inference intensity, and agentic workloads continue expanding the CPU and accelerator markets faster than current expectations."
+    ],
+    "invalidation": [
+      "Helios ramps slowly because of yield, power, cabling, retimer, networking, or customer build-out problems, while data-center AI margins remain below expectations.",
+      "HBM, wafer, packaging, substrate, or server-CPU shortages prevent AMD from converting demand into shipments and cause guidance reductions.",
+      "ROCm and mainstream serving stacks remain materially behind CUDA for production distributed and long-context inference, allowing Nvidia, Google, Cerebras, custom XPUs, or OpenAI's Jalape\u00f1o to take share.",
+      "Hyperscalers accelerate migration toward Arm CPUs and internally designed accelerators, weakening both AMD's x86 opportunity and merchant-GPU demand.",
+      "Revenue growth or earnings momentum decelerates enough to expose AMD's roughly 37x forward-earnings and 20.9x EV/revenue valuation to multiple compression, or operating margins fail to expand from the current 14.4% level."
+    ],
+    "reasoning": "The evidence is net bullish because repeated CPU-demand, share-gain, hyperscaler-deployment, and data-center-growth signals are reinforced by confident earnings-call guidance, a 50% revenue-growth quarter and 1.66 reported EPS versus 1.61 estimated, while the 0.68-confidence fundamental view supports upside but demanding valuation and substantial execution and competitive risks warrant moderate rather than extreme confidence.",
+    "claims_considered": 134
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-09",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis labels AMD a high-conviction long despite several high-importance claims identifying material near-term disadvantages: production-oriented inference software gaps, limited GPU allocations, HBM constraints, Helios execution risks, and structural competition from custom accelerators and Arm CPUs.",
+      "\u201cEmerging Helios/Instinct deployments\u201d overstates the evidence: many cited deployments are planned, while the claims explicitly say Helios may ramp slowly and that roadmap opportunities are not equivalent to realized financial performance.",
+      "The claims support strong current data-center momentum, but they do not establish that future CPU demand and Helios/Instinct deployments will sustain strong growth; demand realization, supply conversion, software adoption, and customer utilization remain unresolved.",
+      "The thesis says valuation constrains upside, but none of the supplied claims provides valuation evidence or establishes that AMD is expensive.",
+      "The synthesis underweights that accelerator capture is central to the upside: the claims state accelerator spending is far larger than CPU spending, while AMD remains materially behind NVIDIA in customer breadth and production inference readiness."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The bullish direction is supported by current results, CPU demand, and planned platform adoption, but \u201chigh-conviction\u201d and sustained future growth overreach a claim set that repeatedly describes planned catalysts, severe execution constraints, and unresolved accelerator competitiveness, while valuation is unsupported.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.79,
+    "confidence_after": 0.6478
   }
 ]

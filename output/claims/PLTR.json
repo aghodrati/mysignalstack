@@ -55,5 +55,24 @@
     "trade_worthy": false,
     "context": "The article argues that increasing competition at the model layer prevents Anthropic and OpenAI from running away with the frontier and building a duopoly, and that the signatories\u2014including Palantir\u2014benefit from this outcome. For Palantir, this would preserve flexibility to select or integrate models rather than becoming dependent on a small number of dominant suppliers.",
     "source": "Not Boring"
+  },
+  {
+    "id": "1a0485ba78d7914a",
+    "ticker": "PLTR",
+    "source_link": "https://www.thediff.co/archive/staying-calibrated/",
+    "source_title": "Staying Calibrated",
+    "event_type": "competitive",
+    "created": "2026-09-08",
+    "claim": "Palantir\u2019s preferred-vendor relationship with Nebius could improve its access to AI infrastructure as neocloud capacity expands, supporting Palantir\u2019s ability to scale infrastructure-intensive demand, although the article does not quantify any commercial benefit to Palantir.",
+    "direction": "long",
+    "confidence": 0.69,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The deal makes Nebius Palantir\u2019s preferred infrastructure vendor. The article\u2019s main stated economic benefit accrues to Nebius: Palantir\u2019s distribution relationship may let Nebius charge a premium for otherwise commoditized infrastructure and potentially obtain additional financing value from cash flows associated with a highly valued Palantir. For Palantir, the direct implication is limited to a potentially strengthened and differentiated infrastructure supply relationship amid rising AI capital spending and concerns that commodity neocloud returns will converge.",
+    "source": "The Diff"
   }
 ]

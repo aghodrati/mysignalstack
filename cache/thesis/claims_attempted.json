@@ -696,5 +696,35 @@
     "GOOGL",
     "SPCX",
     "TSLA"
+  ],
+  "https://newsletter.semianalysis.com/p/tpu-inferencex-full-steam": [
+    "AMD",
+    "GOOGL",
+    "NVDA"
+  ],
+  "https://stratechery.com/2026/openai-does-math-reward-hacking-meta-launches-personal-agent/": [
+    "META"
+  ],
+  "https://stratechery.com/2026/write-things-down/": [
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/09/08/hpe-sees-no-customer-pushback-on-rising-datacenter-equipment-costs/5295102": [
+    "AMD",
+    "AVGO",
+    "NVDA",
+    "ORCL"
+  ],
+  "https://www.nextplatform.com/compute/2026/09/07/dell-says-ai-will-drive-75-percent-of-datacenter-demand-by-2030/5294882": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://www.thediff.co/archive/staying-calibrated/": [
+    "NBIS",
+    "PLTR"
+  ],
+  "https://www.interconnects.ai/p/latest-open-artifacts-24-motif-3": [
+    "GOOGL",
+    "META",
+    "NVDA"
   ]
 }

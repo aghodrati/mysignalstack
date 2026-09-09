@@ -264,5 +264,43 @@
     "trade_worthy": false,
     "context": "Oracle and Quantinuum agreed to provide access to Quantinuum\u2019s Helios quantum computer at an Oracle cloud facility, alongside Oracle\u2019s existing graphics-processing and HPC services. The arrangement could improve Oracle\u2019s strategic positioning in emerging quantum-computing workloads and support future cloud adoption, although the article provides no customer, revenue, or commercial-scale details.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "bbd4447338654745",
+    "ticker": "ORCL",
+    "source_link": "https://www.nextplatform.com/compute/2026/09/08/hpe-sees-no-customer-pushback-on-rising-datacenter-equipment-costs/5295102",
+    "source_title": "HPE Sees No Customer Pushback On Rising Datacenter Equipment Costs",
+    "event_type": "earnings",
+    "created": "2026-09-08",
+    "claim": "Oracle\u2019s agreement to source Juniper QFX networking equipment from HPE supports a bullish outlook for Oracle\u2019s multi-year AI and cloud datacenter expansion by securing high-capacity networking for a potential multi-gigawatt rollout.",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The deal covers Juniper QFX switches using Broadcom\u2019s 102.4 Tb/sec Tomahawk 6 switching ASIC, along with Juniper AIOps management software, and could extend across multiple years as Oracle expands its datacenter footprint. The scale described is consistent with Oracle building substantial infrastructure capacity for cloud and AI workloads, although the rollout remains characterized as potential rather than a firm disclosed revenue commitment.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "b97521ee166fd7ea",
+    "ticker": "ORCL",
+    "source_link": "https://www.nextplatform.com/compute/2026/09/08/hpe-sees-no-customer-pushback-on-rising-datacenter-equipment-costs/5295102",
+    "source_title": "HPE Sees No Customer Pushback On Rising Datacenter Equipment Costs",
+    "event_type": "earnings",
+    "created": "2026-09-08",
+    "claim": "The HPE networking agreement gives Oracle additional economic value through warrants for up to 4.2 million HPE shares, potentially offsetting part of its infrastructure acquisition cost and adding upside if HPE\u2019s deal-driven value increases.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "As part of the networking arrangement, HPE granted Oracle warrants for up to 4.2 million HPE shares, which were described as having been worth more than $200 million before the announcement; vesting conditions and the precise economics were not disclosed. The warrants therefore provide Oracle with a possible financial benefit beyond the hardware and software it receives, but their realizable value is uncertain.",
+    "source": "Next Platform"
   }
 ]

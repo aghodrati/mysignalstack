@@ -41,5 +41,56 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-09-09",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "summary": "Oracle presents a strong underlying fundamental profile, combining roughly 20% revenue and earnings growth with a 36% operating margin, very high reported free-cash-flow margin, and a forward P/E below 15. The valuation remains directionally attractive relative to growth, but it has become less compelling since the prior check, while weakening analyst revisions and reduced institutional buying temper conviction.",
+    "key_changes": [
+      "Analyst revisions shifted sharply from mildly positive to negative, moving from 0.37 to -4.23.",
+      "Analyst-implied upside declined from 72.2% to 48.6%, still substantial but materially less favorable.",
+      "The PEG ratio rose 23.3% from 0.73 to 0.90, indicating less valuation support relative to growth.",
+      "Forward P/E increased 12.0% from 13.23 to 14.82.",
+      "EV-to-revenue increased 10.8% from 8.16 to 9.04, making the enterprise-value valuation richer.",
+      "Institutional buying remained positive but declined 31.4% from 10.81 to 7.42."
+    ],
+    "risks": [
+      "Negative analyst revision momentum could signal emerging concerns about growth durability or earnings expectations.",
+      "The 9.04x EV-to-revenue multiple is demanding despite the attractive forward P/E and PEG ratio.",
+      "Large insider selling is a notable governance and confidence caution, even though insider transactions may not reflect operating fundamentals.",
+      "The exceptionally high reported free-cash-flow margin may be affected by timing, working-capital, or other one-off factors and warrants validation.",
+      "No net upgrades and declining institutional flow reduce near-term confirmation of the constructive fundamental case."
+    ],
+    "reasoning": "The combination of strong growth, margins, cash generation, and still-reasonable growth-adjusted valuation supports a long view, but deteriorating revisions, richer valuation multiples, and ownership cautions justify only moderate confidence.",
+    "fair_value_estimate": 241.42714,
+    "current_price": 162.52,
+    "implied_return_pct": 48.6,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.206,
+        "earnings_growth": 0.219
+      },
+      "Valuation": {
+        "forward_pe": 14.817476,
+        "peg_ratio": 0.9,
+        "ev_to_revenue": 9.044
+      },
+      "Quality": {
+        "operating_margin": 0.36202,
+        "fcf_margin": 0.47473909336693304
+      },
+      "Sentiment": {
+        "analyst_upside": 48.552264336697014,
+        "revisions_trend": -4.228329809725151,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 7.417499937500002,
+        "insider_flow": -2763182523.0,
+        "low_short_interest": -2.78
+      }
+    },
+    "trigger": "earnings"
   }
 ]
