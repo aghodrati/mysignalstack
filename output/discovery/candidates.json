@@ -5021,5 +5021,45 @@
     "name": "Teton Ridge Entertainment",
     "ticker_guess": null,
     "why": "Acquired adaptation rights to Lonesome Dove and related Larry McMurtry novels in February 2025; its deal could lead to future streaming series or films"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-09",
+    "source": "SemiAnalysis",
+    "article_title": "Where Does a Robot Think \u2013 On-Device vs Datacenter Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device",
+    "name": "Physical Intelligence",
+    "ticker_guess": null,
+    "why": "Its \u03c00.7 robot model is cited as running off-robot on a single H100; used as an example of cloud-based robot inference."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-09",
+    "source": "SemiAnalysis",
+    "article_title": "Where Does a Robot Think \u2013 On-Device vs Datacenter Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device",
+    "name": "Figure AI",
+    "ticker_guess": null,
+    "why": "Its Helix model is cited as running entirely onboard the robot; used as an example of the competing edge-inference approach."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-09",
+    "source": "Interconnects",
+    "article_title": "When will average people feel AI\u2019s impact?",
+    "article_link": "https://www.interconnects.ai/p/when-will-average-people-feel-ais",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Presented as an example of an AI company whose future scientific or medical breakthroughs may benefit people only indirectly; cited in discussion of AI receiving credit for breakthroughs and the OpenAI-Hugging Face incident"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-09",
+    "source": "Interconnects",
+    "article_title": "When will average people feel AI\u2019s impact?",
+    "article_link": "https://www.interconnects.ai/p/when-will-average-people-feel-ais",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Presented alongside OpenAI as a leading AI company whose future breakthroughs may be difficult for ordinary people to connect to tangible benefits"
   }
 ]

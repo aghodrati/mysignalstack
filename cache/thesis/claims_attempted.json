@@ -726,5 +726,9 @@
     "GOOGL",
     "META",
     "NVDA"
+  ],
+  "https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device": [
+    "NVDA",
+    "TSM"
   ]
 }
