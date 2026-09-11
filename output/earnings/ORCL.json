@@ -88,5 +88,12 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-09-10",
+    "eps_estimate": 1.74,
+    "reported_eps": 1.92,
+    "surprise_pct": 10.45,
+    "type": "earnings_result"
   }
 ]

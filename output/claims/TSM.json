@@ -777,5 +777,24 @@
     "trade_worthy": false,
     "context": "The article characterizes robotics as a nascent market with little current volume and estimates that even one million Jetson-class chips in 2030 would consume only about 10,000 wafers annually, a rounding error relative to datacenter GPU demand; meaningful supply strain would require tens of millions of chips per year, which the article expects well beyond 2030.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "8e4680828668ab43",
+    "ticker": "TSM",
+    "source_link": "https://www.nextplatform.com/connect/2026/09/10/broadcom-rides-rocketing-trend-for-custom-ai-accelerators/5295681",
+    "source_title": "Broadcom Rides Rocketing Trend For Custom AI Accelerators",
+    "event_type": "earnings",
+    "created": "2026-09-10",
+    "claim": "TSM should benefit from sustained, rapidly expanding demand for advanced-node wafer manufacturing and packaging as Broadcom\u2019s custom AI accelerator and networking business scales through fiscal 2028, while the relationship diversifies TSM\u2019s AI exposure beyond Nvidia.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 10.0,
+    "expected_horizon_days": 730,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article says TSMC has been Broadcom\u2019s manufacturing and packaging foundry for Google\u2019s TPUs for seven years and identifies HBM allocation, wafers, and advanced packaging as critical constraints for custom accelerators. Broadcom expects its AI compute, networking, and related chip sales to rise from $2.6 billion in fiscal 2022 to $230 billion in fiscal 2028, has secured the required capacity, and serves multiple hyperscaler and AI-company XPU programs beyond Google, including Anthropic, OpenAI, and Meta. This points to longer-term incremental and more diversified demand for TSMC\u2019s leading-edge manufacturing and advanced packaging services.",
+    "source": "Next Platform"
   }
 ]

@@ -112,5 +112,24 @@
     "trade_worthy": false,
     "context": "The article contrasts Tesla's 45 Cybercabs and 269 Model Ys in Texas with Waymo's reported 4,000-plus retrofitted vehicles providing 500,000 paid rides per week across 14 cities. Tesla's plan to reach 10 cities by year-end and positive unit economics by mid-2027 therefore depends on rapid validation, production, regulatory, and fleet-scale execution.",
     "source": "Not Boring"
+  },
+  {
+    "id": "c4b76f270689a1c5",
+    "ticker": "TSLA",
+    "source_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "source_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "event_type": "supply_chain",
+    "created": "2026-09-10",
+    "claim": "TSLA's Megapack business is positioned to benefit from rapidly expanding behind-the-meter AI datacenter power projects because battery storage is increasingly needed to smooth load fluctuations and stabilize islanded gas-generation systems.",
+    "direction": "long",
+    "confidence": 0.91,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says xAI deployed an initial 150 MW of Tesla Megapacks at its Colossus 1 site after turbine-generated power experienced 10\u201320 MW oscillations several times per second under fluctuating AI workloads. More broadly, islanded datacenters must provide their own inertia, ride-through and power-quality services, making batteries an increasingly common complement to onsite generation; Liberty Energy reportedly sees battery power capacity averaging 50% of gas capacity across its datacenter clients. This supports incremental demand for Tesla's grid-scale battery systems, although the article does not quantify TSLA's share of the 75 GW behind-the-meter order pipeline or the associated revenue and margins.",
+    "source": "SemiAnalysis"
   }
 ]

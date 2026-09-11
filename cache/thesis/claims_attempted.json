@@ -730,5 +730,27 @@
   "https://newsletter.semianalysis.com/p/where-does-a-robot-think-on-device": [
     "NVDA",
     "TSM"
+  ],
+  "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the": [
+    "CVX",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NBIS",
+    "ORCL",
+    "TSLA"
+  ],
+  "https://www.nextplatform.com/connect/2026/09/10/broadcom-rides-rocketing-trend-for-custom-ai-accelerators/5295681": [
+    "AMZN",
+    "AVGO",
+    "GOOGL",
+    "META",
+    "NVDA",
+    "TSM"
+  ],
+  "https://www.notboring.co/p/an-ode-to-counter-positioning": [
+    "META",
+    "NVDA",
+    "SPCX"
   ]
 }

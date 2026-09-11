@@ -147,5 +147,51 @@
     "final_multiplier": 0.82,
     "confidence_before": 0.8920000000000001,
     "confidence_after": 0.7314400000000001
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-11",
+    "thesis": "TSM remains a high-conviction long as AI-driven leading-edge wafer and advanced-packaging demand, strong execution, and reasonable growth-adjusted valuation should outweigh capacity, capital-intensity, geopolitical, and longer-term competitive risks.",
+    "direction": "long",
+    "confidence": 0.91,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.88,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.91,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 24,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained NVIDIA, AMD, Broadcom, hyperscaler-custom ASIC, and other AI-accelerator demand supporting high utilization and advanced-node mix",
+      "Strong ramp of TSMC's N2 and N3 capacity, including AMD Venice and MI455X-related production",
+      "Expansion of CoWoS, CoWoS-L, hybrid bonding, custom HBM, and direct-to-silicon liquid-cooling packaging for increasingly large AI systems",
+      "Broadcom's custom AI accelerator and networking business scaling through fiscal 2028",
+      "Jalape\u00f1o's planned 2027 production ramp creating incremental N3P wafer and CoWoS demand",
+      "Further evidence that tight supply supports higher revenue per wafer, pricing, margins, and earnings growth"
+    ],
+    "invalidation": [
+      "A material slowdown in AI infrastructure spending or normalization of semiconductor demand that reduces leading-edge utilization and pricing",
+      "Persistent CoWoS-L or broader packaging shortages that materially defer customer shipments or cap TSMC's revenue growth",
+      "Capital-expenditure and construction-cost escalation causing materially weaker free-cash-flow conversion than earnings growth",
+      "Escalating Taiwan geopolitical risk or supply-chain disruption",
+      "Intel, Samsung, SMIC, Tesla, or other alternatives capturing meaningful leading-edge or advanced-packaging share and weakening TSMC's pricing power",
+      "CFET, N2, or other advanced-node execution and yield problems delaying ramps",
+      "Reported earnings falling materially below expectations or the current growth profile deteriorating enough to make the roughly 19x forward P/E unattractive"
+    ],
+    "reasoning": "The news claims show broad, high-confidence AI, advanced-node, and packaging momentum, the independent fundamentals corroborate with 36% revenue growth, 77.4% earnings growth, strong margins, sub-1 PEG, and reasonable valuation, the latest quarter exceeded the $3.89 EPS estimate with $4.31 reported EPS and a 10.89% surprise, and no earnings-call picture was available to offset that bullish evidence.",
+    "claims_considered": 42
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-11",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.91,
+    "confidence_after": 0.91
   }
 ]

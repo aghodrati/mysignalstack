@@ -245,5 +245,43 @@
     "trade_worthy": false,
     "context": "The article presents the deal as NBIS\u2019s response to a structural problem: capital is pouring into AI infrastructure, and returns among providers could converge when supply becomes interchangeable. The Palantir distribution relationship may reduce that pressure, but it does not eliminate the underlying risk that expanding commodity capacity erodes pricing power and invested-capital returns.",
     "source": "The Diff"
+  },
+  {
+    "id": "799c5bec29fa0c2b",
+    "ticker": "NBIS",
+    "source_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "source_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "event_type": "supply_chain",
+    "created": "2026-09-10",
+    "claim": "Nebius\u2019s New Jersey datacenter deployment faces near-term permitting and/or pipeline execution risk that could delay capacity delivery and defer associated revenue growth.",
+    "direction": "short",
+    "confidence": 0.93,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Nebius\u2019s New Jersey project as one of the high-profile behind-the-meter developments forced to pivot from combustion-based generation toward Bloom Energy fuel cells after permitting or pipeline problems. More broadly, it emphasizes that firm equipment orders do not ensure delivery: projects must still clear financing, permits, firm fuel supply, equipment procurement, labor, and islanded-grid commissioning hurdles.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "8ddbf3a5f882e7b1",
+    "ticker": "NBIS",
+    "source_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "source_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "event_type": "supply_chain",
+    "created": "2026-09-10",
+    "claim": "Nebius\u2019s shift to Bloom fuel cells may reduce conventional air-permitting risk and improve the project\u2019s path to energization, but it transfers execution risk to an expensive, electrically complex solution that requires substantial batteries, supercapacitors, and controls.",
+    "direction": "long",
+    "confidence": 0.87,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Nebius replaced its planned combustion generation with 328 MW of Bloom fuel cells under a 10-year power agreement, citing faster deployment and a lighter permitting burden. Fuel cells generally produce much lower NOx and other conventional pollutants, but islanded fuel-cell systems have limited fault current and require additional storage and power-conditioning equipment for step loads, stability, and protection; the article characterizes multi-gigawatt deployment of this configuration as unproven at scale.",
+    "source": "SemiAnalysis"
   }
 ]

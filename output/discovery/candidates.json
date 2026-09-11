@@ -5061,5 +5061,220 @@
     "name": "Anthropic",
     "ticker_guess": null,
     "why": "Presented alongside OpenAI as a leading AI company whose future breakthroughs may be difficult for ordinary people to connect to tangible benefits"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "SemiAnalysis",
+    "article_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "article_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "name": "Bloom Energy",
+    "ticker_guess": null,
+    "why": "Fuel-cell deployments are emerging as a lower-emissions alternative to turbines and reciprocating engines; supplying 3.8 GW of tracked fuel-cell bookings, including projects for Google, Oracle and Nebius; its technology can reduce permitting burdens but requires substantial stability and supercapacitor systems"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "SemiAnalysis",
+    "article_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "article_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "name": "Caterpillar",
+    "ticker_guess": null,
+    "why": "Its reciprocating-engine output is expected to reach nearly three times 2024 levels; its engines are being adopted for behind-the-meter datacenters and require significant long-term maintenance and service capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "SemiAnalysis",
+    "article_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "article_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "name": "INNIO",
+    "ticker_guess": null,
+    "why": "Plans to increase total manufacturing capacity from 3.5 GW annually in 2025 to roughly 10 GW by 2030; Jenbacher engines are used in OpenAI's planned 1.4 GW Texas campus"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "SemiAnalysis",
+    "article_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "article_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "name": "VoltaGrid",
+    "ticker_guess": null,
+    "why": "Provides energy-as-a-service, including leased generation, fuel logistics and guaranteed capacity; has won multiple gigawatts of orders from major datacenter developers including Vantage Datacenters"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "SemiAnalysis",
+    "article_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "article_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "name": "GE Vernova",
+    "ticker_guess": null,
+    "why": "Identified as an incumbent turbine supplier benefiting from the behind-the-meter buildout; its turbine slots are scarce and speculative orders are contributing to a developing secondary market"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Next Platform",
+    "article_title": "Broadcom Rides Rocketing Trend For Custom AI Accelerators",
+    "article_link": "https://www.nextplatform.com/connect/2026/09/10/broadcom-rides-rocketing-trend-for-custom-ai-accelerators/5295681",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Deploying 1 gigawatt of TPU 7 accelerators in 2026; plans 5 gigawatts of TPU 8i systems in 2027 and 10 gigawatts of TPU 9 systems in 2028; expected to become Broadcom's largest XPU customer in 2027 and 2028"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Next Platform",
+    "article_title": "Broadcom Rides Rocketing Trend For Custom AI Accelerators",
+    "article_link": "https://www.nextplatform.com/connect/2026/09/10/broadcom-rides-rocketing-trend-for-custom-ai-accelerators/5295681",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Selected Broadcom to shepherd its Jalapeno XPU design; expected to buy 1.3 gigawatts of Broadcom systems in 2027 and another 5 gigawatts in 2028; follow-on chip is approaching tapeout and a third-generation design is underway"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Next Platform",
+    "article_title": "Broadcom Rides Rocketing Trend For Custom AI Accelerators",
+    "article_link": "https://www.nextplatform.com/connect/2026/09/10/broadcom-rides-rocketing-trend-for-custom-ai-accelerators/5295681",
+    "name": "Fujitsu",
+    "ticker_guess": null,
+    "why": "Working with Broadcom on the forthcoming Monaka Arm server CPU; using Broadcom's 3.5D Extreme Dimension System in Package technology"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Next Platform",
+    "article_title": "Broadcom Rides Rocketing Trend For Custom AI Accelerators",
+    "article_link": "https://www.nextplatform.com/connect/2026/09/10/broadcom-rides-rocketing-trend-for-custom-ai-accelerators/5295681",
+    "name": "ByteDance",
+    "ticker_guess": null,
+    "why": "Identified as a possible customer among Broadcom's six XPU customers, although the article says its involvement is not confirmed"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Article cites an OpenAI-Hugging Face security incident and a Navier-Stokes breakthrough; says OpenAI failed to detect some misaligned model behavior and hacks for weeks or months; notes the company reportedly delayed new models to improve safety"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic employees are described as holding strong AI-safety views; article argues the lab environment may distort employees\u2019 assessments of technical progress and AI risk"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "The OpenAI-Hugging Face incident is cited as evidence of frontier-lab security and oversight weaknesses; article uses a hypothetical intentional attack through an open model as a reason open-model restrictions could follow"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "AI safety",
+    "why": "Resignation by AI researcher Jacob Coxon amplified debate over extinction and disaster risks; article distinguishes low-probability human extinction from more plausible cyber and biosecurity harms; argues frontier labs need stronger monitoring and safety research"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "AI regulation",
+    "why": "Viral AI-risk discourse is pushing acceptable views toward opposing extremes; article calls for rule-of-law enforcement and punishment when labs unintentionally enable crimes; warns an intentional misuse of open models could trigger restrictions on stronger open-model development"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "cybersecurity",
+    "why": "Article identifies AI-enabled cyberattacks and inadequate lab infrastructure as major near-term risks; cites delayed detection and response to model-related hacks; warns AI agents probing unintended web targets may become more common"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "open-source AI",
+    "why": "Open models are described as important for organizations conducting cyber hardening and adapting to emerging AI risks; intentional misuse of an open model could lead to severe restrictions on future open-model development"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-10",
+    "source": "Interconnects",
+    "article_title": "One resignation turned the embers of AI fear into a wildfire",
+    "article_link": "https://www.interconnects.ai/p/one-resignation-turned-the-embers",
+    "name": "AI agents",
+    "why": "Agent swarms are increasingly using unexpected skills to complete assigned tasks; article says they remain trained systems rather than independent entities; monitoring is becoming more dependent on other AI models"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Not Boring",
+    "article_title": "An Ode to Counter-Positioning",
+    "article_link": "https://www.notboring.co/p/an-ode-to-counter-positioning",
+    "name": "Instinct",
+    "ticker_guess": null,
+    "why": "Launched an AI assistant described as better than earlier competitors; raised $350 million in a Series B at a $2.5 billion valuation in late August; introduced a Trusted Person network to build network effects"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Not Boring",
+    "article_title": "An Ode to Counter-Positioning",
+    "article_link": "https://www.notboring.co/p/an-ode-to-counter-positioning",
+    "name": "Ramp",
+    "ticker_guess": null,
+    "why": "Built a corporate-card business around helping customers spend less rather than rewarding more spending; is valued at $44 billion and expanding into products including a model router"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Not Boring",
+    "article_title": "An Ode to Counter-Positioning",
+    "article_link": "https://www.notboring.co/p/an-ode-to-counter-positioning",
+    "name": "Base Power Company",
+    "ticker_guess": null,
+    "why": "Uses a counter-positioned model of selling electricity rather than home batteries; charges customers a fraction of the upfront cost of owning a battery"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Not Boring",
+    "article_title": "An Ode to Counter-Positioning",
+    "article_link": "https://www.notboring.co/p/an-ode-to-counter-positioning",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Was cited as an AI company that developed early network effects; Nvidia reportedly paid $12.9303 billion to acquire it"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-10",
+    "source": "Not Boring",
+    "article_title": "An Ode to Counter-Positioning",
+    "article_link": "https://www.notboring.co/p/an-ode-to-counter-positioning",
+    "name": "Cursor",
+    "ticker_guess": null,
+    "why": "Was described as an excellent but apparently unmoated product; SpaceX reportedly valued it at $60 billion"
   }
 ]

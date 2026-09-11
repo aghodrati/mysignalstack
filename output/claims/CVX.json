@@ -36,5 +36,43 @@
     "trade_worthy": false,
     "context": "The article presents CPC as a strategically important corridor running through Russia to Novorossiysk, a port also central to Russian energy and grain exports, making it a target in the broader Ukraine conflict. The U.S. State Department\u2019s formal d\u00e9marche to Ukraine underscores the sensitivity of the infrastructure to U.S. energy interests. For Chevron, whose Kazakhstan investments depend on reliable takeaway capacity, the episode raises the possibility of recurring export interruptions, higher operating and security uncertainty, and adverse geopolitical exposure as the war continues, but no specific future attack or financial loss is established.",
     "source": "Doomberg"
+  },
+  {
+    "id": "867f5491c15e847b",
+    "ticker": "CVX",
+    "source_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "source_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "event_type": "supply_chain",
+    "created": "2026-09-10",
+    "claim": "Chevron\u2019s participation in Microsoft\u2019s 2.7 GW behind-the-meter power agreements gives it a foothold in a rapidly expanding AI-datacenter energy market, potentially creating incremental gas-generation and energy-services demand beyond its traditional upstream business.",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies more than 2.7 GW of Microsoft\u2019s 2026 year-to-date behind-the-meter nameplate capacity as signed with Joulent and Chevron, while the broader market has reached 75 GW of firm orders and is scaling because datacenter operators value faster power deployment. However, the article does not specify Chevron\u2019s exact scope, economics, ownership, or expected profit contribution from the agreements.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "ef8268f3385a4341",
+    "ticker": "CVX",
+    "source_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "source_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "event_type": "supply_chain",
+    "created": "2026-09-10",
+    "claim": "Chevron\u2019s AI-datacenter power opportunity is exposed to project-delivery delays and weaker-than-expected returns because behind-the-meter projects face financing, permitting, fuel, equipment, labor, and island-operation hurdles before contracted capacity becomes operational.",
+    "direction": "short",
+    "confidence": 0.72,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article stresses that firm equipment orders are not equivalent to delivered projects: permitting and pipeline problems have already forced redesigns, turbine slots extend beyond 2030, and islanded facilities require complex stability systems and specialized labor. These risks could delay or impair the monetization of Chevron-linked capacity, although the article provides no Chevron-specific project schedule, investment amount, or contractual risk allocation.",
+    "source": "SemiAnalysis"
   }
 ]

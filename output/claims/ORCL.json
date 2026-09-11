@@ -302,5 +302,43 @@
     "trade_worthy": false,
     "context": "As part of the networking arrangement, HPE granted Oracle warrants for up to 4.2 million HPE shares, which were described as having been worth more than $200 million before the announcement; vesting conditions and the precise economics were not disclosed. The warrants therefore provide Oracle with a possible financial benefit beyond the hardware and software it receives, but their realizable value is uncertain.",
     "source": "Next Platform"
+  },
+  {
+    "id": "414fa2d0203a3891",
+    "ticker": "ORCL",
+    "source_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "source_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "event_type": "supply_chain",
+    "created": "2026-09-10",
+    "claim": "OpenAI\u2019s reliance on behind-the-meter power for its 1.4 GW Texas and 1.3 GW New Mexico campuses supports substantial contracted demand and potential future cloud-infrastructure revenue for ORCL.",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article states that OpenAI has signed more than $150 billion of contracted spending with Oracle across the two sites, both dependent on onsite generation rather than timely grid interconnection. This indicates that Oracle has secured exposure to very large AI infrastructure deployments, although the article does not specify Oracle\u2019s revenue recognition, margins, or exact contract structure.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "b9d3a6d7489cbba8",
+    "ticker": "ORCL",
+    "source_link": "https://newsletter.semianalysis.com/p/what-is-so-hard-about-behind-the",
+    "source_title": "What is So Hard About Behind-The-Meter Power For Datacenters? Part 1",
+    "event_type": "supply_chain",
+    "created": "2026-09-10",
+    "claim": "Permitting, pipeline, financing, equipment, and islanded-power execution problems could delay Oracle\u2019s AI datacenter deployments, deferring revenue and increasing project costs or operational risk.",
+    "direction": "short",
+    "confidence": 0.95,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Oracle\u2019s Project Jupiter in New Mexico withdrew its original turbine applications after extensive public comments and pivoted to Bloom Energy fuel cells; the permitting proceeding was stayed by the New Mexico Supreme Court, while the associated Green Chile pipeline missed its August 2026 in-service date and was rescheduled for February 2027, with the article estimating first gas in April or May 2027 and full ramping in mid-2028. The article also identifies broader risks including scarce equipment, labor shortages, fuel contracting, balance-of-plant constraints, and the difficulty of stabilizing AI loads on an islanded power system.",
+    "source": "SemiAnalysis"
   }
 ]

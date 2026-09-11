@@ -95,5 +95,48 @@
     "final_multiplier": 0.86,
     "confidence_before": 0.826,
     "confidence_after": 0.71036
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-11",
+    "thesis": "AVGO remains a high-confidence long as accelerating custom-AI-accelerator demand, expanding Ethernet scale-out and scale-up networking, secured supply capacity, and VMware cash flow support multi-year earnings growth despite valuation, leverage, supply, and competitive risks.",
+    "direction": "long",
+    "confidence": 0.84,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.8,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.84,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 28,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained hyperscaler and AI-developer commitments drive custom-accelerator revenue toward the projected fiscal 2026-2027 trajectory.",
+      "Broad adoption of Tomahawk 6, 800 Gb/sec Ethernet, UALink or ESUN/SUE-T architectures expands Broadcom's AI networking volumes.",
+      "Production ramps for OpenAI Jalape\u00f1o, AMD Helios, Google-related accelerators, or other 3.5D XDSiP customers convert pipeline demand into revenue.",
+      "Secured HBM, wafer, and advanced-packaging capacity enables Broadcom to fulfill demand while VMware Private AI Cloud and AI Factory support software growth.",
+      "Oracle's datacenter expansion and Arista's AI scale-up networking participation increase merchant switch-ASIC demand."
+    ],
+    "invalidation": [
+      "HBM, wafer, or advanced-packaging shortages materially prevent Broadcom from meeting its AI revenue outlook, or rising memory costs compress margins and delay customer deployments.",
+      "Hyperscaler custom-ASIC commitments weaken, production ramps slip, or Nvidia, Marvell, or internally developed alternatives take meaningful share and pressure pricing.",
+      "AI networking demand shifts predominantly toward Nvidia NVLink/NVSwitch or UALink in a way that disadvantages Broadcom's platforms.",
+      "VMware growth or integration benefits disappoint while substantial debt limits financial flexibility.",
+      "Growth and margins normalize enough that the elevated 23.9x EV-to-revenue valuation becomes difficult to justify, especially alongside negative insider flow, weaker institutional support, and negative net upgrades."
+    ],
+    "reasoning": "The news consensus and independent fundamentals are strongly bullish, supported by 47.9% revenue growth, 85.4% earnings growth, roughly 49% operating margins, a 44.6% free-cash-flow margin, and a slight 1.74% EPS beat to $2.44 versus $2.40, while no earnings-call picture was available and valuation, leverage, supply constraints, competition, and weakened ownership flows temper\u2014but do not overturn\u2014the thesis.",
+    "claims_considered": 48
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-11",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.84,
+    "confidence_after": 0.84
   }
 ]
