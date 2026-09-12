@@ -264,5 +264,60 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W36"
+  },
+  {
+    "period": "week",
+    "date": "2026-09-12",
+    "value": 4.974999904632568,
+    "delta": 0.19099998474121094,
+    "history": [
+      [
+        "2026-09-08",
+        4.806000232696533
+      ],
+      [
+        "2026-09-09",
+        4.836999893188477
+      ],
+      [
+        "2026-09-10",
+        4.943999767303467
+      ],
+      [
+        "2026-09-11",
+        4.974999904632568
+      ]
+    ],
+    "narrative": "The move was most plausibly driven by renewed inflation concerns, with the headline that CPI, core CPI, and core services CPI \u201cbounce back\u201d undermining expectations for easier policy. Supply and demand worries also likely added upward pressure, including the report that the world\u2019s largest sovereign fund may dump $80 billion of Treasuries and that the bond market is resisting Treasury borrowing despite the buyback.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "There's More Behind The Rise In Treasury Yields",
+        "domain": "SeekingAlpha",
+        "date": "20260912"
+      },
+      {
+        "title": "Inflation Not Going Back Into The Bottle: CPI, Core CPI, And Core Services CPI Bounce Back",
+        "domain": "SeekingAlpha",
+        "date": "20260912"
+      },
+      {
+        "title": "Scott Bessent's Treasury Getting a Fight From the Bond Market Despite $6 Billion Buyback: Market Watcher Says Borrowers 'in for a Rude Awakening'",
+        "domain": "Benzinga",
+        "date": "20260910"
+      },
+      {
+        "title": "QUICK SPARK: 10-Year Treasury Yields Rise to 3-Year Highs",
+        "domain": "Benzinga",
+        "date": "20260909"
+      },
+      {
+        "title": "The World\u2019s Largest Sovereign Fund Wants to Dump $80 Billion of Treasuries | Is TLT Now a Trap?",
+        "domain": "Yahoo",
+        "date": "20260907"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W37"
   }
 ]

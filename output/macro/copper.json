@@ -243,5 +243,58 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-12",
+    "value": 6.4695000648498535,
+    "delta": -1.9326975119176804,
+    "history": [
+      [
+        "2026-09-08",
+        6.738999843597412
+      ],
+      [
+        "2026-09-09",
+        6.803500175476074
+      ],
+      [
+        "2026-09-10",
+        6.4670000076293945
+      ],
+      [
+        "2026-09-11",
+        6.4695000648498535
+      ]
+    ],
+    "narrative": "Copper fell 1.93% over the week, but the listed headlines do not identify a clear, specific bearish catalyst. In fact, \u201cCopper's Next Supercycle: A Structural Bull Case,\u201d the Yahoo piece on copper ETFs and the AI boom, and \u201cDr. Copper Says the AI Boom Is Spreading Through the Real Economy\u201d are broadly supportive; \u201cBonds Taking Charge\u201d may point to broader macro positioning, but not a direct copper trigger. The move is therefore best described as broad positioning or drift rather than a headline-driven repricing.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Bonds Taking Charge - And The Q2 2026 Z.1",
+        "domain": "SeekingAlpha",
+        "date": "20260912"
+      },
+      {
+        "title": "Copper's Next Supercycle: A Structural Bull Case",
+        "domain": "SeekingAlpha",
+        "date": "20260912"
+      },
+      {
+        "title": "Is This a Good Time to Invest in Copper ETFs to Ride the AI Boom?",
+        "domain": "Yahoo",
+        "date": "20260911"
+      },
+      {
+        "title": "Dr. Copper Says the AI Boom Is Spreading Through the Real Economy",
+        "domain": "Benzinga",
+        "date": "20260908"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W37",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

@@ -95,5 +95,30 @@
     "reported_eps": 1.92,
     "surprise_pct": 10.45,
     "type": "earnings_result"
+  },
+  {
+    "date": "2026-09-12",
+    "transcript_date": "2026-09-11",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/09/11/oracle-orcl-q1-2027-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.74,
+    "guidance_summary": "Management guided Q2 FY27 revenue growth of 30%-34%, cloud revenue growth of 65%-71%, and non-GAAP EPS of $1.85-$1.93. FY27 revenue guidance was raised to at least $90 billion, with non-GAAP EPS guided to $8.10. Full-year CapEx is expected at $90-$95 billion, including no more than $70 billion of net cash CapEx; gross margin is expected to flatten after the current ramp-related pressure, while operating margin remains the more important profitability metric.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "evasive",
+    "key_qa_moments": [
+      "On whether CapEx could rise beyond FY28 and when free cash flow would turn positive, management emphasized supplier financing, bring-your-own-hardware, and customer prepayments, but declined to provide a timeframe for positive free cash flow.",
+      "On concerns about New Mexico and Wisconsin data-center delays, management said both projects were progressing and would not affect FY27 guidance, while stressing that capacity is diversified across many sites and delivered in phases.",
+      "On component inflation and pricing, management said prices are rising in a supply-constrained market but Oracle is passing increases through to customers and does not expect an impact on gross margins.",
+      "On gross-margin deterioration, management acknowledged another step-down during the ramp but suggested margins should flatten after the buildout, without giving specific margin targets."
+    ],
+    "risks": [
+      "Negative free cash flow remains significant, with $28 billion of quarterly CapEx versus $23 billion of operating cash flow and no explicit timetable for returning to positive free cash flow.",
+      "The capital-intensive infrastructure ramp is compressing gross margins, while the timing and scale of future growth CapEx remain dependent on demand and funding structures.",
+      "Large data-center projects face permitting, grid interconnection, construction, and energy-delivery risks, particularly in New Mexico and Wisconsin.",
+      "Oracle's model increasingly relies on customer prepayments, supplier financing, and bring-your-own-hardware structures, which may reduce Oracle's cash burden but can complicate underlying capital intensity and economics.",
+      "RPO conversion depends on successfully bringing substantial future capacity online; delays or weaker AI demand could slow revenue realization and pressure returns on infrastructure investment."
+    ],
+    "summary": "Oracle reported exceptionally strong acceleration, led by 121% OCI growth, record RPO, very high GPU utilization, and a raised FY27 revenue and EPS outlook. The Q&A reinforced strong demand and pricing power, but also exposed meaningful uncertainty around free-cash-flow timing, ongoing CapEx intensity, gross-margin pressure, and execution risks in scaling data-center capacity.",
+    "type": "earnings_transcript"
   }
 ]

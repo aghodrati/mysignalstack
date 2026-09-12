@@ -357,5 +357,79 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W36"
+  },
+  {
+    "period": "week",
+    "date": "2026-09-12",
+    "value": 15.84000015258789,
+    "delta": 1.3100004196166992,
+    "history": [
+      [
+        "2026-09-07",
+        15.300000190734863
+      ],
+      [
+        "2026-09-08",
+        15.720000267028809
+      ],
+      [
+        "2026-09-09",
+        16.459999084472656
+      ],
+      [
+        "2026-09-10",
+        17.84000015258789
+      ],
+      [
+        "2026-09-11",
+        15.84000015258789
+      ]
+    ],
+    "narrative": "The move higher appears most plausibly driven by increased hedging and risk awareness rather than a single realized shock: CNBC reported that traders were buying VIX protection during a historically volatile season, while The Economic Times and The Globe and Mail highlighted potential underpricing of risks as U.S. midterm elections approach. The crude-driven Indian equity selloff is a separate regional factor and is unlikely to be the main driver of the U.S. VIX.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Sensex, Nifty tumble as crude prices surge; NSE IPO adds buzz to primary market",
+        "domain": "Business Today",
+        "date": "20260911"
+      },
+      {
+        "title": "'Fear gauge' VIX attracts hedges in historically volatile season",
+        "domain": "CNBC",
+        "date": "20260910"
+      },
+      {
+        "title": "US stocks calm ahead of midterm polls, but markets may be underpricing the risk",
+        "domain": "The Economic Times",
+        "date": "20260909"
+      },
+      {
+        "title": "Fearless U.S. stock market vulnerable to shocks as midterms loom",
+        "domain": "The Globe and Mail",
+        "date": "20260909"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20260908"
+      },
+      {
+        "title": "Low India VIX signals complacency, markets vulnerable to shocks",
+        "domain": "The Hindu Business Line",
+        "date": "20260907"
+      },
+      {
+        "title": "India VIX rises 6% as Sensex, Nifty extend losses in afternoon session",
+        "domain": "Business Today",
+        "date": "20260907"
+      },
+      {
+        "title": "Nifty breaks down, but India VIX stays calm: How a put ratio backspread can help | Shubham Agarwal",
+        "domain": "Moneycontrol",
+        "date": "20260905"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W37"
   }
 ]

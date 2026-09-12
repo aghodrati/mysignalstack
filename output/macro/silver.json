@@ -303,5 +303,53 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-12",
+    "value": 64.55400085449219,
+    "delta": -2.26050582470978,
+    "history": [
+      [
+        "2026-09-08",
+        66.2969970703125
+      ],
+      [
+        "2026-09-09",
+        67.94200134277344
+      ],
+      [
+        "2026-09-10",
+        64.28399658203125
+      ],
+      [
+        "2026-09-11",
+        64.55400085449219
+      ]
+    ],
+    "narrative": "The clearest catalyst was the September 10 headline \u201cHot PPI Sinks Gold, Freight Stocks,\u201d which points to renewed inflation and interest-rate pressure weighing on precious metals, consistent with silver\u2019s weekly decline. \u201cBonds Taking Charge\u201d may reinforce a rates-driven macro backdrop, but the royalty-company report is not a specific catalyst for silver; the near-term bias is therefore modestly bearish.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Bonds Taking Charge - And The Q2 2026 Z.1",
+        "domain": "SeekingAlpha",
+        "date": "20260912"
+      },
+      {
+        "title": "Precious Metals Royalty And Streaming Companies - August 2026 Report",
+        "domain": "SeekingAlpha",
+        "date": "20260911"
+      },
+      {
+        "title": "Hot PPI Sinks Gold, Freight Stocks: 10 Names To Watch Thursday",
+        "domain": "Benzinga",
+        "date": "20260910"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W37",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

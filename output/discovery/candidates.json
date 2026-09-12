@@ -5276,5 +5276,230 @@
     "name": "Cursor",
     "ticker_guess": null,
     "why": "Was described as an excellent but apparently unmoated product; SpaceX reportedly valued it at $60 billion"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Leases approximately 4.25 GW at SB Energy\u2019s PORTS-Pike campus for 20 years; Nvidia guarantees the associated land, power and shell obligations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
+    "name": "SB Energy",
+    "ticker_guess": null,
+    "why": "Its PORTS-Pike Ohio campus is subject to $108.5 billion of Nvidia guarantees and lease-related obligations; the campus is leased to OpenAI"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
+    "name": "Firmus",
+    "ticker_guess": null,
+    "why": "Its 360 MW Batam AI Cloud Partner Program deal represents an estimated $21.1 billion of Nvidia obligations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
+    "name": "SharonAI",
+    "ticker_guess": null,
+    "why": "Its AI Cloud Partner Program deal represents an estimated $4.2 billion of Nvidia obligations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia\u2019s Backstop Universe \u2013 Heads I Win, Tails Who Loses?",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidias-backstop-universe-heads-i",
+    "name": "GMI",
+    "ticker_guess": null,
+    "why": "Its AI Cloud Partner Program deal represents an estimated $2.2 billion of Nvidia obligations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Stratechery",
+    "article_title": "2026.37: Duo Threats",
+    "article_link": "https://stratechery.com/2026/duo-threats/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Released a technically impressive breakthrough on the Navier-Stokes problem; its tactics may chill research in advanced mathematics"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Stratechery",
+    "article_title": "2026.37: Duo Threats",
+    "article_link": "https://stratechery.com/2026/duo-threats/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Discussed in connection with a revival of pessimism about advanced AI and existential risk"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "The Diff",
+    "article_title": "Audio Fixed\u2014Oura: Moats, Bundles, Complications",
+    "article_link": "https://www.thediff.co/archive/oura-moats-bundles-complications/",
+    "name": "Oura",
+    "ticker_guess": null,
+    "why": "Article focuses on Oura's competitive moats; discusses its bundles and complications"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-12",
+    "source": "Doomberg",
+    "article_title": "Apricity or Bust",
+    "article_link": "https://newsletter.doomberg.com/p/apricity-or-bust",
+    "name": "European energy",
+    "why": "EU energy policies are blamed for higher basic costs and loss of heavy industry; leaders have not implemented emergency measures ahead of winter"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-12",
+    "source": "Doomberg",
+    "article_title": "Apricity or Bust",
+    "article_link": "https://newsletter.doomberg.com/p/apricity-or-bust",
+    "name": "LNG markets",
+    "why": "Dutch TTF front-month LNG prices have risen steadily; European prices exceed US Henry Hub gas by more than tenfold; Asian bidders are winning incremental LNG cargoes"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-12",
+    "source": "Doomberg",
+    "article_title": "Apricity or Bust",
+    "article_link": "https://newsletter.doomberg.com/p/apricity-or-bust",
+    "name": "German gas",
+    "why": "Germany is described as entering winter with precariously low preparedness; the article says a full-blown energy emergency is possible or probable"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-12",
+    "source": "Doomberg",
+    "article_title": "Apricity or Bust",
+    "article_link": "https://newsletter.doomberg.com/p/apricity-or-bust",
+    "name": "Iran conflict",
+    "why": "The war with Iran has reportedly closed the Strait of Hormuz; Qatar\u2019s LNG export volumes have suffered indefinite losses, worsening Europe\u2019s energy outlook"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-12",
+    "source": "Doomberg",
+    "article_title": "Apricity or Bust",
+    "article_link": "https://newsletter.doomberg.com/p/apricity-or-bust",
+    "name": "German politics",
+    "why": "Chancellor Friedrich Merz faces roughly 15% approval and backlash after a regional electoral rout; his government is criticized for inaction on the energy threat"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Interconnects",
+    "article_title": "Open-Source AI & Open Models Reading List",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "DeepSeek-R1 is cited as a major open-model release adopted by Perplexity; its possible use of distilled reasoning traces from proprietary models is discussed"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Interconnects",
+    "article_title": "Open-Source AI & Open Models Reading List",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Its rapid release strategy is highlighted as an example of Chinese labs open-sourcing models within hours"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Interconnects",
+    "article_title": "Open-Source AI & Open Models Reading List",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its APIs are discussed in connection with techniques for extracting proprietary reasoning traces; an OpenAI/Hugging Face cyber incident is cited"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Interconnects",
+    "article_title": "Open-Source AI & Open Models Reading List",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic is cited as having confirmed that Chinese labs used reasoning-trace extraction techniques"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Interconnects",
+    "article_title": "Open-Source AI & Open Models Reading List",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-reading-list",
+    "name": "Perplexity",
+    "ticker_guess": null,
+    "why": "It is cited as having rapidly adopted DeepSeek R1, shifting toward a Chinese open model"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #210",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-210",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Reportedly used roughly 10,000 AI agents to produce a proposed solution to the Navier\u2013Stokes problem; formal verification in Lean took an additional 17 hours"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #210",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-210",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Was developing its own Navier\u2013Stokes solution and accused OpenAI of using logs from its Codex conversations; reportedly denied by Sam Altman"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #210",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-210",
+    "name": "Hermeus",
+    "ticker_guess": null,
+    "why": "Unveiled Ramjet-X, an expendable hypersonic test vehicle launched from its reusable Quarterhorse aircraft; plans to offer high-speed testing as a service"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #210",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-210",
+    "name": "Neko Health",
+    "ticker_guess": null,
+    "why": "Opened a preventative-health location in New York City; offers full-body scans, bloodwork and other screenings for $499"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-11",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #210",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-210",
+    "name": "Reducto",
+    "ticker_guess": null,
+    "why": "Promoted its r-1 document-parsing model for complex files; claims processing of more than one billion pages per month and offers migration credits to prospective customers"
   }
 ]

@@ -262,5 +262,70 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-12",
+    "value": 77309.09375,
+    "delta": -3.1504029134456712,
+    "history": [
+      [
+        "2026-09-06",
+        80350.046875
+      ],
+      [
+        "2026-09-07",
+        79115.8515625
+      ],
+      [
+        "2026-09-08",
+        78438.578125
+      ],
+      [
+        "2026-09-09",
+        78259.5234375
+      ],
+      [
+        "2026-09-10",
+        76568.125
+      ],
+      [
+        "2026-09-11",
+        77173.796875
+      ],
+      [
+        "2026-09-12",
+        77309.09375
+      ]
+    ],
+    "narrative": "No clear single catalyst emerges: the week\u2019s modest decline appears more consistent with broad macro positioning and drift than a Bitcoin-specific shock. The \u201cBonds Taking Charge\u201d commentary and the report that Brent crude exceeded $100 a barrel suggest potential rate and inflation pressure, but the mixed equity/futures headlines do not provide a sufficiently specific signal for Bitcoin.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Bonds Taking Charge - And The Q2 2026 Z.1",
+        "domain": "SeekingAlpha",
+        "date": "20260912"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Inflation Data Release",
+        "domain": "Yahoo",
+        "date": "20260911"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Down Pre-Bell Wednesday as Brent Crude Exceeds $100 a Barrel",
+        "domain": "Yahoo",
+        "date": "20260909"
+      },
+      {
+        "title": "Bitcoin Only Goes Up: What The 200W And 50W MAs Say About The Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20260907"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W37",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

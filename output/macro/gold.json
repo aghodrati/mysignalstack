@@ -303,5 +303,68 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-12",
+    "value": 4366.2001953125,
+    "delta": -1.43572197794809,
+    "history": [
+      [
+        "2026-09-08",
+        4393.89990234375
+      ],
+      [
+        "2026-09-09",
+        4416.0
+      ],
+      [
+        "2026-09-10",
+        4364.5
+      ],
+      [
+        "2026-09-11",
+        4366.2001953125
+      ]
+    ],
+    "narrative": "The modest weekly decline was most plausibly pressured by the \u201cHot PPI Sinks Gold\u201d headline and the report that oil topped $100 as Fed-hike bets surged, both implying higher yields and a less supportive monetary backdrop for gold. However, \u201cGold Prices Flash Strong Signal as Major Buyer Doubles Down\u201d points the other way, so the net signal is mixed rather than a decisive trend.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Bonds Taking Charge - And The Q2 2026 Z.1",
+        "domain": "SeekingAlpha",
+        "date": "20260912"
+      },
+      {
+        "title": "Fall Market Crash Risk: 6 Defensive Moves for Boomers & Gen X Investors",
+        "domain": "Yahoo",
+        "date": "20260911"
+      },
+      {
+        "title": "Precious Metals Royalty And Streaming Companies - August 2026 Report",
+        "domain": "SeekingAlpha",
+        "date": "20260911"
+      },
+      {
+        "title": "Oil Tops $100, Fed Hike Bets Surge: 5 Defensive ETFs to Watch Now",
+        "domain": "Benzinga",
+        "date": "20260910"
+      },
+      {
+        "title": "Hot PPI Sinks Gold, Freight Stocks: 10 Names To Watch Thursday",
+        "domain": "Benzinga",
+        "date": "20260910"
+      },
+      {
+        "title": "Gold Prices Flash Strong Signal as Major Buyer Doubles Down",
+        "domain": "Yahoo",
+        "date": "20260909"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W37",
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

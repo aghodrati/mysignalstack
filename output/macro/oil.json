@@ -194,5 +194,68 @@
     "direction": "bullish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-09-12",
+    "value": 100.05000305175781,
+    "delta": 9.36816722818219,
+    "history": [
+      [
+        "2026-09-08",
+        93.02999877929688
+      ],
+      [
+        "2026-09-09",
+        96.05000305175781
+      ],
+      [
+        "2026-09-10",
+        102.4800033569336
+      ],
+      [
+        "2026-09-11",
+        100.05000305175781
+      ]
+    ],
+    "narrative": "The clearest driver was geopolitical supply risk: Saudi Arabia said drones launched from Iraq attacked its East-West pipeline, while Iraq's response and Saudi Arabia's decision to hold off on retaliation kept the incident from escalating further. OPEC+ also keeping October output unchanged provided a mildly supportive backdrop, but the absence of immediate retaliation limits the persistence of the risk premium.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Iraq Says It Appreciates Saudi Arabia's Decision To Hold Off On Retaliation; Says It Rejects Any Attack That Threatens Saudi Security And Stability; Iraq PM Has Ordered Investigation Into The Circumstances Of The Attacks And The Parties Behind Them; Iraqi Government Says It Will Work With Allies And Friends To Prevent Recurrence Of Such Attacks",
+        "domain": "Benzinga",
+        "date": "20260911"
+      },
+      {
+        "title": "Saudi Foreign Ministry Says East-West Pipeline Attacked By Drones Launched From Iraq; Says It Has Chosen Not To Retaliate At This Stage Following A Request From Iraq's Prime Minister",
+        "domain": "Benzinga",
+        "date": "20260911"
+      },
+      {
+        "title": "Markets Turn Higher As Investors Overlook Inflation Numbers",
+        "domain": "SeekingAlpha",
+        "date": "20260911"
+      },
+      {
+        "title": "Energy Runs Against The Grain",
+        "domain": "SeekingAlpha",
+        "date": "20260911"
+      },
+      {
+        "title": "OPEC+ Keeps October Output Same: Oil ETFs in Focus",
+        "domain": "Yahoo",
+        "date": "20260909"
+      },
+      {
+        "title": "'Will The Fed Ever Learn?' Market Strategist Warns Hiking Into Oil Shock Could Repeat 2008's Biggest Mistake",
+        "domain": "Yahoo",
+        "date": "20260908"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W37",
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]
