@@ -1898,5 +1898,43 @@
     "trade_worthy": false,
     "context": "The article explicitly says Google DeepMind is \u201cgetting its butt kicked on the frontier LLM side,\u201d while highlighting AlphaGenome Atlas as an example of its impressive science-AI work. The Atlas is a one-petabyte research database covering roughly nine billion possible single-letter DNA changes, but the article provides no evidence of near-term monetization or a material financial contribution from it.",
     "source": "Not Boring"
+  },
+  {
+    "id": "1a5cb6be530e00a8",
+    "ticker": "GOOGL",
+    "source_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "source_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "event_type": "competitive",
+    "created": "2026-09-14",
+    "claim": "Google Cloud and Google TPUs are positioned to capture a share of emerging robotics inference workloads, creating a potential incremental cloud-demand and strategic-distribution opportunity for GOOGL over the coming quarters and beyond.",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Boston Dynamics is described as running high-level System 2 robot reasoning through its Orbit software on Google infrastructure and TPUs via the DeepMind partnership, while latency-sensitive System 1 control remains onboard. The article presents off-device inference as increasingly attractive for generalist robot fleets because datacenter GPUs can pool compute across robots and support models too large for onboard hardware; Google\u2019s enterprise-grade Gemini infrastructure and data-handling controls may help make its platform acceptable to demanding industrial customers.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "6fcdfe2d093c814b",
+    "ticker": "GOOGL",
+    "source_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "source_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "event_type": "competitive",
+    "created": "2026-09-14",
+    "claim": "The robotics inference opportunity is likely to develop slowly and remain bounded for GOOGL because unreliable wireless networks, safety requirements, data-security restrictions, and the viability of onboard models keep many deployments from placing cognition in the cloud.",
+    "direction": "short",
+    "confidence": 0.79,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says off-device inference works best in structured factories and homes where networking can be engineered, but that autonomous driving and safety-critical control require predominantly onboard compute. Several robotics companies keep execution local because wireless jitter, handoffs, industrial interference, home dead zones, and customer restrictions on exporting video data can make cloud inference a failure mode; Boston Dynamics is presented as an exception that has invested heavily in networking and compliance to use Google infrastructure.",
+    "source": "SemiAnalysis"
   }
 ]

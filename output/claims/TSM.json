@@ -796,5 +796,43 @@
     "trade_worthy": true,
     "context": "The article says TSMC has been Broadcom\u2019s manufacturing and packaging foundry for Google\u2019s TPUs for seven years and identifies HBM allocation, wafers, and advanced packaging as critical constraints for custom accelerators. Broadcom expects its AI compute, networking, and related chip sales to rise from $2.6 billion in fiscal 2022 to $230 billion in fiscal 2028, has secured the required capacity, and serves multiple hyperscaler and AI-company XPU programs beyond Google, including Anthropic, OpenAI, and Meta. This points to longer-term incremental and more diversified demand for TSMC\u2019s leading-edge manufacturing and advanced packaging services.",
     "source": "Next Platform"
+  },
+  {
+    "id": "9667b77340af9ff6",
+    "ticker": "TSM",
+    "source_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "source_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "event_type": "competitive",
+    "created": "2026-09-14",
+    "claim": "Robotics should provide TSM with a long-term incremental source of leading-edge wafer demand, but the article implies little material near-term revenue impact because robot volumes remain too small relative to datacenter accelerators.",
+    "direction": "long",
+    "confidence": 0.95,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Jetson Thor already uses TSMC\u2019s N4 process, while future robot generations are expected to move to N3 and N2, the same advanced nodes used for NVIDIA\u2019s datacenter accelerator roadmap. However, the article estimates that one million Jetson-class chips in 2030 would consume only about 10,000 wafers annually, describing that volume as negligible beside datacenter GPU demand; robotics would not become a meaningful wafer-demand driver until deployments reach tens of millions of chips, beyond 2030.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "b99228507739c20d",
+    "ticker": "TSM",
+    "source_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "source_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "event_type": "competitive",
+    "created": "2026-09-14",
+    "claim": "The growing use of shared datacenter inference should skew NVIDIA\u2019s TSMC-related demand toward higher-volume datacenter accelerators rather than lower-volume robot silicon, supporting a more favorable long-term advanced-node product mix for TSM.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that offloading cognition to shared B300-class GPUs becomes more silicon- and cost-efficient as fleets scale, while Jetson modules remain lower-volume and lower-margin for NVIDIA. Both robot and datacenter products increasingly rely on TSMC\u2019s leading-edge nodes, but the economic case for offload favors additional datacenter GPU deployments and reduces the need to place a powerful accelerator in every robot; the article does not quantify the resulting TSMC revenue or margin effect.",
+    "source": "SemiAnalysis"
   }
 ]

@@ -5585,5 +5585,135 @@
     "article_link": "https://www.normaltech.ai/p/the-ai-as-normal-technology-view",
     "name": "biorisk",
     "why": "The authors identify biological and broader CBRN risks as areas requiring defenses alongside cyberrisk; They cite DNA-synthesis screening and controls on cloud laboratories as specific mitigation measures; They argue for risk-specific defenses rather than treating AI safety as a single catch-all problem"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "SemiAnalysis",
+    "article_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "name": "Boston Dynamics",
+    "ticker_guess": null,
+    "why": "Splits robot intelligence between onboard NVIDIA Jetson Thor System 1 control and datacenter-hosted System 2 reasoning; serves System 2 through Google infrastructure and DeepMind models; treats network reliability and tail latency as major deployment constraints"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "SemiAnalysis",
+    "article_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "name": "Agility Robotics",
+    "ticker_guess": null,
+    "why": "Runs Digit\u2019s perception-to-action stack on an onboard Jetson-class accelerator; keeps fleet orchestration, workflow assignment, mapping, updates, teleoperation, and training-data uploads in the cloud; cites network reliability and safety as reasons not to offload core inference"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "SemiAnalysis",
+    "article_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "name": "Sunday Robotics",
+    "ticker_guess": null,
+    "why": "Moved Memo\u2019s inference fully onboard after home Wi-Fi, Starlink, and 5G jitter undermined cloud inference; trains foundation models using Skill Capture Glove data and reports ACT-2 achieving 99.1% zero-shot laundry-folding success across unfamiliar homes"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "SemiAnalysis",
+    "article_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "name": "Verne Robotics",
+    "ticker_guess": null,
+    "why": "Runs proprietary few-billion-parameter policies locally on Jetson-class or RTX 50-series GPUs; uses camera-equipped data-collection suits and deploys Nemo in warehouses and light manufacturing"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "SemiAnalysis",
+    "article_title": "A Brain Too Big to Carry \u2014 On-Device vs Datacenter Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device",
+    "name": "Weave Robotics",
+    "ticker_guess": null,
+    "why": "Expected to run its few-billion-parameter VLA models locally on Isaac robots; retains network dependence for training-data uploads and teleoperation; designs deployments without requiring home-network changes"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-15",
+    "source": "Stratechery",
+    "article_title": "OpenAI Ads, Amazon Ads in ChatGPT, Walmart to Accept Apple Pay",
+    "article_link": "https://stratechery.com/2026/openai-ads-amazon-ads-in-chatgpt-walmart-to-accept-apple-pay/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "ChatGPT ads are described as working; its chatbot advertising model is presented as relevant to Amazon\u2019s competitive challenge"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-15",
+    "source": "Stratechery",
+    "article_title": "OpenAI Ads, Amazon Ads in ChatGPT, Walmart to Accept Apple Pay",
+    "article_link": "https://stratechery.com/2026/openai-ads-amazon-ads-in-chatgpt-walmart-to-accept-apple-pay/",
+    "name": "Walmart",
+    "ticker_guess": null,
+    "why": "Finally began accepting Apple Pay; the article characterizes the move as giving in to the prevailing payment status quo"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-15",
+    "source": "Next Platform",
+    "article_title": "Operationalize AI At Scale With HPE And Nvidia",
+    "article_link": "https://www.nextplatform.com/ai/2026/09/15/operationalize-ai-at-scale-with-hpe-and-nvidia/5296445",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Provides the AI Factory with Nvidia solution, including secure infrastructure, software, control-plane capabilities, and services; Positions the offering for enterprise AI development, deployment, and ongoing support"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "Next Platform",
+    "article_title": "Despite Hefty Capital Investments, The Cloud Starts Paying Off For Oracle",
+    "article_link": "https://www.nextplatform.com/cloud/2026/09/14/despite-hefty-capital-investments-the-cloud-starts-paying-off-for-oracle/5296362",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Oracle is building major AI datacenter capacity for OpenAI, including the 8.1-gigawatt Stargate sites; OpenAI took delivery of 131,000 GPUs at Oracle\u2019s Abilene datacenter during the quarter; OpenAI\u2019s GPT-6 Astra model was trained on infrastructure at Abilene"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "The Diff",
+    "article_title": "The Economics and Politics of Pacing the Frontier",
+    "article_link": "https://www.thediff.co/archive/the-economics-and-politics-of-pacing-the-frontier/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Reported rapid growth in internal token consumption since the start of the year; cited as part of the frontier-AI labs considering a slower release pace"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "The Diff",
+    "article_title": "The Economics and Politics of Pacing the Frontier",
+    "article_link": "https://www.thediff.co/archive/the-economics-and-politics-of-pacing-the-frontier/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Dario Amodei called for slowing AI progress; discussed for reporting an 80% gross margin excluding distributor revenue share and model-training costs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "The Diff",
+    "article_title": "The Economics and Politics of Pacing the Frontier",
+    "article_link": "https://www.thediff.co/archive/the-economics-and-politics-of-pacing-the-frontier/",
+    "name": "Shopify",
+    "ticker_guess": "SHOP",
+    "why": "Rewriting its Shop mobile app as separate native Android and iOS versions; cited agentic coding as making the approach more feasible"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-14",
+    "source": "The Diff",
+    "article_title": "The Economics and Politics of Pacing the Frontier",
+    "article_link": "https://www.thediff.co/archive/the-economics-and-politics-of-pacing-the-frontier/",
+    "name": "Waymo",
+    "ticker_guess": null,
+    "why": "A self-driving vehicle contacted police about passengers who allegedly possessed a ghost gun; presented as an example of autonomous vehicles reducing risks to human drivers"
   }
 ]

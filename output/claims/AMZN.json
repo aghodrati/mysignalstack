@@ -929,5 +929,24 @@
     "trade_worthy": false,
     "context": "The article says AWS is using Broadcom for packaging and integration of Trainium 4, while Broadcom has secured HBM, wafer, and advanced-packaging capacity and is supporting multiple hyperscalers\u2019 custom AI accelerators. However, it provides no Amazon-specific shipment, revenue, margin, or deployment forecast, so the implication for AMZN is indirect.",
     "source": "Next Platform"
+  },
+  {
+    "id": "b9653a3730b5e355",
+    "ticker": "AMZN",
+    "source_link": "https://stratechery.com/2026/openai-ads-amazon-ads-in-chatgpt-walmart-to-accept-apple-pay/",
+    "source_title": "OpenAI Ads, Amazon Ads in ChatGPT, Walmart to Accept Apple Pay",
+    "event_type": "competitive",
+    "created": "2026-09-15",
+    "claim": "Effective ChatGPT advertising could strengthen a rival AI-driven commerce and discovery channel, increasing competitive pressure on Amazon\u2019s chatbot and e-commerce businesses.",
+    "direction": "short",
+    "confidence": 0.72,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says ChatGPT ads are working and specifically frames them as solving Amazon\u2019s biggest problem with chatbots, implying that successful ad monetization makes ChatGPT a more viable competitor rather than merely a costly consumer feature. It provides no details on advertiser demand, revenue scale, user behavior, or the specific Amazon product affected.",
+    "source": "Stratechery"
   }
 ]

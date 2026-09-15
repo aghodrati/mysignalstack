@@ -766,5 +766,25 @@
   ],
   "https://newsletter.semianalysis.com/p/long-live-the-short-king-why-4-hi": [
     "NVDA"
+  ],
+  "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference": [
+    "AMD",
+    "NVDA"
+  ],
+  "https://newsletter.semianalysis.com/p/a-brain-too-big-to-carry-on-device": [
+    "GOOGL",
+    "NVDA",
+    "TSM"
+  ],
+  "https://stratechery.com/2026/openai-ads-amazon-ads-in-chatgpt-walmart-to-accept-apple-pay/": [
+    "AAPL",
+    "AMZN"
+  ],
+  "https://www.nextplatform.com/cloud/2026/09/14/despite-hefty-capital-investments-the-cloud-starts-paying-off-for-oracle/5296362": [
+    "NVDA",
+    "ORCL"
+  ],
+  "https://www.thediff.co/archive/the-economics-and-politics-of-pacing-the-frontier/": [
+    "ORCL"
   ]
 }

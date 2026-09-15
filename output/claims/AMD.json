@@ -2544,5 +2544,24 @@
     "trade_worthy": false,
     "context": "Dell said that greater GPU allocations from Nvidia and AMD\u2019s accelerator partners are helping it fulfill orders for neoclouds, sovereign customers, and enterprises. Dell sold $16.4 billion of AI systems in the quarter, expects approximately $74 billion for the full fiscal year, and reported $95 billion of AI-system bookings; however, the article emphasizes Nvidia\u2019s role and provides no AMD-specific shipment, revenue, or allocation figures.",
     "source": "Next Platform"
+  },
+  {
+    "id": "988c8570e13a7316",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/vera-rubin-nvl72-agentic-inference",
+    "source_title": "Vera Rubin NVL72 Agentic Inference: 67x better Performance per Dollar",
+    "event_type": "competitive",
+    "created": "2026-09-14",
+    "claim": "AMD faces a material competitive risk in inference accelerators because MI355X appears substantially less efficient than Vera Rubin on the measured AgentX workloads, which could reduce AMD\u2019s ability to win deployments, sustain pricing, and grow inference-GPU share over the next several quarters.",
+    "direction": "short",
+    "confidence": 0.85,
+    "importance": 8,
+    "expected_return_pct": -8.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "On the DeepSeek V4 Pro agentic workload at 100 TPS, the article reports MI355X SGLang at 2.01 million total tok/s/MW versus 59.4 million for Rubin, a 29.5x Rubin advantage in that snapshot; MI355X was also behind the measured Blackwell configurations. The comparison reflects specific hardware, serving engines, caching, and parallelism choices rather than an across-the-board product conclusion, but the article says AMD has committed to collaborating on benchmarking its forthcoming MI455X UALoE72, indicating that AMD\u2019s next platform will be tested against this performance gap.",
+    "source": "SemiAnalysis"
   }
 ]

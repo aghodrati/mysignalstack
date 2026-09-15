@@ -92,5 +92,48 @@
     "final_multiplier": 0.88,
     "confidence_before": 0.5720000000000001,
     "confidence_after": 0.50336
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-15",
+    "thesis": "Oracle offers an attractive but high-risk long opportunity as exceptional OCI growth, record backlog, GPU utilization, and expanding AI infrastructure demand should drive substantial multi-year revenue growth, although near-term cash burn, financing needs, margin pressure, and execution risk limit conviction.",
+    "direction": "long",
+    "confidence": 0.69,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.74,
+    "pre_critic_confidence": 0.69,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "OCI growth remains near its reported 121% pace and cloud revenue guidance of 65%-71% is achieved or exceeded.",
+      "The $638 billion backlog converts into revenue as datacenter capacity comes online, with FY27 revenue reaching or surpassing the $90 billion outlook.",
+      "Very high GPU utilization, renewal-price increases, customer prepayments, and supplier financing improve AI infrastructure returns and support margins.",
+      "HPE networking procurement and diversified, phased capacity delivery enable Oracle to scale its multi-gigawatt AI infrastructure without material customer delays.",
+      "AI-agent adoption strengthens Oracle\u2019s SaaS retention and applications growth while the latest earnings momentum continues, including performance above the $1.74 EPS estimate."
+    ],
+    "invalidation": [
+      "New Mexico, Wisconsin, or other datacenter projects face material permitting, power, equipment, or construction delays that defer backlog conversion and impair FY27 guidance.",
+      "Oracle cannot fund its roughly $90-$95 billion FY27 CapEx plan without materially greater debt, dilution, or worsening credit conditions, while free cash flow remains negative with no credible improvement timetable.",
+      "GPU utilization, customer prepayments, or renewal pricing weaken, particularly if OpenAI cannot fund or consume its contracted capacity.",
+      "Component scarcity and infrastructure costs cause sustained gross-margin deterioration or prevent revenue growth from translating into earnings and cash flow.",
+      "Negative analyst revisions, insider selling, declining institutional support, or valuation compression reflect weakening confidence in the durability of AI-driven growth."
+    ],
+    "reasoning": "The independent fundamental and earnings-call pictures are both directionally bullish, and the latest quarter beat EPS estimates by 10.45%, while the backlog and OCI-growth evidence support substantial upside; however, management\u2019s evasive free-cash-flow outlook, heavy CapEx, margin pressure, financing dependence, and datacenter execution risks warrant a moderate rather than high-confidence long thesis.",
+    "claims_considered": 25
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-15",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.69,
+    "confidence_after": 0.69
   }
 ]

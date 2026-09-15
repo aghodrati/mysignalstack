@@ -232,5 +232,57 @@
     "final_multiplier": 0.82,
     "confidence_before": 0.79,
     "confidence_after": 0.6478
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-15",
+    "thesis": "AMD remains a moderately high-conviction long as accelerating EPYC demand, strong data-center growth, and Helios/Instinct adoption can outweigh near-term HBM, supply, software, margin, and valuation risks.",
+    "direction": "long",
+    "confidence": 0.6232,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.76,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Q3 2026 revenue reaches or exceeds the $13.0 billion midpoint while gross margin remains near 56%.",
+      "Server CPU revenue grows more than 80% year over year in the second half of 2026 and continues gaining share through 2027.",
+      "Microsoft, OpenAI, Meta, and Anthropic convert planned Helios and AMD accelerator deployments into material shipments and revenue.",
+      "Helios and MI455X ramp successfully, with improving yields, adequate HBM and packaging supply, and competitive total cost of ownership.",
+      "ROCm, ATOM, and mainstream inference-stack integration improve enough to narrow AMD's production long-context inference gap.",
+      "AMD's constrained GPU and CPU allocations remain evidence of demand exceeding supply rather than customer pushout."
+    ],
+    "invalidation": [
+      "MI355X and Helios remain materially inferior to Nvidia Vera Rubin on production inference performance per dollar, limiting AMD's accelerator share and pricing.",
+      "ROCm, ATOM, and distributed-inference software fail to achieve reliable production readiness, while CUDA, Google TPUs, Cerebras, or hyperscaler custom ASICs capture expected workloads.",
+      "Server CPU and Helios ramps are delayed by wafers, packaging, substrates, HBM, yields, power availability, or customer build-out timing.",
+      "Data-center AI margins remain below expectations as Helios complexity, memory costs, partner dependence, and pricing pressure prevent earnings conversion.",
+      "The 2027 growth outlook is reduced materially, or revenue growth slows enough that roughly 37x forward earnings and 20.9x EV/revenue compress despite the recent 1.66 EPS result versus 1.61 expected.",
+      "Hyperscalers shift more spending toward Arm CPUs, custom XPUs, Nvidia NVLink-connected systems, or internally developed inference ASICs than AMD can offset."
+    ],
+    "reasoning": "The fundamental picture is bullish but valuation-sensitive, the latest call showed confident guidance and major data-center momentum with acknowledged supply and margin risks, and the latest quarter delivered a modest 3.21% EPS beat, so the strong operating trajectory supports a long while the serious inference and execution risks cap confidence.",
+    "claims_considered": 135
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-15",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The synthesis overstates Helios/Instinct adoption: several key claims describe planned deployments, potential opportunities, or roadmap catalysts rather than realized revenue, while one claim explicitly says TAM projections have not translated into upgraded company-level financial guidance.",
+      "It understates the severity of the inference risk: the claims identify AMD as disadvantaged in production long-context agentic inference, lacking mainstream context-parallelism support, and recently appearing substantially less efficient than Vera Rubin on measured workloads.",
+      "It treats CPU momentum as sufficient support despite repeated claims that Arm adoption, hyperscaler custom CPUs/XPUs, Intel supply availability, and AMD's own server-CPU supply shortfall could limit both addressable growth and near-term share conversion.",
+      "The conclusion that growth can outweigh risks is not demonstrated by the claims because the largest AI opportunity is accelerator-driven, while HBM constraints, scarce GPU allocations, custom accelerators, margin pressure, and software readiness directly limit AMD's ability to monetize that opportunity.",
+      "The bullish evidence is partly duplicative and directional, whereas the negative claims include explicit execution blockers such as slow Helios ramp, Broadcom dependency, unstable distributed-inference software, and limited internal GPU validation capacity.",
+      "The Q1 and Q2 earnings catalysts are already reported by May and August 2026, so they support existing momentum but are not clearly fresh catalysts as of 2026-09-15."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The claims support a plausible long thesis and strong demand backdrop, but the stated confidence overreaches because the most important upside depends on unproven future Helios/Instinct conversion while current accelerator software, inference efficiency, supply, and CPU-substitution risks are both specific and substantial.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.76,
+    "confidence_after": 0.6232
   }
 ]
