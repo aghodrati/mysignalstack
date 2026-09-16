@@ -948,5 +948,43 @@
     "trade_worthy": false,
     "context": "The article says ChatGPT ads are working and specifically frames them as solving Amazon\u2019s biggest problem with chatbots, implying that successful ad monetization makes ChatGPT a more viable competitor rather than merely a costly consumer feature. It provides no details on advertiser demand, revenue scale, user behavior, or the specific Amazon product affected.",
     "source": "Stratechery"
+  },
+  {
+    "id": "db9536825c82118a",
+    "ticker": "AMZN",
+    "source_link": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
+    "source_title": "Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We disagree",
+    "event_type": "regulatory",
+    "created": "2026-09-15",
+    "claim": "AWS faces a limited, project-specific delay to an Ohio datacenter campus from local moratoriums, modestly slowing some AWS capacity deployment but not materially changing Amazon's broader AI infrastructure buildout outlook.",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "SemiAnalysis identifies an AWS campus in Ohio as one of three projects accounting for essentially all of the approximately 1,525 MW of locally delayed datacenter capacity. The article says moratoriums generally freeze new applications rather than revoke existing approvals, so permitted or already-under-construction projects can proceed; it does not quantify the AWS campus's individual capacity or the resulting effect on AWS revenue, costs, or timing.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "f5d77e8c1e66652c",
+    "ticker": "AMZN",
+    "source_link": "https://newsletter.semianalysis.com/p/everyone-says-datacenter-moratoriums",
+    "source_title": "Everyone Says Datacenter Moratoriums Are Killing the US Buildout. We disagree",
+    "event_type": "regulatory",
+    "created": "2026-09-15",
+    "claim": "The limited aggregate impact of US datacenter moratoriums reduces the risk that regulation will materially constrain AWS's ability to expand AI-related datacenter capacity in the coming quarters.",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "SemiAnalysis forecasts 38 GW of US datacenter IT capacity in 2027, including 22 GW already under vertical construction and 16 GW that is largely financed or undergoing site preparation, while estimating only about 2.3 GW is genuinely delayed by local moratoriums and New York's executive order. Texas may add three to four months of administrative delay for some grid-connected projects, but behind-the-meter power development is accelerating, further limiting the threat to AWS's broader expansion plans.",
+    "source": "SemiAnalysis"
   }
 ]

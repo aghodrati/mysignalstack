@@ -5715,5 +5715,69 @@
     "name": "Waymo",
     "ticker_guess": null,
     "why": "A self-driving vehicle contacted police about passengers who allegedly possessed a ghost gun; presented as an example of autonomous vehicles reducing risks to human drivers"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Stratechery",
+    "article_title": "Salesforce AI Force, Agents as UI, The Race to Headless",
+    "article_link": "https://stratechery.com/2026/salesforce-ai-force-agents-as-ui-the-race-to-headless/",
+    "name": "Salesforce",
+    "ticker_guess": null,
+    "why": "The article says Salesforce is abandoning UI as a moat; it connects Salesforce with AI Force, agent-based interfaces, and the shift toward headless software"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Stratechery",
+    "article_title": "Salesforce AI Force, Agents as UI, The Race to Headless",
+    "article_link": "https://stratechery.com/2026/salesforce-ai-force-agents-as-ui-the-race-to-headless/",
+    "name": "AI agents",
+    "why": "Salesforce is discussed in the context of AI Force and agents serving as the user interface; the article argues that traditional UI is losing its role as a competitive moat"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Stratechery",
+    "article_title": "Salesforce AI Force, Agents as UI, The Race to Headless",
+    "article_link": "https://stratechery.com/2026/salesforce-ai-force-agents-as-ui-the-race-to-headless/",
+    "name": "headless software",
+    "why": "The article frames the industry as moving toward headless software, where applications operate with less reliance on conventional user interfaces"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Doomberg",
+    "article_title": "Value Trap",
+    "article_link": "https://newsletter.doomberg.com/p/value-trap",
+    "name": "fuel subsidies",
+    "why": "Angola raised diesel prices by one-third in July 2025 as part of a campaign to phase out fuel subsidies; The increase triggered a three-day transport strike and nationwide unrest, with 30 confirmed dead, 277 injured, and over 1,500 arrested; The government maintained the reduced subsidy levels despite the disruption"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Doomberg",
+    "article_title": "Value Trap",
+    "article_link": "https://newsletter.doomberg.com/p/value-trap",
+    "name": "natural gas",
+    "why": "The Permian Basin is producing more than 23 bcf/d of dry gas, exceeding local demand and leaving fuel frequently given away; Alberta produces about 11 bcf/d, consumes roughly 7 bcf/d domestically, and exports about 4 bcf/d; Alberta\u2019s trapped gas bounty regularly sells at rock-bottom prices"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Doomberg",
+    "article_title": "Value Trap",
+    "article_link": "https://newsletter.doomberg.com/p/value-trap",
+    "name": "energy regulation",
+    "why": "Alberta Premier Danielle Smith faces pressure to expand natural-gas production and egress without harming local voters through higher domestic prices; Subsidized energy in high-consumption regions can encourage bootlegging, organized crime, and corruption when different prices are difficult to enforce"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Doomberg",
+    "article_title": "Value Trap",
+    "article_link": "https://newsletter.doomberg.com/p/value-trap",
+    "name": "energy infrastructure",
+    "why": "Alberta\u2019s natural gas exports are constrained by routes east across the Prairies, west over the Rockies, and south into the United States; Potential data-center demand could create a large new market for Alberta\u2019s low-cost gas"
   }
 ]
