@@ -17,7 +17,7 @@ an instant no-op for every ticker not currently in its own window. A *forced* fu
 (bypassing that window) only ever happens via an explicit --refresh-fundamental.
 
 Passing any of --refresh-claims / --refresh-fundamental / --refresh-earning-call / --refresh-macro /
---weekly / --monthly narrows the run to just the stage(s) named (earnings-window-fundamentals/
+--weekly / --monthly / --refresh-thesis narrows the run to just the stage(s) named (earnings-window-fundamentals/
 trade-decisions still apply as above unless explicitly excluded by naming other stages instead).
 An explicit --refresh-macro (or --weekly/--monthly, scoped to just that one period) also bypasses
 the Saturday/month-end date gating above -- it always refreshes, regardless of today's date, since
@@ -37,6 +37,7 @@ Usage:
     uv run run_loop_a.py my_portfolio --refresh-macro --ticker 10y_yield
     uv run run_loop_a.py my_portfolio --weekly   # e.g. a Saturday-only cron entry
     uv run run_loop_a.py my_portfolio --monthly  # e.g. a month-end-only cron entry
+    uv run run_loop_a.py my_portfolio --refresh-thesis --ticker AMZN
 """
 
 import argparse
@@ -59,6 +60,7 @@ from finance.loop_a_config import active_news_sources, tracked_universe, youtube
 from finance.macro import MONTHLY_NARRATIVE_SERIES, NARRATIVE_SERIES, refresh_macro_narrative
 from finance.newsloop import review_loop_a, run_loop_a
 from finance.portfolio import list_portfolios
+from finance.thesis import load_ticker_thesis, update_ticker_thesis
 from finance.youtube import refresh_youtube_sources
 
 
@@ -113,6 +115,19 @@ def main():
         ),
     )
     parser.add_argument(
+        "--refresh-thesis", action="store_true",
+        help=(
+            "Force Stage C (finance.thesis.update_ticker_thesis) to resynthesize --ticker's thesis "
+            "right now, from whatever claims/fundamental/earnings-call/reported-earnings data is "
+            "already on record -- bypasses the normal trigger (a fresh run only re-aggregates a "
+            "ticker touched by a new trade-worthy claim this run, see finance.newsloop's "
+            "_run_claims_pipeline), for when you want an up-to-date thesis without waiting on new "
+            "news. Doesn't fetch anything new itself -- run --refresh-claims/--refresh-fundamental/ "
+            "--refresh-earning-call first if the underlying data itself is stale. Always runs ONLY "
+            "this (no other stage implied), requires --ticker."
+        ),
+    )
+    parser.add_argument(
         "--refresh-youtube", action="store_true",
         help=(
             "Check every active finance.loop_a_config.youtube_sources() channel for new videos, "
@@ -146,7 +161,8 @@ def main():
         "--ticker", default=None,
         help=(
             "Restrict --refresh-fundamental/--refresh-earning-call to just this stock ticker (e.g. "
-            "--ticker AAPL), or --refresh-macro to just this series key (e.g. --ticker 10y_yield)."
+            "--ticker AAPL), or --refresh-macro to just this series key (e.g. --ticker 10y_yield). "
+            "Required (a stock ticker) for --refresh-thesis."
         ),
     )
     parser.add_argument(
@@ -164,6 +180,8 @@ def main():
         raise SystemExit("--transcript-url requires --ticker.")
     if args.transcript_url and not args.refresh_earning_call:
         raise SystemExit("--transcript-url requires --refresh-earning-call.")
+    if args.refresh_thesis and not args.ticker:
+        raise SystemExit("--refresh-thesis requires --ticker.")
 
     # Presence of any --refresh-* flag narrows this run to just the stage(s) named; with none
     # given, claims/earnings-calls/macro-narratives/youtube all run at their default (whole-
@@ -175,12 +193,14 @@ def main():
     any_stage_flag = (
         args.refresh_claims or args.refresh_fundamental or args.refresh_earning_call
         or args.refresh_macro or args.weekly or args.monthly or args.refresh_youtube
+        or args.refresh_thesis
     )
     do_claims = args.refresh_claims or not any_stage_flag
     do_fundamentals = args.refresh_fundamental
     do_earning_call = args.refresh_earning_call or not any_stage_flag
     do_macro = args.refresh_macro or args.weekly or args.monthly or not any_stage_flag
     do_youtube = args.refresh_youtube or not any_stage_flag
+    do_thesis = args.refresh_thesis
 
     if args.source is not None:
         if not do_claims:
@@ -192,8 +212,8 @@ def main():
         raise SystemExit(
             f"No macro series named {args.ticker!r}. Configured series: {', '.join(sorted(NARRATIVE_SERIES))}"
         )
-    if args.ticker is not None and not (do_fundamentals or do_earning_call or do_macro):
-        print("Note: --ticker only affects --refresh-fundamental/--refresh-earning-call/--refresh-macro -- ignored for this run.")
+    if args.ticker is not None and not (do_fundamentals or do_earning_call or do_macro or do_thesis):
+        print("Note: --ticker only affects --refresh-fundamental/--refresh-earning-call/--refresh-macro/--refresh-thesis -- ignored for this run.")
 
     if args.portfolio not in list_portfolios():
         existing = ", ".join(list_portfolios()) or "(none yet)"
@@ -282,6 +302,29 @@ def main():
                 )
             else:
                 print(f"  {ticker}: no new transcript found (or nothing usable)")
+
+    if do_thesis:
+        ticker = args.ticker.upper()
+        prior = load_ticker_thesis(ticker)
+        print(f"\n=== Manual thesis refresh: {ticker} ===")
+        try:
+            tt = update_ticker_thesis(ticker, dt.date.today())
+        except RateLimited as exc:
+            reason = f" ({exc.message})" if exc.message else ""
+            print(f"  rate limited{reason}, stopping here.")
+            return
+        if tt is None:
+            print(
+                f"  No claims on record for {ticker} yet, or the aggregator produced nothing usable "
+                f"-- thesis left unchanged."
+            )
+        else:
+            before = f"{prior.confidence:.0%}" if prior is not None else "new"
+            print(
+                f"  {ticker}: {before} -> {tt.confidence:.0%} confidence ({tt.direction}), "
+                f"expected return {tt.expected_return_pct:+.1f}% over {tt.expected_horizon_days}d, "
+                f"from {tt.claims_considered} claim(s)"
+            )
 
     if do_macro:
         # refresh_macro_narrative always regenerates a fresh LLM+news read on every call for both

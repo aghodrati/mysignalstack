@@ -133,7 +133,8 @@ _NARRATIVE_SOURCE_LABEL: dict[str, str] = {
     **{key: "GNews" for key in NARRATIVE_QUERIES},
 }
 from finance import read_state
-from finance.thesis import list_tickers_with_thesis, load_ticker_thesis
+from finance.llm import RateLimited
+from finance.thesis import TickerThesis, list_tickers_with_thesis, load_ticker_thesis, update_ticker_thesis
 from finance.youtube import load_youtube_summaries
 from finance.universe import QUICK_PICK_CATEGORIES, SP500_BENCHMARK, load_custom_tickers, save_custom_tickers
 
@@ -418,6 +419,10 @@ def _select_discovery_view() -> None:
 
 def _select_youtube_view() -> None:
     st.session_state["ticker_page_view"] = "youtube"
+
+
+def _select_thesis_view() -> None:
+    st.session_state["ticker_page_view"] = "thesis"
 
 
 def _select_macro_view(series_key: str | None = None) -> None:
@@ -5470,6 +5475,95 @@ def _render_discovery_page() -> None:
     )
 
 
+def _refresh_one_thesis(ticker: str) -> None:
+    """Handler for the Thesis Overview page's manual-refresh control -- a synchronous LLM call
+    (Stage C, via finance.thesis.update_ticker_thesis), not a background job, so this blocks the
+    page with a spinner for the few seconds a real completion call takes.
+    """
+    with st.spinner(f"Resynthesizing {ticker}..."):
+        try:
+            tt = update_ticker_thesis(ticker, dt.date.today())
+        except RateLimited as exc:
+            st.error(f"Rate limited -- {exc.message or 'every configured model is out of quota'}. Try again shortly.")
+            return
+    if tt is None:
+        st.warning(f"{ticker}: no claims on record yet, or the aggregator produced nothing usable -- thesis left unchanged.")
+    else:
+        st.success(f"{ticker} refreshed: {tt.direction} at {tt.confidence:.0%} confidence.")
+
+
+def _new_claims_since_thesis(ticker: str, tt: TickerThesis | None) -> int:
+    """How many of `ticker`'s claims were created after its current thesis snapshot -- claims that
+    exist on disk but haven't been folded into any Stage C synthesis yet (see finance.thesis's own
+    "no diffing" behavior: the next run reconsiders EVERY claim, this is just "how much has piled up
+    since the last time that happened"). All claims count as new when there's no thesis yet at all.
+    """
+    claims = load_claims(ticker)
+    if tt is None:
+        return len(claims)
+    return sum(1 for c in claims if c.created > tt.updated)
+
+
+def _render_thesis_overview_page() -> None:
+    """One row per tracked ticker -- finance.thesis.load_ticker_thesis's latest "aggregated" snapshot
+    (Stage C's synthesized direction/confidence/expected return), not the individual claims feeding
+    it (see Recent for those). A real st.dataframe, not a hand-built table -- free column-header-click
+    sorting on any field, at the cost of no per-row action button (st.dataframe's column_config has
+    no button type at all); manual refresh is instead a single ticker picker + button above the table
+    (finance.thesis.update_ticker_thesis, same op as `run_loop_a.py <portfolio> --refresh-thesis
+    --ticker <ticker>` on the CLI).
+    """
+    st.markdown("### Thesis Overview")
+    universe = tracked_universe()
+
+    refresh_col, button_col = st.columns([4, 1])
+    refresh_ticker = refresh_col.selectbox(
+        "Manually refresh one ticker's thesis", options=sorted(universe), key="thesis_refresh_ticker",
+        label_visibility="collapsed",
+    )
+    if button_col.button("Refresh now", key="thesis_refresh_btn", width="stretch"):
+        _refresh_one_thesis(refresh_ticker)
+
+    rows = []
+    missing = []
+    for ticker, name in universe.items():
+        tt = load_ticker_thesis(ticker)
+        if tt is None:
+            missing.append(ticker)
+        rows.append({
+            "Ticker": ticker,
+            "Name": name,
+            "Direction": "Long" if tt and tt.direction == "long" else "Short" if tt and tt.direction == "short" else "-",
+            "Confidence": tt.confidence if tt else None,
+            "Exp. return %": tt.expected_return_pct if tt else None,
+            "Horizon (days)": tt.expected_horizon_days if tt else None,
+            "Claims": tt.claims_considered if tt else 0,
+            "New claims": _new_claims_since_thesis(ticker, tt),
+            "Updated": tt.updated if tt else None,
+            "Thesis": tt.thesis if tt else "No thesis yet -- run Loop A, or refresh manually above.",
+        })
+
+    df = pd.DataFrame(rows).sort_values("Confidence", ascending=False, na_position="last", ignore_index=True)
+    st.caption(
+        f"{len(rows) - len(missing)} of {len(rows)} tracked tickers have a thesis"
+        + (f" -- {len(missing)} not yet processed: {', '.join(sorted(missing))}" if missing else "")
+    )
+    st.dataframe(
+        df, hide_index=True, width="stretch",
+        # Default st.dataframe height caps at ~400px with its own internal scrollbar regardless of
+        # row count -- explicit height sized to every row (35px/row) + the header (38px) removes
+        # that inner scroll entirely, so the whole universe is visible without scrolling the table
+        # itself (the outer page can still scroll if the universe is large).
+        height=38 + 35 * len(df),
+        column_config={
+            "Confidence": st.column_config.ProgressColumn("Confidence", min_value=0, max_value=1, format="percent"),
+            "Exp. return %": st.column_config.NumberColumn("Exp. return %", format="%.1f%%"),
+            "Updated": st.column_config.DateColumn("Updated"),
+            "Thesis": st.column_config.TextColumn("Thesis", width="large"),
+        },
+    )
+
+
 def _render_macro_page() -> None:
     """The global macro dashboard -- deterministic FRED/yfinance stat tiles (finance.macro), not
     tied to any ticker. See finance.macro's own module docstring for why nothing here costs an
@@ -5682,6 +5776,12 @@ def page_ticker() -> None:
             type="primary" if is_youtube_view else "secondary",
             on_click=_select_youtube_view, width="stretch",
         )
+        is_thesis_view = st.session_state["ticker_page_view"] == "thesis"
+        st.button(
+            "\U0001f4ca Thesis", key="ticker_page_thesis_btn",
+            type="primary" if is_thesis_view else "secondary",
+            on_click=_select_thesis_view, width="stretch",
+        )
         is_macro_view = st.session_state["ticker_page_view"] == "macro"
         focused_series = st.session_state.get("ticker_page_macro_series")
         with st.expander("\U0001f30d Macro", expanded=True):
@@ -5743,6 +5843,9 @@ def page_ticker() -> None:
         return
     if st.session_state["ticker_page_view"] == "youtube":
         _render_youtube_page()
+        return
+    if st.session_state["ticker_page_view"] == "thesis":
+        _render_thesis_overview_page()
         return
     if st.session_state["ticker_page_view"] == "macro":
         _render_macro_page()
