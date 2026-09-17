@@ -5394,5 +5394,43 @@
     "trade_worthy": false,
     "context": "The article says future OpenAI sites may use a mix of Nvidia systems and homegrown OpenAI Jalapeno accelerators, particularly for inference, and estimates that the broader planned infrastructure build could require very large hardware investment; however, the mix between Nvidia and custom silicon is uncertain and the article provides no firm deployment or substitution schedule.",
     "source": "Next Platform"
+  },
+  {
+    "id": "8b710ad08b0da3bd",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/compute/2026/09/16/infleqtion-and-nvidia-reduce-physical-to-logical-qubit-ratio-in-quantum-computers/5296887",
+    "source_title": "Infleqtion And Nvidia Reduce Physical-to-Logical Qubit Ratio in Quantum Computers",
+    "event_type": "product_launch",
+    "created": "2026-09-16",
+    "claim": "Infleqtion\u2019s validated integration of its qLDPC library with CUDA-Q Logical strengthens Nvidia\u2019s strategic position as a software and orchestration platform for emerging fault-tolerant quantum-computing systems, potentially supporting longer-term ecosystem adoption and demand for Nvidia\u2019s quantum/HPC infrastructure.",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The workflow used CUDA-Q Logical for logical ownership, block allocation, and compilation while Infleqtion\u2019s software supplied the qLDPC code, producing an 18-logical-qubit encoded block from 98 physical data qubits and validating multiple logical owners within one block. This provides a concrete third-party demonstration of Nvidia\u2019s quantum software stack, although the article describes a research-stage workflow rather than customer revenue or a commercial deployment.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "02e11d782dffc3d2",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/compute/2026/09/16/infleqtion-and-nvidia-reduce-physical-to-logical-qubit-ratio-in-quantum-computers/5296887",
+    "source_title": "Infleqtion And Nvidia Reduce Physical-to-Logical Qubit Ratio in Quantum Computers",
+    "event_type": "product_launch",
+    "created": "2026-09-16",
+    "claim": "Because the Nvidia-Infleqtion result still requires physical syndrome extraction, neutral-atom noise modeling, detector generation, and decoder benchmarking, it is unlikely to create a material near-term financial contribution for Nvidia and the quantum-computing opportunity remains commercially uncertain.",
+    "direction": "short",
+    "confidence": 0.88,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The reported result validates code construction, logical ownership, and compilation, but does not yet demonstrate full fault-tolerant operation on a physical neutral-atom system. The article also notes that ancilla allocation, scheduling, readout, control, atom movement, leakage, loss, and classical decoding must still be coordinated before the favorable physical-to-logical ratio translates into usable machine performance.",
+    "source": "Next Platform"
   }
 ]

@@ -5779,5 +5779,120 @@
     "article_link": "https://newsletter.doomberg.com/p/value-trap",
     "name": "energy infrastructure",
     "why": "Alberta\u2019s natural gas exports are constrained by routes east across the Prairies, west over the Rockies, and south into the United States; Potential data-center demand could create a large new market for Alberta\u2019s low-cost gas"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Next Platform",
+    "article_title": "Infleqtion And Nvidia Reduce Physical-to-Logical Qubit Ratio in Quantum Computers",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/16/infleqtion-and-nvidia-reduce-physical-to-logical-qubit-ratio-in-quantum-computers/5296887",
+    "name": "Infleqtion",
+    "ticker_guess": null,
+    "why": "Built and validated an 18-logical-qubit, 98-physical-qubit high-rate qLDPC code with Nvidia\u2019s CUDA-Q Logical; uses neutral-atom systems and targets more than 1,000 logical qubits by 2030; is extending its quantum technology through NASA, DOE, and Cisco collaborations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Next Platform",
+    "article_title": "Infleqtion And Nvidia Reduce Physical-to-Logical Qubit Ratio in Quantum Computers",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/16/infleqtion-and-nvidia-reduce-physical-to-logical-qubit-ratio-in-quantum-computers/5296887",
+    "name": "Cisco Systems",
+    "ticker_guess": null,
+    "why": "Partnered with Infleqtion on R&D to connect neutral-atom quantum systems and sensors using Cisco\u2019s quantum networking portfolio; previously unveiled a Universal Quantum Switch for connecting systems using different modalities"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "GeneralistAI",
+    "ticker_guess": null,
+    "why": "Announced GEN-1.5, an in-context learner that performed simple manipulation tasks from instructions; the article questions whether the demonstrations represent true generalization"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "Skild AI",
+    "ticker_guess": null,
+    "why": "Demonstrated its S1 model performing more complex in-context tasks lasting up to 10 minutes; examples included cooking and flipping a pancake"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "Unitree",
+    "ticker_guess": null,
+    "why": "Its concurrent IPO drew financial attention to robotics; Unitree humanoids were associated with China\u2019s highly visible running, jumping, and crash-testing demonstrations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "Figure AI",
+    "ticker_guess": null,
+    "why": "Hosted a nine-day livestream in which a humanoid team sorted 250,000 packages; the demonstration combined autonomous cognition, dexterous manipulation, locomotion, and a real-world application"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "Boston Dynamics",
+    "ticker_guess": null,
+    "why": "The article cites the company\u2019s 2009 humanoid demonstration as an early example of impressive but largely pre-programmed and tele-operated robotics"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "humanoid robotics",
+    "why": "Basic humanoid locomotion is described as largely solved and becoming cheaper; hardware efforts are advancing dexterity, package sorting, and other real-world tasks; broad autonomy and generalizability remain works in progress"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "physical AI",
+    "why": "Robotics is applying generalized AI models to physical-world manipulation and navigation; in-context learning demonstrations suggest robots can perform some tasks without task-specific training; commercialization remains mostly at pilot and development stages"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "US reindustrialization",
+    "why": "Bay Area builders are developing US-sourced magnets, electric motors for military drones, and robotic actuators; the article contrasts renewed American manufacturing efforts with China\u2019s rapid robotics hardware progress"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "China robotics",
+    "why": "China\u2019s World Robotics Games showcased humanoids running, jumping, and testing hardware in visible competitive settings; the event and Unitree\u2019s IPO helped draw financial attention to Chinese robotics"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-16",
+    "source": "Citrini Research",
+    "article_title": "Robotics Tipping Point: A Citrini Field Trip",
+    "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
+    "name": "robot automation",
+    "why": "Simple repetitive tasks such as package sorting are described as readily trainable and close to commercialization; complex dexterity and autonomous operation are advancing but are not yet combined into a broadly useful product"
   }
 ]
