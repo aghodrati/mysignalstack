@@ -2563,5 +2563,24 @@
     "trade_worthy": true,
     "context": "On the DeepSeek V4 Pro agentic workload at 100 TPS, the article reports MI355X SGLang at 2.01 million total tok/s/MW versus 59.4 million for Rubin, a 29.5x Rubin advantage in that snapshot; MI355X was also behind the measured Blackwell configurations. The comparison reflects specific hardware, serving engines, caching, and parallelism choices rather than an across-the-board product conclusion, but the article says AMD has committed to collaborating on benchmarking its forthcoming MI455X UALoE72, indicating that AMD\u2019s next platform will be tested against this performance gap.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "12eec74c509c3e87",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/hpc/2026/09/17/bull-beats-out-hpe-for-next-gen-lumi-ai-supercomputer/5297292",
+    "source_title": "Bull Beats Out HPE For Next-Gen Lumi AI Supercomputer",
+    "event_type": "capex",
+    "created": "2026-09-17",
+    "claim": "AMD\u2019s selection of Venice Epyc 9006 CPUs and Altair MI430X GPUs for the \u20ac387.8 million Lumi-AI system provides a meaningful future data-center design win, reinforcing AMD\u2019s competitive position in European government-funded HPC and AI infrastructure and supporting demand for its next-generation products.",
+    "direction": "long",
+    "confidence": 0.95,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Bull chose an AMD-based configuration over HPE for CSC Finland and the EuroHPC-backed Lumi-AI partition, which is scheduled for installation in the second half of 2027. The planned system is estimated at 1,240 nodes and 4,960 MI430X GPUs, with roughly 10 times the AI performance and twice the FP64 HPC performance of the existing Lumi-G partition, which already uses AMD Epyc processors and MI250X GPUs. The contract value belongs to the system integrator and consortium rather than being disclosed AMD revenue, so the direct financial contribution to AMD cannot be determined from the article.",
+    "source": "Next Platform"
   }
 ]

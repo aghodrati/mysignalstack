@@ -5894,5 +5894,80 @@
     "article_link": "https://www.citriniresearch.com/p/robotics-tipping-point-a-citrini",
     "name": "robot automation",
     "why": "Simple repetitive tasks such as package sorting are described as readily trainable and close to commercialization; complex dexterity and autonomous operation are advancing but are not yet combined into a broadly useful product"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-17",
+    "source": "Next Platform",
+    "article_title": "Bull Beats Out HPE For Next-Gen Lumi AI Supercomputer",
+    "article_link": "https://www.nextplatform.com/hpc/2026/09/17/bull-beats-out-hpe-for-next-gen-lumi-ai-supercomputer/5297292",
+    "name": "Bull",
+    "ticker_guess": null,
+    "why": "Selected as the primary contractor for the Lumi-AI partition; will deploy BullSequana XH3500 systems and its BXI interconnect technology"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-17",
+    "source": "Next Platform",
+    "article_title": "Bull Beats Out HPE For Next-Gen Lumi AI Supercomputer",
+    "article_link": "https://www.nextplatform.com/hpc/2026/09/17/bull-beats-out-hpe-for-next-gen-lumi-ai-supercomputer/5297292",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Lost the Lumi-AI contract to Bull; was the main contractor for the original Lumi supercomputer"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-17",
+    "source": "Next Platform",
+    "article_title": "Bull Beats Out HPE For Next-Gen Lumi AI Supercomputer",
+    "article_link": "https://www.nextplatform.com/hpc/2026/09/17/bull-beats-out-hpe-for-next-gen-lumi-ai-supercomputer/5297292",
+    "name": "IQM Quantum Computers",
+    "ticker_guess": null,
+    "why": "Building the Lumi-IQ quantum computing component for CSC Finland; plans to install a 150-physical-qubit system in 2027 and upgrade it in 2029"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Doomberg",
+    "article_title": "Coming to America",
+    "article_link": "https://newsletter.doomberg.com/p/coming-to-america",
+    "name": "Middle East conflict",
+    "why": "Houthi advances across the Red Sea coast and months of Strait of Hormuz shipment disruption threaten global energy supplies; Saudi Arabia\u2019s vulnerability is presented as a potential trigger for a broader economic crisis"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Doomberg",
+    "article_title": "Coming to America",
+    "article_link": "https://newsletter.doomberg.com/p/coming-to-america",
+    "name": "Oil supply",
+    "why": "Damage to Saudi Arabia\u2019s East-West Pipeline and prolonged Hormuz disruption threaten crude transport; China\u2019s renewed purchases pushed Shanghai crude futures as high as 929.4 yuan, or $138.50 per barrel"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Doomberg",
+    "article_title": "Coming to America",
+    "article_link": "https://newsletter.doomberg.com/p/coming-to-america",
+    "name": "Diesel shortage",
+    "why": "The article cites continuing signs of an imminent global diesel crunch; strategic-reserve drawdowns, alternative routes, and deferred crude demand only postponed the expected economic impact"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Doomberg",
+    "article_title": "Coming to America",
+    "article_link": "https://newsletter.doomberg.com/p/coming-to-america",
+    "name": "China commodities",
+    "why": "Chinese refiners substantially cut crude purchases in the spring before returning to the market as Houthi forces advanced; yuan-denominated crude futures reached their highest level since the contract launched in 2018"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Doomberg",
+    "article_title": "Coming to America",
+    "article_link": "https://newsletter.doomberg.com/p/coming-to-america",
+    "name": "Saudi Arabia",
+    "why": "The East-West Pipeline sustained serious damage; the article argues that Saudi leadership could face increased pressure from foreign and domestic adversaries if Crown Prince Mohammed bin Salman\u2019s position weakens"
   }
 ]
