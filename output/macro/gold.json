@@ -366,5 +366,72 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-19",
+    "value": 4424.89990234375,
+    "delta": 0.362902319272318,
+    "history": [
+      [
+        "2026-09-14",
+        4351.89990234375
+      ],
+      [
+        "2026-09-15",
+        4332.7998046875
+      ],
+      [
+        "2026-09-16",
+        4387.5
+      ],
+      [
+        "2026-09-17",
+        4399.7001953125
+      ],
+      [
+        "2026-09-18",
+        4424.89990234375
+      ]
+    ],
+    "narrative": "No clear single catalyst explains the essentially flat weekly move; it most plausibly reflects broad positioning and drift. The Seeking Alpha report on metals recovering as rate-path prospects shift and the report of North American gold ETF buying surging provide a mildly supportive backdrop, but the Bitcoin and Venezuela headlines are not clear direct drivers of futures prices.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Chart Of The Day: Precious Metals At A 'Prove It' Point",
+        "domain": "SeekingAlpha",
+        "date": "20260918"
+      },
+      {
+        "title": "Consensus Price Forecasts - Metals Prices Recover As Rate Path Prospects Shift",
+        "domain": "SeekingAlpha",
+        "date": "20260918"
+      },
+      {
+        "title": "'Venezuela Nears Deal To Move $4bn Gold Reserve From London To New York' - FT",
+        "domain": "Benzinga",
+        "date": "20260918"
+      },
+      {
+        "title": "Bloomberg\u2019s ETF Analyst Says Bitcoin Funds Will Triple Gold Hours After Admitting They Burned Cash",
+        "domain": "Yahoo",
+        "date": "20260917"
+      },
+      {
+        "title": "JPMorgan Says Bitcoin Could Beat Gold as Analyst Predicts It'll 'Triple' Gold",
+        "domain": "Benzinga",
+        "date": "20260917"
+      },
+      {
+        "title": "North American Gold ETF Buying Jumped From $71 Million to $7.7 Billion in One Month. Can GLDM Hold Up?",
+        "domain": "Yahoo",
+        "date": "20260917"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W38",
+    "direction": "bullish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

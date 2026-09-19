@@ -284,5 +284,49 @@
     "final_multiplier": 0.82,
     "confidence_before": 0.76,
     "confidence_after": 0.6232
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-19",
+    "thesis": "AMD remains a moderately bullish, high-expectation data-center growth story, with strong CPU momentum and emerging Helios/Instinct catalysts likely to outweigh near-term inference-software, supply, execution, and valuation risks.",
+    "direction": "long",
+    "confidence": 0.64,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.64,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "Server CPU revenue growth exceeds 80% year over year in the second half of 2026 and remains above 70% in 2027 as Turin and Venice gain share.",
+      "Helios and MI455X deployments ramp at Microsoft, OpenAI, Anthropic, and other hyperscalers, converting announced demand into material accelerator and rack-scale revenue.",
+      "ROCm, ATOM, vLLM, and related inference software close the production-readiness gap, improving AMD's performance per dollar in long-context and distributed inference.",
+      "HBM, packaging, wafer, and substrate availability improves enough for AMD to monetize constrained accelerator demand.",
+      "AMD sustains approximately 56% gross margins while data-center revenue more than doubles in 2027."
+    ],
+    "invalidation": [
+      "MI355X and successor accelerators continue delivering materially worse performance per dollar than Nvidia systems in production agentic and long-context inference.",
+      "ROCm and ATOM fail to achieve reliable mainstream distributed-inference support, leaving AMD dependent on limited benchmark wins and secondary-platform adoption.",
+      "Helios ramps slowly because of yield, power, cabling, networking, or reliability problems, while customer build-outs and power availability delay deployments.",
+      "HBM, wafer, packaging, or server-CPU shortages prevent AMD from converting strong demand into shipments and revenue.",
+      "Hyperscalers shift more spending to custom accelerators, Arm CPUs, Cerebras, OpenAI ASICs, or Nvidia's NVLink ecosystem, weakening AMD's share opportunity.",
+      "Revenue growth or margins decelerate enough to make roughly 37x forward earnings and 20.9x EV/revenue difficult to justify."
+    ],
+    "reasoning": "The independent fundamentals and latest earnings call are clearly bullish, with 37.8% revenue growth, 91.2% earnings growth, a 3.21% Q2 EPS beat, 56% gross margin, and confident CPU/Helios guidance, but the thesis is tempered by demanding valuation and unusually credible evidence that AMD remains structurally disadvantaged in production inference economics, software maturity, supply conversion, and early rack-scale execution.",
+    "claims_considered": 138
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.64,
+    "confidence_after": 0.64
   }
 ]

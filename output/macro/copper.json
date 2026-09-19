@@ -296,5 +296,52 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-19",
+    "value": 6.614999771118164,
+    "delta": 2.2490100442048133,
+    "history": [
+      [
+        "2026-09-14",
+        6.329999923706055
+      ],
+      [
+        "2026-09-15",
+        6.368500232696533
+      ],
+      [
+        "2026-09-16",
+        6.43149995803833
+      ],
+      [
+        "2026-09-17",
+        6.58650016784668
+      ],
+      [
+        "2026-09-18",
+        6.614999771118164
+      ]
+    ],
+    "narrative": "Copper's weekly rebound was most plausibly part of a broader metals recovery as shifting expectations for the interest-rate path improved sentiment, consistent with Seeking Alpha's \"Consensus Price Forecasts - Metals Prices Recover As Rate Path Prospects Shift.\" However, the available headlines provide no copper-specific supply, demand, or policy catalyst, so the move may also reflect broad positioning rather than a durable fundamental shift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Consensus Price Forecasts - Metals Prices Recover As Rate Path Prospects Shift",
+        "domain": "SeekingAlpha",
+        "date": "20260918"
+      },
+      {
+        "title": "Commodity Price Watch: September 2026",
+        "domain": "SeekingAlpha",
+        "date": "20260918"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W38",
+    "direction": "bullish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

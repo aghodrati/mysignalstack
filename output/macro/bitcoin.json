@@ -327,5 +327,70 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-19",
+    "value": 81247.09375,
+    "delta": 5.146371006064321,
+    "history": [
+      [
+        "2026-09-13",
+        76838.15625
+      ],
+      [
+        "2026-09-14",
+        78163.3828125
+      ],
+      [
+        "2026-09-15",
+        75612.5078125
+      ],
+      [
+        "2026-09-16",
+        76150.3203125
+      ],
+      [
+        "2026-09-17",
+        76403.7734375
+      ],
+      [
+        "2026-09-18",
+        80901.4609375
+      ],
+      [
+        "2026-09-19",
+        81247.09375
+      ]
+    ],
+    "narrative": "No clear single catalyst emerges from these headlines: the week featured a reported 3% Bitcoin decline, mixed equity futures, and positioning around the Fed meeting, while the \"Fed hike and CLARITY setback\" headline suggests offsetting regulatory and policy pressures. The modest weekly gain therefore looks more like broad positioning and volatility than a durable directional move.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Whale's Insight: Crypto Survived The Fed Hike And CLARITY Setback - What Comes Next?",
+        "domain": "SeekingAlpha",
+        "date": "20260919"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Mixed Pre-Bell Friday as Tech Rally Continues",
+        "domain": "Yahoo",
+        "date": "20260918"
+      },
+      {
+        "title": "Cryptocurrencies: Bitcoin Down 3% This Week",
+        "domain": "SeekingAlpha",
+        "date": "20260917"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Tuesday as Traders Prepare for Fed Meeting",
+        "domain": "Yahoo",
+        "date": "20260915"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W38",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

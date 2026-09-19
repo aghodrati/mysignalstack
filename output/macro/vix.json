@@ -431,5 +431,59 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W37"
+  },
+  {
+    "period": "week",
+    "date": "2026-09-19",
+    "value": 14.8100004196167,
+    "delta": -1.0299997329711914,
+    "history": [
+      [
+        "2026-09-14",
+        17.100000381469727
+      ],
+      [
+        "2026-09-15",
+        17.200000762939453
+      ],
+      [
+        "2026-09-16",
+        17.709999084472656
+      ],
+      [
+        "2026-09-17",
+        15.4399995803833
+      ],
+      [
+        "2026-09-18",
+        14.8100004196167
+      ]
+    ],
+    "narrative": "The VIX's weekly decline to 14.81 most plausibly reflects easing near-term equity stress and a rebound from oversold conditions, consistent with The Economic Times headline that markets may stage a near-term rebound. However, no single headline provides a clear catalyst; the options-market positioning and debate over bond-market versus AI risks suggest ongoing uncertainty rather than a decisive volatility shock.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Bizarre volatility bet in the options pits is a head scratcher ahead of Fed rate decision",
+        "domain": "CNBC",
+        "date": "20260916"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20260915"
+      },
+      {
+        "title": "Which matters more to stocks: the bond market or AI risks? The volatility gauge might offer an answer",
+        "domain": "CNBC",
+        "date": "20260914"
+      },
+      {
+        "title": "Oversold markets may stage near-term rebound, say analysts",
+        "domain": "The Economic Times",
+        "date": "20260912"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W38"
   }
 ]

@@ -2582,5 +2582,43 @@
     "trade_worthy": false,
     "context": "Bull chose an AMD-based configuration over HPE for CSC Finland and the EuroHPC-backed Lumi-AI partition, which is scheduled for installation in the second half of 2027. The planned system is estimated at 1,240 nodes and 4,960 MI430X GPUs, with roughly 10 times the AI performance and twice the FP64 HPC performance of the existing Lumi-G partition, which already uses AMD Epyc processors and MI250X GPUs. The contract value belongs to the system integrator and consortium rather than being disclosed AMD revenue, so the direct financial contribution to AMD cannot be determined from the article.",
     "source": "Next Platform"
+  },
+  {
+    "id": "9be6ed02196c4706",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign",
+    "source_title": "Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading",
+    "event_type": "competitive",
+    "created": "2026-09-18",
+    "claim": "AMD faces a sustained near-term disadvantage in AI inference economics and customer adoption because its DeepSeek-V4.1-Flash deployment lagged NVIDIA and its MI355X delivered roughly 2\u20134x worse performance per dollar than B200 even after adjusting for lower total cost of ownership.",
+    "direction": "short",
+    "confidence": 0.95,
+    "importance": 10,
+    "expected_return_pct": -12.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "NVIDIA's vLLM support worked on release day across H100, H200, B200, B300, GB200, and GB300, whereas AMD support was not publicly available during the first 23 hours. When AMD's image became available, it was measured at as much as 14.8x worse performance per dollar than H200 and 42x worse than B200/B300 in some configurations, with the overall MI355X gap remaining about 2\u20134x after TCO adjustment. The article attributes the gap partly to NVIDIA's CUDA integration and collaboration with vLLM, SGLang, and other inference-software developers, implying pressure on AMD's accelerator share, utilization, and pricing power over the coming quarters.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "39eedc374b31c80c",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign",
+    "source_title": "Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading",
+    "event_type": "competitive",
+    "created": "2026-09-18",
+    "claim": "Engram-style architectures and memory offloading could weaken the value of AMD's high-HBM-capacity differentiation in inference, shifting competition toward HBM bandwidth, software optimization, and host-memory integration.",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Engram can place roughly 189 GiB of model memory in host DRAM rather than HBM, and on tested B300 systems DRAM offloading enabled a move from four-way to two-way tensor parallelism while improving the performance frontier by up to 1.6x. Moving Engram back into HBM did not improve B300 results beyond run-to-run variation, leading the article to conclude that HBM bandwidth matters more than capacity for this workload. If this approach generalizes, AMD's large-memory accelerator configurations may receive less commercial credit for capacity alone, while customers may place greater weight on bandwidth and mature offloading software.",
+    "source": "SemiAnalysis"
   }
 ]

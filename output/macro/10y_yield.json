@@ -319,5 +319,69 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W37"
+  },
+  {
+    "period": "week",
+    "date": "2026-09-19",
+    "value": 4.998000144958496,
+    "delta": 0.023000240325927734,
+    "history": [
+      [
+        "2026-09-14",
+        4.960999965667725
+      ],
+      [
+        "2026-09-15",
+        4.995999813079834
+      ],
+      [
+        "2026-09-16",
+        5.00600004196167
+      ],
+      [
+        "2026-09-17",
+        4.947000026702881
+      ],
+      [
+        "2026-09-18",
+        4.998000144958496
+      ]
+    ],
+    "narrative": "The modest 2-basis-point rise appears consistent with broad global yield pressure and persistent inflation/rate-hike concerns, reflected in headlines about a synchronized global hiking cycle and oil at $105. However, no single headline provides a clear, specific catalyst for this week's small move, which may largely reflect positioning and drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Federal Reserve Rate Hike: One And Done?",
+        "domain": "SeekingAlpha",
+        "date": "20260919"
+      },
+      {
+        "title": "A Synchronized, Yet Shallow, Global Hiking Cycle",
+        "domain": "SeekingAlpha",
+        "date": "20260919"
+      },
+      {
+        "title": "$105 Oil Is Quietly Engineering Its Own Demise",
+        "domain": "Benzinga",
+        "date": "20260918"
+      },
+      {
+        "title": "Elizabeth Warren Calls Kevin Warsh a 'Sock Puppet' After Trump Claims He Told Him How to Vote for a Rate Hike: Peter Schiff Asks If It's 'Another Lie'",
+        "domain": "Benzinga",
+        "date": "20260917"
+      },
+      {
+        "title": "Bond Yields Are Surging Around the World \u2014 But China Is Bucking the Trend: \u2018The Economy Is in Its Own World\u2019",
+        "domain": "Yahoo",
+        "date": "20260917"
+      },
+      {
+        "title": "\u2018Jackpot Mode\u2019: Bloomberg\u2019s Eric Balchunas Says Traders Are Betting $7 Billion on TLT In Hopes Of Rare Bond Market Move",
+        "domain": "Yahoo",
+        "date": "20260916"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W38"
   }
 ]

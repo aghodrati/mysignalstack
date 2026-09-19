@@ -5969,5 +5969,160 @@
     "article_link": "https://newsletter.doomberg.com/p/coming-to-america",
     "name": "Saudi Arabia",
     "why": "The East-West Pipeline sustained serious damage; the article argues that Saudi leadership could face increased pressure from foreign and domestic adversaries if Crown Prince Mohammed bin Salman\u2019s position weakens"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "SemiAnalysis",
+    "article_title": "Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading",
+    "article_link": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Developed the Engram architecture used in the DeepSeek-V4.1-Flash model; its released code and hyperparameters were replicated by SemiAnalysis; Engram improved performance versus pure MoE baselines"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "SemiAnalysis",
+    "article_title": "Engrams Embedding Entendre: Codesign for Efficient DRAM/SSD Offloading",
+    "article_link": "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign",
+    "name": "vLLM",
+    "ticker_guess": null,
+    "why": "NVIDIA support for DeepSeek-V4.1-Flash was available immediately across six GPU SKUs, while AMD support and container release lagged; the article highlights vLLM ecosystem support as part of NVIDIA\u2019s CUDA advantage"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Stratechery",
+    "article_title": "2026.38: Doomforce",
+    "article_link": "https://stratechery.com/2026/doomforce/",
+    "name": "Salesforce",
+    "ticker_guess": null,
+    "why": "Appears to be moving away from AgentForce as its central AI interface; is leaning toward Anthropic and OpenAI chatbots as preferred customer UIs; plans to charge a premium while acknowledging that chatbot interfaces could erode the SaaS beachhead"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Stratechery",
+    "article_title": "2026.38: Doomforce",
+    "article_link": "https://stratechery.com/2026/doomforce/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Salesforce is integrating Anthropic\u2019s chatbot technology; presented as one of the preferred chatbot providers for Salesforce customers"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Stratechery",
+    "article_title": "2026.38: Doomforce",
+    "article_link": "https://stratechery.com/2026/doomforce/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Salesforce is leaning toward OpenAI chatbots as a preferred customer interface; ChatGPT advertising is described as working"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Stratechery",
+    "article_title": "2026.38: Doomforce",
+    "article_link": "https://stratechery.com/2026/doomforce/",
+    "name": "Walmart",
+    "ticker_guess": null,
+    "why": "Has decided to accept Apple Pay after previously resisting it"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Next Platform",
+    "article_title": "5 Kubernetes Backup Best Practices",
+    "article_link": "https://intelligence.theregister.com/paper/view/20020",
+    "name": "Kubernetes",
+    "why": "Container orchestration platform; focuses on backup and recovery"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "Ultragenyx Pharmaceutical",
+    "ticker_guess": "RARE",
+    "why": "FDA approved the company\u2019s Fayuvi gene therapy for Sanfilippo syndrome type A; Ultragenyx fixed manufacturing issues after an earlier rejection and expects to ship within 30\u201360 days"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "Amgen",
+    "ticker_guess": "AMGN",
+    "why": "Reported positive Phase III DeLLphi-305 results with AstraZeneca for durvalumab plus tarlatamab; the combination improved overall survival and progression-free survival in extensive-stage small-cell lung cancer"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "AstraZeneca",
+    "ticker_guess": "AZN",
+    "why": "Reported positive Phase III DeLLphi-305 results with Amgen for a durvalumab and tarlatamab combination; the trial involved 563 patients after initial chemotherapy and immunotherapy"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "TypeSafe",
+    "ticker_guess": null,
+    "why": "Introduced Jev, an AI model for classification and decision tasks with predefined answer formats; claims substantially faster and lower-cost responses than frontier models for its target applications"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "Thatch",
+    "ticker_guess": null,
+    "why": "Raised a $108 million Series C at a $1 billion valuation; its platform is used by more than 5,000 employers and supports ICHRA-based individual healthcare budgets"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "gene therapy",
+    "why": "FDA approved Fayuvi, the first treatment for Sanfilippo syndrome type A; one-time AAV9 infusion delivers a working copy of the defective gene; newborn screening is needed to enable earlier treatment"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "cancer treatment",
+    "why": "Phase III DeLLphi-305 results showed durvalumab plus tarlatamab significantly improved overall survival and progression-free survival in extensive-stage small-cell lung cancer; tarlatamab directs T cells toward DLL3-bearing cancer cells"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "AI models",
+    "why": "TypeSafe introduced Jev, a model that returns decisions and probabilities in predefined formats; the company claims 20\u2013200\u00d7 faster responses and 40\u2013400\u00d7 lower costs than frontier models for targeted decisions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-18",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #211",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
+    "name": "health insurance",
+    "why": "Thatch uses ICHRA arrangements to give employees tax-free healthcare budgets for individual insurance plans and eligible medical expenses; the model gives individuals more control over healthcare spending and allows them to retain coverage when changing jobs"
   }
 ]

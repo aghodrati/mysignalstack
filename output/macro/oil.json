@@ -257,5 +257,72 @@
     "direction": "bullish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-09-19",
+    "value": 100.30000305175781,
+    "delta": 0.24987505484699302,
+    "history": [
+      [
+        "2026-09-14",
+        101.38999938964844
+      ],
+      [
+        "2026-09-15",
+        105.83000183105469
+      ],
+      [
+        "2026-09-16",
+        102.43000030517578
+      ],
+      [
+        "2026-09-17",
+        101.91000366210938
+      ],
+      [
+        "2026-09-18",
+        100.30000305175781
+      ]
+    ],
+    "narrative": "No clear single catalyst drove the week's nearly flat move. Saudi supply headlines were conflicting\u2014reports of Aramco boosting Gulf exports contrast with Saudis telling European refiners they will receive no crude next month\u2014while the Fed-rate-hike and oversold-market stories offer only broad, indirect signals.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Federal Reserve Rate Hike: One And Done?",
+        "domain": "SeekingAlpha",
+        "date": "20260919"
+      },
+      {
+        "title": "More Sectors Join The Oversold Club",
+        "domain": "SeekingAlpha",
+        "date": "20260918"
+      },
+      {
+        "title": "The Oil Fund Beating USO by Harvesting Roll Yield Faces Its Biggest Test Yet",
+        "domain": "Yahoo",
+        "date": "20260918"
+      },
+      {
+        "title": "'Aramco to boost Gulf exports to 60 million barrels in September, October, traders say' - Reuters Exclusive",
+        "domain": "Benzinga",
+        "date": "20260918"
+      },
+      {
+        "title": "'Saudis Tell European Refiners They\u2019ll Get No Crude Next Month' - Bloomberg",
+        "domain": "Benzinga",
+        "date": "20260918"
+      },
+      {
+        "title": "The Fed\u2019s Rate Hike Could Backfire If Oil Prices Collapse",
+        "domain": "Yahoo",
+        "date": "20260917"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W38",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]
