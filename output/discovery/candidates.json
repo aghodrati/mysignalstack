@@ -6124,5 +6124,61 @@
     "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-211",
     "name": "health insurance",
     "why": "Thatch uses ICHRA arrangements to give employees tax-free healthcare budgets for individual insurance plans and eligible medical expenses; the model gives individuals more control over healthcare spending and allows them to retain coverage when changing jobs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-19",
+    "source": "Interconnects",
+    "article_title": "Why I still haven\u2019t bought into true RSI",
+    "article_link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Identified as one of the frontier AI labs deploying large numbers of concurrent agents; The article discusses internal automation and safety concerns at the lab, including an OpenAI-Hugging Face incident"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-19",
+    "source": "Interconnects",
+    "article_title": "Why I still haven\u2019t bought into true RSI",
+    "article_link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified alongside OpenAI as a frontier AI lab using thousands of agents; The article cites Anthropic system-card language saying internal AI use has supported progress but has not yet produced clear dramatic acceleration"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-19",
+    "source": "Interconnects",
+    "article_title": "Why I still haven\u2019t bought into true RSI",
+    "article_link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+    "name": "AI agents",
+    "why": "Frontier labs are using thousands of concurrent agents for software engineering, monitoring, planned experiments, and other routine research tasks; Agent swarms are expected to accelerate clearly stated problems with verifiable answers, but diminishing returns and long-tail tasks remain constraints"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-19",
+    "source": "Interconnects",
+    "article_title": "Why I still haven\u2019t bought into true RSI",
+    "article_link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+    "name": "recursive self-improvement",
+    "why": "The article argues that current AI progress is more likely to produce lossy self-improvement than true recursive self-improvement; AI systems may improve efficiency, inference-time scaling, and model costs more readily than peak intelligence or post-training quality"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-19",
+    "source": "Interconnects",
+    "article_title": "Why I still haven\u2019t bought into true RSI",
+    "article_link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+    "name": "AI compute",
+    "why": "Massive inference capacity could create significant near-term acceleration as labs deploy thousands of agents; Scaling laws still imply exponentially increasing compute and resources for linear gains in intelligence"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-19",
+    "source": "Interconnects",
+    "article_title": "Why I still haven\u2019t bought into true RSI",
+    "article_link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
+    "name": "AI safety",
+    "why": "The author argues that growing extinction-risk concern is being amplified by frontier-lab culture and anxiety over scaled agents; The article expects short AI timelines to be directionally right about rapid change but factually wrong about achieving superintelligence within eight years"
   }
 ]
