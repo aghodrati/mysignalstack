@@ -6180,5 +6180,35 @@
     "article_link": "https://www.interconnects.ai/p/where-i-stand-on-rsi",
     "name": "AI safety",
     "why": "The author argues that growing extinction-risk concern is being amplified by frontier-lab culture and anxiety over scaled agents; The article expects short AI timelines to be directionally right about rapid change but factually wrong about achieving superintelligence within eight years"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Stratechery",
+    "article_title": "Frontier Overhangs",
+    "article_link": "https://stratechery.com/2026/frontier-overhangs/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Argued to be economically motivated to advocate pacing the AI frontier while it builds a moat; told investors it expects adjusted operating income to be positive for a second consecutive quarter; reported gross margins above 80% before distribution, training, and other costs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Stratechery",
+    "article_title": "Frontier Overhangs",
+    "article_link": "https://stratechery.com/2026/frontier-overhangs/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Identified alongside Anthropic as a frontier lab that could benefit from owning integrated user touchpoints and model-harness combinations; described as charging high prices amid constrained compute supply; faces pressure to convert AI demand into sufficient revenue"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Stratechery",
+    "article_title": "Frontier Overhangs",
+    "article_link": "https://stratechery.com/2026/frontier-overhangs/",
+    "name": "Fireworks AI",
+    "ticker_guess": null,
+    "why": "Cited by Microsoft\u2019s CEO as an example of an open-weight model provider whose models could be fine-tuned and inserted into Microsoft Copilot"
   }
 ]
