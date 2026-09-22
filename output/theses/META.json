@@ -43,5 +43,47 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.504,
     "confidence_after": 0.504
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-22",
+    "thesis": "META remains a cautiously constructive long because its strong, reasonably valued advertising engine and expanding AI infrastructure optionality outweigh substantial execution, model-competitiveness, and capital-intensity risks, though the latest earnings miss limits conviction.",
+    "direction": "long",
+    "confidence": 0.57,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.74,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.57,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 16,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Muse gains adoption through Meta's existing consumer distribution and begins generating meaningful engagement or monetization.",
+      "Broadcom-backed MTIA deployments, TPU access, and behind-the-meter power improve AI infrastructure economics and capacity availability.",
+      "Meta monetizes external AI compute, model-serving, or enterprise services without materially worsening capital intensity.",
+      "Advertising revenue and user engagement remain strong as short video and AI-driven recommendations expand Meta's inventory and targeting value."
+    ],
+    "invalidation": [
+      "Further earnings misses or deteriorating revenue, operating-margin, and free-cash-flow trends despite continued heavy AI spending.",
+      "Llama and Muse continue losing capability, developer adoption, or user momentum to Chinese, open-weight, and closed-model competitors.",
+      "Infrastructure missteps, custom-chip turnover, memory costs, debt financing, or third-party capacity commitments materially reduce AI returns and free cash flow.",
+      "Amazon's shopping restriction and Meta's forward-deployed enterprise strategy materially limit consumer-commerce monetization and enterprise distribution.",
+      "Regulatory restrictions on teen engagement or AI deployment materially impair user growth, advertising monetization, or product rollout."
+    ],
+    "reasoning": "The fundamental picture is favorable\u201428% revenue growth, 30.9% operating margin, 57.1% free-cash-flow margin, and 16.8x forward earnings\u2014but confidence is restrained by the 6.18 reported EPS versus 7.22 estimate, negative earnings growth and revisions, the absence of an earnings-call picture, and a broad body of evidence that Meta's frontier-model position and AI infrastructure execution remain unsettled.",
+    "claims_considered": 78
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-22",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.57,
+    "confidence_after": 0.57
   }
 ]

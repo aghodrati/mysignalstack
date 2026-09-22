@@ -799,5 +799,23 @@
   "https://newsletter.semianalysis.com/p/engrams-embedding-entendre-codesign": [
     "AMD",
     "NVDA"
+  ],
+  "https://stratechery.com/2026/amazon-blocks-muse-amazons-moat-aggregator-v-aggregator/": [
+    "AMZN"
+  ],
+  "https://www.nextplatform.com/compute/2026/09/21/accelerated-server-sales-are-themselves-accelerating/5297993": [
+    "NVDA"
+  ],
+  "https://www.thediff.co/archive/forward-deployed/": [
+    "AMZN",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "PLTR"
+  ],
+  "https://www.interconnects.ai/p/the-current-balance-of-power-in-open": [
+    "GOOGL",
+    "META",
+    "NVDA"
   ]
 }

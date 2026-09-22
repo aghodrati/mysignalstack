@@ -6210,5 +6210,210 @@
     "name": "Fireworks AI",
     "ticker_guess": null,
     "why": "Cited by Microsoft\u2019s CEO as an example of an open-weight model provider whose models could be fine-tuned and inserted into Microsoft Copilot"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Next Platform",
+    "article_title": "Accelerated Server Sales Are Themselves Accelerating",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/21/accelerated-server-sales-are-themselves-accelerating/5297993",
+    "name": "Dell Technologies",
+    "ticker_guess": "DELL",
+    "why": "Benefited from the generative AI server boom; overtook Hewlett Packard Enterprise in server revenue and remained roughly twice the size of Supermicro"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Next Platform",
+    "article_title": "Accelerated Server Sales Are Themselves Accelerating",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/21/accelerated-server-sales-are-themselves-accelerating/5297993",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Was surpassed by Dell in server revenue during the quarter"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Next Platform",
+    "article_title": "Accelerated Server Sales Are Themselves Accelerating",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/21/accelerated-server-sales-are-themselves-accelerating/5297993",
+    "name": "Super Micro Computer",
+    "ticker_guess": "SMCI",
+    "why": "Dell maintained a server business roughly twice the size of Supermicro"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Next Platform",
+    "article_title": "Accelerated Server Sales Are Themselves Accelerating",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/21/accelerated-server-sales-are-themselves-accelerating/5297993",
+    "name": "Lenovo Group",
+    "ticker_guess": "0992.HK",
+    "why": "Server revenue reportedly doubled year over year in the quarter"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Next Platform",
+    "article_title": "Accelerated Server Sales Are Themselves Accelerating",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/21/accelerated-server-sales-are-themselves-accelerating/5297993",
+    "name": "IEIT Systems / Inspur",
+    "ticker_guess": null,
+    "why": "Server revenue reportedly contracted despite the broader market expansion; identified as an arm of Chinese server maker Inspur"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "The Diff",
+    "article_title": "Forward Deployed",
+    "article_link": "https://www.thediff.co/archive/forward-deployed/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Reportedly deployed capital and hired forward-deployed engineers to gain access to institutional context; partially owns and partners with Thrive Holdings, which acquired 70 accounting and IT services firms as model-training environments; criticized for competing with customers and partners through vertical integration"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "The Diff",
+    "article_title": "Forward Deployed",
+    "article_link": "https://www.thediff.co/archive/forward-deployed/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Considering an AI model launch ahead of its planned IPO; cited as one of the frontier labs hiring or acquiring capabilities modeled on Palantir's deployment strategy; its models were reported to have de-escalated one real-world cyberattack trajectory but continued attacking in most resamplings"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "The Diff",
+    "article_title": "Forward Deployed",
+    "article_link": "https://www.thediff.co/archive/forward-deployed/",
+    "name": "Thrive Holdings",
+    "ticker_guess": null,
+    "why": "Private-equity firm partially owned by and intertwined with OpenAI; acquired 70 accounting and IT services firms to provide industry expertise, real-world data, and expert feedback for improving AI models"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "The Diff",
+    "article_title": "Forward Deployed",
+    "article_link": "https://www.thediff.co/archive/forward-deployed/",
+    "name": "Tampa General Hospital",
+    "ticker_guess": null,
+    "why": "Uses Palantir's Sepsis Hub, which the article says reduced overall sepsis mortality by half and 48-hour mortality by 68%; Palantir systems reportedly also reduced patient-placement time by 83%"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "The Diff",
+    "article_title": "Forward Deployed",
+    "article_link": "https://www.thediff.co/archive/forward-deployed/",
+    "name": "Airbus",
+    "ticker_guess": null,
+    "why": "Presented as an example of a complex institution whose operational knowledge Palantir's Foundry and Ontology can make computationally legible; cited as a Palantir enterprise customer context"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Doomberg",
+    "article_title": "Escalation Clauses",
+    "article_link": "https://newsletter.doomberg.com/p/escalation-clauses",
+    "name": "Gazpromneft",
+    "ticker_guess": null,
+    "why": "Its Moscow Refinery was reportedly significantly damaged in a Ukrainian attack; the refinery is described as capable of processing 245,000 barrels per day"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-22",
+    "source": "Doomberg",
+    "article_title": "Escalation Clauses",
+    "article_link": "https://newsletter.doomberg.com/p/escalation-clauses",
+    "name": "diesel supply",
+    "why": "Article says the world is chronically short of diesel; it describes a full-blown and extended global diesel emergency as unavoidable; diesel prices in France reached a reported record of $10.50 per gallon"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-22",
+    "source": "Doomberg",
+    "article_title": "Escalation Clauses",
+    "article_link": "https://newsletter.doomberg.com/p/escalation-clauses",
+    "name": "refinery disruptions",
+    "why": "Ukrainian drone attacks reportedly damaged multiple Russian refineries; facilities cited include Moscow, Ryazan, Saratov, Syzran, Yaroslavl and Bashneft-Ufaneftekhim; the affected sites represent substantial combined processing capacity"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-22",
+    "source": "Doomberg",
+    "article_title": "Escalation Clauses",
+    "article_link": "https://newsletter.doomberg.com/p/escalation-clauses",
+    "name": "European politics",
+    "why": "Germany\u2019s CDU suffered its worst result in any postwar state election in Mecklenburg-Vorpommern; the AfD doubled its vote share and became the largest party in the state; Chancellor Friedrich Merz vowed to remain in office and pursue reforms"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-22",
+    "source": "Doomberg",
+    "article_title": "Escalation Clauses",
+    "article_link": "https://newsletter.doomberg.com/p/escalation-clauses",
+    "name": "social unrest",
+    "why": "France has seen fishermen blockade ports and a fuel depot; calls are growing to revive the Yellow Vests movement; the article links fuel costs and the cost-of-living crisis to risks of wider unrest"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-22",
+    "source": "Doomberg",
+    "article_title": "Escalation Clauses",
+    "article_link": "https://newsletter.doomberg.com/p/escalation-clauses",
+    "name": "fuel taxation",
+    "why": "French far-right leader Marine Le Pen is calling for a major cut in fuel taxes; the proposal is presented as a response to the diesel-price and cost-of-living crisis"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Interconnects",
+    "article_title": "The current balance of power in open models",
+    "article_link": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+    "name": "Alibaba",
+    "ticker_guess": "BABA",
+    "why": "Its Qwen model family drove China\u2019s lead in open-model downloads; Qwen is now mentioned in about 30% of AI research papers and is used extensively in academia and industry"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Interconnects",
+    "article_title": "The current balance of power in open models",
+    "article_link": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Its Kimi K3 is among the leading Chinese open-weight models; the company has begun purchasing cutting-edge agentic training data from U.S. and Chinese providers"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Interconnects",
+    "article_title": "The current balance of power in open models",
+    "article_link": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Its GLM-5.3 and GLM-5.3-Flash rank among the highest-scoring open-weight models; the company is cited as part of China\u2019s sustained capability lead"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Interconnects",
+    "article_title": "The current balance of power in open models",
+    "article_link": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its closed frontier models remain roughly 2-5 months ahead of leading open-weight models; its APIs are cited as a source of training-data distillation by Chinese labs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Interconnects",
+    "article_title": "The current balance of power in open models",
+    "article_link": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its Claude models remain among the leading closed American systems; potential KYC controls and refusals for cybersecurity work are discussed as factors affecting open-model competition"
   }
 ]

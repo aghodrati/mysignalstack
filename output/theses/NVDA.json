@@ -425,5 +425,51 @@
     "final_multiplier": 0.84,
     "confidence_before": 0.86,
     "confidence_after": 0.7223999999999999
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-22",
+    "thesis": "NVDA remains a high-confidence long because extraordinary, supply-constrained AI infrastructure demand, strong execution and a widening full-stack inference platform outweigh rising memory, financing, custom-silicon and competitive risks, though margin compression and valuation make the upside less asymmetric than the growth profile suggests.",
+    "direction": "long",
+    "confidence": 0.86,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.9,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.78,
+    "pre_critic_confidence": 0.86,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 22,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Q3 revenue approaches or exceeds the $108 billion guide and Vera Rubin contributes the expected roughly 20% of data-center revenue.",
+      "Verified production benchmarks confirm Rubin's claimed inference performance and cost-per-token advantage, with broad customer deployments.",
+      "Secured HBM and system-component supply converts the large backlog and committed allocations into continued fiscal 2028 growth.",
+      "Hyperscaler, sovereign, neocloud, Oracle, Dell and OpenAI infrastructure expansion sustains demand for Nvidia GPUs, networking and rack-scale systems.",
+      "CUDA, vLLM, AgentX, TileRT, Nemotron and related software improvements preserve Nvidia's advantage in production and long-context inference.",
+      "Third-party financing and customer backstop programs successfully expand AI capacity without material credit losses or utilization shortfalls."
+    ],
+    "invalidation": [
+      "Revenue growth decelerates materially below guidance as supply constraints, inventory accumulation, extended payment terms or weak AI returns expose overbuilt capacity.",
+      "Gross margin falls materially below the guided 71%-72% trough or remains depressed as HBM and system costs outpace Nvidia's pricing power.",
+      "TPUv7/TPUv8, AMD Helios or custom accelerators from Broadcom, OpenAI and hyperscalers take meaningful inference share and compress Nvidia pricing.",
+      "Rubin production, HBM qualification or real-world benchmark results disappoint, undermining the expected next-generation performance and ramp.",
+      "Nvidia's guarantees, take-or-pay commitments and investments generate material losses or liquidity pressure as neocloud and frontier-lab counterparties weaken.",
+      "Open-model monetization disappoints, smaller models reduce compute intensity, or China/export restrictions and Ethernet-based networking materially reduce Nvidia's addressable demand.",
+      "The reported 19.6x EV-to-revenue valuation and 16.3x forward P/E re-rate sharply lower because earnings growth slows or insider selling signals deteriorating confidence."
+    ],
+    "reasoning": "The fundamental picture is exceptionally bullish with 85.2% revenue growth, 214.5% earnings growth, 65.6% operating margin, 49.6% free-cash-flow margin and attractive growth-adjusted valuation, the earnings call reinforced demand and supply-constrained growth despite weaker future margins and financing exposure, and the latest quarter delivered EPS of $2.22 versus $2.09 expected, so the net evidence supports a long while warranting moderated confidence.",
+    "claims_considered": 200
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-22",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.86,
+    "confidence_after": 0.86
   }
 ]
