@@ -6415,5 +6415,125 @@
     "name": "Anthropic",
     "ticker_guess": null,
     "why": "Its Claude models remain among the leading closed American systems; potential KYC controls and refusals for cybersecurity work are discussed as factors affecting open-model competition"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Next Platform",
+    "article_title": "Vector Search Is Now A Data Type, But The Money Math Has Not Gone Away",
+    "article_link": "https://www.nextplatform.com/store/2026/09/22/vector-search-is-now-a-data-type-but-the-money-math-has-not-gone-away/5298393",
+    "name": "Pinecone",
+    "ticker_guess": null,
+    "why": "Launched its managed vector database service in 2021 and helped establish the dedicated vector database category; the article argues that category has largely been absorbed by incumbent databases."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Next Platform",
+    "article_title": "Vector Search Is Now A Data Type, But The Money Math Has Not Gone Away",
+    "article_link": "https://www.nextplatform.com/store/2026/09/22/vector-search-is-now-a-data-type-but-the-money-math-has-not-gone-away/5298393",
+    "name": "MongoDB",
+    "ticker_guess": null,
+    "why": "MongoDB Atlas Vector Search reached general availability in December 2023; added dedicated Search Nodes to isolate vector workloads from operational queries."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Next Platform",
+    "article_title": "Vector Search Is Now A Data Type, But The Money Math Has Not Gone Away",
+    "article_link": "https://www.nextplatform.com/store/2026/09/22/vector-search-is-now-a-data-type-but-the-money-math-has-not-gone-away/5298393",
+    "name": "Qdrant",
+    "ticker_guess": null,
+    "why": "Reported 0.98 recall@100 on 1,536-dimensional OpenAI embeddings using binary quantization with 4\u00d7 oversampling; cited as an example of aggressive vector compression."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Next Platform",
+    "article_title": "Vector Search Is Now A Data Type, But The Money Math Has Not Gone Away",
+    "article_link": "https://www.nextplatform.com/store/2026/09/22/vector-search-is-now-a-data-type-but-the-money-math-has-not-gone-away/5298393",
+    "name": "Elastic",
+    "ticker_guess": "ESTC",
+    "why": "Elasticsearch provides approximate k-nearest-neighbor search through Lucene's HNSW implementation; its Better Binary Quantization reduced a 138M \u00d7 1,024-dimensional dataset from about 535 GB to 19 GB."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Next Platform",
+    "article_title": "Vector Search Is Now A Data Type, But The Money Math Has Not Gone Away",
+    "article_link": "https://www.nextplatform.com/store/2026/09/22/vector-search-is-now-a-data-type-but-the-money-math-has-not-gone-away/5298393",
+    "name": "ClickHouse",
+    "ticker_guess": null,
+    "why": "Made its HNSW vector similarity index generally available in version 25.8; cited as another incumbent database absorbing native vector search."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Next Platform",
+    "article_title": "Sovereign AI Overcomes Compliance Challenges And Feeds Innovation",
+    "article_link": "https://www.nextplatform.com/ai/2026/09/22/sponsored/5298191",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Provides the Sovereign AI Factory described in the article; integrates customized infrastructure with HPE services for deployment, security, compliance, and operational support"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Citrini Research",
+    "article_title": "Agentic Reality",
+    "article_link": "https://www.citriniresearch.com/p/agentic-reality",
+    "name": "Shopify",
+    "ticker_guess": "SHOP",
+    "why": "Identified as a second-order beneficiary of agentic commerce; AI-enabled personalization and the disaggregation of online shopping could increase conversions for long-tail retailers"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Interconnects",
+    "article_title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
+    "article_link": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its reported researcher use of Codex was cited as increasing roughly 2x per month; its internal AI-research acceleration and model-safeguard practices were discussed extensively"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Interconnects",
+    "article_title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
+    "article_link": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its AI-acceleration research, Claude usage and routing, safeguards, and likely frontier-model training practices were discussed extensively"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Interconnects",
+    "article_title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
+    "article_link": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Discussed as a Chinese AI lab whose strategy and reasoning-model development provide evidence about the US-China capability gap"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Interconnects",
+    "article_title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
+    "article_link": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+    "name": "Zhipu / Z.ai",
+    "ticker_guess": null,
+    "why": "Job-posting data was cited as showing comparatively substantial B2B-sales hiring; its enterprise and international strategy was compared with other Chinese labs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-22",
+    "source": "Interconnects",
+    "article_title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
+    "article_link": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+    "name": "MiniMax",
+    "ticker_guess": null,
+    "why": "Discussed as a Chinese AI lab with greater international expansion emphasis and a different hiring and product strategy from Zhipu"
   }
 ]

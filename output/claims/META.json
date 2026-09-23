@@ -1480,5 +1480,24 @@
     "trade_worthy": false,
     "context": "The article reports that Llama remains mentioned in about 21% of sampled AI papers but has been overtaken by Alibaba\u2019s Qwen at roughly 30%, while Chinese open-weight models overall appear in more than 40% of papers versus about 30% for U.S. models. Chinese models also dominate open-model usage on OpenRouter and are increasingly used by American startups and enterprises, creating an alternative ecosystem that competes with Meta\u2019s Llama-centered approach. Although some U.S. models such as OpenAI\u2019s gpt-oss and Google\u2019s Gemma 4 show strong adoption, the article does not identify a comparable resurgence for Llama.",
     "source": "Interconnects"
+  },
+  {
+    "id": "a10d761f3c194d52",
+    "ticker": "META",
+    "source_link": "https://www.citriniresearch.com/p/agentic-reality",
+    "source_title": "Agentic Reality",
+    "event_type": "product_launch",
+    "created": "2026-09-22",
+    "claim": "Muse\u2019s apparent consumer product-market fit improves Meta\u2019s strategic position in the emerging agentic-AI market by giving it an early, high-reach consumer agent platform that could strengthen engagement and create future monetization opportunities.",
+    "direction": "long",
+    "confidence": 0.83,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Meta is deliberately targeting consumers rather than enterprises with Muse, which offers a free tier of 100 million tokens per week. The app reportedly surpassed 700,000 downloads on its first day and reached No. 1 in the App Store, suggesting that Meta may have achieved broader consumer adoption than technically stronger but less accessible alternatives. The article presents Meta as a potential beneficiary of the shift toward agents that act on behalf of consumers, although it does not specify a monetization model or quantify any resulting revenue.",
+    "source": "Citrini Research"
   }
 ]
