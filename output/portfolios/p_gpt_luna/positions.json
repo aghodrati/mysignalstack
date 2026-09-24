@@ -122,5 +122,45 @@
     "closed_date": null,
     "actual_return_pct": null,
     "close_reason": null
+  },
+  {
+    "event": "closed",
+    "id": "96a864c3bc15e3be",
+    "closed_date": "2026-09-24",
+    "actual_return_pct": 26.872646288242596,
+    "close_reason": "invalidated"
+  },
+  {
+    "event": "created",
+    "id": "6f6d35a23af368f3",
+    "ticker": "ARM",
+    "created": "2026-09-24",
+    "entry_confidence": 0.634,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
+  },
+  {
+    "event": "closed",
+    "id": "2ff1195170b90161",
+    "closed_date": "2026-09-24",
+    "actual_return_pct": -17.46318028828311,
+    "close_reason": "invalidated"
+  },
+  {
+    "event": "created",
+    "id": "08d0cf6a176e9d93",
+    "ticker": "ORCL",
+    "created": "2026-09-24",
+    "entry_confidence": 0.69,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
   }
 ]

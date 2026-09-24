@@ -92,5 +92,55 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.708,
     "confidence_after": 0.708
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-24",
+    "thesis": "CRWV is a cautiously bullish, high-growth AI infrastructure platform whose exceptional backlog, customer demand, capacity expansion, and technical execution outweigh substantial leverage, profitability, valuation, and margin-mix risks over the medium term.",
+    "direction": "long",
+    "confidence": 0.5712,
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.68,
+    "critic_multiplier": 0.84,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "Conversion of the $129.2 billion backlog and Meta's contracted capacity into accelerating revenue and remaining-performance-obligation growth",
+      "Progress toward approximately 1.7 GW of active power by year-end 2026 with fewer delivery delays",
+      "Continued Platinum-tier technical leadership, reliable Blackwell and Vera Rubin deployments, and improved managed-cluster retention or pricing",
+      "Evidence that Meta's third-party compute procurement accelerates and supports attractive fleet economics",
+      "Further operating leverage as revenue growth remains strong and operating losses narrow"
+    ],
+    "invalidation": [
+      "Material failure to deliver planned capacity or repeated delays at customer facilities",
+      "Debt costs, capital spending, or financing needs materially impair shareholder returns or force a greater shift toward lower-margin bare-metal contracts",
+      "Growth deceleration, backlog cancellations, or weaker-than-expected conversion of agreements with Meta, OpenAI, Google, or Anthropic",
+      "Nebius and other competitors materially pressure managed-cluster pricing, customer acquisition, or retention",
+      "Sustained negative operating profitability, questionable free-cash-flow quality, or valuation compression exposes the shares to a major execution shortfall",
+      "A future earnings report misses expectations or shows deterioration after the latest quarter's $1.14 reported EPS versus a $1.47 estimate"
+    ],
+    "reasoning": "The claims provide a strong medium-term demand, backlog, capacity, and technical-leadership case, while the neutral fundamental picture highlights demanding valuation, losses, questionable free-cash-flow quality, insider selling, and financing risk; the latest quarter's 22.45% EPS beat modestly supports the long view, but no earnings-call evidence is available and these risks keep confidence below high conviction.",
+    "claims_considered": 26
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-24",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis asserts that the positives 'outweigh' the risks, but the claims provide no valuation, scenario, cash-flow, or magnitude analysis establishing that conclusion; importance scores alone do not demonstrate net investment attractiveness.",
+      "It cites valuation risk even though none of the supplied claims provides evidence about CRWV\u2019s valuation or whether the price discounts the bullish catalysts.",
+      "'Technical execution' is presented too favorably: the claims include real delivery delays, unverified Rubin evidence, and rising infrastructure complexity, so operational leadership does not clearly outweigh execution risk.",
+      "The backlog and Meta-related catalysts improve revenue visibility, but the claims do not establish that backlog converts into profitable revenue or sufficient cash generation given heavy capital spending, debt, and possible migration toward lower-margin bare-metal contracts.",
+      "The medium-term bullish framing underweights structural negatives that are not merely temporary: frontier labs moving to self-managed bare metal, Meta potentially becoming a competitor, Nebius entering the Platinum tier, and CoreWeave\u2019s lack of competitive public pay-per-token endpoints."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The cautiously bullish conclusion is directionally supported, but it overstates the evidence by treating revenue visibility and technical advantages as sufficient to overcome unquantified valuation and financing risks, unresolved execution issues, and structural pressure on managed-cluster margins.",
+    "final_multiplier": 0.84,
+    "confidence_before": 0.68,
+    "confidence_after": 0.5712
   }
 ]

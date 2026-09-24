@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ad7c93e9c71aafdd",
+    "ticker": "IREN",
+    "source_link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+    "source_title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+    "event_type": "competitive",
+    "created": "2026-09-23",
+    "claim": "IREN\u2019s poor reliability at its Northern Canadian sites weakens its competitiveness and customer economics in managed GPU clusters, increasing the risk that it must compete primarily on low prices or lose customers to more reliable providers.",
+    "direction": "short",
+    "confidence": 0.98,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "SemiAnalysis characterizes IREN\u2019s Prince George and Mackenzie sites as among the industry\u2019s worst, citing multi-day power outages, network upgrades, storage failures, link flaps, air-quality-related issues, and repeated GPU XID errors; customer complaints reportedly extend to both IREN directly and resellers using its capacity. The report recommends that IREN stop presenting itself as a managed-cluster and inference-endpoint provider and focus on bare-metal offerings, implying that reliability and operational shortcomings are particularly damaging to higher-value managed services.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "90513a46ac5ff753",
+    "ticker": "IREN",
+    "source_link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+    "source_title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+    "event_type": "competitive",
+    "created": "2026-09-23",
+    "claim": "IREN\u2019s newer Texas sites and NVIDIA\u2019s reported $2.1 billion investment improve the longer-term outlook for its AI infrastructure quality and ability to compete for GPU capacity demand, although this does not remediate current Canadian-site weaknesses.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article describes IREN\u2019s Childress and Sweetwater builds more favorably than its Northern Canadian facilities, specifically noting that they have non-zero redundancy for power, cooling, and internet connectivity. It also says NVIDIA\u2019s $2.1 billion investment should help IREN avoid the cost-cutting and infrastructure compromises associated with its older sites, supporting a potentially stronger future AI-hosting platform.",
+    "source": "SemiAnalysis"
+  }
+]

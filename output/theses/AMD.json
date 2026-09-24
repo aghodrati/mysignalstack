@@ -328,5 +328,54 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.64,
     "confidence_after": 0.64
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-24",
+    "thesis": "AMD remains a moderately bullish, execution-sensitive long as exceptional server-CPU momentum, strong data-center demand, and major Helios/MI450 customer commitments can drive substantial growth, but high valuation and persistent Nvidia-like software, inference-efficiency, supply, and rack-scale execution gaps limit upside confidence.",
+    "direction": "long",
+    "confidence": 0.5544,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.66,
+    "critic_multiplier": 0.84,
+    "expected_return_pct": 16,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Server CPU revenue grows more than 80% year over year in the second half of 2026 and more than 70% in 2027 as Turin and Venice gain share.",
+      "Helios and MI455X ramp successfully, including Microsoft, OpenAI, Anthropic, and other hyperscaler deployments, converting the AI-system opportunity into realized revenue.",
+      "ROCm, vLLM, ATOM, and related inference software close the production-readiness gap, improving AMD's performance per dollar and adoption in long-context and distributed inference.",
+      "HBM, packaging, substrate, wafer, and server-CPU supply improves enough for AMD to monetize demand exceeding current allocations.",
+      "Enterprise and sovereign adoption expands through VMware, HPE, Dell, and the Lumi-AI design win, broadening AMD's customer base."
+    ],
+    "invalidation": [
+      "Helios and MI455X ramps are materially delayed or suffer poor yields, reliability, manufacturing, power, or margin performance.",
+      "AMD continues to trail Nvidia by roughly 2\u20134x or more in production inference performance per dollar, while ROCm, ATOM, vLLM, and context-parallelism gaps remain unresolved.",
+      "HBM, packaging, substrate, wafer, or CPU shortages prevent AMD from converting strong demand into shipments, or customer power and data-center build-out delays defer 2027 deployments.",
+      "Hyperscalers increasingly substitute Arm CPUs, custom XPUs, Nvidia-connected alternatives, Cerebras, or internally designed accelerators for AMD products.",
+      "Data-center AI margins remain below expectations, PC and gaming weakness worsens, or slower growth triggers compression of AMD's roughly 37x forward-earnings and 20.9x EV/revenue valuation."
+    ],
+    "reasoning": "The bullish earnings-call outlook, 50% reported revenue growth, 56% gross margin, data-center majority mix, strong CPU demand, and 1.66 EPS versus 1.61 expected outweigh the substantial inference, ecosystem, supply, execution, and valuation risks, but those risks warrant only moderate confidence and a roughly one-year horizon.",
+    "claims_considered": 142
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-24",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis cites high valuation as limiting upside, but none of the supplied claims provides valuation evidence, so that conclusion is unsupported by the stated record.",
+      "\u201cMajor Helios/MI450 customer commitments\u201d overstates the evidence: the claims describe planned deployments, partnerships, and potential demand, while also noting customized Meta configurations, delayed Helios ramp, and no established revenue conversion.",
+      "The thesis may understate the severity of AMD\u2019s AI accelerator risk: multiple claims characterize production inference economics, software, networking, and distributed-inference capability as materially inferior, while accelerator capture is explicitly more important to upside than CPUs alone.",
+      "\u201cExceptional server-CPU momentum\u201d is directionally supported, but the claims also show supply shortfalls, Intel\u2019s ability to sell more CPUs during shortages, and structural migration toward Arm and custom processors, making the momentum less clearly durable than the synthesis implies.",
+      "The conclusion that AMD can drive substantial growth is not fully established by the claims because large TAM forecasts and product roadmaps are explicitly not translated into upgraded company earnings expectations or specific revenue outcomes; Q1 and Q2 catalysts are also historical by the stated date."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The balanced direction is broadly consistent with the claims, but it overreaches by adding an unsupported valuation constraint, treating prospective commitments as established catalysts, and presenting growth confidence too strongly despite evidence that accelerator execution\u2014not CPU demand\u2014is the decisive and substantially impaired variable.",
+    "final_multiplier": 0.84,
+    "confidence_before": 0.66,
+    "confidence_after": 0.5544
   }
 ]

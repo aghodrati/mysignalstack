@@ -45,5 +45,54 @@
     "final_multiplier": 0.84,
     "confidence_before": 0.626,
     "confidence_after": 0.52584
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-24",
+    "thesis": "NBIS offers a high-growth long opportunity as contracted demand, premium managed-GPU positioning, Palantir and Meta relationships, and rapid capacity expansion outweigh near-term permitting, execution, funding, and valuation risks.",
+    "direction": "long",
+    "confidence": 0.5494,
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.72,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.78,
+    "pre_critic_confidence": 0.67,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": 28,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Approval and energization of the delayed New Jersey/Vineland project, followed by conversion of connected power into deployed GPU capacity and revenue.",
+      "Growth in Meta-related backlog and RPO, additional multi-billion-dollar customer contracts, and continued realization of $40-$50 million per megawatt short-duration pricing.",
+      "Execution of the 5 GW contracted-power plan and deployment of more than 1 GW of annual capacity beginning in 2027.",
+      "Further benefits from Platinum status, Palantir preferred-vendor economics, early B300 and Blackwell deployments, and favorable Nvidia procurement or financing access.",
+      "Sustained demand and pricing power supporting FY2026 revenue of $3.0-$3.4 billion, $7-$9 billion ARR, and approximately 40% adjusted EBITDA margins."
+    ],
+    "invalidation": [
+      "Further New Jersey or other major-site permitting and construction delays that defer contracted capacity and revenue realization.",
+      "Failure to convert connected power into revenue because of prolonged commissioning, GPU deployment, platform-installation, or customer-onboarding lags.",
+      "A funding shortfall or substantially greater-than-expected debt, convertible issuance, equity dilution, or financing costs required to support the $20-$25 billion CapEx plan.",
+      "AI-compute pricing normalization, customer commitment cancellations, commoditization, or worsening Blackwell reliability that compresses margins and returns.",
+      "Continued operating losses and modest growth failing to improve despite the expansion, making the roughly 62x revenue valuation unsustainable."
+    ],
+    "reasoning": "The latest quarter beat the -$0.86 EPS estimate with -$0.68 reported EPS and the earnings call showed exceptional demand, $3 billion ARR, and strong pricing, while the independent fundamental picture remains bearish because of a -32.1% operating margin and extreme valuation, producing a bullish but execution- and valuation-sensitive thesis with moderate confidence.",
+    "claims_considered": 20
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-24",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The conclusion that benefits 'outweigh' risks is not directly established: the claims identify substantial execution, permitting, operational, commoditization, and capital-spending risks but provide no quantified risk-reward comparison.",
+      "'Contracted demand' may overstate the evidence because reported capacity commitments and deferred revenue indicate visibility, not necessarily timely deployment, conversion to revenue, profitability, or collectability; multiple claims explicitly say delays could defer realization.",
+      "The Meta and Palantir relationships are supportive but partly prospective or qualified: Meta is only 'likely' to become significant, while Palantir supports a 'modest' premium and only 'may' improve financing terms, so they do not by themselves validate the strength implied by the thesis.",
+      "The thesis invokes valuation risk without any valuation claim or evidence in the supplied set, making that part of the framing unsupported rather than analyzed.",
+      "'Rapid capacity expansion' is supported as an ambition and capability, but the claims simultaneously highlight permitting, construction, Bloom-system complexity, Blackwell recovery, and funding risks; treating speed as a net positive without resolving those execution constraints overreaches."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The claims support a promising but highly conditional growth case, whereas the synthesis converts qualified demand, relationship, and expansion evidence into an unquantified conclusion that the upside outweighs risks.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.67,
+    "confidence_after": 0.5494
   }
 ]

@@ -1,0 +1,51 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-09-24",
+    "thesis": "IREN\u2019s near-term risk-reward is unfavorable because unreliable Canadian GPU operations and deeply negative profitability undermine customer economics while a demanding valuation depends on successful, heavily financed AI-infrastructure execution.",
+    "direction": "short",
+    "confidence": 0.38628,
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.74,
+    "pre_critic_confidence": 0.58,
+    "critic_multiplier": 0.666,
+    "expected_return_pct": -15,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Continued reliability problems at Northern Canadian sites force lower pricing, customer losses, or weaker managed-GPU utilization.",
+      "Further Bitcoin-mining contraction, noncash impairments, or operating losses expose the gap between the AI expansion narrative and current earnings power.",
+      "Delays in commissioning contracted Microsoft, NVIDIA-linked, or other GPU capacity prevent the back-end-weighted ARR ramp from converting into revenue.",
+      "Unspecified financing needs result in additional leverage, dilution, or weaker-than-expected project economics."
+    ],
+    "invalidation": [
+      "Newer Texas sites demonstrate materially better reliability and customer economics than the Canadian fleet.",
+      "NVIDIA\u2019s reported $2.1 billion investment and milestone-based GPU deployments translate into timely, revenue-producing capacity.",
+      "IREN delivers the $3.7 billion year-end 2026 ARR target, scales toward 1.21 GW in 2027, and funds growth without material dilution or margin deterioration.",
+      "Demand remains strong enough to support high utilization and improving profitability despite the current negative operating margin."
+    ],
+    "reasoning": "The reported EPS beat of $0.25 versus a negative $0.45 estimate and the bullish earnings call support the growth case, but the neutral-to-cautious fundamental picture, 22.5x revenue valuation, ongoing losses, financing and execution opacity, and high-confidence Canadian reliability weakness favor a cautious short with moderate rather than high conviction.",
+    "claims_considered": 2
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-24",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article"
+    ],
+    "deterministic_multiplier": 0.9,
+    "llm_concerns": [
+      "The claims support Canadian-site reliability and customer-economics risk, but provide no evidence of deeply negative profitability.",
+      "The claims provide no valuation data or basis for calling IREN's valuation demanding.",
+      "The characterization of AI-infrastructure execution as heavily financed is not established; the only financing-related fact is NVIDIA's reported $2.1 billion investment, whose terms and implications are unspecified.",
+      "The thesis underweights or omits the explicitly positive claim that newer Texas sites and NVIDIA's investment improve IREN's longer-term competitive outlook, although the claims do distinguish this from unresolved Canadian weaknesses.",
+      "The claims support near-term Canadian operational risk, but do not by themselves establish that the overall near-term risk-reward is unfavorable."
+    ],
+    "llm_multiplier": 0.74,
+    "llm_reasoning": "The synthesis correctly captures the Canadian reliability risk but materially overreaches by adding unsupported profitability, valuation, financing, and overall risk-reward conclusions while downplaying the stated longer-term positives.",
+    "final_multiplier": 0.666,
+    "confidence_before": 0.58,
+    "confidence_after": 0.38628
+  }
+]

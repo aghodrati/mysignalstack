@@ -6535,5 +6535,92 @@
     "name": "MiniMax",
     "ticker_guess": null,
     "why": "Discussed as a Chinese AI lab with greater international expansion emphasis and a different hiring and product strategy from Zhipu"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-23",
+    "source": "SemiAnalysis",
+    "article_title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+    "article_link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Forecast to account for a substantial share of lab compute by year-end 2027; described as a major bare-metal customer and anchor of several neocloud financing structures; cited as a customer or partner of multiple providers including CoreWeave, Microsoft, Oracle, and Firmus"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-23",
+    "source": "SemiAnalysis",
+    "article_title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+    "article_link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Alongside OpenAI, described as taking an increasing share of frontier-lab compute; has large infrastructure and cloud relationships with CoreWeave, Microsoft, Google, Lambda, and Firmus; its customer contracts are used to support neocloud debt financing"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-23",
+    "source": "SemiAnalysis",
+    "article_title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+    "article_link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+    "name": "Firmus",
+    "ticker_guess": null,
+    "why": "Remained in the Silver tier despite major announced expansion plans; announced $2B of funding at a $10.5B post-money valuation and an OpenAI anchor tenancy; disclosed 18,400 GB300 GPUs in deployment and additional large-scale Vera Rubin and GB300 plans"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-23",
+    "source": "SemiAnalysis",
+    "article_title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+    "article_link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+    "name": "TensorWave",
+    "ticker_guess": null,
+    "why": "Identified as the leading AMD-exclusive neocloud; raised a $350M Series B at a $1.55B post-money valuation and announced a potential 222MW Fermi site; received positive marks for storage, reliability, and AMD cluster operations despite RCCL and ecosystem limitations"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-23",
+    "source": "SemiAnalysis",
+    "article_title": "ClusterMAX 3.0: The Industry Standard GPU Cloud Rating System Returns",
+    "article_link": "https://newsletter.semianalysis.com/p/clustermax-30-the-industry-standard",
+    "name": "Prime Intellect",
+    "ticker_guess": null,
+    "why": "Raised a $130M Series A at a $1B valuation and reported $100M of annualized revenue across compute, RL, post-training, sandboxes, inference, and evaluations; received strong marks for orchestration, dashboards, and health checks but was constrained by dependence on third-party capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-23",
+    "source": "Not Boring",
+    "article_title": "Would We Send Our Kids to HAA?",
+    "article_link": "https://www.notboring.co/p/haa",
+    "name": "Reducto",
+    "ticker_guess": null,
+    "why": "Provides document-ingestion software for production AI systems; processes more than one billion pages per month and handles difficult files including tables, handwriting, low-quality scans, and unusual layouts; offers migration credits of up to $5,000 for customers benchmarking its r-1 parser"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-23",
+    "source": "Not Boring",
+    "article_title": "Would We Send Our Kids to HAA?",
+    "article_link": "https://www.notboring.co/p/haa",
+    "name": "alternative education",
+    "why": "Horowitz Andreessen Academy is launching a residential San Francisco program for college-aged people as an alternative to university; the program emphasizes building projects, practical responsibility, peer community, and access to experienced mentors"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-23",
+    "source": "Not Boring",
+    "article_title": "Would We Send Our Kids to HAA?",
+    "article_link": "https://www.notboring.co/p/haa",
+    "name": "higher education",
+    "why": "The article compares traditional college\u2019s social and developmental benefits with HAA\u2019s focus on real work and shared experiences; it argues that degrees and schools can no longer guarantee a safe career into the 2040s and 2050s"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-23",
+    "source": "Not Boring",
+    "article_title": "Would We Send Our Kids to HAA?",
+    "article_link": "https://www.notboring.co/p/haa",
+    "name": "AI workforce",
+    "why": "The authors question whether careers in fields such as mathematics, investment banking, law, and medicine will remain stable as AI automates difficult analytical and drafting work; they advocate helping young people develop curiosity, adaptability, and deep skills around their interests"
   }
 ]
