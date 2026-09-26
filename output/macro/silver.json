@@ -408,5 +408,72 @@
     "direction": "bullish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-26",
+    "value": 64.24500274658203,
+    "delta": -3.472259477364237,
+    "history": [
+      [
+        "2026-09-21",
+        65.82499694824219
+      ],
+      [
+        "2026-09-22",
+        65.93199920654297
+      ],
+      [
+        "2026-09-23",
+        64.38200378417969
+      ],
+      [
+        "2026-09-24",
+        63.457000732421875
+      ],
+      [
+        "2026-09-25",
+        64.24500274658203
+      ]
+    ],
+    "narrative": "No clear single catalyst emerges from these headlines for silver\u2019s 5.1% weekly decline. The \u201ciShares Silver Trust Slides Wednesday\u201d report is the most directly relevant, while strong gold ETF demand and headlines that gold defied rate hikes point to mixed precious-metals positioning rather than a clear silver-specific story; the move was likely broad profit-taking or positioning drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Too Big To Fail Redux",
+        "domain": "SeekingAlpha",
+        "date": "20260926"
+      },
+      {
+        "title": "The More These Dividend Machines Drop, The More I Buy",
+        "domain": "SeekingAlpha",
+        "date": "20260925"
+      },
+      {
+        "title": "Gold ETFs Just Had Their 2nd-Biggest Month Ever",
+        "domain": "Yahoo",
+        "date": "20260923"
+      },
+      {
+        "title": "Gold Defied the Fed\u2019s Rate Hike\u2014These 3 Plays Stand Out",
+        "domain": "Yahoo",
+        "date": "20260923"
+      },
+      {
+        "title": "iShares Silver Trust Slides Wednesday: What's Happening?",
+        "domain": "Benzinga",
+        "date": "20260923"
+      },
+      {
+        "title": "\u2018The Sell Button Won\u2019t Work\u2019: Why Rate Hikes No Longer Save Debt Markets",
+        "domain": "Benzinga",
+        "date": "20260922"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W39",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

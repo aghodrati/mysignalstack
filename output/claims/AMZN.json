@@ -1062,5 +1062,43 @@
     "trade_worthy": false,
     "context": "SemiAnalysis rated AWS Bronze and found repeated provisioning failures, storage and Kubernetes configuration problems, inconsistent health-check behavior, and a materially higher small-message latency on AWS\u2019s EFA network than on InfiniBand; EFA also requires extra work for expert-parallel inference libraries. The article says AWS\u2019s engineers were responsive and that some issues were fixed, but attributes the persistent problems to AWS\u2019s organizational structure and says managed clusters are not a priority. Frontier labs with large strategic contracts can compensate through their own engineering resources, so the risk is concentrated in smaller and mid-market customers rather than AWS\u2019s largest AI relationships.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "9266a23bda548932",
+    "ticker": "AMZN",
+    "source_link": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+    "source_title": "2026.39: Begun, the Aggregator Wars Have",
+    "event_type": "competitive",
+    "created": "2026-09-25",
+    "claim": "Amazon\u2019s decision to block Meta\u2019s Muse agent helps protect its advertising monetization and control of the customer interface in the near term, supporting its competitive position in commerce.",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Muse is more useful when it can access Amazon\u2019s reliable delivery and mundane-product fulfillment, but Muse does not display Amazon ads. Amazon therefore blocked the agent, and the article argues it can sustain that stance because its differentiation rests on physical-world investments and delivery infrastructure rather than only on an interface that agents can bypass.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "d3be0ba0a79aa98f",
+    "ticker": "AMZN",
+    "source_link": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+    "source_title": "2026.39: Begun, the Aggregator Wars Have",
+    "event_type": "competitive",
+    "created": "2026-09-25",
+    "claim": "Meta\u2019s potential partnership with Walmart could eventually weaken Amazon\u2019s control of agent-mediated commerce by giving Muse an alternative physical-world commerce and fulfillment base.",
+    "direction": "short",
+    "confidence": 0.75,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Meta needs Walmart\u2019s help to bridge the physical-world moat that currently makes Amazon difficult for agents to bypass. A Walmart partnership could improve Muse\u2019s commerce utility and intensify the emerging aggregator-versus-aggregator competition, although the partnership is presented as a possible strategy rather than a completed action.",
+    "source": "Stratechery"
   }
 ]

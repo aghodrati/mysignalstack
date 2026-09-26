@@ -433,5 +433,72 @@
     "direction": "bullish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-26",
+    "value": 4321.2001953125,
+    "delta": -2.3435492173805583,
+    "history": [
+      [
+        "2026-09-21",
+        4383.89990234375
+      ],
+      [
+        "2026-09-22",
+        4376.39990234375
+      ],
+      [
+        "2026-09-23",
+        4318.39990234375
+      ],
+      [
+        "2026-09-24",
+        4298.0
+      ],
+      [
+        "2026-09-25",
+        4321.2001953125
+      ]
+    ],
+    "narrative": "No clear single catalyst appears in the listed headlines for gold's nearly flat weekly move; the SPDR Gold Trust slipping headline is consistent with mild selling, but offers no specific fundamental explanation. The Hong Kong yuan-denominated gold futures launch is a longer-term supportive development rather than a convincing driver of this week's price action.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Too Big To Fail Redux",
+        "domain": "SeekingAlpha",
+        "date": "20260926"
+      },
+      {
+        "title": "What a $500,000 All Weather Portfolio Actually Looks Like, Built With ETFs",
+        "domain": "Yahoo",
+        "date": "20260925"
+      },
+      {
+        "title": "Is StoneX or Bitwise Right About Bitcoin and Gold?",
+        "domain": "Yahoo",
+        "date": "20260925"
+      },
+      {
+        "title": "Hong Kong To Launch Yuan-Denominated Gold Futures Contract",
+        "domain": "SeekingAlpha",
+        "date": "20260925"
+      },
+      {
+        "title": "SPDR Gold Trust Slips Wednesday: What's Happening?",
+        "domain": "Benzinga",
+        "date": "20260923"
+      },
+      {
+        "title": "Billionaire Howard Marks Says America\u2019s $40T Debt Problem Isn\u2019t a Reason to Sell Stocks. Here\u2019s Where ETFs Come In",
+        "domain": "Benzinga",
+        "date": "20260922"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W39",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

@@ -343,5 +343,62 @@
     "direction": "bullish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-26",
+    "value": 6.695499897003174,
+    "delta": 1.2169331620611956,
+    "history": [
+      [
+        "2026-09-21",
+        6.686500072479248
+      ],
+      [
+        "2026-09-22",
+        6.759500026702881
+      ],
+      [
+        "2026-09-23",
+        6.677999973297119
+      ],
+      [
+        "2026-09-24",
+        6.718500137329102
+      ],
+      [
+        "2026-09-25",
+        6.695499897003174
+      ]
+    ],
+    "narrative": "The clearest copper-specific support was the September 22 headline that Michael Burry is betting on a copper miner as data-center demand soars, reinforcing a bullish demand narrative. The other headlines focus mainly on financial markets and oil, so they do not provide a strong independent explanation for the weekly rise.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Too Big To Fail Redux",
+        "domain": "SeekingAlpha",
+        "date": "20260926"
+      },
+      {
+        "title": "Commodities: Brent Drops Below $100",
+        "domain": "SeekingAlpha",
+        "date": "20260923"
+      },
+      {
+        "title": "Michael Burry Says He\u2019s \u2018Largely Ignoring\u2019 AI Stocks \u2014 Here\u2019s the Copper Miner He\u2019s Betting on as Data Center Demand Soars",
+        "domain": "Benzinga",
+        "date": "20260922"
+      },
+      {
+        "title": "Oil ETFs Surge: What's Next for Commodity Investors?",
+        "domain": "Yahoo",
+        "date": "20260921"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W39",
+    "direction": "bullish",
+    "confidence": "low",
+    "trade_worthy": true
   }
 ]

@@ -392,5 +392,70 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-09-26",
+    "value": 84121.140625,
+    "delta": 3.5545120553541976,
+    "history": [
+      [
+        "2026-09-20",
+        81142.609375
+      ],
+      [
+        "2026-09-21",
+        86602.9140625
+      ],
+      [
+        "2026-09-22",
+        86172.28125
+      ],
+      [
+        "2026-09-23",
+        84383.0078125
+      ],
+      [
+        "2026-09-24",
+        84379.0625
+      ],
+      [
+        "2026-09-25",
+        84034.921875
+      ],
+      [
+        "2026-09-26",
+        84121.140625
+      ]
+    ],
+    "narrative": "No clear single catalyst this week: the bullish framing in \u201cWhale's Insight: Is Bitcoin's Supercycle Starting?\u201d and \u201cWeekly Commentary: Too Big To Fail Redux\u201d was offset by risk-off headlines about Middle East tensions and weaker ETFs/equity futures ahead of US-China and US-Iran developments. The modest weekly gain therefore looks more like broad positioning or drift than a conviction-driven move.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Too Big To Fail Redux",
+        "domain": "SeekingAlpha",
+        "date": "20260926"
+      },
+      {
+        "title": "Whale's Insight: Is Bitcoin's Supercycle Starting?",
+        "domain": "SeekingAlpha",
+        "date": "20260925"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Thursday Amid Ongoing Middle East Tensions Before US-China Talks",
+        "domain": "Yahoo",
+        "date": "20260924"
+      },
+      {
+        "title": "Exchange-Traded Funds Lower, Equity Futures Mixed Pre-Bell Wednesday as Traders Await Developments in US-Iran Talks",
+        "domain": "Yahoo",
+        "date": "20260923"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W39",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

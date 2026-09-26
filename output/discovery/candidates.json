@@ -6622,5 +6622,174 @@
     "article_link": "https://www.notboring.co/p/haa",
     "name": "AI workforce",
     "why": "The authors question whether careers in fields such as mathematics, investment banking, law, and medicine will remain stable as AI automates difficult analytical and drafting work; they advocate helping young people develop curiosity, adaptability, and deep skills around their interests"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "SemiAnalysis",
+    "article_title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
+    "article_link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
+    "name": "ByteDance",
+    "ticker_guess": null,
+    "why": "Occupies roughly one-fifth of delivered Chinese datacenter capacity and leases nearly all of it; its annual leasing demand is at gigawatt scale and it is rapidly expanding self-built campuses"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "SemiAnalysis",
+    "article_title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
+    "article_link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
+    "name": "Alibaba",
+    "ticker_guess": "BABA",
+    "why": "Part of the BAT group whose combined 2Q26 capex reached $20 billion, more than doubling year over year; uses self-build, build-operate-transfer, and wholesale leasing models and is actively expanding AI capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "SemiAnalysis",
+    "article_title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
+    "article_link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
+    "name": "Tencent",
+    "ticker_guess": "TCEHY",
+    "why": "Part of the BAT group\u2019s record AI-related capex increase; has shifted from small leased metro sites toward self-built campuses while deploying modular datacenter designs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "SemiAnalysis",
+    "article_title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
+    "article_link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
+    "name": "GDS Holdings",
+    "ticker_guess": "GDS",
+    "why": "Signed part of a combined 1.3GW of wholesale orders with VNET in 1H26; captured only about one-third of ByteDance and Alibaba orders in 2024\u20132026 year to date"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "SemiAnalysis",
+    "article_title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
+    "article_link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
+    "name": "VNET Group",
+    "ticker_guess": "VNET",
+    "why": "Signed part of a combined 1.3GW of wholesale orders with GDS in 1H26; its wholesale utilization recovered above 70% while legacy retail racks remained near 60%"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Stratechery",
+    "article_title": "2026.39: Begun, the Aggregator Wars Have",
+    "article_link": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+    "name": "Walmart",
+    "ticker_guess": null,
+    "why": "Identified as the specific company Meta needs to help bridge Amazon's physical-world moat; could support Muse's access to commerce and delivery capabilities"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Stratechery",
+    "article_title": "2026.39: Begun, the Aggregator Wars Have",
+    "article_link": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+    "name": "General Motors",
+    "ticker_guess": null,
+    "why": "Announced it will reintegrate Apple CarPlay after abandoning it three years ago; faced customer and dealership backlash over the decision"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Stratechery",
+    "article_title": "2026.39: Begun, the Aggregator Wars Have",
+    "article_link": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+    "name": "Expedia",
+    "ticker_guess": null,
+    "why": "Discussed as seeking to preserve its middleware position in the emerging agent-driven commerce landscape; cited as another potential Muse-related partner"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Next Platform",
+    "article_title": "IonQ: There Is One CPU To Rule Error Correction Decoding",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/25/ionq-there-is-one-cpu-to-rule-error-correction-decoding/5299192",
+    "name": "IonQ",
+    "ticker_guess": "IONQ",
+    "why": "Developed a dual sliding-window LDPC decoder that runs on a single standard CPU; demonstrated simulations of up to 408 logical qubits and more than 31.5 million quantum operations; announced Florida International University will purchase and install a Superion system in late 2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Next Platform",
+    "article_title": "IonQ: There Is One CPU To Rule Error Correction Decoding",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/25/ionq-there-is-one-cpu-to-rule-error-correction-decoding/5299192",
+    "name": "QuEra",
+    "ticker_guess": null,
+    "why": "Its scientists described the challenge of balancing decoder speed and accuracy as quantum systems scale; uses neutral atoms to build quantum-computing qubits"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Next Platform",
+    "article_title": "IonQ: There Is One CPU To Rule Error Correction Decoding",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/25/ionq-there-is-one-cpu-to-rule-error-correction-decoding/5299192",
+    "name": "IBM",
+    "ticker_guess": "IBM",
+    "why": "Uses a large-language-model framework to evaluate code variations for quantum error-correction environments"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-25",
+    "source": "The Diff",
+    "article_title": "AI Agents Save Users Money But Probably Won't Raise Savings Rates",
+    "article_link": "https://www.thediff.co/archive/ai-agents-save-users-money-but-probably-wont-raise-savings-rates/",
+    "name": "AI agents",
+    "why": "AI agents may help users save money; Their impact may not increase savings rates"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #212",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-212",
+    "name": "Vironexis",
+    "ticker_guess": null,
+    "why": "Reported complete responses in all three patients in a subgroup with relapsed or refractory acute lymphoblastic leukemia after one VNX-101 administration; VNX-101 uses an AAV to instruct liver cells to produce a cancer-fighting protein"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #212",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-212",
+    "name": "Solcoa",
+    "ticker_guess": null,
+    "why": "Raised $75 million to build a Nevada rare-earth metallization plant; Solcoa One is designed to produce 500 tonnes annually, with operations targeted for July 2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #212",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-212",
+    "name": "Terraform",
+    "ticker_guess": null,
+    "why": "Produced batches of high-purity methanol from sunlight, air and on-site inputs at its Muroc desert test site; methanol could serve as a feedstock for gasoline, aviation fuel and plastics"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #212",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-212",
+    "name": "Joby Aviation",
+    "ticker_guess": null,
+    "why": "Announced that a converted Cessna Caravan flew 3,199 miles across the United States autonomously with no control inputs from its onboard safety pilot; the aircraft handled taxiing, takeoffs, navigation, rerouting and landings"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-25",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #212",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-212",
+    "name": "Vulcan Elements",
+    "ticker_guess": null,
+    "why": "Will supply magnets for the Army\u2019s SkyFoundry drone initiative; its magnets are intended for the brushless motors powering the drones"
   }
 ]

@@ -485,5 +485,84 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W38"
+  },
+  {
+    "period": "week",
+    "date": "2026-09-26",
+    "value": 14.869999885559082,
+    "delta": 0.05999946594238281,
+    "history": [
+      [
+        "2026-09-21",
+        14.869999885559082
+      ],
+      [
+        "2026-09-22",
+        14.210000038146973
+      ],
+      [
+        "2026-09-23",
+        15.180000305175781
+      ],
+      [
+        "2026-09-24",
+        15.670000076293945
+      ],
+      [
+        "2026-09-25",
+        14.869999885559082
+      ]
+    ],
+    "narrative": "There was no clear single catalyst for the essentially flat weekly move in the VIX (+0.06): headlines described calm stocks and bitcoin alongside growing bond-market turbulence, suggesting offsetting cross-asset signals. The Indian-market selloff and 23% VIX spike reported by Moneycontrol and News18 appear region-specific rather than a direct driver of the U.S. VIX.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Stock market's fear index is scary, but not for the reasons you think",
+        "domain": "Financial Post",
+        "date": "20260925"
+      },
+      {
+        "title": "Bond traders brace for turbulence while bitcoin and stocks remain calm",
+        "domain": "CoinDesk",
+        "date": "20260925"
+      },
+      {
+        "title": "Triple whammy sends markets into a tailspin",
+        "domain": "The Financial Express",
+        "date": "20260924"
+      },
+      {
+        "title": "Market wrap: Cipla, ONGC, HDFC Life, Bajaj Finance top gainers and losers on Nifty and Sensex on Thursday",
+        "domain": "The Economic Times",
+        "date": "20260924"
+      },
+      {
+        "title": "Technical View: Panic selling can't be ruled out if Nifty 50 decisively breaks 23,000 as VIX spikes 23%; 55,000 key support for Bank Nifty",
+        "domain": "Moneycontrol",
+        "date": "20260924"
+      },
+      {
+        "title": "Market Today: Sensex Crashes 1,248 Points, Nifty Ends Below 23,100; VIX Surges 23%",
+        "domain": "News18",
+        "date": "20260924"
+      },
+      {
+        "title": "This Boring Market Is Good News For Investors",
+        "domain": "Seeking Alpha",
+        "date": "20260923"
+      },
+      {
+        "title": "The Stock Market Is Running On Fumes",
+        "domain": "Seeking Alpha",
+        "date": "20260922"
+      },
+      {
+        "title": "Perp futures linked to Volmex bitcoin volatility index debut on Hyperliquid",
+        "domain": "CoinDesk",
+        "date": "20260921"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W39"
   }
 ]

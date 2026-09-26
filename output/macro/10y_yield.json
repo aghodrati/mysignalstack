@@ -383,5 +383,64 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W38"
+  },
+  {
+    "period": "week",
+    "date": "2026-09-26",
+    "value": 5.184000015258789,
+    "delta": 0.18599987030029297,
+    "history": [
+      [
+        "2026-09-21",
+        4.9629998207092285
+      ],
+      [
+        "2026-09-22",
+        4.9679999351501465
+      ],
+      [
+        "2026-09-23",
+        5.113999843597412
+      ],
+      [
+        "2026-09-24",
+        5.1620001792907715
+      ],
+      [
+        "2026-09-25",
+        5.184000015258789
+      ]
+    ],
+    "narrative": "The move appears to reflect a broader bond selloff driven by resilient growth expectations and concern that yields can remain elevated: \u201cThe Recession That Wasn\u2019t\u201d argues against near-term slowdown, while the headline on the bond market becoming an AI trade suggests crowded positioning. Ross Gerber\u2019s warning that the U.S. cannot afford 5% Treasury yields and the associated mortgage-rate surge is more a symptom of the rout than a distinct catalyst, so there is no single clearly identifiable trigger in these headlines.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "The Recession That Wasn't",
+        "domain": "SeekingAlpha",
+        "date": "20260926"
+      },
+      {
+        "title": "Yellow Flag: The Bond Market Is Becoming An AI Trade",
+        "domain": "SeekingAlpha",
+        "date": "20260925"
+      },
+      {
+        "title": "Ross Gerber Warns US 'Can't Afford' 5% Treasury Yields As Bond Rout Sends Mortgage Rates To 2023 High",
+        "domain": "Benzinga",
+        "date": "20260925"
+      },
+      {
+        "title": "Your Bond ETF Lost Money. The Next ETF You Buy Could Matter More",
+        "domain": "Benzinga",
+        "date": "20260923"
+      },
+      {
+        "title": "Elizabeth Warren Calls Kevin Warsh a 'Sock Puppet' After Trump Claims He Told Him How to Vote for a Rate Hike: Peter Schiff Asks If It's 'Another Lie'",
+        "domain": "Yahoo",
+        "date": "20260921"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W39"
   }
 ]

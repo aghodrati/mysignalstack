@@ -831,5 +831,17 @@
     "NBIS",
     "NVDA",
     "ORCL"
+  ],
+  "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom": [
+    "NVDA",
+    "ORCL"
+  ],
+  "https://stratechery.com/2026/begun-the-aggregator-wars-have/": [
+    "AAPL",
+    "AMZN",
+    "META"
+  ],
+  "https://www.notboring.co/p/weekly-dose-of-optimism-212": [
+    "META"
   ]
 }

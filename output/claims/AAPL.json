@@ -169,5 +169,24 @@
     "trade_worthy": false,
     "context": "The article says Walmart has finally begun accepting Apple Pay and attributes the change to the difficulty of resisting the prevailing status quo; this adds a major retailer to Apple Pay\u2019s acceptance network, although the article provides no estimate of transaction volume, monetization, or broader financial impact for Apple.",
     "source": "Stratechery"
+  },
+  {
+    "id": "d5a0819807886353",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/begun-the-aggregator-wars-have/",
+    "source_title": "2026.39: Begun, the Aggregator Wars Have",
+    "event_type": "competitive",
+    "created": "2026-09-25",
+    "claim": "GM\u2019s decision to reintegrate Apple CarPlay validates consumer and dealership preference for Apple\u2019s in-car interface, modestly strengthening CarPlay\u2019s competitive position and Apple\u2019s ability to remain embedded in automakers\u2019 vehicle ecosystems.",
+    "direction": "long",
+    "confidence": 0.91,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "GM had replaced CarPlay with proprietary smartphone software three years ago to gain access to its own data, but reversed course after customer and dealership backlash. The reversal indicates that automakers may face adoption and satisfaction risks when they exclude Apple\u2019s established in-car experience, although the article provides no estimate of incremental Apple revenue or broader automaker commitments.",
+    "source": "Stratechery"
   }
 ]

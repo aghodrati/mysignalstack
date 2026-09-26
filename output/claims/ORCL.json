@@ -530,5 +530,24 @@
     "trade_worthy": false,
     "context": "Oracle\u2019s console lacked RBAC and required manual SSH-key management, while the AMD cluster\u2019s passive checks failed to detect a wedged RDMA control path and an intermittently disappearing GPU; the node remained Ready despite the failures. Although Oracle responded well and fixed the driver and firmware issues, SemiAnalysis said the experience was mixed and noted that Oracle\u2019s increasing emphasis on bare-metal frontier-lab deployments makes managed-cluster usability less strategically important.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "5d40a98f90ef9d7b",
+    "ticker": "ORCL",
+    "source_link": "https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom",
+    "source_title": "The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model",
+    "event_type": "capex",
+    "created": "2026-09-25",
+    "claim": "Rising Chinese hyperscaler demand for overseas AI compute should increase Oracle Cloud GPU-rental demand and support ORCL\u2019s growth outlook.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article expects Chinese hyperscalers\u2019 overseas leased datacenter capacity to nearly double from 2026 to 2029, approaching 4GW, while noting that this understates offshore compute because it excludes hundreds of thousands of GPUs rented from Western clouds; Oracle is specifically cited as benefiting from this GPU-rental activity. The mechanism is incremental Chinese demand for Western cloud capacity rather than Oracle-owned Chinese datacenter construction, so the benefit is tied to overseas AI workloads and cloud GPU consumption.",
+    "source": "SemiAnalysis"
   }
 ]
