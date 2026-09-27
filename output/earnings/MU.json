@@ -1,0 +1,87 @@
+[
+  {
+    "call_date": "2026-09-30",
+    "when": "2026-09-30T16:00:00-04:00",
+    "eps_estimate": 31.59,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-09-23",
+        "eps_estimate": 2.86,
+        "reported_eps": 3.03,
+        "surprise_pct": 5.94
+      },
+      {
+        "earnings_date": "2025-12-17",
+        "eps_estimate": 3.96,
+        "reported_eps": 4.78,
+        "surprise_pct": 20.58
+      },
+      {
+        "earnings_date": "2026-03-18",
+        "eps_estimate": 9.16,
+        "reported_eps": 12.2,
+        "surprise_pct": 33.21
+      },
+      {
+        "earnings_date": "2026-06-24",
+        "eps_estimate": 20.69,
+        "reported_eps": 25.11,
+        "surprise_pct": 21.39
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-09-27",
+    "call_date": "2026-09-30",
+    "narrative": "Investors should focus on Micron\u2019s fourth-quarter outlook, particularly the gross-margin guidance highlighted by Seeking Alpha and whether management can meet or exceed elevated expectations. The \u201c80% odds\u201d headline suggests optimism about a potential analyst beat, while the broader coverage and CNBC\u2019s AI-basket reference point to continued demand for Micron\u2019s memory products from artificial-intelligence infrastructure. They should also watch how management frames the company\u2019s $100 billion Syracuse factory investment\u2014especially its timing, capacity plans, and expected strategic payoff\u2014alongside near-term supply and pricing conditions. My expectation is cautiously bullish if AI-driven demand remains strong, but the market may react more to the forward margin and industry-cycle outlook than to the quarter\u2019s results alone.",
+    "headlines_used": [
+      {
+        "title": "What Lies Ahead for Micron (MU) in the Upcoming Fourth Quarter Report?",
+        "domain": "Yahoo",
+        "date": "20260927"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20260927"
+      },
+      {
+        "title": "What Will Micron's Gross Margin Guide Be?",
+        "domain": "SeekingAlpha",
+        "date": "20260927"
+      },
+      {
+        "title": "How Big Is Micron Technology (MU) $100 Billion Syracuse Factory Bet?",
+        "domain": "Yahoo",
+        "date": "20260926"
+      },
+      {
+        "title": "AMD Hits $1 Trillion, Muse Spooks Subscription Stocks: This Week on Wall Street",
+        "domain": "Benzinga",
+        "date": "20260925"
+      },
+      {
+        "title": "80% Odds Micron Beats Every Analyst On Wall Street, This Model Says",
+        "domain": "Benzinga",
+        "date": "20260925"
+      },
+      {
+        "title": "Discover which S&P500 stocks are making waves on Tuesday.",
+        "domain": "ChartMill",
+        "date": "20260922"
+      },
+      {
+        "title": "These S&P500 stocks are moving in today's session",
+        "domain": "ChartMill",
+        "date": "20260922"
+      },
+      {
+        "title": "CIO: my 'Air 7' stock basket outperforms Mag 7 as a diversified way to play AI",
+        "domain": "CNBC",
+        "date": "20260922"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

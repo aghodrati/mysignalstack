@@ -6791,5 +6791,25 @@
     "name": "Vulcan Elements",
     "ticker_guess": null,
     "why": "Will supply magnets for the Army\u2019s SkyFoundry drone initiative; its magnets are intended for the brushless motors powering the drones"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-26",
+    "source": "SemiAnalysis",
+    "article_title": "Intel Panther Lake Teardown",
+    "article_link": "https://newsletter.semianalysis.com/p/intel-panther-lake-teardown",
+    "name": "Samsung Electronics",
+    "ticker_guess": "005930 OR NULL",
+    "why": "Its SF2 GAAFET process is compared directly with Intel 18A; Samsung uses three nanosheets versus Intel\u2019s four and lacks backside power delivery."
+  },
+  {
+    "type": "company",
+    "date": "2026-09-26",
+    "source": "SemiAnalysis",
+    "article_title": "Intel Panther Lake Teardown",
+    "article_link": "https://newsletter.semianalysis.com/p/intel-panther-lake-teardown",
+    "name": "Applied Materials",
+    "ticker_guess": "AMAT",
+    "why": "Its Endura equipment is cited in connection with thermal control and copper wetting for Intel\u2019s advanced interconnect integration."
   }
 ]

@@ -86,5 +86,48 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.524,
     "confidence_after": 0.524
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-27",
+    "thesis": "INTC offers a moderately attractive 6\u201312 month long opportunity as constrained Xeon supply, DCAI recovery, strong Q2 execution, Panther Lake\u2019s working 18A silicon, and improving foundry traction can drive earnings and strategic confidence, although valuation, dilution, manufacturing economics, and persistent AMD/Arm competition cap upside.",
+    "direction": "long",
+    "confidence": 0.68,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.64,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.68,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "Sustained server-CPU shortages support higher Intel shipments, pricing, revenue, and DCAI cash generation.",
+      "Continued AI-host, agentic-AI, and inference demand strengthens Xeon growth and utilization.",
+      "Panther Lake ramps successfully and validates 18A, RibbonFET, and PowerVia in client products.",
+      "External 18A customer adoption expands beyond Socionext and improves Intel Foundry utilization.",
+      "Foundry operating losses narrow as external leading-edge revenue grows and advanced packaging gains commercial traction."
+    ],
+    "invalidation": [
+      "Intel cannot convert Xeon demand into shipments because supply constraints persist while AMD and Arm capture share.",
+      "DCAI growth fades as processor scarcity normalizes, revealing that the recovery remains materially below Intel\u2019s historical server position.",
+      "Panther Lake\u2019s Foveros-S costs, yield issues, or reliance on TSMC N3E prevent meaningful product-cost, performance, or margin improvement.",
+      "Intel Foundry continues posting large losses with limited external-customer contribution despite its equity-funded expansion.",
+      "AMD and Arm accelerate server share gains, or operating-margin deterioration and elevated valuation produce material earnings-estimate cuts."
+    ],
+    "reasoning": "The fundamental picture and reported quarter support a long bias\u201425.4% revenue growth, 26.2% free-cash-flow margin, and EPS of $0.42 versus a $0.22 estimate\u2014while the absent earnings-call picture and substantial competitive, execution, dilution, and valuation risks warrant only moderate confidence.",
+    "claims_considered": 60
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-27",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.68,
+    "confidence_after": 0.68
   }
 ]
