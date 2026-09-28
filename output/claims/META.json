@@ -1556,5 +1556,43 @@
     "trade_worthy": false,
     "context": "Meta announced a roughly 100-gram headset with a 5K micro-OLED display, eye and hand tracking, and the ability to project a keyboard and touchpad onto a flat surface; it is scheduled for spring 2027 at $1,299.99. Meta also added voice and video to Muse, FDA-approved hearing-aid functionality to Meta Glasses, and additional audio-only glasses and frames. The article views the headset as evidence that Meta\u2019s strategy of developing everyday glasses alongside more capable immersive devices is progressing toward a more useful, smaller form factor, while promised live sports, 3D movies, and hologram calling could support future ecosystem engagement.",
     "source": "Not Boring"
+  },
+  {
+    "id": "45a1a6c0cb2c2ca8",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/apps-agents-and-aggregation/",
+    "source_title": "Apps, Agents, and Aggregation",
+    "event_type": "product_launch",
+    "created": "2026-09-28",
+    "claim": "Meta\u2019s early deployment of agent computers and generative interfaces could strengthen its competitive position by making Meta the primary consumer gateway to apps, services, and eventually its own devices.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 10,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Muse gives U.S. users a dedicated virtual machine with a 2-core processor, 8GB of RAM, and 8GB of storage, allowing an agent to operate existing apps and create personalized interfaces such as a recipe application built from saved Instagram content. The article argues that Meta\u2019s global consumer distribution, messaging services, and planned devices give it an advantage in distributing agents and could make those devices delivery mechanisms for Muse. If consumers increasingly ask agents to complete tasks rather than open individual apps, Meta could gain greater control over consumer demand and reinforce its platform position.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "a77d839e53fa07af",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/apps-agents-and-aggregation/",
+    "source_title": "Apps, Agents, and Aggregation",
+    "event_type": "product_launch",
+    "created": "2026-09-28",
+    "claim": "If agent-mediated task completion replaces direct app usage, Meta could capture more of the consumer interface and demand layer, increasing its long-term strategic leverage over services that depend on access to users.",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that agents make the ability to do things abundant while making user volition and inspiration scarce; the companies that control the agent interface could become gatekeepers between users and the underlying apps and services. Meta\u2019s reach to nearly every person, established messaging products, and ability to provision a computer for each agent are presented as advantages in winning that role, potentially extending Meta\u2019s influence beyond social networking into broader consumer activity and future devices such as glasses.",
+    "source": "Stratechery"
   }
 ]
