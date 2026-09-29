@@ -131,5 +131,24 @@
     "trade_worthy": false,
     "context": "The article says xAI deployed an initial 150 MW of Tesla Megapacks at its Colossus 1 site after turbine-generated power experienced 10\u201320 MW oscillations several times per second under fluctuating AI workloads. More broadly, islanded datacenters must provide their own inertia, ride-through and power-quality services, making batteries an increasingly common complement to onsite generation; Liberty Energy reportedly sees battery power capacity averaging 50% of gas capacity across its datacenter clients. This supports incremental demand for Tesla's grid-scale battery systems, although the article does not quantify TSLA's share of the 75 GW behind-the-meter order pipeline or the associated revenue and margins.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "867b2a2151c3b318",
+    "ticker": "TSLA",
+    "source_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "source_title": "Airbound: As We May Move",
+    "event_type": "competitive",
+    "created": "2026-09-28",
+    "claim": "If Airbound succeeds in making autonomous aircraft dramatically cheaper and more versatile than ground vehicles, it could undermine the long-term value proposition of Tesla\u2019s self-driving-car strategy and pressure TSLA\u2019s valuation.",
+    "direction": "short",
+    "confidence": 0.88,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article explicitly speculates that a self-flying vehicle could be more attractive than a self-driving car because it can travel directly over traffic, operate without roads, and potentially achieve lower cost per kilometer. Airbound is targeting a progression from a 5-kg cargo drone to 100-kg and 500-kg platforms capable of carrying people, with ambitions to make autonomous flight cheaper than trucks, buses, trains, and eventually cars. However, this remains a highly uncertain, multi-decade scenario dependent on major advances in aircraft manufacturing, safety, regulation, operations, batteries, and network adoption; the article offers no evidence that Airbound is near competing with Tesla\u2019s current or near-term vehicles.",
+    "source": "Not Boring"
   }
 ]

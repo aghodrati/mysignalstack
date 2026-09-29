@@ -5698,5 +5698,43 @@
     "trade_worthy": false,
     "context": "The article says chip supply remains constrained by export restrictions even as Chinese datacenter construction and tenant absorption proceed at remarkable speed. Chinese facilities can be populated with restricted H20 accelerators where available or domestic Ascend systems, while additional Chinese demand is served through overseas capacity and Western cloud GPU rentals; therefore, the scale of datacenter construction does not translate one-for-one into Nvidia chip sales in China.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "3f3d1c802c22ac2f",
+    "ticker": "NVDA",
+    "source_link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
+    "source_title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
+    "event_type": "competitive",
+    "created": "2026-09-28",
+    "claim": "NVDA\u2019s GB300 strengthens its near-term inference competitiveness by delivering higher per-GPU throughput and the lowest modeled serving cost in the cited comparison, supporting demand for Nvidia systems in high-throughput, long-context agentic workloads.",
+    "direction": "long",
+    "confidence": 0.83,
+    "importance": 7,
+    "expected_return_pct": 3.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "In the September 28 InferenceX snapshot, GB300 using Dynamo-TRT-LLM served about 13,950 total tokens per second per GPU versus 11,873 for GB200, while GB300 was eligible at $0.0451 per million total tokens under a ten-second p90 time-to-first-token limit\u2014about 26% below MI355X ATOM at $0.0607. At 150 tokens per second, GB200 was also estimated at $0.044 per million total tokens versus $0.049 for MI355X, although the comparison depends materially on the serving engine, caching hierarchy and latency constraint.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "93334d4e1feee082",
+    "ticker": "NVDA",
+    "source_link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
+    "source_title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
+    "event_type": "competitive",
+    "created": "2026-09-28",
+    "claim": "AMD\u2019s MI355X presents a near-term competitive risk to NVDA in latency-sensitive inference because it can deliver materially faster first-token response and lower cost than Nvidia configurations that meet a strict two-second interactivity requirement.",
+    "direction": "short",
+    "confidence": 0.79,
+    "importance": 7,
+    "expected_return_pct": -3.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The compared GB200 runs had roughly 14\u201319 seconds of p90 time to first token, versus approximately 1.1\u20131.2 seconds for MI355X ATOM. Among configurations actually achieving at least 150 tokens per second with p90 TTFT no higher than two seconds, MI355X ATOM was estimated at $0.0607 per million total tokens versus $0.0666 for B200 with Dynamo-SGLang. The article also reports strong MI355X interactivity on TileRT, though its TTFT remained suboptimal, indicating that software and workload conditions determine whether AMD\u2019s advantage persists.",
+    "source": "SemiAnalysis"
   }
 ]

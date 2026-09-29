@@ -377,5 +377,50 @@
     "final_multiplier": 0.84,
     "confidence_before": 0.66,
     "confidence_after": 0.5544
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-29",
+    "thesis": "AMD has a bullish 12-month setup driven by exceptional data-center CPU momentum, accelerating Helios and AI demand, and improving platform breadth, but its premium valuation and persistent inference-software, supply, margin, and execution gaps versus Nvidia constrain upside and confidence.",
+    "direction": "long",
+    "confidence": 0.72,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.72,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Server CPU revenue growth above 80% year over year in the second half of 2026 and above 70% in 2027, supported by continued Epyc share gains and Venice adoption.",
+      "Successful late-2026 MI450/MI455X and Helios ramps, including Microsoft, OpenAI, Anthropic, HPE, and other hyperscaler deployments.",
+      "Improved ROCm, ATOM, TileRT, and distributed-inference software that narrows AMD's production gap versus Nvidia and converts MI355X's latency and cost advantages into broader deployments.",
+      "Expansion of AMD's constrained GPU allocations, HBM availability, and packaging capacity, enabling the company to monetize demand exceeding supply.",
+      "Enterprise and on-premise adoption through VMware, Dell, HPE, and other OEM channels, alongside additional HPC wins such as Lumi.",
+      "Continued agentic-AI and inference growth increasing CPU content per system and expanding AMD's server-CPU and accelerator markets."
+    ],
+    "invalidation": [
+      "MI455X/Helios ramps are delayed or suffer poor yields, high manufacturing costs, weak margins, or customer build-out and power-availability delays.",
+      "AMD remains materially behind Nvidia in production long-context and high-throughput inference economics, with ATOM and ROCm unable to resolve KV-transfer, batching, context-parallelism, and distributed-serving limitations.",
+      "HBM, wafer, substrate, packaging, or other supply constraints prevent AMD from converting strong CPU and accelerator demand into shipments and revenue.",
+      "Hyperscalers shift more spending to internally designed Arm CPUs, custom XPUs, Broadcom or Marvell solutions, Cerebras, OpenAI's Jalape\u00f1o, or Nvidia's Vera Rubin ecosystem.",
+      "AMD's AI-system margins remain below expectations while rising HBM, DRAM, flash, and system costs compress profitability.",
+      "Slower-than-expected data-center growth, weaker 2027 guidance, or continued PC and gaming weakness triggers earnings-estimate cuts and multiple compression from the roughly 37x forward-earnings valuation."
+    ],
+    "reasoning": "The fundamental picture and confident earnings call support a long stance, with 50% reported revenue growth, 56% gross margin, strong CPU demand, major data-center upside, and a modest 3.21% EPS beat, but the call's supply, yield, cadence, and margin caveats plus repeated evidence of Nvidia's inference and software advantage justify only moderate confidence and a measured return target.",
+    "claims_considered": 145
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-29",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.72,
+    "confidence_after": 0.72
   }
 ]

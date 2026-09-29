@@ -6866,5 +6866,151 @@
     "article_link": "https://www.normaltech.ai/p/p-doom",
     "name": "AI governance",
     "why": "Calls for policymaking processes that respond to new evidence; supports AI policies that remain beneficial even if existential risk is negligible"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "SemiAnalysis",
+    "article_title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
+    "article_link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
+    "name": "Z.ai",
+    "ticker_guess": null,
+    "why": "Developed the GLM-5/5.3 model architecture and serving optimizations; uses sparse attention, KV compression, IndexShare and hierarchical cache-management techniques; collaborates with Moore Threads on GLM-5.3-Flash support"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "SemiAnalysis",
+    "article_title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
+    "article_link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
+    "name": "Moore Threads",
+    "ticker_guess": null,
+    "why": "GLM-5\u2019s attention configuration is analyzed as potentially optimized for Moore Threads MTT S4000; collaborated with Z.ai on GLM-5.3-Flash day-one support"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "SemiAnalysis",
+    "article_title": "How GLM5.3 Sparse Attention Affects HBM Memory Usage",
+    "article_link": "https://newsletter.semianalysis.com/p/sparse-savings-persistent-demand-inside-glm53",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Introduced DeepSeek Sparse Attention, the basis for the lightning indexer and sparse MLA discussed in GLM-5.x; DeepSeek V3.2\u2019s MLA configuration is compared with GLM-5\u2019s design"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "The Diff",
+    "article_title": "How Far in the Future Should You Be Trying to Live?",
+    "article_link": "https://www.thediff.co/archive/how-far-in-the-future-should-you-be-trying-to-live/",
+    "name": "MongoDB",
+    "ticker_guess": null,
+    "why": "Its shares fell 20% after its CEO joined Meta; cited as an example of enterprise-software companies losing senior talent to AI labs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "The Diff",
+    "article_title": "How Far in the Future Should You Be Trying to Live?",
+    "article_link": "https://www.thediff.co/archive/how-far-in-the-future-should-you-be-trying-to-live/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Hired public-company CEO Fidji Simo; cited as evidence that AI labs have unusually broad, CEO-shaped talent needs"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-29",
+    "source": "Doomberg",
+    "article_title": "Going With the Flow",
+    "article_link": "https://newsletter.doomberg.com/p/going-with-the-flow",
+    "name": "National Gas",
+    "ticker_guess": null,
+    "why": "Moved Project Union's 350-mile hydrogen pipeline into advanced engineering design; Plans a 1,500-mile national hydrogen network, with an initial 300-mile phase connecting Teesside, Yorkshire and the Humber, and the East Midlands"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-29",
+    "source": "Doomberg",
+    "article_title": "Going With the Flow",
+    "article_link": "https://newsletter.doomberg.com/p/going-with-the-flow",
+    "name": "hydrogen infrastructure",
+    "why": "National Gas is advancing design of a 350-mile hydrogen pipeline from St Fergus to Teesside; Project Union targets a 1,500-mile UK hydrogen network linking industrial clusters and production centers"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-29",
+    "source": "Doomberg",
+    "article_title": "Going With the Flow",
+    "article_link": "https://newsletter.doomberg.com/p/going-with-the-flow",
+    "name": "UK energy security",
+    "why": "The article argues the UK is entering the coldest months with heightened exposure to an energy shock; It criticizes government focus on hydrogen infrastructure while near-term energy needs center on existing fuels"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-29",
+    "source": "Doomberg",
+    "article_title": "Going With the Flow",
+    "article_link": "https://newsletter.doomberg.com/p/going-with-the-flow",
+    "name": "energy shortages",
+    "why": "The article cites a global shortage of LNG, crude oil, and refined products; It says Europe is particularly vulnerable to a winter energy shock"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-29",
+    "source": "Doomberg",
+    "article_title": "Going With the Flow",
+    "article_link": "https://newsletter.doomberg.com/p/going-with-the-flow",
+    "name": "geopolitics",
+    "why": "The article links European energy vulnerability to the war in Iran; It argues the UK remains susceptible to decisions by global leaders its population dislikes"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Not Boring",
+    "article_title": "Airbound: As We May Move",
+    "article_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "name": "Airbound",
+    "ticker_guess": null,
+    "why": "Raised a $37 million Series A led by Greenoaks, with backing from Lightspeed and Lachy Groom; has completed more than 13,000 autonomous flights in India; developing a 5-kg V2 drone, a 100-kg human-capable V3, and a 500-kg V4"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Not Boring",
+    "article_title": "Airbound: As We May Move",
+    "article_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "name": "Zipline",
+    "ticker_guess": null,
+    "why": "Presented as Airbound\u2019s strongest drone-delivery competitor and credited with substantial operational and technical progress; its P2 drone carries 8 pounds at a 55-pound weight, materially less efficiently than Airbound\u2019s V2 target"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Not Boring",
+    "article_title": "Airbound: As We May Move",
+    "article_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "name": "Joby Aviation",
+    "ticker_guess": "JOBY",
+    "why": "Cited as an eVTOL air-taxi competitor; its passenger aircraft are described as costing roughly $4-5 million to purchase, illustrating the affordability gap Airbound aims to close"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Not Boring",
+    "article_title": "Airbound: As We May Move",
+    "article_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "name": "Archer Aviation",
+    "ticker_guess": "ACHR",
+    "why": "Cited alongside Joby as an eVTOL company pursuing air-taxi aircraft; represents the higher-cost passenger eVTOL model Airbound seeks to undercut"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Not Boring",
+    "article_title": "Airbound: As We May Move",
+    "article_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "name": "DoorDash",
+    "ticker_guess": null,
+    "why": "Identified as an Airbound investor developing its own drones; cited as a potential competitor and delivery-network customer whose operations could be disrupted by lower-cost autonomous aircraft"
   }
 ]

@@ -112,5 +112,43 @@
     "trade_worthy": false,
     "context": "The roundup reports that Uber launched its first robotaxi service in Europe, alongside broader coverage of autonomous vehicles, including Waymo\u2019s custom in-vehicle compute architecture and European automotive technology developments. The article provides no information on the service\u2019s scale, economics, regulatory reach, or expected contribution to Uber\u2019s revenue, so the financial impact remains difficult to quantify.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "4900efaca06d89cd",
+    "ticker": "UBER",
+    "source_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "source_title": "Airbound: As We May Move",
+    "event_type": "competitive",
+    "created": "2026-09-28",
+    "claim": "Uber\u2019s investment and production-allocation agreement with Zipline could strengthen Uber Eats\u2019 long-term delivery proposition by giving it priority access to autonomous drone capacity, potentially lowering delivery costs and expanding rapid delivery by 2029.",
+    "direction": "long",
+    "confidence": 0.85,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Uber has invested in Zipline and agreed to absorb all of Zipline\u2019s currently planned production, with Zipline targeting one million drone deliveries per day by 2029. If this capacity is deployed through Uber\u2019s delivery network, Uber could reduce reliance on human couriers, improve delivery speed and economics, and use lower prices to gain share; however, the article provides no evidence that the target or resulting unit economics will be achieved.",
+    "source": "Not Boring"
+  },
+  {
+    "id": "a3298594d21ebfd1",
+    "ticker": "UBER",
+    "source_link": "https://www.notboring.co/p/airbound-as-we-may-move",
+    "source_title": "Airbound: As We May Move",
+    "event_type": "competitive",
+    "created": "2026-09-28",
+    "claim": "If Airbound or similar autonomous aircraft achieve their targeted cost advantage, they could eventually pressure Uber\u2019s delivery and ride businesses by offering a cheaper, faster alternative to ground couriers and some car trips.",
+    "direction": "short",
+    "confidence": 0.62,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Airbound aims to build autonomous electric aircraft with manufacturing costs and operating costs far below existing drones, initially targeting cargo and later passenger travel. The article argues that sufficiently cheap flight could displace vans, trucks, cars, and other ground transportation, while also noting major unresolved engineering, safety, regulatory, manufacturing, and operational obstacles. Uber\u2019s Zipline relationship may provide defensive positioning, but it could also expose Uber to dependence on external drone platforms or competition from a lower-cost operator such as Airbound.",
+    "source": "Not Boring"
   }
 ]
