@@ -422,5 +422,48 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.72,
     "confidence_after": 0.72
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-09-30",
+    "thesis": "AMD remains a moderately high-conviction long because exceptional data-center CPU momentum, strong Q2 operating performance, and the Helios/MI450 pipeline outweigh serious near-term inference-software, HBM, execution, and valuation risks.",
+    "direction": "long",
+    "confidence": 0.74,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.74,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Server CPU revenue growth exceeding 80% year over year in the second half of 2026 and continued EPYC share gains with Venice",
+      "Successful, timely ramp of Helios and MI455X/MI450 systems, including deployments with Microsoft, OpenAI, Anthropic, and other hyperscalers",
+      "Improved ROCm, ATOM, TileRT, and distributed-inference support that narrows AMD's production software gap with NVIDIA",
+      "Relief in wafer, packaging, substrate, HBM, and server-CPU supply constraints, enabling AMD to convert strong demand into shipments",
+      "Data-center revenue more than doubling in 2027 while maintaining approximately 56% gross margin"
+    ],
+    "invalidation": [
+      "Helios and MI450/MI455X ramps are delayed, suffer poor yields, or produce materially lower margins than expected",
+      "AMD's inference performance-per-dollar and production software remain materially inferior to NVIDIA, custom accelerators, Cerebras, or internal hyperscaler ASICs, limiting adoption and pricing",
+      "HBM, packaging, wafer, substrate, or CPU shortages prevent AMD from meeting the stated growth outlook or customer deployments slip because of power and data-center readiness",
+      "Server CPU growth decelerates as hyperscalers shift toward Arm processors and custom XPUs, while Intel or other competitors take share",
+      "Revenue or earnings growth materially misses the bullish outlook, or the roughly 37x forward-earnings and 20.9x EV/revenue valuation compresses because execution or margins disappoint"
+    ],
+    "reasoning": "The fundamental picture is bullish but valuation-sensitive, the earnings call showed confident demand and major data-center upside with acknowledged supply and Helios-margin risks, and the latest quarter modestly beat EPS estimates by 3.21%, so the strong CPU/data-center trajectory supports a long while the substantial AI execution and competitive risks keep conviction below extreme levels.",
+    "claims_considered": 150
+  },
+  {
+    "event": "critic",
+    "date": "2026-09-30",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.74,
+    "confidence_after": 0.74
   }
 ]

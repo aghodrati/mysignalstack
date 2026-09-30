@@ -400,5 +400,140 @@
     "direction": "bullish",
     "confidence": "low",
     "trade_worthy": true
+  },
+  {
+    "period": "month",
+    "date": "2026-09-30",
+    "value": 6.620500087738037,
+    "delta": 1.7520990472857045,
+    "history": [
+      [
+        "2026-09-01",
+        6.506499767303467
+      ],
+      [
+        "2026-09-02",
+        6.500999927520752
+      ],
+      [
+        "2026-09-03",
+        6.577000141143799
+      ],
+      [
+        "2026-09-04",
+        6.5970001220703125
+      ],
+      [
+        "2026-09-08",
+        6.738999843597412
+      ],
+      [
+        "2026-09-09",
+        6.803500175476074
+      ],
+      [
+        "2026-09-10",
+        6.4670000076293945
+      ],
+      [
+        "2026-09-11",
+        6.4695000648498535
+      ],
+      [
+        "2026-09-14",
+        6.329999923706055
+      ],
+      [
+        "2026-09-15",
+        6.368500232696533
+      ],
+      [
+        "2026-09-16",
+        6.43149995803833
+      ],
+      [
+        "2026-09-17",
+        6.58650016784668
+      ],
+      [
+        "2026-09-18",
+        6.614999771118164
+      ],
+      [
+        "2026-09-21",
+        6.686500072479248
+      ],
+      [
+        "2026-09-22",
+        6.759500026702881
+      ],
+      [
+        "2026-09-23",
+        6.677999973297119
+      ],
+      [
+        "2026-09-24",
+        6.718500137329102
+      ],
+      [
+        "2026-09-25",
+        6.695499897003174
+      ],
+      [
+        "2026-09-28",
+        6.565999984741211
+      ],
+      [
+        "2026-09-29",
+        6.543499946594238
+      ],
+      [
+        "2026-09-30",
+        6.620500087738037
+      ]
+    ],
+    "narrative": "The month's gain was most plausibly supported by the recurring AI/data-center demand narrative, highlighted by \u201cDr. Copper Says the AI Boom Is Spreading Through the Real Economy,\u201d the copper-ETF discussion, and the report that Michael Burry is backing a copper miner as data-center demand grows. However, \u201cMetals Meltdown\u201d and the debate over a possible copper surplus show that the move was not driven by a clean, one-way fundamental catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Metals Meltdown",
+        "domain": "SeekingAlpha",
+        "date": "20260928"
+      },
+      {
+        "title": "The Copper Surplus Mirage: Why A Tariff Rejection Could Be A Buying Opportunity",
+        "domain": "SeekingAlpha",
+        "date": "20260926"
+      },
+      {
+        "title": "Weekly Commentary: Too Big To Fail Redux",
+        "domain": "SeekingAlpha",
+        "date": "20260926"
+      },
+      {
+        "title": "Michael Burry Says He\u2019s \u2018Largely Ignoring\u2019 AI Stocks \u2014 Here\u2019s the Copper Miner He\u2019s Betting on as Data Center Demand Soars",
+        "domain": "Benzinga",
+        "date": "20260922"
+      },
+      {
+        "title": "Oil ETFs Surge: What's Next for Commodity Investors?",
+        "domain": "Yahoo",
+        "date": "20260921"
+      },
+      {
+        "title": "Is This a Good Time to Invest in Copper ETFs to Ride the AI Boom?",
+        "domain": "Yahoo",
+        "date": "20260911"
+      },
+      {
+        "title": "Dr. Copper Says the AI Boom Is Spreading Through the Real Economy",
+        "domain": "Benzinga",
+        "date": "20260908"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

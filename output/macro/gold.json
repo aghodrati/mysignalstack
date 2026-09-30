@@ -500,5 +500,150 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "month",
+    "date": "2026-09-30",
+    "value": 4214.7001953125,
+    "delta": -4.132920368194548,
+    "history": [
+      [
+        "2026-09-01",
+        4396.39990234375
+      ],
+      [
+        "2026-09-02",
+        4414.60009765625
+      ],
+      [
+        "2026-09-03",
+        4539.89990234375
+      ],
+      [
+        "2026-09-04",
+        4476.60009765625
+      ],
+      [
+        "2026-09-08",
+        4439.0
+      ],
+      [
+        "2026-09-09",
+        4460.7001953125
+      ],
+      [
+        "2026-09-10",
+        4407.2998046875
+      ],
+      [
+        "2026-09-11",
+        4408.89990234375
+      ],
+      [
+        "2026-09-14",
+        4351.89990234375
+      ],
+      [
+        "2026-09-15",
+        4332.7998046875
+      ],
+      [
+        "2026-09-16",
+        4387.5
+      ],
+      [
+        "2026-09-17",
+        4399.7001953125
+      ],
+      [
+        "2026-09-18",
+        4424.89990234375
+      ],
+      [
+        "2026-09-21",
+        4383.89990234375
+      ],
+      [
+        "2026-09-22",
+        4376.39990234375
+      ],
+      [
+        "2026-09-23",
+        4318.39990234375
+      ],
+      [
+        "2026-09-24",
+        4298.0
+      ],
+      [
+        "2026-09-25",
+        4321.2001953125
+      ],
+      [
+        "2026-09-28",
+        4168.39990234375
+      ],
+      [
+        "2026-09-29",
+        4179.7001953125
+      ],
+      [
+        "2026-09-30",
+        4214.7001953125
+      ]
+    ],
+    "narrative": "The most plausible driver was a sharp repricing toward higher U.S. rates: the headline \u201cFed Hike Bets Hit 70%: Gold Just Lost The Argument to a 5.2% Treasury\u201d directly points to rising yields and tighter-policy expectations pressuring non-yielding gold. The month\u2019s move also appears amplified by profit-taking after the earlier surge, consistent with reports that gold had fallen roughly $400 since August; geopolitical and mining headlines offer less direct explanation.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "GLD Sells Your Gold Every Month to Pay Itself, and the IRS Can Tax Those Sales at Up to 28%",
+        "domain": "Yahoo",
+        "date": "20260929"
+      },
+      {
+        "title": "Gold Has Fallen Roughly $400 an Ounce Since August. The Retiree Who Sold at the Top Still Owes Medicare on the Top, in 2028",
+        "domain": "Yahoo",
+        "date": "20260929"
+      },
+      {
+        "title": "The Inverse Correlation Between Gold And Interest Rates Is Breaking Down",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "5.5% Treasury Rates Bring Me Back To Ray Dalio's All-Weather Portfolio",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "Comex Update: 400oz Gold Contract Cancelled; Silver Demand Strengthens",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "Toogood Gold Narrows Table Mountain Targets as Two Major Gold Corridors Take Shape",
+        "domain": "Yahoo",
+        "date": "20260928"
+      },
+      {
+        "title": "Nasdaq 100 Sinks, Oil Rallies as Trump Rejects Iran's Hormuz Plan: Stock Market Today",
+        "domain": "Benzinga",
+        "date": "20260928"
+      },
+      {
+        "title": "Fed Hike Bets Hit 70%: Gold Just Lost The Argument to a 5.2% Treasury",
+        "domain": "Benzinga",
+        "date": "20260928"
+      },
+      {
+        "title": "Why Are Precious Metal Stocks Falling Today?",
+        "domain": "Benzinga",
+        "date": "20260928"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

@@ -7012,5 +7012,35 @@
     "name": "DoorDash",
     "ticker_guess": null,
     "why": "Identified as an Airbound investor developing its own drones; cited as a potential competitor and delivery-network customer whose operations could be disrupted by lower-cost autonomous aircraft"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Stratechery",
+    "article_title": "OpenAI Dev Day, Dot and OpenAI\u2019s Product Transition, Sign In With ChatGPT",
+    "article_link": "https://stratechery.com/2026/openai-dev-day-dot-and-openais-product-transition-sign-in-with-chatgpt/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Showcased a product at Dev Day that the article describes as confusing; the product reflects a broader transition in OpenAI\u2019s offerings"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-29",
+    "source": "Next Platform",
+    "article_title": "AMD Buys World Labs For $8.2 Billion To Get AI Model Cred",
+    "article_link": "https://www.nextplatform.com/ai/2026/09/29/amd-buys-world-labs-for-82-billion-to-get-ai-model-cred/5299801",
+    "name": "World Labs",
+    "ticker_guess": null,
+    "why": "AMD agreed to acquire it for $8.2 billion in stock; develops world models including Marble and Atlas; raised $1.23 billion and was valued at about $5 billion in its February funding round"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-29",
+    "source": "Next Platform",
+    "article_title": "AMD Buys World Labs For $8.2 Billion To Get AI Model Cred",
+    "article_link": "https://www.nextplatform.com/ai/2026/09/29/amd-buys-world-labs-for-82-billion-to-get-ai-model-cred/5299801",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Operates an AI model, dataset, and interactive-space distribution hub; described as having been acquired by Nvidia for $12.9 billion, increasing pressure on AMD to build its own model ecosystem"
   }
 ]

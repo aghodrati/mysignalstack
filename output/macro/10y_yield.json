@@ -442,5 +442,147 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W39"
+  },
+  {
+    "period": "month",
+    "date": "2026-09-30",
+    "value": 5.255000114440918,
+    "delta": 0.49700021743774414,
+    "history": [
+      [
+        "2026-08-31",
+        4.757999897003174
+      ],
+      [
+        "2026-09-01",
+        4.796000003814697
+      ],
+      [
+        "2026-09-02",
+        4.796000003814697
+      ],
+      [
+        "2026-09-03",
+        4.76200008392334
+      ],
+      [
+        "2026-09-04",
+        4.783999919891357
+      ],
+      [
+        "2026-09-08",
+        4.806000232696533
+      ],
+      [
+        "2026-09-09",
+        4.836999893188477
+      ],
+      [
+        "2026-09-10",
+        4.943999767303467
+      ],
+      [
+        "2026-09-11",
+        4.974999904632568
+      ],
+      [
+        "2026-09-14",
+        4.960999965667725
+      ],
+      [
+        "2026-09-15",
+        4.995999813079834
+      ],
+      [
+        "2026-09-16",
+        5.00600004196167
+      ],
+      [
+        "2026-09-17",
+        4.947000026702881
+      ],
+      [
+        "2026-09-18",
+        4.998000144958496
+      ],
+      [
+        "2026-09-21",
+        4.9629998207092285
+      ],
+      [
+        "2026-09-22",
+        4.9679999351501465
+      ],
+      [
+        "2026-09-23",
+        5.113999843597412
+      ],
+      [
+        "2026-09-24",
+        5.1620001792907715
+      ],
+      [
+        "2026-09-25",
+        5.184000015258789
+      ],
+      [
+        "2026-09-28",
+        5.239999771118164
+      ],
+      [
+        "2026-09-29",
+        5.255000114440918
+      ]
+    ],
+    "narrative": "The month\u2019s move appears to have been a broad bond-market repricing toward higher yields, with investors responding to stronger fundamental expectations and heavy long-duration supply; the Seeking Alpha headlines explicitly framed the sell-off around \u201cHigher Yields, Stronger Fundamentals\u201d and noted the 30-year Treasury \u201cGoes For Six.\u201d The TLT record low and reports of mortgage rates reaching 2023 highs confirm the severity of the duration sell-off, although the headlines do not identify a single discrete catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Bond Market Sell-Off: Higher Yields, Stronger Fundamentals",
+        "domain": "SeekingAlpha",
+        "date": "20260930"
+      },
+      {
+        "title": "30-Year Goes For Six",
+        "domain": "SeekingAlpha",
+        "date": "20260930"
+      },
+      {
+        "title": "The Curious Case Of Stock Market Denial",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "'Something Will Break': Ross Gerber Sounds Alarm as Treasury Yields Hit Decades-High Levels, Bond Volatility Flashes 2008 Crisis Signals",
+        "domain": "Benzinga",
+        "date": "20260929"
+      },
+      {
+        "title": "Ross Gerber Warns US 'Can't Afford' 5% Treasury Yields As Bond Rout Sends Mortgage Rates To 2023 High",
+        "domain": "Yahoo",
+        "date": "20260927"
+      },
+      {
+        "title": "TLT ETF Hits Record Low as Treasury Yields Hover Near 5.2%: Long-Duration Bond Pain Deepens",
+        "domain": "Benzinga",
+        "date": "20260925"
+      },
+      {
+        "title": "Your Bond ETF Lost Money. The Next ETF You Buy Could Matter More",
+        "domain": "Benzinga",
+        "date": "20260923"
+      },
+      {
+        "title": "Elizabeth Warren Calls Kevin Warsh a 'Sock Puppet' After Trump Claims He Told Him How to Vote for a Rate Hike: Peter Schiff Asks If It's 'Another Lie'",
+        "domain": "Yahoo",
+        "date": "20260921"
+      },
+      {
+        "title": "Bond Yields Are Surging Around the World \u2014 But China Is Bucking the Trend: \u2018The Economy Is in Its Own World\u2019",
+        "domain": "Yahoo",
+        "date": "20260917"
+      }
+    ],
+    "fetch_succeeded": true
   }
 ]

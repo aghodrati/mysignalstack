@@ -12579,5 +12579,71 @@
       "summary": "The article presents an in-depth investment thesis on Airbound, an Indian startup founded by Naman Pushp that is developing lightweight autonomous eVTOL aircraft for cargo and eventually passengers. Airbound\u2019s core bet is that carbon-fiber-first design, one-piece manufacturing, electric propulsion, and autonomy can make small aircraft cheaper per kilogram-kilometer than drones, vans, trucks, trains, and eventually cars. The company is starting with a 5-kg delivery drone and plans to scale to human- and family-carrying aircraft, while facing substantial regulatory, safety, manufacturing, and commercialization risks."
     },
     "source": "Not Boring"
+  },
+  "https://stratechery.com/2026/openai-dev-day-dot-and-openais-product-transition-sign-in-with-chatgpt/": {
+    "seen_date": "2026-09-30",
+    "article_date": "2026-09-30",
+    "title": "OpenAI Dev Day, Dot and OpenAI\u2019s Product Transition, Sign In With ChatGPT",
+    "text": "OpenAI's Dev Day showcased a product that is, frankly, pretty confusing. However, there is more vision here than it might seem.",
+    "event": null,
+    "source": "Stratechery"
+  },
+  "https://intelligence.theregister.com/paper/view/20982": {
+    "seen_date": "2026-09-30",
+    "article_date": "2026-09-30",
+    "title": "How and Why CISOs Drive DSPM Adoption",
+    "text": "Loading assets, please wait...",
+    "event": null,
+    "source": "Next Platform"
+  },
+  "https://www.nextplatform.com/ai/2026/09/29/amd-buys-world-labs-for-82-billion-to-get-ai-model-cred/5299801": {
+    "seen_date": "2026-09-30",
+    "article_date": "2026-09-29",
+    "title": "AMD Buys World Labs For $8.2 Billion To Get AI Model Cred",
+    "text": "ai\nAMD Buys World Labs For $8.2 Billion To Get AI Model Cred\nAs you might expect, the Hugging Face open weight AI model distribution hub, which has over 3 million AI models, over 1 million datasets, and over 1.4 million interactive spaces that it hosts, was something that AMD had to focus on as it was trying to increase adoption of its Instinct GPU accelerators. But now Hugging Face is under control of Nvidia after a $12.9 billion acquisition by Big Green earlier this month.\nAnd so, AMD has to do something dramatic to change the narrative as well as to become a model builder in its own right as Nvidia has been since November 2023 with the launch of its Nemotron3 8B family of models. That dramatic thing is to acquire World Labs, a maker of so-called world models that are designed to understand the physics of the world rather than the generate text and images based on the corpus of human knowledge.\nAMD has agreed to pay an incredulous $8.2 billion to acquire World Labs, an AI startup that was founded in January 2024 by Fei-Fei Li, Justin Johnson, Ben Mildenhall, and Christoph Lassner in April 2024 and that has raised $1.23 billion in two rounds of funding \u2013 including angle investors Jeff Dean (Google), Geoff Hinton (Google), Marc Benioff (Salesforce), Reed Hoffman (LinkedIn), and Eric Schmidt (Sun Microsystems and Google). Nvidia and AMD were part of the $1 billion Series B funding in February of this year. At that time, World Labs was valued at around $5 billion, so AMD is paying a premium of around 75 percent to get a team that can build world models.\nAMD, which has broken through a $1 trillion market capitalization recently, is paying the $8.2 billion to the owners of World Labs with stock \u2013 what we lovingly call funny money \u2013 rather than real cash, which AMD cannot afford to blow right now given the investments it must make and the chip capacity and ingredients it must pay for ahead of time to build its CPUs and GPUs.\nWhile World Labs focuses on world models, AMD\u2019s aspirations might be \u2013 and I would argue, should be \u2013 larger than the niche that World Labs has been attacking alongside Nvidia with its Cosmos world models.\nBut World Labs needs to mind the store, too, with Tencent has HunyanWorld and Google has Genie 3 in the game, and AI upstarts Runway, Odyssey, and Decart are also building world models, and World Labs did a public launch of its Marble world model in November 2025 and followed up with a World API cloud access version of Marble in January of this year. The company\u2019s follow-on Atlas world model engine \u2013 an \u201comni world model\u201d that is technically a multimodal autoregressive diffusion transformer \u2013 was launched with early access to a select number of customers in early September, which will be plugged into future Marble versions apparently. Yann LeCun, who used to head up AI research at Meta Platforms, is also up to something in the world model space with his AMI Labs startup.\nHowever, this deal is as much about buying a team as it was buying a product, just like the $40 billion acquisition of Xilinx and the\nFei-Fei Li, who was chief executive officer at World Labs and is now chief scientist at AMD, has a bachelors degree in physics from Princeton University and a PhD in electrical and electronics engineering from Caltech and is one of the two dozen AI luminaries on Earth. Significantly, Li was chief scientist of AI/ML at Google back in January 2017, and left the company in October 2018 as Google\u2019s \u201cProject Maven\u201d collaboration with the US Department of Defense caused an uproar inside of the search engine and cloud giant. Since 2014, Li has been the director of the Stanford AI Lab and was co-director of the Stanford Institute for Human-Centered Artificial Intelligence since leaving Google. Li has, of course, been a professor of computer science at Stanford University for nearly two decades after stints at Princeton and the University of Illinois.\nJustin Johnson got his bachelors in computer science at Caltech and his PhD at Stanford, where he met Li. Johnson was then an AI research scientist at Meta Platforms from 2016 through December 2023 and is currently an adjunct professor of computer science and engineering at the University of Michigan. Ben Mildenhall got his bachelors of computer science at Stanford, where he met Li, and then followed up with a PhD in computer science from the University of California at Berkeley. Mildenhall spent several years as a research scientist at Google, focusing on computer vision and generative 3D models. Christoph Lassner got his informatik degrees at the University of T\u00fcbingen in Germany and then became an applied scientist at Amazon in September 2017. He moved to Meta Platforms as a research scientist and manager after that and did a year at Epic Games building 3D worlds for video games.\nFrom the announcement put out by AMD, it looks like Johnson and Mildenhall will continue running World Labs inside of AMD, while Li will report directly to AMD chief executive officer Lisa Su and will presumably have a much broader role than helping AMD create world models for robots. At the very least, AMD now has aspirations to move its compute engines into robots, as rival Nvidia is already doing. And by the way, Nvidia co-founder and chief executive officer Jensen Huang has put his son, Spencer, in charge of robotics at Big Green, and his daughter Madison is in charge of product marketing and operations for 3D simulation and Omniverse software.\nNo one is talking about the headcount at World Labs or the revenue stream and customer count for the acquired company, but presumably the whole team is moving over and is considerably richer today than they were as last week ended. (Interestingly, co-founder Lassner is not mentioned in the AMD announcement, so maybe they are minus one with the World Labs staff.)\nHere is the thing. If Nvidia can compete with its customers when it comes to model building, then AMD can, too. And probably has to so it can ensure there are open source frontier models to show AMD is more open than Nvidia with its open weight Nemotron GenAI models and with its free and open source Cosmos world model. (The 20 million hours of video used to train Cosmos is not open, and very likely because it was scraped from the Internet and Nvidia does not own it.)\nThe question I have is will Li and Su decide to create an open source GenAI model, and open it all the way up \u2013 source code, weights, and training data \u2013 to prove it is much more open than Nvidia. That\u2019s what I would do if I was Su, and the World Labs team can do this as well as maintain and expand its world models.",
+    "event": {
+      "event": "AMD agreed to acquire AI startup World Labs for $8.2 billion in stock to obtain its world-model technology and research team.",
+      "companies": [
+        "AMD",
+        "NVDA"
+      ],
+      "other_companies_mentioned": [
+        {
+          "name": "World Labs",
+          "ticker": null,
+          "why": "AMD agreed to acquire it for $8.2 billion in stock; develops world models including Marble and Atlas; raised $1.23 billion and was valued at about $5 billion in its February funding round"
+        },
+        {
+          "name": "Hugging Face",
+          "ticker": null,
+          "why": "Operates an AI model, dataset, and interactive-space distribution hub; described as having been acquired by Nvidia for $12.9 billion, increasing pressure on AMD to build its own model ecosystem"
+        }
+      ],
+      "event_type": "m_and_a",
+      "importance": 8,
+      "time_horizon": "months",
+      "key_facts": [
+        "AMD agreed to pay $8.2 billion in stock to acquire World Labs.",
+        "World Labs develops world models intended to understand physical-world behavior rather than primarily generate text and images.",
+        "World Labs raised $1.23 billion across two funding rounds and was valued at about $5 billion in its February Series B financing, implying that AMD is paying roughly a 75% premium.",
+        "World Labs launched its Marble world model in November 2025, its World API cloud-access version in January 2026, and early access to its Atlas omni-world-model engine in September 2026.",
+        "AMD chief scientist Fei-Fei Li will report directly to CEO Lisa Su, while Justin Johnson and Ben Mildenhall are expected to continue running World Labs inside AMD.",
+        "The acquisition is presented as a move for World Labs' technical team as well as its products, potentially expanding AMD's ambitions into robotics and AI model building.",
+        "The article says AMD is pursuing model-building capabilities partly in response to Nvidia's model and world-model efforts and to support a more open AI strategy.",
+        "Nvidia was described as having acquired Hugging Face for $12.9 billion earlier in September, giving it control of a major AI model-distribution platform."
+      ],
+      "type": "news",
+      "novel": true,
+      "summary": "The article reports that AMD will acquire World Labs for $8.2 billion in stock, bringing in a prominent AI research team led by Fei-Fei Li and technology focused on world models. It frames the transaction as a strategic response to Nvidia's expanding role in AI models, software, and robotics, and as an effort to improve adoption of AMD's accelerators. The article also speculates that AMD could use World Labs to develop openly available frontier and world models."
+    },
+    "source": "Next Platform"
+  },
+  "https://www.thediff.co/archive/modern-pricing/": {
+    "seen_date": "2026-09-30",
+    "article_date": "2026-09-29",
+    "title": "Modern Pricing",
+    "text": "Plus! The Numbers; Commoditizing; Allocating Risks; Market Conditions; Supply Chains",
+    "event": null,
+    "source": "The Diff"
   }
 }

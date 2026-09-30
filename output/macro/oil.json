@@ -391,5 +391,150 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "month",
+    "date": "2026-09-30",
+    "value": 90.77999877929688,
+    "delta": 0.6207022290144248,
+    "history": [
+      [
+        "2026-09-01",
+        90.22000122070312
+      ],
+      [
+        "2026-09-02",
+        91.01000213623047
+      ],
+      [
+        "2026-09-03",
+        91.30000305175781
+      ],
+      [
+        "2026-09-04",
+        91.4800033569336
+      ],
+      [
+        "2026-09-08",
+        93.02999877929688
+      ],
+      [
+        "2026-09-09",
+        96.05000305175781
+      ],
+      [
+        "2026-09-10",
+        102.4800033569336
+      ],
+      [
+        "2026-09-11",
+        100.05000305175781
+      ],
+      [
+        "2026-09-14",
+        101.38999938964844
+      ],
+      [
+        "2026-09-15",
+        105.83000183105469
+      ],
+      [
+        "2026-09-16",
+        102.43000030517578
+      ],
+      [
+        "2026-09-17",
+        101.91000366210938
+      ],
+      [
+        "2026-09-18",
+        100.30000305175781
+      ],
+      [
+        "2026-09-21",
+        95.77999877929688
+      ],
+      [
+        "2026-09-22",
+        94.58999633789062
+      ],
+      [
+        "2026-09-23",
+        92.16000366210938
+      ],
+      [
+        "2026-09-24",
+        94.61000061035156
+      ],
+      [
+        "2026-09-25",
+        92.41000366210938
+      ],
+      [
+        "2026-09-28",
+        92.5999984741211
+      ],
+      [
+        "2026-09-29",
+        89.37999725341797
+      ],
+      [
+        "2026-09-30",
+        90.77999877929688
+      ]
+    ],
+    "narrative": "WTI was essentially flat-to-slightly higher over the month, and the headlines do not identify a clear, specific catalyst. Russian crude exports reportedly boomed while Russia\u2019s diesel-sales ban and higher military spending offered conflicting supply and geopolitical signals; meanwhile, the report that markets struggled as Treasury yields climbed and oil slipped points to broader macro pressure rather than a durable oil-specific driver.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Markets Struggle As Treasury Yields Climb And Oil Slips",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "'Russian Crude Exports Boom Blunted by Kremlin\u2019s Diesel Sales Ban' - Bloomberg",
+        "domain": "Benzinga",
+        "date": "20260929"
+      },
+      {
+        "title": "Berkshire's Delta Bet Shows Why Quality Matters In Airline Stocks",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "Reported September 28, 'Russia raises 2027 military spending by 27%, budget documents show' - Reuters Exclusive",
+        "domain": "Benzinga",
+        "date": "20260929"
+      },
+      {
+        "title": "Iran's Supreme Leader Says US Won't Dare to Advance Beyond Arabian Sea While Trump Confirms Talks With Mediators",
+        "domain": "Benzinga",
+        "date": "20260929"
+      },
+      {
+        "title": "Cumberland's Monday Memo",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "Simplify Tops Madison Dearborn With a Rival Bid for USCF",
+        "domain": "Yahoo",
+        "date": "20260928"
+      },
+      {
+        "title": "Peter Schiff Warns Record Diesel Prices Could Leave US Vulnerable To Next Energy Shock, Says Trump's Diesel Export Ban Could 'Backfire'",
+        "domain": "Yahoo",
+        "date": "20260928"
+      },
+      {
+        "title": "Zacks Investment Ideas feature highlights: GLD, QQQ, USO, MU and TWLO",
+        "domain": "Yahoo",
+        "date": "20260924"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

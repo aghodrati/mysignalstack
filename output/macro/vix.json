@@ -564,5 +564,156 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W39"
+  },
+  {
+    "period": "month",
+    "date": "2026-09-30",
+    "value": 16.18000030517578,
+    "delta": -0.15999984741210938,
+    "history": [
+      [
+        "2026-09-01",
+        16.34000015258789
+      ],
+      [
+        "2026-09-02",
+        15.199999809265137
+      ],
+      [
+        "2026-09-03",
+        14.319999694824219
+      ],
+      [
+        "2026-09-04",
+        14.529999732971191
+      ],
+      [
+        "2026-09-07",
+        15.300000190734863
+      ],
+      [
+        "2026-09-08",
+        15.720000267028809
+      ],
+      [
+        "2026-09-09",
+        16.459999084472656
+      ],
+      [
+        "2026-09-10",
+        17.84000015258789
+      ],
+      [
+        "2026-09-11",
+        15.84000015258789
+      ],
+      [
+        "2026-09-14",
+        17.100000381469727
+      ],
+      [
+        "2026-09-15",
+        17.200000762939453
+      ],
+      [
+        "2026-09-16",
+        17.709999084472656
+      ],
+      [
+        "2026-09-17",
+        15.4399995803833
+      ],
+      [
+        "2026-09-18",
+        14.8100004196167
+      ],
+      [
+        "2026-09-21",
+        14.869999885559082
+      ],
+      [
+        "2026-09-22",
+        14.210000038146973
+      ],
+      [
+        "2026-09-23",
+        15.180000305175781
+      ],
+      [
+        "2026-09-24",
+        15.670000076293945
+      ],
+      [
+        "2026-09-25",
+        14.869999885559082
+      ],
+      [
+        "2026-09-28",
+        16.06999969482422
+      ],
+      [
+        "2026-09-29",
+        16.040000915527344
+      ],
+      [
+        "2026-09-30",
+        16.18000030517578
+      ]
+    ],
+    "narrative": "No clear single catalyst drove the modest 0.16-point decline in VIX this month; U.S. equity volatility remained broadly contained despite concerns about bond-market turbulence. The Seeking Alpha headline that the VIX is understating bond volatility and CoinDesk's report that bond traders were bracing for turbulence while stocks remained calm support a divergence between relatively steady equities and elevated broader macro risks.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "The VIX Is Lying To You: Look At Bond Volatility Instead",
+        "domain": "Seeking Alpha",
+        "date": "20260929"
+      },
+      {
+        "title": "5 reasons why market is down today: Sensex, Nifty hit six month lows; India VIX spikes",
+        "domain": "Business Today",
+        "date": "20260929"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20260929"
+      },
+      {
+        "title": "Market wrap: Infosys, Dr Reddy's Labs, Tata Motors PV, Power Grid top gainers and losers on Nifty and Sensex on Monday",
+        "domain": "The Economic Times",
+        "date": "20260928"
+      },
+      {
+        "title": "Nifty, Sensex: History favours stock market comeback in October; stocks to watch",
+        "domain": "Business Today",
+        "date": "20260928"
+      },
+      {
+        "title": "India VIX spikes 14% as oil, geopolitical risks trigger market sell-off",
+        "domain": "Business Standard",
+        "date": "20260928"
+      },
+      {
+        "title": "Stock market's fear index is scary, but not for the reasons you think",
+        "domain": "Financial Post",
+        "date": "20260925"
+      },
+      {
+        "title": "Bond traders brace for turbulence while bitcoin and stocks remain calm",
+        "domain": "CoinDesk",
+        "date": "20260925"
+      },
+      {
+        "title": "Triple whammy sends markets into a tailspin",
+        "domain": "The Financial Express",
+        "date": "20260924"
+      },
+      {
+        "title": "Market wrap: Cipla, ONGC, HDFC Life, Bajaj Finance top gainers and losers on Nifty and Sensex on Thursday",
+        "domain": "The Economic Times",
+        "date": "20260924"
+      }
+    ],
+    "fetch_succeeded": true
   }
 ]
