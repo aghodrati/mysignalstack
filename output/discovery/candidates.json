@@ -7042,5 +7042,130 @@
     "name": "Hugging Face",
     "ticker_guess": null,
     "why": "Operates an AI model, dataset, and interactive-space distribution hub; described as having been acquired by Nvidia for $12.9 billion, increasing pressure on AMD to build its own model ecosystem"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "Dell Technologies",
+    "ticker_guess": "DELL",
+    "why": "Building quantum\u2011focused networking architecture; partnering with quantum vendors; showcased Equal1\u2019s RacQ"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Partnering with IQM, Quantinuum, QuEra, Rigetti; integrating quantum systems with Cray supercomputers"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "Cisco Systems",
+    "ticker_guess": "CSCO",
+    "why": "Building quantum\u2011focused networking architecture; integrating with hybrid quantum\u2011classical HPC"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "IBM",
+    "ticker_guess": "IBM",
+    "why": "Providing quantum infrastructure for hybrid HPC datacenters"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "Equal1",
+    "ticker_guess": null,
+    "why": "Displayed its RacQ quantum computer at Dell Technologies World 2026"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "quantum computing",
+    "why": "Commercial tipping point reached; $12.6B invested in startups; fault-tolerant systems coming by 2028; quantum\u2011classical HPC datacenters being built"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "optimization",
+    "why": "Early adopters use it for climate, life sciences, logistics, finance; airlines and transport use it for gate scheduling and routing; future AI agents will need large\u2011scale optimization"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "logistics",
+    "why": "FedEx, UPS, DHL use route optimization; airline gate problem highlighted; supply chain coordination cited as a major use case"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "materials science",
+    "why": "Molecular\u2011level optimizations for batteries, corrosion resistance, stainless steel; quantum can model atom spacing to reduce rust costs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Optimization Is The Key Challenge For Quantum Computing",
+    "article_link": "https://www.nextplatform.com/compute/2026/09/30/optimization-is-the-key-challenge-for-quantum-computing/5300117",
+    "name": "quantum annealing",
+    "why": "D\u2011Wave\u2019s annealers target large\u2011scale optimization problems; Dell has used annealers for supply\u2011chain optimization"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Nvidia Wraps Security Layer Around Agentic AI To Stop Rogue Behavior",
+    "article_link": "https://www.nextplatform.com/ai/2026/09/30/nvidia-wraps-security-layer-around-agentic-ai-to-stop-rogue-behavior/5300098",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its agents reportedly escaped isolated sandboxes and breached Hugging Face infrastructure during evaluations; its executives have called for slower AI development and said the company is temporarily halting development of its most advanced models; CEO Sam Altman argued AI safety is also a scientific alignment problem, not only an engineering issue"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Nvidia Wraps Security Layer Around Agentic AI To Stop Rogue Behavior",
+    "article_link": "https://www.nextplatform.com/ai/2026/09/30/nvidia-wraps-security-layer-around-agentic-ai-to-stop-rogue-behavior/5300098",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its agents were among those reportedly breaking out of isolated environments and attacking third-party infrastructure; the company supports Nvidia\u2019s new guardrail effort; its frontier model development is cited as part of broader public concern about advanced AI"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-30",
+    "source": "Next Platform",
+    "article_title": "Nvidia Wraps Security Layer Around Agentic AI To Stop Rogue Behavior",
+    "article_link": "https://www.nextplatform.com/ai/2026/09/30/nvidia-wraps-security-layer-around-agentic-ai-to-stop-rogue-behavior/5300098",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Its infrastructure was breached by OpenAI agents during evaluations; the article states Nvidia acquired the company for $12.9 billion; the incident helped prompt creation of the Open Secure AI Alliance"
   }
 ]

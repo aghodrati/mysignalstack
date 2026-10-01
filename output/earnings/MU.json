@@ -83,5 +83,38 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-09-30",
+    "eps_estimate": 31.82,
+    "reported_eps": 33.42,
+    "surprise_pct": 5.03,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-01",
+    "transcript_date": "2026-10-01",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/01/micron-mu-q4-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.88,
+    "guidance_summary": "Q1 FY2027 revenue guided to $60-$63 billion, non-GAAP gross margin to approximately 86.3%, and non-GAAP EPS to $37.15-$39.15 on approximately 1.15 billion diluted shares. Management expects single-digit sequential bit growth and double-digit cost growth for both DRAM and NAND. FY2027 capital expenditures are expected to increase, with the majority of incremental construction spending directed toward clean-room capacity in Idaho and Singapore coming online from late 2028 onward; R&D is expected to rise by more than $1 billion.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On 2028 margins and supply-demand, analysts asked why tightness and profitability would persist beyond 2027. Management cited stronger server and agentic-AI demand, over 75% of FY2027 shipments already committed, expanding SCAs, rising HBM trade ratios, and clean-room lead times, stating it has no line of sight to when supply and demand will balance.",
+      "On HBM market size and market share, management declined to update its TAM outlook or provide a specific share target, saying HBM will grow faster than conventional DRAM and that share should remain around Micron's broader DRAM share. This was a positive demand read but a notably non-specific answer on sizing and competitive ambitions.",
+      "On new SCAs and pricing, management said the basic floor-and-ceiling framework remains common, but new agreements reflect higher current and expected market pricing; roughly three-quarters of SCA revenue has defined pricing frameworks while the remainder remains subject to periodic negotiation.",
+      "On industry supply growth, management gave a surprisingly specific explanation for expected DRAM supply deceleration despite higher capex: increasing HBM4/HBM4E trade ratios, diminishing technology-transition gains, and clean-room constraints. It also said any incremental supply would likely be absorbed by latent AI demand and higher memory content per system."
+    ],
+    "risks": [
+      "Management explicitly said it has no line of sight to when supply and demand will balance, implying continued memory-market volatility and limited visibility beyond contracted volumes.",
+      "Mobile and client bit shipments declined sequentially for a second consecutive quarter, with higher pricing and mix masking weaker unit demand; elevated memory prices could further pressure mainstream demand.",
+      "The majority of incremental capex is for clean-room construction that will not generate meaningful bits until late 2028 or later, creating execution, timing, and return-on-capital risk.",
+      "HBM migration toward HBM4 and HBM4E carries higher trade ratios and may constrain conventional DRAM supply growth despite substantial capital investment.",
+      "Management did not provide updated HBM TAM or a precise market-share target, leaving uncertainty around the ultimate size, economics, and competitive position of the HBM opportunity.",
+      "China exposure is expected to fall to the single-digit percentage range, reducing geopolitical and local-competition exposure but also limiting potential sales in China."
+    ],
+    "summary": "The call strongly supports a bullish view: Q1 revenue and EPS guidance are exceptionally high, gross margins are expected to remain elevated, demand is broadening from accelerator HBM into CPU-based agentic-AI systems, and more than 75% of FY2027 shipments are already allocated or contracted. Q&A reinforced confidence in tight conditions through 2028 and favorable pricing, although management's lack of visibility on market balance, ongoing mobile/client bit declines, high HBM trade ratios, and long-dated clean-room spending remain important risks.",
+    "type": "earnings_transcript"
   }
 ]
