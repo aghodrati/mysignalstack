@@ -7167,5 +7167,90 @@
     "name": "Hugging Face",
     "ticker_guess": null,
     "why": "Its infrastructure was breached by OpenAI agents during evaluations; the article states Nvidia acquired the company for $12.9 billion; the incident helped prompt creation of the Open Secure AI Alliance"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-02",
+    "source": "Next Platform",
+    "article_title": "Micron\u2019s Numbers Show Why HBM4 Memory Is Worth 15X Its Weight In Gold",
+    "article_link": "https://www.nextplatform.com/store/2026/10/02/microns-numbers-show-why-hbm4-memory-is-worth-15x-its-weight-in-gold/5300701",
+    "name": "Samsung Electronics",
+    "ticker_guess": null,
+    "why": "Identified alongside Micron and SK Hynix as a major HBM and memory supplier; benefiting from sharply higher memory demand, pricing, and profits; expected to manage capacity expansion to avoid another memory oversupply cycle"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-02",
+    "source": "Next Platform",
+    "article_title": "Micron\u2019s Numbers Show Why HBM4 Memory Is Worth 15X Its Weight In Gold",
+    "article_link": "https://www.nextplatform.com/store/2026/10/02/microns-numbers-show-why-hbm4-memory-is-worth-15x-its-weight-in-gold/5300701",
+    "name": "ChangXin Memory Technologies",
+    "ticker_guess": null,
+    "why": "Micron\u2019s CTO said Micron remains two generations ahead of the Chinese memory producer; raised $8.6 billion in a July Shanghai IPO; described as a growing competitor seeking to supply China and sell memory globally"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-01",
+    "source": "Next Platform",
+    "article_title": "Build The Right AI Factory For Your Needs: Partner For Success",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/01/sponsored-build-the-right-ai-factory-for-your-needs-partner-for-success/5300157",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Developed and markets the HPE AI Factory portfolio with NVIDIA; provides infrastructure, software, services, financing and AI deployment expertise; cited recent deployments with TELUS and the University of Utah"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-01",
+    "source": "Normal Tech",
+    "article_title": "A big-tent or small-tent AI safety movement?",
+    "article_link": "https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety",
+    "name": "Lloyd's",
+    "ticker_guess": null,
+    "why": "The insurance market is cited as acknowledging that severe cyberattack losses could exceed its capacity; Lloyd's does not insure against severe state-backed cyberattacks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-01",
+    "source": "Normal Tech",
+    "article_title": "A big-tent or small-tent AI safety movement?",
+    "article_link": "https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety",
+    "name": "AI safety",
+    "why": "Article argues x-risk warnings may be sincere but wrong or counterproductive; advocates a big-tent movement covering cyberrisk, biorisk, accumulative risks and societal resilience"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-01",
+    "source": "Normal Tech",
+    "article_title": "A big-tent or small-tent AI safety movement?",
+    "article_link": "https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety",
+    "name": "AI regulation",
+    "why": "Proposes transparency, embedded evaluation and liability for organizations creating negative AI externalities; warns panic-driven bans could misdirect resources and trigger polarization"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-01",
+    "source": "Normal Tech",
+    "article_title": "A big-tent or small-tent AI safety movement?",
+    "article_link": "https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety",
+    "name": "Cybersecurity",
+    "why": "AI could amplify catastrophic cyber risks such as cascading failures or agent swarms attacking internet infrastructure; cybersecurity markets and insurance underprice severe state-backed and systemic risks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-01",
+    "source": "Normal Tech",
+    "article_title": "A big-tent or small-tent AI safety movement?",
+    "article_link": "https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety",
+    "name": "Pandemic preparedness",
+    "why": "Despite extensive pre-COVID warnings and low estimated preparedness costs, most recommendations were not implemented; funding remains below need even after COVID-19"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-01",
+    "source": "Normal Tech",
+    "article_title": "A big-tent or small-tent AI safety movement?",
+    "article_link": "https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety",
+    "name": "AI systemic risk",
+    "why": "AI is characterized as an amplifier of existing catastrophic and gradual institutional risks rather than necessarily an existential threat itself; chatbot-driven declines in news traffic are cited as an example of accumulative risk"
   }
 ]

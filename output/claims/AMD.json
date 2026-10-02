@@ -2848,5 +2848,43 @@
     "trade_worthy": false,
     "context": "AMD agreed to pay the full $8.2 billion consideration in stock rather than cash. Because the acquired company\u2019s owners receive AMD equity, existing shareholders bear dilution and the opportunity cost of transferring part of AMD\u2019s future upside to World Labs sellers.",
     "source": "Next Platform"
+  },
+  {
+    "id": "8e1fa0a1cb834b1e",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/store/2026/10/02/microns-numbers-show-why-hbm4-memory-is-worth-15x-its-weight-in-gold/5300701",
+    "source_title": "Micron\u2019s Numbers Show Why HBM4 Memory Is Worth 15X Its Weight In Gold",
+    "event_type": "earnings",
+    "created": "2026-10-02",
+    "claim": "AMD\u2019s AI accelerator business should continue to benefit from strong HBM demand because scarce high-bandwidth memory is an essential component of the training and inference systems that use its accelerators.",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article explicitly identifies HBM as a prerequisite for the generative-AI ecosystem and says that HBM made by Micron, Samsung, and SK Hynix underpins both Nvidia and AMD accelerators. Micron\u2019s Cloud Memory sales, dominated by HBM, grew 3.6X year over year, while HBM supply is largely committed and pricing is rising, indicating sustained demand for the memory component used alongside AMD\u2019s AI products.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "6c6c3ca59cf6e178",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/store/2026/10/02/microns-numbers-show-why-hbm4-memory-is-worth-15x-its-weight-in-gold/5300701",
+    "source_title": "Micron\u2019s Numbers Show Why HBM4 Memory Is Worth 15X Its Weight In Gold",
+    "event_type": "earnings",
+    "created": "2026-10-02",
+    "claim": "Tighter HBM supply and rising HBM prices in 2027-2028 could constrain AMD\u2019s AI accelerator shipments or pressure system economics if AMD cannot secure sufficient memory at acceptable costs.",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Micron expects memory supply constraints to worsen in calendar 2027 and 2028, with HBM4E and HBM5 requiring more DRAM and facing greater manufacturing-yield challenges. Micron has already contracted most of its 2027 HBM bit supply at significantly higher prices, while customers have provided large prepayments to secure memory; the article does not identify equivalent AMD-specific supply commitments, so AMD may face a component-availability and cost risk as its AI accelerator demand grows.",
+    "source": "Next Platform"
   }
 ]
