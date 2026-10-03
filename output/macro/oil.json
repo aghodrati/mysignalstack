@@ -536,5 +536,72 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-03",
+    "value": 91.11000061035156,
+    "delta": -1.4067774053025506,
+    "history": [
+      [
+        "2026-09-28",
+        92.5999984741211
+      ],
+      [
+        "2026-09-29",
+        89.37999725341797
+      ],
+      [
+        "2026-09-30",
+        90.41999816894531
+      ],
+      [
+        "2026-10-01",
+        92.87000274658203
+      ],
+      [
+        "2026-10-02",
+        91.11000061035156
+      ]
+    ],
+    "narrative": "The clearest specific pressure was the reported G7 plan to release up to 100 million barrels, alongside President Trump\u2019s claim that Europe would immediately release heavily stocked diesel supplies; that prospective supply surge plausibly weighed on WTI. The opposing headline\u2014Brent returning above $100 as a third aircraft carrier headed to the Middle East\u2014signals geopolitical upside risk, so the weekly decline likely reflected a tug-of-war rather than a clean fundamental trend.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Q3 Recap: Resilience Is Reshaping The Outlook",
+        "domain": "SeekingAlpha",
+        "date": "20261003"
+      },
+      {
+        "title": "Equity Outlook: AI, Higher Rates Raise The Bar For Diversification",
+        "domain": "SeekingAlpha",
+        "date": "20261002"
+      },
+      {
+        "title": "Brent Oil Is Back Above $100 as a Third Aircraft Carrier Heads to the Middle East",
+        "domain": "Yahoo",
+        "date": "20261002"
+      },
+      {
+        "title": "'G7 to Release Up to 100M of Barrels of Diesel and Oil'- Bloomberg",
+        "domain": "Benzinga",
+        "date": "20261002"
+      },
+      {
+        "title": "President Trump, On Social Media, Says Europe Has Just Agreed To Release Massive Amount Of Heavily Stocked Diesel Oil; Process To Begin Immediately",
+        "domain": "Benzinga",
+        "date": "20261002"
+      },
+      {
+        "title": "Simplify Tops Madison Dearborn With a Rival Bid for USCF",
+        "domain": "Yahoo",
+        "date": "20260928"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W40",
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

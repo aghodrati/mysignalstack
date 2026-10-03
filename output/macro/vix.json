@@ -715,5 +715,79 @@
       }
     ],
     "fetch_succeeded": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-03",
+    "value": 15.3100004196167,
+    "delta": 0.4400005340576172,
+    "history": [
+      [
+        "2026-09-28",
+        16.06999969482422
+      ],
+      [
+        "2026-09-29",
+        16.040000915527344
+      ],
+      [
+        "2026-09-30",
+        16.34000015258789
+      ],
+      [
+        "2026-10-01",
+        16.389999389648438
+      ],
+      [
+        "2026-10-02",
+        15.3100004196167
+      ]
+    ],
+    "narrative": "There is no clear single catalyst for the modest rise in the VIX; the week appears to reflect a broader risk-off backdrop, with oil and geopolitical concerns highlighted in the September 28 Business Standard report and market selloffs noted in the India-focused headlines. Those developments may have reinforced caution, but they do not specifically establish a driver for U.S. equity volatility.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Cboe wants to turn VIX into a never",
+        "domain": "CoinDesk",
+        "date": "20261002"
+      },
+      {
+        "title": "Market wrap: Infosys, HDFC Bank, Bajaj Auto, Maruti Suzuki among top gainers and losers on Nifty and Sensex on Thursday",
+        "domain": "The Economic Times",
+        "date": "20261001"
+      },
+      {
+        "title": "D Street sell off deepens: Sensex, Nifty tumble; here's what's driving the fall",
+        "domain": "Business Today",
+        "date": "20261001"
+      },
+      {
+        "title": "3 Market Predictions For October",
+        "domain": "Seeking Alpha",
+        "date": "20260930"
+      },
+      {
+        "title": "The VIX Is Lying To You: Look At Bond Volatility Instead",
+        "domain": "Seeking Alpha",
+        "date": "20260929"
+      },
+      {
+        "title": "5 reasons why market is down today: Sensex, Nifty hit six month lows; India VIX spikes",
+        "domain": "Business Today",
+        "date": "20260929"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20260929"
+      },
+      {
+        "title": "India VIX spikes 14% as oil, geopolitical risks trigger market sell-off",
+        "domain": "Business Standard",
+        "date": "20260928"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W40"
   }
 ]

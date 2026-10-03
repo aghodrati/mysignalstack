@@ -584,5 +584,69 @@
       }
     ],
     "fetch_succeeded": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-03",
+    "value": 5.2769999504089355,
+    "delta": 0.09299993515014648,
+    "history": [
+      [
+        "2026-09-28",
+        5.239999771118164
+      ],
+      [
+        "2026-09-29",
+        5.255000114440918
+      ],
+      [
+        "2026-09-30",
+        5.293000221252441
+      ],
+      [
+        "2026-10-01",
+        5.236999988555908
+      ],
+      [
+        "2026-10-02",
+        5.2769999504089355
+      ]
+    ],
+    "narrative": "No clear single catalyst is evident this week; the headlines are mixed, with \u201cThe Case For A Fed Pause Strengthens\u201d favoring lower yields while the \u201cBullish Goldilocks Macro\u201d theme and reports of 24-year-high Treasury yields are consistent with firm growth and term-premium pressure. The Middle East carrier headline may have added volatility, but it does not clearly explain the modest 9-basis-point rise on its own.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "The Case For A Fed Pause Strengthens",
+        "domain": "SeekingAlpha",
+        "date": "20261003"
+      },
+      {
+        "title": "Bullish Goldilocks Macro, Sort Of",
+        "domain": "SeekingAlpha",
+        "date": "20261003"
+      },
+      {
+        "title": "A $1.2 Million Portfolio With No Bonds in It? These 3 ETFs Add Ballast Without Ending the Growth",
+        "domain": "Yahoo",
+        "date": "20261002"
+      },
+      {
+        "title": "Gold ETFs Keep the Bid, but Investors Miss This Key Seasonality Pattern",
+        "domain": "Benzinga",
+        "date": "20261002"
+      },
+      {
+        "title": "AI Will Kill Us in 10 Years, but Bond Market Will Do It 'Next Week,' Says Strategist As Treasury Yields Hit 24-Year Highs",
+        "domain": "Yahoo",
+        "date": "20261002"
+      },
+      {
+        "title": "Jim Cramer Says Third Aircraft Carrier With 10,000 Troops 'Streaming' to Middle East Makes It 'Tough' for Bonds to Rally",
+        "domain": "Benzinga",
+        "date": "20261002"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W40"
   }
 ]

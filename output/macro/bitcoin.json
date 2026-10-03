@@ -623,5 +623,65 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-03",
+    "value": 84629.3671875,
+    "delta": 0.26409599532619676,
+    "history": [
+      [
+        "2026-09-27",
+        84458.0859375
+      ],
+      [
+        "2026-09-28",
+        83502.609375
+      ],
+      [
+        "2026-09-29",
+        83622.4296875
+      ],
+      [
+        "2026-09-30",
+        83553.8515625
+      ],
+      [
+        "2026-10-01",
+        84853.1015625
+      ],
+      [
+        "2026-10-02",
+        84497.2109375
+      ],
+      [
+        "2026-10-03",
+        84629.3671875
+      ]
+    ],
+    "narrative": "Bitcoin was essentially flat on the week (+0.26%), and the listed headlines provide no clear, specific catalyst. The reports of lower equity futures amid rising oil prices suggest a mildly risk-off backdrop, but the BITO dividend discussion and crisis-dynamics commentary do not convincingly explain Bitcoin's move.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Significant Step For Crisis Dynamics",
+        "domain": "SeekingAlpha",
+        "date": "20261003"
+      },
+      {
+        "title": "BITO: A Large Dividend Boost Could Be Due, But This Is Still A Fund To Avoid",
+        "domain": "SeekingAlpha",
+        "date": "20260929"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Monday as Oil Prices Rise",
+        "domain": "Yahoo",
+        "date": "20260928"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W40",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

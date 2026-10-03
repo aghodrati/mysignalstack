@@ -1594,5 +1594,24 @@
     "trade_worthy": false,
     "context": "The article argues that agents make the ability to do things abundant while making user volition and inspiration scarce; the companies that control the agent interface could become gatekeepers between users and the underlying apps and services. Meta\u2019s reach to nearly every person, established messaging products, and ability to provision a computer for each agent are presented as advantages in winning that role, potentially extending Meta\u2019s influence beyond social networking into broader consumer activity and future devices such as glasses.",
     "source": "Stratechery"
+  },
+  {
+    "id": "c74c9bc1076bbf96",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/dots-and-question-marks/",
+    "source_title": "2026.40: Dots and Question Marks",
+    "event_type": "product_launch",
+    "created": "2026-10-02",
+    "claim": "Meta\u2019s decision to pursue the Meta Enterprise Platform risks wasting resources on an unclear customer and distracting it from the potentially much larger consumer-agent opportunity, weakening its strategic position in the emerging agent market.",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that agents could become a foundational consumer technology and that Meta may be well positioned to own the consumer-agent space, but criticizes Meta\u2019s announcement of an enterprise platform shortly afterward because the target customer is unclear and the enterprise focus could divert attention from consumer products. The implication is primarily strategic rather than a quantified near-term earnings effect.",
+    "source": "Stratechery"
   }
 ]

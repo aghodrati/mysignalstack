@@ -645,5 +645,72 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-03",
+    "value": 4162.2998046875,
+    "delta": -3.6772281644662064,
+    "history": [
+      [
+        "2026-09-28",
+        4168.39990234375
+      ],
+      [
+        "2026-09-29",
+        4179.7001953125
+      ],
+      [
+        "2026-09-30",
+        4186.7001953125
+      ],
+      [
+        "2026-10-01",
+        4202.2998046875
+      ],
+      [
+        "2026-10-02",
+        4162.2998046875
+      ]
+    ],
+    "narrative": "No clear single catalyst explains the nearly flat weekly move in gold futures. The September jobs report miss and the headline that gold ETFs are keeping the bid are modestly supportive, but the silver selloff and broad commentary do not establish a specific gold direction; this likely reflects positioning and drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Significant Step For Crisis Dynamics",
+        "domain": "SeekingAlpha",
+        "date": "20261003"
+      },
+      {
+        "title": "Bullish Goldilocks Macro, Sort Of",
+        "domain": "SeekingAlpha",
+        "date": "20261003"
+      },
+      {
+        "title": "September Jobs Report Misses: US Economy Adds 29,000 Jobs",
+        "domain": "Benzinga",
+        "date": "20261002"
+      },
+      {
+        "title": "Gold ETFs Keep the Bid, but Investors Miss This Key Seasonality Pattern",
+        "domain": "Benzinga",
+        "date": "20261002"
+      },
+      {
+        "title": "Gold Is Trading Around $4,140 an Ounce. He Sells $100,000 at 67 Instead of Taking More From His IRA, and the IRS Can Tax the Gain at Up to 28%",
+        "domain": "Yahoo",
+        "date": "20261001"
+      },
+      {
+        "title": "Silver Has Now Lost Nearly Half Its Value. Here\u2019s What Broke the Metals Trade",
+        "domain": "Yahoo",
+        "date": "20260930"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W40",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

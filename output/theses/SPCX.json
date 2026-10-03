@@ -90,5 +90,47 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.48,
     "confidence_after": 0.48
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-03",
+    "thesis": "SPCX remains a high-growth AI-infrastructure and launch-platform story, but extreme valuation, severe operating losses, customer and Nvidia dependence, and substantial execution risk make downside more likely than the bullish expansion narrative can presently justify.",
+    "direction": "short",
+    "confidence": 0.72,
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.72,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.72,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": -25,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Delays or cost overruns in the proposed 10GW-plus 2027 datacenter rollout expose financing, power, labor, equipment, and commissioning constraints.",
+      "Nvidia allocation or product-transition problems disrupt SPCX's accelerated-system deliveries, while AI-system order timing causes another revenue shortfall.",
+      "Customer concentration worsens, major customers reduce orders, or Dell competition pressures pricing and share gains.",
+      "Terafab investment or other vertical-integration initiatives consume substantial capital without producing timely operating benefits.",
+      "Starship's engine-shutdown issue delays routine launches, reuse, or Starlink V3 deployment economics."
+    ],
+    "invalidation": [
+      "SPCX executes the 10GW-plus 2027 datacenter expansion on schedule, secures major Microsoft or Google capacity commitments, and converts capacity into durable high-margin recurring revenue.",
+      "Sustained AI-infrastructure demand, stronger Vera-Rubin mix, manufacturing expansion, and improving margins materially reduce the valuation burden.",
+      "Starship achieves reliable routine reuse and accelerates Starlink expansion while launch costs decline.",
+      "The next quarters show durable earnings and cash-flow improvement rather than merely a one-quarter EPS beat."
+    ],
+    "reasoning": "The fundamental picture is bearish because a -41.6% operating margin and roughly 125x forward earnings/38x EV-to-revenue valuation outweigh 15.4% growth and reported free cash flow, while the latest quarter's $0.09 loss versus a $0.29 loss estimate was a meaningful beat but no earnings-call evidence is available and does not resolve the structural risks.",
+    "claims_considered": 23
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-03",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.72,
+    "confidence_after": 0.72
   }
 ]

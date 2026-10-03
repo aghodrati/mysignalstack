@@ -7252,5 +7252,15 @@
     "article_link": "https://www.normaltech.ai/p/a-big-tent-or-small-tent-ai-safety",
     "name": "AI systemic risk",
     "why": "AI is characterized as an amplifier of existing catastrophic and gradual institutional risks rather than necessarily an existential threat itself; chatbot-driven declines in news traffic are cited as an example of accumulative risk"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-02",
+    "source": "Stratechery",
+    "article_title": "2026.40: Dots and Question Marks",
+    "article_link": "https://stratechery.com/2026/dots-and-question-marks/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Held Dev Day and introduced new pricing tiers and overlapping products; launched consumer-oriented \u201cdots\u201d that are reportedly limited to Pro subscribers; its product strategy and branding were described as confusing but potentially more visionary than they appear"
   }
 ]

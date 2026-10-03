@@ -2886,5 +2886,24 @@
     "trade_worthy": false,
     "context": "Micron expects memory supply constraints to worsen in calendar 2027 and 2028, with HBM4E and HBM5 requiring more DRAM and facing greater manufacturing-yield challenges. Micron has already contracted most of its 2027 HBM bit supply at significantly higher prices, while customers have provided large prepayments to secure memory; the article does not identify equivalent AMD-specific supply commitments, so AMD may face a component-availability and cost risk as its AI accelerator demand grows.",
     "source": "Next Platform"
+  },
+  {
+    "id": "b361a95751f9bd72",
+    "ticker": "AMD",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-213",
+    "source_title": "Weekly Dose of Optimism #213",
+    "event_type": "other",
+    "created": "2026-10-02",
+    "claim": "AMD\u2019s acquisition of World Labs could strengthen its AI-related capabilities and strategic positioning, but the article provides too little detail to determine a material effect on AMD\u2019s earnings or valuation.",
+    "direction": "long",
+    "confidence": 0.66,
+    "importance": 2,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article mentions in its extra doses, without further explanation, that AMD bought World Labs; it gives no acquisition price, product details, expected synergies, revenue contribution, or integration risks. Any bullish implication therefore rests only on the possibility that the deal expands AMD\u2019s AI technology or market position.",
+    "source": "Not Boring"
   }
 ]
