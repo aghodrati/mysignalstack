@@ -7262,5 +7262,60 @@
     "name": "OpenAI",
     "ticker_guess": null,
     "why": "Held Dev Day and introduced new pricing tiers and overlapping products; launched consumer-oriented \u201cdots\u201d that are reportedly limited to Pro subscribers; its product strategy and branding were described as confusing but potentially more visionary than they appear"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-03",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-203/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Nearly withdrew from consulting with the Vatican over concern that an encyclical might declare AI systems non-conscious; researchers including Chris Olah say they are uncertain whether AI models are conscious; its spending and potential profitability are discussed in the context of AI labs\u2019 growth strategies"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-04",
+    "source": "Doomberg",
+    "article_title": "Straw Clutching",
+    "article_link": "https://newsletter.doomberg.com/p/straw-clutching",
+    "name": "diesel",
+    "why": "US diesel prices are at record highs; Elevated fuel costs are contributing to broader inflation; Diesel is crucial to the economy and election-year politics"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-04",
+    "source": "Doomberg",
+    "article_title": "Straw Clutching",
+    "article_link": "https://newsletter.doomberg.com/p/straw-clutching",
+    "name": "fuel exports",
+    "why": "The Trump administration is considering restricting US diesel exports; Energy Secretary Chris Wright has sought refiners\u2019 support for voluntary export limits; A short-term export ban is presented as an alternative to voluntary restrictions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-04",
+    "source": "Doomberg",
+    "article_title": "Straw Clutching",
+    "article_link": "https://newsletter.doomberg.com/p/straw-clutching",
+    "name": "oil refining",
+    "why": "The article attributes diesel scarcity to a global refining crisis; US refiners are supplying domestic consumers while participating in global markets; Refinery operations remain subject to government consent and conditions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-04",
+    "source": "Doomberg",
+    "article_title": "Straw Clutching",
+    "article_link": "https://newsletter.doomberg.com/p/straw-clutching",
+    "name": "energy regulation",
+    "why": "The administration has multiple options to restrain domestic diesel prices; Industry groups are framing the policy choice as either a ban or no action; The article argues the White House has more leverage than industry claims"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-04",
+    "source": "Doomberg",
+    "article_title": "Straw Clutching",
+    "article_link": "https://newsletter.doomberg.com/p/straw-clutching",
+    "name": "US politics",
+    "why": "High diesel prices are approaching the November midterm elections; Rising fuel costs are beginning to affect the broader economy; The administration is seeking action to limit political and inflationary fallout"
   }
 ]
