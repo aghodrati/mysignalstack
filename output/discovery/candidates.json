@@ -7317,5 +7317,25 @@
     "article_link": "https://newsletter.doomberg.com/p/straw-clutching",
     "name": "US politics",
     "why": "High diesel prices are approaching the November midterm elections; Rising fuel costs are beginning to affect the broader economy; The administration is seeking action to limit political and inflationary fallout"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "Stratechery",
+    "article_title": "Apple and a Hacker\u2019s Future",
+    "article_link": "https://stratechery.com/2026/apple-and-a-hackers-future/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude Code was running persistently on the hacked Mac Mini; it detected suspicious activity, halted commands, provided diagnostics, and helped identify and remove the malware"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "Stratechery",
+    "article_title": "Apple and a Hacker\u2019s Future",
+    "article_link": "https://stratechery.com/2026/apple-and-a-hackers-future/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Codex and ChatGPT were running on or used to access the Mac Mini; the article also mentions OpenAI\u2019s Dots as an agent-monitoring-related product"
   }
 ]
