@@ -187,11 +187,20 @@ def aggregate_claims(
     Raises RateLimited (propagated from finance.llm.complete) if every model
     is currently out of quota, same as every other Stage call.
     """
+    # `claim` is now a short headline (the full mechanism/explanation lives in `context` instead --
+    # see extract_claims' own prompt), so Stage C would otherwise lose that detail entirely. Adding
+    # `context` to every claim here would be expensive at scale (claims accumulate forever and a
+    # heavy ticker can hit MAX_CLAIMS_FOR_AGGREGATION, each context averaging ~2x a claim's own
+    # token cost) for information that mostly matters on the claims actually driving the current
+    # thesis -- so only the important ones (>=7, the same bar extract_claims' own prompt calls "the
+    # article's main point") carry their context along; everything else still contributes its
+    # direction/confidence/importance to the synthesis, just without the extra explanation.
     claim_summaries = [
         {
             "claim": c.claim, "direction": c.direction, "confidence": c.confidence, "importance": c.importance,
             "trade_worthy": c.trade_worthy, "source": c.source_title, "date": c.created.isoformat(),
             "expected_horizon_days": c.expected_horizon_days,
+            **({"context": c.context} if c.importance >= 7 and c.context else {}),
         }
         for c in sorted(claims, key=lambda c: c.created)
     ]

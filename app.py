@@ -787,7 +787,8 @@ def _claim_card_html(c, article_summary: str | None, also_claims: list | None = 
     if also_claims:
         back_bits.append('<div class="keep-card-summary-title">\U0001f517 Also relevant to</div>')
         back_bits += [
-            f'<div class="keep-card-summary keep-card-risk-item">#{html.escape(oc.ticker)}: '
+            f'<div class="keep-card-summary keep-card-risk-item">'
+            f'{_DIRECTION_ARROW.get(oc.direction, "➖")} #{html.escape(oc.ticker)}: '
             f'{html.escape(oc.claim)}</div>'
             for oc in also_claims
         ]
@@ -1004,8 +1005,62 @@ def _show_more_cards(shown_key: str, current_shown: int) -> None:
     st.session_state[shown_key] = current_shown + _NATIVE_PAGE_SIZE
 
 
-def _clear_recent_search() -> None:
-    st.session_state["recent_page_search"] = ""
+def _clear_search_key(key: str) -> None:
+    st.session_state[key] = ""
+
+
+def _render_search_box(key: str) -> str:
+    """Shared search input + clear button + Escape-to-clear binding -- the Recent page's own search
+    UI (_parse_search_query/_card_matches_search still do the actual matching), factored out so
+    Discovery/Interviews can get the identical box instead of re-implementing the layout, the clear
+    button, and the Escape-key JS shim. Right-aligned, at most half-width -- a search box doesn't
+    need to dominate the row above it. Returns the raw text typed so far (caller decides what
+    "searching" means for its own page, same as _render_recent_page's `is_searching` already did).
+    """
+    _, search_col = st.columns([1, 1])
+    with search_col:
+        input_col, clear_col = st.columns([6, 1], vertical_alignment="center")
+        with input_col:
+            search_query = st.text_input(
+                "Search", placeholder="Search cards...", key=key, label_visibility="collapsed",
+            )
+        with clear_col:
+            if search_query.strip():
+                st.button("✕", key=f"{key}_clear", on_click=_clear_search_key, args=(key,), help="Clear search")
+    if search_query.strip():
+        # Same window.parent.document technique as _maybe_close_sidebar_on_mobile -- reaches out of
+        # this component's own iframe into the real page to click the "✕" button above when Escape
+        # is pressed, since Streamlit has no Python-level keyboard-shortcut API. Bound once per real
+        # page load (doc.__searchEscBound guard), not once per rerun -- this same components.html
+        # call re-runs on every rerun while searching, and would otherwise stack a fresh duplicate
+        # "keydown" listener each time, firing the click N times on the Nth Escape press. Shared
+        # across every page using this box (not per-key) since only one such box is ever visible
+        # at a time -- the guard just needs to exist once per real page load.
+        components.html(
+            """
+            <script>
+            (function() {
+                try {
+                    var doc = window.parent.document;
+                    if (doc.__searchEscBound) return;
+                    doc.__searchEscBound = true;
+                    doc.addEventListener("keydown", function(e) {
+                        if (e.key !== "Escape") return;
+                        var buttons = doc.querySelectorAll("button");
+                        for (var i = 0; i < buttons.length; i++) {
+                            if (buttons[i].textContent.trim() === "✕") {
+                                buttons[i].click();
+                                return;
+                            }
+                        }
+                    });
+                } catch (e) {}
+            })();
+            </script>
+            """,
+            height=0, width=0,
+        )
+    return search_query
 
 
 def _render_card_display_settings() -> None:
@@ -4933,52 +4988,9 @@ def _render_recent_page() -> None:
     # specific thing", a completely different mode from "what's new", not a filter layered on top of
     # it -- so the moment there's a query, the whole rest of this page below switches to a dedicated
     # search-results view instead of leaving the Dates/Cards pills visibly selected but silently
-    # ignored (confirmed that reads as broken/confusing, not just a cosmetic nit). Right-aligned,
-    # at most half-width -- a search box this size doesn't need to dominate the row the way the
-    # Dates/Cards pills below it do.
-    _, search_col = st.columns([1, 1])
-    with search_col:
-        input_col, clear_col = st.columns([6, 1], vertical_alignment="center")
-        with input_col:
-            search_query = st.text_input(
-                "Search", placeholder="Search cards...",
-                key="recent_page_search", label_visibility="collapsed",
-            )
-        with clear_col:
-            if search_query.strip():
-                st.button("✕", key="recent_page_search_clear", on_click=_clear_recent_search, help="Clear search")
+    # ignored (confirmed that reads as broken/confusing, not just a cosmetic nit).
+    search_query = _render_search_box("recent_page_search")
     is_searching = bool(search_query.strip())
-    if is_searching:
-        # Same window.parent.document technique as _maybe_close_sidebar_on_mobile -- reaches out of
-        # this component's own iframe into the real page to click the "✕" button above when Escape
-        # is pressed, since Streamlit has no Python-level keyboard-shortcut API. Bound once per real
-        # page load (doc.__recentSearchEscBound guard), not once per rerun -- this same components.
-        # html call re-runs on every rerun while searching, and would otherwise stack a fresh
-        # duplicate "keydown" listener each time, firing the click N times on the Nth Escape press.
-        components.html(
-            """
-            <script>
-            (function() {
-                try {
-                    var doc = window.parent.document;
-                    if (doc.__recentSearchEscBound) return;
-                    doc.__recentSearchEscBound = true;
-                    doc.addEventListener("keydown", function(e) {
-                        if (e.key !== "Escape") return;
-                        var buttons = doc.querySelectorAll("button");
-                        for (var i = 0; i < buttons.length; i++) {
-                            if (buttons[i].textContent.trim() === "✕") {
-                                buttons[i].click();
-                                return;
-                            }
-                        }
-                    });
-                } catch (e) {}
-            })();
-            </script>
-            """,
-            height=0, width=0,
-        )
 
     if is_searching:
         search_phrases, search_words = _parse_search_query(search_query)
@@ -5140,19 +5152,8 @@ def _render_recent_page() -> None:
         )
         return
 
-    # One unified count across every type currently shown (claims already counted in card units --
-    # a combined multi-ticker card is 1 -- not raw claims), computed here rather than left to the
-    # grid's own generic hidden-count caption (suppressed below via show_hidden_count=False) so
-    # there's exactly one line, not two saying almost the same thing.
-    all_ids = [cid for _, cid, _, _ in dated]
-    unread_count = sum(1 for cid in all_ids if cid not in read_ids_now)
-    st.caption(
-        f"{unread_count} unread card(s) in this window "
-        f"({len(all_ids) - unread_count} already read)."
-    )
     _render_keep_card_grid(
         [(cid, card_html) for _, cid, card_html, _search_text in dated], key="feed_recent",
-        show_hidden_count=False, show_count=False,
     )
 
 
@@ -5415,6 +5416,19 @@ def _discovery_card_html(group: dict) -> str:
     return _flip_card_html(card_body, "".join(back_bits))
 
 
+def _discovery_search_text(group: dict) -> str:
+    """What a discovery group gets matched against when searching (see _render_discovery_page) --
+    unlike most card types, which just match their own rendered HTML, a group's card caps how many
+    mentions it actually displays (_DISCOVERY_MENTIONS_SHOWN), so matching the HTML alone would miss
+    a hit buried in an older, un-rendered mention. This covers every mention ever recorded for the
+    group, not just the shown ones.
+    """
+    bits = [group["display_name"]]
+    for e in group["entries"]:
+        bits += [e["source"], e["why"], e.get("article_title", "")]
+    return " ".join(bits)
+
+
 def _render_discovery_page() -> None:
     """Companies extract_event flagged as discussed in real depth by an already-fetched article,
     but NOT in the tracked universe (finance.newsloop's "other_companies_mentioned" -- see that
@@ -5456,6 +5470,12 @@ def _render_discovery_page() -> None:
 
     groups = _group_discovery_candidates(candidates)  # already most-recent-mention-first
     st.markdown(f"<h3 style='margin-bottom:0.15rem'>Discovery ({len(groups)})</h3>", unsafe_allow_html=True)
+    search_query = _render_search_box("discovery_page_search")
+    if search_query.strip():
+        search_phrases, search_words = _parse_search_query(search_query)
+        groups = [g for g in groups if _card_matches_search(_discovery_search_text(g), search_phrases, search_words)]
+        st.caption(f"{len(groups)} result(s) for {search_query!r}.")
+
     cards = [(_discovery_card_id(g["type"], g["display_name"]), _discovery_card_html(g), g) for g in groups]
     pin_rank = {cid: i for i, cid in enumerate(read_state.pin_ids_ordered(_CURRENT_USER))}
 
@@ -5709,8 +5729,18 @@ def _render_youtube_page() -> None:
         )
         return
     ordered = sorted(summaries, key=lambda e: e["published"], reverse=True)
-    cards = [(_youtube_card_id(e["video_id"]), _youtube_card_html(e)) for e in ordered]
-    _render_keep_card_grid(cards, key="feed_youtube", columns_override=1)
+    cards = [(_youtube_card_id(e["video_id"]), _youtube_card_html(e), e) for e in ordered]
+
+    search_query = _render_search_box("youtube_page_search")
+    if search_query.strip():
+        search_phrases, search_words = _parse_search_query(search_query)
+        # Matched against the rendered card HTML (title/channel/summary bullets are all already in
+        # there) -- unlike Discovery, nothing here is capped/truncated before display, so there's no
+        # need for a dedicated full-text helper the way _discovery_search_text is.
+        cards = [c for c in cards if _card_matches_search(c[1], search_phrases, search_words)]
+        st.caption(f"{len(cards)} result(s) for {search_query!r}.")
+
+    _render_keep_card_grid([(cid, card_html) for cid, card_html, _e in cards], key="feed_youtube", columns_override=1)
 
 
 def page_ticker() -> None:

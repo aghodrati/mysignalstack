@@ -149,6 +149,25 @@ def youtube_sources() -> list[dict]:
     ]
 
 
+def max_claims_per_article(source: str) -> int | None:
+    """Cap on how many claims finance.newsloop.extract_claims keeps for one (article, ticker) pair
+    from this source -- None (the default, source absent or missing this key) means unlimited, keep
+    every claim the LLM returns. Some sources (long, technical trade-press pieces covering many
+    distinct details in one article -- Next Platform is the first case this was added for) can
+    legitimately produce many separate claims per article even though extract_claims' prompt already
+    tries to merge restatements of the same implication; a per-source cap controls the resulting
+    claims-per-article volume without having to tighten the shared prompt (and risk losing genuinely
+    distinct claims) for every other source too. When set, the highest-importance claims are kept and
+    the rest dropped -- same "worth noting even if not everything" tradeoff as every other discovery
+    cap in this module (_MAX_THEMES, _MAX_OTHER_COMPANIES).
+    """
+    for s in _load().get("news_sources", []):
+        if s["name"] == source:
+            value = s.get("max_claims_per_article")
+            return int(value) if value is not None else None
+    return None
+
+
 def max_article_chars() -> int | None:
     """Cap on how many characters of an article's text Loop A sends to the
     LLM (Stage A, Stage B, the SEC 8-K classifier) -- None (the default,

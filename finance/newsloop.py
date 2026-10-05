@@ -102,6 +102,7 @@ from finance.loop_a_config import (
     full_page_fetch_sources,
     llm_config,
     max_article_chars,
+    max_claims_per_article,
     tracked_universe,
 )
 from finance.earnings_calls import (
@@ -789,7 +790,8 @@ _TRADE_WORTHY_REQUIRED_FIELDS = {"expected_horizon_days", "expected_return_pct"}
 
 
 def extract_claims(
-    article_text: str, ticker: str, event: dict, signals: dict, as_of: dt.date, debug: bool = False
+    article_text: str, ticker: str, event: dict, signals: dict, as_of: dt.date, source: str = "",
+    debug: bool = False,
 ) -> list[dict] | None:
     """Stage B: every distinct, independent claim this article makes about
     `ticker` -- zero, one, or several (a positive near-term catalyst and a
@@ -799,6 +801,10 @@ def extract_claims(
     portfolio-specific context, so it's cacheable globally (see
     finance.claims). finance.thesis's aggregator synthesizes across
     every claim collected over time.
+
+    `source` (optional, defaults to "" which never matches a configured cap) is only used to look up
+    finance.loop_a_config.max_claims_per_article -- see that function's own docstring for why a
+    source can cap how many of its claims get kept per article.
 
     Returns None only for a genuine failure (no LLM response, unparseable
     JSON) -- distinct from an empty list, which means the article
@@ -835,19 +841,20 @@ def extract_claims(
         f"an empty list.\n\n"
         f'Respond with ONLY a JSON object (no markdown fences, no commentary): {{"claims": [...]}} '
         f"where each item is:\n"
-        f'{{"claim": "one sentence: the specific INVESTMENT implication of this article for '
-        f"{ticker} -- what it means for the business (competitive position, margins, demand, "
-        f"capacity, risk), not a restatement of a technical/scientific fact by itself. A technical "
-        f"detail only qualifies as the claim if you also state its business consequence in the same "
-        f"sentence (e.g. not 'Uses microfluidic cooling' but 'New microfluidic cooling could let "
-        f"{ticker} push package power density past rivals stuck on air cooling'). If the article is "
-        f"too purely technical for you to honestly state a business consequence -- not just "
-        f"restate the technical fact and call it one -- that's exactly the 'too vague/indirect' case "
-        f'above: return an empty list rather than manufacturing a claim, '
+        f'{{"claim": "a SHORT headline, at most ~12 words -- just the specific INVESTMENT '
+        f"implication of this article for {ticker} (what it means for the business: competitive "
+        f"position, margins, demand, capacity, risk), not a restatement of a technical/scientific "
+        f"fact by itself and not the supporting detail/mechanism behind it -- that belongs in "
+        f"'context' below, not here. E.g. not 'New microfluidic cooling could let {ticker} push "
+        f"package power density past rivals stuck on air cooling' but just '{ticker} gains a cooling "
+        f"edge over air-cooled rivals' -- the headline states the consequence, 'context' explains "
+        f"why/how. If the article is too purely technical for you to honestly state a business "
+        f"consequence -- not just restate the technical fact and call it one -- that's exactly the "
+        f"'too vague/indirect' case above: return an empty list rather than manufacturing a claim, "
         f'"context": "one paragraph, specific to THIS claim -- this is where the technical detail '
         f"itself belongs (specs, mechanism, how it works), plus enough surrounding article context "
         f"to understand the claim without re-reading the whole article -- not a restatement of the "
-        f"one-sentence claim, and not a summary of the whole article either, just this claim's own "
+        f"headline claim, and not a summary of the whole article either, just this claim's own "
         f"context, "
         f'"trade_worthy": true only if you could also confidently give a specific '
         f"expected_return_pct and expected_horizon_days for this claim alone -- i.e. it names a "
@@ -910,6 +917,16 @@ def extract_claims(
         else:
             cleaned.update(expected_horizon_days=0, expected_return_pct=0.0)
         claims.append(cleaned)
+
+    cap = max_claims_per_article(source)
+    if cap is not None and len(claims) > cap:
+        # Keep the highest-importance claims (confidence as tiebreaker) -- same "worth noting even
+        # if not everything" tradeoff _MAX_THEMES/_MAX_OTHER_COMPANIES already use elsewhere.
+        over_cap = len(claims) - cap
+        claims = sorted(claims, key=lambda c: (c["importance"], c["confidence"]), reverse=True)[:cap]
+        if debug:
+            print(f"      [extract_claims:{ticker}] capped to {cap} claim(s) for source {source!r}, dropped {over_cap} lower-importance")
+
     if debug:
         if not claims:
             reason = f", {dropped} dropped as malformed" if dropped else ""
@@ -1028,7 +1045,7 @@ def _extract_and_store_claims(
     signals = compute_signal_bundle(ticker, article_date)
     if verbose:
         print(f"    [Stage B] extracting claims for {ticker}")
-    extracted = extract_claims(article_text, ticker, event, signals, article_date, debug=verbose)
+    extracted = extract_claims(article_text, ticker, event, signals, article_date, source=source, debug=verbose)
     # Marked immediately after the call returns (success or a genuine parse failure) -- a crash
     # mid-article never reprocesses it, same reasoning Stage A's cache uses. RateLimited
     # propagates *before* this line, so a rate-limited ticker is correctly left unmarked and
