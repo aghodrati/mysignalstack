@@ -910,5 +910,43 @@
     "trade_worthy": false,
     "context": "The company ended Q3 with $23.98 billion of cash against $59.42 billion of debt, largely associated with the VMware acquisition. The article does not provide maturities, interest expense, or repayment plans, so the risk is identifiable but cannot be sized precisely from the available information.",
     "source": "Next Platform"
+  },
+  {
+    "id": "f7a14ce3a94f9dbf",
+    "ticker": "AVGO",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/05/ai-spending-is-the-honey-badger-of-budgets/5301184",
+    "source_title": "AI Spending Is The Honey Badger Of Budgets",
+    "event_type": "capex",
+    "created": "2026-10-05",
+    "claim": "AVGO benefits from accelerating AI infrastructure demand",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Gartner\u2019s sharply higher AI infrastructure forecasts imply sustained spending on AI servers, storage, and switching through 2027. The article specifically identifies custom XPU designs from hyperscalers and cloud builders, along with AI-optimized systems and networking infrastructure, as major drivers; Broadcom is named among the vendors providing financing and is positioned to participate in this buildout. The demand implication is bullish, but the article does not quantify Broadcom\u2019s revenue exposure or timing precisely enough to size a trade.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "397e80abbfe26d68",
+    "ticker": "AVGO",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/05/ai-spending-is-the-honey-badger-of-budgets/5301184",
+    "source_title": "AI Spending Is The Honey Badger Of Budgets",
+    "event_type": "capex",
+    "created": "2026-10-05",
+    "claim": "AVGO faces greater financing and counterparty risk from AI expansion",
+    "direction": "short",
+    "confidence": 0.7,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says technology companies are increasingly using debt financing, vendor financing from Nvidia, AMD, and Broadcom, roundtripping transactions, and other capital-raising methods to sustain AI investment. This suggests Broadcom could face elevated receivables, credit, or customer-concentration risk if AI builders cannot fund planned deployments or if expected future revenues fail to materialize, although the article provides no company-specific exposure or evidence of deterioration.",
+    "source": "Next Platform"
   }
 ]

@@ -465,5 +465,55 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.74,
     "confidence_after": 0.74
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-06",
+    "thesis": "AMD remains a fundamentally attractive but execution-sensitive long as exceptional Data Center, EPYC, and forthcoming Helios demand can support substantial growth, though high valuation, HBM constraints, and Nvidia's major inference-software advantage limit near-term upside and confidence.",
+    "direction": "long",
+    "confidence": 0.6068,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.74,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Q3 revenue reaches or exceeds the approximately $13.0 billion midpoint while maintaining roughly 56% gross margin.",
+      "EPYC revenue grows more than 80% in the second half of 2026 and more than 70% in 2027 as agentic-AI CPU demand and Venice deployments ramp.",
+      "Helios and MI455X production ramps successfully, with Microsoft, OpenAI, Anthropic, Meta, and neocloud customers converting announced demand into large deployments.",
+      "ROCm, ATOM, TileRT, vLLM, and SGLang improvements close the distributed-inference performance and production-readiness gap versus Nvidia.",
+      "HBM, packaging, substrate, and wafer availability improves enough for AMD to meet or exceed its stated 2027 data-center growth outlook."
+    ],
+    "invalidation": [
+      "Helios yields, manufacturing complexity, or customer data-center readiness cause material deployment delays or materially weaker margins than management's outlook implies.",
+      "HBM and broader component shortages prevent AMD from converting strong accelerator demand into shipments, while rising memory costs compress system economics.",
+      "Nvidia's sustained inference advantage, including materially better performance per dollar and software support, causes MI355X, MI450, or MI455X adoption and pricing to disappoint.",
+      "Custom hyperscaler XPUs, Arm server CPUs, Cerebras, Jalape\u00f1o, or other alternatives materially reduce AMD's addressable CPU or accelerator share.",
+      "Revenue growth decelerates materially below guidance or operating-margin pressure causes earnings to miss expectations, exposing the roughly 37x forward-earnings valuation to compression.",
+      "The reported EPS beat proves unsustainable, with actual EPS of $1.66 versus the $1.61 estimate failing to translate into stronger forward guidance or cash-flow conversion."
+    ],
+    "reasoning": "The long case is supported by strong reported momentum, including $11.54 billion of quarterly revenue, a modest 3.21% EPS beat, accelerating Data Center results, confident management guidance, and a 56% gross-margin outlook, while the independent fundamental picture is bullish but tempered by demanding valuation and moderate margins and the extensive evidence of Nvidia software, supply, and Helios execution risks keeps confidence below high conviction.",
+    "claims_considered": 155
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-06",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis cites high valuation as a limitation, but none of the supplied claims provide valuation evidence, so that point is unsupported by the record.",
+      "It overstates Helios as a growth support: the claims establish planned Microsoft demand and a credible opportunity, but also describe delayed or slow ramping, manufacturing and reliability issues, merchant-network dependence, and no realized revenue conversion.",
+      "The 74% confidence appears too high given repeated high-confidence claims that AMD is materially disadvantaged in production agentic inference, has weaker software and networking, faces delayed Helios execution, and may lose spending to custom accelerators and internal Arm CPUs.",
+      "\u201cSubstantial growth\u201d is better supported for Data Center and EPYC than for AMD\u2019s accelerator business: the claims repeatedly say TAM forecasts do not establish AMD revenue, HBM constraints cap shipments, and AMD\u2019s current share remains limited.",
+      "The synthesis understates the breadth of inference risk by reducing it to Nvidia\u2019s software advantage, despite claims of materially worse performance per dollar, weak mainstream-stack integration, missing long-context features, and competitive threats from custom ASICs, Cerebras, and Google."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The core long thesis is supported, but it overreaches on valuation, Helios readiness, accelerator revenue conversion, and confidence relative to the claims\u2019 unusually extensive and high-confidence execution and inference concerns.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.74,
+    "confidence_after": 0.6068
   }
 ]

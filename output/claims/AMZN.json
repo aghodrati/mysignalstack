@@ -1119,5 +1119,43 @@
     "trade_worthy": false,
     "context": "The article contrasts Amazon Prime Air\u2019s roughly 83-pound fully loaded drone carrying up to a 5-pound package with Airbound\u2019s 1.5-kilogram TRT carrying 1 kilogram and V2 designed to carry 5 kilograms at a 1.67x payload-to-empty-weight ratio. Airbound says its V2 costs under $5,000 to manufacture in India versus the article\u2019s estimate of roughly $100,000 for comparable competitors at similar production scale, reflecting its carbon-fiber-first design, one-piece manufacturing, autonomy, and focus on cost per kilogram-kilometer. Amazon has substantial resources and operating scale, but the article argues that Airbound\u2019s efficiency-focused architecture could ultimately enable cheaper, faster, more flexible deliveries and compete with vans, trucks, and existing drone networks. This remains a long-term, unproven risk: Airbound is pre-commercial at scale and still faces major engineering, regulatory, safety, manufacturing, and operational hurdles.",
     "source": "Not Boring"
+  },
+  {
+    "id": "50fd7c40d79d1d5e",
+    "ticker": "AMZN",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/05/ai-spending-is-the-honey-badger-of-budgets/5301184",
+    "source_title": "AI Spending Is The Honey Badger Of Budgets",
+    "event_type": "capex",
+    "created": "2026-10-05",
+    "claim": "AWS benefits from sustained acceleration in AI infrastructure demand",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Gartner forecasts aggregate AI spending rising from $1.79 trillion in 2025 to $2.67 trillion in 2026 and $3.64 trillion in 2027, with hyperscalers and service providers purchasing AI-optimized servers remaining the largest infrastructure-spending category. Amazon Web Services is specifically identified among the major cloud providers whose revenues help fund this investment, implying stronger demand for AWS compute, storage, networking, and related AI services over the next several quarters.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "d981fddba46f5719",
+    "ticker": "AMZN",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/05/ai-spending-is-the-honey-badger-of-budgets/5301184",
+    "source_title": "AI Spending Is The Honey Badger Of Budgets",
+    "event_type": "capex",
+    "created": "2026-10-05",
+    "claim": "AI investment requirements pressure Amazon\u2019s cash flow and returns",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that hyperscalers, cloud builders, and AI model builders may collectively spend approximately $6.1 trillion on AI from 2025 through 2027, nearly matching their estimated $6.2 trillion of combined cloud, software, search, and social-media revenue before operating costs. It says companies including Amazon are increasingly relying on debt financing, vendor financing, roundtripping transactions, and other capital-raising methods to sustain AI investment, creating a risk that AWS and Amazon must absorb exceptionally high capital spending and financing burdens before AI generates sufficient cost savings or revenue.",
+    "source": "Next Platform"
   }
 ]

@@ -264,5 +264,43 @@
     "trade_worthy": false,
     "context": "Apple reportedly plans to introduce a roughly six-inch smart-home display, an updated HomePod mini, and a new TV box, using the devices to showcase a delayed Siri assistant and control thermostats, locks, media, communications, and photos. The author is skeptical because of years of Siri disappointment, dependence on third-party device makers, and concern that Apple would extend its restrictive platform model into the home; the products therefore represent a possible expansion opportunity rather than a clearly supported bullish catalyst.",
     "source": "Stratechery"
+  },
+  {
+    "id": "8735a2676101d892",
+    "ticker": "AAPL",
+    "source_link": "https://www.thediff.co/archive/life-with-nonzero-interest-rates/",
+    "source_title": "Life with Nonzero Interest Rates",
+    "event_type": "macro",
+    "created": "2026-10-05",
+    "claim": "Apple\u2019s ad policies may strengthen its services monetization advantage",
+    "direction": "long",
+    "confidence": 0.76,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "By blocking some advertiser connections in iOS and potentially expanding the list, Apple makes advertising at scale and within vertically integrated platforms relatively more attractive. Apple\u2019s control of iOS and access to first-party user data could let its own services advertising benefit, although the article does not quantify any revenue or margin impact.",
+    "source": "The Diff"
+  },
+  {
+    "id": "410880a621ddd136",
+    "ticker": "AAPL",
+    "source_link": "https://www.thediff.co/archive/life-with-nonzero-interest-rates/",
+    "source_title": "Life with Nonzero Interest Rates",
+    "event_type": "macro",
+    "created": "2026-10-05",
+    "claim": "Apple\u2019s ad policies may strengthen major platform rivals",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that Apple\u2019s privacy and advertising restrictions make scale and vertical integration more valuable, benefiting large platforms with extensive first-party data while hurting publishers and advertisers dependent on third-party advertising. It characterizes this as potentially strengthening Apple\u2019s most serious strategic threats, particularly while the dominant computing form factor remains uncertain.",
+    "source": "The Diff"
   }
 ]

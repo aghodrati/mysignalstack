@@ -7337,5 +7337,83 @@
     "name": "OpenAI",
     "ticker_guess": null,
     "why": "Codex and ChatGPT were running on or used to access the Mac Mini; the article also mentions OpenAI\u2019s Dots as an agent-monitoring-related product"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "SemiAnalysis",
+    "article_title": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI",
+    "article_link": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude plans, particularly those using Opus 5.5, offer roughly 4x-5x the API-equivalent value of comparable OpenAI plans; Anthropic uses lower limits on more expensive models to reduce subscription subsidies; subscription plans can consume over 40% of inference compute despite representing about 10% of revenue"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "SemiAnalysis",
+    "article_title": "Anthropic Subscriptions Offer 5x+ More Value Than OpenAI",
+    "article_link": "https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Recently halved the limits and API-equivalent value of its $200 plan for new subscribers; launched a $500 plan with 300 TPS Ultrafast and only 21% more Astra capacity than the former $200 plan; its subscription value is now materially below Anthropic\u2019s across comparable models"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Stratechery",
+    "article_title": "Game Decompilation, Is This Legal?, A Well-Trodden Path",
+    "article_link": "https://stratechery.com/2026/game-decompilation-is-this-legal-a-well-trodden-path/",
+    "name": "software decompilation",
+    "why": "Games are being decompiled; legality of game decompilation is a central issue"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Stratechery",
+    "article_title": "Game Decompilation, Is This Legal?, A Well-Trodden Path",
+    "article_link": "https://stratechery.com/2026/game-decompilation-is-this-legal-a-well-trodden-path/",
+    "name": "gaming industry",
+    "why": "Article argues the larger risk to gaming comes from new games and increased personalization"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "The Diff",
+    "article_title": "Life with Nonzero Interest Rates",
+    "article_link": "https://www.thediff.co/archive/life-with-nonzero-interest-rates/",
+    "name": "Groq",
+    "ticker_guess": null,
+    "why": "Much of the company was acqui-hired by Nvidia in a deal announced late last year; two engineers from its surviving entity are suing over the transaction"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "The Diff",
+    "article_title": "Life with Nonzero Interest Rates",
+    "article_link": "https://www.thediff.co/archive/life-with-nonzero-interest-rates/",
+    "name": "Kalshi",
+    "ticker_guess": null,
+    "why": "The article discusses users turning to Kalshi for highly speculative short-term prediction-market bets; one problem gambler allegedly had to pressure support to delete and ban his account"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "The Diff",
+    "article_title": "Life with Nonzero Interest Rates",
+    "article_link": "https://www.thediff.co/archive/life-with-nonzero-interest-rates/",
+    "name": "Polymarket",
+    "ticker_guess": null,
+    "why": "Discussed alongside Kalshi as a prediction-market platform attracting users, including problem gamblers"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "The Diff",
+    "article_title": "Life with Nonzero Interest Rates",
+    "article_link": "https://www.thediff.co/archive/life-with-nonzero-interest-rates/",
+    "name": "Firmus",
+    "ticker_guess": null,
+    "why": "Australian AI company is preparing to go public; existing investors are expected to take about half of the offering"
   }
 ]

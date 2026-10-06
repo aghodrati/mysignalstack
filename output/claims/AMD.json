@@ -2905,5 +2905,43 @@
     "trade_worthy": false,
     "context": "The article mentions in its extra doses, without further explanation, that AMD bought World Labs; it gives no acquisition price, product details, expected synergies, revenue contribution, or integration risks. Any bullish implication therefore rests only on the possibility that the deal expands AMD\u2019s AI technology or market position.",
     "source": "Not Boring"
+  },
+  {
+    "id": "67709a0a6784764d",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/05/ai-spending-is-the-honey-badger-of-budgets/5301184",
+    "source_title": "AI Spending Is The Honey Badger Of Budgets",
+    "event_type": "capex",
+    "created": "2026-10-05",
+    "claim": "AMD gains from accelerating AI infrastructure demand",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 8,
+    "expected_return_pct": 15.0,
+    "expected_horizon_days": 365,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Gartner raised its AI infrastructure forecasts to $981.9 billion for 2025 and added $52.9 billion for 2026 and $87.4 billion for 2027. The article expects hyperscalers, cloud builders, and AI model builders to keep buying AI-optimized servers, including incremental GPU-accelerated systems from AMD alongside Nvidia products, supporting AMD\u2019s data-center accelerator demand through 2027.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "0878d2d6198ac47a",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/05/ai-spending-is-the-honey-badger-of-budgets/5301184",
+    "source_title": "AI Spending Is The Honey Badger Of Budgets",
+    "event_type": "capex",
+    "created": "2026-10-05",
+    "claim": "Custom hyperscaler XPUs limit AMD\u2019s share of AI spending growth",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article attributes much of the upward infrastructure revision to custom XPU designs developed by hyperscalers and cloud builders, with some designs sold to major AI model builders. Although it expects incremental AMD GPU-system sales, this mix means rapidly growing aggregate AI infrastructure spending will not translate entirely into AMD-addressable GPU demand and may constrain AMD\u2019s share of the expansion.",
+    "source": "Next Platform"
   }
 ]
