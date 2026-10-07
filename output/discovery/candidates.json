@@ -7415,5 +7415,143 @@
     "name": "Firmus",
     "ticker_guess": null,
     "why": "Australian AI company is preparing to go public; existing investors are expected to take about half of the offering"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-06",
+    "source": "Next Platform",
+    "article_title": "When One Datacenter Is No Longer Enough",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/06/sponsored-when-one-datacenter-is-no-longer-enough/5301045",
+    "name": "Cisco",
+    "ticker_guess": "CSCO",
+    "why": "Discusses Silicon One architecture; Intelligent Collective Networking; Scale-Across imperative; hardware-accelerated security"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Next Platform",
+    "article_title": "When One Datacenter Is No Longer Enough",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/06/sponsored-when-one-datacenter-is-no-longer-enough/5301045",
+    "name": "AI training",
+    "why": "huge, synchronous GPU traffic; distributed across multiple datacenters; requires tight coordination"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Next Platform",
+    "article_title": "When One Datacenter Is No Longer Enough",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/06/sponsored-when-one-datacenter-is-no-longer-enough/5301045",
+    "name": "Data center networking",
+    "why": "interconnect needed for low packet loss; new routing approaches; high-speed coherent optics"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Next Platform",
+    "article_title": "When One Datacenter Is No Longer Enough",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/06/sponsored-when-one-datacenter-is-no-longer-enough/5301045",
+    "name": "Power efficiency",
+    "why": "trade-off between network consumption and GPU energy; physical power constraints"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Next Platform",
+    "article_title": "When One Datacenter Is No Longer Enough",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/06/sponsored-when-one-datacenter-is-no-longer-enough/5301045",
+    "name": "GPU synchronization",
+    "why": "synchronized bursts; buffering; bottleneck reduction"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Next Platform",
+    "article_title": "When One Datacenter Is No Longer Enough",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/06/sponsored-when-one-datacenter-is-no-longer-enough/5301045",
+    "name": "Security in AI infrastructure",
+    "why": "hardware-accelerated MACsec; IPsec; programmability for evolving workloads"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-06",
+    "source": "Next Platform",
+    "article_title": "Dell Adds Data Context, Prep, And Storage Features To Its AI Data Platform",
+    "article_link": "https://www.nextplatform.com/store/2026/10/06/dell-adds-data-context-prep-and-storage-features-to-its-ai-data-platform/5301356",
+    "name": "Dell Technologies",
+    "ticker_guess": "DELL",
+    "why": "Expanded its AI Data Platform with a Unified Semantic Layer, Enterprise Knowledge Graph, and Knowledge Agents; added GPU-accelerated data processing and a storage performance benchmarking tool for ObjectScale and PowerScale"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-07",
+    "source": "Doomberg",
+    "article_title": "Ties That Bind",
+    "article_link": "https://newsletter.doomberg.com/p/ties-that-bind",
+    "name": "Hydro-Qu\u00e9bec",
+    "ticker_guess": null,
+    "why": "Purchases the substantial majority of Churchill Falls' electricity under a contract running until 2041; its customers in the US Northeast benefit from the hydroelectric system's dispatchability"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-07",
+    "source": "Doomberg",
+    "article_title": "Ties That Bind",
+    "article_link": "https://newsletter.doomberg.com/p/ties-that-bind",
+    "name": "grid/energy",
+    "why": "Churchill Falls Generating Station has 5.4 GW of hydroelectric capacity; its output is sold mainly to Hydro-Qu\u00e9bec under a 1969 contract at 0.2 Canadian cents per kWh; a proposed C$70 billion project would upgrade Churchill Falls and develop Gull Island"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-07",
+    "source": "Doomberg",
+    "article_title": "Ties That Bind",
+    "article_link": "https://newsletter.doomberg.com/p/ties-that-bind",
+    "name": "critical minerals",
+    "why": "Labrador contains prospects for iron ore, nickel, copper, cobalt, gold, rare earths and other critical minerals; the region remains largely undeveloped despite its substantial resource endowment"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-07",
+    "source": "Doomberg",
+    "article_title": "Ties That Bind",
+    "article_link": "https://newsletter.doomberg.com/p/ties-that-bind",
+    "name": "Canada-US trade",
+    "why": "The federal government is providing C$10 billion in backing for the Labrador hydroelectric project; Prime Minister Mark Carney is presenting the development as a response to US President Donald Trump's trade threats and a way to strengthen Canada's economy"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Interconnects",
+    "article_title": "The Cyber Risk Discourse is Broken",
+    "article_link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+    "name": "AI regulation",
+    "why": "Article argues banning open-weight AI models could reduce U.S. competitiveness without preventing diffusion by bad actors; contends that restricting open models while allowing frontier-model APIs to advance could worsen cyber risk"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Interconnects",
+    "article_title": "The Cyber Risk Discourse is Broken",
+    "article_link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+    "name": "cybersecurity",
+    "why": "Closed-model APIs have been publicly linked to most documented AI-assisted cyber attacks discussed; open-weight models could provide defenders with deployable tools on air-gapped networks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Interconnects",
+    "article_title": "The Cyber Risk Discourse is Broken",
+    "article_link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+    "name": "AI safety",
+    "why": "Debate centers on whether open weights are inherently more dangerous than closed APIs; article argues safeguards may improve more slowly than cyber capabilities"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-06",
+    "source": "Interconnects",
+    "article_title": "The Cyber Risk Discourse is Broken",
+    "article_link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+    "name": "China AI policy",
+    "why": "Chinese companies continue releasing open-weight models with strong cyber capabilities under a distinct risk-assessment framework; major model releases reportedly require government registration and evaluations"
   }
 ]
