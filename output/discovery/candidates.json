@@ -7553,5 +7553,55 @@
     "article_link": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
     "name": "China AI policy",
     "why": "Chinese companies continue releasing open-weight models with strong cyber capabilities under a distinct risk-assessment framework; major model releases reportedly require government registration and evaluations"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Stratechery",
+    "article_title": "An Interview with Katie Harbath About Disrupting Politics at Facebook",
+    "article_link": "https://stratechery.com/2026/an-interview-with-katie-harbath-about-disrupting-politics-at-facebook/",
+    "name": "Facebook",
+    "ticker_guess": null,
+    "why": "Article centers on an interview with former Head of Global Elections Katie Harbath; discusses how the company changed during the 2010s"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Next Platform",
+    "article_title": "Memory Is The Lynchpin Of The IT Industry, And Doubly So For AI",
+    "article_link": "https://www.nextplatform.com/store/2026/10/08/memory-is-the-lynchpin-of-the-it-industry-and-doubly-so-for-ai/5301841",
+    "name": "Samsung Electronics",
+    "ticker_guess": "005930.KS",
+    "why": "One of the three HBM suppliers alongside SK Hynix and Micron; cited as a source of HBM stack specifications and as facing yield-related cost pressure"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Next Platform",
+    "article_title": "Memory Is The Lynchpin Of The IT Industry, And Doubly So For AI",
+    "article_link": "https://www.nextplatform.com/store/2026/10/08/memory-is-the-lynchpin-of-the-it-industry-and-doubly-so-for-ai/5301841",
+    "name": "Seagate Technology",
+    "ticker_guess": "STX",
+    "why": "One of the three remaining disk-drive makers; hyperscalers and cloud builders have contracted most of its disk-drive supply"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Next Platform",
+    "article_title": "Memory Is The Lynchpin Of The IT Industry, And Doubly So For AI",
+    "article_link": "https://www.nextplatform.com/store/2026/10/08/memory-is-the-lynchpin-of-the-it-industry-and-doubly-so-for-ai/5301841",
+    "name": "Western Digital",
+    "ticker_guess": "WDC",
+    "why": "One of the three remaining disk-drive makers; hyperscaler contracting has contributed to sharply higher nearline-drive prices"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Next Platform",
+    "article_title": "HPE Unveils The First Of The Next Generation of ProLiants for the AI Era",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/08/hpe-unveils-the-first-of-the-next-generation-of-proliants-for-the-ai-era/5301808",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Unveiled the first four ProLiant Gen 13 systems for AI and dense computing workloads; introduced enhanced iLO 8 management, encryption, multi-party authorization, and post-quantum cryptography features"
   }
 ]
