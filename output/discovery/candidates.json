@@ -7603,5 +7603,115 @@
     "name": "Hewlett Packard Enterprise",
     "ticker_guess": "HPE",
     "why": "Unveiled the first four ProLiant Gen 13 systems for AI and dense computing workloads; introduced enhanced iLO 8 management, encryption, multi-party authorization, and post-quantum cryptography features"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "SemiAnalysis",
+    "article_title": "Beijing Will Not Pace the Frontier: China\u2019s Speed-First AI Safety Regime",
+    "article_link": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Dario Amodei called for frontier labs to slow capability improvements; later reportedly weighed a new model and released Claude Opus 5.5 while framing pacing as necessary to remain competitive with China; cited by Chinese experts as an example of marketing AI danger"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "SemiAnalysis",
+    "article_title": "Beijing Will Not Pace the Frontier: China\u2019s Speed-First AI Safety Regime",
+    "article_link": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "One of the nine Chinese developers analyzed across 2021-September 2026; its releases generally lacked published safety evaluations, including R1, V3.1 and the V4 family; engineer Liu Shengyu said he joined partly to counter the prospect of Anthropic controlling AGI"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "SemiAnalysis",
+    "article_title": "Beijing Will Not Pace the Frontier: China\u2019s Speed-First AI Safety Regime",
+    "article_link": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+    "name": "Zhipu AI",
+    "ticker_guess": null,
+    "why": "Identified as the only Chinese lab with a recurring strategic commitment to frontier safety; six of the 15 substantive frontier-safety statements by Chinese lab leaders came from Zhipu; GLM-5.3 was the only cited 2026 Chinese release with a capability-evaluation note at launch"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "SemiAnalysis",
+    "article_title": "Beijing Will Not Pace the Frontier: China\u2019s Speed-First AI Safety Regime",
+    "article_link": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+    "name": "Alibaba",
+    "ticker_guess": "BABA",
+    "why": "Its Qwen releases accounted for 238 of the 857 releases in the study, but only seven had any published safety result and three had one at launch; CEO Eddie Wu\u2019s 2025 superintelligence keynote reportedly did not mention safety or risk"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "SemiAnalysis",
+    "article_title": "Beijing Will Not Pace the Frontier: China\u2019s Speed-First AI Safety Regime",
+    "article_link": "https://newsletter.semianalysis.com/p/beijing-will-not-pace-the-frontier",
+    "name": "Baidu",
+    "ticker_guess": "BIDU",
+    "why": "Had one release with any published safety result among 49 analyzed; CEO Robin Li made one of the clearest Chinese AI loss-of-control statements, calling for cooperation and rules"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Next Platform",
+    "article_title": "Growing Pains: How Distributed AI Training Changes The Network Between Datacenters",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/08/sponsored-growing-pains-how-distributed-ai-training-changes-the-network-between-datacenters/5301560",
+    "name": "Cisco",
+    "ticker_guess": null,
+    "why": "Promotes a scale-across architecture using Silicon One P200 deep-buffer routing processors, Cisco 8223/N9000 platforms and 400G/800G coherent optics; estimates distributed AI deployments may require about 14 times the bandwidth of conventional datacenter interconnects; says early deployments are underway but the technology may take several years to mature"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Citrini Research",
+    "article_title": "Breaking The Wall",
+    "article_link": "https://www.citriniresearch.com/p/breaking-the-wall",
+    "name": "Coinbase",
+    "ticker_guess": "COIN",
+    "why": "Proposed US stock perpetual futures product is listed by the CFTC as approval pending; Coinbase Wallet was used by the author to investigate onchain financial applications"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Citrini Research",
+    "article_title": "Breaking The Wall",
+    "article_link": "https://www.citriniresearch.com/p/breaking-the-wall",
+    "name": "Robinhood",
+    "ticker_guess": "HOOD",
+    "why": "Launched \u201cStock Tokens,\u201d described as the first development to open the floodgates for tokenized equities; its tokenized-equity activity helped spur broader adoption across chains"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Citrini Research",
+    "article_title": "Breaking The Wall",
+    "article_link": "https://www.citriniresearch.com/p/breaking-the-wall",
+    "name": "Hyperliquid",
+    "ticker_guess": "HYPE",
+    "why": "Became one of the only liquid venues for pricing crude oil during a March weekend escalation of the Iran conflict; offers tokenized assets and perpetual products now listed by Bloomberg"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Citrini Research",
+    "article_title": "Breaking The Wall",
+    "article_link": "https://www.citriniresearch.com/p/breaking-the-wall",
+    "name": "Solana",
+    "ticker_guess": "SOL",
+    "why": "Temporarily processed more trades than the NYSE in September; experienced a major increase in activity following the expansion of tokenized equities"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-08",
+    "source": "Citrini Research",
+    "article_title": "Breaking The Wall",
+    "article_link": "https://www.citriniresearch.com/p/breaking-the-wall",
+    "name": "Bloomberg",
+    "ticker_guess": "NULL",
+    "why": "Bloomberg Terminal began listing Hyperliquid perpetuals and tokens, signaling growing institutional visibility for onchain markets"
   }
 ]
