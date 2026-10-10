@@ -1670,5 +1670,24 @@
     "trade_worthy": false,
     "context": "Synergy Research\u2019s combined forecast for major cloud, software, search, and social-media services\u2014including META\u2014totals approximately $6.2 trillion of revenue across 2025-2027. This broad revenue base is presented as the funding source for continued AI investment, although the figure is not broken out for META and does not represent free cash flow after operating costs.",
     "source": "Next Platform"
+  },
+  {
+    "id": "31cdafcf2a8f6d25",
+    "ticker": "META",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-214",
+    "source_title": "Weekly Dose of Optimism #214",
+    "event_type": "other",
+    "created": "2026-10-09",
+    "claim": "META strengthens its long-term position in scientific AI",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Meta is investing collectively with Google DeepMind and Isomorphic Labs $300 million in Biohub\u2019s expanded $1.8 billion virtual-cell initiative. The collaboration will build shared biomedical datasets and computing resources for models that predict cellular responses to interventions, potentially giving Meta strategic access to capabilities and partnerships in an important AI application area. The article provides no near-term revenue, margin, or user-growth impact, and the financial commitment is not sized relative to Meta\u2019s business.",
+    "source": "Not Boring"
   }
 ]

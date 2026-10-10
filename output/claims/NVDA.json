@@ -6040,5 +6040,43 @@
     "trade_worthy": false,
     "context": "Nvidia is reportedly considering moving the HBM controller from the GPU chiplet onto a customizable HBM4/HBM4E base die. Nvidia says this approach could increase bandwidth by up to 30%, reduce HBM power consumption by 15%, and free up to 25% of XPU die area. If implemented successfully, the design could help Nvidia preserve performance while using constrained HBM more efficiently, supporting product competitiveness and potentially improving system economics.",
     "source": "Next Platform"
+  },
+  {
+    "id": "1516c861bc37ad67",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/connect/2026/10/09/upscale-ai-partners-with-nvidia-while-competing-with-it/5302456",
+    "source_title": "Upscale AI Partners With Nvidia While Competing With It",
+    "event_type": "competitive",
+    "created": "2026-10-09",
+    "claim": "NVDA gains incremental scale-out switching demand from Upscale AI",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 6,
+    "expected_return_pct": 1.5,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Upscale AI selected Nvidia as its supplier of choice for scale-out fabrics, buying Spectrum-X ASICs for 400 Gb/sec, 800 Gb/sec, and 1.6 Tb/sec switches. It will also port its SkyOS AI-optimized SONiC/SAI operating system across those products, potentially expanding Spectrum-X adoption and reinforcing Nvidia\u2019s Ethernet scale-out ecosystem. This is a quarters-scale, positive but relatively modest opportunity because the article provides no volume or revenue commitments.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "f3ed35b62cba6b3c",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/connect/2026/10/09/upscale-ai-partners-with-nvidia-while-competing-with-it/5302456",
+    "source_title": "Upscale AI Partners With Nvidia While Competing With It",
+    "event_type": "competitive",
+    "created": "2026-10-09",
+    "claim": "NVDA faces a longer-term threat to its proprietary scale-up networking moat",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Upscale AI is developing SkyHammer and the SkyFabriX architecture to provide Ethernet-based UALoE and ESUN scale-up networking for up to 576 accelerators per tier and potentially thousands across tiers. Such products could offer AMD and other accelerator customers alternatives to Nvidia\u2019s NVLink/NVSwitch ecosystem, pressuring Nvidia\u2019s pricing power and proprietary-system advantage. The near-term threat is limited: Nvidia GPUs cannot currently use SkyHammer for scale-up, and Nvidia retains substantial bandwidth and latency advantages, while the article only speculates about future adoption and customer traction.",
+    "source": "Next Platform"
   }
 ]

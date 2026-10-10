@@ -603,5 +603,72 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-10",
+    "value": 91.8499984741211,
+    "delta": 0.8122026767777735,
+    "history": [
+      [
+        "2026-10-05",
+        89.43000030517578
+      ],
+      [
+        "2026-10-06",
+        89.44000244140625
+      ],
+      [
+        "2026-10-07",
+        88.27999877929688
+      ],
+      [
+        "2026-10-08",
+        91.48999786376953
+      ],
+      [
+        "2026-10-09",
+        91.8499984741211
+      ]
+    ],
+    "narrative": "The modest weekly gain was most plausibly driven by rising geopolitical and supply-disruption risk, highlighted by reports that an LPG tanker was targeted near the Strait of Hormuz and that another vessel was struck near the UAE. Hurricane-related Gulf production concerns also supported prices, though the limited size of the move suggests markets are treating these risks cautiously rather than pricing in a sustained outage.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Investors Need Convincing Despite Cooling Jobs And Strong AI Earnings",
+        "domain": "SeekingAlpha",
+        "date": "20261010"
+      },
+      {
+        "title": "Escalation, Stalemate Or Breakthrough: 3 Scenarios That Could Shape Oil's Next Move",
+        "domain": "SeekingAlpha",
+        "date": "20261009"
+      },
+      {
+        "title": "UKMTO Receives Report Of An Incident 13NM West Of Al Jazeera, UAE; Vessel Struck By An Unknown Projectile Causing Fire Which Has Since Been Extinguished",
+        "domain": "Benzinga",
+        "date": "20261009"
+      },
+      {
+        "title": "Iranian IRGC Navy Says It Targeted An LPG Tanker Trying To Illegally Pass Through The Strait Of Hormuz; Vessel Suffered Massive Fire",
+        "domain": "Benzinga",
+        "date": "20261009"
+      },
+      {
+        "title": "Oil Is Already at $100. Now a Hurricane Could Shut Down Gulf Production",
+        "domain": "Yahoo",
+        "date": "20261008"
+      },
+      {
+        "title": "Trump Wants to Keep America\u2019s Diesel at Home: It's Having a Strange Effect on Oil Prices",
+        "domain": "Yahoo",
+        "date": "20261005"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W41",
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

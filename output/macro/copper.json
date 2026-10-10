@@ -582,5 +582,52 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-10",
+    "value": 6.642499923706055,
+    "delta": 2.3182350326789836,
+    "history": [
+      [
+        "2026-10-05",
+        6.5854997634887695
+      ],
+      [
+        "2026-10-06",
+        6.5945000648498535
+      ],
+      [
+        "2026-10-07",
+        6.596499919891357
+      ],
+      [
+        "2026-10-08",
+        6.519000053405762
+      ],
+      [
+        "2026-10-09",
+        6.642499923706055
+      ]
+    ],
+    "narrative": "Copper rose sharply this week, but the listed headlines do not provide a clear, copper-specific catalyst. \u201cWeekly Commentary: Not Idiosyncratic But Systemic\u201d and \u201cThe Geopolitical Reshaping Of Energy\u201d may reflect broad macro or geopolitical positioning, but they are too general to explain the move with confidence; it was likely driven by broader positioning and market drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Not Idiosyncratic But Systemic",
+        "domain": "SeekingAlpha",
+        "date": "20261010"
+      },
+      {
+        "title": "The Geopolitical Reshaping Of Energy",
+        "domain": "SeekingAlpha",
+        "date": "20261007"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W41",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

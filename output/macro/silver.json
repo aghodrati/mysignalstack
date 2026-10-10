@@ -677,5 +677,62 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-10",
+    "value": 60.66999816894531,
+    "delta": 1.1554378595260095,
+    "history": [
+      [
+        "2026-10-05",
+        60.86899948120117
+      ],
+      [
+        "2026-10-06",
+        61.167999267578125
+      ],
+      [
+        "2026-10-07",
+        59.89899826049805
+      ],
+      [
+        "2026-10-08",
+        59.06399917602539
+      ],
+      [
+        "2026-10-09",
+        60.66999816894531
+      ]
+    ],
+    "narrative": "No clear single catalyst emerges from these headlines: silver still rose on the week despite Seeking Alpha's \"Gold And Silver: Correction In Progress\" and the jump in 30-year Treasury yields to 5.7%, both of which could have pressured precious metals. The broader \"Not Idiosyncratic But Systemic\" commentary and the allocator's interest in another obscure metal are too nonspecific to explain silver's move, which was likely driven by broad positioning or drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Not Idiosyncratic But Systemic",
+        "domain": "SeekingAlpha",
+        "date": "20261010"
+      },
+      {
+        "title": "Gold And Silver: Correction In Progress (Technical And Fundamental)",
+        "domain": "SeekingAlpha",
+        "date": "20261009"
+      },
+      {
+        "title": "Stock Market Today: S&P 500, Russell 2000 Fall as 30-Year Yield Hits 5.7%",
+        "domain": "Benzinga",
+        "date": "20261007"
+      },
+      {
+        "title": "The Silver Waiting Game: Why One Allocator Put 25% of His Fund Into Another, Obscure Metal",
+        "domain": "Benzinga",
+        "date": "20261007"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W41",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

@@ -7713,5 +7713,85 @@
     "name": "Bloomberg",
     "ticker_guess": "NULL",
     "why": "Bloomberg Terminal began listing Hyperliquid perpetuals and tokens, signaling growing institutional visibility for onchain markets"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Stratechery",
+    "article_title": "2026.41: It\u2019s Not You, It\u2019s Me",
+    "article_link": "https://stratechery.com/2026/its-not-you-its-me/",
+    "name": "LG",
+    "ticker_guess": null,
+    "why": "Partnering with Apple to expand Apple\u2019s home offering; cited as an example of Apple pursuing a more integrated consumer-technology strategy"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Next Platform",
+    "article_title": "Upscale AI Partners With Nvidia While Competing With It",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/09/upscale-ai-partners-with-nvidia-while-competing-with-it/5302456",
+    "name": "Upscale AI",
+    "ticker_guess": null,
+    "why": "Raised $500 million in total and reached a $2 billion valuation; developing SkyHammer and SkyFabriX scale-up networking for AI clusters; partnered with Nvidia to build Spectrum-X-based scale-out switches and integrate its SkyOS software"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Next Platform",
+    "article_title": "Upscale AI Partners With Nvidia While Competing With It",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/09/upscale-ai-partners-with-nvidia-while-competing-with-it/5302456",
+    "name": "Cisco Systems",
+    "ticker_guess": "CSCO",
+    "why": "Cited as a benchmark alongside Broadcom and Nvidia for scale-out networking ASIC bandwidth; discussed as a participant in high-bandwidth modular switch architectures"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #214",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-214",
+    "name": "Atomic Machines",
+    "ticker_guess": null,
+    "why": "Came out of stealth with its Matter Compiler, an AI-native manufacturing system intended to build micro-machines from code; is beginning to ship its PrimeSwitch relay to early customers for high-voltage AI data centers"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #214",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-214",
+    "name": "Anduril",
+    "ticker_guess": null,
+    "why": "Announced a $3.7 billion investment in the Arsenal-2 shipyard near Baltimore; received a U.S. Navy contract worth up to $2.9 billion tied to production outcomes"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #214",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-214",
+    "name": "Biohub",
+    "ticker_guess": null,
+    "why": "Expanded its collaboration to $1.8 billion for shared datasets, computing, and resources supporting predictive virtual-cell models"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #214",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-214",
+    "name": "Isomorphic Labs",
+    "ticker_guess": null,
+    "why": "Joined Google DeepMind and Meta in collectively investing $300 million in the virtual-cell collaboration"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-09",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #214",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-214",
+    "name": "Privo",
+    "ticker_guess": null,
+    "why": "Reported Phase 2 results for its PRV111 cisplatin oral-cancer patch; 21 of 22 patients had complete clearance and all avoided planned surgery"
   }
 ]

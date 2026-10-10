@@ -789,5 +789,69 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W40"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-10",
+    "value": 14.84000015258789,
+    "delta": -0.4700002670288086,
+    "history": [
+      [
+        "2026-10-05",
+        15.520000457763672
+      ],
+      [
+        "2026-10-06",
+        15.010000228881836
+      ],
+      [
+        "2026-10-07",
+        15.079999923706055
+      ],
+      [
+        "2026-10-08",
+        15.40999984741211
+      ],
+      [
+        "2026-10-09",
+        14.84000015258789
+      ]
+    ],
+    "narrative": "No clear single catalyst for the modest VIX decline this week; the strongest risk-on signal was the broad equity rally described by NDTV Profit, while Moneycontrol noted bullish follow-through potential despite caution. The CoinDesk headline about rising bond volatility suggests underlying macro uncertainty remained, so the move most plausibly reflects subdued positioning and drift rather than a decisive change in risk perception.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Stock Market Highlights: Sensex Jumps 879 Points, Nifty Settles At 22,520; IT Stocks Lead Gains",
+        "domain": "NDTV Profit",
+        "date": "20261009"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20261008"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20261007"
+      },
+      {
+        "title": "The VIX of bonds is rising but bitcoin and stocks aren't hearing it yet",
+        "domain": "CoinDesk",
+        "date": "20261006"
+      },
+      {
+        "title": "Messi's Farewell Match Has No English TV Coverage in the US",
+        "domain": "Heavy.",
+        "date": "20261005"
+      },
+      {
+        "title": "Technical View: Nifty 50 needs follow-up buying towards 22,800 to confirm bullish strength; 55,000 key for Bank Nifty upside, VIX signals caution",
+        "domain": "Moneycontrol",
+        "date": "20261005"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W41"
   }
 ]

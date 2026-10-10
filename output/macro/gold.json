@@ -712,5 +712,72 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-10",
+    "value": 4216.2998046875,
+    "delta": 1.2973596937728038,
+    "history": [
+      [
+        "2026-10-05",
+        4156.7998046875
+      ],
+      [
+        "2026-10-06",
+        4187.10009765625
+      ],
+      [
+        "2026-10-07",
+        4140.7001953125
+      ],
+      [
+        "2026-10-08",
+        4157.0
+      ],
+      [
+        "2026-10-09",
+        4216.2998046875
+      ]
+    ],
+    "narrative": "The clearest pressure was hawkish Fed repricing: \u201cGold Just Fell to a Two-Month Low as the Fed Signals Another Hike,\u201d while the Fed minutes also hinted at another hike and 10-year yields approached 5.35%. However, gold finished the week essentially unchanged (+1.30), so there is no clear single catalyst for the net move; it looks more like broad macro positioning and volatility than a decisive trend.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Not Idiosyncratic But Systemic",
+        "domain": "SeekingAlpha",
+        "date": "20261010"
+      },
+      {
+        "title": "Gold ETF Flows: September 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261009"
+      },
+      {
+        "title": "GLD, GDX, and GDXJ Are 3 Ways to Bet on Gold. The Same Move Can Produce Wildly Different Returns",
+        "domain": "Yahoo",
+        "date": "20261009"
+      },
+      {
+        "title": "Gold Just Fell to a Two-Month Low as the Fed Signals Another Hike",
+        "domain": "Yahoo",
+        "date": "20261008"
+      },
+      {
+        "title": "Stock Market Today: S&P 500 Slips as Oil Spikes 5%, 10-Year Yields Near 5.35%",
+        "domain": "Benzinga",
+        "date": "20261008"
+      },
+      {
+        "title": "Fed Minutes Hint to Another Hike This Year: Traders Don't See It Coming In October",
+        "domain": "Benzinga",
+        "date": "20261007"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W41",
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

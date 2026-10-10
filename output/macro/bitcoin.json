@@ -683,5 +683,75 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-10",
+    "value": 82814.828125,
+    "delta": -2.2990416911449874,
+    "history": [
+      [
+        "2026-10-04",
+        86480.3046875
+      ],
+      [
+        "2026-10-05",
+        85786.59375
+      ],
+      [
+        "2026-10-06",
+        85557.5625
+      ],
+      [
+        "2026-10-07",
+        83275.9296875
+      ],
+      [
+        "2026-10-08",
+        81676.3359375
+      ],
+      [
+        "2026-10-09",
+        82546.3203125
+      ],
+      [
+        "2026-10-10",
+        82814.828125
+      ]
+    ],
+    "narrative": "No clear single catalyst emerges from these headlines; Bitcoin's modest weekly decline appears more consistent with broad/systemic risk positioning than a discrete crypto shock. The reports on Bitcoin slipping below $84K and investors favoring direct-holding alternatives over futures funds such as BITO describe weak sentiment and product-flow friction, but do not establish a strong forward driver.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Not Idiosyncratic But Systemic",
+        "domain": "SeekingAlpha",
+        "date": "20261010"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Up Pre-Bell Friday as Oil Prices Fall, Traders Assess SpaceX Spectrum Deal",
+        "domain": "Yahoo",
+        "date": "20261009"
+      },
+      {
+        "title": "Why Bitcoin Futures Funds Like BITO Keep Losing Ground to Direct-Holding Alternatives",
+        "domain": "Yahoo",
+        "date": "20261008"
+      },
+      {
+        "title": "Bitcoin Slips Below $84K, Traders Are Watching BITO And IBIT",
+        "domain": "Benzinga",
+        "date": "20261007"
+      },
+      {
+        "title": "Bitcoin's New Bull Market: No More Boom And Bust",
+        "domain": "SeekingAlpha",
+        "date": "20261005"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W41",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

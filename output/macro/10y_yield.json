@@ -648,5 +648,69 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W40"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-10",
+    "value": 5.24399995803833,
+    "delta": -0.03299999237060547,
+    "history": [
+      [
+        "2026-10-05",
+        5.310999870300293
+      ],
+      [
+        "2026-10-06",
+        5.269000053405762
+      ],
+      [
+        "2026-10-07",
+        5.2769999504089355
+      ],
+      [
+        "2026-10-08",
+        5.230999946594238
+      ],
+      [
+        "2026-10-09",
+        5.24399995803833
+      ]
+    ],
+    "narrative": "There was no clear single catalyst for the modest 3-basis-point weekly decline in the 10-year yield. The report that foreign buyers took 80% of the Treasury\u2019s $39 billion auction suggests strong demand that may have provided some downward pressure on yields, but the move was likely mostly broad positioning and drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Despite The AI Debt Pileup, Bond Market Still In La-La-Land, Investors Chasing Yield, Backed By Sky-High AI Stock Valuations",
+        "domain": "SeekingAlpha",
+        "date": "20261010"
+      },
+      {
+        "title": "Treasury Yields Snapshot: October 9, 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261009"
+      },
+      {
+        "title": "'Treasury\u2019s Bessent hires Trump\u2019s controversial former Fed board pick, Judy Shelton, as adviser' - CNBC",
+        "domain": "Benzinga",
+        "date": "20261009"
+      },
+      {
+        "title": "Renting Is Still Cheaper Than Buying \u2014 but JPMorgan Says US Housing Affordability Is Getting Worse: \u2018Incomes Have Simply Failed to Keep Up\u2019",
+        "domain": "Benzinga",
+        "date": "20261009"
+      },
+      {
+        "title": "Foreign Buyers Took 80% of the Treasury\u2019s $39 Billion Auction",
+        "domain": "Yahoo",
+        "date": "20261008"
+      },
+      {
+        "title": "Higher Rates 'Cannot Manufacture' Oil or Reverse Tariffs: James Thorne Says Fed Eyeing Another Hike a 'Misdiagnosis'",
+        "domain": "Yahoo",
+        "date": "20261008"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W41"
   }
 ]
