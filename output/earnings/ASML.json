@@ -1,0 +1,67 @@
+[
+  {
+    "call_date": "2026-10-14",
+    "when": "2026-10-14T08:00:00-04:00",
+    "eps_estimate": 10.66,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-15",
+        "eps_estimate": 5.37,
+        "reported_eps": 5.49,
+        "surprise_pct": 2.14
+      },
+      {
+        "earnings_date": "2026-01-27",
+        "eps_estimate": 7.55,
+        "reported_eps": 7.34,
+        "surprise_pct": -2.72
+      },
+      {
+        "earnings_date": "2026-04-14",
+        "eps_estimate": 6.62,
+        "reported_eps": 7.15,
+        "surprise_pct": 7.99
+      },
+      {
+        "earnings_date": "2026-07-13",
+        "eps_estimate": 6.95,
+        "reported_eps": 7.58,
+        "surprise_pct": 9.09
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-11",
+    "call_date": "2026-10-14",
+    "narrative": "Investors should watch whether ASML\u2019s order intake and outlook show that AI-related semiconductor demand is translating into sustained equipment spending, especially after Samsung\u2019s Q3 guidance indicated that AI demand is outstripping memory supply. The call will also be important for clues from major customers such as TSMC, Samsung, and SK Hynix, as well as for any discussion of delivery timing and demand for ASML\u2019s most advanced lithography systems. Given the broader earnings-season and Fed-focused headlines, management\u2019s comments on macroeconomic uncertainty, customer capital-expenditure plans, and export restrictions\u2014particularly concerning China\u2014may matter as much as the quarter itself. My expectation is cautiously constructive if ASML confirms strong AI-driven demand and a healthy backlog, but investors may react negatively if shipments, orders, or guidance are constrained by customer timing, supply-chain issues, or geopolitical limits.",
+    "headlines_used": [
+      {
+        "title": "Welcome back to earnings season: What to watch this week",
+        "domain": "Yahoo",
+        "date": "20261011"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261011"
+      },
+      {
+        "title": "VOO Doesn't Hold SpaceX, Taiwan Semiconductor, Samsung Electronics, SK Hynix, or ASML. Meet the Vanguard ETF That Does.",
+        "domain": "Yahoo",
+        "date": "20261010"
+      },
+      {
+        "title": "Banking Bellwethers Kick Off Earnings, Fed Chair's Speech In Focus",
+        "domain": "SeekingAlpha",
+        "date": "20261010"
+      },
+      {
+        "title": "Samsung's Q3 Profit Guidance Tops Analyst Estimates As AI Demand Outstrips Memory Supply",
+        "domain": "Benzinga",
+        "date": "20261007"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]
