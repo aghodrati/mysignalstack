@@ -1,0 +1,82 @@
+[
+  {
+    "call_date": "2026-10-15",
+    "when": "2026-10-15T08:00:00-04:00",
+    "eps_estimate": 4.52,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-15",
+        "eps_estimate": 2.63,
+        "reported_eps": 2.92,
+        "surprise_pct": 11.23
+      },
+      {
+        "earnings_date": "2026-01-15",
+        "eps_estimate": 2.98,
+        "reported_eps": 3.14,
+        "surprise_pct": 5.53
+      },
+      {
+        "earnings_date": "2026-04-15",
+        "eps_estimate": 3.33,
+        "reported_eps": 3.49,
+        "surprise_pct": 4.68
+      },
+      {
+        "earnings_date": "2026-07-16",
+        "eps_estimate": 3.89,
+        "reported_eps": 4.31,
+        "surprise_pct": 10.89
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-12",
+    "call_date": "2026-10-15",
+    "narrative": "Investors should watch whether TSMC confirms the strong AI and advanced-chip demand implied by the Q3 preview\u2019s headline forecast of 65% profit growth, and whether it explains the expected margin slippage toward 50%. The call should also provide detail on pricing, utilization, advanced-node capacity, capital spending, and whether demand from customers such as Nvidia remains robust despite the recent chip-stock volatility. My expectation is a strong quarter and constructive outlook, but with investors likely to focus more on margins and forward capacity constraints than on headline growth alone. Taiwan Semiconductor\u2019s long-term position as a leading foundry remains compelling, though elevated expectations leave the stock vulnerable if management gives cautious guidance.",
+    "headlines_used": [
+      {
+        "title": "Dividend Harvesting Portfolio Week 293: $29,300 Allocated, $3,401.43 In Projected Dividends",
+        "domain": "SeekingAlpha",
+        "date": "20261012"
+      },
+      {
+        "title": "TSMC\u2019s Q3 Earnings Preview: 65% Profit Growth, But Net Margin Seen Slipping to 50%",
+        "domain": "Yahoo",
+        "date": "20261012"
+      },
+      {
+        "title": "Stocktwits Tech Watch: ASML, TSMC Earnings This Week And Apple\u2019s Next Home Play",
+        "domain": "Yahoo",
+        "date": "20261012"
+      },
+      {
+        "title": "Wall Street Brunch: Start Your Earnings Engines",
+        "domain": "SeekingAlpha",
+        "date": "20261011"
+      },
+      {
+        "title": "David Tepper Once Said \u2018I Don\u2019t Trust Myself\u2019 on Nvidia\u2014Now Appaloosa Holds 1.5 Million Shares",
+        "domain": "Benzinga",
+        "date": "20261011"
+      },
+      {
+        "title": "If You Invested $1000 In Taiwan Semiconductor Stock 10 Years Ago, You Would Have This Much Today",
+        "domain": "Benzinga",
+        "date": "20261009"
+      },
+      {
+        "title": "OpenAI's $20 Billion Revenue Gap Sends Chip Stocks Tumbling",
+        "domain": "ChartMill",
+        "date": "20261009"
+      },
+      {
+        "title": "Nasdaq Hits a Fresh Record While the 10-Year Climbs to 5.31%",
+        "domain": "ChartMill",
+        "date": "20261006"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]
