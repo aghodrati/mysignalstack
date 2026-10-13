@@ -2221,5 +2221,24 @@
     "trade_worthy": false,
     "context": "Google DeepMind and Alphabet-linked Isomorphic Labs are joining Biohub and Meta in a $1.8 billion virtual-cell collaboration, with the companies collectively investing $300 million. The initiative will create shared datasets and computing resources for models that predict cellular responses to interventions, potentially improving DeepMind\u2019s and Isomorphic Labs\u2019 capabilities in biology and therapeutic research. However, the article provides no near-term revenue impact, commercial milestones, or evidence that the collaboration will translate into products or earnings within a defined period.",
     "source": "Not Boring"
+  },
+  {
+    "id": "e00fe922152e5db8",
+    "ticker": "GOOGL",
+    "source_link": "https://www.notboring.co/p/runway-learning-from-watching-the",
+    "source_title": "Runway: Learning From Watching the World",
+    "event_type": "m_and_a",
+    "created": "2026-10-13",
+    "claim": "Runway intensifies Google\u2019s competition in frontier video AI",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Google and Runway among the four companies building frontier video-generation models. Runway is expanding from creative video into interactive interfaces, robotics, operating systems, advertising, and eventually scientific simulation, while its commercial distribution is growing rapidly. This adds a well-funded, fast-moving rival competing with Google for video-AI customers, researchers, and future world-model applications, although the article also notes Google\u2019s substantial financial resources. The competitive impact on Google\u2019s earnings is not directly quantified.",
+    "source": "Not Boring"
   }
 ]

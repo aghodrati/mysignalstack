@@ -435,5 +435,24 @@
     "trade_worthy": false,
     "context": "One engine shut down early during ascent, and SpaceX ended the mission sooner than planned by bringing Starship down at a prearranged location in the northern Pacific. Although the vehicle still reached orbit and deployed its payload, the anomaly must be fixed before SpaceX can reliably conduct the high launch cadence envisioned for Starlink and other commercial uses.",
     "source": "Not Boring"
+  },
+  {
+    "id": "3b63be87a83136ba",
+    "ticker": "SPCX",
+    "source_link": "https://stratechery.com/2026/spacex-buys-more-spectrum-musk-and-market-structure-distributed-cellular/",
+    "source_title": "SpaceX Buys More Spectrum, Musk and Market Structure, Distributed Cellular",
+    "event_type": "competitive",
+    "created": "2026-10-13",
+    "claim": "SPCX\u2019s mobile strategy gains credibility and potential growth upside",
+    "direction": "long",
+    "confidence": 0.68,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says SpaceX\u2019s latest spectrum purchase makes its developing mobile strategy clearer and suggests the strategy might work, implying improved prospects for entering or expanding in mobile connectivity. It provides no specific customer, revenue, competitive, or timing details.",
+    "source": "Stratechery"
   }
 ]

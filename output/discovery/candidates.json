@@ -7838,5 +7838,75 @@
     "article_link": "https://newsletter.doomberg.com/p/jump-ball",
     "name": "Shipping chokepoints",
     "why": "Indonesia controls access around the Strait of Malacca; the article compares its economic significance with the Strait of Hormuz and presents the location as a source of geopolitical leverage"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-12",
+    "source": "The Diff",
+    "article_title": "The Super-Rich as Financial Sin-Eaters",
+    "article_link": "https://www.thediff.co/archive/the-super-rich-as-financial-sin-eaters/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Reported revenue below expectations, contributing to a sell-off in AI stocks; reports revenue differently from Anthropic by excluding certain third-party distribution payments"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-12",
+    "source": "The Diff",
+    "article_title": "The Super-Rich as Financial Sin-Eaters",
+    "article_link": "https://www.thediff.co/archive/the-super-rich-as-financial-sin-eaters/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Includes revenue paid to third parties for distribution in its reported revenue; an eventual S-1 is expected to provide a standardized framework for comparing AI-lab financials"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-13",
+    "source": "Not Boring",
+    "article_title": "Runway: Learning From Watching the World",
+    "article_link": "https://www.notboring.co/p/runway-learning-from-watching-the",
+    "name": "Runway",
+    "ticker_guess": null,
+    "why": "Released Solaris, Praxis-1, Project Continuum and other world-model products; added more than $100 million in annual recurring revenue in Q3 2026; acquired Paris robotics lab Kinetix"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-13",
+    "source": "Not Boring",
+    "article_title": "Runway: Learning From Watching the World",
+    "article_link": "https://www.notboring.co/p/runway-learning-from-watching-the",
+    "name": "World Labs",
+    "ticker_guess": null,
+    "why": "AMD agreed to acquire the company for $8.2 billion; described as developing 3D reconstruction and generation models"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-13",
+    "source": "Not Boring",
+    "article_title": "Runway: Learning From Watching the World",
+    "article_link": "https://www.notboring.co/p/runway-learning-from-watching-the",
+    "name": "Standard Bots",
+    "ticker_guess": null,
+    "why": "Testing Runway\u2019s Praxis-1 world-action model on its RO1 robotic arm; cited as an early deployment partner for video-trained robot control"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-13",
+    "source": "Not Boring",
+    "article_title": "Runway: Learning From Watching the World",
+    "article_link": "https://www.notboring.co/p/runway-learning-from-watching-the",
+    "name": "ByteDance",
+    "ticker_guess": null,
+    "why": "Identified as one of the few companies building frontier video-generation models; competes with Runway for customers and AI researchers"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-13",
+    "source": "Not Boring",
+    "article_title": "Runway: Learning From Watching the World",
+    "article_link": "https://www.notboring.co/p/runway-learning-from-watching-the",
+    "name": "Kinetix",
+    "ticker_guess": null,
+    "why": "Paris-based robotics research lab acquired by Runway; its technology supports Runway\u2019s expansion from video generation into robotics"
   }
 ]
