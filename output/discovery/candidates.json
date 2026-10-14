@@ -7908,5 +7908,116 @@
     "name": "Kinetix",
     "ticker_guess": null,
     "why": "Paris-based robotics research lab acquired by Runway; its technology supports Runway\u2019s expansion from video generation into robotics"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-14",
+    "source": "Next Platform",
+    "article_title": "Cisco Turns Its Attention To The Control Layers Of Its Quantum Network",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/14/cisco-turns-its-attention-to-the-control-layers-of-its-quantum-network/5302977",
+    "name": "Cisco",
+    "ticker_guess": null,
+    "why": "Outshift unit developing quantum networking stack; unveiled entanglement chip and Universal Quantum Switch; announced Quantum Network Controller and Network-Aware Quantum Compiler"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Next Platform",
+    "article_title": "Cisco Turns Its Attention To The Control Layers Of Its Quantum Network",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/14/cisco-turns-its-attention-to-the-control-layers-of-its-quantum-network/5302977",
+    "name": "quantum networking",
+    "why": "Cisco developing quantum network stack; prototype entanglement chip; Universal Quantum Switch"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Next Platform",
+    "article_title": "Cisco Turns Its Attention To The Control Layers Of Its Quantum Network",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/14/cisco-turns-its-attention-to-the-control-layers-of-its-quantum-network/5302977",
+    "name": "control plane automation",
+    "why": "Quantum Network Controller to automate entanglement requests; replace manual stitching"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Next Platform",
+    "article_title": "Cisco Turns Its Attention To The Control Layers Of Its Quantum Network",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/14/cisco-turns-its-attention-to-the-control-layers-of-its-quantum-network/5302977",
+    "name": "entanglement-as-a-service",
+    "why": "API model for entanglement; schedules connections based on fidelity, rate"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Next Platform",
+    "article_title": "Cisco Turns Its Attention To The Control Layers Of Its Quantum Network",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/14/cisco-turns-its-attention-to-the-control-layers-of-its-quantum-network/5302977",
+    "name": "quantum memory",
+    "why": "Needed to store qubits; current fragility; improve fidelity and timing"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Next Platform",
+    "article_title": "Cisco Turns Its Attention To The Control Layers Of Its Quantum Network",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/14/cisco-turns-its-attention-to-the-control-layers-of-its-quantum-network/5302977",
+    "name": "quantum compiler",
+    "why": "Network-Aware Quantum Compiler distributes large circuits across nodes"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-13",
+    "source": "Next Platform",
+    "article_title": "Microsoft\u2019s \u201cClea\u201d Maia 300 Inference XPU Is A Bandwidth Beast",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/13/microsofts-clea-maia-300-inference-xpu-is-a-bandwidth-beast/5302874",
+    "name": "Global UniChip",
+    "ticker_guess": null,
+    "why": "Reportedly shepherded Maia 100 and is presumed to be handling Maia 200 and Maia 300; close packaging partner of TSMC"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-13",
+    "source": "Next Platform",
+    "article_title": "Microsoft\u2019s \u201cClea\u201d Maia 300 Inference XPU Is A Bandwidth Beast",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/13/microsofts-clea-maia-300-inference-xpu-is-a-bandwidth-beast/5302874",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Microsoft\u2019s Maia accelerators support OpenAI model inference and training workloads; the article says the share of OpenAI\u2019s GPT API service running on Maia hardware is unclear"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Doomberg",
+    "article_title": "Diesel of Discontent",
+    "article_link": "https://newsletter.doomberg.com/p/diesel-of-discontent",
+    "name": "LNG trade",
+    "why": "136 of 140 LNG cargoes from Russia\u2019s Yamal plant went to Europe in the first six months of 2026; France, Belgium, Spain, and the Netherlands absorbed most deliveries; article estimates roughly $7 billion in related revenue"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Doomberg",
+    "article_title": "Diesel of Discontent",
+    "article_link": "https://newsletter.doomberg.com/p/diesel-of-discontent",
+    "name": "Oil sanctions",
+    "why": "The UK allowed an exception for imports of Russian crude refined in India; the article argues this enabled Russian-origin diesel to reach Britain despite sanctions rhetoric"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Doomberg",
+    "article_title": "Diesel of Discontent",
+    "article_link": "https://newsletter.doomberg.com/p/diesel-of-discontent",
+    "name": "European energy",
+    "why": "European buyers continued purchasing Russian LNG while leaders publicly called for Moscow\u2019s isolation; energy dependence and fuel shortages are presented as conflicting with sanctions policy"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-14",
+    "source": "Doomberg",
+    "article_title": "Diesel of Discontent",
+    "article_link": "https://newsletter.doomberg.com/p/diesel-of-discontent",
+    "name": "Russia-Ukraine war",
+    "why": "The article critiques Western economic warfare against Russia as ineffective; it argues that sanctions have failed to impose sufficient pressure while contributing to European economic weakness"
   }
 ]

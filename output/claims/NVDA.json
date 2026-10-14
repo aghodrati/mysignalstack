@@ -6078,5 +6078,24 @@
     "trade_worthy": false,
     "context": "Upscale AI is developing SkyHammer and the SkyFabriX architecture to provide Ethernet-based UALoE and ESUN scale-up networking for up to 576 accelerators per tier and potentially thousands across tiers. Such products could offer AMD and other accelerator customers alternatives to Nvidia\u2019s NVLink/NVSwitch ecosystem, pressuring Nvidia\u2019s pricing power and proprietary-system advantage. The near-term threat is limited: Nvidia GPUs cannot currently use SkyHammer for scale-up, and Nvidia retains substantial bandwidth and latency advantages, while the article only speculates about future adoption and customer traction.",
     "source": "Next Platform"
+  },
+  {
+    "id": "ca7dc31f093fb9fe",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/13/microsofts-clea-maia-300-inference-xpu-is-a-bandwidth-beast/5302874",
+    "source_title": "Microsoft\u2019s \u201cClea\u201d Maia 300 Inference XPU Is A Bandwidth Beast",
+    "event_type": "product_launch",
+    "created": "2026-10-13",
+    "claim": "Microsoft\u2019s Maia roadmap raises longer-term inference demand risk for Nvidia",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Maia 300 is designed specifically for large-scale inference, with 288 GB of HBM4, roughly 18 TB/sec of HBM bandwidth, 96 XPUs per liquid-cooled rack, and coherent scaling to 12,288 accelerators. Microsoft claims up to seven times the token throughput of a Maia 200 rack and 2.5 times better performance per watt, while Maia 200 is already ramping on Azure for Copilot and other workloads. If these systems perform as claimed and Microsoft deploys them at multi-gigawatt scale, Azure could substitute more internally designed Maia capacity for Nvidia accelerators, particularly in inference and large agentic workloads. However, Maia 300 remains a future product and the article provides no firm deployment schedule or evidence of actual displacement of Nvidia systems.",
+    "source": "Next Platform"
   }
 ]

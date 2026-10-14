@@ -193,5 +193,55 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.91,
     "confidence_after": 0.91
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-14",
+    "thesis": "TSM remains a high-confidence long because exceptional AI-driven advanced-node and packaging demand, expanding customer diversification, strong profitability and a reasonable growth-adjusted valuation outweigh near-term packaging and free-cash-flow constraints and longer-term competitive and geopolitical risks.",
+    "direction": "long",
+    "confidence": 0.7462,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.88,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.91,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Continued strong AI accelerator and hyperscaler demand sustaining leading-edge utilization and pricing",
+      "AMD Venice and MI455X, Microsoft Maia 300, Broadcom custom accelerators and OpenAI Jalape\u00f1o scaling on TSMC advanced nodes and packaging",
+      "Successful 2nm ramp and execution of the increased $60-$64 billion 2026 capital-expenditure plan",
+      "Expansion of CoWoS, liquid-cooling, custom-HBM and other advanced-packaging capacity",
+      "Further customer diversification through Intel tiles, AWS Graviton5 and additional custom AI-chip programs"
+    ],
+    "invalidation": [
+      "A material slowdown in AI infrastructure spending or semiconductor demand that reduces advanced-node utilization, pricing or earnings growth",
+      "Persistent CoWoS-L and HBM shortages that prevent TSMC from converting wafer demand into shipments and revenue",
+      "Capex inflation and overseas-fab investment materially weakening free-cash-flow conversion or margins",
+      "Intel 18A, Samsung, SMIC, EMIB-T or other alternatives taking meaningful leading-edge or advanced-packaging share sooner than expected",
+      "A severe Taiwan geopolitical disruption or evidence that TSMC's valuation has become dependent on growth that is no longer achievable"
+    ],
+    "reasoning": "The bullish news consensus is reinforced by the independent fundamental profile and a Q2 EPS beat of 4.31 versus 3.89 estimates, while no earnings-call picture is available and the principal offsets are execution, capital intensity, competition and Taiwan risk.",
+    "claims_considered": 48
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-14",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The claim that valuation is reasonable on a growth-adjusted basis is unsupported: none of the supplied claims provides a valuation, price, earnings multiple, or growth-adjusted framework.",
+      "The conclusion that benefits 'outweigh' packaging constraints, free-cash-flow pressure, competition, and geopolitical risk is not established by the claims; they identify risks but provide no quantitative comparison or aggregate assessment.",
+      "Several cited catalysts are conditional, hypothetical, or only modest: LX2 is explicitly unconfirmed, Tensordyne depends on reaching volume production, AMD share gains are uncertain, and AWS, Cerebras, and Marvell are described as modest or incremental contributors.",
+      "The synthesis presents customer diversification as an established strength, but the claims mainly show additional prospective or partial relationships; they do not demonstrate that customer concentration or dependence on AI demand has materially declined.",
+      "The packaging narrative is internally tensioned: TSMC is described as the leader with strong liquid-cooling and packaging capabilities, yet insufficient CoWoS-L capacity is a material near-term constraint and Intel EMIB-T could both relieve shipments pressure and weaken pricing power.",
+      "The high confidence level overstates the evidence because several important upside claims concern multi-year developments, while the claims also assign high confidence to meaningful competitive, CFET execution, free-cash-flow, capacity, and geopolitical risks."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The bullish direction is broadly supported, but the synthesis overreaches by asserting reasonable valuation and a risk-adjusted superiority of upside without supporting evidence, while treating several conditional or modest catalysts as a sufficiently certain offset to material acknowledged risks.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.91,
+    "confidence_after": 0.7462
   }
 ]

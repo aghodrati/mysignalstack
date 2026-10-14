@@ -302,5 +302,24 @@
     "trade_worthy": false,
     "context": "The article argues that Apple\u2019s privacy and advertising restrictions make scale and vertical integration more valuable, benefiting large platforms with extensive first-party data while hurting publishers and advertisers dependent on third-party advertising. It characterizes this as potentially strengthening Apple\u2019s most serious strategic threats, particularly while the dominant computing form factor remains uncertain.",
     "source": "The Diff"
+  },
+  {
+    "id": "0368e6dd7b09ea65",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/apple-homeview-the-new-apple-tv-the-app-story/",
+    "source_title": "Apple HomeView, The New Apple TV, The App Story",
+    "event_type": "product_launch",
+    "created": "2026-10-14",
+    "claim": "HomeView may face limited demand, constraining Apple\u2019s growth opportunity",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Apple has officially announced HomeView but questions how large the addressable market is for expensive devices whose AI is allegedly subpar. If consumers view the product as overpriced relative to its capabilities, adoption could be limited, reducing the product\u2019s potential contribution to Apple\u2019s revenue and growth over the coming months.",
+    "source": "Stratechery"
   }
 ]

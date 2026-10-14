@@ -39,5 +39,51 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-10-14",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.78,
+    "summary": "ASML shows a compelling fundamental profile, combining 21.3% revenue growth and 28.5% earnings growth with exceptional 37.1% operating and 32.5% free-cash-flow margins. Valuation remains elevated at 29.2x forward earnings, but the improved 1.09 PEG ratio, strong business quality, institutional inflows, and roughly 22.9% consensus upside support a positive fundamental bias.",
+    "key_changes": [
+      "Institutional flow increased 136.6%, from 8.33 to 19.71, indicating materially stronger institutional buying.",
+      "The PEG ratio declined 44.9%, from 1.98 to 1.09, meaning valuation looks substantially more reasonable relative to earnings growth.",
+      "Analyst-implied upside decreased 13.5%, from 26.4% to 22.9%, reducing the valuation cushion modestly.",
+      "The low-short-interest indicator moved 15.2% further in the low-short direction, from -0.33 to -0.38."
+    ],
+    "risks": [
+      "The 29.2x forward P/E still leaves the shares vulnerable to multiple compression if growth expectations or semiconductor spending weaken.",
+      "Negative revisions momentum and zero net upgrades suggest near-term analyst sentiment is not improving despite the strong operating profile.",
+      "ASML's results remain exposed to semiconductor-cycle volatility, customer investment timing, export restrictions, and concentration in a highly specialized equipment market."
+    ],
+    "reasoning": "The combination of exceptional margins, strong growth, improved growth-adjusted valuation, and positive ownership trends outweighs the elevated absolute multiple and weakening revisions, warranting a moderately high-confidence long view.",
+    "fair_value_estimate": 2110.2832,
+    "current_price": 1717.76,
+    "implied_return_pct": 22.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.213,
+        "earnings_growth": 0.285
+      },
+      "Valuation": {
+        "forward_pe": 29.226446,
+        "peg_ratio": 1.09,
+        "ev_to_revenue": 1037.421
+      },
+      "Quality": {
+        "operating_margin": 0.37057,
+        "fcf_margin": 0.32515462827416225
+      },
+      "Sentiment": {
+        "analyst_upside": 22.850875558867358,
+        "revisions_trend": -2.813852813852813,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 19.7064999395,
+        "low_short_interest": -0.38
+      }
+    },
+    "trigger": "earnings"
   }
 ]

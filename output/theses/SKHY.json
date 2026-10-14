@@ -179,5 +179,49 @@
     "final_multiplier": 0.86,
     "confidence_before": 0.91,
     "confidence_after": 0.7826
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-14",
+    "thesis": "SK Hynix remains a high-conviction long because exceptionally tight DRAM, HBM and NAND markets, strong AI-driven demand, HBM4 shipments, and structural supply discipline should sustain revenue, pricing and cash-flow strength, while execution, yield and next-generation competition risks temper upside.",
+    "direction": "long",
+    "confidence": 0.91,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.88,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.91,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 35,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Continued AI accelerator and sovereign-AI data-center investment drives sustained HBM4 and server-memory demand.",
+      "Customer precommitments and limited industry capacity preserve HBM, DRAM and NAND pricing through 2027.",
+      "Successful HBM4, HBM4E and higher-layer-stack ramps improve yields and expand profitable sellable output.",
+      "Enterprise-SSD growth and tight NAND supply support pricing and mix.",
+      "Further evidence of strong quarterly revenue, margins and cash generation confirms the favorable fundamental trajectory."
+    ],
+    "invalidation": [
+      "A sharp slowdown or collapse in generative-AI infrastructure spending reduces accelerator, HBM and server-memory demand.",
+      "HBM4 and higher-layer products suffer materially worse yields, packaging bottlenecks or cost inflation that compress margins despite strong pricing.",
+      "Micron, Samsung or emerging competitors win meaningful next-generation HBM sockets or CXMT materially disrupts conventional DRAM pricing sooner than expected.",
+      "Custom HBM and alternative stack-integration models reduce SK Hynix's share of the highest-value memory economics.",
+      "Reported growth proves inflated by one-time items, an unusually weak comparison base or accounting effects, while forward growth normalizes enough to undermine valuation.",
+      "The anomalous negative EV-to-revenue data or optimistic fair-value assumptions reveal that the apparent valuation support is unreliable."
+    ],
+    "reasoning": "The news evidence is overwhelmingly bullish and supported by a strongly positive independent fundamental picture, while the latest reported quarter showed EPS of 90.62 versus a 4.87 estimate, although no earnings-call evidence is available and HBM execution, competition and data-quality risks justify some discount to maximum conviction.",
+    "claims_considered": 37
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-14",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.91,
+    "confidence_after": 0.91
   }
 ]

@@ -3057,5 +3057,24 @@
     "trade_worthy": false,
     "context": "Upscale AI is developing SkyHammer and SkyFabriX using UALink over Ethernet and ESUN, targeting clusters of up to thousands of accelerators. The article says AMD is relying on companies such as Upscale AI to provide UALink, UALoE, or ESUN scale-up options, which could help AMD compete with Nvidia\u2019s proprietary NVLink/NVSwitch ecosystem. However, AMD has made no stated commitment, and the article only speculates that it might acquire Upscale AI.",
     "source": "Next Platform"
+  },
+  {
+    "id": "38b9837bbba89478",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/13/microsofts-clea-maia-300-inference-xpu-is-a-bandwidth-beast/5302874",
+    "source_title": "Microsoft\u2019s \u201cClea\u201d Maia 300 Inference XPU Is A Bandwidth Beast",
+    "event_type": "product_launch",
+    "created": "2026-10-13",
+    "claim": "Microsoft custom silicon intensifies AMD\u2019s inference accelerator competition",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Microsoft\u2019s Maia 300 is designed specifically for large-scale inference, with 96 XPUs per liquid-cooled rack, up to 12,288 accelerators in one coherent system image, roughly 7X the token throughput of a Maia 200 rack, and 2.5X better performance per watt. Microsoft expects Maia systems to run OpenAI, Microsoft, and open-source models through Azure and Foundry, potentially improving Azure\u2019s ability to substitute internally designed hardware for merchant accelerators from AMD in inference deployments. The article provides no evidence of specific AMD share losses, pricing pressure, or customer displacement, so the business impact remains an indirect competitive risk.",
+    "source": "Next Platform"
   }
 ]

@@ -40,5 +40,51 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-10-14",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.9,
+    "summary": "TSM shows an unusually strong fundamental profile, with 36% revenue growth, 77.4% earnings growth, operating and free-cash-flow margins above 59%, and a forward P/E near 20x. A PEG ratio of 0.85 and roughly 30% consensus-implied upside suggest the valuation remains reasonable relative to growth, although the EV-to-revenue multiple has expanded.",
+    "key_changes": [
+      "The PEG ratio declined 13.3% from 0.98 to 0.85, indicating improved valuation relative to expected growth.",
+      "EV-to-revenue increased 11.9% from 3.233 to 3.617, reflecting a less attractive valuation on sales.",
+      "The low-short-interest measure became 8.7% less negative, moving from -0.69 to -0.63, suggesting slightly less supportive positioning from short-interest dynamics."
+    ],
+    "risks": [
+      "Growth and margins could normalize from exceptionally high levels, making the current valuation more sensitive to earnings disappointments.",
+      "TSM remains exposed to semiconductor cyclicality, customer concentration, capital-intensity, and geopolitical or supply-chain disruption risks.",
+      "The consensus fair-value estimate is only a directional anchor, and multiple expansion implied by strong expectations could reverse if AI-related demand or industry conditions weaken."
+    ],
+    "reasoning": "The combination of exceptional growth, profitability, reasonable growth-adjusted valuation, and substantial implied upside supports a high-confidence long view, despite cyclical, geopolitical, and valuation-sensitivity risks.",
+    "fair_value_estimate": 578.222,
+    "current_price": 445.12,
+    "implied_return_pct": 29.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.36,
+        "earnings_growth": 0.774
+      },
+      "Valuation": {
+        "forward_pe": 19.94502,
+        "peg_ratio": 0.85,
+        "ev_to_revenue": 3.617
+      },
+      "Quality": {
+        "operating_margin": 0.60344005,
+        "fcf_margin": 0.593330391034158
+      },
+      "Sentiment": {
+        "analyst_upside": 29.90249820273183,
+        "revisions_trend": 0.5012531328320802,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 5.727499647499999,
+        "insider_flow": 346428.0,
+        "low_short_interest": -0.63
+      }
+    },
+    "trigger": "earnings"
   }
 ]

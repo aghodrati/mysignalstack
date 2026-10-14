@@ -891,5 +891,24 @@
     "trade_worthy": false,
     "context": "Panther Lake is the first shipped commercial product combining Intel\u2019s four-sheet RibbonFET GAA transistors, backside PowerVia power delivery, and advanced Foveros-S packaging. The teardown confirms that Intel 18A compute logic reaches similar representative density to TSMC N3E, although it does not lead TSMC N3P or N2 in peak density and still relies on TSMC for Panther Lake\u2019s high-end GPU and I/O. Intel\u2019s recovery remains dependent on performance, cost, yield, and subsequent process implementations, making this a developing competitive threat rather than an immediate loss of TSMC business.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "c592167a7a6bbdf1",
+    "ticker": "TSM",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/13/microsofts-clea-maia-300-inference-xpu-is-a-bandwidth-beast/5302874",
+    "source_title": "Microsoft\u2019s \u201cClea\u201d Maia 300 Inference XPU Is A Bandwidth Beast",
+    "event_type": "product_launch",
+    "created": "2026-10-13",
+    "claim": "Maia 300 could add meaningful future demand for TSMC\u2019s 2nm capacity",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 7,
+    "expected_return_pct": 2.0,
+    "expected_horizon_days": 365,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Microsoft plans to build Maia 300\u2019s compute dies on TSMC\u2019s N2P process, and the article describes possible multi-gigawatt deployments, including roughly 575,000 accelerators per gigawatt. If Maia 300 reaches substantial Azure production volumes, it would create incremental demand for TSMC\u2019s leading-edge wafer capacity over the coming quarters and beyond, although deployment scale remains partly speculative.",
+    "source": "Next Platform"
   }
 ]

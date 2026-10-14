@@ -682,5 +682,24 @@
     "trade_worthy": false,
     "context": "Nvidia is reportedly reconsidering future Rubin and Rubin Ultra HBM configurations, potentially using as little as 192 GB in some designs, while AMD is holding its Altair accelerator at 488 GB. Custom HBM4/HBM4E base dies and controller integration could improve bandwidth and power efficiency while allowing fewer or shorter stacks. If these architectural changes reduce HBM gigabytes per accelerator, SK Hynix could face slower unit demand growth even as total AI accelerator deployments continue rising.",
     "source": "Next Platform"
+  },
+  {
+    "id": "2c98564c302aa8a3",
+    "ticker": "SKHY",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/13/microsofts-clea-maia-300-inference-xpu-is-a-bandwidth-beast/5302874",
+    "source_title": "Microsoft\u2019s \u201cClea\u201d Maia 300 Inference XPU Is A Bandwidth Beast",
+    "event_type": "product_launch",
+    "created": "2026-10-13",
+    "claim": "Microsoft\u2019s Maia 300 could increase SK Hynix HBM4 demand",
+    "direction": "long",
+    "confidence": 0.63,
+    "importance": 6,
+    "expected_return_pct": 8.0,
+    "expected_horizon_days": 365,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article says Maia 300 uses eight HBM4 stacks totaling 288 GB and approximately 18 TB/sec of bandwidth, and presumes the HBM4 supplier is SK Hynix because Maia 200 reportedly used HBM from SK Hynix. If Microsoft deploys the rumored large Maia fleet, each accelerator would require substantial HBM4 content, creating a potential incremental demand and revenue opportunity for SK Hynix. However, the supplier is not confirmed and the deployment scale remains partly speculative.",
+    "source": "Next Platform"
   }
 ]

@@ -925,5 +925,15 @@
   "https://www.notboring.co/p/runway-learning-from-watching-the": [
     "AMD",
     "GOOGL"
+  ],
+  "https://stratechery.com/2026/apple-homeview-the-new-apple-tv-the-app-story/": [
+    "AAPL"
+  ],
+  "https://www.nextplatform.com/compute/2026/10/13/microsofts-clea-maia-300-inference-xpu-is-a-bandwidth-beast/5302874": [
+    "AMD",
+    "MSFT",
+    "NVDA",
+    "SKHY",
+    "TSM"
   ]
 }
