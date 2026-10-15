@@ -70,5 +70,31 @@
     "reported_eps": 11.82,
     "surprise_pct": 9.86,
     "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-15",
+    "transcript_date": "2026-10-14",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/14/asml-asml-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.88,
+    "guidance_summary": "Q4 2026 revenue guided to \u20ac14.2-15.2 billion with approximately 57% gross margin, \u20ac3.7 billion of installed-base-management sales, \u20ac1.2 billion of R&D and \u20ac0.4 billion of SG&A. FY2026 revenue guided to \u20ac44-45 billion, up approximately 36% year over year, with approximately 56% gross margin; EUV growth is expected above 45%, non-EUV systems around 20%, and installed-base management around 50%. Memory system sales are expected to grow 75%, logic 10% and advanced logic above 25%. Management is targeting 30% capacity growth in 2027 for low-NA EUV and DUV immersion and is investigating capacity growth above 30% in 2028; no hard capex guidance was provided.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "Analysts pressed management on whether ASML could materially exceed the 30% capacity-growth plan, including whether 140-150 EUV systems could be produced in 2028. Management declined to provide new 2027/2028 unit targets but cited factory-footprint optimization, shorter cycle times and supplier expansion as meaningful levers.",
+      "Analysts questioned whether customer forecasts for 2029-2030 reflected speculative slot-reservation behavior. Management said purchase orders require substantial, painful down payments and real commitments, while ASML is deliberately delaying acceptance of later-year orders until it can balance total demand and capacity fairly across customers.",
+      "On pricing, management was unusually specific that increases have been completed for the most critical, high-volume-manufacturing products and associated upgrades, with some benefit in 2027 and the full impact from 2028 onward, while declining to disclose exact products or backlog treatment.",
+      "On gross margin, management explained that Q4 margin is expected to decline sequentially despite higher revenue because ramp costs will offset fixed-cost absorption. It also highlighted upgrade demand as a major swing factor for margins beyond 2026."
+    ],
+    "risks": [
+      "Capacity expansion may be constrained by ramp costs, supply-chain execution and the need to support suppliers as output rises above 30% annually.",
+      "Customer cleanroom and fab-construction execution could create tactical installation delays in 2027-2028 even though management does not view cleanroom availability as a major current demand constraint.",
+      "Installed-base upgrade revenue and its exceptionally high margins may not be fully sustainable, making upgrades a key swing factor for future gross margin.",
+      "Management would not quantify 2027 or 2028 output, leaving uncertainty around the ability to satisfy demand implied by customer interest in 2029-2030.",
+      "High-NA EUV adoption is progressing, but the timing and scale of the production ramp remain uncertain; customer capacity build-outs could either accelerate or delay adoption.",
+      "China represents approximately 20% of FY2026 sales, creating continuing exposure to export controls and future market-access risk, despite management's confidence in local demand and competitive positioning."
+    ],
+    "summary": "The call was strongly bullish on demand, with record Q3 results, raised FY2026 revenue expectations and customer visibility extending through 2028 and into 2029-2030. Q&A reinforced the long thesis through evidence of real customer commitments, broad logic and memory demand, pricing increases and multiple capacity-expansion levers, although ramp costs, upgrade mix and execution constraints temper near-term margin upside.",
+    "type": "earnings_transcript"
   }
 ]

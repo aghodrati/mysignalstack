@@ -8019,5 +8019,105 @@
     "article_link": "https://newsletter.doomberg.com/p/diesel-of-discontent",
     "name": "Russia-Ukraine war",
     "why": "The article critiques Western economic warfare against Russia as ineffective; it argues that sanctions have failed to impose sufficient pressure while contributing to European economic weakness"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Stratechery",
+    "article_title": "A Conversation With Ari Emanuel About Entertainment and AI",
+    "article_link": "https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Discussed as an AI company that could have pursued advertising rather than subscriptions; its AI product Muse is described as a potential competitive threat to Amazon and Meta"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Stratechery",
+    "article_title": "A Conversation With Ari Emanuel About Entertainment and AI",
+    "article_link": "https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/",
+    "name": "TikTok",
+    "ticker_guess": null,
+    "why": "Credited with shifting social platforms toward algorithmically recommended user-generated content; its model prompted Meta to develop Reels"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Stratechery",
+    "article_title": "A Conversation With Ari Emanuel About Entertainment and AI",
+    "article_link": "https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/",
+    "name": "Snap",
+    "ticker_guess": "SNAP",
+    "why": "Described as one of the remaining major social networks with a young, highly engaged user base; viewed as having substantial unrealized AI and monetization potential"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Stratechery",
+    "article_title": "A Conversation With Ari Emanuel About Entertainment and AI",
+    "article_link": "https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/",
+    "name": "Netflix",
+    "ticker_guess": "NFLX",
+    "why": "Discussed as a major streaming platform shaping content economics and as a possible permanent distribution window for Hollywood"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Stratechery",
+    "article_title": "A Conversation With Ari Emanuel About Entertainment and AI",
+    "article_link": "https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/",
+    "name": "TKO Group Holdings",
+    "ticker_guess": "TKO",
+    "why": "Emanuel's company is used as a case study for monetizing live sports and entertainment through broadcast rights, sponsorships, site fees and premium ticketing"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-14",
+    "source": "Normal Tech",
+    "article_title": "Steering AI Beyond Automation",
+    "article_link": "https://www.normaltech.ai/p/steering-ai-beyond-automation",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its partnership with Cerebras is cited as contributing to a major push for lower-latency AI; its mission and AGI framing are presented as examples of the automation agenda"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-14",
+    "source": "Normal Tech",
+    "article_title": "Steering AI Beyond Automation",
+    "article_link": "https://www.normaltech.ai/p/steering-ai-beyond-automation",
+    "name": "Thinking Machines",
+    "ticker_guess": null,
+    "why": "Founded by former OpenAI CTO Mira Murati; published an architecture for collaboration agents featuring an ultra-low-latency user-facing model and a more capable background model, but has not shipped a product"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-14",
+    "source": "Normal Tech",
+    "article_title": "Steering AI Beyond Automation",
+    "article_link": "https://www.normaltech.ai/p/steering-ai-beyond-automation",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified alongside OpenAI and Google as pursuing lower-latency AI systems"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-14",
+    "source": "Normal Tech",
+    "article_title": "Steering AI Beyond Automation",
+    "article_link": "https://www.normaltech.ai/p/steering-ai-beyond-automation",
+    "name": "Mercor",
+    "ticker_guess": null,
+    "why": "Cited as a company capturing process traces from human occupations to supply AI model training"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-14",
+    "source": "Normal Tech",
+    "article_title": "Steering AI Beyond Automation",
+    "article_link": "https://www.normaltech.ai/p/steering-ai-beyond-automation",
+    "name": "Cursor",
+    "ticker_guess": null,
+    "why": "Identified as part of the push toward lower-latency AI tools and as an example of coding-agent development"
   }
 ]
