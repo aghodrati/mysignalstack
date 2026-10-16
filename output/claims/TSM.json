@@ -910,5 +910,24 @@
     "trade_worthy": true,
     "context": "Microsoft plans to build Maia 300\u2019s compute dies on TSMC\u2019s N2P process, and the article describes possible multi-gigawatt deployments, including roughly 575,000 accelerators per gigawatt. If Maia 300 reaches substantial Azure production volumes, it would create incremental demand for TSMC\u2019s leading-edge wafer capacity over the coming quarters and beyond, although deployment scale remains partly speculative.",
     "source": "Next Platform"
+  },
+  {
+    "id": "3e13a5440dd98c2f",
+    "ticker": "TSM",
+    "source_link": "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding",
+    "source_title": "ASML Is Building a Hybrid Bonding Tool!",
+    "event_type": "competitive",
+    "created": "2026-10-15",
+    "claim": "ASML\u2019s potential bonder could strengthen TSMC\u2019s advanced-packaging capabilities",
+    "direction": "long",
+    "confidence": 0.68,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "TSMC is already a leading die-to-wafer hybrid-bonding user through SoIC, bonding at roughly 6 micrometers today and targeting 4.5 micrometers around 2029. ASML is reportedly designing a track-based die-to-wafer tool with tighter alignment, metrology, particle control and scalable station utilization, potentially giving TSMC another high-performance equipment source and supporting its increasingly demanding logic-packaging roadmap. However, ASML has not announced the product and several technical challenges remain unresolved, so the benefit to TSMC is prospective rather than established.",
+    "source": "SemiAnalysis"
   }
 ]

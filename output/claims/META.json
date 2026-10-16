@@ -1689,5 +1689,24 @@
     "trade_worthy": false,
     "context": "Meta is investing collectively with Google DeepMind and Isomorphic Labs $300 million in Biohub\u2019s expanded $1.8 billion virtual-cell initiative. The collaboration will build shared biomedical datasets and computing resources for models that predict cellular responses to interventions, potentially giving Meta strategic access to capabilities and partnerships in an important AI application area. The article provides no near-term revenue, margin, or user-growth impact, and the financial commitment is not sized relative to Meta\u2019s business.",
     "source": "Not Boring"
+  },
+  {
+    "id": "cdf348e4b6795c33",
+    "ticker": "META",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297",
+    "source_title": "A Decade In, zeroRISC Sees A Bright Future For Open Silicon",
+    "event_type": "product_launch",
+    "created": "2026-10-15",
+    "claim": "META may reduce hardware-security costs and supply-chain risk",
+    "direction": "long",
+    "confidence": 0.77,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Meta joined zeroRISC, Qualcomm, Analog Devices, and the Max Planck Institute in launching Pavona under GlobalPlatform, giving it participation in a neutral ecosystem for reusable open hardware roots of trust and post-quantum cryptography. The ecosystem\u2019s open-source silicon and cryptographic IP could reduce licensing and development costs, improve design transparency, and strengthen control over security components and supply chains. However, the article does not state that Meta has adopted Pavona technology in production or quantify any financial benefit, making the business impact indirect and longer term.",
+    "source": "Next Platform"
   }
 ]

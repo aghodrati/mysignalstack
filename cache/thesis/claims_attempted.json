@@ -935,5 +935,19 @@
     "NVDA",
     "SKHY",
     "TSM"
+  ],
+  "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding": [
+    "AMD",
+    "ASML",
+    "INTC",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297": [
+    "AMD",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NVDA",
+    "QCOM"
   ]
 }

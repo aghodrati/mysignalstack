@@ -78,5 +78,37 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-10-15",
+    "eps_estimate": 4.52,
+    "reported_eps": 4.6,
+    "surprise_pct": 1.67,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-16",
+    "transcript_date": "2026-10-15",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/15/tsmc-tsm-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.88,
+    "guidance_summary": "Q4 2026 revenue guided to $52.3-$54.3 billion, about 14% sequential growth at the midpoint, with gross margin of 65%-67% and operating margin of 56.5%-58.5%. Full-year 2026 U.S.-dollar revenue growth was raised/affirmed at approximately 44%; 2026 CapEx remains $60-$64 billion, while 2026-2028 investment is expected to be significantly higher than in the prior three years. Management expects continued very strong AI/HPC demand, N2 capacity to more than double in 2027, and overseas-fab gross-margin dilution to widen to 3%-4% in the next few years.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On whether power, data-center funding, HBM, packaging, networking components, or other bottlenecks could cause AI capacity overbuilding, Wei said TSMC evaluates all of these factors and still judges demand to be higher than supply; he declined to quantify the potential mismatch.",
+      "When asked whether wafer-supply tightness and capacity additions could exceed 10% annually, management said demand is still rising and the supply-demand gap remains large, but Wei would not say whether the gap will widen or narrow because customers continue to increase forecasts.",
+      "On U.S. expansion, Wei specifically confirmed evaluations in Texas and discussions with a customer regarding a Terafab, but said the structure is unresolved and any fab would need to be run by TSMC.",
+      "On pricing, Wei avoided saying whether increases apply to existing contracts or only incremental capacity, responding that pricing depends on market segment, location, and technology while emphasizing that TSMC intends to capture more of its value."
+    ],
+    "risks": [
+      "AI demand may ultimately be constrained by data-center power, financing, HBM, advanced packaging, lasers, or other supply-chain bottlenecks, although management said current demand remains above capacity.",
+      "Very aggressive CapEx and nearly 20 fabs in progress raise execution, utilization, and cycle-risk concerns if AI demand or customer forecasts weaken.",
+      "Overseas-fab margin dilution is expected to widen to 3%-4% in coming years, while N2 ramp-up is already reducing gross margin.",
+      "Consumer and price-sensitive markets are being challenged by rising component prices and macroeconomic uncertainty, making 2027 planning more cautious.",
+      "Management did not provide specific 2027-2028 CapEx figures, exact capacity-growth targets, customer outsourcing commitments, or detailed pricing actions."
+    ],
+    "summary": "TSMC delivered an exceptionally strong quarter, with revenue up 41.2% year over year, 68% of revenue from HPC, and guidance pointing to another sharp sequential increase in Q4. The Q&A reinforced management's unusually strong conviction in multi-year AI demand and supported a bullish earnings view, but also exposed meaningful risks from aggressive capacity spending, overseas-fab margin dilution, supply-chain bottlenecks, and limited specificity around future CapEx, pricing, and customer commitments.",
+    "type": "earnings_transcript"
   }
 ]

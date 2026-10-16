@@ -2240,5 +2240,24 @@
     "trade_worthy": false,
     "context": "The article identifies Google and Runway among the four companies building frontier video-generation models. Runway is expanding from creative video into interactive interfaces, robotics, operating systems, advertising, and eventually scientific simulation, while its commercial distribution is growing rapidly. This adds a well-funded, fast-moving rival competing with Google for video-AI customers, researchers, and future world-model applications, although the article also notes Google\u2019s substantial financial resources. The competitive impact on Google\u2019s earnings is not directly quantified.",
     "source": "Not Boring"
+  },
+  {
+    "id": "6de14ec8fe41e930",
+    "ticker": "GOOGL",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297",
+    "source_title": "A Decade In, zeroRISC Sees A Bright Future For Open Silicon",
+    "event_type": "product_launch",
+    "created": "2026-10-15",
+    "claim": "GOOGL strengthens long-term cloud security and silicon ecosystem influence",
+    "direction": "long",
+    "confidence": 0.83,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google originated Titan and OpenTitan, whose project director remains zeroRISC CEO Dominic Rizzo. OpenTitan elements are also incorporated into Caliptra, a datacenter root-of-trust architecture developed with Google and other major hardware companies. Through these open-source efforts and Pavona\u2019s post-quantum cryptography ecosystem, Google can help shape reusable security standards, improve control over heterogeneous cloud hardware, and potentially reduce reliance on proprietary security IP. The article provides no direct evidence of near-term revenue, margin, or valuation impact.",
+    "source": "Next Platform"
   }
 ]

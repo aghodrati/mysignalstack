@@ -1138,5 +1138,24 @@
     "trade_worthy": false,
     "context": "PowerVia routes the main power network through wider backside metals and nano-TSVs, freeing frontside routing and potentially reducing voltage droop and supply losses; RibbonFET surrounds four stacked nanosheets with the gate for stronger electrostatic control. However, backside processing, dielectric isolation, and the retained carrier add thermal resistance, while the combined GAA/BSPDN integration increases fabrication complexity and risk. The teardown does not establish a quantified performance or efficiency lead over competing products.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "2d8d67a3bd9afb17",
+    "ticker": "INTC",
+    "source_link": "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding",
+    "source_title": "ASML Is Building a Hybrid Bonding Tool!",
+    "event_type": "competitive",
+    "created": "2026-10-15",
+    "claim": "ASML entry could strengthen Intel\u2019s advanced-packaging supplier options",
+    "direction": "long",
+    "confidence": 0.68,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "ASML is reportedly developing a track-based die-to-wafer hybrid-bonding tool, a market where Besi currently has the only tools in volume production. Because Besi\u2019s logic hybrid-bonding business is concentrated at TSMC and Intel, ASML\u2019s potential entry could give Intel an additional qualified supplier and access to a tool designed for tighter alignment, higher station utilization, and heterogeneous chiplet integration. However, ASML has not announced the product, and the article does not establish Intel adoption plans or quantify any impact on Intel\u2019s costs, capacity, or packaging competitiveness.",
+    "source": "SemiAnalysis"
   }
 ]

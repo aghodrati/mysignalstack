@@ -8119,5 +8119,130 @@
     "name": "Cursor",
     "ticker_guess": null,
     "why": "Identified as part of the push toward lower-latency AI tools and as an example of coding-agent development"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "SemiAnalysis",
+    "article_title": "ASML Is Building a Hybrid Bonding Tool!",
+    "article_link": "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding",
+    "name": "BE Semiconductor Industries",
+    "ticker_guess": "BESI.AS",
+    "why": "Identified as the current leader and only supplier with die-to-wafer hybrid bonding tools in volume production; ASML\u2019s potential entry could weaken its logic hybrid-bonding business, while Korean competition and delayed HBM adoption could pressure its HBM prospects"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "SemiAnalysis",
+    "article_title": "ASML Is Building a Hybrid Bonding Tool!",
+    "article_link": "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding",
+    "name": "Prodrive Technologies",
+    "ticker_guess": null,
+    "why": "Reportedly working with ASML on the architecture of its hybrid bonder; likely supplier of linear motors and drives, drawing on its work with ASML EUV stages and Hanwha\u2019s SHB2 Nano bonder"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "SemiAnalysis",
+    "article_title": "ASML Is Building a Hybrid Bonding Tool!",
+    "article_link": "https://newsletter.semianalysis.com/p/asml-is-building-a-hybrid-bonding",
+    "name": "VDL ETG",
+    "ticker_guess": null,
+    "why": "Reportedly working with ASML on the hybrid-bonder architecture; likely supplier of frames and modules based on its existing ASML equipment relationship"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "When Faster Supercomputers Aren\u2019t Enough: A Million Reasons Why Advanced Computing Matters For Genomics",
+    "article_link": "https://www.nextplatform.com/hpc/2026/10/15/partner-content-when-faster-supercomputers-arent-enough/5302571",
+    "name": "supercomputing",
+    "why": "Uses Summit and Aurora HPC systems; discusses GPU acceleration for genomics; mentions DOE's American Science Cloud"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "When Faster Supercomputers Aren\u2019t Enough: A Million Reasons Why Advanced Computing Matters For Genomics",
+    "article_link": "https://www.nextplatform.com/hpc/2026/10/15/partner-content-when-faster-supercomputers-arent-enough/5302571",
+    "name": "genomics",
+    "why": "Focus on Million Veteran Program; genome-wide association studies; SAIGE-GPU tool"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "When Faster Supercomputers Aren\u2019t Enough: A Million Reasons Why Advanced Computing Matters For Genomics",
+    "article_link": "https://www.nextplatform.com/hpc/2026/10/15/partner-content-when-faster-supercomputers-arent-enough/5302571",
+    "name": "federated learning",
+    "why": "Describes APPFL framework; discusses data sharing without moving data"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "When Faster Supercomputers Aren\u2019t Enough: A Million Reasons Why Advanced Computing Matters For Genomics",
+    "article_link": "https://www.nextplatform.com/hpc/2026/10/15/partner-content-when-faster-supercomputers-arent-enough/5302571",
+    "name": "GPU computing",
+    "why": "Rewrites code to use GPUs, reducing CPU-core hours; highlights GPU role in AI and genomics"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "When Faster Supercomputers Aren\u2019t Enough: A Million Reasons Why Advanced Computing Matters For Genomics",
+    "article_link": "https://www.nextplatform.com/hpc/2026/10/15/partner-content-when-faster-supercomputers-arent-enough/5302571",
+    "name": "data privacy",
+    "why": "Emphasizes need for permissioned, authorized computing; discusses access control in federated learning"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "A Decade In, zeroRISC Sees A Bright Future For Open Silicon",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297",
+    "name": "zeroRISC",
+    "ticker_guess": null,
+    "why": "Co-founded by former Google OpenTitan leader Dominic Rizzo in 2023; launched Pavona with industry partners and offers open-source silicon trust, cryptographic IP, provisioning, verification, and lifecycle-management tools"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "A Decade In, zeroRISC Sees A Bright Future For Open Silicon",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297",
+    "name": "lowRISC",
+    "ticker_guess": null,
+    "why": "Official maintainer and host of OpenTitan; developed the Ibex open-source CPU and continues to support OpenTitan and open-silicon infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "A Decade In, zeroRISC Sees A Bright Future For Open Silicon",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297",
+    "name": "Nuvoton Technology",
+    "ticker_guess": null,
+    "why": "Brought a discrete security root-of-trust chip based on OpenTitan to market in 2024; announced plans for its use in Google Chromebooks running ChromeOS"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "A Decade In, zeroRISC Sees A Bright Future For Open Silicon",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297",
+    "name": "SiFive",
+    "ticker_guess": null,
+    "why": "Offers custom silicon solutions based on the open RISC-V architecture; identified as an early company helping expand the open-silicon ecosystem"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-15",
+    "source": "Next Platform",
+    "article_title": "A Decade In, zeroRISC Sees A Bright Future For Open Silicon",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/15/a-decade-in-zerorisc-sees-a-bright-future-for-open-silicon/5303297",
+    "name": "GlobalPlatform",
+    "ticker_guess": null,
+    "why": "Hosts Pavona as a neutral ecosystem for designing open and secure hardware; provides the standards-consortium framework for the initiative"
   }
 ]
