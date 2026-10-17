@@ -1,0 +1,59 @@
+[
+  {
+    "call_date": "2026-10-20",
+    "when": "2026-10-20T16:00:00-04:00",
+    "eps_estimate": 0.17,
+    "reported_quarters": [
+      {
+        "earnings_date": "2026-08-04",
+        "eps_estimate": -0.29,
+        "reported_eps": -0.09,
+        "surprise_pct": 68.89
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-17",
+    "call_date": "2026-10-20",
+    "narrative": "Investors should watch whether the call addresses the growing speculation around a Tesla\u2013SpaceX merger and clarifies whether the Roadster story has any meaningful business or financial connection to SpaceX; one headline specifically warns that merger hype may be outpacing fundamentals. The headlines offer little evidence about SpaceX\u2019s operating performance, so the more relevant questions are likely to be Starlink subscriber and cash-flow momentum, launch cadence and reliability, satellite-network investment, and the path toward sustainable profitability. My expectation is that the call could be dominated by questions about Musk-related headlines and strategic speculation rather than new earnings information, with management needing to separate SpaceX\u2019s underlying execution from Tesla\u2019s Roadster-driven publicity.",
+    "headlines_used": [
+      {
+        "title": "Elon Musk\u2019s Roadster, Nvidia\u2019s Space AI Push, Nadella\u2019s Security Warning: Mag 7 Voices This Week",
+        "domain": "Yahoo",
+        "date": "20261017"
+      },
+      {
+        "title": "Tesla\u2019s Flying Roadster Has Wall Street Talking About SpaceX, Not Cars",
+        "domain": "Yahoo",
+        "date": "20261017"
+      },
+      {
+        "title": "Tough Trading Leaves Indices In The Red",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Stock Market Today: Wall Street Swaps Chips for Old Reliables as Producer Prices Spike",
+        "domain": "ChartMill",
+        "date": "20261016"
+      },
+      {
+        "title": "Tesla Roadster Awes, But Shares Lag Into Earnings - Where To Buy (Downgrade)",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Gary Black Warns Tesla Bulls Against Hyping SpaceX Merger, Says Roadster\u2019s Brand Impact Could Outweigh Earnings",
+        "domain": "Benzinga",
+        "date": "20261016"
+      },
+      {
+        "title": "Why Is AST SpaceMobile Stock Falling Friday?",
+        "domain": "Benzinga",
+        "date": "20261016"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

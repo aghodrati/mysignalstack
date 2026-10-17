@@ -701,5 +701,24 @@
     "trade_worthy": true,
     "context": "The article says Maia 300 uses eight HBM4 stacks totaling 288 GB and approximately 18 TB/sec of bandwidth, and presumes the HBM4 supplier is SK Hynix because Maia 200 reportedly used HBM from SK Hynix. If Microsoft deploys the rumored large Maia fleet, each accelerator would require substantial HBM4 content, creating a potential incremental demand and revenue opportunity for SK Hynix. However, the supplier is not confirmed and the deployment scale remains partly speculative.",
     "source": "Next Platform"
+  },
+  {
+    "id": "ad89b6fbf2d3a28a",
+    "ticker": "SKHY",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "source_title": "Weekly Dose of Optimism #215",
+    "event_type": "product_launch",
+    "created": "2026-10-16",
+    "claim": "SK hynix gains a long-term memory-process innovation advantage",
+    "direction": "long",
+    "confidence": 0.91,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "SK hynix is a founding chipmaker partner in Applied Materials\u2019 $5 billion EPIC center, alongside TSMC, Intel, Samsung, and Micron. The center will place competing companies\u2019 engineers in nearly four acres of cleanroom space to run materials research, equipment development, and pilot production in parallel on process technology three to four generations ahead of current production, potentially shortening development cycles and supporting SK hynix\u2019s future process competitiveness. The article provides no specific revenue, margin, capacity, or timing impact for SK hynix, so this is a strategic rather than directly tradable catalyst.",
+    "source": "Not Boring"
   }
 ]

@@ -1157,5 +1157,24 @@
     "trade_worthy": false,
     "context": "ASML is reportedly developing a track-based die-to-wafer hybrid-bonding tool, a market where Besi currently has the only tools in volume production. Because Besi\u2019s logic hybrid-bonding business is concentrated at TSMC and Intel, ASML\u2019s potential entry could give Intel an additional qualified supplier and access to a tool designed for tighter alignment, higher station utilization, and heterogeneous chiplet integration. However, ASML has not announced the product, and the article does not establish Intel adoption plans or quantify any impact on Intel\u2019s costs, capacity, or packaging competitiveness.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "f821eb0b12bd41af",
+    "ticker": "INTC",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "source_title": "Weekly Dose of Optimism #215",
+    "event_type": "product_launch",
+    "created": "2026-10-16",
+    "claim": "Intel gains potential process-development advantages through EPIC",
+    "direction": "long",
+    "confidence": 0.87,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Intel is a founding chipmaker partner in Applied Materials\u2019 $5 billion EPIC center, alongside TSMC, Samsung, SK hynix, and Micron. EPIC will place materials research, equipment development, and pilot production together in nearly four acres of cleanroom space, running stages in parallel to shorten development cycles for process technology three to four generations ahead of current production. This could improve Intel\u2019s access to collaborative process R&D and help its future manufacturing competitiveness, although the article provides no evidence yet of commercial results or timing.",
+    "source": "Not Boring"
   }
 ]

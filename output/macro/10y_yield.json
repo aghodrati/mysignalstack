@@ -712,5 +712,69 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W41"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-17",
+    "value": 5.0980000495910645,
+    "delta": -0.14599990844726562,
+    "history": [
+      [
+        "2026-10-12",
+        5.239999771118164
+      ],
+      [
+        "2026-10-13",
+        5.2170000076293945
+      ],
+      [
+        "2026-10-14",
+        5.190000057220459
+      ],
+      [
+        "2026-10-15",
+        5.089000225067139
+      ],
+      [
+        "2026-10-16",
+        5.0980000495910645
+      ]
+    ],
+    "narrative": "The 15-basis-point decline in the 10-year yield was most plausibly driven by risk-off safe-haven demand as equities weakened, consistent with Seeking Alpha's \u201cBonds As Safe Havens, Again\u201d and \u201cTough Trading Leaves Indices In The Red.\u201d Yahoo's report that the chip rout pulled Treasury yields back from a 24-year high also directly supports this explanation, while the deficit headlines likely limited the rally rather than caused it.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Surprise! Bonds As Safe Havens, Again",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Tough Trading Leaves Indices In The Red",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Bad News for Trump. The US Is In Its Worst Bond Crisis Since Alexander Hamilton Was Leading the Treasury",
+        "domain": "Yahoo",
+        "date": "20261016"
+      },
+      {
+        "title": "Chip Rout Finally Does What Scott Bessent\u2019s Buybacks Couldn\u2019t: Pulls Treasury Yields Back From 24-Year High",
+        "domain": "Yahoo",
+        "date": "20261016"
+      },
+      {
+        "title": "Thomas Massie Warns Trump's 'One Big Beautiful Bill' Will Result in Americans Paying \u2018Hundreds of Billions\u2019 in New Government Spending",
+        "domain": "Benzinga",
+        "date": "20261014"
+      },
+      {
+        "title": "Scott Bessent's Inflation Victory Lap Gets Pushback From Nassim Taleb \u2014 'Black Swan' Author Says Deficit Is 'Exploding' and Consumers Are 'Squeezed'",
+        "domain": "Benzinga",
+        "date": "20261014"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W42"
   }
 ]

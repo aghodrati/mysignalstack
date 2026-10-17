@@ -150,5 +150,43 @@
     "trade_worthy": false,
     "context": "The article explicitly speculates that a self-flying vehicle could be more attractive than a self-driving car because it can travel directly over traffic, operate without roads, and potentially achieve lower cost per kilometer. Airbound is targeting a progression from a 5-kg cargo drone to 100-kg and 500-kg platforms capable of carrying people, with ambitions to make autonomous flight cheaper than trucks, buses, trains, and eventually cars. However, this remains a highly uncertain, multi-decade scenario dependent on major advances in aircraft manufacturing, safety, regulation, operations, batteries, and network adoption; the article offers no evidence that Airbound is near competing with Tesla\u2019s current or near-term vehicles.",
     "source": "Not Boring"
+  },
+  {
+    "id": "2d7e719fdc0def7d",
+    "ticker": "TSLA",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "source_title": "Weekly Dose of Optimism #215",
+    "event_type": "product_launch",
+    "created": "2026-10-16",
+    "claim": "Roadster unveiling strengthens Tesla\u2019s innovation and halo-brand appeal",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Tesla unveiled its delayed second-generation Roadster at a SpaceX test site, demonstrating an advertised roughly one-second 0\u201360 mph time and a rocket-like jump using compressed air, nozzles, and fans. The spectacle could reinforce Tesla\u2019s technology and performance image, potentially supporting future customer interest, but the article provides no demand, pricing, or order data.",
+    "source": "Not Boring"
+  },
+  {
+    "id": "b96ae612859df6c9",
+    "ticker": "TSLA",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "source_title": "Weekly Dose of Optimism #215",
+    "event_type": "product_launch",
+    "created": "2026-10-16",
+    "claim": "Roadster\u2019s 2028 production timeline limits near-term financial contribution",
+    "direction": "short",
+    "confidence": 0.92,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Tesla said production of the second-generation Roadster would begin in 2028, nine years after it was first teased and following multiple delays. Thus, despite the unveiling, the model is unlikely to contribute materially to Tesla\u2019s revenue, deliveries, or earnings over the next several quarters; the article gives no production volume or pricing estimates.",
+    "source": "Not Boring"
   }
 ]

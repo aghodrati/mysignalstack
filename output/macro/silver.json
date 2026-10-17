@@ -734,5 +734,62 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-17",
+    "value": 56.994998931884766,
+    "delta": -6.057358411033609,
+    "history": [
+      [
+        "2026-10-12",
+        60.14099884033203
+      ],
+      [
+        "2026-10-13",
+        59.1609992980957
+      ],
+      [
+        "2026-10-14",
+        55.54999923706055
+      ],
+      [
+        "2026-10-15",
+        56.83700180053711
+      ],
+      [
+        "2026-10-16",
+        56.994998931884766
+      ]
+    ],
+    "narrative": "The clearest proximate driver was the inflation-report shock: \u201cGold Lost $100 an Ounce in Hours After the Inflation Report,\u201d which likely triggered broad precious-metals liquidation and hit silver harder. The \u201cRegime Change\u201d commentary about bonds pricing an AI-bubble burst and recession reinforces a risk-off/deleveraging backdrop, while the scarcity headline was not enough to offset that pressure.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Hope I'm Wrong",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "Regime Change: Bonds Pricing AI Bubble Burst And A Recession",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Gold Lost $100 an Ounce in Hours After the Inflation Report",
+        "domain": "Yahoo",
+        "date": "20261015"
+      },
+      {
+        "title": "Silver Nears Crucial Test: Peak Scarcity or Structural Squeeze?",
+        "domain": "Benzinga",
+        "date": "20261014"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W42",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

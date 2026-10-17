@@ -753,5 +753,75 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-17",
+    "value": 81575.2890625,
+    "delta": -1.6124732809969844,
+    "history": [
+      [
+        "2026-10-11",
+        83679.46875
+      ],
+      [
+        "2026-10-12",
+        81762.5625
+      ],
+      [
+        "2026-10-13",
+        83095.125
+      ],
+      [
+        "2026-10-14",
+        81562.4921875
+      ],
+      [
+        "2026-10-15",
+        82141.4609375
+      ],
+      [
+        "2026-10-16",
+        81500.8046875
+      ],
+      [
+        "2026-10-17",
+        81575.2890625
+      ]
+    ],
+    "narrative": "No clear single catalyst is evident in the listed headlines for Bitcoin's modest 1.61% weekly decline. The market-wide risk-off tone in the Yahoo reports and the SeekingAlpha commentary may have contributed to cautious positioning, but they do not provide a specific Bitcoin shock; the ETF-trading headline mainly signals continued interest rather than a directional driver.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Hope I'm Wrong",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "Bitcoin's Post-Quantum Solutions",
+        "domain": "SeekingAlpha",
+        "date": "20261015"
+      },
+      {
+        "title": "Bitcoin, Nvidia And Tesla ETFs Lead Wall Street\u2019s Most Traded Funds",
+        "domain": "Benzinga",
+        "date": "20261014"
+      },
+      {
+        "title": "Exchange-Traded Funds Lower, Equity Futures Mixed Pre-Bell Tuesday Amid Chip Weakness, Bank Earnings",
+        "domain": "Yahoo",
+        "date": "20261013"
+      },
+      {
+        "title": "Exchange-Traded Funds Lower, Equity Futures Mixed Pre-Bell Monday as Investors Weigh Oil, Earnings",
+        "domain": "Yahoo",
+        "date": "20261012"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W42",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

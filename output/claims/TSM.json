@@ -929,5 +929,24 @@
     "trade_worthy": false,
     "context": "TSMC is already a leading die-to-wafer hybrid-bonding user through SoIC, bonding at roughly 6 micrometers today and targeting 4.5 micrometers around 2029. ASML is reportedly designing a track-based die-to-wafer tool with tighter alignment, metrology, particle control and scalable station utilization, potentially giving TSMC another high-performance equipment source and supporting its increasingly demanding logic-packaging roadmap. However, ASML has not announced the product and several technical challenges remain unresolved, so the benefit to TSMC is prospective rather than established.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "84929afd2b17153e",
+    "ticker": "TSM",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "source_title": "Weekly Dose of Optimism #215",
+    "event_type": "product_launch",
+    "created": "2026-10-16",
+    "claim": "TSM gains earlier access to advanced chip-process development",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "TSMC is a founding chipmaker partner in Applied Materials\u2019 $5 billion EPIC center, alongside Intel, Samsung, SK hynix, and Micron. The 600,000-square-foot facility is designed to combine materials research, equipment development, and pilot production in parallel, allowing partners to work on process technology three to four generations ahead of current production and potentially shorten development cycles that traditionally take most of a decade. This could support TSMC\u2019s long-term process leadership, though the article provides no TSMC-specific schedule, cost, or customer impact.",
+    "source": "Not Boring"
   }
 ]

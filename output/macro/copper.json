@@ -629,5 +629,57 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-17",
+    "value": 6.531000137329102,
+    "delta": -1.6785816734303238,
+    "history": [
+      [
+        "2026-10-12",
+        6.698500156402588
+      ],
+      [
+        "2026-10-13",
+        6.677999973297119
+      ],
+      [
+        "2026-10-14",
+        6.611499786376953
+      ],
+      [
+        "2026-10-15",
+        6.511499881744385
+      ],
+      [
+        "2026-10-16",
+        6.531000137329102
+      ]
+    ],
+    "narrative": "No clear single catalyst emerges from these headlines: the -1.68 weekly move appears more consistent with broad positioning or macro drift than a specific fundamental shock. \u201cTraders Are Shelling Out Millions to Secure Copper\u201d and \u201cCollect Monthly Income From The AI Copper Trade\u201d are broadly supportive, but they do not explain the selloff and are offset by the caution implied in \u201cHope I'm Wrong.\u201d",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Hope I'm Wrong",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "'Traders Are Shelling Out Millions to Secure Copper' - Bloomberg",
+        "domain": "Benzinga",
+        "date": "20261016"
+      },
+      {
+        "title": "Collect Monthly Income From The AI Copper Trade",
+        "domain": "SeekingAlpha",
+        "date": "20261015"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W42",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

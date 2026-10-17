@@ -8244,5 +8244,100 @@
     "name": "GlobalPlatform",
     "ticker_guess": null,
     "why": "Hosts Pavona as a neutral ecosystem for designing open and secure hardware; provides the standards-consortium framework for the initiative"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-16",
+    "source": "Next Platform",
+    "article_title": "Just How Rosy Is That Datacenter Buildout Forecast?",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/16/just-how-rosy-is-that-datacenter-buildout-forecast/5303595",
+    "name": "data center construction",
+    "why": "Growth driven by GenAI boom; 12.9 GW new capacity 2026, 18 GW 2027; construction spending shown in US Census Bureau data"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-16",
+    "source": "Next Platform",
+    "article_title": "Just How Rosy Is That Datacenter Buildout Forecast?",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/16/just-how-rosy-is-that-datacenter-buildout-forecast/5303595",
+    "name": "power generation infrastructure",
+    "why": "Datacenter buildout requires new grid interconnects and behind\u2011the\u2011meter power; power utility construction counterbalancing commercial decline"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-16",
+    "source": "Next Platform",
+    "article_title": "Just How Rosy Is That Datacenter Buildout Forecast?",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/16/just-how-rosy-is-that-datacenter-buildout-forecast/5303595",
+    "name": "labor shortage",
+    "why": "Major damper on 2026 spending; expected to remain a constraint through 2029"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-16",
+    "source": "Next Platform",
+    "article_title": "Just How Rosy Is That Datacenter Buildout Forecast?",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/16/just-how-rosy-is-that-datacenter-buildout-forecast/5303595",
+    "name": "supply chain constraints",
+    "why": "Chip manufacturing equipment and power distribution components lag behind demand; delays and cancellations common"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-16",
+    "source": "Next Platform",
+    "article_title": "Just How Rosy Is That Datacenter Buildout Forecast?",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/16/just-how-rosy-is-that-datacenter-buildout-forecast/5303595",
+    "name": "regulatory/political pressure",
+    "why": "Demand for datacenters to pay fair share of electricity costs; skepticism about community benefits; affects project approvals"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-16",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #215",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "name": "Applied Materials",
+    "ticker_guess": "AMAT",
+    "why": "Opened the $5 billion EPIC chip-equipment and process R&D center in Sunnyvale; plans to bring chipmakers, equipment vendors, and universities together to accelerate process development"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-16",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #215",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "name": "Arrowhead Pharmaceuticals",
+    "ticker_guess": "ARWR",
+    "why": "Reported interim Phase 1/2a data showing ARO-MAPT reduced cerebrospinal-fluid total tau by 73% at Day 105; expects Alzheimer\u2019s cohort data in 2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-16",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #215",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "name": "Physical Intelligence",
+    "ticker_guess": null,
+    "why": "Opened a beta Pi robotics API allowing companies to fine-tune models on their own robot data and run inference on deployed robots; early applications include strawberry picking, server assembly, and autonomous wheel loaders"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-16",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #215",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "name": "Nature Will",
+    "ticker_guess": null,
+    "why": "Released Natura-1, a 50-billion-parameter model pretrained on one million hours of egocentric human video; the model is designed to improve two-handed control, novel-task generalization, and long-horizon robotic behavior"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-16",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #215",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "name": "Flexport",
+    "ticker_guess": null,
+    "why": "Showed an automated fulfillment center near Chicago where robots move real freight for customers; the example is presented as evidence that warehouse robotics is becoming commercially deployed"
   }
 ]

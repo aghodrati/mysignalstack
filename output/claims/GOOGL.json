@@ -2259,5 +2259,24 @@
     "trade_worthy": false,
     "context": "Google originated Titan and OpenTitan, whose project director remains zeroRISC CEO Dominic Rizzo. OpenTitan elements are also incorporated into Caliptra, a datacenter root-of-trust architecture developed with Google and other major hardware companies. Through these open-source efforts and Pavona\u2019s post-quantum cryptography ecosystem, Google can help shape reusable security standards, improve control over heterogeneous cloud hardware, and potentially reduce reliance on proprietary security IP. The article provides no direct evidence of near-term revenue, margin, or valuation impact.",
     "source": "Next Platform"
+  },
+  {
+    "id": "f0ca853360785a1a",
+    "ticker": "GOOGL",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "source_title": "Weekly Dose of Optimism #215",
+    "event_type": "product_launch",
+    "created": "2026-10-16",
+    "claim": "Gemini gains credibility as a leading embodied-AI platform",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google DeepMind demonstrated Gemini Argon teaching an Apollo humanoid robot to play cornhole from a human throwing video. The model generated a simulation, matched it to the robot\u2019s motors through system identification, trained the throwing motion, and then executed it without a bespoke cornhole controller. This supports Google\u2019s competitive position and longer-term robotics monetization optionality, but the article provides no revenue, customer, or deployment evidence.",
+    "source": "Not Boring"
   }
 ]

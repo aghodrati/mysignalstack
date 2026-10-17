@@ -815,5 +815,24 @@
     "trade_worthy": false,
     "context": "The article reports that Nvidia may reduce HBM capacity in future Rubin and Rubin Ultra designs, while AMD is reportedly holding its Altair accelerator at 488 GB. Designers are considering fewer or shorter stacks and custom HBM base dies to manage constrained and expensive supply. If these architecture changes reduce HBM consumption per accelerator, they could temper the longer-term growth opportunity for MU\u2019s HBM business despite continued AI demand.",
     "source": "Next Platform"
+  },
+  {
+    "id": "7d218d602e842381",
+    "ticker": "MU",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-215",
+    "source_title": "Weekly Dose of Optimism #215",
+    "event_type": "product_launch",
+    "created": "2026-10-16",
+    "claim": "MU gains access to faster collaborative chip-process development",
+    "direction": "long",
+    "confidence": 0.93,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Micron is a founding chipmaker partner in Applied Materials\u2019 $5 billion EPIC center alongside TSMC, Intel, Samsung, and SK hynix. EPIC will place competing companies\u2019 engineers together with equipment makers and researchers, running materials research, equipment development, and pilot production in parallel rather than sequentially, potentially shortening development cycles for process technologies three to four generations ahead of current production. This supports MU\u2019s long-term process competitiveness, though the article provides no specific impact on revenue, margins, or timing.",
+    "source": "Not Boring"
   }
 ]

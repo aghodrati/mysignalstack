@@ -779,5 +779,72 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-17",
+    "value": 4181.10009765625,
+    "delta": -0.834848294993551,
+    "history": [
+      [
+        "2026-10-12",
+        4190.60009765625
+      ],
+      [
+        "2026-10-13",
+        4177.2998046875
+      ],
+      [
+        "2026-10-14",
+        4107.89990234375
+      ],
+      [
+        "2026-10-15",
+        4170.10009765625
+      ],
+      [
+        "2026-10-16",
+        4181.10009765625
+      ]
+    ],
+    "narrative": "The clearest driver was the hotter-than-expected 3.7% inflation reading in \u201cInflation Comes in Hotter Than Expected at 3.7%, Keeping Fed Hike Bets Alive,\u201d which lifted rate expectations and triggered the reported \u201cGold Lost $100 an Ounce in Hours After the Inflation Report.\u201d That rate-driven liquidation plausibly explains the modest weekly decline despite gold\u2019s longer-term support, while the miner-cash-pile headline is not a direct price catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Hope I'm Wrong",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "Impact Of Rising Inflation And Interest Rates On Commodities",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Inflation Comes in Hotter Than Expected at 3.7%, Keeping Fed Hike Bets Alive (UPDATED)",
+        "domain": "Yahoo",
+        "date": "20261015"
+      },
+      {
+        "title": "Gold Lost $100 an Ounce in Hours After the Inflation Report",
+        "domain": "Yahoo",
+        "date": "20261015"
+      },
+      {
+        "title": "Dow Jones Climbs to 52,000 While Chips Bleed on Rate-Hike Fears: Stock Market Today",
+        "domain": "Benzinga",
+        "date": "20261015"
+      },
+      {
+        "title": "Gold Slump Is Masking a $20 Billion Miner Cash Pile",
+        "domain": "Benzinga",
+        "date": "20261015"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W42",
+    "direction": "bearish",
+    "confidence": "high",
+    "trade_worthy": true
   }
 ]

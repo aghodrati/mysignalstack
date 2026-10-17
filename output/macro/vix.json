@@ -853,5 +853,84 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W41"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-17",
+    "value": 19.989999771118164,
+    "delta": 5.149999618530273,
+    "history": [
+      [
+        "2026-10-12",
+        15.210000038146973
+      ],
+      [
+        "2026-10-13",
+        15.270000457763672
+      ],
+      [
+        "2026-10-14",
+        16.8700008392334
+      ],
+      [
+        "2026-10-15",
+        16.459999084472656
+      ],
+      [
+        "2026-10-16",
+        19.989999771118164
+      ]
+    ],
+    "narrative": "The move appears to reflect broadening risk aversion and heavier hedging, with tech selling highlighted by ZeroHedge (\u201cHigher Probability Of VIX 25 Than SPX -2%\u201d) and CNBC reporting that traders expect the fear gauge to rise further. However, the headlines provide no clear single fundamental catalyst for the U.S. volatility increase; the India VIX and market-fall reports are corroborative but largely unrelated regional signals.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Financials Up After Generally Strong Earnings -- Financials Roundup",
+        "domain": "MarketScreener",
+        "date": "20261016"
+      },
+      {
+        "title": "Wall Street's fear gauge is ripping. Traders see it going even higher",
+        "domain": "CNBC",
+        "date": "20261016"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20261015"
+      },
+      {
+        "title": "Markets Today: Sensex, Nifty Open Flat Amid Mixed Global Cues; IT Stocks Gain, India VIX Rises",
+        "domain": "News18",
+        "date": "20261014"
+      },
+      {
+        "title": "Pre-market action: Here's the trade setup for today's session",
+        "domain": "The Economic Times",
+        "date": "20261014"
+      },
+      {
+        "title": "Nifty Weekly Expiry Outlook: India VIX Near Four-Month High; What Does It Mean for Markets?",
+        "domain": "NDTV Profit",
+        "date": "20261013"
+      },
+      {
+        "title": "\"Higher Probability Of VIX 25 Than SPX -2%\": Hedge Funds Dump Tech As Goldman Finds Records Everywhere Except Conviction",
+        "domain": "ZeroHedge",
+        "date": "20261013"
+      },
+      {
+        "title": "Volatility index India VIX up 36% since September - What it indicates about market? Should you be worried? Explained",
+        "domain": "Livemint",
+        "date": "20261013"
+      },
+      {
+        "title": "Three Reasons Why Market Is Falling Today: Sensex Down 1,000 Points From Day's High, Nifty Below 22,400",
+        "domain": "NDTV Profit",
+        "date": "20261012"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W42"
   }
 ]

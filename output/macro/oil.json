@@ -670,5 +670,72 @@
     "direction": "bullish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-17",
+    "value": 101.41000366210938,
+    "delta": 10.408280181607,
+    "history": [
+      [
+        "2026-10-12",
+        93.73999786376953
+      ],
+      [
+        "2026-10-13",
+        94.13999938964844
+      ],
+      [
+        "2026-10-14",
+        95.08999633789062
+      ],
+      [
+        "2026-10-15",
+        97.97000122070312
+      ],
+      [
+        "2026-10-16",
+        101.41000366210938
+      ]
+    ],
+    "narrative": "The clearest specific catalyst was the report that an Iranian navy-constrained oil tanker caught fire east of the Strait of Hormuz, reviving geopolitical and shipping-supply risk and plausibly helping drive crude higher. This aligns with reports that energy stocks advanced and that crude led the week, although Russia\u2019s claim of sufficient diesel for exports provides a modest counterpoint.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Impact Of Rising Inflation And Interest Rates On Commodities",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Sector Update: Energy Stocks Advance Premarket Friday",
+        "domain": "Yahoo",
+        "date": "20261016"
+      },
+      {
+        "title": "Health Care and Crude Led the Week While Tech Lost Its Grip",
+        "domain": "Yahoo",
+        "date": "20261016"
+      },
+      {
+        "title": "AI Boom At Risk? Geopolitics, China, And Market Opportunities For 2027",
+        "domain": "SeekingAlpha",
+        "date": "20261016"
+      },
+      {
+        "title": "Iranian Navy Says Oil Tanker Violating Maritime Restrictions Caught Fire East Of The Strait Of Hormuz",
+        "domain": "Benzinga",
+        "date": "20261016"
+      },
+      {
+        "title": "Russian Deputy PM For Energy Novak Says That Even With Refineries Undergoing Repairs, There's Enough Diesel For Export",
+        "domain": "Benzinga",
+        "date": "20261016"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W42",
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]
