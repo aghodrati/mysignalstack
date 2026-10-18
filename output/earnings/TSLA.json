@@ -1,0 +1,92 @@
+[
+  {
+    "call_date": "2026-10-21",
+    "when": "2026-10-21T16:00:00-04:00",
+    "eps_estimate": 0.45,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-22",
+        "eps_estimate": 0.56,
+        "reported_eps": 0.5,
+        "surprise_pct": -10.53
+      },
+      {
+        "earnings_date": "2026-01-28",
+        "eps_estimate": 0.45,
+        "reported_eps": 0.5,
+        "surprise_pct": 10.96
+      },
+      {
+        "earnings_date": "2026-04-22",
+        "eps_estimate": 0.35,
+        "reported_eps": 0.41,
+        "surprise_pct": 17.15
+      },
+      {
+        "earnings_date": "2026-07-22",
+        "eps_estimate": 0.54,
+        "reported_eps": 0.33,
+        "surprise_pct": -39.15
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-18",
+    "call_date": "2026-10-21",
+    "narrative": "Investors should watch whether Tesla\u2019s core auto business is stabilizing while the company continues funding ambitious projects such as Optimus and the flying Roadster, especially with gasoline cars falling below 50% of global sales. The \u201cthree suppliers get paid before Tesla does\u201d headline highlights the importance of cash generation, working-capital management, and any pressure from supplier obligations. The call should also clarify whether Musk can turn his product and autonomy promises into credible execution, since recent coverage frames Tesla as both a premium-multiple battery/technology company and a business facing competitive and cyclical pressure. Expectations appear high and volatile: optimism around Optimus, options activity, and Musk\u2019s execution may support the narrative, but investors could react negatively if the update emphasizes slower auto growth, margin pressure, or delayed timelines.",
+    "headlines_used": [
+      {
+        "title": "Elon Musk Says Optimus Is Tesla's Most Important Product. These 3 Suppliers Get Paid Before Tesla Does.",
+        "domain": "Yahoo",
+        "date": "20261018"
+      },
+      {
+        "title": "3 Founder Led Stocks With Up To 31% ROE",
+        "domain": "Yahoo",
+        "date": "20261018"
+      },
+      {
+        "title": "Meta, Tesla Headline Earnings In Busy Week For Markets",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "Tesla: Musk Proves He Can Deliver (Earnings Preview)",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "Semis And Bonds At Inflection Points; Bonds Become Correlated With AI Trade; Musk Shows Flying Roadster",
+        "domain": "Benzinga",
+        "date": "20261016"
+      },
+      {
+        "title": "Gasoline Cars Fall Below 50% of Global Sales: The Trump Contradiction",
+        "domain": "Benzinga",
+        "date": "20261016"
+      },
+      {
+        "title": "Which S&P500 stocks are moving before the opening bell on Friday?",
+        "domain": "ChartMill",
+        "date": "20261016"
+      },
+      {
+        "title": "Stocks making the biggest moves midday: CoreWeave, Moog, J.B. Hunt, Alcoa & more",
+        "domain": "CNBC",
+        "date": "20261016"
+      },
+      {
+        "title": "Options Action: Tesla turns bulls' heads",
+        "domain": "CNBC",
+        "date": "20261016"
+      },
+      {
+        "title": "Battery Stocks Earnings Preview: Tesla\u2019s Premium Multiple vs. Deep-Value Lithium Suppliers",
+        "domain": "ChartMill",
+        "date": "20261015"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

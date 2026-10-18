@@ -8339,5 +8339,111 @@
     "name": "Flexport",
     "ticker_guess": null,
     "why": "Showed an automated fulfillment center near Chicago where robots move real freight for customers; the example is presented as evidence that warehouse robotics is becoming commercially deployed"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-17",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-205/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Discussed as a central subject of the reviewed AI history; released ChatGPT during the same month as FTX\u2019s collapse; GPT-1 reportedly used otherwise-idle GPUs during December"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-17",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-205/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Discussed in the context of early AI-lab history and funding uncertainty after FTX\u2019s collapse; its perceived prospects were affected by OpenAI\u2019s ChatGPT release"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-18",
+    "source": "Doomberg",
+    "article_title": "Electricity Island",
+    "article_link": "https://newsletter.doomberg.com/p/electricity-island",
+    "name": "grid/energy",
+    "why": "\u2022 Estonia, Latvia, and Lithuania synchronized with the Continental European Synchronous Area on February 9, 2025; \u2022 The project ended their electricity-grid links with Russia and Belarus; \u2022 The EU provided over \u20ac1.23 billion in Connecting Europe Facility grants, covering 75% of investment costs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-18",
+    "source": "Doomberg",
+    "article_title": "Electricity Island",
+    "article_link": "https://newsletter.doomberg.com/p/electricity-island",
+    "name": "energy security",
+    "why": "\u2022 Baltic grid integration reduces dependence on hostile neighboring power systems; \u2022 The EU says synchronization strengthens security of supply and supports renewable-energy integration; \u2022 Major electricity flows from Russia had already effectively stopped in 2022"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-18",
+    "source": "Doomberg",
+    "article_title": "Electricity Island",
+    "article_link": "https://newsletter.doomberg.com/p/electricity-island",
+    "name": "geopolitics",
+    "why": "\u2022 Kaliningrad lost direct electricity links to mainland Russia after Baltic synchronization; \u2022 The Russian exclave is surrounded by NATO members and is described as a strategic flashpoint; \u2022 Moscow warned that attempts to isolate Kaliningrad could trigger direct conflict with NATO"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-18",
+    "source": "Doomberg",
+    "article_title": "Electricity Island",
+    "article_link": "https://newsletter.doomberg.com/p/electricity-island",
+    "name": "nuclear risk",
+    "why": "\u2022 Russia said it could use its full military arsenal, including nuclear weapons, to defend Kaliningrad; \u2022 Moscow warned of possible strikes against decision-making centers in NATO states; \u2022 The threat was framed as a response to efforts to cut Kaliningrad off from the rest of Russia"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-17",
+    "source": "Interconnects",
+    "article_title": "Meta shakes up the frontiers, open and closed",
+    "article_link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Described as the leading frontier lab alongside OpenAI; its Opus 5.5 is cited as ahead of Meta\u2019s latest closed models; viewed as highly organized and consistent in maintaining frontier status"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-17",
+    "source": "Interconnects",
+    "article_title": "Meta shakes up the frontiers, open and closed",
+    "article_link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Described as one of the two leading frontier labs; Meta\u2019s closed models are characterized as similar to OpenAI\u2019s GPT-6-Astra; cited as more inconsistent than Anthropic but still capable of remaining at the frontier"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-17",
+    "source": "Interconnects",
+    "article_title": "Meta shakes up the frontiers, open and closed",
+    "article_link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+    "name": "Mistral",
+    "ticker_guess": null,
+    "why": "Announced Mistral Large 4 with a strong reported index score; its model weights had not yet been released at the time of writing"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-17",
+    "source": "Interconnects",
+    "article_title": "Meta shakes up the frontiers, open and closed",
+    "article_link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+    "name": "Reflection",
+    "ticker_guess": null,
+    "why": "Released its first model, Beam; its model announcement helped frame Meta\u2019s decision to release Muse Spark Open weights before competing Western labs released their own"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-17",
+    "source": "Interconnects",
+    "article_title": "Meta shakes up the frontiers, open and closed",
+    "article_link": "https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open",
+    "name": "xAI",
+    "ticker_guess": null,
+    "why": "Included among the small group of U.S. labs still capable of competing at the frontier; characterized as having potential talent-turnover or organizational challenges"
   }
 ]

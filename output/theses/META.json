@@ -136,5 +136,49 @@
     "final_multiplier": 0.82,
     "confidence_before": 0.59,
     "confidence_after": 0.48379999999999995
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-18",
+    "thesis": "META remains a constructive long because its highly profitable advertising engine can fund an unusually broad AI, agent, and infrastructure push, while Muse Spark\u2019s improved frontier position and distribution create substantial long-term optionality despite heavy capex, execution, and monetization risks.",
+    "direction": "long",
+    "confidence": 0.68,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.74,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.68,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained advertising revenue, engagement, and recommendation-system gains from additional AI compute",
+      "Further Muse adoption across WhatsApp, Facebook Marketplace, glasses, and other consumer surfaces",
+      "Commercial uptake of Muse Spark Open, Muse models, Meta Compute, or external AI-infrastructure services",
+      "Successful deployment of MTIA custom accelerators, TPU capacity, behind-the-meter power, and rapid-build datacenters at attractive economics",
+      "Evidence that Muse Spark and Muse Wonder narrow the gap with Anthropic and OpenAI while expanding Meta\u2019s open and closed model ecosystem"
+    ],
+    "invalidation": [
+      "Another material earnings miss or deterioration in revenue, operating margins, and free cash flow",
+      "AI capex and third-party compute commitments accelerate without measurable advertising, product, or infrastructure monetization",
+      "Persistent infrastructure missteps, custom-chip delays, supplier friction, or execution failures that raise compute costs and increase Nvidia dependence",
+      "Muse adoption fails to translate into engagement or revenue, especially after Amazon blocks commerce access and Meta Enterprise Platform distracts from consumer agents",
+      "Llama and Muse lose further developer adoption to Chinese or rival open models, while restrictive licensing limits Muse Spark Open\u2019s commercial ecosystem",
+      "Teen-use restrictions, antitrust action, or other regulation materially reduces engagement or advertising monetization"
+    ],
+    "reasoning": "The independent fundamentals are strongly constructive with 28% revenue growth, 30.9% operating margin, 57.1% free-cash-flow margin, and reasonable forward valuation, but the 6.18 reported EPS versus 7.22 expected, negative earnings growth, weakening revisions, absent earnings-call evidence, and extensive AI spending and execution risks warrant a moderate rather than high-conviction long.",
+    "claims_considered": 95
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-18",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.68,
+    "confidence_after": 0.68
   }
 ]

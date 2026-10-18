@@ -1,0 +1,87 @@
+[
+  {
+    "call_date": "2026-10-21",
+    "when": "2026-10-21T16:00:00-04:00",
+    "eps_estimate": 5.7,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-29",
+        "eps_estimate": 6.67,
+        "reported_eps": 7.25,
+        "surprise_pct": 8.66
+      },
+      {
+        "earnings_date": "2026-01-28",
+        "eps_estimate": 8.22,
+        "reported_eps": 8.88,
+        "surprise_pct": 8.0
+      },
+      {
+        "earnings_date": "2026-04-29",
+        "eps_estimate": 6.82,
+        "reported_eps": 7.31,
+        "surprise_pct": 7.2
+      },
+      {
+        "earnings_date": "2026-07-29",
+        "eps_estimate": 7.22,
+        "reported_eps": 6.18,
+        "surprise_pct": -14.42
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-18",
+    "call_date": "2026-10-21",
+    "narrative": "Investors should focus on whether Meta\u2019s heavy AI investment is translating into stronger engagement, advertising performance, and credible monetization plans, especially as one headline says AI spending could reach $205 billion in 2027. They should also listen for updated guidance on infrastructure and capital spending, since the bullish analyst coverage and \u201cconstructive technical setup\u201d raise expectations ahead of earnings. Management\u2019s comments on the Brazil controversy and broader regulatory or political risks will matter, particularly regarding Instagram content controls and platform neutrality. Overall, expectations appear elevated: I would look for solid operating momentum and confident AI commentary, but any sign that spending is rising faster than monetization could temper the positive reaction.",
+    "headlines_used": [
+      {
+        "title": "5 big analyst AI moves: Meta gets Street-high PT; Salesforce double upgraded",
+        "domain": "Yahoo",
+        "date": "20261018"
+      },
+      {
+        "title": "What Advanced Micro Devices Buyers Were Betting On Before A 137% Rally",
+        "domain": "Yahoo",
+        "date": "20261018"
+      },
+      {
+        "title": "Meta, Tesla Headline Earnings In Busy Week For Markets",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "GAMR Video Game ETF Momentum Continues Into Q4",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      },
+      {
+        "title": "Meta Denies Political Bias in Brazil Elections After Staff Flagged Instagram Restrictions Affecting President Lula's Accounts: Report",
+        "domain": "Benzinga",
+        "date": "20261016"
+      },
+      {
+        "title": "CNBC TechCheck Evening Edition: October 16, 2026",
+        "domain": "CNBC",
+        "date": "20261016"
+      },
+      {
+        "title": "Meta's AI Spending Could Hit $205 Billion in 2027: Why Magnificent 7 ETFs Face a Crucial Test",
+        "domain": "Benzinga",
+        "date": "20261016"
+      },
+      {
+        "title": "The Week That Was: October 16, 2026",
+        "domain": "CNBC",
+        "date": "20261016"
+      },
+      {
+        "title": "Meta Platforms (NASDAQ:META) Offers Strong Growth and a Constructive Technical Setup",
+        "domain": "ChartMill",
+        "date": "20261016"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]
