@@ -549,5 +549,24 @@
     "trade_worthy": false,
     "context": "The article expects Chinese hyperscalers\u2019 overseas leased datacenter capacity to nearly double from 2026 to 2029, approaching 4GW, while noting that this understates offshore compute because it excludes hundreds of thousands of GPUs rented from Western clouds; Oracle is specifically cited as benefiting from this GPU-rental activity. The mechanism is incremental Chinese demand for Western cloud capacity rather than Oracle-owned Chinese datacenter construction, so the benefit is tied to overseas AI workloads and cloud GPU consumption.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "6a2fdb09908dc833",
+    "ticker": "ORCL",
+    "source_link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+    "source_title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+    "event_type": "capex",
+    "created": "2026-10-19",
+    "claim": "ORCL is positioned to expand AI-cloud capacity and capture rising compute demand",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Oracle closed approximately 4.5GW of datacenter IT-capacity leases across three sites between August and October 2025, making it an early participant in the article\u2019s reported wave of gigawatt-scale AI infrastructure commitments. The broader forecast calls for more than 50GW of global datacenter construction in 2027 and increasing compute supply, which could support Oracle\u2019s ability to offer additional AI and cloud capacity. The article does not quantify the resulting revenue or margin impact for Oracle.",
+    "source": "SemiAnalysis"
   }
 ]

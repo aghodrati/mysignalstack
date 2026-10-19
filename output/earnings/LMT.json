@@ -1,0 +1,87 @@
+[
+  {
+    "call_date": "2026-10-22",
+    "when": "2026-10-22T08:00:00-04:00",
+    "eps_estimate": 7.52,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-21",
+        "eps_estimate": 6.36,
+        "reported_eps": 6.95,
+        "surprise_pct": 9.31
+      },
+      {
+        "earnings_date": "2026-01-29",
+        "eps_estimate": 5.75,
+        "reported_eps": 5.8,
+        "surprise_pct": 0.94
+      },
+      {
+        "earnings_date": "2026-04-23",
+        "eps_estimate": 6.69,
+        "reported_eps": 6.44,
+        "surprise_pct": -3.78
+      },
+      {
+        "earnings_date": "2026-07-23",
+        "eps_estimate": 7.2,
+        "reported_eps": 7.94,
+        "surprise_pct": 10.29
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-19",
+    "call_date": "2026-10-22",
+    "narrative": "Investors should watch whether Lockheed\u2019s commentary supports the CEO\u2019s reported view that demand tied to the Iran war is \u201cpermanent,\u201d while also addressing political criticism that defense contractors are profiting from prolonged conflict. The call should provide clues on backlog conversion, Pentagon priorities, program execution, and whether increased demand is translating into stronger profitability, especially as the sector faces \u201cweak momentum\u201d despite strong profitability. Supply-chain resilience\u2014including exposure to the rare-earth magnet shortfall highlighted in the headlines\u2014may also be important. My expectation is for a fundamentally supported outlook from defense demand, but with scrutiny on margins, execution, and the sustainability of the demand surge rather than simply its headline size.",
+    "headlines_used": [
+      {
+        "title": "A big 'yikes' still hangs over the AI trade as Meta and Tesla report: What to watch this week",
+        "domain": "Yahoo",
+        "date": "20261019"
+      },
+      {
+        "title": "America Needs 48,000 Tons of Rare Earth Magnets. It Only Makes 300",
+        "domain": "Yahoo",
+        "date": "20261019"
+      },
+      {
+        "title": "The Winners Inside SCHD - October 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261018"
+      },
+      {
+        "title": "Tesla Promises Its Flying Roadster For 2028, but MKBHD Has One Question: \u2018This Is A Prank, Right?\u2019",
+        "domain": "Benzinga",
+        "date": "20261018"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261018"
+      },
+      {
+        "title": "Joe Kent Slams Defense Contractors After Lockheed CEO Says Iran War Demand Is \u2018Permanent:\u2019 \u2018Stop Spilling American Blood for Profit\u2019",
+        "domain": "Benzinga",
+        "date": "20261018"
+      },
+      {
+        "title": "Defense Prime Earnings Test: Can Strong Profitability Overcome Weak Momentum?",
+        "domain": "ChartMill",
+        "date": "20261016"
+      },
+      {
+        "title": "CNBC\u2019s Morgan Brennan speaks with defense leaders from Lockheed Martin, GM Defense, and Hadrian",
+        "domain": "CNBC",
+        "date": "20261015"
+      },
+      {
+        "title": "Watch CNBC's full report with Lockheed Martin CEO and Pentagon officials",
+        "domain": "CNBC",
+        "date": "20261015"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

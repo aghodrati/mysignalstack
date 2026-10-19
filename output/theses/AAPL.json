@@ -43,5 +43,54 @@
     "final_multiplier": 0.774,
     "confidence_before": 0.672,
     "confidence_after": 0.520128
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-19",
+    "thesis": "AAPL has a modestly bearish risk-reward profile as supply and memory-cost pressures, App Store monetization concessions, uncertain Siri and AI economics, and a demanding valuation outweigh promising but unproven smart-home and ecosystem opportunities.",
+    "direction": "short",
+    "confidence": 0.5576,
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.78,
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.82,
+    "pre_critic_confidence": 0.68,
+    "critic_multiplier": 0.82,
+    "expected_return_pct": -8,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Further advanced-node and memory supply constraints reduce iPhone, Mac, and iPad growth or margins.",
+      "App Store fee reductions and regulatory concessions pressure Services revenue growth and profitability.",
+      "Siri AI delays or weak performance limit HomeView adoption and undermine Apple\u2019s broader AI and smart-home strategy.",
+      "HomeView demand proves limited because of high pricing, weak AI capabilities, and concerns about Apple\u2019s long-term product support.",
+      "Browser-based AI agents weaken the strategic value of Apple\u2019s app-centric ecosystem and developer platform."
+    ],
+    "invalidation": [
+      "HomeView and Apple Home Collection achieve strong adoption, generate recurring iCloud+ revenue, and establish a credible new platform.",
+      "Apple resolves Siri AI delays and delivers materially better agent capabilities that improve hardware demand and AI monetization.",
+      "Supply constraints ease, memory inflation moderates, and sustained iPhone and Mac demand preserves growth and margins.",
+      "Services growth remains resilient despite App Store fee changes, regulatory settlements, FX pressure, and mobile-gaming weakness.",
+      "Apple\u2019s strong June-quarter momentum continues without the expected deterioration in the forward outlook."
+    ],
+    "reasoning": "The latest quarter beat EPS estimates at $2.02 versus $1.89, and Apple\u2019s fundamentals and current demand remain strong, but the earnings call\u2019s cautious outlook, supply and cost risks, uncertain AI economics, negative revision momentum, and high valuation align with the more consequential bearish platform and Services claims.",
+    "claims_considered": 22
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-19",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis adds memory-cost pressure, but no claim mentions memory costs; the only supply evidence is a claim about chip shortages constraining near-term performance.",
+      "A demanding valuation is not supported by any supplied claim, so it cannot substantiate the bearish risk-reward conclusion.",
+      "The claim that uncertain AI economics weigh on AAPL overreaches the evidence: the claims support Siri limitations and platform risks, but do not establish AI economics.",
+      "The conclusion that bearish factors outweigh opportunities is asserted rather than demonstrated; several ecosystem claims are positive, including credible smart-home foothold, lock-in, recurring iCloud+ revenue, Apple Pay, CarPlay, and Vision Pro support.",
+      "The App Store settlement and Germany ATT disputes are already described as settled by August 19; the synthesis appropriately captures their continuing economic effects but understates the offsetting reduction in regulatory overhang."
+    ],
+    "llm_multiplier": 0.82,
+    "llm_reasoning": "The bearish framing is directionally supported, but unsupported memory-cost and valuation assertions plus an unproven net-weighting conclusion warrant a material confidence reduction.",
+    "final_multiplier": 0.82,
+    "confidence_before": 0.68,
+    "confidence_after": 0.5576
   }
 ]

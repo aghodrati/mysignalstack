@@ -2278,5 +2278,43 @@
     "trade_worthy": false,
     "context": "Google DeepMind demonstrated Gemini Argon teaching an Apollo humanoid robot to play cornhole from a human throwing video. The model generated a simulation, matched it to the robot\u2019s motors through system identification, trained the throwing motion, and then executed it without a bespoke cornhole controller. This supports Google\u2019s competitive position and longer-term robotics monetization optionality, but the article provides no revenue, customer, or deployment evidence.",
     "source": "Not Boring"
+  },
+  {
+    "id": "84b61d8a92335f80",
+    "ticker": "GOOGL",
+    "source_link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+    "source_title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+    "event_type": "capex",
+    "created": "2026-10-19",
+    "claim": "GOOGL\u2019s AI infrastructure capacity is likely to expand materially",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google is identified among buyers seeking gigawatt-scale datacenter leases, alongside Meta, AWS, Microsoft, Nvidia, AMD, Anthropic and OpenAI. SemiAnalysis expects global datacenter construction to exceed 50GW in 2027, supported by more than $1 trillion of signed leases, accelerating self-build activity, modular designs, shorter construction timelines and alternative power solutions. For Google, this implies greater access to compute for AI model development and deployment, although the article does not quantify Google\u2019s specific capacity additions.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "b84ad00b69f6e999",
+    "ticker": "GOOGL",
+    "source_link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+    "source_title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+    "event_type": "capex",
+    "created": "2026-10-19",
+    "claim": "GOOGL faces materially higher AI infrastructure capital requirements",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The projected datacenter acceleration requires unprecedented capital expenditure, with signed leases enabling developers to raise debt and hyperscalers pursuing gigawatt-scale capacity. Google is explicitly listed among the companies seeking such leases, so the buildout implies substantial additional datacenter, power and equipment spending. SemiAnalysis also warns that the capital demand could push interest rates higher, adding a financing and valuation headwind for capital-intensive hyperscalers.",
+    "source": "SemiAnalysis"
   }
 ]

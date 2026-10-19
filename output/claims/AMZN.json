@@ -1157,5 +1157,43 @@
     "trade_worthy": false,
     "context": "The article argues that hyperscalers, cloud builders, and AI model builders may collectively spend approximately $6.1 trillion on AI from 2025 through 2027, nearly matching their estimated $6.2 trillion of combined cloud, software, search, and social-media revenue before operating costs. It says companies including Amazon are increasingly relying on debt financing, vendor financing, roundtripping transactions, and other capital-raising methods to sustain AI investment, creating a risk that AWS and Amazon must absorb exceptionally high capital spending and financing burdens before AI generates sufficient cost savings or revenue.",
     "source": "Next Platform"
+  },
+  {
+    "id": "8a088ff298cca21e",
+    "ticker": "AMZN",
+    "source_link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+    "source_title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+    "event_type": "capex",
+    "created": "2026-10-19",
+    "claim": "AWS can expand AI capacity faster and capture more hyperscale demand",
+    "direction": "long",
+    "confidence": 0.84,
+    "importance": 8,
+    "expected_return_pct": 8.0,
+    "expected_horizon_days": 270,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "SemiAnalysis says AWS is among the buyers pursuing gigawatt-scale datacenter leases and cites AWS\u2019s Indiana buildout as an example of a giant site being delivered. AWS is also simplifying datacenter shells through its SAMDC design and prefabricating data halls through Project Houdini, with some construction schedules below 10 months. Faster deployment could help Amazon satisfy rapidly growing AI-compute demand and strengthen AWS\u2019s competitive position during 2027.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "c7952603bdf28c02",
+    "ticker": "AMZN",
+    "source_link": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+    "source_title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+    "event_type": "capex",
+    "created": "2026-10-19",
+    "claim": "AWS\u2019s accelerated buildout will materially increase Amazon\u2019s capital intensity",
+    "direction": "short",
+    "confidence": 0.8,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article forecasts more than 50GW of global datacenter construction in 2027, supported by large signed leases and rising hyperscaler self-build starts. AWS is identified as both a major buyer and an active builder, while Amazon\u2019s modular designs and power work are intended to enable faster expansion rather than reduce the need for large absolute investment. The resulting datacenter, power-generation and infrastructure spending could pressure Amazon\u2019s free cash flow and returns on invested capital, while broader capital demand may also contribute to higher interest rates.",
+    "source": "SemiAnalysis"
   }
 ]
