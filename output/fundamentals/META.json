@@ -40,5 +40,54 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-10-21",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.67,
+    "summary": "META retains a strong fundamental profile, combining 28% revenue growth with excellent operating and free-cash-flow margins and a PEG ratio below 1. Valuation has become less compelling, earnings growth is negative, and sharply weaker revisions and reduced institutional buying temper the bullish case, but the 17.8% consensus upside still supports a constructive view.",
+    "key_changes": [
+      "Analyst revisions deteriorated substantially, moving from -0.35 to -1.41, while consensus upside fell from 29.9% to 17.8%.",
+      "Institutional flow weakened sharply from 10.32 to 1.39, indicating much less incremental institutional buying support.",
+      "Forward P/E increased 19.6% from 16.75x to 20.04x, PEG rose 13.3% from 0.83 to 0.94, and EV/revenue increased 17.4% from 6.68x to 7.85x.",
+      "Operating margin improved 12.8% from 30.9% to 34.8%, strengthening the business-quality profile.",
+      "Insider selling increased 27.9% in magnitude, from approximately $202.0 million to $258.4 million, while low-short-interest support improved modestly."
+    ],
+    "risks": [
+      "Negative earnings growth of 13.4% could signal pressure beneath the strong revenue growth.",
+      "Valuation multiples have expanded materially, leaving less room for execution disappointments.",
+      "The sharply negative revisions trend may indicate deteriorating near-term earnings expectations.",
+      "Continued insider selling and weaker institutional flows reduce ownership-based confirmation of the bullish view."
+    ],
+    "reasoning": "Strong growth, improving margins, high cash generation, sub-1 PEG valuation, and meaningful implied upside outweigh the increasingly mixed earnings, revisions, ownership, and multiple-expansion signals, warranting a moderately confident long view.",
+    "fair_value_estimate": 817.87445,
+    "current_price": 694.25,
+    "implied_return_pct": 17.8,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.28,
+        "earnings_growth": -0.134
+      },
+      "Valuation": {
+        "forward_pe": 20.035631,
+        "peg_ratio": 0.94,
+        "ev_to_revenue": 7.845
+      },
+      "Quality": {
+        "operating_margin": 0.34827,
+        "fcf_margin": 0.5708771839908303
+      },
+      "Sentiment": {
+        "analyst_upside": 17.806906733885498,
+        "revisions_trend": -1.4080901177675353,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 1.386499995,
+        "insider_flow": -258423125.0,
+        "low_short_interest": -1.52
+      }
+    },
+    "trigger": "earnings"
   }
 ]

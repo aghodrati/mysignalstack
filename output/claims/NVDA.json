@@ -6173,5 +6173,24 @@
     "trade_worthy": false,
     "context": "The article argues that the scale of datacenter construction will create extraordinary capital demand and may push interest rates higher. Higher rates could weigh on valuation multiples for Nvidia, though the timing and magnitude of any rate impact are uncertain and the claim is macroeconomic rather than company-specific.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "ca4bb47c5dd115dc",
+    "ticker": "NVDA",
+    "source_link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+    "source_title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+    "event_type": "regulatory",
+    "created": "2026-10-20",
+    "claim": "DHS rules could constrain Nvidia\u2019s DeepSeek-derived Nemotron models",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "DHS barred DeepSeek and its models from serving as vendors in federal civilian procurement. The article says it is unclear whether that restriction could also cover finetuned models or models trained on DeepSeek outputs, while Nvidia\u2019s Nemotron models have relied heavily on DeepSeek models in their training recipes. If interpreted broadly, the policy could limit Nemotron\u2019s eligibility for government procurement and weaken Nvidia\u2019s domestic open-model initiative over the coming months.",
+    "source": "Interconnects"
   }
 ]

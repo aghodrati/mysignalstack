@@ -55,5 +55,40 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-10-20",
+    "eps_estimate": 0.16,
+    "reported_eps": 0.35,
+    "surprise_pct": 112.49,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-21",
+    "transcript_date": "2026-10-20",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/20/spacex-spcx-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.68,
+    "guidance_summary": "Management guided to Q4 2026 capital expenditures of $35 billion-$40 billion, total company gross margins broadly consistent with Q2, and Q1 2027 revenue of $33 billion-$37 billion. Compute capacity is expected to reach 2.5-3.0 gigawatts by year-end, with approximately 13 gigawatts online by the end of 2027 viewed as highly achievable and a possible upside case above 20 gigawatts. Management reiterated a $100 billion 2026 ARR target and outlined a $500 billion-$1 trillion ARR aspiration by the end of 2027.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On power, cooling, and infrastructure constraints behind the 13-gigawatt 2027 target, the analyst pressed for operational detail and funding requirements. Musk gave unusually specific deployment figures\u201420,000 GB300s per month and high confidence in 10 incremental gigawatts\u2014but withheld the actual power-sourcing plan as proprietary; the CFO relied on operating cash flow, debt markets, and vendor/customer partnerships to fund the buildout.",
+      "On the potential SpaceX-Tesla combination, the analyst asked about deal merits and roadblocks. Musk said both special committees were still negotiating, no terms had been agreed, and shareholder approval\u2014particularly a 50% vote of all Tesla shares\u2014would be a substantial hurdle, directly tempering market assumptions that a transaction was certain.",
+      "On Starlink Mobile's ability to compete with U.S. wireless incumbents, the analyst questioned spectrum sufficiency, satellite capacity, coverage, and the terrestrial-versus-satellite traffic mix. Management offered a broad architecture\u2014S-band for most capacity, low-band spectrum for building penetration, and radios using existing Starlink sites\u2014but deferred a fuller explanation to a future presentation and asserted a path to several hundred billion dollars of connectivity revenue.",
+      "On compute monetization, the analyst asked how capacity would be divided between external cloud customers and internal Grok/Cursor needs. Musk said the target was roughly 50/50 but dynamic, and specifically rejected long-term contracts in favor of spot pricing because he expects compute value per watt to rise; he claimed customers are renewing at higher rates and that demand could support a six-month payback."
+    ],
+    "risks": [
+      "Q4 capex is expected to nearly double sequentially to $35 billion-$40 billion, creating substantial execution, financing, and balance-sheet risk even though management emphasized investment-grade status.",
+      "The 13-gigawatt 2027 compute target depends on resolving power, cooling, electrical equipment, and infrastructure bottlenecks. Musk was highly confident in 10 incremental gigawatts but acknowledged that the upside case above 20 gigawatts is unlikely to be fully achieved if execution is imperfect.",
+      "Compute economics depend heavily on spot-market pricing and management's assumption that useful intelligence per watt and dollars per watt will continue rising; a decline in AI demand or pricing could materially impair returns on the infrastructure buildout.",
+      "Management did not disclose the detailed power-sourcing plan, explicitly citing competitive sensitivity, leaving investors unable to independently assess feasibility.",
+      "Starship Flight 15's full booster-and-ship catch is uncertain, and launch cadence, satellite deployment, and the broader Starlink capacity ramp remain dependent on successful and increasingly frequent Starship flights.",
+      "The Terafab roadmap is highly ambitious, with a test chip targeted for mid-2027 and volume production in late 2028; Musk acknowledged large error bars and limited operating history in semiconductor manufacturing.",
+      "The potential SpaceX-Tesla transaction has no agreed terms and faces a high shareholder-approval hurdle, so expected synergies should not be treated as committed.",
+      "The $500 billion-$1 trillion 2027 ARR aspiration is extraordinarily aggressive relative to current revenue and depends on rapid scaling of compute, Grok, cloud contracts, and connectivity."
+    ],
+    "summary": "The call was strongly positive on current results and near-term demand: revenue rose 161%, adjusted EBITDA rose 306%, Starlink subscribers continued to expand, and Super Intelligence revenue accelerated sharply. Management paired that momentum with an exceptionally aggressive compute investment plan and very large ARR ambitions, producing a bullish earnings signal but with meaningful execution, funding, pricing, and credibility risks. Analyst Q&A was answered with confidence and some impressive specificity, but management also withheld key infrastructure details and acknowledged uncertainty around major strategic and technology milestones.",
+    "type": "earnings_transcript"
   }
 ]

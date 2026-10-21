@@ -416,5 +416,24 @@
     "trade_worthy": false,
     "context": "Apple previously discontinued its wireless-router business after years without meaningful updates and ultimately left customers waiting for support. The article presents this as evidence that Apple may abandon home products that do not materially move revenue, creating a long-term adoption risk for HomeView and related accessories even if the initial launch succeeds.",
     "source": "Stratechery"
+  },
+  {
+    "id": "c9961e1b5301b1e5",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/muse-spark-open-meta-apple-thin-and-thick/",
+    "source_title": "Muse Spark Open, Meta + Apple, Thin and Thick",
+    "event_type": "competitive",
+    "created": "2026-10-20",
+    "claim": "Apple gains AI ecosystem appeal from local Meta model support",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Meta released a new open-source model and is partnering with Apple so the model can run locally on Apple devices. This could broaden the AI capabilities and usefulness of Apple hardware, potentially supporting device appeal and ecosystem engagement, although the article provides no details on adoption, monetization, or commercial terms.",
+    "source": "Stratechery"
   }
 ]

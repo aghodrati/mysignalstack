@@ -8515,5 +8515,187 @@
     "name": "Schneider Electric",
     "ticker_guess": null,
     "why": "Collaborating with Apple on Apple Home Collection accessories; products are designed to work seamlessly with Apple Home and support encrypted home-data management"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "Stratechery",
+    "article_title": "Netflix Earnings, Business or Franchise, Disney\u2019s Deal",
+    "article_link": "https://stratechery.com/2026/netflix-earnings-business-or-franchise-disneys-deal/",
+    "name": "Netflix",
+    "ticker_guess": "NFLX",
+    "why": "Described as having a solid business; increasingly viewed as a business rather than a franchise in terms of growth"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-19",
+    "source": "The Diff",
+    "article_title": "Doing Business in the Dark Forest",
+    "article_link": "https://www.thediff.co/archive/doing-business-in-the-dark-forest/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Hiring conceptual reasoning fellows to improve AI reasoning in domains without checkable answers; cited as an example of how AI companies' hiring plans can reveal strategic priorities"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-19",
+    "source": "The Diff",
+    "article_title": "Doing Business in the Dark Forest",
+    "article_link": "https://www.thediff.co/archive/doing-business-in-the-dark-forest/",
+    "name": "Reliance Industries",
+    "ticker_guess": null,
+    "why": "Asking more than 400,000 employees to invest in the IPO of its Jio Platforms unit; paid salaries early to provide employees with liquidity and potentially support the IPO price"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-19",
+    "source": "The Diff",
+    "article_title": "Doing Business in the Dark Forest",
+    "article_link": "https://www.thediff.co/archive/doing-business-in-the-dark-forest/",
+    "name": "Nscale",
+    "ticker_guess": null,
+    "why": "Microsoft reportedly abandoned an Nscale datacenter project shortly before Nscale's IPO; presented as an example of supply-side problems affecting AI infrastructure companies"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-20",
+    "source": "Citrini Research",
+    "article_title": "Citrini Therapeutics",
+    "article_link": "https://www.citriniresearch.com/p/citrini-therapeutics",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Provided controlled access to an internal research model more advanced than its public releases; its model coordinated literature research, specialist molecular tools, compute resources and vendor communications to design the protein candidates"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-20",
+    "source": "Citrini Research",
+    "article_title": "Citrini Therapeutics",
+    "article_link": "https://www.citriniresearch.com/p/citrini-therapeutics",
+    "name": "Twist Bioscience",
+    "ticker_guess": "TWST",
+    "why": "Served as one of two CROs supporting DNA synthesis, expression and purification, binding measurements and developability assays; the researchers contacted Twist about manufacturing feasibility for fusion and bispecific constructs"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-20",
+    "source": "Citrini Research",
+    "article_title": "Citrini Therapeutics",
+    "article_link": "https://www.citriniresearch.com/p/citrini-therapeutics",
+    "name": "Adaptyv Bio",
+    "ticker_guess": null,
+    "why": "Served as a CRO alongside Twist Bioscience for laboratory work validating the AI-designed proteins; combined CRO costs for synthesis, production, purification and assays were just under $150,000"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-20",
+    "source": "Citrini Research",
+    "article_title": "Citrini Therapeutics",
+    "article_link": "https://www.citriniresearch.com/p/citrini-therapeutics",
+    "name": "AI drug discovery",
+    "why": "Claude autonomously designed, ranked and packaged 211 protein candidates for laboratory testing; the campaign used more than 10,000 H100 GPU-hours and produced 17 designs that bound scorpion-toxin targets"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-20",
+    "source": "Citrini Research",
+    "article_title": "Citrini Therapeutics",
+    "article_link": "https://www.citriniresearch.com/p/citrini-therapeutics",
+    "name": "Protein therapeutics",
+    "why": "The project focused on AI-designed minibinders targeting scorpion toxins; two Cn2 designs bound tightly in the low-nanomolar range, but toxin-blocking activity has not yet been tested"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-20",
+    "source": "Citrini Research",
+    "article_title": "Citrini Therapeutics",
+    "article_link": "https://www.citriniresearch.com/p/citrini-therapeutics",
+    "name": "Biotech development",
+    "why": "Researchers used CROs for DNA synthesis, protein production, purification, binding measurements and developability testing; further animal studies, formulation, manufacturing and human-trial preparation would be required before a treatment"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-20",
+    "source": "Citrini Research",
+    "article_title": "Citrini Therapeutics",
+    "article_link": "https://www.citriniresearch.com/p/citrini-therapeutics",
+    "name": "Biosecurity",
+    "why": "Anthropic\u2019s public models blocked the initial biological-design request; the work proceeded under controlled access using an internal research model and in-person sessions at Anthropic offices"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Normal Tech",
+    "article_title": "New paper: Emerging trends in AI agent evaluation",
+    "article_link": "https://www.normaltech.ai/p/new-paper-emerging-trends-in-ai-agent",
+    "name": "AI agents",
+    "why": "Evaluating agents requires examining entire action trajectories, tool use, shortcuts, and interactions rather than only final outcomes; agent evaluations are increasingly expensive, with some ExploitBench runs costing tens of thousands of dollars in credits"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Normal Tech",
+    "article_title": "New paper: Emerging trends in AI agent evaluation",
+    "article_link": "https://www.normaltech.ai/p/new-paper-emerging-trends-in-ai-agent",
+    "name": "AI evaluation",
+    "why": "Researchers call for better tools, rigorous benchmarks, open-world testing, and real-world observational data; evaluation findings at the lab, use-case, human, and institutional levels may not translate across layers"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Normal Tech",
+    "article_title": "New paper: Emerging trends in AI agent evaluation",
+    "article_link": "https://www.normaltech.ai/p/new-paper-emerging-trends-in-ai-agent",
+    "name": "AI safety",
+    "why": "Evaluators used other agents to investigate harmful actions in the OpenAI-HuggingFace incident, while acknowledging limitations and bias; monitoring large volumes of agent traces remains difficult"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Normal Tech",
+    "article_title": "New paper: Emerging trends in AI agent evaluation",
+    "article_link": "https://www.normaltech.ai/p/new-paper-emerging-trends-in-ai-agent",
+    "name": "AI governance",
+    "why": "Independent evaluation depends on funding, model and chain-of-thought access, protection from retaliation, transparency, and methodological freedom; policymakers and public-sector deployments are urged to make evaluation continuous and integrated from the outset"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-20",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Released its internal DeepInfer inference stack publicly, which may materially reduce inference costs for its models; DHS barred DeepSeek and its models from vendor status in federal civilian procurement; released two new model iterations, including DeepSeek-V4.1-Flash-1017 under an MIT license"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-20",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+    "name": "Xiaomi",
+    "ticker_guess": null,
+    "why": "Released MiMo-V2.6-Pro-RL, described as the top open model on Artificial Analysis\u2019s ranking at the time of writing; published a technical report, training environments, and a live dashboard for its scaled reinforcement-learning runs"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-20",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+    "name": "Cloudflare",
+    "ticker_guess": "NET",
+    "why": "Released Clef, an open decision-model finetune; the article says decision models are seeing rapid adoption for classification outputs"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-20",
+    "source": "Interconnects",
+    "article_title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+    "article_link": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+    "name": "Reflection",
+    "ticker_guess": null,
+    "why": "Released Beam-1.0-501B-A23B, described as the strongest American open model under a permissive Apache 2.0 license; highlighted for high token efficiency"
   }
 ]

@@ -1860,5 +1860,24 @@
     "trade_worthy": false,
     "context": "Meta is listed among companies pursuing gigawatt-scale datacenter leases during a buildout that SemiAnalysis expects to require unprecedented capital expenditure and potentially push interest rates higher. As a major buyer and self-building hyperscaler, Meta may incur greater datacenter, power and financing costs, creating pressure on free cash flow and returns on AI investment even as capacity expands.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "e47db4fc8e0843d5",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/muse-spark-open-meta-apple-thin-and-thick/",
+    "source_title": "Muse Spark Open, Meta + Apple, Thin and Thick",
+    "event_type": "competitive",
+    "created": "2026-10-20",
+    "claim": "Meta expands AI distribution through Apple devices",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Meta released a new open-source model and is partnering with Apple to support running it locally on Apple devices. This could broaden the model\u2019s user reach and strengthen Meta\u2019s position in the AI ecosystem, though the article provides no details on adoption, monetization, or the partnership\u2019s scale.",
+    "source": "Stratechery"
   }
 ]

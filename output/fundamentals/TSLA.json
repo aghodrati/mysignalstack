@@ -41,5 +41,56 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-10-21",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.78,
+    "summary": "Tesla has strong revenue growth, but earnings are declining and operating margin is only about 1.4%, making the quality of growth questionable despite a high reported free-cash-flow margin. Valuation remains exceptionally demanding, while analyst upside and sentiment have deteriorated materially, so the fundamentals do not support a clear long or short direction.",
+    "key_changes": [
+      "Analyst-implied upside fell sharply from 22.5% to 6.5%, substantially reducing the valuation cushion.",
+      "Revisions trend shifted from mildly positive to clearly negative, while net upgrades fell from 1 to 0.",
+      "Forward P/E increased 17.7% from 146.4 to 172.3, further raising the valuation hurdle.",
+      "Institutional flow dropped 96.7%, from 11.24 to 0.37, indicating materially weaker ownership support.",
+      "EV/revenue increased 16.4% from 12.0 to 14.0, making the revenue-based valuation more demanding.",
+      "PEG improved 20.8% from 4.56 to 3.61, but remains elevated and does not offset the broader valuation concerns."
+    ],
+    "risks": [
+      "Very high forward P/E and EV/revenue leave substantial downside if growth or profitability disappoints.",
+      "Earnings growth is negative despite 25.5% revenue growth, suggesting margin pressure or weak operating leverage.",
+      "Operating margin near 1.4% provides limited protection against pricing pressure, cost inflation, or execution setbacks.",
+      "Negative analyst revisions and sharply reduced implied upside could reinforce valuation compression.",
+      "The strong free-cash-flow margin may be difficult to sustain if investment needs, working capital, or cash-flow quality deteriorate."
+    ],
+    "reasoning": "The combination of strong revenue growth and high reported free cash flow is outweighed by declining earnings, very weak operating profitability, extreme valuation, and deteriorating sentiment, warranting a neutral view with relatively high confidence.",
+    "fair_value_estimate": 397.83212,
+    "current_price": 373.71,
+    "implied_return_pct": 6.5,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.255,
+        "earnings_growth": -0.03
+      },
+      "Valuation": {
+        "forward_pe": 172.3381,
+        "peg_ratio": 3.61,
+        "ev_to_revenue": 13.986
+      },
+      "Quality": {
+        "operating_margin": 0.014099999,
+        "fcf_margin": 0.1803240646309327
+      },
+      "Sentiment": {
+        "analyst_upside": 6.454769741243216,
+        "revisions_trend": -4.734848484848486,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 0.3725000525,
+        "insider_flow": 221043582.0,
+        "low_short_interest": -2.01
+      }
+    },
+    "trigger": "earnings"
   }
 ]
