@@ -88,5 +88,39 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-10-21",
+    "eps_estimate": 0.45,
+    "reported_eps": 0.48,
+    "surprise_pct": 6.4,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-22",
+    "transcript_date": "2026-10-22",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/22/tesla-tsla-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.76,
+    "guidance_summary": "Management guided to approximately $20 billion of current-year capex, with further increases over the next several years for Robotaxi fleet expansion, Optimus production, Super Intelligence compute, new products, solar capacity and Terafab. Automotive demand was described as exceeding production, with production ramping at existing factories; the long-term target remains 5 million vehicles annually around 2030. Energy storage demand is strong, with Megapack capacity nearly sold out through 2027 and expected margin improvement. Robotaxi revenue is expected to become noticeable around Q2 2027 and potentially significant by Q3-Q4 2027, while unsupervised customer vehicles may begin joining the fleet around Q2 2027. Optimus customer deliveries are targeted for late 2027, with a production-rate goal of 20,000 units per week within roughly a year.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "Analysts questioned whether competing automakers could replicate FSD and pressure pricing; management dismissed the risk, arguing the long-tail safety problem is exceptionally difficult, but provided limited quantitative evidence on competitive durability or pricing power.",
+      "On Robotaxi economics, management acknowledged it is not yet at the $0.30-per-mile target and offered no current revenue or profitability figures, instead saying scale should make the business meaningful in 2027.",
+      "When asked about Robotaxi scaling bottlenecks, management conceded that software remains a constraint: operating hours, nighttime driving, higher-speed roads and broader conditions are still being unlocked, despite earlier claims of rapid exponential scaling.",
+      "On Optimus, management was unusually specific that the hands, bespoke gears, reliability and AI capability remain unresolved; it also admitted the initial production ramp will be slow and bumpy, while still maintaining late-2027 customer delivery expectations. Terafab similarly requires tens of billions of dollars through 2028 and potentially more than $100 billion long term."
+    ],
+    "risks": [
+      "Flat revenue, lower year-over-year EPS and a 2% delivery decline indicate limited current-period growth despite highly optimistic future targets.",
+      "Automotive margin improvement to 18.1% excluding credits was driven partly by regional mix, while commodity inflation and interest-rate changes remain headwinds.",
+      "Energy gross-margin expansion to 33.1% was substantially supported by tariff refunds and vendor reimbursements, raising questions about sustainability.",
+      "Robotaxi economics and regulatory approval remain unproven; management acknowledged current unit economics are below target and that software, operating-hours and geographic expansion hurdles remain.",
+      "Optimus has substantial execution risk from unresolved hand design, reliability, supply-chain and AI issues, despite aggressive production and revenue timelines.",
+      "The planned investment cycle is capital intensive: capex is approximately $20 billion this year, borrowing capacity has been expanded by up to $30 billion, and Terafab could require tens of billions near term and over $100 billion long term.",
+      "Management's long-term claims around taking a majority of passenger miles, producing millions of vehicles, and making Optimus the world's largest product are highly ambitious and lack supporting financial or operational milestones."
+    ],
+    "summary": "The call presented a sharply bifurcated picture: current automotive financial performance was largely stagnant, while management emphasized accelerating opportunity in FSD, Robotaxi, energy storage, Optimus and semiconductor infrastructure. Q&A provided some useful candor on unresolved software, hardware, regulatory and profitability hurdles, but management remained highly confident and supplied few concrete near-term financial metrics. The result is a mixed call with substantial long-term optionality offset by significant execution, capital intensity and credibility risk.",
+    "type": "earnings_transcript"
   }
 ]

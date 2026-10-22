@@ -83,5 +83,38 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-10-21",
+    "eps_estimate": 5.46,
+    "reported_eps": 3.83,
+    "surprise_pct": -29.91,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-22",
+    "transcript_date": "2026-10-21",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/21/meta-meta-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.68,
+    "guidance_summary": "Q4 2026 revenue guided to $73-$76 billion, including an assumed 1% foreign-currency headwind. FY2026 total expenses are guided to $175-$179 billion including the $9.9 billion legal charge; CapEx is guided to $135-$145 billion; Reality Labs losses are expected at $18-$19 billion in 2026 and approximately $15 billion in 2027. Management expects continued aggressive AI and core-business investment, but provided no quantitative 2027 expense, CapEx, or margin outlook.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "cautious",
+    "key_qa_moments": [
+      "Analysts pressed on what limits Muse user growth; Zuckerberg specifically identified compute intensity, incomplete global rollout, capacity, and the need to improve model efficiency before broader scaling.",
+      "On Muse economics, management declined to provide per-user cost figures and instead cited a targeted greater-than-10x efficiency improvement over the next year through smaller models, off-peak capacity, GPU utilization, and inference optimization.",
+      "On 2027 expenses and CapEx, Li repeatedly said planning was still early and declined to quantify the outlook until the Q4 call, despite questions referencing prior expectations for higher investment followed by greater flexibility.",
+      "When asked about monetization timing, Zuckerberg acknowledged Muse monetization will come earlier than Meta's usual product playbook because of the unusually high compute costs, with commerce fees and subscriptions viewed as necessary to support further capacity buildout."
+    ],
+    "risks": [
+      "Muse is highly compute-intensive, with management withholding current unit-cost metrics while committing to ambitious efficiency improvements that are not yet proven at scale.",
+      "AI infrastructure spending is exceptionally high: $34.9 billion of quarterly CapEx, negative $2.1 billion of free cash flow, and $135-$145 billion of FY2026 CapEx guidance.",
+      "The company may need additional financing for AI investment; the new nonvoting Class C shares create capital-raising flexibility while preserving founder voting control, although no specific financing was announced.",
+      "2027 investment levels and profitability remain unclear, with management declining to provide quantitative guidance and emphasizing continued aggressive spending.",
+      "Reality Labs remains deeply loss-making, with approximately $15 billion of expected losses in 2027 despite investment reallocation toward AI.",
+      "Youth-related litigation and regulatory scrutiny remain material, with multiple U.S. trials scheduled in coming months."
+    ],
+    "summary": "Meta delivered exceptionally strong core operating momentum, with revenue up 26%, ad pricing up 14%, engagement gains, and substantial AI-driven conversion improvements. However, the call highlighted a major investment and execution tradeoff: Muse adoption is promising but compute-intensive, free cash flow is already negative, CapEx is enormous, and management provided limited visibility into 2027 spending or margins. The Q&A was constructive but notably cautious on unit economics, capacity, monetization timing, and capital needs, making the overall signal mixed rather than decisively bullish.",
+    "type": "earnings_transcript"
   }
 ]

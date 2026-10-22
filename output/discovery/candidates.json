@@ -8697,5 +8697,130 @@
     "name": "Reflection",
     "ticker_guess": null,
     "why": "Released Beam-1.0-501B-A23B, described as the strongest American open model under a permissive Apache 2.0 license; highlighted for high token efficiency"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "SemiAnalysis",
+    "article_title": "The Huawei-DeepSeek Symbiosis",
+    "article_link": "https://newsletter.semianalysis.com/p/huawei-deepseek",
+    "name": "Huawei",
+    "ticker_guess": null,
+    "why": "DeepSeek released Ascend support across six repositories; Ascend 950PR/950DT hardware, CANN, URMA and SuperPod systems are being optimized for DeepSeek workloads; Huawei is using DeepSeek models and engineering to improve its domestic AI accelerator ecosystem"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "SemiAnalysis",
+    "article_title": "The Huawei-DeepSeek Symbiosis",
+    "article_link": "https://newsletter.semianalysis.com/p/huawei-deepseek",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Released Ascend support for TileLang, DeepGEMM, DeepEP, TileKernels, FlashMLA and DeepSelect; is adapting kernels, compiler behavior, memory layouts and communication for Huawei hardware; provides model weights and workloads for optimized Huawei releases"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "Stratechery",
+    "article_title": "Presented by Stripe",
+    "article_link": "https://stratechery.com/2026/presented-by-stripe/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Became Stratechery\u2019s exclusive presenting sponsor starting in October 2026; provides the Subscription API/Stripe Billing and supports Passport access-management software; contract provides total editorial independence, although the author acknowledges a conflict of interest"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-21",
+    "source": "Stratechery",
+    "article_title": "Presented by Stripe",
+    "article_link": "https://stratechery.com/2026/presented-by-stripe/",
+    "name": "fintech",
+    "why": "Stripe\u2019s Subscription API, later Stripe Billing, enabled Stratechery\u2019s subscription business; Stripe also underpins Passport access-management software used by Stratechery and other publishers; the sponsorship is intended to support expanded coverage of fintech"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-21",
+    "source": "Stratechery",
+    "article_title": "Presented by Stripe",
+    "article_link": "https://stratechery.com/2026/presented-by-stripe/",
+    "name": "digital advertising",
+    "why": "Stratechery is adding Stripe sponsorship placements across its website, emails, podcasts, and podcast video content; the model combines advertising revenue with paid subscriptions"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "Next Platform",
+    "article_title": "Huang shrugs off protestors to kick off GTC Berlin with DSX Pods, Robots",
+    "article_link": "https://www.nextplatform.com/control/2026/10/21/huang-shrugs-off-protestors-to-kick-off-gtc-berlin-with-dsx-pods-robots/5304447",
+    "name": "Schneider Electric",
+    "ticker_guess": null,
+    "why": "Identified as a key NVIDIA DSX partner; involved in the broader AI-factory datacenter ecosystem highlighted at GTC Europe"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "Next Platform",
+    "article_title": "Huang shrugs off protestors to kick off GTC Berlin with DSX Pods, Robots",
+    "article_link": "https://www.nextplatform.com/control/2026/10/21/huang-shrugs-off-protestors-to-kick-off-gtc-berlin-with-dsx-pods-robots/5304447",
+    "name": "TeraWulf",
+    "ticker_guess": null,
+    "why": "Its Lake Mariner datacenter was cited as an example of deployment delays caused by electrician shortages; nearly half of the 1,800 tradespeople onsite are electricians"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "Next Platform",
+    "article_title": "Huang shrugs off protestors to kick off GTC Berlin with DSX Pods, Robots",
+    "article_link": "https://www.nextplatform.com/control/2026/10/21/huang-shrugs-off-protestors-to-kick-off-gtc-berlin-with-dsx-pods-robots/5304447",
+    "name": "Samsung Electro-Mechanics",
+    "ticker_guess": null,
+    "why": "Joining NVIDIA\u2019s substrate supply chain; contributing existing manufacturing capacity in South Korea"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "Next Platform",
+    "article_title": "Huang shrugs off protestors to kick off GTC Berlin with DSX Pods, Robots",
+    "article_link": "https://www.nextplatform.com/control/2026/10/21/huang-shrugs-off-protestors-to-kick-off-gtc-berlin-with-dsx-pods-robots/5304447",
+    "name": "Siliconware Precision Industries",
+    "ticker_guess": null,
+    "why": "Expanding Taiwan manufacturing capacity for optical engines used in co-packaged optics; expansion targets a 15-fold increase by mid-2027 and another doubling by the end of 2028"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-21",
+    "source": "Next Platform",
+    "article_title": "Huang shrugs off protestors to kick off GTC Berlin with DSX Pods, Robots",
+    "article_link": "https://www.nextplatform.com/control/2026/10/21/huang-shrugs-off-protestors-to-kick-off-gtc-berlin-with-dsx-pods-robots/5304447",
+    "name": "Amkor Technology",
+    "ticker_guess": "AMKR",
+    "why": "Named among NVIDIA\u2019s supply-chain partners supporting expanded manufacturing capabilities across advanced packaging and testing"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-21",
+    "source": "Doomberg",
+    "article_title": "Doomberg Academy: Refining",
+    "article_link": "https://newsletter.doomberg.com/p/doomberg-academy-refining",
+    "name": "energy security",
+    "why": "Attacks on civilian energy infrastructure are described as a dangerous development; Refineries are identified as recent targets"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-21",
+    "source": "Doomberg",
+    "article_title": "Doomberg Academy: Refining",
+    "article_link": "https://newsletter.doomberg.com/p/doomberg-academy-refining",
+    "name": "oil refining",
+    "why": "Refineries transform crude oil into outputs essential to the global economy; Disruption to these facilities could affect petroleum product availability"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-21",
+    "source": "Doomberg",
+    "article_title": "Doomberg Academy: Refining",
+    "article_link": "https://newsletter.doomberg.com/p/doomberg-academy-refining",
+    "name": "crude oil",
+    "why": "Crude oil is described as the feedstock refineries convert into a range of economically important outputs"
   }
 ]
