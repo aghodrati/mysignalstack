@@ -8822,5 +8822,89 @@
     "article_link": "https://newsletter.doomberg.com/p/doomberg-academy-refining",
     "name": "crude oil",
     "why": "Crude oil is described as the feedstock refineries convert into a range of economically important outputs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "Three Physical Walls Are Hitting AI Datacenter Infrastructure at the Same Time - And the Compound Effects Are Worse",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/23/partner-content-three-physical-walls-are-hitting-ai-datacenter-infrastructure-at-the-same-time-and-the-compound-effects-are-worse/5304697",
+    "name": "liquid cooling",
+    "why": "Cold plate technology using diamond-copper composites; direct liquid cooling (DLC) capable of 4,000W per chip; 42U modular rack FusionPod with 155kW rating; 800V HVDC Sidecar power supply supports liquid cooling integration"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "Three Physical Walls Are Hitting AI Datacenter Infrastructure at the Same Time - And the Compound Effects Are Worse",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/23/partner-content-three-physical-walls-are-hitting-ai-datacenter-infrastructure-at-the-same-time-and-the-compound-effects-are-worse/5304697",
+    "name": "high-voltage power delivery",
+    "why": "Shift from 54V to 800V DC reduces current and I\u00b2R losses; 800V HVDC Sidecar prototype for 300kW\u20131.2MW racks; wide-bandgap SiC/MoFET and GaN HEMT used in power conversion"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "Three Physical Walls Are Hitting AI Datacenter Infrastructure at the Same Time - And the Compound Effects Are Worse",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/23/partner-content-three-physical-walls-are-hitting-ai-datacenter-infrastructure-at-the-same-time-and-the-compound-effects-are-worse/5304697",
+    "name": "optical interconnect",
+    "why": "Transition to co-packaged optics (CPO) for 224G and 448G bandwidth; 224G high-density orthogonal backplanes; 240kW rack supports 128 XPU per cabinet via optical links"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "Three Physical Walls Are Hitting AI Datacenter Infrastructure at the Same Time - And the Compound Effects Are Worse",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/23/partner-content-three-physical-walls-are-hitting-ai-datacenter-infrastructure-at-the-same-time-and-the-compound-effects-are-worse/5304697",
+    "name": "wide-bandgap semiconductors",
+    "why": "SiC MOSFETs for AC\u2011to\u2011HVDC rectification; GaN HEMTs for HVDC\u2011to\u2011DC conversion; GaN-based multi\u2011phase regulators for 54V\u2011to\u201112V/6V stage"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "Three Physical Walls Are Hitting AI Datacenter Infrastructure at the Same Time - And the Compound Effects Are Worse",
+    "article_link": "https://www.nextplatform.com/compute/2026/10/23/partner-content-three-physical-walls-are-hitting-ai-datacenter-infrastructure-at-the-same-time-and-the-compound-effects-are-worse/5304697",
+    "name": "AI datacenter infrastructure",
+    "why": "Rising rack power from 20kW (2023) to 240kW (2026); megawatt-class racks and 3,000+W chips; heat flux densities above 200W/cm\u00b2; integration of cooling, power, and interconnect as a coupled optimization"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-22",
+    "source": "Next Platform",
+    "article_title": "How Mixx Technologies Is Lighting The Way To Fully Optical Scale-up Networks",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/22/how-mixx-technologies-is-lighting-the-way-to-fully-optical-scale-up-networks/5304886",
+    "name": "Mixx Technologies",
+    "ticker_guess": null,
+    "why": "Developing the SxC connector, near-packaged optical engines, co-packaged optics, optical circuit switches, and a software control plane; targets first near-packaged optical module shipments in 2028-2029 and first co-packaged product around the end of the decade"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-22",
+    "source": "Next Platform",
+    "article_title": "How Mixx Technologies Is Lighting The Way To Fully Optical Scale-up Networks",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/22/how-mixx-technologies-is-lighting-the-way-to-fully-optical-scale-up-networks/5304886",
+    "name": "Marvell",
+    "ticker_guess": "MRVL",
+    "why": "Identified as a potential supplier or partner for XPU scale-out networks that will require denser optical fiber attachment"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-22",
+    "source": "Next Platform",
+    "article_title": "How Mixx Technologies Is Lighting The Way To Fully Optical Scale-up Networks",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/22/how-mixx-technologies-is-lighting-the-way-to-fully-optical-scale-up-networks/5304886",
+    "name": "Coherent",
+    "ticker_guess": "COHR",
+    "why": "Cited as having optical circuit-switch appliances with hundreds of ports, although current products are too large for Mixx's intended high-density applications"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-17",
+    "source": "Next Platform",
+    "article_title": "Rethinking Ransomware Recovery: Closing the Detection and Recovery Gap in Asia Pacific",
+    "article_link": "https://intelligence.theregister.com/paper/view/21101",
+    "name": "cybersecurity",
+    "why": "Focus on ransomware detection and recovery gaps; emphasis on Asia Pacific region; discusses challenges in closing detection and recovery cycle"
   }
 ]
