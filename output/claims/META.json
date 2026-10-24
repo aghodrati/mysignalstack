@@ -1879,5 +1879,43 @@
     "trade_worthy": false,
     "context": "Meta released a new open-source model and is partnering with Apple to support running it locally on Apple devices. This could broaden the model\u2019s user reach and strengthen Meta\u2019s position in the AI ecosystem, though the article provides no details on adoption, monetization, or the partnership\u2019s scale.",
     "source": "Stratechery"
+  },
+  {
+    "id": "71d413fc6ab3a09e",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/a-new-era/",
+    "source_title": "2026.43: A New Era",
+    "event_type": "competitive",
+    "created": "2026-10-23",
+    "claim": "META gains broader AI distribution through Apple devices",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Meta developed a new open-source AI model and is partnering with Apple so the model can run locally on Apple devices. This could expand the model\u2019s reach and strengthen Meta\u2019s position in consumer AI by placing its technology inside Apple\u2019s installed base, although the article does not specify monetization or adoption terms.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "e07d88526ed6d4cc",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/a-new-era/",
+    "source_title": "2026.43: A New Era",
+    "event_type": "competitive",
+    "created": "2026-10-23",
+    "claim": "META remains a major engagement competitor to Netflix",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Meta and YouTube as Netflix\u2019s primary engagement competition, arguing that Netflix may struggle to grow even if its content problems are fixable. This portrays Meta\u2019s platforms as competing effectively for users\u2019 attention and limiting Netflix\u2019s expansion opportunity.",
+    "source": "Stratechery"
   }
 ]

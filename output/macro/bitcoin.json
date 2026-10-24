@@ -823,5 +823,70 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-24",
+    "value": 80494.46875,
+    "delta": -1.0907547964056574,
+    "history": [
+      [
+        "2026-10-18",
+        82017.6015625
+      ],
+      [
+        "2026-10-19",
+        81853.5390625
+      ],
+      [
+        "2026-10-20",
+        82941.0
+      ],
+      [
+        "2026-10-21",
+        84011.96875
+      ],
+      [
+        "2026-10-22",
+        81311.890625
+      ],
+      [
+        "2026-10-23",
+        81074.1875
+      ],
+      [
+        "2026-10-24",
+        80494.46875
+      ]
+    ],
+    "narrative": "Bitcoin's modest 1.09% weekly decline appears consistent with broader risk-off positioning as equity futures weakened amid AI-spending and valuation concerns, highlighted by Friday's headline \"Exchange-Traded Funds, Equity Futures Lower Pre-Bell Friday Amid AI Spending Concerns\" and SeekingAlpha's \"AI Bubble Or Not, Investors Should Manage The Risk Now.\" However, these are indirect macro signals rather than a clear Bitcoin-specific catalyst, so the move is best characterized as broad positioning or drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Friday Amid AI Spending Concerns",
+        "domain": "Yahoo",
+        "date": "20261023"
+      },
+      {
+        "title": "AI Bubble Or Not, Investors Should Manage The Risk Now",
+        "domain": "SeekingAlpha",
+        "date": "20261020"
+      },
+      {
+        "title": "Exchange-Traded Funds Higher, Equity Futures Mixed Pre-Bell Monday as Tech Stocks Recover",
+        "domain": "Yahoo",
+        "date": "20261019"
+      },
+      {
+        "title": "Weekly Commentary: Hope I'm Wrong",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W43",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

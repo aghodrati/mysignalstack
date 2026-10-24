@@ -1,0 +1,59 @@
+[
+  {
+    "call_date": "2026-10-27",
+    "when": "2026-10-27T16:00:00-04:00",
+    "eps_estimate": 6.25,
+    "reported_quarters": [
+      {
+        "earnings_date": "2026-07-28",
+        "eps_estimate": 4.87,
+        "reported_eps": 90.62,
+        "surprise_pct": 1760.69
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-24",
+    "call_date": "2026-10-27",
+    "narrative": "Investors should watch whether SK hynix\u2019s Q3 results and outlook confirm that AI-driven HBM and broader memory demand remain strong, especially after the recent chip-stock correction and the stock\u2019s sharp run. Management\u2019s comments on next year will be particularly important: one Seeking Alpha headline flags potential \u201ccracks\u201d as a next-year issue, while the decision to shelve Solidigm\u2019s IPO reportedly does not reflect a change in growth prospects or investment needs. I would expect a strong quarter relative to the recent market anxiety, but potentially cautious commentary on memory-cycle durability, pricing, competition, and the timing of any slowdown. The stock could therefore react as much to forward guidance and AI-memory demand as to the reported results themselves.",
+    "headlines_used": [
+      {
+        "title": "Memory Stocks Are Plummetting. Jensen Huang Says the Bears Have It Wrong.",
+        "domain": "Yahoo",
+        "date": "20261024"
+      },
+      {
+        "title": "SK hynix (KOSE:A000660) Stock Looks Reasonable After Its Huge Run",
+        "domain": "Yahoo",
+        "date": "20261023"
+      },
+      {
+        "title": "Why Is SK hynix Stock Surging Friday?",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "SK Hynix Shelves Solidigm IPO Plans Amid Chip-Stock Correction and Market Volatility: Says Does Not Reflect Any Change in 'Growth Prospects or Investment Needs'",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "SK hynix: The Cracks Are A Next-Year Problem",
+        "domain": "SeekingAlpha",
+        "date": "20261020"
+      },
+      {
+        "title": "SK hynix: Why I'm Buying This Ugly Dip Ahead Of Q3 Earnings (Preview)",
+        "domain": "SeekingAlpha",
+        "date": "20261020"
+      },
+      {
+        "title": "Stock Market Today: Chip Selloff Hits Day Eight as Nasdaq Logs Its Worst Week Since June",
+        "domain": "ChartMill",
+        "date": "20261019"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

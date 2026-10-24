@@ -1,0 +1,21 @@
+[
+  {
+    "id": "32f85ad4e9687e3e",
+    "ticker": "XOM",
+    "source_link": "https://newsletter.doomberg.com/p/margin-call",
+    "source_title": "Margin Call",
+    "event_type": "other",
+    "created": "2026-10-24",
+    "claim": "Guyana materially strengthens XOM\u2019s upstream growth outlook",
+    "direction": "long",
+    "confidence": 0.95,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "ExxonMobil operates Guyana\u2019s Stabroek Block, where the Errea Wittu FPSO is expected to begin operations in December and lift national production above 1 million barrels per day. This adds substantial production capacity in a rapidly expanding asset and supports ExxonMobil\u2019s regional upstream position, although the article does not provide ExxonMobil\u2019s ownership share, cash-flow impact, or project economics.",
+    "source": "Doomberg"
+  }
+]

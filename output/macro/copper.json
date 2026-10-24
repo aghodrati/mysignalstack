@@ -681,5 +681,47 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-24",
+    "value": 6.47599983215332,
+    "delta": -0.8421421531048079,
+    "history": [
+      [
+        "2026-10-19",
+        6.538000106811523
+      ],
+      [
+        "2026-10-20",
+        6.566500186920166
+      ],
+      [
+        "2026-10-21",
+        6.543000221252441
+      ],
+      [
+        "2026-10-22",
+        6.362500190734863
+      ],
+      [
+        "2026-10-23",
+        6.47599983215332
+      ]
+    ],
+    "narrative": "There is no clear, specific catalyst in the provided headlines to explain copper's 0.84 weekly decline. The Seeking Alpha piece titled \"Weekly Commentary: Hope I'm Wrong\" is too vague to credibly attribute the move to a particular fundamental development, so the decline most plausibly reflects broad positioning, macro sentiment, or routine volatility.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Hope I'm Wrong",
+        "domain": "SeekingAlpha",
+        "date": "20261017"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W43",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

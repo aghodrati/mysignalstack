@@ -932,5 +932,89 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W42"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-24",
+    "value": 19.450000762939453,
+    "delta": -0.5399990081787109,
+    "history": [
+      [
+        "2026-10-19",
+        18.440000534057617
+      ],
+      [
+        "2026-10-20",
+        17.309999465942383
+      ],
+      [
+        "2026-10-21",
+        16.68000030517578
+      ],
+      [
+        "2026-10-22",
+        19.030000686645508
+      ],
+      [
+        "2026-10-23",
+        19.450000762939453
+      ]
+    ],
+    "narrative": "No clear single catalyst for the modest weekly decline in the VIX; the headlines mainly describe India-specific equity stress, including the Nifty selloff and India VIX surges, which do not directly explain U.S. volatility. The Oct. 19 report of the Nasdaq jumping more than 1% while the VIX swung may suggest intermittent risk appetite, but the overall move is more plausibly broad positioning or drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Technical View: Nifty 50 faces further downside if it fails to defend 200-week EMA; Bank Nifty\u2019s 53,700 support in focus as India VIX hits 17",
+        "domain": "Moneycontrol",
+        "date": "20261023"
+      },
+      {
+        "title": "Stock Market Crash News Today Live Updates: Nifty Slumps Near 22,400, Sensex Drops Over 700 Points; Nifty Bank At Day's Low",
+        "domain": "NDTV Profit",
+        "date": "20261023"
+      },
+      {
+        "title": "Technical View: Nifty 50 below 22,500 could strengthen bearish grip amid elevated VIX, oil prices; 54,400 crucial for Bank Nifty",
+        "domain": "Moneycontrol",
+        "date": "20261022"
+      },
+      {
+        "title": "Stock Market LIVE: Sensex down 300pts, Nifty around 22,650; VIX rises 6%",
+        "domain": "Business Standard",
+        "date": "20261022"
+      },
+      {
+        "title": "Sensex tanks 1,300 pts from day's high; India VIX surges 8%; here's why",
+        "domain": "Business Today",
+        "date": "20261021"
+      },
+      {
+        "title": "Nasdaq Jumps Past 1 Percent as VIX Swings While Dow Dips Below Its 50-Day Line",
+        "domain": "The Expositor",
+        "date": "20261019"
+      },
+      {
+        "title": "Nasdaq Jumps Past 1 Percent as VIX Swings While Dow Dips Below Its 50-Day Line",
+        "domain": "The North Bay Nugget",
+        "date": "20261019"
+      },
+      {
+        "title": "Nasdaq Jumps Past 1 Percent as VIX Swings While Dow Dips Below Its 50-Day Line",
+        "domain": "The London Free Press",
+        "date": "20261019"
+      },
+      {
+        "title": "Nasdaq Jumps Past 1 Percent as VIX Swings While Dow Dips Below Its 50-Day Line",
+        "domain": "The Kingston Whig-Standard",
+        "date": "20261019"
+      },
+      {
+        "title": "RTX 5090 Power Limit Jumps From 600W To 800W With A Custom VBIOS Editor, While The RTX 4090 Gets Pushed To 700W",
+        "domain": "Wccftech",
+        "date": "20261019"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W43"
   }
 ]

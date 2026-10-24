@@ -435,5 +435,24 @@
     "trade_worthy": false,
     "context": "Meta released a new open-source model and is partnering with Apple so the model can run locally on Apple devices. This could broaden the AI capabilities and usefulness of Apple hardware, potentially supporting device appeal and ecosystem engagement, although the article provides no details on adoption, monetization, or commercial terms.",
     "source": "Stratechery"
+  },
+  {
+    "id": "f0c8d3603931b442",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/a-new-era/",
+    "source_title": "2026.43: A New Era",
+    "event_type": "competitive",
+    "created": "2026-10-23",
+    "claim": "Apple strengthens on-device AI capabilities through Meta\u2019s model",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article highlights Apple\u2019s surprising partnership with Meta to enable Meta\u2019s new open-source AI model to run locally on Apple devices. This could improve Apple devices\u2019 access to generative-AI functionality and help support the value of Apple\u2019s integrated ecosystem, although the article does not quantify adoption, monetization, or the model\u2019s performance relative to Apple\u2019s own AI efforts.",
+    "source": "Stratechery"
   }
 ]

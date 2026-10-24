@@ -776,5 +776,69 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W42"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-24",
+    "value": 4.98799991607666,
+    "delta": -0.1100001335144043,
+    "history": [
+      [
+        "2026-10-19",
+        5.136000156402588
+      ],
+      [
+        "2026-10-20",
+        5.117000102996826
+      ],
+      [
+        "2026-10-21",
+        5.145999908447266
+      ],
+      [
+        "2026-10-22",
+        4.953000068664551
+      ],
+      [
+        "2026-10-23",
+        4.98799991607666
+      ]
+    ],
+    "narrative": "The modest 11-basis-point decline in the 10-year yield was most plausibly driven by growing concern that Fed over-tightening is weakening the economy, reinforced by Danielle DiMartino Booth\u2019s warning that a recession may already be underway and that the Treasury rally signals a consequential shift. The fiscal/debt headlines were a competing concern but do not explain this week\u2019s decline as directly.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Fed Over-Tightening: How Much Runway Is Left Before It Bites?",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Treasury Yields Snapshot: October 23, 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261023"
+      },
+      {
+        "title": "Former Fed Adviser Danielle DiMartino Booth Warns Recession May Already Be Here: Treasury Rally Signals \u2018Far More Consequential\u2019 Shift",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "Anthony Scaramucci Says Politicians 'Get Away With Robbing' Working Class Who Feel 'Inflation-Adjusted Rich'",
+        "domain": "Benzinga",
+        "date": "20261022"
+      },
+      {
+        "title": "The Government Spends About $5.5 Billion a Day More Than It Takes In. The Debt Has Doubled in 10 Years. Jaime Dimon This the Situation Could Get Much Worse.",
+        "domain": "Yahoo",
+        "date": "20261021"
+      },
+      {
+        "title": "Investors Just Poured Nearly $12 Billion Into This Battered ETF \u2014 and the Reason Could Surprise Wall Street",
+        "domain": "Yahoo",
+        "date": "20261019"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W43"
   }
 ]

@@ -737,5 +737,72 @@
     "direction": "bullish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-24",
+    "value": 103.2699966430664,
+    "delta": 1.8341316574195021,
+    "history": [
+      [
+        "2026-10-19",
+        103.66000366210938
+      ],
+      [
+        "2026-10-20",
+        101.79000091552734
+      ],
+      [
+        "2026-10-21",
+        97.1500015258789
+      ],
+      [
+        "2026-10-22",
+        99.47000122070312
+      ],
+      [
+        "2026-10-23",
+        103.2699966430664
+      ]
+    ],
+    "narrative": "The week's gain was most plausibly driven by escalating Middle East tensions, with headlines noting that oil rallied amid the conflict and that Brent topped $116 while WTI crossed $100. Additional support came from concerns that the Strategic Petroleum Reserve is emptying and that Permian producers cannot quickly replenish it, reinforcing near-term supply-risk fears.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "There's More Behind This Week's Market Nerves",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Sell-Off Widens As Oil Rallies Amid Middle East Conflict",
+        "domain": "SeekingAlpha",
+        "date": "20261023"
+      },
+      {
+        "title": "USO Jumps To Over 11-Year High As Brent Tops $116, WTI Crosses $100 Amid Escalating Middle East Tensions",
+        "domain": "Yahoo",
+        "date": "20261023"
+      },
+      {
+        "title": "Brent Crude Jumped 4% to $113. Trump Is Throwing $150 Million at Refiners",
+        "domain": "Yahoo",
+        "date": "20261023"
+      },
+      {
+        "title": "Strategic Petroleum Reserve Is Emptying, Here\u2019s Why Permian Producers Can\u2019t Fill It Up",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "Reported Earlier, 'Putin\u2019s War On Ukraine Puts Oil Giant Rosneft Under Mounting Pressure' - Bloomberg",
+        "domain": "Benzinga",
+        "date": "20261022"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W43",
+    "direction": "bullish",
+    "confidence": "high",
+    "trade_worthy": true
   }
 ]

@@ -791,5 +791,67 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-24",
+    "value": 53.71099853515625,
+    "delta": -5.761909743437766,
+    "history": [
+      [
+        "2026-10-19",
+        56.9739990234375
+      ],
+      [
+        "2026-10-20",
+        57.70600128173828
+      ],
+      [
+        "2026-10-21",
+        57.422000885009766
+      ],
+      [
+        "2026-10-22",
+        54.763999938964844
+      ],
+      [
+        "2026-10-23",
+        53.71099853515625
+      ]
+    ],
+    "narrative": "The week's decline was most plausibly driven by a broad precious-metals unwind: Yahoo's report that gold is sliding toward $4,000 as the haven trade breaks points to fading safe-haven demand, while SeekingAlpha's \"Inflation Heats Up, Silver Sinks\" highlights pressure from the macro/rates backdrop. The war-risk and AI/data-center headlines may have added volatility, but they are less direct explanations for silver's move.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Gold Is Sliding Back Toward $4,000 as the Haven Trade Breaks",
+        "domain": "Yahoo",
+        "date": "20261023"
+      },
+      {
+        "title": "Is A War Imminent? Concerns Overshadow Strong Meta, Tesla Earnings",
+        "domain": "Benzinga",
+        "date": "20261022"
+      },
+      {
+        "title": "408x Oversubscribed AI IPO Crashes 32%\u2014Democratic Sweep Prospects Trigger Selling in Data Center Stocks",
+        "domain": "Benzinga",
+        "date": "20261020"
+      },
+      {
+        "title": "Inflation Heats Up, Silver Sinks - What Is The Market Telling Us?",
+        "domain": "SeekingAlpha",
+        "date": "20261019"
+      },
+      {
+        "title": "Silver: A Monetary Metal Conflicted About Its Industrial Twin",
+        "domain": "SeekingAlpha",
+        "date": "20261019"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W43",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

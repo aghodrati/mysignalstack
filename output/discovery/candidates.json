@@ -8906,5 +8906,125 @@
     "article_link": "https://intelligence.theregister.com/paper/view/21101",
     "name": "cybersecurity",
     "why": "Focus on ransomware detection and recovery gaps; emphasis on Asia Pacific region; discusses challenges in closing detection and recovery cycle"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "SemiAnalysis",
+    "article_title": "Amazon\u2019s Trainium Takes a Strike at the Training King",
+    "article_link": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Runs production inference and reinforcement-learning rollouts on Trainium2 and Trainium3; its performance team reportedly prefers Trainium\u2019s profiling experience to Nvidia\u2019s and AMD\u2019s"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Stratechery",
+    "article_title": "2026.43: A New Era",
+    "article_link": "https://stratechery.com/2026/a-new-era/",
+    "name": "Netflix",
+    "ticker_guess": "NFLX",
+    "why": "Reported layoffs, executive departures, disappointing earnings, and a 40% share-price decline over the past 12 months; faces growth pressure from Meta and YouTube competing for user engagement"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Stratechery",
+    "article_title": "2026.43: A New Era",
+    "article_link": "https://stratechery.com/2026/a-new-era/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Became the presenting sponsor of Stratechery; its recurring-billing infrastructure helped enable Stratechery's subscription business; more than 5 million businesses use Stripe, representing 1.7% of global GDP"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "APC Says Let There Be Light, With Raft Of Standards To Speed Up Photonics Manufacturing",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/23/apc-says-let-there-be-light-with-raft-of-standards-to-speed-up-photonics-manufacturing/5304950",
+    "name": "Lumentum Holdings",
+    "ticker_guess": "LITE",
+    "why": "Reported that its optical components are completely sold out through 2029; expects shortages for some products through 2028; manufactures indium phosphide components critical to photonics"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "APC Says Let There Be Light, With Raft Of Standards To Speed Up Photonics Manufacturing",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/23/apc-says-let-there-be-light-with-raft-of-standards-to-speed-up-photonics-manufacturing/5304950",
+    "name": "Resolight",
+    "ticker_guess": null,
+    "why": "Participated in the APC working group; promotes nanosecond optical circuit switching and native photon routing to reduce optical-electrical conversions, energy use, and transceiver requirements"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Next Platform",
+    "article_title": "APC Says Let There Be Light, With Raft Of Standards To Speed Up Photonics Manufacturing",
+    "article_link": "https://www.nextplatform.com/connect/2026/10/23/apc-says-let-there-be-light-with-raft-of-standards-to-speed-up-photonics-manufacturing/5304950",
+    "name": "Digital Realty",
+    "ticker_guess": "DLR",
+    "why": "Its chief technology officer said networking is increasingly slowing compute and that the industry may be at the end of copper"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-24",
+    "source": "Doomberg",
+    "article_title": "Margin Call",
+    "article_link": "https://newsletter.doomberg.com/p/margin-call",
+    "name": "Petrobras",
+    "ticker_guess": null,
+    "why": "Sole owner and operator of Brazil\u2019s Morpho-1 exploration block; reported hydrocarbons in a deepwater well offshore Amap\u00e1 and later found an additional oil-bearing layer in the same block; targeting the Equatorial Margin as a future major oil and gas production region"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #216",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-216",
+    "name": "GSK",
+    "ticker_guess": null,
+    "why": "FDA granted accelerated approval to dostarlimab (Jemperli) as standalone first treatment for certain stage II and III dMMR rectal cancers; GSK\u2019s 154-patient trial reported no disease progression in 71% of patients after a median 26 months"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #216",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-216",
+    "name": "Coherence Neuro",
+    "ticker_guess": null,
+    "why": "Raised $45 million in Series A funding from Founders Fund and OpenAI\u2019s Startup Fund; developing cancer therapies that use neurotechnology and data feedback loops to monitor and influence tumors; human trials are underway in glioblastoma"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #216",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-216",
+    "name": "The Nuclear Company",
+    "ticker_guess": null,
+    "why": "Proposed Prosperity One, a Kentucky nuclear campus with up to six AP1000 reactors totaling approximately 6.6 GW; targeting NRC approval in 2028 and expecting at least 30% cost savings from standardized sequential construction"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #216",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-216",
+    "name": "Warhound",
+    "ticker_guess": null,
+    "why": "Launched by Colossal Biosciences\u2019 Ben Lamm and Anduril\u2019s Palmer Luckey with $200 million in funding and a reported $1.2 billion valuation; plans to genetically enhance working dogs and combine those changes with protective hardware and software"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-23",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #216",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-216",
+    "name": "Marathon Fusion",
+    "ticker_guess": null,
+    "why": "Reported converting mercury into stable gold at ten times CERN\u2019s 2025 rate; is developing fusion-based production of medical isotopes including copper-64 and copper-67; reported progress enriching lithium-6 for fusion fuel"
   }
 ]

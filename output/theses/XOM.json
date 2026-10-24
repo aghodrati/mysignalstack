@@ -1,0 +1,48 @@
+[
+  {
+    "event": "aggregated",
+    "date": "2026-10-24",
+    "thesis": "XOM has a moderately bullish outlook as Guyana-driven upstream expansion reinforces strong fundamentals and potential fair-value upside, despite a recent earnings miss and execution and commodity-cycle risks.",
+    "direction": "long",
+    "confidence": 0.47952,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.72,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.72,
+    "critic_multiplier": 0.666,
+    "expected_return_pct": 8.0,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Errea Wittu FPSO begins operations in December as expected",
+      "Guyana production rises above 1 million barrels per day, expanding XOM's regional upstream capacity",
+      "Continued revenue, earnings, operating-margin, and free-cash-flow strength supports the valuation gap to fair value"
+    ],
+    "invalidation": [
+      "Delay, underperformance, or weaker-than-expected economics from the Errea Wittu FPSO or Guyana operations",
+      "Sustained commodity-price weakness materially reduces earnings and free cash flow",
+      "Earnings growth slows sharply, negative analyst revisions continue, or subsequent quarters miss expectations after the reported EPS of $3.52 versus the $3.63 estimate",
+      "Persistent insider selling or other evidence that management sees limited upside"
+    ],
+    "reasoning": "The high-confidence, high-importance Guyana claim and 9.8% fundamental fair-value gap support a long stance, while the latest 3.0% EPS miss, cyclicality, negative revisions, and absence of an earnings-call picture limit conviction.",
+    "claims_considered": 1
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-24",
+    "deterministic_flags": [
+      "all supporting claims come from a single source article"
+    ],
+    "deterministic_multiplier": 0.9,
+    "llm_concerns": [
+      "The sole claim supports Guyana-driven upstream growth but does not establish strong overall fundamentals or potential fair-value upside.",
+      "The thesis introduces a recent earnings miss, execution risk, and commodity-cycle risk that are not stated in the provided claim, so the balancing risks are also unsupported.",
+      "A single upstream-growth claim is insufficient to substantiate the broader company-level conclusion or the 72% confidence level."
+    ],
+    "llm_multiplier": 0.74,
+    "llm_reasoning": "The thesis substantially overreaches the only provided evidence by converting a positive Guyana/upstream claim into a company-wide valuation and risk assessment, while the claim is current and not stale.",
+    "final_multiplier": 0.666,
+    "confidence_before": 0.72,
+    "confidence_after": 0.47952
+  }
+]
