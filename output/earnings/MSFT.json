@@ -1,0 +1,92 @@
+[
+  {
+    "call_date": "2026-10-28",
+    "when": "2026-10-28T16:00:00-04:00",
+    "eps_estimate": 4.72,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-29",
+        "eps_estimate": 3.66,
+        "reported_eps": 4.13,
+        "surprise_pct": 12.73
+      },
+      {
+        "earnings_date": "2026-01-28",
+        "eps_estimate": 3.92,
+        "reported_eps": 4.14,
+        "surprise_pct": 5.69
+      },
+      {
+        "earnings_date": "2026-04-29",
+        "eps_estimate": 4.07,
+        "reported_eps": 4.27,
+        "surprise_pct": 4.85
+      },
+      {
+        "earnings_date": "2026-07-29",
+        "eps_estimate": 4.24,
+        "reported_eps": 4.74,
+        "surprise_pct": 11.81
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-25",
+    "call_date": "2026-10-28",
+    "narrative": "Investors should focus on whether Microsoft\u2019s cloud and AI demand is translating into sustained growth and profitability, especially amid the \u201c$744 Billion AI Reckoning\u201d headline and broader fears that AI spending has become excessive. The company\u2019s comments on data-center capacity, electricity availability, and infrastructure constraints will be important, given Microsoft\u2019s Hardman attributing Nscale\u2019s decision to a lack of grid connections. Management should also address the pace and returns of AI investment, as well as competitive pressure from OpenAI and other major technology companies. Expectations appear constructive for operational performance, but the call may be judged less on headline results than on evidence that AI spending can generate durable returns without worsening capacity constraints or investor concerns about an AI bubble.",
+    "headlines_used": [
+      {
+        "title": "Here's the Price at Which I'd Buy Microsoft Stock",
+        "domain": "Yahoo",
+        "date": "20261025"
+      },
+      {
+        "title": "Haleon Heads These 3 British AI Healthcare Stocks To Watch",
+        "domain": "Yahoo",
+        "date": "20261025"
+      },
+      {
+        "title": "Microsoft Q1: A $744 Billion AI Reckoning Is Coming",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Fed Decision, Microsoft, Alphabet Earnings Highlight Blockbuster Week",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Tech-to-Defensive Rotation, GM Stock Logs Worst Week Since 2023: This Week on Wall Street",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "Texas Attorney General Paxton Sues OpenAI, CEO Altman Over Alleged Imposition Of Negative Side Effects On Clients",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "Stock Market Today: Meta\u2019s Spending Plans Reignite AI Bubble Fears as the Nasdaq Sinks 2.6% and Money Runs to Defensives",
+        "domain": "ChartMill",
+        "date": "20261023"
+      },
+      {
+        "title": "Dow Jones Top Movers Today: PG and JNJ Lead Gainers, CAT and AMZN Lead Losers",
+        "domain": "ChartMill",
+        "date": "20261022"
+      },
+      {
+        "title": "World's largest wealth fund posts $30 billion loss after bond market turbulence",
+        "domain": "CNBC",
+        "date": "20261022"
+      },
+      {
+        "title": "Microsoft's Hardman: Lack of grid connections behind Nscale decision",
+        "domain": "CNBC",
+        "date": "20261021"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

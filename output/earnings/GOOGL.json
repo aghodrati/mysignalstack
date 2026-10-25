@@ -1,0 +1,92 @@
+[
+  {
+    "call_date": "2026-10-28",
+    "when": "2026-10-28T16:00:00-04:00",
+    "eps_estimate": 3.0,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-29",
+        "eps_estimate": 2.26,
+        "reported_eps": 2.87,
+        "surprise_pct": 26.88
+      },
+      {
+        "earnings_date": "2026-02-04",
+        "eps_estimate": 2.64,
+        "reported_eps": 2.82,
+        "surprise_pct": 7.01
+      },
+      {
+        "earnings_date": "2026-04-29",
+        "eps_estimate": 2.67,
+        "reported_eps": 5.11,
+        "surprise_pct": 91.59
+      },
+      {
+        "earnings_date": "2026-07-22",
+        "eps_estimate": 2.9,
+        "reported_eps": 9.11,
+        "surprise_pct": 214.23
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-25",
+    "call_date": "2026-10-28",
+    "narrative": "Investors should focus on whether Alphabet\u2019s AI spending is translating into stronger Google Cloud demand, higher-value Search monetization, and credible growth in generative-AI products, especially as the headlines frame AI capex as both a potential \u201creckoning\u201d and a source of revenue for suppliers. The call should also clarify the pace and economics of AI investment, including infrastructure costs, margin pressure, and how Google is defending its competitive position against Microsoft and the broader US\u2013China AI race. Given the positive \u201cGARP-friendly quality compounder\u201d characterization and the relatively small gap between Alphabet\u2019s two share classes, expectations appear constructive, but the stock likely needs evidence that AI is accelerating\u2014not merely protecting\u2014its core businesses. My expectation is for a fundamentally solid report, with the biggest market reaction driven by forward commentary on Cloud, AI monetization, and capital spending rather than by the quarter\u2019s headline results alone.",
+    "headlines_used": [
+      {
+        "title": "Alphabet's 2 Classes of Common Stock Trade About 1% Apart. Here's the One I'd Buy.",
+        "domain": "Yahoo",
+        "date": "20261025"
+      },
+      {
+        "title": "Google\u2019s Ex-CEO Says China Trails US by 6 Months in AI Race, but Could Still Win Due to This Strategy: \u2018We\u2019re Already Losing\u2019",
+        "domain": "Yahoo",
+        "date": "20261025"
+      },
+      {
+        "title": "Microsoft Q1: A $744 Billion AI Reckoning Is Coming",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Fed Decision, Microsoft, Alphabet Earnings Highlight Blockbuster Week",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Mark Cuban Says AI Agents Can Be Like \u2018Cockroaches\u2019 That Find Ways Into Systems, But Defenders Can Fight Back With AI: \u2018We\u2019ve Always Had Hacks\u2019",
+        "domain": "Benzinga",
+        "date": "20261024"
+      },
+      {
+        "title": "Tech-to-Defensive Rotation, GM Stock Logs Worst Week Since 2023: This Week on Wall Street",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "Alphabet (NASDAQ:GOOGL) Screens as a GARP-Friendly Quality Compounder",
+        "domain": "ChartMill",
+        "date": "20261023"
+      },
+      {
+        "title": "Dow Jones Top Movers: Gainers and Losers on October 22, 2026",
+        "domain": "ChartMill",
+        "date": "20261022"
+      },
+      {
+        "title": "World's largest wealth fund posts $30 billion loss after bond market turbulence",
+        "domain": "CNBC",
+        "date": "20261022"
+      },
+      {
+        "title": "'One man's capex is another man's revenue': Aptus Capital's David Wagner on Meta's AI spending",
+        "domain": "CNBC",
+        "date": "20261022"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

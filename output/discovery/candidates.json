@@ -9026,5 +9026,15 @@
     "name": "Marathon Fusion",
     "ticker_guess": null,
     "why": "Reported converting mercury into stable gold at ten times CERN\u2019s 2025 rate; is developing fusion-based production of medical isotopes including copper-64 and copper-67; reported progress enriching lithium-6 for fusion fuel"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-24",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-206/",
+    "name": "The Hershey Company",
+    "ticker_guess": "HSY",
+    "why": "Rachel Handler criticizes the declining quality of Hershey\u2019s chocolate; the piece attributes deterioration to cumulative incremental product changes made to reduce costs"
   }
 ]
