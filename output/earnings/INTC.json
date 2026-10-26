@@ -1,0 +1,92 @@
+[
+  {
+    "call_date": "2026-10-29",
+    "when": "2026-10-29T16:00:00-04:00",
+    "eps_estimate": 0.4,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-23",
+        "eps_estimate": 0.01,
+        "reported_eps": 0.23,
+        "surprise_pct": 3162.41
+      },
+      {
+        "earnings_date": "2026-01-22",
+        "eps_estimate": 0.08,
+        "reported_eps": 0.15,
+        "surprise_pct": 81.51
+      },
+      {
+        "earnings_date": "2026-04-23",
+        "eps_estimate": 0.01,
+        "reported_eps": 0.29,
+        "surprise_pct": 2108.68
+      },
+      {
+        "earnings_date": "2026-07-23",
+        "eps_estimate": 0.22,
+        "reported_eps": 0.42,
+        "surprise_pct": 94.59
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-26",
+    "call_date": "2026-10-29",
+    "narrative": "Investors should focus on whether Intel\u2019s results and outlook show credible progress in its turnaround, particularly its ability to execute on manufacturing and foundry plans after the Ohio fab milestone\u2014still at least five years behind schedule. They should also watch management\u2019s commentary on demand across PCs, data centers, and AI-related markets, especially as Nvidia remains central to investor expectations for semiconductor growth. Given that Intel\u2019s results are explicitly \u201cin focus\u201d and the stock is included in an earnings-volatility watch, the market may react sharply to guidance, margin trends, and any update on delays or capital priorities. My expectation is for a closely scrutinized call in which operational execution and the timing of the manufacturing recovery matter at least as much as the quarter\u2019s headline results.",
+    "headlines_used": [
+      {
+        "title": "Stocktwits Tech Watch: More Big Earnings, Apple\u2019s Touch-Screen MacBook And Intel Results In Focus",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "Is Nvidia Stock Cheaper Now That Its Multiple Has Fallen?",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "Earnings Volatility Watch: SanDisk and 11 Other Stocks Are Priced for at Least 10% Swings This Week",
+        "domain": "Benzinga",
+        "date": "20261025"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261025"
+      },
+      {
+        "title": "Fed Decision, Microsoft, Alphabet Earnings Highlight Blockbuster Week",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Most Active US Stocks: Oct. 23, 2026 Volume Leaders",
+        "domain": "ChartMill",
+        "date": "20261023"
+      },
+      {
+        "title": "Tech-to-Defensive Rotation, GM Stock Logs Worst Week Since 2023: This Week on Wall Street",
+        "domain": "Benzinga",
+        "date": "20261023"
+      },
+      {
+        "title": "Most-Active US Stocks on Oct. 22: SHFS Has Heaviest Volume",
+        "domain": "ChartMill",
+        "date": "20261022"
+      },
+      {
+        "title": "Intel hits construction milestone at Ohio chip fab that\u2019s at least 5 years behind schedule ",
+        "domain": "CNBC",
+        "date": "20261021"
+      },
+      {
+        "title": "Options Action: Key names get new options trading hours",
+        "domain": "CNBC",
+        "date": "20261019"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

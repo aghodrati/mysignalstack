@@ -38,5 +38,50 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-10-26",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.82,
+    "summary": "SKHY\u2019s reported fundamentals are exceptionally strong, with explosive revenue growth, double-digit earnings growth, very high operating and free-cash-flow margins, and inexpensive forward valuation. The 80.3% fair-value-implied upside and improving valuation metrics reinforce the bullish view, although the anomalous negative EV-to-revenue figure materially reduces confidence in the data quality and valuation interpretation.",
+    "key_changes": [
+      "Forward P/E declined 19.2% from 4.84 to 3.91, indicating a cheaper reported earnings valuation.",
+      "PEG ratio fell 41.2% from 0.34 to 0.20, further improving the reported growth-adjusted valuation.",
+      "Analyst-implied upside increased 39.4% from 57.6% to 80.3%, strengthening the positive consensus signal."
+    ],
+    "risks": [
+      "The negative EV-to-revenue value is economically unusual and may indicate balance-sheet, data-definition, or calculation issues.",
+      "Reported revenue growth of 256.8% and operating and FCF margins of 76.3% and 67.1% may be unusually elevated or unsustainable, warranting verification of accounting quality and comparability.",
+      "The valuation and fair-value case depends on estimates that could be overly optimistic, while the lack of net upgrades provides limited corroboration from analyst activity.",
+      "Rapid growth and strong margins can normalize sharply if the company faces competition, customer concentration, acquisition integration issues, or cyclical demand weakness."
+    ],
+    "reasoning": "The combination of extraordinary reported growth and profitability, very low forward valuation, and substantial consensus upside supports a long view, but anomalous metrics and sustainability concerns cap conviction below the highest level.",
+    "fair_value_estimate": 247.0,
+    "current_price": 137.02,
+    "implied_return_pct": 80.3,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 2.568,
+        "earnings_growth": 12.724
+      },
+      "Valuation": {
+        "forward_pe": 3.912445,
+        "peg_ratio": 0.2,
+        "ev_to_revenue": -0.347
+      },
+      "Quality": {
+        "operating_margin": 0.76328003,
+        "fcf_margin": 0.6709593420110085
+      },
+      "Sentiment": {
+        "analyst_upside": 80.26565464895634,
+        "revisions_trend": 9.999999999999998,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 96.15149945000002
+      }
+    },
+    "trigger": "earnings"
   }
 ]

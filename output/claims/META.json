@@ -1917,5 +1917,43 @@
     "trade_worthy": false,
     "context": "The article identifies Meta and YouTube as Netflix\u2019s primary engagement competition, arguing that Netflix may struggle to grow even if its content problems are fixable. This portrays Meta\u2019s platforms as competing effectively for users\u2019 attention and limiting Netflix\u2019s expansion opportunity.",
     "source": "Stratechery"
+  },
+  {
+    "id": "ea28bf3502e09374",
+    "ticker": "META",
+    "source_link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "source_title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "event_type": "competitive",
+    "created": "2026-10-25",
+    "claim": "Muse strengthens Meta\u2019s position in consumer AI agents",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The podcast describes Meta\u2019s Muse as unusually useful despite not being a frontier model: it proactively monitors information, reminds users about documents and appointments, researches purchases, assembles shopping carts, and completes transactions using one-time virtual cards. The speaker\u2019s positive experience suggests potential consumer engagement and differentiation for Meta\u2019s agent products, but the evidence is anecdotal and does not establish revenue impact.",
+    "source": "Interconnects"
+  },
+  {
+    "id": "b4609e07cd544944",
+    "ticker": "META",
+    "source_link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "source_title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "event_type": "competitive",
+    "created": "2026-10-25",
+    "claim": "Platform restrictions and reliability issues limit Muse\u2019s commerce utility",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Amazon reportedly blocks Muse from shopping on its platform, forcing purchases through other websites. Muse is also described as slow, prone to browser crashes, and sometimes obstructed by websites or data-center blocking. These frictions could constrain task completion, user satisfaction, and the near-term commercial value of Meta\u2019s agent, even though the user still found it highly useful for asynchronous tasks.",
+    "source": "Interconnects"
   }
 ]

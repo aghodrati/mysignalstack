@@ -9036,5 +9036,85 @@
     "name": "The Hershey Company",
     "ticker_guess": "HSY",
     "why": "Rachel Handler criticizes the declining quality of Hershey\u2019s chocolate; the piece attributes deterioration to cumulative incremental product changes made to reduce costs"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Stratechery",
+    "article_title": "The End of the Internet",
+    "article_link": "https://stratechery.com/2026/the-end-of-the-internet/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Provides payments, billing, card-program, and usage-tracking infrastructure for Internet-native, fintech, AI, and creator businesses; cited as enabling companies such as Substack to launch without building financial infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Stratechery",
+    "article_title": "The End of the Internet",
+    "article_link": "https://stratechery.com/2026/the-end-of-the-internet/",
+    "name": "Substack",
+    "ticker_guess": null,
+    "why": "Presented as an example of an integrated platform that makes subscription publishing easier; uses Stripe for payments"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Stratechery",
+    "article_title": "The End of the Internet",
+    "article_link": "https://stratechery.com/2026/the-end-of-the-internet/",
+    "name": "Automattic",
+    "ticker_guess": null,
+    "why": "Its Pressable business manages the author's WordPress site; the managed service patched the site's PHP vulnerability before disclosure"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Stratechery",
+    "article_title": "The End of the Internet",
+    "article_link": "https://stratechery.com/2026/the-end-of-the-internet/",
+    "name": "TikTok",
+    "ticker_guess": null,
+    "why": "Described as the culmination of public social media's shift toward algorithmically optimized entertainment with little remaining social interaction"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-25",
+    "source": "Interconnects",
+    "article_title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "article_link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Released Kimi K3.1 Pro with benchmark results that attracted mixed reactions; plans to release model weights by November 4; intentionally reduced offensive cyber capabilities before its open-weight release"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-25",
+    "source": "Interconnects",
+    "article_title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "article_link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Discussed as a provider of highly capable closed AI models and cybersecurity access programs; reportedly decided not to hire junior employees; its safeguards were described as blocking attempts to obtain the PHP exploit"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-25",
+    "source": "Interconnects",
+    "article_title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "article_link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Runs a defensive cybersecurity program providing trusted access to its models; its Patch the Planet program helped identify and coordinate disclosure of a serious PHP vulnerability; its safeguards reportedly block requests for the PHP exploit"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-25",
+    "source": "Interconnects",
+    "article_title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "article_link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Referenced as a lower-cost alternative for coding tasks; a possible DeepSeek swarm was rumored to be fixing the PHP vulnerability at scale, though the claim was unverified"
   }
 ]

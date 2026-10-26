@@ -1,0 +1,92 @@
+[
+  {
+    "call_date": "2026-10-29",
+    "when": "2026-10-29T16:00:00-04:00",
+    "eps_estimate": 1.96,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-30",
+        "eps_estimate": 1.56,
+        "reported_eps": 1.95,
+        "surprise_pct": 25.2
+      },
+      {
+        "earnings_date": "2026-02-05",
+        "eps_estimate": 1.95,
+        "reported_eps": 1.95,
+        "surprise_pct": 0.22
+      },
+      {
+        "earnings_date": "2026-04-29",
+        "eps_estimate": 1.65,
+        "reported_eps": 2.78,
+        "surprise_pct": 68.18
+      },
+      {
+        "earnings_date": "2026-07-30",
+        "eps_estimate": 1.83,
+        "reported_eps": 5.75,
+        "surprise_pct": 214.89
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-26",
+    "call_date": "2026-10-29",
+    "narrative": "Investors should focus on whether Amazon\u2019s AI and infrastructure spending is translating into accelerating AWS demand and broader cloud profitability, especially as the headlines highlight both AI-bubble concerns and the idea that one company\u2019s capex can become another\u2019s revenue. They should also watch retail execution and holiday-period commentary, given the market\u2019s attention to Amazon\u2019s upcoming report and the broader tech sell-off. The \u201cparts add up to $290\u201d headline suggests investors may assess AWS, advertising, and e-commerce as separate value drivers, while Anthropic\u2019s potential IPO could provide an additional strategic or valuation catalyst. Expectations appear elevated but volatile: I would look for solid operating momentum and constructive AI commentary, while recognizing that heavy spending, market skepticism, or cautious guidance could produce a sharp reaction.",
+    "headlines_used": [
+      {
+        "title": "Stocktwits Tech Watch: More Big Earnings, Apple\u2019s Touch-Screen MacBook And Intel Results In Focus",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "I'd Buy Half a Position in Amazon Stock Before Its Oct. 29 Report -- and Half After",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "Tech's Make-Or-Break Week Before The Midterms",
+        "domain": "SeekingAlpha",
+        "date": "20261026"
+      },
+      {
+        "title": "Amazon Into Earnings: The Parts Add Up To $290, And Anthropic's IPO Could Add More",
+        "domain": "SeekingAlpha",
+        "date": "20261026"
+      },
+      {
+        "title": "Earnings Volatility Watch: SanDisk and 11 Other Stocks Are Priced for at Least 10% Swings This Week",
+        "domain": "Benzinga",
+        "date": "20261025"
+      },
+      {
+        "title": "Celestica Stock Dips as the AI Trade Unwinds: Can Earnings Turn It Around?",
+        "domain": "Benzinga",
+        "date": "20261024"
+      },
+      {
+        "title": "'Fast Money' traders talk opportunities in the tech sell-off",
+        "domain": "CNBC",
+        "date": "20261023"
+      },
+      {
+        "title": "Stock Market Today: Meta\u2019s Spending Plans Reignite AI Bubble Fears as the Nasdaq Sinks 2.6% and Money Runs to Defensives",
+        "domain": "ChartMill",
+        "date": "20261023"
+      },
+      {
+        "title": "Dow Jones Top Movers Today: PG and JNJ Lead Gainers, CAT and AMZN Lead Losers",
+        "domain": "ChartMill",
+        "date": "20261022"
+      },
+      {
+        "title": "'One man's capex is another man's revenue': Aptus Capital's David Wagner on Meta's AI spending",
+        "domain": "CNBC",
+        "date": "20261022"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

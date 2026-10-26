@@ -1,0 +1,52 @@
+[
+  {
+    "call_date": "2026-10-29",
+    "when": "2026-10-29T16:00:00-04:00",
+    "eps_estimate": 1.32,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-30",
+        "eps_estimate": 1.05,
+        "reported_eps": 1.26,
+        "surprise_pct": 20.73
+      },
+      {
+        "earnings_date": "2026-02-05",
+        "eps_estimate": 1.45,
+        "reported_eps": 1.68,
+        "surprise_pct": 16.45
+      },
+      {
+        "earnings_date": "2026-04-30",
+        "eps_estimate": 1.11,
+        "reported_eps": 1.4,
+        "surprise_pct": 26.13
+      },
+      {
+        "earnings_date": "2026-07-30",
+        "eps_estimate": 0.96,
+        "reported_eps": 1.25,
+        "surprise_pct": 29.56
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-26",
+    "call_date": "2026-10-29",
+    "narrative": "Investors should focus on whether Reddit\u2019s management addresses the risk of **slower growth guidance** highlighted in the \u201cCan \u2018Reddit Max\u2019 Save RDDT\u2026\u201d headline, and whether Reddit Max is becoming a credible new monetization or engagement driver. They should also watch user growth, engagement, advertising demand, and management\u2019s outlook for sustaining Reddit\u2019s momentum as it scales its ad business and other revenue streams. The second headline appears unrelated to Reddit\u2019s business and should not influence expectations. My expectation is a closely scrutinized call: positive commentary on Reddit Max and strong engagement could reassure investors, while cautious guidance or limited evidence of monetization would likely weigh on sentiment.",
+    "headlines_used": [
+      {
+        "title": "Can \u2018Reddit Max\u2019 Save RDDT From Slower Growth Guidance on Oct. 29?",
+        "domain": "Yahoo",
+        "date": "20261025"
+      },
+      {
+        "title": "Sibling Bought Out Family Home, Then Its Value Tripled. Now Brother And Sister Want The Profit Because \u2018It\u2019s Only Fair\u2019",
+        "domain": "Yahoo",
+        "date": "20261024"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

@@ -6420,5 +6420,24 @@
     "trade_worthy": false,
     "context": "The APC released common architecture, interface, manufacturing, testing, and multicore-fiber standards intended to reduce implementation differences, broaden supplier participation, and avoid proprietary fragmentation. Nvidia CEO Jensen Huang demonstrated Spectrum X co-packaged optics, so faster industry standardization and broader sourcing could support adoption and scaling of Nvidia\u2019s optical networking offerings over the coming quarters, but the article provides no specific Nvidia revenue or market-share impact.",
     "source": "Next Platform"
+  },
+  {
+    "id": "4b7ad9cc53feca09",
+    "ticker": "NVDA",
+    "source_link": "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber",
+    "source_title": "Podcast: Kimi K3.1 Pro, the new cyber reality, and Muse musings",
+    "event_type": "competitive",
+    "created": "2026-10-25",
+    "claim": "Kimi could support incremental demand for Nvidia B300 systems",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Kimi K3.1 Pro reportedly requires Nvidia B300 hardware, with one node needed per model replica, unlike smaller models that can run on H200s or existing infrastructure. If the roughly three-trillion-parameter model gains meaningful adoption after its planned open-weight release, serving it would require relatively resource-intensive deployments and could create incremental demand for Nvidia\u2019s newest accelerator systems. However, the article emphasizes mixed user reactions and uncertain adoption, so the demand implication remains indirect.",
+    "source": "Interconnects"
   }
 ]
