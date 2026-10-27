@@ -1955,5 +1955,43 @@
     "trade_worthy": false,
     "context": "Amazon reportedly blocks Muse from shopping on its platform, forcing purchases through other websites. Muse is also described as slow, prone to browser crashes, and sometimes obstructed by websites or data-center blocking. These frictions could constrain task completion, user satisfaction, and the near-term commercial value of Meta\u2019s agent, even though the user still found it highly useful for asynchronous tasks.",
     "source": "Interconnects"
+  },
+  {
+    "id": "ed65688a206be7a5",
+    "ticker": "META",
+    "source_link": "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/",
+    "source_title": "Robots Are Coming for Jobs That Don't Exist Yet",
+    "event_type": "capex",
+    "created": "2026-10-26",
+    "claim": "META faces dilution and cash-flow pressure from funding AI expansion",
+    "direction": "short",
+    "confidence": 0.97,
+    "importance": 8,
+    "expected_return_pct": -4.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Meta is raising approximately $35 billion through equity and convertible securities and plans a $60 billion at-the-market offering for early next year. The article frames this as a return to external capital raising after periods when investors focused on free cash flow, while also noting that investors appear relatively unperturbed because the spending was anticipated and a peer completed a similarly large offering.",
+    "source": "The Diff"
+  },
+  {
+    "id": "2b58b71e686ef93f",
+    "ticker": "META",
+    "source_link": "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/",
+    "source_title": "Robots Are Coming for Jobs That Don't Exist Yet",
+    "event_type": "capex",
+    "created": "2026-10-26",
+    "claim": "META gains funding flexibility to accelerate AI infrastructure monetization",
+    "direction": "long",
+    "confidence": 0.84,
+    "importance": 8,
+    "expected_return_pct": 10.0,
+    "expected_horizon_days": 365,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article argues that Meta, like Google, has expanding opportunities to spend on AI inference because additional capacity can generate relatively predictable revenue increases. A large at-the-market offering would let equity investors continuously supply capital as those opportunities emerge, helping Meta expand capacity and maximize the areas where AI spending produces revenue.",
+    "source": "The Diff"
   }
 ]

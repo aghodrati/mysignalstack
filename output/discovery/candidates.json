@@ -9116,5 +9116,89 @@
     "name": "DeepSeek",
     "ticker_guess": null,
     "why": "Referenced as a lower-cost alternative for coding tasks; a possible DeepSeek swarm was rumored to be fixing the PHP vulnerability at scale, though the claim was unverified"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-27",
+    "source": "Stratechery",
+    "article_title": "Anthropic S-1, The Cost of Compute, Who Is Paying?",
+    "article_link": "https://stratechery.com/2026/anthropic-s-1-the-cost-of-compute-who-is-paying/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Filed for an IPO; core business is described as highly profitable; faces potential profit pressure from competition and ongoing dilution"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-27",
+    "source": "Stratechery",
+    "article_title": "Anthropic S-1, The Cost of Compute, Who Is Paying?",
+    "article_link": "https://stratechery.com/2026/anthropic-s-1-the-cost-of-compute-who-is-paying/",
+    "name": "AI compute",
+    "why": "Anthropic's core business depends on compute; competition may consume profits through ongoing compute costs"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Next Platform",
+    "article_title": "Cadence, Nvidia Unveil New AI Models To Put EDA On Autopilot",
+    "article_link": "https://www.nextplatform.com/hpc/2026/10/26/cadence-nvidia-unveil-new-ai-models-to-put-eda-on-autopilot/5305228",
+    "name": "Cadence Design Systems",
+    "ticker_guess": "CDNS",
+    "why": "Launched the Maestro AI model family for chip and system design; partnered with Nvidia to fine-tune models on Nvidia\u2019s Nemotron models and Cadence tool outputs; reported up to 30% higher output quality and 5x greater token efficiency versus general-purpose models"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "The Diff",
+    "article_title": "Robots Are Coming for Jobs That Don't Exist Yet",
+    "article_link": "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/",
+    "name": "Instacart",
+    "ticker_guess": "CART",
+    "why": "Its grocery-delivery business is described as converging with restaurant-delivery platforms; scale, logistics synergies, and richer customer data make merger discussions increasingly likely"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-27",
+    "source": "Doomberg",
+    "article_title": "Tough Comp",
+    "article_link": "https://newsletter.doomberg.com/p/tough-comp",
+    "name": "geopolitics",
+    "why": "US officials are preparing for a possible new round of attacks on Iran; Iran has threatened an extraordinarily violent response to renewed strikes"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-27",
+    "source": "Doomberg",
+    "article_title": "Tough Comp",
+    "article_link": "https://newsletter.doomberg.com/p/tough-comp",
+    "name": "air warfare",
+    "why": "The article questions whether aircraft carriers, long-range bombers and regional air bases can deliver a decisive knockout blow against Iran; Russia\u2019s campaign shows the difficulty of forcing capitulation through standoff attacks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-27",
+    "source": "Doomberg",
+    "article_title": "Tough Comp",
+    "article_link": "https://newsletter.doomberg.com/p/tough-comp",
+    "name": "missiles",
+    "why": "US forces are replenishing large quantities of standoff land-attack missiles and bunker-buster bombs; Russia has fired thousands of ballistic missiles and tens of thousands of drones against Ukraine"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-27",
+    "source": "Doomberg",
+    "article_title": "Tough Comp",
+    "article_link": "https://newsletter.doomberg.com/p/tough-comp",
+    "name": "air defense",
+    "why": "Ukraine\u2019s energy infrastructure is deteriorating sharply only after Kyiv has effectively run out of air-defense missiles; the article highlights air defense as a major constraint on long-range attack effectiveness"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-27",
+    "source": "Doomberg",
+    "article_title": "Tough Comp",
+    "article_link": "https://newsletter.doomberg.com/p/tough-comp",
+    "name": "energy infrastructure",
+    "why": "Russia has conducted a years-long campaign against Ukraine\u2019s energy infrastructure; damage has become more severe as Ukraine\u2019s air-defense missile stockpiles have dwindled"
   }
 ]

@@ -1,0 +1,87 @@
+[
+  {
+    "call_date": "2026-10-30",
+    "when": "2026-10-30T08:00:00-04:00",
+    "eps_estimate": 4.83,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-31",
+        "eps_estimate": 1.71,
+        "reported_eps": 1.85,
+        "surprise_pct": 8.39
+      },
+      {
+        "earnings_date": "2026-01-30",
+        "eps_estimate": 1.44,
+        "reported_eps": 1.52,
+        "surprise_pct": 5.2
+      },
+      {
+        "earnings_date": "2026-05-01",
+        "eps_estimate": 0.97,
+        "reported_eps": 1.41,
+        "surprise_pct": 45.56
+      },
+      {
+        "earnings_date": "2026-07-31",
+        "eps_estimate": 5.57,
+        "reported_eps": 6.06,
+        "surprise_pct": 8.84
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-27",
+    "call_date": "2026-10-30",
+    "narrative": "Investors should watch how Chevron\u2019s upstream results reflect the oil-price backdrop, since one headline cites oil at $116 and another describes renewed momentum in the energy trade, while also separating commodity-driven gains from production performance. The call should also clarify refining and fuel-market conditions, given the prominent political headlines about gasoline prices and pressure on \u201cBig Oil.\u201d With CNBC highlighting CVX among dividend stocks favored for stable income, commentary on free cash flow, dividend coverage, buybacks, and capital spending will be especially important. Overall, I would expect a constructive tone if higher oil prices are translating into stronger cash generation, but management\u2019s outlook and sensitivity to volatile prices may matter more than the quarter itself.",
+    "headlines_used": [
+      {
+        "title": "Don't Miss This Week's 5 Most Important Earnings Charts",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "AI Headlines Pile Up as Wall Street Navigates a Volatile Week",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "Stock Market Today: SpaceX\u2019s Cell Tower Push Rattles Telecom as $116 Oil Drags the Dow Lower",
+        "domain": "ChartMill",
+        "date": "20261026"
+      },
+      {
+        "title": "Top Wall Street analysts prefer these 3 dividend stocks for stable income",
+        "domain": "CNBC",
+        "date": "20261026"
+      },
+      {
+        "title": "Trump Said the 'Quiet Part' Out Loud on Gas Prices, Says Bernie Sanders: His Billionaire Friends Getting Rich Matters More Than Your Pump Costs",
+        "domain": "Benzinga",
+        "date": "20261026"
+      },
+      {
+        "title": "Gavin Newsom, Pete Buttigieg Slam Trump Over Gas Prices, Big Oil\u2014Analyst Says Diesel Is $2.72/Gallon Higher",
+        "domain": "Benzinga",
+        "date": "20261026"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261025"
+      },
+      {
+        "title": "Fed Decision, Microsoft, Alphabet Earnings Highlight Blockbuster Week",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Under-the-radar stocks to play the next leg of the energy trade with oil prices jumping again",
+        "domain": "CNBC",
+        "date": "20261022"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

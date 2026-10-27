@@ -6439,5 +6439,43 @@
     "trade_worthy": false,
     "context": "Kimi K3.1 Pro reportedly requires Nvidia B300 hardware, with one node needed per model replica, unlike smaller models that can run on H200s or existing infrastructure. If the roughly three-trillion-parameter model gains meaningful adoption after its planned open-weight release, serving it would require relatively resource-intensive deployments and could create incremental demand for Nvidia\u2019s newest accelerator systems. However, the article emphasizes mixed user reactions and uncertain adoption, so the demand implication remains indirect.",
     "source": "Interconnects"
+  },
+  {
+    "id": "fe413e734e51cdc1",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/26/nvidia-simulates-its-way-into-googles-magic-state-cultivation-party/5305405",
+    "source_title": "Nvidia Simulates Its Way Into Google's Magic State Cultivation Party",
+    "event_type": "competitive",
+    "created": "2026-10-26",
+    "claim": "NVDA strengthens its strategic position in quantum-computing infrastructure",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Nvidia used CUDA-Q and cuQuantum to simulate magic state cultivation, scaling from four GPUs to 8,192 GPUs on Jupiter, and modeled detailed hardware errors including coherent errors and leakage. The work is presented as complementary to Google\u2019s hardware demonstration and positions Nvidia\u2019s GPUs and software as tools for designing future quantum processors and error-correction systems. This could support long-term adoption and ecosystem influence, but the article provides no direct evidence of near-term revenue, customer commitments, or material financial impact.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "e51b5c0bd6e8d25f",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/hpc/2026/10/26/cadence-nvidia-unveil-new-ai-models-to-put-eda-on-autopilot/5305228",
+    "source_title": "Cadence, Nvidia Unveil New AI Models To Put EDA On Autopilot",
+    "event_type": "product_launch",
+    "created": "2026-10-26",
+    "claim": "NVDA gains incremental enterprise AI and HPC adoption through Cadence",
+    "direction": "long",
+    "confidence": 0.76,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Cadence is partnering with Nvidia and fine-tuning its Maestro EDA models on Nvidia\u2019s Nemotron models. The models will support API, secure-VPC, and on-premises deployment, while Cadence says 20% to 30% of chips under development already use AI-agent assistance and that adoption is rising. This gives Nvidia a concrete software ecosystem and enterprise workload path in EDA and AI-driven HPC, although the article provides no revenue, GPU-volume, or customer-commitment estimates.",
+    "source": "Next Platform"
   }
 ]

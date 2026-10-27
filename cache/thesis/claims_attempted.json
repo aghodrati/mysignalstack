@@ -1009,5 +1009,17 @@
   "https://www.interconnects.ai/p/podcast-kimi-k31-pro-the-new-cyber": [
     "META",
     "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/10/26/nvidia-simulates-its-way-into-googles-magic-state-cultivation-party/5305405": [
+    "GOOGL",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/hpc/2026/10/26/cadence-nvidia-unveil-new-ai-models-to-put-eda-on-autopilot/5305228": [
+    "NVDA"
+  ],
+  "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/": [
+    "AMZN",
+    "META",
+    "SPCX"
   ]
 }

@@ -454,5 +454,43 @@
     "trade_worthy": false,
     "context": "The article says SpaceX\u2019s latest spectrum purchase makes its developing mobile strategy clearer and suggests the strategy might work, implying improved prospects for entering or expanding in mobile connectivity. It provides no specific customer, revenue, competitive, or timing details.",
     "source": "Stratechery"
+  },
+  {
+    "id": "b3790043f99a42c6",
+    "ticker": "SPCX",
+    "source_link": "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/",
+    "source_title": "Robots Are Coming for Jobs That Don't Exist Yet",
+    "event_type": "capex",
+    "created": "2026-10-26",
+    "claim": "Tighter AI financing could give SpaceX a relative infrastructure advantage",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Elon Musk says credit is difficult for companies without non-AI revenue. The article suggests neoclouds are especially exposed to funding delays because they pay interest and possible tenant penalties before collecting revenue, while SpaceX\u2019s established rocket and automotive businesses provide non-AI revenue and its core competency is building large infrastructure ahead of schedule. This could let SpaceX continue or accelerate AI infrastructure deployment as more financing-constrained competitors stall.",
+    "source": "The Diff"
+  },
+  {
+    "id": "93dca8cfc455d2e9",
+    "ticker": "SPCX",
+    "source_link": "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/",
+    "source_title": "Robots Are Coming for Jobs That Don't Exist Yet",
+    "event_type": "capex",
+    "created": "2026-10-26",
+    "claim": "Weak AI end demand could leave SpaceX\u2019s AI infrastructure stranded",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article presents a separate bear case in which lenders are skeptical that AI demand is economically profitable or durable. If that concern proves correct, SpaceX\u2019s AI assets could face the same stranding risk as other neocloud infrastructure rather than benefiting from its construction capabilities.",
+    "source": "The Diff"
   }
 ]

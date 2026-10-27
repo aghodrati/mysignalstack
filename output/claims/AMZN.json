@@ -1252,5 +1252,43 @@
     "trade_worthy": false,
     "context": "The article reports a 27-minute compilation for a gpt-oss training run, first-step delays of roughly 30\u201355 times normal step time, seven FlexAttention failures caused by compilation timeouts, missing TokenSwitch support, confusing profiler setup, and a maturity gap versus CUDA. AWS is targeting up to a 100-fold compilation-time reduction and has fixes on its roadmap, but until those improvements arrive, researchers experimenting with architectures may continue preferring Nvidia, limiting the near-term revenue and margin impact of Trainium investment.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "504244aaa55fdc9e",
+    "ticker": "AMZN",
+    "source_link": "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/",
+    "source_title": "Robots Are Coming for Jobs That Don't Exist Yet",
+    "event_type": "capex",
+    "created": "2026-10-26",
+    "claim": "AWS demand supports AMZN\u2019s near-term growth outlook",
+    "direction": "long",
+    "confidence": 0.94,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Amazon says AWS capacity is mostly booked through 2027. The article characterizes AWS as growing rapidly and slightly short of compute while remaining mostly long its existing portfolio, indicating strong customer demand and continued opportunity for AWS revenue growth over coming quarters.",
+    "source": "The Diff"
+  },
+  {
+    "id": "de706bbe91564877",
+    "ticker": "AMZN",
+    "source_link": "https://www.thediff.co/archive/robots-are-coming-for-jobs-that-dont-exist-yet/",
+    "source_title": "Robots Are Coming for Jobs That Don't Exist Yet",
+    "event_type": "capex",
+    "created": "2026-10-26",
+    "claim": "AWS limits overexpansion risk through flexible capacity procurement",
+    "direction": "long",
+    "confidence": 0.87,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AWS reportedly needs only a few months of lead time for new equipment. That relatively short procurement cycle means Amazon can respond to demand without committing far in advance to excess capacity, reducing the risk that current AI infrastructure spending produces a large overcapacity problem if demand weakens.",
+    "source": "The Diff"
   }
 ]

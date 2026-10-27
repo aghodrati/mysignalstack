@@ -1,0 +1,82 @@
+[
+  {
+    "call_date": "2026-10-30",
+    "when": "2026-10-30T08:00:00-04:00",
+    "eps_estimate": 4.03,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-31",
+        "eps_estimate": 1.82,
+        "reported_eps": 1.88,
+        "surprise_pct": 3.03
+      },
+      {
+        "earnings_date": "2026-01-30",
+        "eps_estimate": 1.69,
+        "reported_eps": 1.71,
+        "surprise_pct": 1.12
+      },
+      {
+        "earnings_date": "2026-05-01",
+        "eps_estimate": 1.01,
+        "reported_eps": 2.09,
+        "surprise_pct": 107.46
+      },
+      {
+        "earnings_date": "2026-07-31",
+        "eps_estimate": 3.63,
+        "reported_eps": 3.52,
+        "surprise_pct": -3.0
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-27",
+    "call_date": "2026-10-30",
+    "narrative": "Investors should focus on how ExxonMobil\u2019s upstream earnings benefited from the oil-price rally\u2014one headline cites oil at $116\u2014and whether management views those prices as sustainable or volatile. They should also watch refining and fuel-market commentary, since the headlines highlight political pressure over gasoline prices and diesel reportedly being $2.72 per gallon higher, which could affect margins, demand, and the company\u2019s public messaging. Given CNBC\u2019s report on energy stocks benefiting from jumping oil prices, expectations are favorable for the quarter, but investors will likely care more about production volumes, cost discipline, capital returns, and 2027 spending guidance than the backward-looking result alone. My expectation is a strong operational update if elevated crude prices persisted through the quarter, tempered by caution around commodity-price reversals, inflation, and regulatory or political scrutiny.",
+    "headlines_used": [
+      {
+        "title": "Don't Miss This Week's 5 Most Important Earnings Charts",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "Earnings live updates: Whirlpool stock drops on softer quarter as inflation weighs on sales",
+        "domain": "Yahoo",
+        "date": "20261026"
+      },
+      {
+        "title": "Stock Market Today: SpaceX\u2019s Cell Tower Push Rattles Telecom as $116 Oil Drags the Dow Lower",
+        "domain": "ChartMill",
+        "date": "20261026"
+      },
+      {
+        "title": "Trump Said the 'Quiet Part' Out Loud on Gas Prices, Says Bernie Sanders: His Billionaire Friends Getting Rich Matters More Than Your Pump Costs",
+        "domain": "Benzinga",
+        "date": "20261026"
+      },
+      {
+        "title": "Gavin Newsom, Pete Buttigieg Slam Trump Over Gas Prices, Big Oil\u2014Analyst Says Diesel Is $2.72/Gallon Higher",
+        "domain": "Benzinga",
+        "date": "20261026"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261025"
+      },
+      {
+        "title": "Fed Decision, Microsoft, Alphabet Earnings Highlight Blockbuster Week",
+        "domain": "SeekingAlpha",
+        "date": "20261024"
+      },
+      {
+        "title": "Under-the-radar stocks to play the next leg of the energy trade with oil prices jumping again",
+        "domain": "CNBC",
+        "date": "20261022"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

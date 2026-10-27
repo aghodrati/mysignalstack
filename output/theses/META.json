@@ -180,5 +180,50 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.68,
     "confidence_after": 0.68
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-27",
+    "thesis": "META remains a cautiously bullish long-term compounder because exceptional advertising economics, financial strength, expanding AI distribution and improving frontier-model credibility can outweigh severe near-term risks from AI capex, dilution, execution and uncertain Muse monetization.",
+    "direction": "long",
+    "confidence": 0.62,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.67,
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.68,
+    "pre_critic_confidence": 0.62,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 12,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Muse achieves the targeted greater-than-10x inference-efficiency improvement and scales without comparable growth in per-user costs.",
+      "Muse monetization through commerce fees or subscriptions begins earlier than expected, while Apple distribution and broader consumer adoption expand reach.",
+      "Muse Spark Open, Muse Wonder and related models sustain competitive performance and regain developer and enterprise adoption.",
+      "AI infrastructure deployment accelerates through custom MTIA chips, third-party capacity, behind-the-meter power and modular datacenters, improving utilization and reducing reliance on scarce Nvidia capacity.",
+      "AI-driven advertising conversion, engagement and pricing remain strong, supporting continued revenue and free-cash-flow growth.",
+      "Meta converts its large compute buildout into external cloud, model-serving or premium capacity revenue without impairing internal superintelligence work."
+    ],
+    "invalidation": [
+      "Muse remains too compute-intensive to scale economically, efficiency gains fall short, or monetization is delayed despite rising inference costs.",
+      "2027 CapEx and operating expenses remain far above expectations, free cash flow stays negative, or additional equity and debt financing causes material dilution and valuation pressure.",
+      "Meta's frontier models again lag leading U.S. and Chinese competitors, while Llama and Muse Spark Open lose ecosystem adoption because of restrictive licensing or weak performance.",
+      "Infrastructure missteps, custom-chip failures, supplier friction or behind-the-meter power execution materially reduce usable capacity and returns on AI investment.",
+      "The reported EPS miss and sharply negative earnings revisions develop into sustained weakness in advertising growth, margins or earnings.",
+      "Regulatory action, youth restrictions, antitrust remedies or Reality Labs losses materially impair engagement, monetization or capital allocation."
+    ],
+    "reasoning": "The strong fundamental profile and 26% revenue, 14% ad-pricing and engagement momentum support a long, but the 29.9% EPS miss, negative free cash flow, $135-$145 billion 2026 CapEx guidance, cautious earnings-call Q&A and dilution risk reduce conviction and justify a return expectation below the 17.8% consensus upside.",
+    "claims_considered": 105
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-27",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.62,
+    "confidence_after": 0.62
   }
 ]
