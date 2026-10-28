@@ -9200,5 +9200,25 @@
     "article_link": "https://newsletter.doomberg.com/p/tough-comp",
     "name": "energy infrastructure",
     "why": "Russia has conducted a years-long campaign against Ukraine\u2019s energy infrastructure; damage has become more severe as Ukraine\u2019s air-defense missile stockpiles have dwindled"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-27",
+    "source": "Next Platform",
+    "article_title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Oracle is expanding its partnership with OpenAI; ChatGPT, OpenAI models, and Codex will connect with Oracle applications, databases, and OCI"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-27",
+    "source": "Next Platform",
+    "article_title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815",
+    "name": "SambaNova Systems",
+    "ticker_guess": null,
+    "why": "Oracle plans to offer SambaNova\u2019s fifth-generation SN50 reconfigurable dataflow units in OCI; the hardware is designed for inference decode workloads alongside GPUs"
   }
 ]

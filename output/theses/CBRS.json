@@ -38,5 +38,49 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.61,
     "confidence_after": 0.61
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-28",
+    "thesis": "CBRS has a modestly bullish near-term setup from strong growth, an EPS beat, CS-4 commercialization, AMD integration, and planned Oracle OCI availability, but high valuation, memory and power constraints, and increasingly fungible GPU-based inference cap conviction and upside.",
+    "direction": "long",
+    "confidence": 0.58,
+    "fundamental_direction": null,
+    "fundamental_confidence": null,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.58,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "Broader CS-4 availability converts customer evaluations into orders and revenue",
+      "AMD deploys Cerebras in disaggregated prefill/decode systems and expands the partnership",
+      "Oracle launches Cerebras CS-4 capacity in OCI and generates meaningful enterprise demand",
+      "Cerebras cloud and services growth remains substantially faster than product revenue growth",
+      "CS-4 modularity, deployment speed, and partner-friendly I/O improve customer adoption and margins"
+    ],
+    "invalidation": [
+      "TileRT or comparable NVIDIA software materially captures ultra-low-latency inference demand and reduces dedicated Cerebras purchases",
+      "CS-4 demand is limited by its unchanged 44GB SRAM capacity, roughly 125-135kW rack power, or inefficient fixed prefill-to-decode ratios",
+      "Cerebras fails to sustain growth after the Q2 2026 revenue increase or the cloud and services mix deteriorates",
+      "AMD and Oracle deployments remain exploratory without material commitments or revenue",
+      "Cerebras requires substantial price concessions because its overclocked CS-4 performance does not translate into durable customer economics",
+      "Napier reaches production with materially better inference cost and performance than Cerebras systems"
+    ],
+    "reasoning": "The latest reported quarter showed a real EPS beat of -$0.05 versus -$0.18 expected and supports the strong revenue-growth narrative, while no fundamental or earnings-call picture was provided to validate valuation, margins, or guidance; consequently the thesis remains modestly long on product and ecosystem momentum but with reduced confidence because competitive, scalability, and deployment-economics risks are substantial.",
+    "claims_considered": 26
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-28",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.58,
+    "confidence_after": 0.58
   }
 ]

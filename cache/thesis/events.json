@@ -15367,5 +15367,93 @@
     "text": "\u201cMeasure what is measurable, and make measurable what is not so.\u201d \u2013 Galileo Galilei Roughly two and a half years ago, we published \u201c Mapping the War ,\u201d a guide to following the daily ebbs and flows of the war between NATO and Russia over Ukraine. In it, we listed several accessible open-source social media accounts that, despite their known biases, provided good signal in a sea of propagandistic noise. One account profiled was the Military Summary channel on YouTube , an excellent source of real-time information that has collectively garnered more than 400 million views worldwide. By consuming the channel\u2019s twice-daily, bite-sized summaries of the war, we became aware of several important developments long before they made headlines in the Financial Times or Washington Post . Among them were Ukraine\u2019s huge assault on Russian cargo and tanker ships in the Sea of Azov in July, Russia\u2019s retaliation by blockading Ukraine\u2019s Black Sea ports and destroying Odesa\u2019s port infrastructure, and countless other escalations. Put your likes | Military Summary One thing that stands out after watching hundreds of such episodes over the years is just how tough it is to inflict a knockout blow from the air using only long-range, standoff munitions. Consider Russia\u2019s years-long campaign against Ukraine\u2019s energy infrastructure. Russia has fired thousands of highly advanced ballistic missiles and tens of thousands of cutting-edge drones in a seemingly relentless daily campaign, but only now, with Kyiv effectively out of air-defense missiles, is the target deteriorating at a truly alarming rate. If you live in Britain, you have probably been told that this pace exists because Russia is a paper tiger whose missiles don\u2019t shoot straight, or Russian President Vladimir Putin has cancer (did you see his hands twitch?), or his agents are too busy Q-Tipping your local politician\u2019s bidet to focus on winning the war. In the rest of the world, the natural conclusion is that it is prohibitively difficult to inflict sufficient damage from afar to force capitulation, especially against a country as large and as clearly motivated to fight as Ukraine. What a weirdo | The Telegraph Against such a backdrop, breaking news published in the Wall Street Journal over the weekend piqued our interest: \u201c American warships in the Middle East are preparing for an escalation in fighting in case President Trump opts for a fresh round of attacks against Iran in the coming weeks, according to US officials familiar with the planning. During a rare visit to a US aircraft carrier and guided-missile destroyer operating in the Arabian Sea, The Wall Street Journal observed flight operations, as well as a significant replenishment of munitions and supplies\u2014including a large delivery of standoff land attack missiles and bunker-buster bombs designed to penetrate ground targets. \u201d Given Iran\u2019s credible threats to unleash an extraordinarily violent response to any renewed strikes on its territory, just what, exactly, are US President Donald Trump and his advisers hoping to accomplish with yet another round of fighting? Is a civilization-ending knockout blow to Iran even remotely possible using a couple of aircraft carriers, some long-range bombers taking off stateside, and what remains of American air bases in the Middle East? Can we learn anything from how challenging it has been for Russia to deal such a blow to Ukraine, despite sharing a border more than 1,000 miles long and enjoying access to its entire formidable military-industrial complex for the task? A direct comparison between Iran and Ukraine is not only readily available using open sources, but the numbers will come as a sobering shock. Let\u2019s have a look. Read more",
     "event": null,
     "source": "Doomberg"
+  },
+  "https://stratechery.com/2026/meta-earnings-muse-and-the-frontier-musebook/": {
+    "seen_date": "2026-10-28",
+    "article_date": "2026-10-28",
+    "title": "Meta Earnings, Muse and the Frontier, Musebook",
+    "text": "Meta's earnings come in the context of Zuckerberg delivering on his promise; if investors believe in Muse they must support Meta's spending on compute.",
+    "event": {
+      "event": "Meta's earnings are being evaluated in light of Mark Zuckerberg's promise to develop Muse, with investor confidence in the project tied to support for elevated compute spending.",
+      "companies": [
+        "META"
+      ],
+      "other_companies_mentioned": [],
+      "event_type": "earnings",
+      "importance": 5,
+      "time_horizon": "quarters",
+      "key_facts": [
+        "Meta's earnings are discussed in the context of Zuckerberg delivering on his promise regarding Muse.",
+        "The article argues that investors who believe in Muse must support Meta's spending on compute."
+      ],
+      "type": "analysis",
+      "novel": false,
+      "summary": "The article connects Meta's earnings with Mark Zuckerberg's progress on Muse and the company's investment in compute. It argues that confidence in Muse requires investors to accept and support Meta's substantial compute spending."
+    },
+    "source": "Stratechery"
+  },
+  "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815": {
+    "seen_date": "2026-10-28",
+    "article_date": "2026-10-27",
+    "title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "text": "Oracle is Expanding the Accelerator Options in OCI for Enterprises\nIt\u2019s a tale of two companies when discussion turns to Oracle and the burgeoning AI industry. The longtime tech giant tends at the same time to embody the surging enthusiasm about the technology\u2019s promise and the looming concerns about the massive amounts being spent and the possibility of a bursting AI bubble.\nOn the latter, it\u2019s a \u201cyeah but\u201d sort of story. The company\u2019s sales between its 2025 and 2026 fiscal years jumped from $57.4 billion to $67.4 billion, and its Oracle Cloud Infrastructure (OCI) business in Q1 FY 2027 hit $7.4 billion, a 121 percent year-over-year jump. And there\u2019s more to come. Its remaining performance obligations, which represent contracted sales for service not yet delivered and not counted in revenue, hit $664 billion, up $209 billion over the previous year.\nBut that comes amid spending worries, in particular the hundreds of billions of dollars it\u2019s spent on building datacenters to support the exploding AI-driven demand. Its capital expenditures in FY 2026 hit $55.7 billion and could push beyond $90 billion this fiscal year, all against the backdrop of growing public resistance to datacenter buildouts and AI itself. Oracle certainly isn\u2019t alone in this spending rush, but it\u2019s often pointed to as a cautionary tale.\nThe Technology Itself\nThat said, move away from all the dollar signs and financial projections, and Oracle is aggressively expanding what it offers AI customers through its cloud business while holding its own in a market of other heavyweights, from Microsoft to Google to Amazon Web Services,\nThat\u2019s what\u2019s been on display at the Oracle AI World 2026 show in Las Vegas this week. The first day wasn\u2019t an open floodgate of new products, services, and partnerships. Oracle executives put at the top of the agenda two relatively narrow but key aspects of enterprise AI: the security of the data and how the technology can ease the day-to-day for companies and their workers alike.\nDay 2 had a greater focus on the architecture itself, adding key pieces to the OCI infrastructure to give organizations more hardware options as they take on greater inference and other AI workloads.\nBoth fit with Oracle\u2019s push to ensure that enterprises and HPC customers can run their growing AI workloads using whatever software and hardware they need.\n\u201cThere's more comfort with a wide range of options in those environments,\u201d Nathan Thomas, senior vice president and product manager for OCI, told The Next Platform before the show. \u201cWe want to enable that, so we partner very deeply with who we view are best-in-breed in markets. You see us do a lot with Nvidia in chipsets. You see us do a lot with AMD chipsets. We feel very confident those are going to be solutions that our customers continue to want to see and we want to partner deeply there. We don't want to put ourselves in a position where we're dictating any of that stuff or trying to cut off any options for those customers.\u201d\nAt the show on Tuesday, executives unveiled new accelerator choices. Google\u2019s Tensor Processing Units (TPUs) will be available on OCI next year \u2013 the first time Google\u2019s specialized AI chips will be offered in a hyperscale environment other than Google\u2019s own. The chips are designed to handle large language model (LLM) training and post-training workloads and inference for reasoning and agentic AI.\nGoogle, in April, released its eight-generation TPUs, the first model to split into two distinct specialized chips, the TPU 8t for training and TPU 8i (below) for inference.\nLikewise, Oracle next year will deploy Cerebras\u2019 fast-inferencing hardware into OCI. Cerebras, known for creating wafer-sized chips that put compute and memory on the same chip, in August introduced its CS-4 AI accelerator, a rack-scale offering based on three of its new Wafer Scale Engine 3 Turbo (below) chips, which the company boasts offers up to 30-times the tokens-per-second-per-user speed of GPUs. Those, too, will be arriving in OCI in 2027.\nAnother option will be SambaNova\u2019s fifth-generation inference-focused SN50 Reconfigurable Dataflow Units (RDUs), (below) which were released in February. They\u2019re designed to work with GPUs, with those accelerators handling prefill tasks and the RDUs handling decode.\nDeep Trust\nOn Monday, Oracle unveiled its Deep Trust AI Architecture, which will be embedded in the company\u2019s AI Database, Autonomous AI Database, and APEX AI Application Generator. The goal is to protect organizations\u2019 data as AI applications are accessing sensitive information, AI agents are breaching systems of outside companies to complete their tasks, and threat groups are using AI in their attacks.\nThe architecture is designed to protect such data, enforce business rules, ensure accurate answers from AI systems, and control AI\u2019s interactions with enterprise environments. Oracle wants to embed this control layer where the data lives. It dovetails with Oracle's Maximum Availability Architecture, which shows enterprises how to build systems that remain available even during failures.\n\u201cDeep Trust AI Architecture applies the same principle to AI: build trust into the architecture from the start, instead of trying to bolt it on later,\u201d wrote Juan Loaiza, executive vice president of Oracle database technologies, and Maria Colgan, vice president of product management. \u201cAnd, because that trust is enforced in the underlying infrastructure, rather than buried inside each application, it can protect both the applications you already have, and the new applications you build. ... AI should not have to implement enterprise trust every time it builds an application or accesses data. Trust should be built into the architecture.\u201d\nOracle also is putting an emphasis on turning on more AI in the workplace. The company is expanding its partnership with OpenAI, linking the AI vendor\u2019s models, ChatGPT chatbot, and Codex developer tool with its own applications, data, and cloud infrastructure. This opens another door for frontier AI to get deeper into the enterprise, touching on everything from building applications to detecting and fixing security vulnerabilities.\nOracle is offering ChatGPT plug-ins in Oracle AI Workspace to let enterprises connect to OpenAI tools with Oracle\u2019s Fusion applications, NetSuite, AI Database, and OCI, making their capabilities ready for agents and accessible to ChatGPT users.\nNew AI-fueled features in Oracle\u2019s Fusion portfolio are aimed at making agentic AI a key player in the enterprise by letting users define what they want and letting tools do the work.\n\u201cWork is sometimes organized around the work itself,\u201d Co-CEO Mike Sicilia said during his opening day keynote. \u201cPeople need to know what applications to open, where to find the information, the steps to follow, and who is to do what\u2019s next. AI allows us to do that much better. It allows for far more intuitive software. In fact, AI should allow you to barely think about the software at all. Instead of navigating applications and managing processes, you simply tell the system what you\u2019d like to accomplish. Because it understands your business, it can figure out how to get the work done.\u201d\nOracle also rolled out new applications powered by its Fusion Claw, the execution runtime behind the Fusion Agentic Applications suite. At the show, the company unveiled 25 new agentic applications across Oracle Fusion software suites, from human resources and ERP to supply chain and customer management, for tasks like scheduling deliveries, customer service evaluations, and payroll management. Customers also can build their own agentic applications.\nFusion Companion gives users an avenue to work with Fusion Application through ChatGPT and other AI tools. It takes what users ask for and automatically selects and coordinates the agents, workflows, approvals, and other steps to execute the work. Oracle also announced Fusion Setup and Configuration Registry, a public Git repository to make implementing Fusion applications easier and faster. The vendor\u2019s expertise and best practices become reusable AI skills agents can use to automate what are now manual setup and configuration tasks.",
+    "event": {
+      "event": "Oracle announced expanded OCI accelerator options, including Google TPUs, Cerebras inference hardware, and SambaNova inference processors, alongside new enterprise AI security, agentic applications, and OpenAI integrations.",
+      "companies": [
+        "AMD",
+        "CBRS",
+        "GOOGL",
+        "NVDA",
+        "ORCL"
+      ],
+      "other_companies_mentioned": [
+        {
+          "name": "OpenAI",
+          "ticker": null,
+          "why": "Oracle is expanding its partnership with OpenAI; ChatGPT, OpenAI models, and Codex will connect with Oracle applications, databases, and OCI"
+        },
+        {
+          "name": "SambaNova Systems",
+          "ticker": null,
+          "why": "Oracle plans to offer SambaNova\u2019s fifth-generation SN50 reconfigurable dataflow units in OCI; the hardware is designed for inference decode workloads alongside GPUs"
+        }
+      ],
+      "event_type": "product_launch",
+      "importance": 8,
+      "time_horizon": "quarters",
+      "key_facts": [
+        "Oracle\u2019s OCI business generated $7.4 billion in Q1 FY 2027, up 121% year over year.",
+        "Oracle\u2019s remaining performance obligations reached $664 billion, up $209 billion from the prior year.",
+        "Oracle\u2019s FY 2026 capital expenditures were $55.7 billion and could exceed $90 billion in the current fiscal year.",
+        "Oracle said it is partnering deeply with Nvidia and AMD and intends to give OCI customers broad hardware choices rather than dictate a single platform.",
+        "Google TPUs will become available on OCI in 2027, marking the first planned availability of Google\u2019s specialized AI chips in a hyperscale environment outside Google.",
+        "Oracle plans to deploy Cerebras inference hardware in OCI in 2027, including systems based on Cerebras\u2019 CS-4 accelerator and Wafer Scale Engine 3 Turbo chips.",
+        "Oracle plans to offer SambaNova\u2019s SN50 reconfigurable dataflow units as another OCI inference option.",
+        "Oracle unveiled its Deep Trust AI Architecture for its AI Database, Autonomous AI Database, and APEX AI Application Generator to protect data, enforce business rules, and control AI interactions with enterprise systems.",
+        "Oracle expanded its partnership with OpenAI to connect OpenAI models, ChatGPT, and Codex with Oracle applications, data, and cloud infrastructure.",
+        "Oracle introduced ChatGPT plug-ins in Oracle AI Workspace for connections to Fusion applications, NetSuite, AI Database, and OCI.",
+        "Oracle announced 25 new agentic applications across its Fusion software suites, including human resources, ERP, supply chain, and customer management."
+      ],
+      "type": "news",
+      "novel": true,
+      "summary": "Oracle is using its AI World 2026 event to broaden OCI\u2019s hardware and software offering for enterprise and high-performance computing workloads. The company announced planned access to Google TPUs, Cerebras accelerators, and SambaNova inference processors, while emphasizing interoperability with Nvidia and AMD. It also introduced a security architecture, expanded its OpenAI partnership, and launched new agentic Fusion applications, although these initiatives come amid substantial datacenter spending and broader concerns about AI investment levels."
+    },
+    "source": "Next Platform"
+  },
+  "https://intelligence.theregister.com/paper/view/21154": {
+    "seen_date": "2026-10-28",
+    "article_date": "2026-10-27",
+    "title": "Skills to Power the Future",
+    "text": "Loading assets, please wait...",
+    "event": null,
+    "source": "Next Platform"
+  },
+  "https://www.thediff.co/archive/how-fast-does-software-depreciate-these-days/": {
+    "seen_date": "2026-10-28",
+    "article_date": "2026-10-27",
+    "title": "How Fast Does Software Depreciate These Days?",
+    "text": "Plus! Service Businesses; Layoffs; Office Politics; Self-Limiting Bubbles; Venues",
+    "event": null,
+    "source": "The Diff"
   }
 }

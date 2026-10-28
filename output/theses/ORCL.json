@@ -135,5 +135,48 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.69,
     "confidence_after": 0.69
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-10-28",
+    "thesis": "Oracle is a moderately high-conviction long as exceptionally strong OCI growth, record backlog, high GPU utilization, broader accelerator offerings, and contracted AI demand should drive substantial revenue acceleration, though near-term returns are constrained by extreme CapEx, negative free cash flow, financing and dilution risk, margin pressure, and datacenter execution delays.",
+    "direction": "long",
+    "confidence": 0.74,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.74,
+    "pre_critic_confidence": 0.74,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "OCI growth continues near or above the reported 121% year-over-year rate and cloud growth accelerates toward management's FY27 outlook.",
+      "Conversion of Oracle's $664 billion remaining performance obligations into revenue progresses as new AI datacenter capacity comes online.",
+      "GPU utilization remains near 98% and renewal pricing stays elevated, supporting better infrastructure returns and pricing power.",
+      "Broader OCI availability of Google TPUs, Cerebras, SambaNova, Nvidia, and AMD accelerators wins additional enterprise and frontier-AI workloads.",
+      "OpenAI, Meta, and other customers fund and consume contracted capacity while permitting and power delivery improve at major campuses."
+    ],
+    "invalidation": [
+      "Free cash flow remains deeply negative without a credible path to improvement despite customer prepayments, supplier financing, and bring-your-own-hardware structures.",
+      "New Mexico, Wisconsin, or other datacenter and power projects suffer material delays that prevent timely RPO conversion or leave capacity underutilized.",
+      "AI demand, OpenAI funding, or customer consumption weakens, causing backlog cancellations, slower OCI growth, lower GPU utilization, or overcapacity.",
+      "CapEx materially exceeds the $90-$95 billion FY27 expectation, requiring substantially greater debt or equity issuance and worsening dilution or financing costs.",
+      "Gross-margin pressure fails to flatten, infrastructure returns disappoint, or negative analyst revisions and institutional outflows intensify."
+    ],
+    "reasoning": "The long case is supported by a 10.45% quarterly EPS beat, strong earnings-call demand and raised FY27 guidance, a 0.68-confidence favorable fundamental profile, and exceptional OCI/backlog momentum, but confidence is capped by management's evasiveness on free-cash-flow timing, heavy investment and financing needs, margin compression, and credible execution risks.",
+    "claims_considered": 33
+  },
+  {
+    "event": "critic",
+    "date": "2026-10-28",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.74,
+    "confidence_after": 0.74
   }
 ]

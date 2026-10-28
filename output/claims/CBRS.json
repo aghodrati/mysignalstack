@@ -454,5 +454,43 @@
     "trade_worthy": false,
     "context": "The article reports that Cerebras introduced a rack-scale system combining three latest-generation WSE chips, with each chip rated at up to 250 PFLOPS of AI compute and 43.2 PB/s of memory bandwidth. These specifications support a stronger performance proposition for data-center customers, but the article provides no pricing, customer win, shipment volume, or revenue evidence tying the launch to near-term financial results.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "b1eebecab4cd70aa",
+    "ticker": "CBRS",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815",
+    "source_title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "event_type": "product_launch",
+    "created": "2026-10-27",
+    "claim": "Oracle OCI deployment could expand Cerebras\u2019s enterprise demand",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 10.0,
+    "expected_horizon_days": 270,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Oracle plans to deploy Cerebras inference hardware in OCI in 2027, including CS-4 systems based on Wafer Scale Engine 3 Turbo chips. OCI is growing rapidly, generating $7.4 billion in Q1 FY 2027, and Oracle\u2019s stated strategy is to offer customers broad accelerator choices. Availability through that cloud platform could improve Cerebras\u2019s access to enterprise and HPC customers, validate its inference positioning, and create future hardware demand, although the article provides no contract value or purchase commitment.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "be3ba3d7d5fcb18d",
+    "ticker": "CBRS",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815",
+    "source_title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "event_type": "product_launch",
+    "created": "2026-10-27",
+    "claim": "Oracle\u2019s multi-vendor OCI strategy may constrain Cerebras\u2019s share gains",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Cerebras will be offered alongside Nvidia and AMD accelerators, Google TPUs planned for 2027, and SambaNova inference processors. Oracle explicitly says it does not want to dictate a single platform, so Cerebras will gain OCI distribution but must compete directly for workloads and customer spending rather than receive an exclusive position. The article does not quantify how much OCI demand Cerebras could capture.",
+    "source": "Next Platform"
   }
 ]

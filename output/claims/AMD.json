@@ -3095,5 +3095,24 @@
     "trade_worthy": false,
     "context": "AWS is moving Trainium toward a native PyTorch training stack with eager mode, torch.compile, standard distributed APIs, and support for libraries such as Accelerate and TorchTitan, while investing in vLLM and SGLang. SemiAnalysis found Trainium3 usable for nontrivial training, competitive with GB300 and B200 across some matrix shapes, and supported 89 of 96 FlexAttention tests. Although compilation time, API gaps, and ecosystem maturity remain disadvantages, AWS\u2019s planned compiler improvements and extensive automated testing could broaden Trainium adoption beyond inference and make it a more credible alternative to AMD accelerators for research training, increasing pressure on AMD\u2019s share and pricing over the coming months.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "f44ff721b10d4f47",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815",
+    "source_title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "event_type": "product_launch",
+    "created": "2026-10-27",
+    "claim": "Oracle\u2019s OCI strategy supports AMD accelerator demand",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Oracle\u2019s OCI executive said the company partners deeply with AMD and expects AMD chipsets to remain solutions customers want, while OCI avoids dictating a single hardware platform. This gives AMD continued access to Oracle\u2019s rapidly expanding cloud infrastructure business, although the article provides no AMD-specific deployment volumes or commitments and also highlights competing accelerator options from Google, Cerebras, and SambaNova.",
+    "source": "Next Platform"
   }
 ]

@@ -6477,5 +6477,43 @@
     "trade_worthy": false,
     "context": "Cadence is partnering with Nvidia and fine-tuning its Maestro EDA models on Nvidia\u2019s Nemotron models. The models will support API, secure-VPC, and on-premises deployment, while Cadence says 20% to 30% of chips under development already use AI-agent assistance and that adoption is rising. This gives Nvidia a concrete software ecosystem and enterprise workload path in EDA and AI-driven HPC, although the article provides no revenue, GPU-volume, or customer-commitment estimates.",
     "source": "Next Platform"
+  },
+  {
+    "id": "1dfdcc8889d25220",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815",
+    "source_title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "event_type": "product_launch",
+    "created": "2026-10-27",
+    "claim": "Oracle\u2019s OCI expansion supports continued Nvidia accelerator demand",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "OCI generated $7.4 billion in Q1 FY 2027, up 121% year over year, while Oracle\u2019s capital expenditures could exceed $90 billion this fiscal year. Oracle said it remains deeply partnered with Nvidia and expects customers to continue wanting Nvidia solutions, so OCI\u2019s rapid infrastructure buildout should provide a favorable demand backdrop for Nvidia GPUs.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "c1e7b52865c36d5c",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/27/oracle-is-expanding-the-accelerator-options-in-oci-for-enterprises/5305815",
+    "source_title": "Oracle is Expanding the Accelerator Options in OCI for Enterprises",
+    "event_type": "product_launch",
+    "created": "2026-10-27",
+    "claim": "Oracle\u2019s accelerator diversification creates competitive and share risk for Nvidia",
+    "direction": "short",
+    "confidence": 0.91,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Oracle plans to offer Google TPUs, Cerebras CS-4/Wafer Scale Engine 3 Turbo systems, and SambaNova SN50 inference processors on OCI in 2027, alongside Nvidia and AMD hardware. This gives enterprise customers alternatives to Nvidia, particularly for inference and some training workloads, potentially reducing Nvidia\u2019s share of Oracle\u2019s future accelerator deployments and limiting pricing leverage.",
+    "source": "Next Platform"
   }
 ]
