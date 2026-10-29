@@ -41,5 +41,54 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-10-29",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.7,
+    "summary": "XOM retains a strong operating profile, with very robust revenue and earnings growth alongside healthy operating and free-cash-flow margins. However, valuation has become less attractive, consensus fair value implies roughly 1.4% downside, and deteriorating sentiment and ownership flows offset the otherwise favorable fundamentals.",
+    "key_changes": [
+      "Analyst-implied upside deteriorated sharply from 9.8% to -1.4%, shifting from meaningful potential upside to slight downside versus consensus fair value.",
+      "Institutional flow reversed from a positive 10.3 reading to -1.2, indicating materially weaker institutional support.",
+      "EV-to-revenue increased 16.4%, from 1.87x to 2.18x, making the valuation less forgiving.",
+      "PEG rose 10.6%, from 1.32 to 1.46, indicating a higher price relative to expected growth.",
+      "Net upgrades declined from 1 to 0, removing the prior modest positive revision signal."
+    ],
+    "risks": [
+      "Energy-price and refining-cycle volatility could make the strong reported growth and margins difficult to sustain.",
+      "Negative analyst revisions and the lack of net upgrades may signal weakening expectations.",
+      "Current valuation offers limited margin of safety given the slight downside to consensus fair value and higher PEG and EV-to-revenue multiples.",
+      "Continued institutional outflows and insider selling could reflect or contribute to deteriorating confidence. "
+    ],
+    "reasoning": "The combination of excellent growth and cash-generation quality with only moderate valuation but worsening expectations and limited consensus upside supports a neutral view with fairly high confidence.",
+    "fair_value_estimate": 179.40909,
+    "current_price": 182.02,
+    "implied_return_pct": -1.4,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.441,
+        "earnings_growth": 1.128
+      },
+      "Valuation": {
+        "forward_pe": 14.908272,
+        "peg_ratio": 1.46,
+        "ev_to_revenue": 2.18
+      },
+      "Quality": {
+        "operating_margin": 0.15859,
+        "fcf_margin": 0.16542125474773423
+      },
+      "Sentiment": {
+        "analyst_upside": -1.4344083067794888,
+        "revisions_trend": -4.0000000000000036,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": -1.1900000499999999,
+        "insider_flow": -3102307.0,
+        "low_short_interest": -1.15
+      }
+    },
+    "trigger": "earnings"
   }
 ]

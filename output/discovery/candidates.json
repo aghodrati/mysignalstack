@@ -9220,5 +9220,101 @@
     "name": "SambaNova Systems",
     "ticker_guess": null,
     "why": "Oracle plans to offer SambaNova\u2019s fifth-generation SN50 reconfigurable dataflow units in OCI; the hardware is designed for inference decode workloads alongside GPUs"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-29",
+    "source": "Stratechery",
+    "article_title": "An Interview with Palantir CTO Shyam Sankar About the AI Religious War",
+    "article_link": "https://stratechery.com/2026/an-interview-with-palantir-cto-shyam-sankar-about-the-ai-religious-war/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Palantir still works with Anthropic but used its dispute with the U.S. government to build infrastructure allowing customers to swap models safely; cited as an example of frontier labs' usage policies and potential control over customer data"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-29",
+    "source": "Stratechery",
+    "article_title": "An Interview with Palantir CTO Shyam Sankar About the AI Religious War",
+    "article_link": "https://stratechery.com/2026/an-interview-with-palantir-cto-shyam-sankar-about-the-ai-religious-war/",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Discussed as an open-weight Chinese model whose distillation-based progress can pressure U.S. AI market economics; Palantir does not use it internally but gives commercial customers model choice"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-28",
+    "source": "Next Platform",
+    "article_title": "Intel\u2019s $2.3 Billion Bet on a Quantum Future is a Decade in the Making",
+    "article_link": "https://www.nextplatform.com/hpc/2026/10/28/intels-23-billion-bet-on-a-quantum-future-is-a-decade-in-the-making/5306068",
+    "name": "Classiq",
+    "ticker_guess": null,
+    "why": "Intel plans to acquire the six-year-old Israeli quantum-software company for $2.3 billion; its hardware-agnostic platform helps developers build quantum algorithms and applications; it has more than four dozen enterprise customers and about 130 employees"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-28",
+    "source": "Interconnects",
+    "article_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "name": "Artificial Analysis",
+    "ticker_guess": null,
+    "why": "Its Intelligence Index v5 is presented as the most prominent independent metric for frontier-model intelligence; The company is shifting toward private benchmarks and earns revenue from labs that pay to verify results"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-28",
+    "source": "Interconnects",
+    "article_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its leading models are described as ahead of open models in flexibility and reliability; The article says OpenAI has increasingly focused on internal uses such as AI R&D automation and high-spending customers rather than public intelligence indices"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-28",
+    "source": "Interconnects",
+    "article_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its leading models are described as ahead of open models in flexibility and reliability; The article says Anthropic has increasingly focused on internal uses such as AI R&D automation and high-spending customers rather than public intelligence indices"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-28",
+    "source": "Interconnects",
+    "article_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "name": "AI benchmarking",
+    "why": "Artificial Analysis Intelligence Index v5 aggregates knowledge work, coding, science, and general capabilities into a single frontier-model score; Benchmark design involves trade-offs between comparability, real-world relevance, transparency, and resistance to benchmark-specific optimization"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-28",
+    "source": "Interconnects",
+    "article_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "name": "Open AI models",
+    "why": "Open-weight models remain competitive in coding and some existing workflows but trail leading closed models in flexibility, reliability, and scientific evaluations; The article argues open models\u2019 economic value lies in commoditizing inference, enabling model ownership, and supporting internal specialization"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-28",
+    "source": "Interconnects",
+    "article_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "name": "AI evaluation",
+    "why": "Private benchmarks are intended to reduce benchmark gaming but prevent the community from inspecting prompts and identifying flaws; Evaluation providers have substantial influence over perceived winners and losers in the AI market"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-28",
+    "source": "Interconnects",
+    "article_title": "Artificial Analysis v5 and the benchmarker's dilemma",
+    "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
+    "name": "AI agents",
+    "why": "Benchmark design is shifting toward general agentic collaborators and repetitive agentic tasks; Progress depends on reinforcement-learning environments, evaluation expertise, and post-training infrastructure across multiple capability domains"
   }
 ]

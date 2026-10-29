@@ -283,5 +283,43 @@
     "trade_worthy": false,
     "context": "Point2 Technology expanded its Series B financing to $136 million with participation from Arm, supporting RF-based interconnect products intended for AI data centers. This gives Arm an investment and ecosystem foothold in the rapidly developing interconnect layer, although the article does not quantify the financial contribution or establish a direct near-term effect on Arm\u2019s earnings.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "2e6eb1b95d298dc3",
+    "ticker": "ARM",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/29/sponsored-how-to-evaluate-cpu-performance-for-agentic-ai/5305779",
+    "source_title": "How to Evaluate CPU Performance for Agentic AI",
+    "event_type": "competitive",
+    "created": "2026-10-29",
+    "claim": "Arm gains a potential competitive edge in agentic AI server CPUs",
+    "direction": "long",
+    "confidence": 0.76,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Arm reports that an independent third party measured its AGI CPU against AMD EPYC Turin on CPU-visible tooling, orchestration, reasoning, and planning workloads, with server measurements modeled to show approximately twice the performance per rack versus AMD EPYC 9755. The proposed evaluation emphasizes task completion, concurrency, sustained utilization, and rack-level power and thermal constraints rather than isolated socket benchmarks. However, the comparison covers selected workloads, is presented in a sponsored feature, and does not establish customer adoption or broad superiority across production environments.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "c91fdb9b33f5bc8c",
+    "ticker": "ARM",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/29/sponsored-how-to-evaluate-cpu-performance-for-agentic-ai/5305779",
+    "source_title": "How to Evaluate CPU Performance for Agentic AI",
+    "event_type": "competitive",
+    "created": "2026-10-29",
+    "claim": "Agentic AI could expand Arm\u2019s addressable server CPU opportunity",
+    "direction": "long",
+    "confidence": 0.62,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that CPUs are becoming central to agentic AI for sequential latency-sensitive work, orchestration, retrieval, scheduling, tool execution, state management, and accelerator utilization. It cites a projected increase in the overall CPU market from $26 billion in 2025 to $246 billion five years later, with growth expected from AI host CPUs and agentic AI sandboxes. This supports a larger potential market for Arm-based server CPUs, but the article does not quantify Arm\u2019s likely share or identify purchase commitments.",
+    "source": "Next Platform"
   }
 ]

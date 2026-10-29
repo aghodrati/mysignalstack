@@ -3114,5 +3114,24 @@
     "trade_worthy": false,
     "context": "Oracle\u2019s OCI executive said the company partners deeply with AMD and expects AMD chipsets to remain solutions customers want, while OCI avoids dictating a single hardware platform. This gives AMD continued access to Oracle\u2019s rapidly expanding cloud infrastructure business, although the article provides no AMD-specific deployment volumes or commitments and also highlights competing accelerator options from Google, Cerebras, and SambaNova.",
     "source": "Next Platform"
+  },
+  {
+    "id": "60291348abb645e2",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/10/29/sponsored-how-to-evaluate-cpu-performance-for-agentic-ai/5305779",
+    "source_title": "How to Evaluate CPU Performance for Agentic AI",
+    "event_type": "competitive",
+    "created": "2026-10-29",
+    "claim": "AMD faces greater competitive pressure in agentic AI CPU deployments",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Arm is promoting core-, system-, and rack-level evaluation focused on completed tasks, throughput, agent density, and energy efficiency rather than isolated CPU benchmarks. In an independent third-party evaluation commissioned by Arm, its AGI CPU was reported to deliver approximately twice the modeled rack-level performance of AMD EPYC 9755 on selected CPU-visible agentic workloads covering tooling, orchestration, reasoning, and planning. If customers adopt this methodology, AMD could face pressure in agentic AI server selection, though the result is Arm-reported, workload-specific, and based partly on rack modeling rather than a broad standardized benchmark.",
+    "source": "Next Platform"
   }
 ]

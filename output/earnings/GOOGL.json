@@ -88,5 +88,38 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-10-28",
+    "eps_estimate": 3.01,
+    "reported_eps": 2.12,
+    "surprise_pct": -29.52,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-29",
+    "transcript_date": "2026-10-29",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.62,
+    "guidance_summary": "Management guided to continued strong but potentially moderating growth: Q4 revenue will face a somewhat larger FX headwind, Search will lap the acceleration from late 2025, and Cloud TPU system sales will continue scaling with a more meaningful revenue ramp expected in 2027. Cloud margins are expected to face near-term pressure as third-party compute capacity ramps. Full-year 2026 CapEx guidance remains $195 billion-$205 billion, with CapEx expected to increase significantly in 2027; depreciation, energy and other infrastructure costs will continue weighing on earnings and free cash flow.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "Analysts questioned why Search revenue growth decelerated despite the fastest query growth in five years. Management specifically attributed the gap to FX, vertical-specific advertising normalization, and lower monetization of AI Mode, while saying ad deployment in AI Overviews and AI Mode is now scaling globally.",
+      "Analysts pressed for the hurdles to deploying agentic products to Google's billion-user base. Pichai acknowledged that capable models alone are insufficient and cited the need for distilled models, lower latency, secure runtimes, connectors and governance; consumer rollout is expected later this year, with broader progress extending into 2027.",
+      "Analysts sought Cloud growth excluding TPU sales and whether new third-party capacity would accelerate growth. Kurian declined to quantify ex-TPU growth, described it only as 'very, very strong,' and said capacity remains a constraint that is being managed carefully.",
+      "Analysts asked for TPU system revenue recognition and margins. Management provided no product-level margin figures, emphasizing that systems include hardware, software and networking, that inventory is built only against signed contracts, and that scale should improve economics."
+    ],
+    "risks": [
+      "Search monetization is lagging usage growth as AI Mode queries currently monetize at lower rates than traditional Search.",
+      "Q4 Search and YouTube revenue face larger FX headwinds and difficult comparisons against the late-2025 Search acceleration.",
+      "Cloud margins may decline in the near term as Alphabet relies on third-party compute capacity to satisfy demand.",
+      "The AI infrastructure buildout is extremely capital intensive: Q3 free cash flow was negative $9.1 billion, inventory rose sharply for TPU systems, and 2027 CapEx is expected to increase significantly.",
+      "Management did not disclose Cloud growth excluding TPU sales or TPU system margins, increasing uncertainty around the quality and profitability of reported Cloud growth.",
+      "Agentic consumer products still require substantial work on model efficiency, latency, security, trust and reliability before broad deployment."
+    ],
+    "summary": "Alphabet delivered exceptional reported growth, led by 103% Cloud growth, strong Search usage, rapid Gemini adoption and expanding TPU demand. However, the Q&A highlighted a meaningful monetization gap between rapidly growing AI usage and current Search revenue, while management avoided quantifying ex-TPU Cloud growth and TPU margins. Near-term FX, tougher Search comparisons, Cloud margin pressure and sharply rising infrastructure investment make the earnings signal balanced rather than decisively bullish.",
+    "type": "earnings_transcript"
   }
 ]
