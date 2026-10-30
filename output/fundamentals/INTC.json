@@ -39,5 +39,53 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-10-30",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "summary": "INTC\u2019s fundamentals imply a moderately bullish direction, supported by 25.4% revenue growth, a strong 26.2% free-cash-flow margin, improving sentiment, and a lower forward P/E than at the previous check. However, the 42.0x forward P/E and 8.8x EV/revenue remain demanding relative to the only moderate 12.2% operating margin, limiting conviction and leaving little room for execution disappointment.",
+    "key_changes": [
+      "Analyst-implied upside increased 61.5%, from 17.2% to 27.9%, strengthening the positive sentiment signal.",
+      "Forward P/E declined 13.0%, from 48.3x to 42.0x, modestly improving valuation despite remaining elevated.",
+      "Institutional buying flow fell 47.9%, from 19.9 to 10.4, indicating less supportive ownership momentum.",
+      "Insider flow shifted from net selling of 7.6 million shares to net buying of 2.4 million shares, a notable improvement in insider alignment.",
+      "The low-short-interest measure weakened 17.1%, from -2.4 to -2.8, suggesting slightly less favorable short-positioning sentiment."
+    ],
+    "risks": [
+      "The valuation remains demanding, with a roughly 42x forward P/E and 8.8x EV/revenue.",
+      "A 12.2% operating margin is relatively moderate and may not justify the premium multiple if profitability fails to expand.",
+      "The decline in institutional flow could signal reduced incremental sponsorship.",
+      "The 27.9% consensus upside is only a directional estimate and may be vulnerable to earnings, execution, or estimate revisions."
+    ],
+    "reasoning": "The combination of strong growth, cash generation, improving valuation versus the prior check, and positive sentiment supports a long view, but elevated multiples and moderate operating profitability warrant only moderate conviction.",
+    "fair_value_estimate": 117.71429,
+    "current_price": 92.07,
+    "implied_return_pct": 27.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.254
+      },
+      "Valuation": {
+        "forward_pe": 41.987988,
+        "peg_ratio": 1.36,
+        "ev_to_revenue": 8.781
+      },
+      "Quality": {
+        "operating_margin": 0.12189999,
+        "fcf_margin": 0.2618880741704077
+      },
+      "Sentiment": {
+        "analyst_upside": 27.85303573368092,
+        "revisions_trend": 0.6205673758865216,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 10.355499987500002,
+        "insider_flow": 2376951.0,
+        "low_short_interest": -2.8099999
+      }
+    },
+    "trigger": "earnings"
   }
 ]

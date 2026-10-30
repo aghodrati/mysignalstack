@@ -1,0 +1,82 @@
+[
+  {
+    "call_date": "2026-11-02",
+    "when": "2026-11-02T15:00:00-05:00",
+    "eps_estimate": 0.41,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-03",
+        "eps_estimate": 0.17,
+        "reported_eps": 0.21,
+        "surprise_pct": 25.46
+      },
+      {
+        "earnings_date": "2026-02-02",
+        "eps_estimate": 0.23,
+        "reported_eps": 0.25,
+        "surprise_pct": 8.6
+      },
+      {
+        "earnings_date": "2026-05-04",
+        "eps_estimate": 0.28,
+        "reported_eps": 0.33,
+        "surprise_pct": 18.08
+      },
+      {
+        "earnings_date": "2026-08-03",
+        "eps_estimate": 0.35,
+        "reported_eps": 0.41,
+        "surprise_pct": 18.51
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-30",
+    "call_date": "2026-11-02",
+    "narrative": "Investors should watch whether Palantir can sustain the \u201cstrong growth\u201d and high-growth leadership highlighted by ChartMill while demonstrating that momentum is broad-based across its government and commercial businesses. The call should also address valuation and sentiment: the stock recently fell, while Oppenheimer reiterated an Outperform rating and raised its target to $235, suggesting the market may demand strong execution to justify optimism. Given broader concerns about bloated capital spending weighing on technology stocks, management\u2019s comments on investment levels, margins, cash generation, and the scalability of AI-related demand will be important. My expectation is for another solid operating update, but with the shares likely sensitive to forward guidance and evidence that growth is accelerating rather than merely meeting already-high expectations.",
+    "headlines_used": [
+      {
+        "title": "Palantir Technologies vs. Figma: Comparing Revenue Growth Trends",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Nasdaq 100 Futures Dip On Weak Intel, Amazon Earnings With Bloated Capex Worries Weighing On Sentiment \u2014  AMZN, INTC, SBUX, PLTR, ASTS In Focus",
+        "domain": "Yahoo",
+        "date": "20261029"
+      },
+      {
+        "title": "Nebius And NBIL: Smarter Pricing, Lower Leverage, But I'm Staying Out For Now",
+        "domain": "SeekingAlpha",
+        "date": "20261029"
+      },
+      {
+        "title": "Oppenheimer Reiterates Outperform on Palantir Technologies, Raises Price Target to $235",
+        "domain": "Benzinga",
+        "date": "20261029"
+      },
+      {
+        "title": "Undercovered Dozen: Micron, i-80 Gold, Hercules Capital, And More",
+        "domain": "SeekingAlpha",
+        "date": "20261029"
+      },
+      {
+        "title": "Why Is Palantir Stock Falling on Wednesday?",
+        "domain": "Benzinga",
+        "date": "20261028"
+      },
+      {
+        "title": "Palantir Technologies (NASDAQ:PLTR): Strong Growth and Technical Setup Quality Align",
+        "domain": "ChartMill",
+        "date": "20261026"
+      },
+      {
+        "title": "Palantir Technologies (NASDAQ:PLTR): High-Growth Leadership and Momentum in Focus",
+        "domain": "ChartMill",
+        "date": "20261023"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

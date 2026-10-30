@@ -25,5 +25,90 @@
     ],
     "summary": "Apple delivered a very strong June quarter, with 16% revenue growth, 22% iPhone growth, 29% Mac growth, and record cash flow, but results and gross margin benefited from tariff refunds. The forward outlook is materially less robust: September growth decelerates to 9%-11% amid worsening supply constraints, higher memory costs, and FX pressure, while Q&A revealed limited visibility into December, uncertain AI economics, and regulatory delays for Siri AI. Overall, the call is balanced between exceptional current demand and increasingly significant near-term execution and margin risks.",
     "type": "earnings_transcript"
+  },
+  {
+    "call_date": "2026-11-02",
+    "when": "2026-11-02T15:00:00-05:00",
+    "eps_estimate": 1.98,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-10-30",
+        "eps_estimate": 1.77,
+        "reported_eps": 1.85,
+        "surprise_pct": 4.52
+      },
+      {
+        "earnings_date": "2026-01-29",
+        "eps_estimate": 2.67,
+        "reported_eps": 2.84,
+        "surprise_pct": 6.34
+      },
+      {
+        "earnings_date": "2026-04-30",
+        "eps_estimate": 1.94,
+        "reported_eps": 2.01,
+        "surprise_pct": 3.46
+      },
+      {
+        "earnings_date": "2026-07-30",
+        "eps_estimate": 1.89,
+        "reported_eps": 2.02,
+        "surprise_pct": 6.74
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-30",
+    "call_date": "2026-11-02",
+    "narrative": "Investors should watch whether Apple\u2019s Q4 results and guidance validate the optimism implied by its \u201cearnings preview\u201d coverage and the stock\u2019s move toward an all-time high, particularly through iPhone demand, Services growth, and gross-margin commentary. The launch of Apple\u2019s first touchscreen laptop could also prompt questions about product strategy, customer adoption, and whether it becomes a meaningful future growth driver, even though it is unlikely to materially affect this call. Given the broader \u201cMagnificent 7\u201d decline, management\u2019s outlook and its explanation of how Apple is navigating valuation, competition, China exposure, and AI-related investment may matter as much as the reported quarter. My expectation is for solid execution and a constructive long-term message, but with elevated expectations making the market especially sensitive to weaker guidance or any sign that hardware demand is losing momentum.",
+    "headlines_used": [
+      {
+        "title": "The Magnificent 7 stocks are seeing stunning declines",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Warren Buffett's Successor, Greg Abel, Has 54% of Berkshire Hathaway's $365 Billion Portfolio Invested in 4 Proven Winners",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Apple Earnings Preview: Q4 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "Alphabet: Why I'm Buying The Free Cash Flow Scare",
+        "domain": "SeekingAlpha",
+        "date": "20261029"
+      },
+      {
+        "title": "Apple Stock Heads Toward All-Time High: What's Going On?",
+        "domain": "Benzinga",
+        "date": "20261029"
+      },
+      {
+        "title": "Intel Earnings Prediction Market Preview: What Will Lip-Bu Tan Say?",
+        "domain": "Benzinga",
+        "date": "20261029"
+      },
+      {
+        "title": "Over 41,000 U.S. Homeland Security officials' details apparently exposed after massive data breach",
+        "domain": "CNBC",
+        "date": "20261029"
+      },
+      {
+        "title": "Hands-on with Apple's first touchscreen laptop: Touch is totally optional",
+        "domain": "CNBC",
+        "date": "20261028"
+      },
+      {
+        "title": "Most-Active S&P 500 Stocks in the Oct. 26 Session",
+        "domain": "ChartMill",
+        "date": "20261026"
+      }
+    ],
+    "type": "earnings_preview"
   }
 ]
