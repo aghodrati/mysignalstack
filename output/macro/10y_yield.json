@@ -840,5 +840,205 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W43"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-31",
+    "value": 4.928999900817871,
+    "delta": -0.05900001525878906,
+    "history": [
+      [
+        "2026-10-26",
+        4.986000061035156
+      ],
+      [
+        "2026-10-27",
+        4.993000030517578
+      ],
+      [
+        "2026-10-28",
+        5.045000076293945
+      ],
+      [
+        "2026-10-29",
+        4.988999843597412
+      ],
+      [
+        "2026-10-30",
+        4.928999900817871
+      ]
+    ],
+    "narrative": "There was no clear single catalyst for the 6-basis-point decline in the 10-year yield this week. The Fed\u2019s rate hold and markets looking toward December, as noted by Seeking Alpha, may have reinforced expectations for a near-term pause, while the Warsh headline adds longer-term policy uncertainty; the move was likely primarily broad positioning and drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Moving Averages Of The Ivy Portfolio And S&P 500: October 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "U.S. Federal Reserve Holds Rates As Markets Look To December",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "Kevin Warsh Plans Fewer Fed Rate Decisions as Central Bank Sets Aside Meetings for Long-Term Strategy \u2014 Rate Votes Drop to Six by 2028",
+        "domain": "Benzinga",
+        "date": "20261029"
+      },
+      {
+        "title": "Beyond the Fed\u2019s Pause: Savers Win, Borrowers Pay, and Oil Fuels the Dollar",
+        "domain": "Benzinga",
+        "date": "20261029"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W44"
+  },
+  {
+    "period": "month",
+    "date": "2026-10-31",
+    "value": 4.928999900817871,
+    "delta": -0.3080000877380371,
+    "history": [
+      [
+        "2026-10-01",
+        5.236999988555908
+      ],
+      [
+        "2026-10-02",
+        5.276999950408936
+      ],
+      [
+        "2026-10-05",
+        5.310999870300293
+      ],
+      [
+        "2026-10-06",
+        5.269000053405762
+      ],
+      [
+        "2026-10-07",
+        5.276999950408936
+      ],
+      [
+        "2026-10-08",
+        5.230999946594238
+      ],
+      [
+        "2026-10-09",
+        5.24399995803833
+      ],
+      [
+        "2026-10-12",
+        5.239999771118164
+      ],
+      [
+        "2026-10-13",
+        5.2170000076293945
+      ],
+      [
+        "2026-10-14",
+        5.190000057220459
+      ],
+      [
+        "2026-10-15",
+        5.089000225067139
+      ],
+      [
+        "2026-10-16",
+        5.0980000495910645
+      ],
+      [
+        "2026-10-19",
+        5.136000156402588
+      ],
+      [
+        "2026-10-20",
+        5.117000102996826
+      ],
+      [
+        "2026-10-21",
+        5.145999908447266
+      ],
+      [
+        "2026-10-22",
+        4.953000068664551
+      ],
+      [
+        "2026-10-23",
+        4.98799991607666
+      ],
+      [
+        "2026-10-26",
+        4.986000061035156
+      ],
+      [
+        "2026-10-27",
+        4.993000030517578
+      ],
+      [
+        "2026-10-28",
+        5.045000076293945
+      ],
+      [
+        "2026-10-29",
+        4.988999843597412
+      ],
+      [
+        "2026-10-30",
+        4.928999900817871
+      ]
+    ],
+    "narrative": "The 31-basis-point decline in the 10-year yield was most plausibly driven by the Treasury rally during the tech selloff, as reported in the October 19 headline, which also cited the unwinding of crowded bets against bonds. The Fed\u2019s decision to hold rates, highlighted on October 30, likely reinforced expectations that policy would remain restrictive but stable, supporting duration demand.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Moving Averages Of The Ivy Portfolio And S&P 500: October 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "U.S. Federal Reserve Holds Rates As Markets Look To December",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "AI Bubble Warning - Why Larry McDonald Sees A 20-30% Market Crash Risk",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "Kevin Warsh Plans Fewer Fed Rate Decisions as Central Bank Sets Aside Meetings for Long-Term Strategy \u2014 Rate Votes Drop to Six by 2028",
+        "domain": "Benzinga",
+        "date": "20261029"
+      },
+      {
+        "title": "Beyond the Fed\u2019s Pause: Savers Win, Borrowers Pay, and Oil Fuels the Dollar",
+        "domain": "Benzinga",
+        "date": "20261029"
+      },
+      {
+        "title": "Fed May Hold Rates Today, But Bond ETFs Face a Bigger Test Ahead",
+        "domain": "Benzinga",
+        "date": "20261028"
+      },
+      {
+        "title": "The Government Spends About $5.5 Billion a Day More Than It Takes In. The Debt Has Doubled in 10 Years. Jaime Dimon This the Situation Could Get Much Worse.",
+        "domain": "Yahoo",
+        "date": "20261021"
+      },
+      {
+        "title": "Investors Just Poured Nearly $12 Billion Into This Battered ETF \u2014 and the Reason Could Surprise Wall Street",
+        "domain": "Yahoo",
+        "date": "20261019"
+      },
+      {
+        "title": "Treasuries Rallied as Tech Slid, and the Crowded Bet Against Bonds Felt It",
+        "domain": "Yahoo",
+        "date": "20261019"
+      }
+    ],
+    "fetch_succeeded": true
   }
 ]

@@ -78,5 +78,37 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-10-30",
+    "eps_estimate": 4.04,
+    "reported_eps": 4.23,
+    "surprise_pct": 4.81,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-31",
+    "transcript_date": "2026-10-30",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/30/exxonmobil-xom-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.86,
+    "guidance_summary": "Management reported strong third-quarter earnings and cash generation, with $7 billion of quarterly capital spending, continued investment in advantaged Upstream and Product Solutions projects, a 4% dividend increase, and a planned $20 billion annual share-repurchase pace for 2027 assuming reasonable market conditions. Operational guidance included Uaru startup in fourth quarter, Golden Pass Train 2 substantial completion by December and Train 3 mechanical completion in mid-2027, Rovuma LNG FID targeted by year-end, and a continued 350,000 barrels per day Middle East production impact in the fourth quarter. Longer term, Exxon expects continued growth from Guyana, the Permian, LNG, higher-value refining and chemicals, with structural savings targeted at $20 billion cumulatively by 2030.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On whether the $20 billion 2027 buyback is sustainable if oil falls from $120 to $60, management reiterated a strategy of maintaining distributions through the cycle and explicitly acknowledged that it leaned on the balance sheet earlier in the year to do so; the commitment is therefore strong but dependent on substantial financial capacity.",
+      "On refining normalization, management declined to provide a precise timing estimate and said markets could remain disrupted well through next year or longer, citing the Strait of Hormuz, damaged Middle Eastern and Russian refining capacity, and potential Chinese exports as the key variables.",
+      "On Venezuela and Kazakhstan opportunities, Woods pushed back on press reports, stressed that both are works in progress, and said Exxon would not commit until fiscal, legal and investor-protection regimes support competitive returns.",
+      "On post-2030 growth and Guyana expansion, management said it has good visibility but is withholding greater specificity until confidence improves, while suggesting it may ultimately outperform existing commitments."
+    ],
+    "risks": [
+      "Middle East conflict is disrupting crude, LNG and refined-product logistics; management maintained a 350,000 barrels per day fourth-quarter impact and said UAE production sales remain deferred by egress constraints.",
+      "Approximately half of Russia's refining capacity is reportedly offline, turning Russia from a net exporter into a net importer and potentially keeping product markets tight through next year or longer.",
+      "Distribution commitments may require balance-sheet support in a weaker commodity or margin environment, despite the planned $20 billion 2027 buyback pace.",
+      "Golden Pass, Rovuma LNG and other major projects retain execution, contractor, stakeholder and geopolitical risks, with some timelines dependent on unresolved gating factors.",
+      "Long-term growth targets rely on technologies and operational improvements whose benefits, particularly Permian secondary recovery and post-2030 projects, will materialize gradually and remain only partly quantified."
+    ],
+    "summary": "The call was strongly constructive: record refining utilization, growing Guyana and Permian production, structural cost reductions and robust cash flow support higher dividends and a $20 billion 2027 buyback plan. Q&A reinforced Exxon\u2019s confidence in its operating model and long-term growth pipeline, although management was notably less precise on refining normalization, geopolitical projects, post-2030 plans and the sustainability of distributions in a weaker commodity environment.",
+    "type": "earnings_transcript"
   }
 ]

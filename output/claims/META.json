@@ -1993,5 +1993,24 @@
     "trade_worthy": true,
     "context": "The article argues that Meta, like Google, has expanding opportunities to spend on AI inference because additional capacity can generate relatively predictable revenue increases. A large at-the-market offering would let equity investors continuously supply capital as those opportunities emerge, helping Meta expand capacity and maximize the areas where AI spending produces revenue.",
     "source": "The Diff"
+  },
+  {
+    "id": "82dfb828e01efec4",
+    "ticker": "META",
+    "source_link": "https://stratechery.com/2026/at-long-last/",
+    "source_title": "2026.44: At Long Last\u2026",
+    "event_type": "competitive",
+    "created": "2026-10-30",
+    "claim": "META faces margin and cash-flow pressure from Muse-driven compute spending",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article frames Meta\u2019s earnings around Mark Zuckerberg delivering on his Muse ambitions, which requires substantial and potentially escalating compute investment. That spending can weigh on near-term profitability and free cash flow even if it is intended to strengthen Meta\u2019s AI capabilities; the article does not quantify the spending or its earnings impact.",
+    "source": "Stratechery"
   }
 ]

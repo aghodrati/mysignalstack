@@ -804,5 +804,221 @@
     "direction": "bullish",
     "confidence": "high",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-31",
+    "value": 104.12000274658203,
+    "delta": 0.8230910536905611,
+    "history": [
+      [
+        "2026-10-26",
+        101.76000213623047
+      ],
+      [
+        "2026-10-27",
+        99.9000015258789
+      ],
+      [
+        "2026-10-28",
+        102.77999877929688
+      ],
+      [
+        "2026-10-29",
+        102.0
+      ],
+      [
+        "2026-10-30",
+        104.12000274658203
+      ]
+    ],
+    "narrative": "No clear single catalyst drove the modest weekly gain; the headlines present conflicting signals, with Russia\u2019s planned diesel-export ban and the unconfirmed Iran-U.S. vessel incident offering some support, while expectations of more Russian diesel reaching America are bearish. The muted Fed reaction and broader equity weakness suggest the move was more likely broad positioning or drift than a decisive oil-specific repricing.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Exchange-Traded Funds Lower as US Equities Decline After Midday Friday",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Russia Deputy PM For Energy Novak Says Government Plans To Extend Ban On Diesel Exports Until End Of January 2027, With Some Exceptions; Russia Plans October Diesel Exports Of 510K Tons, With 2.15M Tons Planned For November Exports",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Iran Navy Says It Destroyed U.S. Unmanned Vessel In Eastern Strait Of Hormuz; No U.S. Confirmation",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Market Stays Muted After Fed Decision To Keep Rates Steady",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      },
+      {
+        "title": "Trump\u2019s Energy Secretary Says More Russian Diesel Is Coming to America",
+        "domain": "Yahoo",
+        "date": "20261028"
+      },
+      {
+        "title": "U.S. Tight Oil Scenario, October 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W44",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
+  },
+  {
+    "period": "month",
+    "date": "2026-10-31",
+    "value": 104.12000274658205,
+    "delta": 12.113706974574235,
+    "history": [
+      [
+        "2026-10-01",
+        92.87000274658205
+      ],
+      [
+        "2026-10-02",
+        91.11000061035156
+      ],
+      [
+        "2026-10-05",
+        89.43000030517578
+      ],
+      [
+        "2026-10-06",
+        89.44000244140625
+      ],
+      [
+        "2026-10-07",
+        88.27999877929688
+      ],
+      [
+        "2026-10-08",
+        91.48999786376952
+      ],
+      [
+        "2026-10-09",
+        91.8499984741211
+      ],
+      [
+        "2026-10-12",
+        93.73999786376952
+      ],
+      [
+        "2026-10-13",
+        94.13999938964844
+      ],
+      [
+        "2026-10-14",
+        95.08999633789062
+      ],
+      [
+        "2026-10-15",
+        97.97000122070312
+      ],
+      [
+        "2026-10-16",
+        101.41000366210938
+      ],
+      [
+        "2026-10-19",
+        103.66000366210938
+      ],
+      [
+        "2026-10-20",
+        101.79000091552734
+      ],
+      [
+        "2026-10-21",
+        97.1500015258789
+      ],
+      [
+        "2026-10-22",
+        99.47000122070312
+      ],
+      [
+        "2026-10-23",
+        103.2699966430664
+      ],
+      [
+        "2026-10-26",
+        101.76000213623048
+      ],
+      [
+        "2026-10-27",
+        99.9000015258789
+      ],
+      [
+        "2026-10-28",
+        102.77999877929688
+      ],
+      [
+        "2026-10-29",
+        102.0
+      ],
+      [
+        "2026-10-30",
+        104.12000274658205
+      ]
+    ],
+    "narrative": "The month's rally was most plausibly driven by heightened geopolitical and supply-risk premia: Iran's claim that it destroyed a U.S. unmanned vessel in the Strait of Hormuz and Trump's comments about the Iran war point to disruption risk in a critical oil chokepoint. Russia's planned extension of its diesel-export ban and reports that the U.S. emergency oil reserve is at a 1982 low further reinforced tightening concerns, although Trump's expectation that the conflict will be resolved soon limits conviction.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Exchange-Traded Funds Lower as US Equities Decline After Midday Friday",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Russia Deputy PM For Energy Novak Says Government Plans To Extend Ban On Diesel Exports Until End Of January 2027, With Some Exceptions; Russia Plans October Diesel Exports Of 510K Tons, With 2.15M Tons Planned For November Exports",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Iran Navy Says It Destroyed U.S. Unmanned Vessel In Eastern Strait Of Hormuz; No U.S. Confirmation",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Live On KCMO Radio, President Trump, On Iran War, Says It's Going To Get Wrapped Up Soon; We Need A Guarantee There Will Never Be A Nuclear Weapon",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Market Stays Muted After Fed Decision To Keep Rates Steady",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      },
+      {
+        "title": "Trump\u2019s Energy Secretary Says More Russian Diesel Is Coming to America",
+        "domain": "Yahoo",
+        "date": "20261028"
+      },
+      {
+        "title": "U.S. Tight Oil Scenario, October 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      },
+      {
+        "title": "Commodities: Oil In Wait-And-See Mode Ahead Of U.S. Midterms",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      },
+      {
+        "title": "America\u2019s Emergency Oil Reserve Is at a 1982 Low, and Gas Is Costlier Than Under Biden",
+        "domain": "Yahoo",
+        "date": "20261027"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

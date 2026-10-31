@@ -720,5 +720,24 @@
     "trade_worthy": false,
     "context": "SK hynix is a founding chipmaker partner in Applied Materials\u2019 $5 billion EPIC center, alongside TSMC, Intel, Samsung, and Micron. The center will place competing companies\u2019 engineers in nearly four acres of cleanroom space to run materials research, equipment development, and pilot production in parallel on process technology three to four generations ahead of current production, potentially shortening development cycles and supporting SK hynix\u2019s future process competitiveness. The article provides no specific revenue, margin, capacity, or timing impact for SK hynix, so this is a strategic rather than directly tradable catalyst.",
     "source": "Not Boring"
+  },
+  {
+    "id": "eda697891af3128f",
+    "ticker": "SKHY",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "source_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "event_type": "competitive",
+    "created": "2026-10-30",
+    "claim": "SK Hynix could gain incremental HBM demand from Korea\u2019s sovereign AI buildout",
+    "direction": "long",
+    "confidence": 0.89,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies SK Hynix as a major domestic HBM supplier positioned to support South Korean accelerator makers FuriosaAI and Rebellions. Furiosa plans to scale RNGD production to about 20,000 accelerators in 2026 and roughly twice that in 2027, while its next-generation accelerator is expected to use HBM4 or HBM4e. This could diversify and modestly expand HBM demand, although the disclosed accelerator volumes remain small relative with leading global AI accelerator shipments and no specific SK Hynix supply contract is announced.",
+    "source": "Next Platform"
   }
 ]

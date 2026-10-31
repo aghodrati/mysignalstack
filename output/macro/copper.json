@@ -723,5 +723,186 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-31",
+    "value": 6.458499908447266,
+    "delta": -0.27022736503431455,
+    "history": [
+      [
+        "2026-10-26",
+        6.507999897003174
+      ],
+      [
+        "2026-10-27",
+        6.622000217437744
+      ],
+      [
+        "2026-10-28",
+        6.641499996185303
+      ],
+      [
+        "2026-10-29",
+        6.580999851226807
+      ],
+      [
+        "2026-10-30",
+        6.458499908447266
+      ]
+    ],
+    "narrative": "Copper fell 0.27 over the week despite a reported mega-mine pause, as the Benzinga headline notes that the disruption failed to lift prices while the AI trade cracked, pointing to weaker risk appetite and demand concerns overwhelming supply support. The \"Cycle Transition\" commentary may reinforce a cautious macro backdrop, while the oil headline offers no specific copper catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "A Mega-Mine Pause Fails to Lift Copper As the AI Trade Cracks",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Commodities: Oil In Wait-And-See Mode Ahead Of U.S. Midterms",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W44",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
+  },
+  {
+    "period": "month",
+    "date": "2026-10-31",
+    "value": 6.458499908447266,
+    "delta": -0.36254190256264085,
+    "history": [
+      [
+        "2026-10-01",
+        6.48199987411499
+      ],
+      [
+        "2026-10-02",
+        6.492000102996826
+      ],
+      [
+        "2026-10-05",
+        6.5854997634887695
+      ],
+      [
+        "2026-10-06",
+        6.5945000648498535
+      ],
+      [
+        "2026-10-07",
+        6.596499919891357
+      ],
+      [
+        "2026-10-08",
+        6.519000053405762
+      ],
+      [
+        "2026-10-09",
+        6.642499923706055
+      ],
+      [
+        "2026-10-12",
+        6.698500156402588
+      ],
+      [
+        "2026-10-13",
+        6.677999973297119
+      ],
+      [
+        "2026-10-14",
+        6.611499786376953
+      ],
+      [
+        "2026-10-15",
+        6.511499881744385
+      ],
+      [
+        "2026-10-16",
+        6.531000137329102
+      ],
+      [
+        "2026-10-19",
+        6.538000106811523
+      ],
+      [
+        "2026-10-20",
+        6.566500186920166
+      ],
+      [
+        "2026-10-21",
+        6.543000221252441
+      ],
+      [
+        "2026-10-22",
+        6.362500190734863
+      ],
+      [
+        "2026-10-23",
+        6.47599983215332
+      ],
+      [
+        "2026-10-26",
+        6.507999897003174
+      ],
+      [
+        "2026-10-27",
+        6.622000217437744
+      ],
+      [
+        "2026-10-28",
+        6.641499996185303
+      ],
+      [
+        "2026-10-29",
+        6.580999851226807
+      ],
+      [
+        "2026-10-30",
+        6.458499908447266
+      ]
+    ],
+    "narrative": "Copper\u2019s monthly decline appears to reflect broad risk-off positioning rather than a single supply shock: Benzinga\u2019s \u201cA Mega-Mine Pause Fails to Lift Copper As the AI Trade Cracks\u201d points to weakening enthusiasm around AI-linked demand, while SeekingAlpha\u2019s \u201cInflection Points: The Spooked Earnings-Driven Market\u201d supports a wider de-risking backdrop. The \u201cTraders Are Shelling Out Millions to Secure Copper\u201d headline is a longer-term constructive supply signal, but it did not prevent the near-term selloff; there is no clear, durable catalyst for the next month.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "A Mega-Mine Pause Fails to Lift Copper As the AI Trade Cracks",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Commodities: Oil In Wait-And-See Mode Ahead Of U.S. Midterms",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      },
+      {
+        "title": "Inflection Points: The Spooked Earnings-Driven Market",
+        "domain": "SeekingAlpha",
+        "date": "20261027"
+      },
+      {
+        "title": "'Traders Are Shelling Out Millions to Secure Copper' - Bloomberg",
+        "domain": "Benzinga",
+        "date": "20261016"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

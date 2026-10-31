@@ -948,5 +948,24 @@
     "trade_worthy": false,
     "context": "The article says technology companies are increasingly using debt financing, vendor financing from Nvidia, AMD, and Broadcom, roundtripping transactions, and other capital-raising methods to sustain AI investment. This suggests Broadcom could face elevated receivables, credit, or customer-concentration risk if AI builders cannot fund planned deployments or if expected future revenues fail to materialize, although the article provides no company-specific exposure or evidence of deterioration.",
     "source": "Next Platform"
+  },
+  {
+    "id": "b2d6fc0a021d700d",
+    "ticker": "AVGO",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "source_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "event_type": "competitive",
+    "created": "2026-10-30",
+    "claim": "Furiosa partnership broadens Broadcom\u2019s AI infrastructure opportunity",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Furiosa is developing its third-generation accelerator with Broadcom, potentially using Broadcom\u2019s Tomahawk networking products and 3.5D XDSiP advanced-packaging architecture for a rack-scale system. If adopted, this would add a South Korean accelerator customer to Broadcom\u2019s custom AI silicon, networking, and packaging opportunity set, while sovereign-AI demand could support further non-American accelerator deployments. However, the specific Broadcom products and commercial economics remain undisclosed, and the article presents the architecture as an inference rather than a confirmed design.",
+    "source": "Next Platform"
   }
 ]

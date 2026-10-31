@@ -6515,5 +6515,24 @@
     "trade_worthy": false,
     "context": "Oracle plans to offer Google TPUs, Cerebras CS-4/Wafer Scale Engine 3 Turbo systems, and SambaNova SN50 inference processors on OCI in 2027, alongside Nvidia and AMD hardware. This gives enterprise customers alternatives to Nvidia, particularly for inference and some training workloads, potentially reducing Nvidia\u2019s share of Oracle\u2019s future accelerator deployments and limiting pricing leverage.",
     "source": "Next Platform"
+  },
+  {
+    "id": "6ba8e034bc140d82",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "source_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "event_type": "competitive",
+    "created": "2026-10-30",
+    "claim": "Sovereign AI adoption creates incremental competitive pressure on Nvidia",
+    "direction": "short",
+    "confidence": 0.92,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that governments and datacenter operators increasingly want AI infrastructure sourced independently of the United States, even when alternatives are less powerful. South Korea\u2019s FuriosaAI and Rebellions are scaling working accelerators, with Furiosa raising $620 million, targeting about 20,000 RNGD units in 2026 and twice that in 2027, and developing a more capable Broadcom-supported successor. Rebellions has planned deployment of up to 3,200 Rebel100 accelerators in Japan, while Equinix is deploying Furiosa RNGD systems in Lisbon. These volumes remain small relative to Nvidia\u2019s, and the current products trail Nvidia technologically, but sovereign supply-chain priorities could divert some future accelerator demand from Nvidia in Asia-Pacific and EMEA markets.",
+    "source": "Next Platform"
   }
 ]

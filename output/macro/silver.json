@@ -853,5 +853,221 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-31",
+    "value": 49.09700012207031,
+    "delta": -8.590416374526843,
+    "history": [
+      [
+        "2026-10-26",
+        54.108001708984375
+      ],
+      [
+        "2026-10-27",
+        54.292999267578125
+      ],
+      [
+        "2026-10-28",
+        53.457000732421875
+      ],
+      [
+        "2026-10-29",
+        52.191001892089844
+      ],
+      [
+        "2026-10-30",
+        49.09700012207031
+      ]
+    ],
+    "narrative": "The week's sharp drop was most plausibly driven by broad precious-metals liquidation and renewed hawkish-rate concerns after the Fed held rates at 3.75%-4% while two officials pushed for a hike. The Yahoo reports that SLV hit an 11-month low and silver has lost more than half its value confirm the severity of the selloff, while Peter Brandt's potential-bottom view is only a tentative contrarian signal rather than a clear catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Gold And Silver: A Generational Buying Opportunity Is Emerging",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Weekly Commentary: Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Gold, Silver In Spotlight After GLD Hits 52-Week Low, SLV Sinks To 11-Month Low \u2013 Peter Brandt Sees Signs Of A Potential Bottom",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Silver Has Lost More Than Half Its Value Since January",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Fed Holds Rate at 3.75%-4%, Two Officials Push for a Hike (UPDATED)",
+        "domain": "Benzinga",
+        "date": "20261028"
+      },
+      {
+        "title": "Here's How Much $1000 Invested In iShares Silver Trust 5 Years Ago Would Be Worth Today",
+        "domain": "Benzinga",
+        "date": "20261027"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W44",
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
+  },
+  {
+    "period": "month",
+    "date": "2026-10-31",
+    "value": 49.09700012207031,
+    "delta": -19.148618598988076,
+    "history": [
+      [
+        "2026-10-01",
+        60.72499847412109
+      ],
+      [
+        "2026-10-02",
+        59.97700119018555
+      ],
+      [
+        "2026-10-05",
+        60.86899948120117
+      ],
+      [
+        "2026-10-06",
+        61.167999267578125
+      ],
+      [
+        "2026-10-07",
+        59.89899826049805
+      ],
+      [
+        "2026-10-08",
+        59.06399917602539
+      ],
+      [
+        "2026-10-09",
+        60.66999816894531
+      ],
+      [
+        "2026-10-12",
+        60.14099884033203
+      ],
+      [
+        "2026-10-13",
+        59.1609992980957
+      ],
+      [
+        "2026-10-14",
+        55.54999923706055
+      ],
+      [
+        "2026-10-15",
+        56.83700180053711
+      ],
+      [
+        "2026-10-16",
+        56.994998931884766
+      ],
+      [
+        "2026-10-19",
+        56.9739990234375
+      ],
+      [
+        "2026-10-20",
+        57.70600128173828
+      ],
+      [
+        "2026-10-21",
+        57.422000885009766
+      ],
+      [
+        "2026-10-22",
+        54.76399993896485
+      ],
+      [
+        "2026-10-23",
+        53.71099853515625
+      ],
+      [
+        "2026-10-26",
+        54.108001708984375
+      ],
+      [
+        "2026-10-27",
+        54.292999267578125
+      ],
+      [
+        "2026-10-28",
+        53.45700073242188
+      ],
+      [
+        "2026-10-29",
+        52.19100189208984
+      ],
+      [
+        "2026-10-30",
+        49.09700012207031
+      ]
+    ],
+    "narrative": "Silver's sharp monthly decline appears consistent with broad liquidation and weak positioning, with the October 28 Fed decision\u2014holding rates at 3.75%-4% while two officials favored a hike\u2014providing a plausible macro headwind. The reports that SLV reached an 11-month low and that silver has lost more than half its value since January describe the damage, while Peter Brandt's potential-bottom view and the \"generational buying opportunity\" commentary are tentative contrarian signals rather than clear catalysts.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Gold And Silver: A Generational Buying Opportunity Is Emerging",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Weekly Commentary: Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Gold, Silver In Spotlight After GLD Hits 52-Week Low, SLV Sinks To 11-Month Low \u2013 Peter Brandt Sees Signs Of A Potential Bottom",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Silver Has Lost More Than Half Its Value Since January",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Fed Holds Rate at 3.75%-4%, Two Officials Push for a Hike (UPDATED)",
+        "domain": "Benzinga",
+        "date": "20261028"
+      },
+      {
+        "title": "SPDR Gold Shares vs. iShares Silver Trust: Looking for an Inflation Hedge? One Could Have the Edge",
+        "domain": "Yahoo",
+        "date": "20261028"
+      },
+      {
+        "title": "Buy SLV: Unsustainable Global Debt And Rising Contagion Risks",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      },
+      {
+        "title": "Here's How Much $1000 Invested In iShares Silver Trust 5 Years Ago Would Be Worth Today",
+        "domain": "Benzinga",
+        "date": "20261027"
+      },
+      {
+        "title": "What Newmont\u2019s Outperformance and Extreme Short Data Reveal About Gold",
+        "domain": "Benzinga",
+        "date": "20261026"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

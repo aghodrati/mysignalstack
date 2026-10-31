@@ -888,5 +888,246 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-10-31",
+    "value": 77317.9921875,
+    "delta": -4.298561476312235,
+    "history": [
+      [
+        "2026-10-25",
+        80024.0078125
+      ],
+      [
+        "2026-10-26",
+        80006.65625
+      ],
+      [
+        "2026-10-27",
+        80805.078125
+      ],
+      [
+        "2026-10-28",
+        81267.5859375
+      ],
+      [
+        "2026-10-29",
+        77775.109375
+      ],
+      [
+        "2026-10-30",
+        77198.2109375
+      ],
+      [
+        "2026-10-31",
+        77317.9921875
+      ]
+    ],
+    "narrative": "Bitcoin's roughly 4% weekly decline was most plausibly driven by crypto-specific risk aversion after the \"Record Binance Hack\" headline, which coincided with sharp drops in Coinbase, Strategy, Robinhood, and Circle, alongside a broader tech selloff. The \"Cycle Transition\" commentary may reinforce caution, but there is no evidence here of a stronger fundamental catalyst beyond the hack-related sentiment shock and general risk-off positioning.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Coinbase Tumbles 11% as Record Binance Hack Hits Crypto and Trading Revenue Slides; Strategy Sinks 12%, Robinhood Plunges 10%, Circle Drops 9%",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Exchange-Traded Funds Lower, Equity Futures Mixed Pre-Bell Friday Amid Steep Tech Decline",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Cryptocurrencies: Bitcoin Down 3% This Week",
+        "domain": "SeekingAlpha",
+        "date": "20261029"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W44",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
+  },
+  {
+    "period": "month",
+    "date": "2026-10-31",
+    "value": 77317.9921875,
+    "delta": -8.496397301575131,
+    "history": [
+      [
+        "2026-10-02",
+        84497.2109375
+      ],
+      [
+        "2026-10-03",
+        84763.578125
+      ],
+      [
+        "2026-10-04",
+        86480.3046875
+      ],
+      [
+        "2026-10-05",
+        85786.59375
+      ],
+      [
+        "2026-10-06",
+        85557.5625
+      ],
+      [
+        "2026-10-07",
+        83275.9296875
+      ],
+      [
+        "2026-10-08",
+        81676.3359375
+      ],
+      [
+        "2026-10-09",
+        82546.3203125
+      ],
+      [
+        "2026-10-10",
+        82912.2265625
+      ],
+      [
+        "2026-10-11",
+        83679.46875
+      ],
+      [
+        "2026-10-12",
+        81762.5625
+      ],
+      [
+        "2026-10-13",
+        83095.125
+      ],
+      [
+        "2026-10-14",
+        81562.4921875
+      ],
+      [
+        "2026-10-15",
+        82141.4609375
+      ],
+      [
+        "2026-10-16",
+        81500.8046875
+      ],
+      [
+        "2026-10-17",
+        81382.1484375
+      ],
+      [
+        "2026-10-18",
+        82017.6015625
+      ],
+      [
+        "2026-10-19",
+        81853.5390625
+      ],
+      [
+        "2026-10-20",
+        82941.0
+      ],
+      [
+        "2026-10-21",
+        84011.96875
+      ],
+      [
+        "2026-10-22",
+        81311.890625
+      ],
+      [
+        "2026-10-23",
+        81074.1875
+      ],
+      [
+        "2026-10-24",
+        80790.8359375
+      ],
+      [
+        "2026-10-25",
+        80024.0078125
+      ],
+      [
+        "2026-10-26",
+        80006.65625
+      ],
+      [
+        "2026-10-27",
+        80805.078125
+      ],
+      [
+        "2026-10-28",
+        81267.5859375
+      ],
+      [
+        "2026-10-29",
+        77775.109375
+      ],
+      [
+        "2026-10-30",
+        77198.2109375
+      ],
+      [
+        "2026-10-31",
+        77317.9921875
+      ]
+    ],
+    "narrative": "The month appears to have been driven mainly by broad risk-off positioning and worsening crypto-specific sentiment late in the period: Bitcoin was reported down 3% for the week, while the \u201cCoinbase Tumbles 11%\u201d headline tied a record Binance hack to weaker crypto trading revenue. However, these headlines do not establish a single clear catalyst for the full monthly decline, and \u201cCycle Transition\u201d remains too vague to explain the move on its own.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Weekly Commentary: Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Coinbase Tumbles 11% as Record Binance Hack Hits Crypto and Trading Revenue Slides; Strategy Sinks 12%, Robinhood Plunges 10%, Circle Drops 9%",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Exchange-Traded Funds Lower, Equity Futures Mixed Pre-Bell Friday Amid Steep Tech Decline",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Cryptocurrencies: Bitcoin Down 3% This Week",
+        "domain": "SeekingAlpha",
+        "date": "20261029"
+      },
+      {
+        "title": "Why Bitcoin Decoupled From Traditional Headwinds",
+        "domain": "SeekingAlpha",
+        "date": "20261026"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Friday Amid AI Spending Concerns",
+        "domain": "Yahoo",
+        "date": "20261023"
+      },
+      {
+        "title": "Bitcoin, Nvidia And Tesla ETFs Lead Wall Street\u2019s Most Traded Funds",
+        "domain": "Benzinga",
+        "date": "20261014"
+      },
+      {
+        "title": "Bitcoin Slips Below $84K, Traders Are Watching BITO And IBIT",
+        "domain": "Benzinga",
+        "date": "20261007"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

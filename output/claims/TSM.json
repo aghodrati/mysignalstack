@@ -948,5 +948,24 @@
     "trade_worthy": false,
     "context": "TSMC is a founding chipmaker partner in Applied Materials\u2019 $5 billion EPIC center, alongside Intel, Samsung, SK hynix, and Micron. The 600,000-square-foot facility is designed to combine materials research, equipment development, and pilot production in parallel, allowing partners to work on process technology three to four generations ahead of current production and potentially shorten development cycles that traditionally take most of a decade. This could support TSMC\u2019s long-term process leadership, though the article provides no TSMC-specific schedule, cost, or customer impact.",
     "source": "Not Boring"
+  },
+  {
+    "id": "34e378ce7221c668",
+    "ticker": "TSM",
+    "source_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "source_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "event_type": "competitive",
+    "created": "2026-10-30",
+    "claim": "Furiosa growth could modestly increase TSMC advanced-node demand",
+    "direction": "long",
+    "confidence": 0.68,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Furiosa expects to produce about 20,000 RNGD accelerators in 2026 and roughly twice that in 2027, while its next accelerator is planned for a 2 nm process with chiplets and HBM4 or HBM4e. The article says the process is presumably TSMC's, creating a potential source of incremental advanced-node and packaging demand for TSMC, although the foundry choice and resulting revenue contribution remain unconfirmed and likely small relative to TSMC's overall business.",
+    "source": "Next Platform"
   }
 ]

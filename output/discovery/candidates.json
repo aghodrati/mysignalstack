@@ -9316,5 +9316,160 @@
     "article_link": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
     "name": "AI agents",
     "why": "Benchmark design is shifting toward general agentic collaborators and repetitive agentic tasks; Progress depends on reinforcement-learning environments, evaluation expertise, and post-training infrastructure across multiple capability domains"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Stratechery",
+    "article_title": "2026.44: At Long Last\u2026",
+    "article_link": "https://stratechery.com/2026/at-long-last/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Filed an S-1 and disclosed financial information analyzed by Stratechery; its core business is described as profitable, but competition and investor dilution could pressure future profits"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Stratechery",
+    "article_title": "2026.44: At Long Last\u2026",
+    "article_link": "https://stratechery.com/2026/at-long-last/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Provides payments, billing, card-program, and usage-tracking infrastructure for internet-native companies, fintechs, and AI businesses; is presented as making more technology businesses practical to launch"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Next Platform",
+    "article_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "name": "FuriosaAI",
+    "ticker_guess": null,
+    "why": "Raised a $620 million Series D; expects to produce about 20,000 RNGD accelerators in 2026 and roughly double output in 2027; developing a third-generation 2 nm, chiplet-based accelerator with Broadcom"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Next Platform",
+    "article_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "name": "Rebellions",
+    "ticker_guess": null,
+    "why": "Developed the Rebel100 accelerator, roughly comparable to Nvidia's older H200; working on next-generation systems and supplying RebelRack systems to Japanese neocloud ai&"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Next Platform",
+    "article_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "name": "Samsung Electronics",
+    "ticker_guess": null,
+    "why": "Identified as one of the world's largest memory vendors and a major leading-edge wafer foundry; among Furiosa's largest patrons and a potential source of domestic HBM and manufacturing capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Next Platform",
+    "article_title": "AI Arms Race Puts Sovereign Supply Chains in the Spotlight",
+    "article_link": "https://www.nextplatform.com/ai/2026/10/30/ai-arms-race-puts-sovereign-supply-chains-in-the-spotlight/5306758",
+    "name": "Equinix",
+    "ticker_guess": "EQIX",
+    "why": "Agreed to deploy Furiosa's RNGD accelerators at its LS2 colocation facility in Lisbon"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-31",
+    "source": "Doomberg",
+    "article_title": "Gating Functions",
+    "article_link": "https://newsletter.doomberg.com/p/gating-functions",
+    "name": "Venezuelan oil",
+    "why": "Orinoco Belt heavy-oil production temporarily fell 25% when lighter crude was diverted to struggling domestic refineries; reported production later rose to 1.25 million bpd from 830,000 bpd in December"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-31",
+    "source": "Doomberg",
+    "article_title": "Gating Functions",
+    "article_link": "https://newsletter.doomberg.com/p/gating-functions",
+    "name": "US sanctions",
+    "why": "Successive US administrations imposed sanctions that restricted Venezuela\u2019s access to materials, capital goods, financing, and diluent supplies; sanctions pressure eased after Nicol\u00e1s Maduro\u2019s departure"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-31",
+    "source": "Doomberg",
+    "article_title": "Gating Functions",
+    "article_link": "https://newsletter.doomberg.com/p/gating-functions",
+    "name": "Oil blockade",
+    "why": "The US Navy imposed a partial blockade on sanctioned oil tankers entering and leaving Venezuela; the action targeted the country\u2019s primary source of income and intensified pressure on its government"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-31",
+    "source": "Doomberg",
+    "article_title": "Gating Functions",
+    "article_link": "https://newsletter.doomberg.com/p/gating-functions",
+    "name": "Oil diluents",
+    "why": "Venezuela requires lighter hydrocarbons such as naphtha to transport Orinoco\u2019s solid-like heavy crude; a Russian tanker carrying about 300,000 barrels of naphtha entered Venezuelan waters amid the blockade"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-31",
+    "source": "Doomberg",
+    "article_title": "Gating Functions",
+    "article_link": "https://newsletter.doomberg.com/p/gating-functions",
+    "name": "Geopolitics",
+    "why": "US military action removed Nicol\u00e1s Maduro in early January; the successor government was described as more responsive to US demands, coinciding with a rebound in diluent imports and heavy-crude exports"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #217",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-217",
+    "name": "Eli Lilly and Company",
+    "ticker_guess": "LLY",
+    "why": "Retatrutide Phase 3 trials reportedly improved obstructive sleep apnea and reduced body weight; Lilly raised its full-year revenue outlook by $5 billion after strong earnings"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #217",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-217",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Reported progress using Claude to accelerate antibody design, CAR-T engineering, manufacturing-document review, and drug-trial assessment; acquired Mithril Medicine and is developing drug programs with external partners"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #217",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-217",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Announced model-generated results involving a mathematical proof, a claimed disproof of the Exponential Time Hypothesis, and work on quantum field theory; shared outputs with expert reviewers and published formalizations on GitHub"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #217",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-217",
+    "name": "Neuralink",
+    "ticker_guess": null,
+    "why": "Reported that an ALS participant using its VOICE brain-computer interface reached 75 words per minute with a 5.8% error rate; said its Blindsight product for restoring sight is engineering-ready pending regulatory approval"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-30",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #217",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-217",
+    "name": "Anduril Industries",
+    "ticker_guess": null,
+    "why": "Announced BlueChip, a domestically designed and manufactured computer using American components, materials, and batteries; the product expands Anduril\u2019s hardware and manufacturing capabilities"
   }
 ]

@@ -913,5 +913,221 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-10-31",
+    "value": 3898.89990234375,
+    "delta": -2.7196287995181367,
+    "history": [
+      [
+        "2026-10-26",
+        4038.39990234375
+      ],
+      [
+        "2026-10-27",
+        4074.60009765625
+      ],
+      [
+        "2026-10-28",
+        4051.60009765625
+      ],
+      [
+        "2026-10-29",
+        4031.39990234375
+      ],
+      [
+        "2026-10-30",
+        3898.89990234375
+      ]
+    ],
+    "narrative": "No clear single catalyst this week: futures were essentially flat to slightly lower (-2.72), while the headlines were mostly opinion-driven, including claims that a generational buying opportunity is emerging and that GLD's 52-week low may signal a bottom. Those conflicting bottom-fishing and bearish-positioning themes suggest broad positioning or drift rather than a decisive fundamental driver.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Gold And Silver: A Generational Buying Opportunity Is Emerging",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "GLD: The Global Economic Death Spiral Is Not A Black Swan Event",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Gold, Silver In Spotlight After GLD Hits 52-Week Low, SLV Sinks To 11-Month Low \u2013 Peter Brandt Sees Signs Of A Potential Bottom",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "SPDR Gold Shares vs. iShares Silver Trust: Looking for an Inflation Hedge? One Could Have the Edge",
+        "domain": "Yahoo",
+        "date": "20261028"
+      },
+      {
+        "title": "'Another Golden Asteroid Story': Why Lab-Made Gold Won't Crash Bullion",
+        "domain": "Benzinga",
+        "date": "20261027"
+      },
+      {
+        "title": "What Newmont\u2019s Outperformance and Extreme Short Data Reveal About Gold",
+        "domain": "Benzinga",
+        "date": "20261026"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W44",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
+  },
+  {
+    "period": "month",
+    "date": "2026-10-31",
+    "value": 3898.89990234375,
+    "delta": -7.21985380494079,
+    "history": [
+      [
+        "2026-10-01",
+        4202.2998046875
+      ],
+      [
+        "2026-10-02",
+        4162.2998046875
+      ],
+      [
+        "2026-10-05",
+        4156.7998046875
+      ],
+      [
+        "2026-10-06",
+        4187.10009765625
+      ],
+      [
+        "2026-10-07",
+        4140.7001953125
+      ],
+      [
+        "2026-10-08",
+        4157.0
+      ],
+      [
+        "2026-10-09",
+        4216.2998046875
+      ],
+      [
+        "2026-10-12",
+        4190.60009765625
+      ],
+      [
+        "2026-10-13",
+        4177.2998046875
+      ],
+      [
+        "2026-10-14",
+        4107.89990234375
+      ],
+      [
+        "2026-10-15",
+        4170.10009765625
+      ],
+      [
+        "2026-10-16",
+        4181.10009765625
+      ],
+      [
+        "2026-10-19",
+        4160.10009765625
+      ],
+      [
+        "2026-10-20",
+        4142.60009765625
+      ],
+      [
+        "2026-10-21",
+        4150.0
+      ],
+      [
+        "2026-10-22",
+        4060.39990234375
+      ],
+      [
+        "2026-10-23",
+        4007.89990234375
+      ],
+      [
+        "2026-10-26",
+        4038.39990234375
+      ],
+      [
+        "2026-10-27",
+        4074.60009765625
+      ],
+      [
+        "2026-10-28",
+        4051.60009765625
+      ],
+      [
+        "2026-10-29",
+        4031.39990234375
+      ],
+      [
+        "2026-10-30",
+        3898.89990234375
+      ]
+    ],
+    "narrative": "Gold was essentially flat to slightly lower over the month, with the most plausible pressure coming from the headline about U.S. bond yields rising ahead of the FOMC decision. However, the other items\u2014such as \u201cGLD Hits 52-Week Low\u201d and Peter Brandt\u2019s potential-bottom view\u2014are largely retrospective or speculative, so there is no clear single catalyst.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Gold And Silver: A Generational Buying Opportunity Is Emerging",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "GLD: The Global Economic Death Spiral Is Not A Black Swan Event",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Weekly Commentary: Cycle Transition",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Gold, Silver In Spotlight After GLD Hits 52-Week Low, SLV Sinks To 11-Month Low \u2013 Peter Brandt Sees Signs Of A Potential Bottom",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "SPDR Gold Shares vs. iShares Silver Trust: Looking for an Inflation Hedge? One Could Have the Edge",
+        "domain": "Yahoo",
+        "date": "20261028"
+      },
+      {
+        "title": "'Another Golden Asteroid Story': Why Lab-Made Gold Won't Crash Bullion",
+        "domain": "Benzinga",
+        "date": "20261027"
+      },
+      {
+        "title": "What Newmont\u2019s Outperformance and Extreme Short Data Reveal About Gold",
+        "domain": "Benzinga",
+        "date": "20261026"
+      },
+      {
+        "title": "Selling $300,000 of GLD Bought Five Years Ago Means a $162,713 Gain Taxed as a Collectible, Not a Stock",
+        "domain": "Yahoo",
+        "date": "20261025"
+      },
+      {
+        "title": "Gold Price Outlook as US Bond Yields Rise Ahead of FOMC Decision",
+        "domain": "Benzinga",
+        "date": "20261025"
+      }
+    ],
+    "fetch_succeeded": true,
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

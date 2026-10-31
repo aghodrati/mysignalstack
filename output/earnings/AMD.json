@@ -24,5 +24,95 @@
     ],
     "summary": "AMD reported a highly bullish quarter, with 50% revenue growth, 56% gross margin, data center revenue above half of company sales, and major upward revisions to its long-term opportunity and earnings trajectory. The Q&A reinforced strong CPU demand and substantial Helios upside, although management was less specific on accelerator revenue cadence and margins and acknowledged supply, yield, customer build-out, and memory-cost risks.",
     "type": "earnings_transcript"
+  },
+  {
+    "call_date": "2026-11-03",
+    "when": "2026-11-03T15:00:00-05:00",
+    "eps_estimate": 1.94,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-04",
+        "eps_estimate": 1.18,
+        "reported_eps": 1.2,
+        "surprise_pct": 2.1
+      },
+      {
+        "earnings_date": "2026-02-03",
+        "eps_estimate": 1.32,
+        "reported_eps": 1.53,
+        "surprise_pct": 15.53
+      },
+      {
+        "earnings_date": "2026-05-05",
+        "eps_estimate": 1.29,
+        "reported_eps": 1.37,
+        "surprise_pct": 5.82
+      },
+      {
+        "earnings_date": "2026-08-04",
+        "eps_estimate": 1.61,
+        "reported_eps": 1.66,
+        "surprise_pct": 3.21
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-10-31",
+    "call_date": "2026-11-03",
+    "narrative": "Investors should focus on whether AMD\u2019s data-center and AI businesses are accelerating enough to withstand Intel\u2019s reported 78% data-center jump, while also watching for weakness in PCs after Intel\u2019s warning. The \u201ccircular AI financing\u201d headline involving Meta makes the quality and sustainability of AI-related demand, customer commitments, and financing arrangements especially important. AMD\u2019s outlook for AI competition and an increasingly fractured market will likely matter as much as the quarter itself, given CNBC\u2019s view that AMD stands out and T. Rowe Price\u2019s bullish positioning. My expectation is for a closely watched call in which strong AI commentary could counter concerns about PCs and competitive pressure, but vague guidance or signs that demand depends heavily on financing partnerships could reinforce the stock\u2019s recent 11% decline.",
+    "headlines_used": [
+      {
+        "title": "AMD Stock Fell 11% in a Day Ahead of Its November 3 Report. Here\u2019s Why Intel\u2019s 78% Data Center Jump Matters More to AMD Than Its PC Warning",
+        "domain": "Yahoo",
+        "date": "20261031"
+      },
+      {
+        "title": "Prediction: 2 Under $1 Trillion Stocks That Will Be Worth More Than Micron 5 Years From Now",
+        "domain": "Yahoo",
+        "date": "20261031"
+      },
+      {
+        "title": "S&P 500 Top Movers: Gainers and Losers in Today's US Session",
+        "domain": "ChartMill",
+        "date": "20261030"
+      },
+      {
+        "title": "S&P 500 Top Movers: Gainers and Losers in Today's Session",
+        "domain": "ChartMill",
+        "date": "20261030"
+      },
+      {
+        "title": "SK hynix: Despite Their Premium To The Korean Shares, The U.S. ADRs Are A Bargain",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "AMD: Circular AI Financing With Meta Just Reached A New Level",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      },
+      {
+        "title": "QUICK SPARK: Intel Stock Drops 28%, Eyes Worst Day Since July 1974",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Intel Stock Eyes One of Its Worst Days Since 1974: 'Houston, We Have a Problem,' Analyst Says",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Why T. Rowe Price's Dom Rizzo is betting on Intel and AMD",
+        "domain": "CNBC",
+        "date": "20261028"
+      },
+      {
+        "title": " As AI becomes more fractured, one names stands out: AMD",
+        "domain": "CNBC",
+        "date": "20261026"
+      }
+    ],
+    "type": "earnings_preview"
   }
 ]

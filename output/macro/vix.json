@@ -1016,5 +1016,210 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W43"
+  },
+  {
+    "period": "week",
+    "date": "2026-10-31",
+    "value": 19.420000076293945,
+    "delta": -0.030000686645507812,
+    "history": [
+      [
+        "2026-10-26",
+        18.389999389648438
+      ],
+      [
+        "2026-10-27",
+        17.520000457763672
+      ],
+      [
+        "2026-10-28",
+        16.90999984741211
+      ],
+      [
+        "2026-10-29",
+        17.200000762939453
+      ],
+      [
+        "2026-10-30",
+        19.420000076293945
+      ]
+    ],
+    "narrative": "There was no clear single catalyst for the essentially flat weekly move in VIX (-0.03). The October 27 News18 report that India VIX fell and smallcaps rallied suggests modest easing in market stress, but this was offset by the prior caution signal from the October 26 Moneycontrol headline noting India VIX at a five-month high ahead of F&O expiry; overall, the move looks like broad positioning and drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Markets Today: Sensex Ends Flat, Nifty Holds 22,750; Smallcaps Rally As India VIX Falls",
+        "domain": "News18",
+        "date": "20261027"
+      },
+      {
+        "title": "Trade Spotlight: How should you trade BSE, Mankind Pharma, Bajaj Finserv, Bharti Airtel, Zydus Lifesciences, and others on October 27?",
+        "domain": "Moneycontrol",
+        "date": "20261027"
+      },
+      {
+        "title": "Technical View: Nifty 50 needs follow-up buying to confirm reversal; India VIX at 5-month high signals caution ahead of F&O expiry; Monday\u2019s low key for Bank Nifty",
+        "domain": "Moneycontrol",
+        "date": "20261026"
+      },
+      {
+        "title": "Market wrap: Dr Reddys, JSW Steel, Shriram Finance, Tata Consumer top gainers and losers on Nifty and Sensex on Monday",
+        "domain": "The Economic Times",
+        "date": "20261026"
+      },
+      {
+        "title": "Monday Watchlist: Nifty volatility spikes - IT, Pharma & Realty among key sectors to watch",
+        "domain": "The Financial Express",
+        "date": "20261026"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W44"
+  },
+  {
+    "period": "month",
+    "date": "2026-10-31",
+    "value": 19.420000076293945,
+    "delta": 3.030000686645508,
+    "history": [
+      [
+        "2026-10-01",
+        16.389999389648438
+      ],
+      [
+        "2026-10-02",
+        15.3100004196167
+      ],
+      [
+        "2026-10-05",
+        15.520000457763672
+      ],
+      [
+        "2026-10-06",
+        15.010000228881836
+      ],
+      [
+        "2026-10-07",
+        15.079999923706056
+      ],
+      [
+        "2026-10-08",
+        15.40999984741211
+      ],
+      [
+        "2026-10-09",
+        14.84000015258789
+      ],
+      [
+        "2026-10-12",
+        15.210000038146973
+      ],
+      [
+        "2026-10-13",
+        15.270000457763672
+      ],
+      [
+        "2026-10-14",
+        16.8700008392334
+      ],
+      [
+        "2026-10-15",
+        16.459999084472656
+      ],
+      [
+        "2026-10-16",
+        19.989999771118164
+      ],
+      [
+        "2026-10-19",
+        18.440000534057617
+      ],
+      [
+        "2026-10-20",
+        17.309999465942383
+      ],
+      [
+        "2026-10-21",
+        16.68000030517578
+      ],
+      [
+        "2026-10-22",
+        19.030000686645508
+      ],
+      [
+        "2026-10-23",
+        19.450000762939453
+      ],
+      [
+        "2026-10-26",
+        18.38999938964844
+      ],
+      [
+        "2026-10-27",
+        17.520000457763672
+      ],
+      [
+        "2026-10-28",
+        16.90999984741211
+      ],
+      [
+        "2026-10-29",
+        17.200000762939453
+      ],
+      [
+        "2026-10-30",
+        19.420000076293945
+      ]
+    ],
+    "narrative": "The VIX rise appears to have been driven by a broad risk-off move in Indian equities, with the October 21 report of the Sensex plunging 1,300 points and the October 23 headline noting the Nifty\u2019s sharp slump and India VIX reaching 17 pointing to escalating downside hedging. Caution ahead of F&O expiry likely amplified volatility, as highlighted by the October 26 report that India VIX had reached a five-month high, but the headlines provide no clear underlying fundamental catalyst.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Markets Today: Sensex Ends Flat, Nifty Holds 22,750; Smallcaps Rally As India VIX Falls",
+        "domain": "News18",
+        "date": "20261027"
+      },
+      {
+        "title": "Trade Spotlight: How should you trade BSE, Mankind Pharma, Bajaj Finserv, Bharti Airtel, Zydus Lifesciences, and others on October 27?",
+        "domain": "Moneycontrol",
+        "date": "20261027"
+      },
+      {
+        "title": "Technical View: Nifty 50 needs follow-up buying to confirm reversal; India VIX at 5-month high signals caution ahead of F&O expiry; Monday\u2019s low key for Bank Nifty",
+        "domain": "Moneycontrol",
+        "date": "20261026"
+      },
+      {
+        "title": "Market wrap: Dr Reddys, JSW Steel, Shriram Finance, Tata Consumer top gainers and losers on Nifty and Sensex on Monday",
+        "domain": "The Economic Times",
+        "date": "20261026"
+      },
+      {
+        "title": "Monday Watchlist: Nifty volatility spikes - IT, Pharma & Realty among key sectors to watch",
+        "domain": "The Financial Express",
+        "date": "20261026"
+      },
+      {
+        "title": "Technical View: Nifty 50 faces further downside if it fails to defend 200-week EMA; Bank Nifty\u2019s 53,700 support in focus as India VIX hits 17",
+        "domain": "Moneycontrol",
+        "date": "20261023"
+      },
+      {
+        "title": "Stock Market Crash News Today Live Updates: Nifty Slumps Near 22,400, Sensex Drops Over 700 Points; Nifty Bank At Day's Low",
+        "domain": "NDTV Profit",
+        "date": "20261023"
+      },
+      {
+        "title": "Stock Market LIVE: Sensex down 300pts, Nifty around 22,650; VIX rises 6%",
+        "domain": "Business Standard",
+        "date": "20261022"
+      },
+      {
+        "title": "Sensex tanks 1,300 pts from day's high; India VIX surges 8%; here's why",
+        "domain": "Business Today",
+        "date": "20261021"
+      }
+    ],
+    "fetch_succeeded": true
   }
 ]

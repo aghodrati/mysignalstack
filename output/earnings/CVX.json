@@ -83,5 +83,37 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-10-30",
+    "eps_estimate": 4.87,
+    "reported_eps": 5.28,
+    "surprise_pct": 8.47,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-10-31",
+    "transcript_date": "2026-10-30",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/10/30/chevron-cvx-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "long",
+    "earnings_confidence": 0.78,
+    "guidance_summary": "Management expects full-year capital spending to finish at the low end of guidance, with fourth-quarter CapEx higher than Q3. Share repurchases remain at roughly $2.5-$3.0 billion per quarter, alongside continued dividend growth. Refining margins are expected to remain elevated in the near term but eventually moderate as refinery runs and export flows recover; petrochemical margins may remain above mid-cycle through year-end and possibly into 2027. Permian production is expected to remain broadly stable above 1 million boe/d, while Venezuela production is targeted to reach approximately 600,000 bpd by 2031 with total costs below $20/bbl.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "Analysts pressed on Venezuela's above-ground and political risks; management emphasized stronger contractual protections, Chevron's control over crude marketing and cash flows, local operating relationships, and the ability to pace activity with market conditions. It specifically stated the program would be self-funding with no additional Chevron capital exposure beyond internally generated venture cash.",
+      "On the TCO concession extension, management declined to address media reports about possible one-time payments or working-interest changes, but said negotiations had narrowed to fundamental issues, were progressing well, and showed no red flags. The lack of specific economics leaves some uncertainty.",
+      "On Bakken economics, management gave unusually specific benefits: a 50% tariff reduction, $3.7 billion of debt deconsolidation, a 0.5% corporate ROCE improvement, recurring earnings upside, and a planned shift from three rigs to two while maintaining roughly 180,000 boe/d.",
+      "On capital allocation, despite a stronger balance sheet, management explicitly rejected near-term changes because of commodity volatility, retaining the existing dividend, investment, balance-sheet and $2.5-$3.0 billion buyback framework."
+    ],
+    "risks": [
+      "Venezuela remains exposed to political, regulatory, sanctions, security and execution risks despite improved contractual terms and management's confidence in self-funding economics.",
+      "The TCO concession extension could require concessions to the Kazakh government, including potentially unfavorable financial or ownership terms; management provided no timeline or specific economics.",
+      "Refining and petrochemical earnings are benefiting from conflict-related outages, reduced exports and elevated freight/logistics costs, which may normalize as capacity and trade flows recover.",
+      "Commodity-price volatility can create working-capital swings and timing effects; management cited a $64 intra-quarter oil-price range and indicated no change to capital allocation.",
+      "The planned 50% increase in exploration spending raises capital deployment and execution risk even though recent infrastructure-led discovery performance has improved."
+    ],
+    "summary": "Chevron delivered a very strong quarter, with adjusted earnings of $10.4 billion, record U.S. refinery throughput, sustained U.S. upstream production above 2 million boe/d and robust cash generation supporting debt reduction and shareholder returns. The Q&A reinforced confidence in low-cost Venezuela growth, Bakken restructuring, AI-driven efficiency and exploration upside, although some strategic growth initiatives depend on unresolved political negotiations and currently elevated refining and petrochemical margins may not persist.",
+    "type": "earnings_transcript"
   }
 ]
