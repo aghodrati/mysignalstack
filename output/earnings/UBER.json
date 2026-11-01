@@ -1,0 +1,82 @@
+[
+  {
+    "call_date": "2026-11-04",
+    "when": "2026-11-04T08:00:00-05:00",
+    "eps_estimate": 0.9,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-04",
+        "eps_estimate": 0.69,
+        "reported_eps": 3.11,
+        "surprise_pct": 353.17
+      },
+      {
+        "earnings_date": "2026-02-04",
+        "eps_estimate": 0.78,
+        "reported_eps": 0.14,
+        "surprise_pct": -81.94
+      },
+      {
+        "earnings_date": "2026-05-06",
+        "eps_estimate": 0.71,
+        "reported_eps": 0.13,
+        "surprise_pct": -81.74
+      },
+      {
+        "earnings_date": "2026-08-05",
+        "eps_estimate": 0.83,
+        "reported_eps": 1.17,
+        "surprise_pct": 40.22
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-01",
+    "call_date": "2026-11-04",
+    "narrative": "Investors should focus on third-quarter bookings and profitability across Uber\u2019s rides and delivery businesses, along with management\u2019s outlook for demand, pricing, and cost discipline. The DoorDash\u2013Instacart deal and the Wonder headline underscore intensifying competition and consolidation in delivery, so commentary on market share, restaurant economics, and Uber\u2019s ability to differentiate will be important. The \u201cDumping Uber Stock Before Q3 Earnings\u201d headline suggests expectations and positioning may already be elevated, while the broader packed earnings calendar could make the stock especially sensitive to guidance. My expectation is for a fundamentally solid report if mobility demand and delivery execution remain healthy, but the market will likely reward forward guidance and margin progress more than a merely in-line quarter.",
+    "headlines_used": [
+      {
+        "title": "Trump\u2019s FTC Probes Personalized Pricing at Instacart Days After DoorDash Agreed to Buy It for $17 Billion",
+        "domain": "Yahoo",
+        "date": "20261101"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261101"
+      },
+      {
+        "title": "Apple Leads Packed Earnings Calendar As Investors Eye Tech, Pharma Results",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Why Dumping Uber Stock Before Q3 Earnings May Not Be the Smartest Move",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "10 Industrials Stocks Whale Activity In Today\u2019s Session",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Rivian Stock Gains Despite Bearish Technicals, Earnings and Autonomy Impress",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "From Wall Street to Silicon Valley, Anthropic IPO poised to have massive 'trickle-down effect'",
+        "domain": "CNBC",
+        "date": "20261026"
+      },
+      {
+        "title": "It\u2019s a restaurant. It\u2019s a food hall. It\u2019s a delivery chain. It\u2019s \u2026 Wonder?",
+        "domain": "CNBC",
+        "date": "20261025"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

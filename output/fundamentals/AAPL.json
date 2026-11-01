@@ -40,5 +40,56 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-11-01",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.78,
+    "summary": "Apple continues to show exceptional underlying business quality, with 16.4% revenue growth, 28.7% earnings growth, and operating and free-cash-flow margins above 31%. However, valuation has become materially more demanding while analyst sentiment, estimate revisions, and consensus upside have deteriorated, leaving the fundamental risk-reward balance mixed despite the strong business profile.",
+    "key_changes": [
+      "Forward P/E rose 12.1% from 32.2 to 36.1, increasing the valuation burden.",
+      "EV/revenue increased 13.5% from 9.5x to 10.8x, further elevating the premium investors are paying.",
+      "PEG rose 12.2% from 2.46 to 2.76, indicating valuation has expanded faster than the growth-adjusted case improved.",
+      "Analyst upside fell from 5.8% to -3.6%, shifting consensus from modest upside to modest downside relative to the current price.",
+      "Revisions momentum worsened 210.1%, from -1.63 to -5.06, signaling more negative estimate directionality.",
+      "Institutional flow slowed sharply from 11.07 to 0.90, while net upgrades improved modestly from -3 to -2 and low-short-interest support edged slightly higher."
+    ],
+    "risks": [
+      "Premium valuation leaves the shares vulnerable to multiple contraction if growth or margins disappoint.",
+      "Deteriorating analyst revisions and negative consensus upside could pressure expectations and limit near-term returns.",
+      "The current valuation appears to embed sustained strong growth and exceptional profitability, increasing execution sensitivity.",
+      "Negative insider flow and sharply weaker institutional flow provide less ownership support than at the prior check.",
+      "Competitive, regulatory, product-cycle, and macro risks could challenge the durability of Apple's growth and margins."
+    ],
+    "reasoning": "The exceptional growth and profitability support a bullish business view, but rich valuation and worsening forward-looking sentiment offset those strengths, warranting a neutral fundamental stance with high confidence.",
+    "fair_value_estimate": 332.3858,
+    "current_price": 344.63,
+    "implied_return_pct": -3.6,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.164,
+        "earnings_growth": 0.287
+      },
+      "Valuation": {
+        "forward_pe": 36.068707,
+        "peg_ratio": 2.76,
+        "ev_to_revenue": 10.821
+      },
+      "Quality": {
+        "operating_margin": 0.32623002,
+        "fcf_margin": 0.31430327873742997
+      },
+      "Sentiment": {
+        "analyst_upside": -3.5528537852189235,
+        "revisions_trend": -5.0556117290192155,
+        "net_upgrades": -2.0
+      },
+      "Ownership": {
+        "institutional_flow": 0.9029999925000001,
+        "insider_flow": -408095757.0,
+        "low_short_interest": -0.8999999999999999
+      }
+    },
+    "trigger": "earnings"
   }
 ]

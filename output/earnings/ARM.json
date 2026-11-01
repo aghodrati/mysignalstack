@@ -1,0 +1,72 @@
+[
+  {
+    "call_date": "2026-11-04",
+    "when": "2026-11-04T16:00:00-05:00",
+    "eps_estimate": 0.48,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-05",
+        "eps_estimate": 0.33,
+        "reported_eps": 0.39,
+        "surprise_pct": 17.7
+      },
+      {
+        "earnings_date": "2026-02-04",
+        "eps_estimate": 0.41,
+        "reported_eps": 0.43,
+        "surprise_pct": 5.09
+      },
+      {
+        "earnings_date": "2026-05-05",
+        "eps_estimate": 0.58,
+        "reported_eps": 0.6,
+        "surprise_pct": 3.57
+      },
+      {
+        "earnings_date": "2026-07-29",
+        "eps_estimate": 0.4,
+        "reported_eps": 0.45,
+        "surprise_pct": 11.44
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-01",
+    "call_date": "2026-11-04",
+    "narrative": "Investors should focus on Arm\u2019s licensing and royalty momentum, especially whether demand from AI/data-center and mobile customers is translating into sustained growth and whether management\u2019s outlook supports the premium investors have assigned to the stock. The nearly 10% drop in Arm shares alongside declines in Qualcomm, Broadcom, and Marvell suggests the market is highly sensitive to semiconductor-cycle, AI-spending, and valuation concerns, so guidance and commentary on customer demand may matter more than the quarter itself. My expectation is for a closely scrutinized call with potentially cautious near-term trading: solid execution could stabilize sentiment, but any sign of slower licensing, weaker mobile demand, or limited incremental AI upside could amplify the recent selloff.",
+    "headlines_used": [
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261101"
+      },
+      {
+        "title": "Apple Leads Packed Earnings Calendar As Investors Eye Tech, Pharma Results",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "Why Arm Holdings Stock Plummeted by Nearly 10% Today",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "Alphabet Posts Worst Week Since 2011, Intel Suffers Record Crash as Warsh Sees 'Cracks': This Week on Wall Street",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Broadcom Falls 5% Despite DA Davidson Upgrade on Anthropic and OpenAI IPO Hopes; Arm and Qualcomm Sink 10%, Marvell Drops 8%",
+        "domain": "Yahoo",
+        "date": "20261030"
+      },
+      {
+        "title": "The Other Elon Musk ETF Responds as Tesla Tops $100",
+        "domain": "Benzinga",
+        "date": "20261030"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

@@ -24,5 +24,85 @@
     ],
     "summary": "The call presents a mixed transition story: near-term earnings face a shrinking handset market, sharply accelerated Apple share loss, elevated costs and margin dilution, while automotive and IoT remain strong and data center creates a potentially substantial diversification opportunity. Management was direct and confident in the Q&A, but the aggressive non-handset targets rely on successful data center ramps, pricing actions and execution against supply constraints, making the call neutral overall rather than clearly bullish or bearish.",
     "type": "earnings_transcript"
+  },
+  {
+    "call_date": "2026-11-04",
+    "when": "2026-11-04T16:00:00-05:00",
+    "eps_estimate": 2.16,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-05",
+        "eps_estimate": 2.88,
+        "reported_eps": 3.0,
+        "surprise_pct": 4.32
+      },
+      {
+        "earnings_date": "2026-02-04",
+        "eps_estimate": 3.4,
+        "reported_eps": 3.5,
+        "surprise_pct": 2.87
+      },
+      {
+        "earnings_date": "2026-04-29",
+        "eps_estimate": 2.56,
+        "reported_eps": 2.65,
+        "surprise_pct": 3.34
+      },
+      {
+        "earnings_date": "2026-07-29",
+        "eps_estimate": 2.23,
+        "reported_eps": 2.21,
+        "surprise_pct": -0.74
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-01",
+    "call_date": "2026-11-04",
+    "narrative": "Investors should focus on Qualcomm\u2019s outlook for premium smartphones, especially demand outside Apple, as the headlines point to an unusually volatile semiconductor backdrop and Apple\u2019s earnings are also in focus. They should also watch whether management highlights AI-enabled devices, automotive, and edge-computing growth\u2014areas consistent with the broader AI and digital-technology themes in the headlines\u2014as meaningful offsets to handset cyclicality. Given Intel\u2019s record weakness and the market\u2019s sensitivity to technology earnings, guidance and commentary on chip demand, inventory, and China exposure may matter as much as the reported quarter. My expectation is for a closely watched, potentially volatile call: Qualcomm\u2019s diversified model is a relative strength, but investors will likely demand evidence that newer growth businesses are compensating for any softness in smartphones.",
+    "headlines_used": [
+      {
+        "title": "FREELANDER Showcases AI and Digital Technology to International Guests",
+        "domain": "Yahoo",
+        "date": "20261101"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261101"
+      },
+      {
+        "title": "Intel Is Down 45% in October, Its Worst Month Ever",
+        "domain": "Yahoo",
+        "date": "20261031"
+      },
+      {
+        "title": "Apple Leads Packed Earnings Calendar As Investors Eye Tech, Pharma Results",
+        "domain": "SeekingAlpha",
+        "date": "20261031"
+      },
+      {
+        "title": "S&P 500 Top Movers: Gainers and Losers in Today's US Session",
+        "domain": "ChartMill",
+        "date": "20261030"
+      },
+      {
+        "title": "Alphabet Posts Worst Week Since 2011, Intel Suffers Record Crash as Warsh Sees 'Cracks': This Week on Wall Street",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "S&P 500 Gap Movers for October 30, 2026",
+        "domain": "ChartMill",
+        "date": "20261030"
+      },
+      {
+        "title": "The Other Elon Musk ETF Responds as Tesla Tops $100",
+        "domain": "Benzinga",
+        "date": "20261030"
+      }
+    ],
+    "type": "earnings_preview"
   }
 ]
