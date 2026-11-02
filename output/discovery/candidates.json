@@ -9526,5 +9526,55 @@
     "article_link": "https://www.thediff.co/archive/longreads-open-thread-207/",
     "name": "bookstore retail",
     "why": "Barnes & Noble is described as having diluted its bookstore identity by allocating more store space to non-book products; Its turnaround requires accepting lower near-term revenue to rebuild customer foot traffic"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "SemiAnalysis",
+    "article_title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+    "article_link": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its GDPval benchmark is criticized as outdated for modern agents; GPT-6 models are evaluated across GDPx domains and perform strongly in some areas but still fail difficult finance, legal, engineering and quant tasks"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "SemiAnalysis",
+    "article_title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+    "article_link": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude models generally rank among the strongest performers in GDPx; Opus 5.5 leads overall and wins quant trading, hardware design and chip design"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "SemiAnalysis",
+    "article_title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+    "article_link": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "name": "Living Context",
+    "ticker_guess": null,
+    "why": "Provided GDPx finance tasks based on a realistic private-equity transaction with about 4,000 anonymized files; no tested model solved its public quality-of-earnings task"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "SemiAnalysis",
+    "article_title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+    "article_link": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "name": "Third Moment",
+    "ticker_guess": null,
+    "why": "Provided quant-trading tasks using full order-book event tapes and hidden out-of-sample evaluation; 70 of 111 model runs underperformed the reference strategy"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "SemiAnalysis",
+    "article_title": "GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains",
+    "article_link": "https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities",
+    "name": "Beautiful Machines",
+    "ticker_guess": null,
+    "why": "Provided hardware-design tasks using professional CAD, PCB and engineering environments; no tested model achieved a verified full pass on its public compressor-housing task"
   }
 ]

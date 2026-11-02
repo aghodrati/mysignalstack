@@ -82,5 +82,75 @@
     ],
     "summary": "The call presented a highly bullish AI infrastructure expansion story, with $3.1 billion of contracted ARR, a $3.7 billion year-end 2026 target, 480 MW scheduled for delivery in 2026, and a path to 1.21 GW in 2027. Q&A reinforced management's confidence in demand and air-cooled GPU economics, but also highlighted limited disclosure on GPU counts, unit economics, total financing needs, customer mix, and the conversion of secured power into operational compute. The call implies a positive earnings direction, tempered by execution, financing, customer concentration, and ongoing Bitcoin-mining transition risks.",
     "type": "earnings_transcript"
+  },
+  {
+    "call_date": "2026-11-05",
+    "when": "2026-11-05T16:00:00-05:00",
+    "eps_estimate": -0.66,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-06",
+        "eps_estimate": 0.14,
+        "reported_eps": 0.01,
+        "surprise_pct": -94.38
+      },
+      {
+        "earnings_date": "2026-02-05",
+        "eps_estimate": -0.25,
+        "reported_eps": -0.03,
+        "surprise_pct": 88.44
+      },
+      {
+        "earnings_date": "2026-05-08",
+        "eps_estimate": -0.26,
+        "reported_eps": -0.16,
+        "surprise_pct": 38.42
+      },
+      {
+        "earnings_date": "2026-08-27",
+        "eps_estimate": -0.45,
+        "reported_eps": -0.25,
+        "surprise_pct": 44.09
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-02",
+    "call_date": "2026-11-05",
+    "narrative": "Investors should watch whether IREN can substantiate the \u201cdemand is exploding\u201d narrative with concrete AI-capacity additions, customer commitments, deployment timing, and power availability. The call should also clarify how quickly that capacity can translate into higher future earnings, including utilization, capital needs, and the balance between its AI infrastructure and existing digital-asset mining operations. Given the recent 52-week-low headline and broader AI-bubble concerns, management\u2019s discussion of execution risks, funding, and customer concentration will be especially important. My expectation is for an upbeat long-term AI-growth message, but with near-term results and guidance potentially scrutinized for evidence that capacity is becoming revenue-producing rather than merely planned.",
+    "headlines_used": [
+      {
+        "title": "Nvidia, Costco and 10 More Issuers Opt Out of ICE and OKX\u2019s Tokenized Stock Venue",
+        "domain": "Yahoo",
+        "date": "20261102"
+      },
+      {
+        "title": "Why Did RDDT, IREN, MBLY Stocks Tumble To 52-Week Lows Last Week?",
+        "domain": "Yahoo",
+        "date": "20261102"
+      },
+      {
+        "title": "Elon Musk\u2019s Net Worth Takes a Hit as SpaceX Stock Dips on AI Bubble Jitters",
+        "domain": "Benzinga",
+        "date": "20261101"
+      },
+      {
+        "title": "IREN And IRE: Demand Is Exploding, Yet Questions Remain",
+        "domain": "SeekingAlpha",
+        "date": "20261101"
+      },
+      {
+        "title": "These 3 ETFs Doubled Investors' Money in October as AI Stocks Crashed",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "IREN Limited: A Strong Buy As AI Capacity Builds Toward Higher Future Earnings",
+        "domain": "SeekingAlpha",
+        "date": "20261030"
+      }
+    ],
+    "type": "earnings_preview"
   }
 ]

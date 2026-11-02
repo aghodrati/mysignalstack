@@ -1404,5 +1404,43 @@
     "trade_worthy": false,
     "context": "The forecast implies an exceptionally large global datacenter buildout, with Microsoft participating both as a lease buyer and hyperscaler builder. SemiAnalysis expects the resulting capital demand to put upward pressure on interest rates. Microsoft may therefore face heavier capital expenditures, financing and infrastructure costs, and potentially valuation pressure if rates rise, although the article does not quantify the effect on Microsoft specifically.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "765b8d47a1f51932",
+    "ticker": "MSFT",
+    "source_link": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
+    "source_title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
+    "event_type": "regulatory",
+    "created": "2026-11-01",
+    "claim": "MSFT\u2019s 2027 datacenter expansion is largely insulated from election risk",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Roughly three-quarters of the 33.8 GW expected across the top 20 states for 2027 is already under construction, limiting the ability of new permitting restrictions to disrupt near-term capacity delivery. Microsoft is identified among the hyperscalers developing datacenters, so its already-started projects would generally have greater protection than unstarted projects, although individual campuses may still require later permits or power phases.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "9778222f166c1cbc",
+    "ticker": "MSFT",
+    "source_link": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
+    "source_title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
+    "event_type": "regulatory",
+    "created": "2026-11-01",
+    "claim": "MSFT faces higher costs and potential delays for its 2028 datacenter pipeline",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Most of the 62.2 GW of US net additions forecast for 2028 has not yet started construction, and restrictive candidates could affect roughly 30 GW across the relevant states. Texas alone represents close to 30% of planned 2028 US capacity and could impose a five- to nine-month longer interruption if permitting does not restart around December 2026. Microsoft can generally absorb higher development costs and fund power, but its projects still depend on state permits, equipment availability and construction schedules; moratoriums could therefore delay capacity delivery, while conditions such as grid-cost payments, water-use requirements and reduced tax incentives could raise capital costs and pressure returns.",
+    "source": "SemiAnalysis"
   }
 ]
