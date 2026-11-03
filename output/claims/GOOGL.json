@@ -2430,5 +2430,24 @@
     "trade_worthy": false,
     "context": "Roughly three-quarters of the 33.8 GW expected across the top 20 states for 2027 is already under construction, making near-term US capacity additions less exposed to the election-driven policy changes. This is relevant to Google as a major hyperscale developer, although the article does not quantify Google\u2019s share of that already-started capacity or identify specific protected projects.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "2342209aa5e03151",
+    "ticker": "GOOGL",
+    "source_link": "https://www.thediff.co/archive/understanding-anthropic/",
+    "source_title": "Understanding Anthropic",
+    "event_type": "other",
+    "created": "2026-11-02",
+    "claim": "GOOGL faces valuation pressure from aggressive AI spending",
+    "direction": "short",
+    "confidence": 0.92,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Google as an AI-related stock that has sold off because it is spending too aggressively. In the article\u2019s framing, the capital intensity of competing in AI can pressure investor perceptions of Google\u2019s financial discipline and returns, even as the company invests to remain competitive. GOOGL\u2019s recent five-day and one-month declines are consistent with this pressure, but the article does not provide a sufficiently specific earnings or valuation estimate to size the effect.",
+    "source": "The Diff"
   }
 ]

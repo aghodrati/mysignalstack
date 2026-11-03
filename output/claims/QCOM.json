@@ -36,5 +36,43 @@
     "trade_worthy": false,
     "context": "The article states that Qualcomm\u2019s Automotive and IoT businesses each grew strongly during Q3 FY2026 even as handset revenue fell 20%. This supports a more favorable longer-term mix shift toward non-handset markets, although the article does not provide segment growth rates, dollar contributions, or enough detail to determine whether these businesses can fully replace the handset shortfall.",
     "source": "Semiconductor Engineering"
+  },
+  {
+    "id": "f303f8c1319444fe",
+    "ticker": "QCOM",
+    "source_link": "https://www.nextplatform.com/ai/2026/11/02/qualcomm-has-eyes-on-the-ai-inference-datacenter-with-hbc-and-ai250/5306954",
+    "source_title": "Qualcomm Has Eyes On The AI Inference Datacenter With HBC And AI250",
+    "event_type": "product_launch",
+    "created": "2026-11-02",
+    "claim": "HBC validation reduces Qualcomm\u2019s AI250 manufacturing and launch risk",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Qualcomm validated first-generation HBC silicon\u2019s complete memory read-write path and near-memory computations at production levels using automated test equipment. Management said this validation supports its plans for high-yield AI250 manufacturing, which is expected to begin sampling in the first half of 2027, although commercial production and customer adoption remain unproven.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "07d8df8a9b30236c",
+    "ticker": "QCOM",
+    "source_link": "https://www.nextplatform.com/ai/2026/11/02/qualcomm-has-eyes-on-the-ai-inference-datacenter-with-hbc-and-ai250/5306954",
+    "source_title": "Qualcomm Has Eyes On The AI Inference Datacenter With HBC And AI250",
+    "event_type": "product_launch",
+    "created": "2026-11-02",
+    "claim": "HBC strengthens Qualcomm\u2019s competitive position in AI inference datacenters",
+    "direction": "long",
+    "confidence": 0.77,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The HBC package places an AI accelerator beneath an LPDDR memory stack, keeping most inference processing near the data. Qualcomm reported up to 18 times LPDDR memory bandwidth and five times HBM4 terabit-per-second-per-watt efficiency in testing, potentially giving its Dragonfly AI250 and Dragonfly Rack platforms a performance and operating-cost advantage over conventional HBM-based solutions. The company plans AI250 sampling in 2027 and AI300 sampling in 2028, but customer uptake and revenue impact are not yet established.",
+    "source": "Next Platform"
   }
 ]

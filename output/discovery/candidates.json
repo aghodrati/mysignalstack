@@ -9576,5 +9576,35 @@
     "name": "Beautiful Machines",
     "ticker_guess": null,
     "why": "Provided hardware-design tasks using professional CAD, PCB and engineering environments; no tested model achieved a verified full pass on its public compressor-housing task"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "The Diff",
+    "article_title": "Understanding Anthropic",
+    "article_link": "https://www.thediff.co/archive/understanding-anthropic/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Preparing for an IPO with founders retaining 50.1% voting rights and a trust appointing most board members; Q2 revenue reached $11.6 billion after quarterly growth of 48%, 132%, and 144%, before slowing to 45%; Committed to approximately $850 billion in compute spending and reported $130 billion of cash plus substantial credit lines"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "The Diff",
+    "article_title": "Understanding Anthropic",
+    "article_link": "https://www.thediff.co/archive/understanding-anthropic/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Used as Anthropic\u2019s primary comparison throughout the article; Anthropic is portrayed as more safety-focused and differentiated by its emphasis on text, code, and developer users; A reduction in OpenAI\u2019s fundraising target was used to haircut Anthropic\u2019s implied IPO value"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "The Diff",
+    "article_title": "Understanding Anthropic",
+    "article_link": "https://www.thediff.co/archive/understanding-anthropic/",
+    "name": "Cloudflare",
+    "ticker_guess": null,
+    "why": "Could become a toll collector for AI training data if publishers increasingly rely on it to control access; AI labs are promoting shared opt-out standards partly to prevent that outcome"
   }
 ]

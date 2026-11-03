@@ -1,0 +1,77 @@
+[
+  {
+    "call_date": "2026-11-06",
+    "when": "2026-11-06T08:00:00-05:00",
+    "eps_estimate": -0.26,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-08-11",
+        "eps_estimate": -0.11,
+        "reported_eps": -0.18,
+        "surprise_pct": -63.64
+      },
+      {
+        "earnings_date": "2025-11-11",
+        "eps_estimate": -0.12,
+        "reported_eps": -0.2,
+        "surprise_pct": -60.9
+      },
+      {
+        "earnings_date": "2026-03-17",
+        "eps_estimate": -0.16,
+        "reported_eps": -0.27,
+        "surprise_pct": -65.05
+      },
+      {
+        "earnings_date": "2026-08-07",
+        "eps_estimate": -0.16,
+        "reported_eps": -0.28,
+        "surprise_pct": -74.57
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-03",
+    "call_date": "2026-11-06",
+    "narrative": "Investors should focus on execution: progress toward deploying Oklo\u2019s advanced reactors, customer and regulatory milestones, project timelines, and any evidence that its commercial pipeline is becoming more tangible. The \u201cbullish on nuclear, skeptical of execution\u201d and \u201cstalking an entry\u201d headlines suggest the central question is whether management can convert strong sector enthusiasm into reliable delivery and financing progress. The call may also address competitive positioning versus NuScale and X-Energy, particularly customer traction and the path to commercialization. Expectations should remain cautious: sentiment is constructive enough for B. Riley to retain a Buy rating, but TD Cowen\u2019s Hold and the execution concerns imply that investors will likely demand concrete milestones rather than broad optimism.",
+    "headlines_used": [
+      {
+        "title": "X-Energy Has Amazon as an Anchor Customer and Went Public in April. Is It a Better SMR Stock Than Oklo?",
+        "domain": "Yahoo",
+        "date": "20261102"
+      },
+      {
+        "title": "Here's How to Play NuScale Stock Before Q3 Earnings Release",
+        "domain": "Yahoo",
+        "date": "20261102"
+      },
+      {
+        "title": "Frontier Nuclear And Minerals Launches 2026 Drill Program At Pine Ridge Uranium Project In Wyoming\u2019s Powder River Basin",
+        "domain": "Benzinga",
+        "date": "20261030"
+      },
+      {
+        "title": "Oklo: Bullish On Nuclear Energy, Skeptical Of Execution",
+        "domain": "SeekingAlpha",
+        "date": "20261028"
+      },
+      {
+        "title": "B. Riley Securities Maintains Buy on Oklo, Lowers Price Target to $61",
+        "domain": "Benzinga",
+        "date": "20261028"
+      },
+      {
+        "title": "Oklo: Stalking An Entry As The Boom And Bust Cycle Concludes",
+        "domain": "SeekingAlpha",
+        "date": "20261027"
+      },
+      {
+        "title": "TD Cowen Initiates Coverage of Oklo at Hold",
+        "domain": "Fintel",
+        "date": "20261027"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]
