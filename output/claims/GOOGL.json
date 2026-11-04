@@ -2449,5 +2449,43 @@
     "trade_worthy": false,
     "context": "The article identifies Google as an AI-related stock that has sold off because it is spending too aggressively. In the article\u2019s framing, the capital intensity of competing in AI can pressure investor perceptions of Google\u2019s financial discipline and returns, even as the company invests to remain competitive. GOOGL\u2019s recent five-day and one-month declines are consistent with this pressure, but the article does not provide a sufficiently specific earnings or valuation estimate to size the effect.",
     "source": "The Diff"
+  },
+  {
+    "id": "ce1cb798e9972644",
+    "ticker": "GOOGL",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "source_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "event_type": "m_and_a",
+    "created": "2026-11-03",
+    "claim": "GOOGL may face greater optical-component supply risk",
+    "direction": "short",
+    "confidence": 0.74,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Marvell is acquiring Lumentum, one of only two key indium-phosphide laser suppliers, while Lumentum\u2019s order book is reportedly sold out through early 2029. Although Marvell says it will continue selling to Google and other customers, vertical integration could allow it to favor its own custom CPU/XPU business, potentially making access to scarce optical capacity less predictable for Google\u2019s AI infrastructure.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "3e9c8c8d67497244",
+    "ticker": "GOOGL",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "source_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "event_type": "m_and_a",
+    "created": "2026-11-03",
+    "claim": "GOOGL\u2019s optical-circuit-switch strategy gains industry validation",
+    "direction": "long",
+    "confidence": 0.69,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article highlights Google\u2019s Palomar optical circuit switch, used to connect nearly 10,000 TPU accelerators in reconfigurable topologies. Marvell expects other hyperscalers and AI builders to adopt optical circuit switches because of potential power and latency advantages, which supports the strategic value of Google\u2019s existing optical-fabric approach and may help its AI-system scalability relative to architectures relying solely on Ethernet.",
+    "source": "Next Platform"
   }
 ]

@@ -1442,5 +1442,43 @@
     "trade_worthy": false,
     "context": "Most of the 62.2 GW of US net additions forecast for 2028 has not yet started construction, and restrictive candidates could affect roughly 30 GW across the relevant states. Texas alone represents close to 30% of planned 2028 US capacity and could impose a five- to nine-month longer interruption if permitting does not restart around December 2026. Microsoft can generally absorb higher development costs and fund power, but its projects still depend on state permits, equipment availability and construction schedules; moratoriums could therefore delay capacity delivery, while conditions such as grid-cost payments, water-use requirements and reduced tax incentives could raise capital costs and pressure returns.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "38db41319f7164fd",
+    "ticker": "MSFT",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "source_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "event_type": "m_and_a",
+    "created": "2026-11-03",
+    "claim": "Optical shortages could constrain Microsoft\u2019s custom AI-chip expansion",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Lumentum\u2019s indium phosphide laser order book is reportedly sold out through early 2029, and the article identifies optical components as a prospective gating factor for AI infrastructure. Because Marvell\u2019s custom CPU/XPU business includes Microsoft, constrained laser and photonics capacity could limit the pace at which Microsoft deploys or scales custom silicon-based AI systems before additional supply becomes available.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "f5a0ec09d316d838",
+    "ticker": "MSFT",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "source_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "event_type": "m_and_a",
+    "created": "2026-11-03",
+    "claim": "Marvell\u2019s acquisition could improve Microsoft\u2019s long-term optical supply access",
+    "direction": "long",
+    "confidence": 0.72,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Marvell plans to acquire Lumentum and combine its photonics, laser, optical-switching, and packaging capabilities with Marvell\u2019s custom-chip business, which serves Microsoft alongside AWS and Google. Vertical integration could help secure photonics capacity and support near-package and co-packaged optics for Microsoft\u2019s future custom CPUs or XPUs, although the transaction is not expected to close until the first half of 2028 and faces potential regulatory scrutiny.",
+    "source": "Next Platform"
   }
 ]

@@ -1233,5 +1233,24 @@
     "trade_worthy": false,
     "context": "Classiq has more than four dozen enterprise customers, including Comcast, AT&T, BMW, Rolls-Royce, Oak Ridge National Laboratory, NTT Data, Mphasis, Lufthansa, and Wells Fargo. Intel acknowledged that its quantum group had done little customer engagement, so acquiring Classiq would provide an existing commercial channel, customer base, and software-led entry point across multiple quantum hardware modalities.",
     "source": "Next Platform"
+  },
+  {
+    "id": "536faedb8fb008a6",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "source_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "event_type": "m_and_a",
+    "created": "2026-11-03",
+    "claim": "Marvell-Lumentum strengthens competition against Intel in datacenter connectivity",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The combined company would span optical fabrics from datacenter and rack connectivity through package-level links, while Marvell seeks to expand beyond connectivity into custom CPUs and XPUs. The article explicitly frames this strategy as nipping at the heels of Intel and AMD, potentially intensifying competitive pressure on Intel\u2019s datacenter and AI infrastructure businesses. Marvell also intends to sell optical components to Intel, so the competitive effect is mixed with a supplier relationship rather than being an outright displacement threat.",
+    "source": "Next Platform"
   }
 ]

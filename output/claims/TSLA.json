@@ -188,5 +188,24 @@
     "trade_worthy": false,
     "context": "Tesla said production of the second-generation Roadster would begin in 2028, nine years after it was first teased and following multiple delays. Thus, despite the unveiling, the model is unlikely to contribute materially to Tesla\u2019s revenue, deliveries, or earnings over the next several quarters; the article gives no production volume or pricing estimates.",
     "source": "Not Boring"
+  },
+  {
+    "id": "4f77b9fddf9156a4",
+    "ticker": "TSLA",
+    "source_link": "https://newsletter.semianalysis.com/p/elon-is-doing-it-again-spacex-will",
+    "source_title": "Elon Is Doing It Again: SpaceX Will Be The World\u2019s Biggest AI Cloud",
+    "event_type": "capex",
+    "created": "2026-11-03",
+    "claim": "Tesla could gain incremental infrastructure revenue from SpaceX\u2019s datacenter expansion",
+    "direction": "long",
+    "confidence": 0.42,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article speculates that Tesla may manufacture modular mechanical, electrical, and plumbing equipment for SpaceX\u2019s rapidly expanding datacenters, while also suggesting Tesla could become more than a battery-storage merchant to SpaceX. If realized, this could create additional equipment and BESS demand for Tesla, but the article provides no confirmed agreement, revenue figure, or timing, so the implication is indirect and highly uncertain.",
+    "source": "SemiAnalysis"
   }
 ]

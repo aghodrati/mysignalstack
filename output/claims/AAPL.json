@@ -454,5 +454,43 @@
     "trade_worthy": false,
     "context": "The article highlights Apple\u2019s surprising partnership with Meta to enable Meta\u2019s new open-source AI model to run locally on Apple devices. This could improve Apple devices\u2019 access to generative-AI functionality and help support the value of Apple\u2019s integrated ecosystem, although the article does not quantify adoption, monetization, or the model\u2019s performance relative to Apple\u2019s own AI efforts.",
     "source": "Stratechery"
+  },
+  {
+    "id": "c9a28f8b99b60229",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/ai-on-the-ballot/",
+    "source_title": "AI on the Ballot",
+    "event_type": "regulatory",
+    "created": "2026-11-04",
+    "claim": "Apple gains as constrained compute increases demand for edge inference",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that if political opposition limits new U.S. data-center construction, compute will remain scarce and expensive for longer. That makes inference performed locally on devices more valuable, favoring Apple because its products and ecosystem can support greater reliance on edge inference rather than exclusively cloud-based AI services.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "23bdd40904c75e18",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/ai-on-the-ballot/",
+    "source_title": "AI on the Ballot",
+    "event_type": "regulatory",
+    "created": "2026-11-04",
+    "claim": "A slower AI buildout could ease Apple\u2019s memory-cost pressure",
+    "direction": "long",
+    "confidence": 0.85,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies memory as a current AI-infrastructure bottleneck and argues that a slowdown in data-center expansion would eventually reduce demand for AI-related memory. Apple, described as a major beneficiary of the prior computing paradigm, could benefit from improved memory availability and lower component-cost pressure, although the effect would take time to emerge.",
+    "source": "Stratechery"
   }
 ]

@@ -967,5 +967,24 @@
     "trade_worthy": false,
     "context": "Furiosa is developing its third-generation accelerator with Broadcom, potentially using Broadcom\u2019s Tomahawk networking products and 3.5D XDSiP advanced-packaging architecture for a rack-scale system. If adopted, this would add a South Korean accelerator customer to Broadcom\u2019s custom AI silicon, networking, and packaging opportunity set, while sovereign-AI demand could support further non-American accelerator deployments. However, the specific Broadcom products and commercial economics remain undisclosed, and the article presents the architecture as an inference rather than a confirmed design.",
     "source": "Next Platform"
+  },
+  {
+    "id": "0c1b7ce42dad0915",
+    "ticker": "AVGO",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "source_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "event_type": "m_and_a",
+    "created": "2026-11-03",
+    "claim": "Marvell-Lumentum intensifies competition against AVGO in AI connectivity",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The combined Marvell-Lumentum would span optical fabrics from datacenter and rack connectivity down to near-package and co-packaged optics, strengthening Marvell\u2019s ability to serve hyperscalers\u2019 custom CPUs and XPUs while supplying other chipmakers. This could challenge Broadcom\u2019s position in AI connectivity over the long term, although the article says Nvidia and Broadcom will still have connectivity businesses several times larger than the expanded Marvell-Lumentum. The deal is not expected to close until the first half of 2028 and faces potential Chinese and European antitrust scrutiny, making the competitive impact distant and uncertain.",
+    "source": "Next Platform"
   }
 ]

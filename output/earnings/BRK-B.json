@@ -1,0 +1,41 @@
+[
+  {
+    "call_date": "2026-11-07",
+    "when": "2026-11-07T16:00:00-05:00",
+    "eps_estimate": 6.14,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-01",
+        "eps_estimate": 5.73,
+        "reported_eps": 6.25,
+        "surprise_pct": 9.0
+      },
+      {
+        "earnings_date": "2026-02-28",
+        "eps_estimate": 5.17,
+        "reported_eps": 4.73,
+        "surprise_pct": -8.48
+      },
+      {
+        "earnings_date": "2026-05-02",
+        "eps_estimate": 5.05,
+        "reported_eps": 5.26,
+        "surprise_pct": 4.17
+      },
+      {
+        "earnings_date": "2026-08-08",
+        "eps_estimate": 5.13,
+        "reported_eps": 6.03,
+        "surprise_pct": 17.4
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-04",
+    "call_date": "2026-11-07",
+    "narrative": "With no relevant headlines from the past seven days, investors should focus on Berkshire Hathaway\u2019s core operating trends rather than any specific news-driven catalyst. Key areas include insurance underwriting results and catastrophe losses, investment income, performance across its industrial and consumer businesses, and whether management comments on its large cash position and capital-allocation plans. I would expect a relatively resilient report given Berkshire\u2019s diversification, but quarterly results could still be volatile because of market movements and insurance claims; management\u2019s outlook and commentary may matter more than any single quarter\u2019s figures.",
+    "headlines_used": [],
+    "type": "earnings_preview"
+  }
+]

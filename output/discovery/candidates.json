@@ -9606,5 +9606,141 @@
     "name": "Cloudflare",
     "ticker_guess": null,
     "why": "Could become a toll collector for AI training data if publishers increasingly rely on it to control access; AI labs are promoting shared opt-out standards partly to prevent that outcome"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Stratechery",
+    "article_title": "AI on the Ballot",
+    "article_link": "https://stratechery.com/2026/ai-on-the-ballot/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its updated S-1 is cited as evidence that inference margins are high while compute spending is dominated by R&D; frontier-lab competition could be moderated by constrained compute and political opposition to data-center expansion"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Stratechery",
+    "article_title": "AI on the Ballot",
+    "article_link": "https://stratechery.com/2026/ai-on-the-ballot/",
+    "name": "Huawei",
+    "ticker_guess": null,
+    "why": "Its CloudMatrix 384 system is presented as a less power-efficient alternative to Nvidia\u2019s systems; China could compensate for weaker chips by deploying substantially more electricity"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Stratechery",
+    "article_title": "AI on the Ballot",
+    "article_link": "https://stratechery.com/2026/ai-on-the-ballot/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Its payments data from 72,000 non-AI SaaS businesses showed revenue growth accelerating above 30%; the data contradicts fears that AI had already caused a broad SaaS revenue collapse"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-03",
+    "source": "Next Platform",
+    "article_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "article_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "name": "Marvell Technology",
+    "ticker_guess": "MRVL",
+    "why": "Agreed to acquire Lumentum for $80 billion in stock and assume approximately $35 billion in debt and obligations; seeks to vertically integrate datacenter connectivity, photonics, and custom CPU/XPU offerings; expects the transaction to close in the first half of 2028"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-03",
+    "source": "Next Platform",
+    "article_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "article_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "name": "Lumentum",
+    "ticker_guess": "LITE",
+    "why": "Supplies indium phosphide lasers and other optical components for datacenter interconnects; reported $1.26 billion in sales and $360.3 million in profit in its most recent quarter; its photonics order book is reportedly sold out through early 2029"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-03",
+    "source": "Next Platform",
+    "article_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "article_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "name": "Coherent",
+    "ticker_guess": "COHR",
+    "why": "Identified as Lumentum\u2019s principal competing supplier of lasers and optical circuit-switch components; received $2 billion to expand manufacturing in March 2026; could become a takeover target following the Marvell-Lumentum deal"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-03",
+    "source": "Next Platform",
+    "article_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "article_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "name": "MediaTek",
+    "ticker_guess": "2454.TW",
+    "why": "Mentioned as a larger semiconductor competitor that Marvell hopes to bypass as it expands into broader datacenter connectivity and custom-chip markets"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-03",
+    "source": "Next Platform",
+    "article_title": "Marvell Cuts To The Front Of The Datacenter Optics Line With Lumentum Deal",
+    "article_link": "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392",
+    "name": "Celestial AI",
+    "ticker_guess": null,
+    "why": "Marvell acquired the photonics-interposer technology company for $3.25 billion in December 2025; the acquisition is described as positioning Marvell for optical on-package compute engines"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Doomberg",
+    "article_title": "Recycle Bin",
+    "article_link": "https://newsletter.doomberg.com/p/recycle-bin",
+    "name": "EQT",
+    "ticker_guess": "EQT",
+    "why": "Announced a $13 billion all-stock acquisition of Range Resources; the deal is intended to create the largest US natural gas producer"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Doomberg",
+    "article_title": "Recycle Bin",
+    "article_link": "https://newsletter.doomberg.com/p/recycle-bin",
+    "name": "Range Resources",
+    "ticker_guess": "RRC",
+    "why": "Agreed to be acquired by EQT in a $13 billion all-stock transaction; it is described as a pure-play natural gas producer"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-04",
+    "source": "Doomberg",
+    "article_title": "Recycle Bin",
+    "article_link": "https://newsletter.doomberg.com/p/recycle-bin",
+    "name": "natural gas",
+    "why": "US natural gas production is forecast to grow by more than the EU\u2019s total output in both 2026 and 2027; abundant Appalachian supply has pushed spot prices to roughly $1\u20132 per million BTUs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-04",
+    "source": "Doomberg",
+    "article_title": "Recycle Bin",
+    "article_link": "https://newsletter.doomberg.com/p/recycle-bin",
+    "name": "LNG exports",
+    "why": "New US Gulf Coast LNG terminals are expected to drive a step-change in domestic gas demand; producers are consolidating to secure supply for export growth"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-04",
+    "source": "Doomberg",
+    "article_title": "Recycle Bin",
+    "article_link": "https://newsletter.doomberg.com/p/recycle-bin",
+    "name": "power generation",
+    "why": "Planned gas-fired power plants are expected to supply electricity-intensive data centers; shortages of gas-fired turbines could delay the conversion of abundant gas into electricity"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-04",
+    "source": "Doomberg",
+    "article_title": "Recycle Bin",
+    "article_link": "https://newsletter.doomberg.com/p/recycle-bin",
+    "name": "turbine supply chain",
+    "why": "Major gas-turbine suppliers are reportedly sold out for years; some new orders placed in 2026 may not be delivered until 2030 or later"
   }
 ]

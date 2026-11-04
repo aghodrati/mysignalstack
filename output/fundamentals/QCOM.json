@@ -40,5 +40,54 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-11-04",
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.6,
+    "summary": "Qualcomm offers a moderately attractive valuation and strong cash-generation profile, with a forward P/E of 16.2, PEG ratio of 0.74, 28.1% free-cash-flow margin, and roughly 19.8% implied upside to consensus fair value. However, contracting revenue and earnings, alongside weaker analyst momentum and deteriorating institutional flows, limit conviction and suggest the upside depends on an earnings recovery.",
+    "key_changes": [
+      "Institutional flow deteriorated sharply from positive 36.5 to slightly negative -1.3, removing a prior ownership tailwind.",
+      "Analyst-implied upside declined from 23.5% to 19.8%, while net upgrades fell from 1 to 0.",
+      "EV-to-revenue increased 10.9% from 3.68 to 4.08, making the valuation somewhat less attractive.",
+      "PEG rose 17.5% from 0.63 to 0.74, still favorable but less compelling than at the prior check.",
+      "The low-short-interest signal improved modestly, from -3.83 to -3.12, but remains a limited positive rather than a major catalyst."
+    ],
+    "risks": [
+      "Revenue is declining 4% and earnings are declining 23%, raising the risk that current valuation metrics overstate normalized earnings power.",
+      "The valuation has become somewhat richer while analyst revisions and institutional flows have weakened.",
+      "Qualcomm remains exposed to cyclical handset demand, customer concentration, competitive pressure, and potential royalty or licensing disputes.",
+      "The consensus fair-value estimate may prove optimistic if the expected earnings recovery is delayed."
+    ],
+    "reasoning": "Strong free-cash-flow generation, reasonable valuation, and meaningful consensus upside support a modest long bias, but current earnings contraction and deteriorating sentiment justify only moderate confidence.",
+    "fair_value_estimate": 197.03448,
+    "current_price": 164.43,
+    "implied_return_pct": 19.8,
+    "factors": {
+      "Growth": {
+        "revenue_growth": -0.04,
+        "earnings_growth": -0.23
+      },
+      "Valuation": {
+        "forward_pe": 16.184229,
+        "peg_ratio": 0.74,
+        "ev_to_revenue": 4.077
+      },
+      "Quality": {
+        "operating_margin": 0.18528,
+        "fcf_margin": 0.28139963879653496
+      },
+      "Sentiment": {
+        "analyst_upside": 19.828790366721407,
+        "revisions_trend": 0.0,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": -1.3304997445000002,
+        "insider_flow": -54788214.0,
+        "low_short_interest": -3.1199999999999997
+      }
+    },
+    "trigger": "earnings"
   }
 ]

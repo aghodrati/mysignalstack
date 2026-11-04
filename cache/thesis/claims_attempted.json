@@ -1057,5 +1057,24 @@
   ],
   "https://www.thediff.co/archive/understanding-anthropic/": [
     "GOOGL"
+  ],
+  "https://newsletter.semianalysis.com/p/elon-is-doing-it-again-spacex-will": [
+    "SPCX",
+    "TSLA"
+  ],
+  "https://stratechery.com/2026/ai-on-the-ballot/": [
+    "AAPL",
+    "AMZN",
+    "NVDA",
+    "SPCX"
+  ],
+  "https://www.nextplatform.com/connect/2026/11/03/marvell-cuts-to-the-front-of-the-datacenter-optics-line-with-lumentum-deal/5307392": [
+    "AMD",
+    "AMZN",
+    "AVGO",
+    "GOOGL",
+    "INTC",
+    "MSFT",
+    "NVDA"
   ]
 }
