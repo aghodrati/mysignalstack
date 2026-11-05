@@ -9742,5 +9742,125 @@
     "article_link": "https://newsletter.doomberg.com/p/recycle-bin",
     "name": "turbine supply chain",
     "why": "Major gas-turbine suppliers are reportedly sold out for years; some new orders placed in 2026 may not be delivered until 2030 or later"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "Stratechery",
+    "article_title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
+    "article_link": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
+    "name": "Intuit",
+    "ticker_guess": "INTU",
+    "why": "CEO described a strategy to use AI to automate accounting, tax, payroll, payments and financial-product workflows; launched or highlighted Intuit Accountant Suite, Intuit Enterprise Suite and Intuit Intelligence; acknowledged Mailchimp has underperformed and that all strategic options remain open"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "Stratechery",
+    "article_title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
+    "article_link": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
+    "name": "Mailchimp",
+    "ticker_guess": null,
+    "why": "Intuit CEO said the $12 billion acquisition has not been executed well; Intuit has separated the business and is considering all options for its future"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "Stratechery",
+    "article_title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
+    "article_link": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
+    "name": "Credit Karma",
+    "ticker_guess": null,
+    "why": "Intuit said the platform has about 45 million monthly active users and more than 60,000 data points per consumer; it is being integrated with TurboTax and external large language models to recommend personalized financial products"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "Stratechery",
+    "article_title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
+    "article_link": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Intuit has a deep partnership and is integrating its financial experiences into OpenAI\u2019s LLM ecosystem; Intuit aims to be called by AI agents to execute financial decisions rather than merely provide information"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "Stratechery",
+    "article_title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
+    "article_link": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Intuit has a deep partnership and is integrating its financial experiences into Anthropic\u2019s LLM ecosystem; Intuit aims to provide financial intelligence and transaction execution inside external AI platforms"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Next Platform",
+    "article_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "name": "Samsung Electronics",
+    "ticker_guess": "005930",
+    "why": "Identified alongside SK Hynix and Micron as a source of HBM allocations limiting AMD Instinct GPU production"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Citrini Research",
+    "article_title": "State of the Themes",
+    "article_link": "https://www.citriniresearch.com/p/state-of-the-themes-556",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its recent S-1 was described as relatively clean; it has shifted much of the capital-intensive buildout risk to other parties and is approaching cash-flow breakeven earlier than expected"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Citrini Research",
+    "article_title": "State of the Themes",
+    "article_link": "https://www.citriniresearch.com/p/state-of-the-themes-556",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Cut token prices on July 30 to regain market share; the move is presented as evidence of commoditization and customer price sensitivity in AI services"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Interconnects",
+    "article_title": "How big is the open model economy today?",
+    "article_link": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+    "name": "Fireworks",
+    "ticker_guess": null,
+    "why": "Announced it serves more than 40T tokens per day to customers\u2019 customized models; said this inference vertical has grown more than 2x since summer"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Interconnects",
+    "article_title": "How big is the open model economy today?",
+    "article_link": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+    "name": "Baseten",
+    "ticker_guess": null,
+    "why": "Identified as one of the primary bellwethers for measuring open-model inference adoption"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Interconnects",
+    "article_title": "How big is the open model economy today?",
+    "article_link": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+    "name": "Together AI",
+    "ticker_guess": null,
+    "why": "Identified as one of the primary bellwethers for measuring open-model inference adoption"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Interconnects",
+    "article_title": "How big is the open model economy today?",
+    "article_link": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+    "name": "OpenRouter",
+    "ticker_guess": null,
+    "why": "Its reported API data provides a measure of open-model share of token volume"
   }
 ]

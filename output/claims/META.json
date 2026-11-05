@@ -2012,5 +2012,24 @@
     "trade_worthy": false,
     "context": "The article frames Meta\u2019s earnings around Mark Zuckerberg delivering on his Muse ambitions, which requires substantial and potentially escalating compute investment. That spending can weigh on near-term profitability and free cash flow even if it is intended to strengthen Meta\u2019s AI capabilities; the article does not quantify the spending or its earnings impact.",
     "source": "Stratechery"
+  },
+  {
+    "id": "e722e0c732d3d21b",
+    "ticker": "META",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "source_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "event_type": "earnings",
+    "created": "2026-11-04",
+    "claim": "Meta gains a limited alternative source of AI accelerator capacity",
+    "direction": "long",
+    "confidence": 0.84,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD said Helios racks equipped with Altair MI455X GPUs had begun shipping to Meta, alongside Microsoft, OpenAI, and Oracle. This gives Meta access to AMD-based AI infrastructure in addition to incumbent suppliers, but AMD\u2019s insufficient HBM allocations constrain Instinct GPU production and limit how materially this can diversify Meta\u2019s accelerator supply or reduce dependence on Nvidia.",
+    "source": "Next Platform"
   }
 ]

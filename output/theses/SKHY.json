@@ -223,5 +223,49 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.91,
     "confidence_after": 0.91
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-05",
+    "thesis": "SK Hynix remains a fundamentally attractive long as tight AI-driven HBM, DRAM, and enterprise-SSD markets, HBM4 ramping, and limited industry capacity support revenue and pricing power, but the latest earnings miss and execution risks warrant reduced conviction.",
+    "direction": "long",
+    "confidence": 0.78,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.82,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.78,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained HBM shortages and customer precommitments supporting pricing and shipment visibility through 2027",
+      "Successful HBM4 and higher-layer HBM ramps with improving yields and packaging capacity",
+      "Continued hyperscaler, GPU, XPU, and sovereign-AI infrastructure investment driving HBM and server-memory demand",
+      "Persistent DRAM and NAND supply discipline sustaining elevated selling prices and margins",
+      "Limited near-term disruption from CXMT in HBM and high-value server memory"
+    ],
+    "invalidation": [
+      "Further material earnings misses or evidence that reported margins, revenue growth, or valuation metrics are unreliable",
+      "HBM4E/HBM5 yield, thermal, packaging, or capacity problems that materially raise costs or limit sellable output",
+      "Micron, Samsung, CXMT, or other competitors taking meaningful HBM share or offering superior next-generation products",
+      "A sharp slowdown or cancellation of AI infrastructure spending, causing HBM, DRAM, or enterprise-SSD demand and pricing to weaken",
+      "Customer bargaining power or customized-HBM designs reducing SK Hynix's margins and preferred-supplier position",
+      "CXMT expansion creating a larger-than-expected conventional DRAM glut and sustained price pressure"
+    ],
+    "reasoning": "The claims and independent fundamentals strongly favor a long, supported by tight supply, AI-memory growth, HBM4 participation, and inexpensive reported valuation, but confidence is tempered by the 34.24% Q3 EPS miss versus 6.24 estimated EPS, the absence of an earnings-call picture, anomalous fundamental data, and substantial HBM execution and cyclicality risks.",
+    "claims_considered": 40
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-05",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.78,
+    "confidence_after": 0.78
   }
 ]

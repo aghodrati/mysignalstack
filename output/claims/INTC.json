@@ -1252,5 +1252,43 @@
     "trade_worthy": false,
     "context": "The combined company would span optical fabrics from datacenter and rack connectivity through package-level links, while Marvell seeks to expand beyond connectivity into custom CPUs and XPUs. The article explicitly frames this strategy as nipping at the heels of Intel and AMD, potentially intensifying competitive pressure on Intel\u2019s datacenter and AI infrastructure businesses. Marvell also intends to sell optical components to Intel, so the competitive effect is mixed with a supplier relationship rather than being an outright displacement threat.",
     "source": "Next Platform"
+  },
+  {
+    "id": "6f07645cc10a6955",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "source_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "event_type": "earnings",
+    "created": "2026-11-04",
+    "claim": "AMD continues taking datacenter CPU share from Intel",
+    "direction": "short",
+    "confidence": 0.97,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says AMD has more than a third of x86 server CPU shipments and nearly half of x86 server CPU revenue in the first half of 2026. It attributes AMD\u2019s gains to stronger server products, higher average selling prices, and better process-node, packaging, and supply-chain execution that lets AMD grow shipments faster than Intel. Continued AMD share gains would pressure Intel\u2019s datacenter revenue, pricing, and profitability over coming quarters.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "14cb9d81b339dcdd",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "source_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "event_type": "earnings",
+    "created": "2026-11-04",
+    "claim": "Intel remains excluded from the accelerating datacenter AI accelerator market",
+    "direction": "short",
+    "confidence": 0.95,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article states that Intel has no meaningful datacenter GPU or AI accelerator, while AMD is shipping Instinct GPUs and Helios systems into deployments at major cloud and AI customers. Although AMD is not materially closing Nvidia\u2019s GPU gap because of HBM constraints, it is still participating in AI-related CPU, GPU, and rack demand that Intel largely cannot address, leaving Intel at a competitive disadvantage as datacenter AI spending expands.",
+    "source": "Next Platform"
   }
 ]

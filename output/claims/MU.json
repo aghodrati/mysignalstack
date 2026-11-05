@@ -834,5 +834,24 @@
     "trade_worthy": false,
     "context": "Micron is a founding chipmaker partner in Applied Materials\u2019 $5 billion EPIC center alongside TSMC, Intel, Samsung, and SK hynix. EPIC will place competing companies\u2019 engineers together with equipment makers and researchers, running materials research, equipment development, and pilot production in parallel rather than sequentially, potentially shortening development cycles for process technologies three to four generations ahead of current production. This supports MU\u2019s long-term process competitiveness, though the article provides no specific impact on revenue, margins, or timing.",
     "source": "Not Boring"
+  },
+  {
+    "id": "89859abd46982ee3",
+    "ticker": "MU",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "source_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "event_type": "earnings",
+    "created": "2026-11-04",
+    "claim": "HBM scarcity supports Micron\u2019s pricing power and demand outlook",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD says insufficient HBM allocations from Micron, Samsung, and SK Hynix are limiting its Instinct GPU production, while the article describes DRAM costs as exceptionally high. This indicates that HBM remains a supply-constrained input with strong demand from AI accelerator vendors, supporting Micron\u2019s pricing environment, although constrained capacity may also limit shipment volume.",
+    "source": "Next Platform"
   }
 ]

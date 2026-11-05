@@ -1480,5 +1480,43 @@
     "trade_worthy": false,
     "context": "Marvell plans to acquire Lumentum and combine its photonics, laser, optical-switching, and packaging capabilities with Marvell\u2019s custom-chip business, which serves Microsoft alongside AWS and Google. Vertical integration could help secure photonics capacity and support near-package and co-packaged optics for Microsoft\u2019s future custom CPUs or XPUs, although the transaction is not expected to close until the first half of 2028 and faces potential regulatory scrutiny.",
     "source": "Next Platform"
+  },
+  {
+    "id": "1e7dcd85e2b6c9c4",
+    "ticker": "MSFT",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "source_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "event_type": "earnings",
+    "created": "2026-11-04",
+    "claim": "MSFT gains an additional AI accelerator supplier through AMD deployments",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD said Helios racks using Altair MI455X GPUs had begun shipping to Microsoft, alongside Meta, OpenAI, and Oracle. This gives Microsoft a deployed AMD-based alternative to Nvidia accelerators and supports continued expansion of its AI infrastructure, although the article does not quantify the scale or financial contribution of these systems.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "80387caddb4f098d",
+    "ticker": "MSFT",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "source_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "event_type": "earnings",
+    "created": "2026-11-04",
+    "claim": "AMD\u2019s HBM shortage may limit Microsoft\u2019s access to AMD AI capacity",
+    "direction": "short",
+    "confidence": 0.72,
+    "importance": 5,
+    "expected_return_pct": -1.5,
+    "expected_horizon_days": 365,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article argues that insufficient HBM allocations from Samsung, SK Hynix, and Micron prevent AMD from producing enough Instinct GPUs to materially challenge Nvidia. Although Microsoft has begun receiving AMD Helios racks, the constrained AMD GPU supply could limit how quickly Microsoft can use AMD hardware to diversify its accelerator procurement or expand AI capacity through that supplier.",
+    "source": "Next Platform"
   }
 ]

@@ -739,5 +739,24 @@
     "trade_worthy": false,
     "context": "The article identifies SK Hynix as a major domestic HBM supplier positioned to support South Korean accelerator makers FuriosaAI and Rebellions. Furiosa plans to scale RNGD production to about 20,000 accelerators in 2026 and roughly twice that in 2027, while its next-generation accelerator is expected to use HBM4 or HBM4e. This could diversify and modestly expand HBM demand, although the disclosed accelerator volumes remain small relative with leading global AI accelerator shipments and no specific SK Hynix supply contract is announced.",
     "source": "Next Platform"
+  },
+  {
+    "id": "f2302d9cfa0453bd",
+    "ticker": "SKHY",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666",
+    "source_title": "AMD Cannot Catch Nvidia, But It Sure Can Make Some Money",
+    "event_type": "earnings",
+    "created": "2026-11-04",
+    "claim": "SKHY benefits from strong HBM demand and supplier pricing power",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 8,
+    "expected_return_pct": 10.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "AMD says insufficient HBM allocations from Samsung, SK Hynix, and Micron are limiting its Instinct GPU production, while AMD is also using heavier HBM configurations than Nvidia. This indicates AI accelerator demand materially exceeds available HBM supply, supporting strong demand, allocation leverage, and potentially favorable pricing for SK Hynix\u2019s HBM business over the coming quarters, although its own capacity may remain constrained.",
+    "source": "Next Platform"
   }
 ]

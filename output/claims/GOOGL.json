@@ -2487,5 +2487,24 @@
     "trade_worthy": false,
     "context": "The article highlights Google\u2019s Palomar optical circuit switch, used to connect nearly 10,000 TPU accelerators in reconfigurable topologies. Marvell expects other hyperscalers and AI builders to adopt optical circuit switches because of potential power and latency advantages, which supports the strategic value of Google\u2019s existing optical-fabric approach and may help its AI-system scalability relative to architectures relying solely on Ethernet.",
     "source": "Next Platform"
+  },
+  {
+    "id": "25d7ef2d2e5be26a",
+    "ticker": "GOOGL",
+    "source_link": "https://www.interconnects.ai/p/how-well-can-we-measure-open-model",
+    "source_title": "How big is the open model economy today?",
+    "event_type": "competitive",
+    "created": "2026-11-04",
+    "claim": "Rapid open-model growth pressures Google\u2019s closed-model platform business",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article estimates near-exponential adoption of open-model inference, using Fireworks, Baseten, Together AI, and OpenRouter as indicators. Fireworks alone reported more than 40 trillion daily tokens for customized models and said that vertical had more than doubled since summer, with total fall volume potentially exceeding 100 trillion tokens. Google\u2019s closed-model platform and API token volumes are presented as the primary benchmark, implying that expanding open-model usage could compete for inference demand and pricing, although the article does not provide a quantified loss of Google share.",
+    "source": "Interconnects"
   }
 ]

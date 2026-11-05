@@ -515,5 +515,50 @@
     "final_multiplier": 0.82,
     "confidence_before": 0.74,
     "confidence_after": 0.6068
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-05",
+    "thesis": "AMD remains a moderately high-conviction long as exceptional Data Center and EPYC momentum, expanding Helios/Instinct deployments, and strong AI infrastructure demand outweigh near-term HBM, software, execution, competition, and valuation risks.",
+    "direction": "long",
+    "confidence": 0.76,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.76,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Data Center revenue continues accelerating, with Q4 datacenter AI revenue growing roughly 50% sequentially and 2027 datacenter revenue more than doubling year over year.",
+      "EPYC Venice ramps successfully, converting strong hyperscaler, enterprise, and OEM demand into further server-CPU share gains and supporting the expected 2027 server-revenue growth.",
+      "Helios MI455X deployments to Meta, Microsoft, OpenAI, Oracle, and other customers scale on schedule with improving yields, supply, margins, and ROCm adoption.",
+      "AMD secures sufficient HBM, packaging, substrate, wafer, and optical-component capacity to expand Instinct shipments beyond current constrained levels.",
+      "AMD's latest quarter continues to beat expectations, following reported EPS of $2.09 versus a $1.94 estimate, a 7.46% surprise.",
+      "ROCm, ATOM, TileRT, and upstream vLLM/SGLang improvements materially narrow AMD's production-inference performance and reliability gap versus Nvidia."
+    ],
+    "invalidation": [
+      "HBM, packaging, substrate, optical, or wafer constraints prevent AMD from meeting Helios and Instinct commitments, causing materially weaker accelerator growth or margins.",
+      "Helios yields, rack complexity, customer build-out timing, or power availability delay deployments and undermine management's 2027 data-center outlook.",
+      "AMD's production inference software remains materially behind Nvidia, with persistent performance, distributed-serving, context-parallelism, networking, or reliability gaps limiting customer adoption.",
+      "Microsoft Maia, AWS Trainium, hyperscaler custom XPUs, Cerebras, OpenAI ASICs, Arm CPUs, or other alternatives capture more AI spending and server workloads than expected.",
+      "EPYC demand fails to translate into shipments or share gains because of supply constraints, Arm adoption, or renewed Intel and Nvidia CPU competition.",
+      "AI infrastructure spending slows or produces weak customer returns, while AMD's roughly 37x forward-earnings valuation and approximately 14.4% operating margin lead to material multiple compression or earnings disappointment."
+    ],
+    "reasoning": "The fundamental picture and confident earnings-call outlook support a long, reinforced by strong reported execution and a 7.46% EPS beat, but the position is not higher conviction because AMD's premium valuation, below-corporate-average AI margins, HBM constraints, and persistent Nvidia/custom-silicon software and system advantages could prevent roadmap demand from converting into expected earnings.",
+    "claims_considered": 172
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-05",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.76,
+    "confidence_after": 0.76
   }
 ]

@@ -1076,5 +1076,21 @@
     "INTC",
     "MSFT",
     "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/11/04/amd-cannot-catch-nvidia-but-it-sure-can-make-some-money/5307666": [
+    "AMD",
+    "INTC",
+    "META",
+    "MSFT",
+    "MU",
+    "NVDA",
+    "ORCL",
+    "SKHY"
+  ],
+  "https://www.citriniresearch.com/p/state-of-the-themes-556": [
+    "NVDA"
+  ],
+  "https://www.interconnects.ai/p/how-well-can-we-measure-open-model": [
+    "GOOGL"
   ]
 }
