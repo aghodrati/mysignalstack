@@ -560,5 +560,50 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.76,
     "confidence_after": 0.76
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-06",
+    "thesis": "AMD remains a fundamentally strong, data-center-led growth story with accelerating EPYC share gains and emerging Helios/Instinct upside, but elevated valuation, HBM and system-supply constraints, and a substantial inference software and custom-accelerator gap limit near-term upside and raise execution sensitivity.",
+    "direction": "long",
+    "confidence": 0.78,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.78,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Data Center revenue continues to grow rapidly, with 2027 revenue more than doubling as guided.",
+      "EPYC revenue sustains the expected second-half 2026 and 2027 growth rates as Venice ramps and agentic-AI CPU demand expands.",
+      "Helios MI455X deployments at Microsoft, Meta, OpenAI, and Oracle scale successfully, validating AMD's rack-scale platform.",
+      "ROCm, ATOM, TileRT, and distributed-inference software improvements materially narrow the production performance gap with Nvidia and Google TPUs.",
+      "HBM, packaging, wafer, and substrate capacity improves enough for AMD to convert its strong Instinct and EPYC demand into higher shipments.",
+      "Enterprise adoption expands through HPE, VMware, Dell, and open-Ethernet/UALink ecosystem support."
+    ],
+    "invalidation": [
+      "Helios production, yields, customer build-outs, or margins materially disappoint, causing the guided 2027 data-center acceleration to be reduced.",
+      "HBM and optical-component shortages persist or worsen, preventing AMD from scaling Instinct shipments and pressuring accelerator gross margins.",
+      "Nvidia, Google TPU, AWS Trainium, Microsoft Maia, OpenAI ASICs, or custom hyperscaler XPUs sustain large performance-per-dollar advantages in production inference and displace AMD deployments.",
+      "ROCm, ATOM, and distributed-serving software fail to achieve reliable mainstream support, leaving AMD's inference ecosystem materially behind Nvidia's.",
+      "EPYC growth slows as hyperscalers shift toward Arm CPUs, custom silicon, or competing agentic-AI platforms.",
+      "High valuation multiples contract because revenue growth, guidance, operating margin, or free-cash-flow conversion falls short; the latest quarter's $2.09 EPS versus $1.94 expected is not followed by sustained earnings upside."
+    ],
+    "reasoning": "The overwhelmingly bullish operating evidence, confident earnings-call outlook, strong latest-quarter execution and 7.46% EPS beat support a long thesis, while roughly 37x forward earnings, moderate operating margin, supply bottlenecks, and credible Nvidia/custom-chip inference competition justify a measured confidence and return expectation rather than an aggressive call.",
+    "claims_considered": 176
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-06",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.78,
+    "confidence_after": 0.78
   }
 ]

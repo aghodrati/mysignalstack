@@ -9862,5 +9862,45 @@
     "name": "OpenRouter",
     "ticker_guess": null,
     "why": "Its reported API data provides a measure of open-model share of token volume"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "SemiAnalysis",
+    "article_title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Identified as a Google TPU customer; cited as a major AI lab supporting the InferenceX ecosystem"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "SemiAnalysis",
+    "article_title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified as a Google TPU customer; described as an AI lab with substantial TPU capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "SemiAnalysis",
+    "article_title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+    "article_link": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king",
+    "name": "Inferact",
+    "ticker_guess": null,
+    "why": "Built Kimi K3 megakernels with Google; submitted TPUv7 results and a reproduction stack integrated into vLLM"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "Next Platform",
+    "article_title": "Arista Lines Up Networking For 10 Gigawatts Of AI Systems",
+    "article_link": "https://www.nextplatform.com/connect/2026/11/05/arista-lines-up-networking-for-10-gigawatts-of-ai-systems/5307929",
+    "name": "Arista Networks",
+    "ticker_guess": "ANET",
+    "why": "Q3 revenue rose 58.5% year over year to $3.66 billion and net income rose 82.9% to $1.56 billion; expects AI front-end and back-end networking revenue to double from about $3.5 billion in 2026 to $7 billion in 2027; forecasts networking for 10 gigawatts of AI cluster capacity and more than ten accelerator types by the end of 2027"
   }
 ]

@@ -625,5 +625,24 @@
     "trade_worthy": true,
     "context": "Oracle plans to offer Google TPUs, Cerebras CS-4 and Wafer Scale Engine 3 Turbo systems, and SambaNova SN50 inference processors in OCI during 2027, while continuing deep partnerships with Nvidia and AMD. Giving enterprises multiple training and inference platforms may improve OCI\u2019s ability to win workloads that require specialized hardware rather than a single accelerator ecosystem.",
     "source": "Next Platform"
+  },
+  {
+    "id": "32e6cc144d82194c",
+    "ticker": "ORCL",
+    "source_link": "https://newsletter.semianalysis.com/p/tpu-strikes-the-king",
+    "source_title": "The Iron(wood) Throne: Google's TPU Stakes Its Claim on Inference",
+    "event_type": "competitive",
+    "created": "2026-11-05",
+    "claim": "Oracle\u2019s TPU adoption supports its AI infrastructure offering",
+    "direction": "long",
+    "confidence": 0.79,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Oracle as an external Google TPU customer, alongside OpenAI, Anthropic, and Meta. Broader TPU externalization and improving TPU software support could give Oracle access to a competitive accelerator option for serving AI workloads, potentially strengthening its ability to offer AI infrastructure capacity. However, the article provides no details on Oracle\u2019s deployment scale, pricing, utilization, margins, or resulting customer demand, so the financial impact remains indirect.",
+    "source": "SemiAnalysis"
   }
 ]

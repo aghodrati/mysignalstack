@@ -1518,5 +1518,43 @@
     "trade_worthy": true,
     "context": "The article argues that insufficient HBM allocations from Samsung, SK Hynix, and Micron prevent AMD from producing enough Instinct GPUs to materially challenge Nvidia. Although Microsoft has begun receiving AMD Helios racks, the constrained AMD GPU supply could limit how quickly Microsoft can use AMD hardware to diversify its accelerator procurement or expand AI capacity through that supplier.",
     "source": "Next Platform"
+  },
+  {
+    "id": "7143809de8f35950",
+    "ticker": "MSFT",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/05/arista-lines-up-networking-for-10-gigawatts-of-ai-systems/5307929",
+    "source_title": "Arista Lines Up Networking For 10 Gigawatts Of AI Systems",
+    "event_type": "earnings",
+    "created": "2026-11-05",
+    "claim": "MSFT\u2019s AI infrastructure spending remains a major growth driver through 2027",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Microsoft is one of Arista\u2019s customers accounting for at least 10% of annual revenue and is working with Arista on ESUN scale-up networking for its Maia accelerators. Arista expects Microsoft to remain a significant spender in 2026 and 2027, supporting continued expansion of Microsoft\u2019s AI infrastructure capacity and related capital investment.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "566c900397952bd6",
+    "ticker": "MSFT",
+    "source_link": "https://www.nextplatform.com/connect/2026/11/05/arista-lines-up-networking-for-10-gigawatts-of-ai-systems/5307929",
+    "source_title": "Arista Lines Up Networking For 10 Gigawatts Of AI Systems",
+    "event_type": "earnings",
+    "created": "2026-11-05",
+    "claim": "Open Ethernet could improve MSFT\u2019s AI networking flexibility and economics",
+    "direction": "long",
+    "confidence": 0.68,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Microsoft is collaborating with Arista on ESUN scale-up networks, an Ethernet-based alternative to Nvidia\u2019s proprietary NVLink and NVSwitch stack. The article argues that hyperscalers prefer more open and potentially cheaper networking, but Microsoft\u2019s ESUN deployments are still in trials, with production rollouts not expected until 2028.",
+    "source": "Next Platform"
   }
 ]

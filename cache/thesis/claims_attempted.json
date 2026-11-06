@@ -1092,5 +1092,18 @@
   ],
   "https://www.interconnects.ai/p/how-well-can-we-measure-open-model": [
     "GOOGL"
+  ],
+  "https://newsletter.semianalysis.com/p/tpu-strikes-the-king": [
+    "AMD",
+    "GOOGL",
+    "META",
+    "NVDA",
+    "ORCL"
+  ],
+  "https://www.nextplatform.com/connect/2026/11/05/arista-lines-up-networking-for-10-gigawatts-of-ai-systems/5307929": [
+    "AMD",
+    "META",
+    "MSFT",
+    "NVDA"
   ]
 }

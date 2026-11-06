@@ -41,5 +41,55 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-11-06",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "summary": "BRK-B retains strong operating quality, with materially improved reported operating margins and better revenue growth, but the very high earnings-growth rate may be partly base-effect driven. Valuation has become less attractive at 25.5x forward earnings, consensus implies roughly 2.9% downside, and weakening institutional flows plus heavier insider selling offset the business-quality strengths.",
+    "key_changes": [
+      "Operating margin rose sharply from 14.4% to 32.6%, while revenue growth increased from 4.4% to 10.0%.",
+      "Forward P/E increased 7.1% from 23.8x to 25.5x, making the valuation more demanding.",
+      "Analyst-implied upside deteriorated from positive 2.2% to negative 2.9%, and institutional flow shifted from strongly positive to slightly negative.",
+      "Insider selling increased substantially, from approximately $8.2 million to $27.9 million of net selling.",
+      "Earnings growth eased from 119.6% to 107.8%, remaining very strong but still potentially distorted by an easy comparison base.",
+      "EV-to-revenue became less negative, moving from -0.707 to -0.608, though this remains difficult to interpret economically."
+    ],
+    "risks": [
+      "The elevated earnings-growth figure may not be sustainable and could normalize sharply.",
+      "A 25.5x forward earnings multiple leaves limited margin for error if growth or profitability moderates.",
+      "Consensus fair value is below the current price, implying modest downside rather than a clear valuation cushion.",
+      "Accelerating insider selling and the reversal in institutional flows may indicate reduced near-term sponsorship, although these signals are not conclusive.",
+      "Reported operating-margin improvement may reflect mix, investment gains, or other factors that are not fully representative of recurring operating performance."
+    ],
+    "reasoning": "The combination of excellent but potentially less repeatable quality improvements and stronger revenue growth is offset by fuller valuation, negative implied upside, and weaker ownership signals, supporting a neutral stance with moderately high confidence.",
+    "fair_value_estimate": 555.6667,
+    "current_price": 572.33,
+    "implied_return_pct": -2.9,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.1,
+        "earnings_growth": 1.078
+      },
+      "Valuation": {
+        "forward_pe": 25.51459,
+        "peg_ratio": 10.06,
+        "ev_to_revenue": -0.608
+      },
+      "Quality": {
+        "operating_margin": 0.32561,
+        "fcf_margin": 0.12122582437258278
+      },
+      "Sentiment": {
+        "analyst_upside": -2.911484632991468,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": -0.7059999355000002,
+        "insider_flow": -27902061.0,
+        "low_short_interest": -0.9900000000000001
+      }
+    },
+    "trigger": "earnings"
   }
 ]
