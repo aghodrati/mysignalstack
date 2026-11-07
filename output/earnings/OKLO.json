@@ -73,5 +73,40 @@
       }
     ],
     "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-11-06",
+    "eps_estimate": -0.26,
+    "reported_eps": -0.22,
+    "surprise_pct": 14.79,
+    "type": "earnings_result"
+  },
+  {
+    "date": "2026-11-07",
+    "transcript_date": "2026-11-06",
+    "transcript_url": "https://www.fool.com/earnings/call-transcripts/2026/11/06/oklo-oklo-q3-2026-earnings-call-transcript/",
+    "earnings_direction": "neutral",
+    "earnings_confidence": 0.72,
+    "guidance_summary": "Management maintained guidance for $120 million-$150 million of cash used in operations and $400 million-$500 million of property, plant and equipment spending for fiscal 2026. No revenue or margin guidance was provided; near-term revenue remains primarily prospective, with potential early fuel-services revenue within roughly two years and larger fuel, isotope, recycling, and power revenue dependent on facility scale-up, approvals, and customer commitments.",
+    "guidance_change": "no prior call on record",
+    "management_tone": "confident",
+    "key_qa_moments": [
+      "On Aurora-Idaho timing, an analyst asked whether the 2028-2029 online window represented a pushout. Management attributed the broader range to lessons from Groves-1, including electrical-noise management, neutron-monitor calibration, equipment recalibration, and full-plant integration, while leaving open the possibility of pulling the schedule forward.",
+      "On the Meta agreement, management explicitly said it is not binding to build the reactor. Meta has provided capital and reservation capacity, but the project must progress through fuel procurement, site development, interconnection, and additional milestones before full execution.",
+      "On third-party fuel revenue, management offered several possible models\u2014technical services, fabrication for customers, facility rental, partnerships, and recycled-feedstock supply\u2014but said meaningful revenue ramps only after facilities are scaled, with early services revenue possible over the next two years.",
+      "On the Virginia PJM application, management said it disagreed with the technical basis for rejection but accepted the decision, emphasizing that the 900-megawatt remaining pipeline and Ohio project were unaffected. Ohio interconnection is still expected to take roughly 24 months."
+    ],
+    "risks": [
+      "Aurora-Idaho's commissioning schedule is not firm and may extend toward 2029 because of instrumentation, electrical-noise, calibration, and integrated start-up complexity.",
+      "The Meta arrangement is not a binding reactor-build commitment; substantial development, fuel, interconnection, and execution milestones remain.",
+      "PJM/FERC interconnection risk remains material: one Virginia application was withdrawn and the complaint was dismissed, while Ohio still faces a lengthy process.",
+      "Third-party fuel, recycling, isotope, and irradiation revenue is largely optional and timing-dependent rather than contracted or currently material.",
+      "Fuel availability and enrichment remain strategic bottlenecks despite management's improved confidence; scaling beyond the first reactor depends on external partners and new infrastructure.",
+      "USFR capacity depends on the supplier's planned manufacturing campus being completed and qualified, with individual purchases still requiring subsequent orders.",
+      "The company continues to incur substantial operating losses and capital spending, with $2.3 billion of ATM issuance indicating meaningful dilution and ongoing cash deployment risk.",
+      "Multiple projects\u2014Aurora-Idaho, A3F, recycling, Groves-2, and isotope production\u2014are being advanced in parallel, increasing execution and capital-allocation complexity."
+    ],
+    "summary": "The call showed substantial execution progress, including Aurora-Idaho construction, Groves-1 completion, A3F development, fuel procurement, and a $3.1 billion liquidity position. However, the Q&A exposed meaningful uncertainty around Aurora's commissioning date, the nonbinding nature of the Meta relationship, interconnection approvals, and the timing of prospective fuel and isotope revenues. The call was operationally encouraging but not sufficiently de-risked to imply a clearly bullish earnings reaction, making the standalone signal neutral.",
+    "type": "earnings_transcript"
   }
 ]

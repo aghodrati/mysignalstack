@@ -9902,5 +9902,120 @@
     "name": "Arista Networks",
     "ticker_guess": "ANET",
     "why": "Q3 revenue rose 58.5% year over year to $3.66 billion and net income rose 82.9% to $1.56 billion; expects AI front-end and back-end networking revenue to double from about $3.5 billion in 2026 to $7 billion in 2027; forecasts networking for 10 gigawatts of AI cluster capacity and more than ten accelerator types by the end of 2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-06",
+    "source": "Stratechery",
+    "article_title": "2026.45: Falling Leaves (and Stocks)",
+    "article_link": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Built a SaaS Index using payments data from 72,000 non-AI SaaS businesses; found SaaS revenue growth accelerating to over 30% year over year despite a major selloff in SaaS stocks"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-06",
+    "source": "Stratechery",
+    "article_title": "2026.45: Falling Leaves (and Stocks)",
+    "article_link": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+    "name": "Intuit",
+    "ticker_guess": "INTU",
+    "why": "Its CEO was interviewed about the company\u2019s approach to accounting and AI; presented as an example of an established software company adapting to the AI paradigm shift"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-06",
+    "source": "Next Platform",
+    "article_title": "IBM, AMD, And Oak Ridge Unveil Quantum Error Correction Platform",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/06/ibm-amd-and-oak-ridge-unveil-quantum-error-correction-platform/5308284",
+    "name": "IBM",
+    "ticker_guess": null,
+    "why": "Co-developed and hosts the quantum-classical error-correction platform at its Poughkeepsie facility; provides the Nighthawk quantum computer and quantum API; plans to use the work in developing its Quantum Starling fault-tolerant system"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-07",
+    "source": "Doomberg",
+    "article_title": "Attrition Pocket",
+    "article_link": "https://newsletter.doomberg.com/p/attrition-pocket",
+    "name": "Ukraine war",
+    "why": "Russia has intensified attacks on bridges across Kyiv\u2019s Dnipro River; Disruption could split Ukraine\u2019s western supply routes from eastern front operations"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-07",
+    "source": "Doomberg",
+    "article_title": "Attrition Pocket",
+    "article_link": "https://newsletter.doomberg.com/p/attrition-pocket",
+    "name": "Military logistics",
+    "why": "Kyiv is described as the central gateway for Western shells, missiles, armored vehicles, and fuel; Road and rail routes converge in the capital before extending toward northern and eastern regions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-07",
+    "source": "Doomberg",
+    "article_title": "Attrition Pocket",
+    "article_link": "https://newsletter.doomberg.com/p/attrition-pocket",
+    "name": "Critical infrastructure",
+    "why": "The Southern Bridge and other Dnipro crossings have faced drone, missile, and aircraft-bomb attacks; Damage or closure of the bridges would create a major military and transport bottleneck"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-07",
+    "source": "Doomberg",
+    "article_title": "Attrition Pocket",
+    "article_link": "https://newsletter.doomberg.com/p/attrition-pocket",
+    "name": "Russia strategy",
+    "why": "Moscow previously refrained from destroying Ukraine\u2019s key river crossings; The article argues the recent escalation may reflect a deliberate change in Russian tactics"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-07",
+    "source": "Doomberg",
+    "article_title": "Attrition Pocket",
+    "article_link": "https://newsletter.doomberg.com/p/attrition-pocket",
+    "name": "Iran conflict",
+    "why": "The article broadens its analysis to a global conflict involving the war against Iran; It presents the bridge campaign as potentially linked to an imminent wider climax"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-06",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #218",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-218",
+    "name": "INOVIO",
+    "ticker_guess": "INO",
+    "why": "Received accelerated FDA approval for Voceryq, the first plasmid DNA-based immunotherapy approved in the US; Voceryq treated recurrent respiratory papillomatosis, and the company plans to apply the platform to other HPV diseases, cancers, and infections"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-06",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #218",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-218",
+    "name": "Zipline",
+    "ticker_guess": null,
+    "why": "Raised $1.5 billion at a $21.5 billion valuation; plans to expand autonomous drone deliveries nationwide; signed a contract with Walmart to scale delivery to 300 supercenters"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-06",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #218",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-218",
+    "name": "Walmart",
+    "ticker_guess": "WMT",
+    "why": "Signed a national autonomous-delivery expansion contract with Zipline; the program is intended to reach 300 supercenters"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-06",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #218",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-218",
+    "name": "Precigen",
+    "ticker_guess": null,
+    "why": "Its Papzimeos treatment for recurrent respiratory papillomatosis received full approval in August 2025; uses a modified virus to target HPV types 6 and 11"
   }
 ]

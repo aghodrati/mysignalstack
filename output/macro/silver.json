@@ -1069,5 +1069,67 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-07",
+    "value": 51.803001403808594,
+    "delta": 5.511540980121654,
+    "history": [
+      [
+        "2026-11-02",
+        50.720001220703125
+      ],
+      [
+        "2026-11-03",
+        49.58700180053711
+      ],
+      [
+        "2026-11-04",
+        52.119998931884766
+      ],
+      [
+        "2026-11-05",
+        52.233001708984375
+      ],
+      [
+        "2026-11-06",
+        51.803001403808594
+      ]
+    ],
+    "narrative": "No clear single catalyst explains the week's roughly 5.51-point gain: bearish headlines such as \"SLV Crashes To Near 52-Week Lows\" and \"Precious Metal Selloff\" conflict with the \"One of the Best Buying Opportunities\" framing in the Silver article. The move therefore looks more like a sharp rebound/positioning shift than a news-confirmed trend, with the listed headlines offering little reliable forward signal.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Precious Metal Selloff: Remember The All-Weather Portfolio",
+        "domain": "SeekingAlpha",
+        "date": "20261105"
+      },
+      {
+        "title": "Post-Midterm ETF Action",
+        "domain": "SeekingAlpha",
+        "date": "20261104"
+      },
+      {
+        "title": "SLV Crashes To Near 52-Week Lows, GLD Falls Pre-Market \u2013 World Gold Council Cuts 2026 Gold Investment Forecast By Half",
+        "domain": "Yahoo",
+        "date": "20261103"
+      },
+      {
+        "title": "Silver Just Did Something Unseen Since 2020: \u2018One of the Best Buying Opportunities,\u2019 Analyst Says",
+        "domain": "Benzinga",
+        "date": "20261102"
+      },
+      {
+        "title": "Silver and SLV ETF Prices Lost Crucial Support: Will US NFP Data Turn the Tide?",
+        "domain": "Benzinga",
+        "date": "20261031"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W45",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

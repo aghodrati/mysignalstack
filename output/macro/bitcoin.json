@@ -1129,5 +1129,70 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-07",
+    "value": 75906.9921875,
+    "delta": -1.972961509528992,
+    "history": [
+      [
+        "2026-11-01",
+        78248.453125
+      ],
+      [
+        "2026-11-02",
+        76677.296875
+      ],
+      [
+        "2026-11-03",
+        77345.046875
+      ],
+      [
+        "2026-11-04",
+        80405.2890625
+      ],
+      [
+        "2026-11-05",
+        75942.125
+      ],
+      [
+        "2026-11-06",
+        75746.9296875
+      ],
+      [
+        "2026-11-07",
+        75906.9921875
+      ]
+    ],
+    "narrative": "Bitcoin slipped 1.97% over the week, but the headlines do not identify a clear, specific catalyst. The SeekingAlpha piece noting that the post-midterm rally to $81K failed suggests fading momentum or profit-taking, while the mixed pre-election equity and ETF positioning headlines point to broader uncertainty rather than a decisive crypto signal.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Whale's Insight: Bitcoin Hit $81K After The Midterms - Why Didn't The Rally Last?",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Exchange-Traded Funds Lower, Equity Futures Mixed Pre-Bell Tuesday Ahead of US Midterm Election Results",
+        "domain": "Yahoo",
+        "date": "20261103"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday Ahead of Busy Corporate Earnings Week",
+        "domain": "Yahoo",
+        "date": "20261102"
+      },
+      {
+        "title": "Whale's Insight: Crypto Is Changing - Where Is The Money Going?",
+        "domain": "SeekingAlpha",
+        "date": "20261102"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W45",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

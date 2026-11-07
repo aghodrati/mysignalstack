@@ -6838,5 +6838,43 @@
     "trade_worthy": false,
     "context": "Arista currently generates no significant revenue from Ethernet scale-up networks, and its expected ESUN deployments remain trials in 2027 with production not anticipated until 2028. The article credits Nvidia with first-mover advantages in tightly coupled GPU clusters and says Nvidia continues to hold the proprietary NVLink/NVSwitch position while open alternatives take time to mature, supporting NVDA\u2019s near-term networking share and economics.",
     "source": "Next Platform"
+  },
+  {
+    "id": "613f43466fda6605",
+    "ticker": "NVDA",
+    "source_link": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+    "source_title": "2026.45: Falling Leaves (and Stocks)",
+    "event_type": "regulatory",
+    "created": "2026-11-06",
+    "claim": "Data-center opposition raises regulatory risk for NVDA\u2019s AI infrastructure demand",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Democrats\u2019 enlarged Congressional majority, state-level election results\u2014particularly in Texas\u2014and opposition from Republicans have made the future of the AI buildout more regulatory uncertain. Because data centers are the deployment base for AI accelerators, slower or more difficult construction could eventually constrain demand for NVDA systems, though the article provides no specific projects, rules, or timing.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "37e1cb476129c9dc",
+    "ticker": "NVDA",
+    "source_link": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+    "source_title": "2026.45: Falling Leaves (and Stocks)",
+    "event_type": "regulatory",
+    "created": "2026-11-06",
+    "claim": "A Democratic Congressional majority increases NVDA\u2019s U.S.-China policy risk",
+    "direction": "short",
+    "confidence": 0.88,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article predicts that U.S.-China relations will become more complicated after the election and specifically says Jensen Huang\u2019s position in Washington will become more difficult. This implies greater uncertainty around policies affecting NVDA\u2019s China business and access to that market, but it does not identify a specific forthcoming rule, restriction, or financial impact.",
+    "source": "Stratechery"
   }
 ]

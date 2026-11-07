@@ -1129,5 +1129,72 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-07",
+    "value": 4074.89990234375,
+    "delta": 4.514093831806276,
+    "history": [
+      [
+        "2026-11-02",
+        3969.60009765625
+      ],
+      [
+        "2026-11-03",
+        3940.39990234375
+      ],
+      [
+        "2026-11-04",
+        4073.0
+      ],
+      [
+        "2026-11-05",
+        4113.5
+      ],
+      [
+        "2026-11-06",
+        4074.89990234375
+      ]
+    ],
+    "narrative": "The clearest apparent driver was the Benzinga report that a \u201cDemocratic Sweep Drops Dollar, Pushing Gold Past $4,000 Toward Key Test,\u201d which links political results and dollar weakness to gold\u2019s modest weekly gain. However, the move was only marginal and the other headlines are largely general commentary, so follow-through is not strongly established.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Whale's Insight: Bitcoin Hit $81K After The Midterms - Why Didn't The Rally Last?",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Guide to Gold ETF Investing",
+        "domain": "Yahoo",
+        "date": "20261106"
+      },
+      {
+        "title": "The World\u2019s Debt Is at Record Levels. 6 Ways to Protect Your Portfolio.",
+        "domain": "Yahoo",
+        "date": "20261106"
+      },
+      {
+        "title": "Gold Market Commentary: Where Floor Art Thou?",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Democratic Sweep Drops Dollar, Pushing Gold Past $4,000 Toward Key Test",
+        "domain": "Benzinga",
+        "date": "20261104"
+      },
+      {
+        "title": "$80 Billion Hedge Fund Braces for Bear Market",
+        "domain": "Benzinga",
+        "date": "20261103"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W45",
+    "direction": "bullish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

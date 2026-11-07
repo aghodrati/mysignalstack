@@ -1040,5 +1040,49 @@
       }
     ],
     "fetch_succeeded": true
+  },
+  {
+    "period": "week",
+    "date": "2026-11-07",
+    "value": 4.859000205993652,
+    "delta": -0.06999969482421875,
+    "history": [
+      [
+        "2026-11-02",
+        4.894000053405762
+      ],
+      [
+        "2026-11-03",
+        4.952000141143799
+      ],
+      [
+        "2026-11-04",
+        4.894000053405762
+      ],
+      [
+        "2026-11-05",
+        4.836999893188477
+      ],
+      [
+        "2026-11-06",
+        4.859000205993652
+      ]
+    ],
+    "narrative": "There was no clear single catalyst in the listed headlines for the 10-year Treasury yield's 7-basis-point weekly decline. The PPI-versus-CPI piece discusses potential profit-margin pressure but does not clearly explain a lower long-term yield, while the Bitcoin article is largely unrelated; the move was likely broad positioning or market drift.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "PPI Vs. CPI: Are Record Profit Margins About To Get Squeezed",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Whale's Insight: Bitcoin Hit $81K After The Midterms - Why Didn't The Rally Last?",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W45"
   }
 ]

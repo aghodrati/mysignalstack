@@ -2582,5 +2582,43 @@
     "trade_worthy": true,
     "context": "Nvidia FP4 GPUs still lead TPUv7 on many GLM-5.3 performance-per-dollar points because TPUv7 lacks native FP4 support, with TPUv8 FP4 support expected only in Q1 2027. TPUv7 also requires further prefill and end-to-end latency improvements, while Nvidia refreshes reportedly moved GB300 ahead of TPUv7 by 1.5x to 2.6x on Kimi K3. These limitations could constrain TPU wins and delay the revenue or margin benefits of external adoption before newer TPU generations arrive.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "a53ae8431f11a6b5",
+    "ticker": "GOOGL",
+    "source_link": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+    "source_title": "2026.45: Falling Leaves (and Stocks)",
+    "event_type": "regulatory",
+    "created": "2026-11-06",
+    "claim": "Slowing search growth pressures Google\u2019s core advertising outlook",
+    "direction": "short",
+    "confidence": 0.97,
+    "importance": 8,
+    "expected_return_pct": -6.0,
+    "expected_horizon_days": 60,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Google\u2019s latest earnings showed search revenue growth slowing for the first time in five quarters, which spooked investors and raises concern about the trajectory of its most important business. The supplied market data also shows a recent earnings surprise of -29.52% and a 19.02% one-month decline, indicating that the issue is already affecting sentiment.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "6de2fb21c7200c66",
+    "ticker": "GOOGL",
+    "source_link": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+    "source_title": "2026.45: Falling Leaves (and Stocks)",
+    "event_type": "regulatory",
+    "created": "2026-11-06",
+    "claim": "Google retains substantial upside if AI Mode monetizes successfully",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that Google should be given time to determine whether AI Mode can be monetized with advertising, comparing the opportunity with Facebook\u2019s eventual monetization of Stories and Reels. Because Google already operates a large advertising business, the author believes it is especially well positioned to convert AI usage into ad revenue, though the outcome remains uncertain.",
+    "source": "Stratechery"
   }
 ]

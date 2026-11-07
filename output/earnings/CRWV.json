@@ -1,0 +1,77 @@
+[
+  {
+    "call_date": "2026-11-10",
+    "when": "2026-11-10T16:00:00-05:00",
+    "eps_estimate": -1.55,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-10",
+        "eps_estimate": -0.48,
+        "reported_eps": -0.22,
+        "surprise_pct": 54.37
+      },
+      {
+        "earnings_date": "2026-02-26",
+        "eps_estimate": -0.68,
+        "reported_eps": -0.89,
+        "surprise_pct": -29.96
+      },
+      {
+        "earnings_date": "2026-05-07",
+        "eps_estimate": -1.2,
+        "reported_eps": -1.4,
+        "surprise_pct": -16.26
+      },
+      {
+        "earnings_date": "2026-08-11",
+        "eps_estimate": -1.47,
+        "reported_eps": -1.14,
+        "surprise_pct": 22.45
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-07",
+    "call_date": "2026-11-10",
+    "narrative": "Investors should focus on whether CoreWeave can sustain rapid demand growth amid headlines about \u201cslower builds\u201d and \u201cscarcer compute,\u201d while explaining capacity expansion, utilization, and the timing of new data-center deployments. The company also needs to address financing and liquidity: bonds yielding \u201cover 17%\u201d and warnings that neocloud players could go to zero point to heightened concern about leverage, capital intensity, and access to funding. Management\u2019s outlook for AI-compute demand, customer commitments, and profitability will be especially important given the broader AI-bubble and chip-selloff concerns, as well as Ark\u2019s reported sale of CRWV. My expectation is for continued strong demand commentary but a volatile reaction if management cannot pair that demand with credible funding, build-out, and margin guidance.",
+    "headlines_used": [
+      {
+        "title": "CoreWeave Bonds Now Yield \u201cOver 17%.\u201d Lenders Are Pricing a Neocloud in Distress",
+        "domain": "Yahoo",
+        "date": "20261107"
+      },
+      {
+        "title": "Cathie Wood-Led Ark Loads Up On GOOG, AMD, NVDA And Biotech Stocks \u2014 But Sells CRWV, AVGO, LLY",
+        "domain": "Yahoo",
+        "date": "20261107"
+      },
+      {
+        "title": "Slower Builds, Scarcer Compute",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "October CPI Inflation Is Likely To Be 'Hot,' But Focus On The AI Bubble Burst",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Stock Market Today: Nasdaq Crashes 5.5% as Midterm Fallout Turns Into a Brutal AI Chip Selloff",
+        "domain": "ChartMill",
+        "date": "20261106"
+      },
+      {
+        "title": "CoreWeave Stock Gains Friday: What's Happening?",
+        "domain": "Benzinga",
+        "date": "20261106"
+      },
+      {
+        "title": "AI Bubble About to Burst? Top Tech Investor Warns Most Neocloud Players Could Go to Zero",
+        "domain": "Benzinga",
+        "date": "20261106"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

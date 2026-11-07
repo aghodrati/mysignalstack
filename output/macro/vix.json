@@ -1221,5 +1221,84 @@
       }
     ],
     "fetch_succeeded": true
+  },
+  {
+    "period": "week",
+    "date": "2026-11-07",
+    "value": 25.639999389648438,
+    "delta": 6.219999313354492,
+    "history": [
+      [
+        "2026-11-02",
+        21.149999618530273
+      ],
+      [
+        "2026-11-03",
+        20.829999923706055
+      ],
+      [
+        "2026-11-04",
+        16.610000610351562
+      ],
+      [
+        "2026-11-05",
+        28.18000030517578
+      ],
+      [
+        "2026-11-06",
+        25.639999389648438
+      ]
+    ],
+    "narrative": "This week's VIX jump was most plausibly driven by the sharp late-week equity selloff, particularly the reported \"Black Thursday\" plunge in which the Nasdaq fell 5.5% and $2.5 trillion was wiped out. CNBC also reported that the fear gauge surged the most since April as retail traders exited, consistent with a rapid increase in hedging demand and risk aversion.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Wall Street's fear gauge may be flashing a buy sign",
+        "domain": "CNBC",
+        "date": "20261106"
+      },
+      {
+        "title": "Market wrap: M&M, ICICI Bank, Tata Motors PV, Eicher Motors top gainers and losers on Nifty and Sensex on Friday",
+        "domain": "The Economic Times",
+        "date": "20261106"
+      },
+      {
+        "title": "Black Thursday on Wall Street: $2.5 trillion wiped off Nasdaq as index plunges 5.5%, Dow Jones sheds 1,800 points",
+        "domain": "Proto Thema",
+        "date": "20261106"
+      },
+      {
+        "title": "Wall Street fear gauge soars and retail traders bolt as markets in tailspin",
+        "domain": "The Economic Times",
+        "date": "20261106"
+      },
+      {
+        "title": "Wall Street's fear gauge surges the most since April. Why traders think it should be even higher",
+        "domain": "CNBC",
+        "date": "20261105"
+      },
+      {
+        "title": "Blue Chips Surge Past 2.8% as VIX Drops Below 18 While Oil Sinks Nearly 8%",
+        "domain": "The North Bay Nugget",
+        "date": "20261104"
+      },
+      {
+        "title": "Blue Chips Surge Past 2.8% as VIX Drops Below 18 While Oil Sinks Nearly 8%",
+        "domain": "The Kingston Whig-Standard",
+        "date": "20261104"
+      },
+      {
+        "title": "Blue Chips Surge Past 2.8% as VIX Drops Below 18 While Oil Sinks Nearly 8%",
+        "domain": "National Post",
+        "date": "20261104"
+      },
+      {
+        "title": "VIX stays elevated despite five-day market rally as global risks keep investors on edge",
+        "domain": "The Hindu",
+        "date": "20261104"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W45"
   }
 ]

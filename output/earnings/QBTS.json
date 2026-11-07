@@ -1,0 +1,62 @@
+[
+  {
+    "call_date": "2026-11-10",
+    "when": "2026-11-10T08:00:00-05:00",
+    "eps_estimate": -0.1,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-06",
+        "eps_estimate": -0.07,
+        "reported_eps": -0.05,
+        "surprise_pct": 24.53
+      },
+      {
+        "earnings_date": "2026-02-26",
+        "eps_estimate": -0.06,
+        "reported_eps": -0.09,
+        "surprise_pct": -45.94
+      },
+      {
+        "earnings_date": "2026-05-12",
+        "eps_estimate": -0.08,
+        "reported_eps": -0.05,
+        "surprise_pct": 34.52
+      },
+      {
+        "earnings_date": "2026-08-06",
+        "eps_estimate": -0.09,
+        "reported_eps": -0.13,
+        "surprise_pct": -42.19
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-07",
+    "call_date": "2026-11-10",
+    "narrative": "Investors should focus on whether D-Wave can demonstrate that its \u201creal customers\u201d are translating into repeatable commercial growth and broader adoption, rather than merely validating the technology. IonQ\u2019s record guidance and the strong moves in other quantum stocks may provide a favorable sector read-through, but they also raise the bar for D-Wave\u2019s own outlook and execution. The key risks are that the bullish case is already priced in and that B. Riley\u2019s lower target signals reduced near-term expectations, so management\u2019s guidance, customer pipeline, and progress toward sustainable commercialization will matter more than headline enthusiasm. I would expect a closely watched call with potentially volatile shares: positive customer and outlook commentary could reinforce the rally, while cautious guidance or limited evidence of scaling could trigger a sharp reassessment.",
+    "headlines_used": [
+      {
+        "title": "Rigetti Soars 17%, D-Wave Up 17% as IonQ Raises Guidance to \u201cAn Industry Record\u201d",
+        "domain": "Yahoo",
+        "date": "20261106"
+      },
+      {
+        "title": "IonQ Beat and Raised. Can the Quantum Stock Buck the Tech Selloff?",
+        "domain": "Yahoo",
+        "date": "20261106"
+      },
+      {
+        "title": "D-Wave Quantum Earnings Preview: Real Customers, But Bull Case Still Priced In",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "B. Riley Securities Maintains Buy on D-Wave Quantum, Lowers Price Target to $27",
+        "domain": "Benzinga",
+        "date": "20261102"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

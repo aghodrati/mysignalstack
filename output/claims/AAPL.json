@@ -492,5 +492,24 @@
     "trade_worthy": false,
     "context": "The article identifies memory as a current AI-infrastructure bottleneck and argues that a slowdown in data-center expansion would eventually reduce demand for AI-related memory. Apple, described as a major beneficiary of the prior computing paradigm, could benefit from improved memory availability and lower component-cost pressure, although the effect would take time to emerge.",
     "source": "Stratechery"
+  },
+  {
+    "id": "e25611ee1f799a0a",
+    "ticker": "AAPL",
+    "source_link": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+    "source_title": "2026.45: Falling Leaves (and Stocks)",
+    "event_type": "regulatory",
+    "created": "2026-11-06",
+    "claim": "Apple\u2019s hardware business is performing exceptionally well",
+    "direction": "long",
+    "confidence": 0.84,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Apple\u2019s earnings indicated its hardware business was doing better than ever, even amid memory challenges. This suggests resilient demand and execution across Apple\u2019s hardware products, though the article does not quantify the earnings impact or establish how long the strength will persist.",
+    "source": "Stratechery"
   }
 ]

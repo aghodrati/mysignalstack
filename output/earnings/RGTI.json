@@ -1,0 +1,72 @@
+[
+  {
+    "call_date": "2026-11-10",
+    "when": "2026-11-10T16:00:00-05:00",
+    "eps_estimate": -0.05,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-10",
+        "eps_estimate": -0.04,
+        "reported_eps": -0.03,
+        "surprise_pct": 25.0
+      },
+      {
+        "earnings_date": "2026-03-04",
+        "eps_estimate": -0.03,
+        "reported_eps": -0.03,
+        "surprise_pct": 8.7
+      },
+      {
+        "earnings_date": "2026-05-11",
+        "eps_estimate": -0.04,
+        "reported_eps": -0.04,
+        "surprise_pct": 6.67
+      },
+      {
+        "earnings_date": "2026-08-06",
+        "eps_estimate": -0.05,
+        "reported_eps": -0.05,
+        "surprise_pct": -8.11
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-07",
+    "call_date": "2026-11-10",
+    "narrative": "Investors should focus on whether Rigetti\u2019s Q3 results and forward guidance justify the recent 19% share-price surge, particularly through customer adoption, bookings, and progress toward commercially useful quantum systems. The call should also clarify cash usage, funding needs, and the path toward profitability, as the broader quantum-stock selloff has highlighted the divide between ambitious growth prospects and current earnings realities. The bullish backdrop includes B. Riley maintaining a Buy rating and renewed sector enthusiasm, but the downgrade citing persistent expectations\u2014and B. Riley\u2019s lower price target\u2014suggests the market may demand increasingly concrete execution. My expectation is for a volatile reaction: strong technology or outlook commentary could support the rally, while weaker commercialization progress, heavier cash burn, or cautious guidance could expose how much optimism is already reflected in the stock.",
+    "headlines_used": [
+      {
+        "title": "Infleqtion (INFQ) Mirrors Quantum, Tech Rally on Rosy Growth Prospects, Shares Climb 19.5%",
+        "domain": "Yahoo",
+        "date": "20261107"
+      },
+      {
+        "title": "Rigetti Computing (RGTI) Q3 Earnings Loom, Shares Surge 19%",
+        "domain": "Yahoo",
+        "date": "20261107"
+      },
+      {
+        "title": "Rigetti: The Stock Has Fallen, But Expectations Haven't (Rating Downgrade)",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Nanometrics Q2 EPS $0.21, Inline, Sales $67.6M Beat $65.32M Estimate",
+        "domain": "Benzinga",
+        "date": "20261102"
+      },
+      {
+        "title": "Quantum Stocks Face Earnings Reality Check After Selloff Exposes Profitability Divide",
+        "domain": "ChartMill",
+        "date": "20261102"
+      },
+      {
+        "title": "B. Riley Securities Maintains Buy on Rigetti Computing, Lowers Price Target to $25",
+        "domain": "Benzinga",
+        "date": "20261102"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

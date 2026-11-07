@@ -3342,5 +3342,24 @@
     "trade_worthy": false,
     "context": "Arista currently generates meaningful AI revenue from front-end, scale-across, and scale-out networking but has not generated significant scale-up revenue. Arista expects ESUN scale-up trials using racks with roughly 128\u2013144 accelerators to begin in 2027, with production deployments not expected until 2028. Because AMD is collaborating with Arista on rack-scale switching, this timeline suggests AMD cannot rely on a mature open-Ethernet scale-up ecosystem to accelerate near-term AI-system adoption.",
     "source": "Next Platform"
+  },
+  {
+    "id": "edc51087abd68a8b",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/06/ibm-amd-and-oak-ridge-unveil-quantum-error-correction-platform/5308284",
+    "source_title": "IBM, AMD, And Oak Ridge Unveil Quantum Error Correction Platform",
+    "event_type": "product_launch",
+    "created": "2026-11-06",
+    "claim": "AMD strengthens its position in emerging quantum-classical computing",
+    "direction": "long",
+    "confidence": 0.91,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD\u2019s fifth-generation Epyc Turin CPUs and Instinct MI355X GPUs will power Oak Ridge\u2019s Umbra HPC system in IBM\u2019s co-located quantum error-correction platform. The systems will be used for decoding optimization, AI-assisted error correction, software orchestration, and hybrid quantum-classical workflows, giving AMD a strategic reference deployment and exposure to a potential future computing market. However, the article provides no purchase volume, revenue contribution, or commercial deployment timetable, and IBM\u2019s fault-tolerant system is not expected until 2029.",
+    "source": "Next Platform"
   }
 ]

@@ -1020,5 +1020,72 @@
     "direction": "bullish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-11-07",
+    "value": 90.83000183105469,
+    "delta": -12.764118867605024,
+    "history": [
+      [
+        "2026-11-02",
+        96.45999908447266
+      ],
+      [
+        "2026-11-03",
+        96.08999633789062
+      ],
+      [
+        "2026-11-04",
+        88.12000274658203
+      ],
+      [
+        "2026-11-05",
+        90.5199966430664
+      ],
+      [
+        "2026-11-06",
+        90.83000183105469
+      ]
+    ],
+    "narrative": "The sharp weekly drop was most plausibly driven by weakening physical-market conditions, consistent with the headline that physical oil went from a \"bidding war to a fire sale,\" signaling easing supply tightness and/or softer demand. Iran's reported constructive stance toward mediated negotiations also raises the prospect of future supply returning, adding a bearish overhang, while Kazakhstan's delayed German exports are a smaller offset.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Whale's Insight: Bitcoin Hit $81K After The Midterms - Why Didn't The Rally Last?",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Energy Stocks Still A Portfolio Hedge",
+        "domain": "SeekingAlpha",
+        "date": "20261106"
+      },
+      {
+        "title": "Tehran Is Dealing Positively With The Latest Proposal Presented By The Mediators; Tehran Is Awaiting Practical Steps From Washington To Build Trust; Iran Is Open To Negotiations That Ensure Its Legitimate Demands Are Met, AlArabiya Citing Source",
+        "domain": "Benzinga",
+        "date": "20261106"
+      },
+      {
+        "title": "Reported Earlier, Kazakhstan Says Oil Exports To Germany Won't Resume By End Of 2026",
+        "domain": "Benzinga",
+        "date": "20261106"
+      },
+      {
+        "title": "Physical Oil Just Went From a Bidding War to a Fire Sale",
+        "domain": "Yahoo",
+        "date": "20261104"
+      },
+      {
+        "title": "Sector Update: Energy Stocks Decline Premarket Wednesday",
+        "domain": "Yahoo",
+        "date": "20261104"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W45",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

@@ -1105,5 +1105,14 @@
     "META",
     "MSFT",
     "NVDA"
+  ],
+  "https://stratechery.com/2026/falling-leaves-and-stocks/": [
+    "AAPL",
+    "GOOGL",
+    "META",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/11/06/ibm-amd-and-oak-ridge-unveil-quantum-error-correction-platform/5308284": [
+    "AMD"
   ]
 }
