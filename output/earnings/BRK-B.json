@@ -37,5 +37,51 @@
     "narrative": "With no relevant headlines from the past seven days, investors should focus on Berkshire Hathaway\u2019s core operating trends rather than any specific news-driven catalyst. Key areas include insurance underwriting results and catastrophe losses, investment income, performance across its industrial and consumer businesses, and whether management comments on its large cash position and capital-allocation plans. I would expect a relatively resilient report given Berkshire\u2019s diversification, but quarterly results could still be volatile because of market movements and insurance claims; management\u2019s outlook and commentary may matter more than any single quarter\u2019s figures.",
     "headlines_used": [],
     "type": "earnings_preview"
+  },
+  {
+    "call_date": "2026-11-09",
+    "when": "2026-11-09T16:00:00-05:00",
+    "eps_estimate": 6.14,
+    "reported_quarters": [
+      {
+        "earnings_date": "2026-02-28",
+        "eps_estimate": 5.17,
+        "reported_eps": 4.73,
+        "surprise_pct": -8.48
+      },
+      {
+        "earnings_date": "2026-05-02",
+        "eps_estimate": 5.05,
+        "reported_eps": 5.26,
+        "surprise_pct": 4.17
+      },
+      {
+        "earnings_date": "2026-08-08",
+        "eps_estimate": 5.13,
+        "reported_eps": 6.03,
+        "surprise_pct": 17.4
+      },
+      {
+        "earnings_date": "2026-11-07",
+        "eps_estimate": 6.14,
+        "reported_eps": 5.94,
+        "surprise_pct": -3.21
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-08",
+    "call_date": "2026-11-09",
+    "narrative": "With no relevant headlines from the past seven days, investors should focus on Berkshire\u2019s insurance underwriting results, catastrophe losses, investment gains or losses, and the performance of its major operating businesses. The call may also draw attention to Berkshire\u2019s unusually important cash allocation decisions, including acquisitions, share repurchases, and the transition of leadership responsibilities. I would expect results to remain lumpy because reported earnings can swing with market movements and insurance claims, while operating earnings should provide the clearer view of underlying performance. Management\u2019s commentary on pricing conditions in insurance, the broader economy, and succession planning may matter as much as the headline results.",
+    "headlines_used": [],
+    "type": "earnings_preview"
+  },
+  {
+    "report_date": "2026-11-07",
+    "eps_estimate": 6.14,
+    "reported_eps": 5.94,
+    "surprise_pct": -3.21,
+    "type": "earnings_result"
   }
 ]

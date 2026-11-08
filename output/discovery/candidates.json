@@ -10017,5 +10017,85 @@
     "name": "Precigen",
     "ticker_guess": null,
     "why": "Its Papzimeos treatment for recurrent respiratory papillomatosis received full approval in August 2025; uses a modified virus to target HPV types 6 and 11"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "SemiAnalysis",
+    "article_title": "We Visited China\u2019s Stargate in Inner Mongolia",
+    "article_link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+    "name": "Envision Group",
+    "ticker_guess": null,
+    "why": "Owns and is developing the Galaxy datacenter campus in Ulanqab, planned for up to 800MW of IT capacity; vertically integrates wind generation, batteries, power electronics, substations, cooling and datacenter operations; plans up to 3GW of datacenter capacity in Inner Mongolia"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "SemiAnalysis",
+    "article_title": "We Visited China\u2019s Stargate in Inner Mongolia",
+    "article_link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+    "name": "CATL",
+    "ticker_guess": "300750.SZ",
+    "why": "Became VNET\u2019s largest shareholder in 2026 and agreed to take a 49% stake in Zhongheng Electric\u2019s controlling shareholder; is jointly developing gigawatt-scale datacenter campuses with VNET and working with Zhongheng on datacenter power systems"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "SemiAnalysis",
+    "article_title": "We Visited China\u2019s Stargate in Inner Mongolia",
+    "article_link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+    "name": "VNET Group",
+    "ticker_guess": "VNET",
+    "why": "Partnered with CATL to jointly develop gigawatt-scale datacenter campuses; provides the datacenter and colocation expertise in a broader partnership with CATL and Zhongheng Electric"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "SemiAnalysis",
+    "article_title": "We Visited China\u2019s Stargate in Inner Mongolia",
+    "article_link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+    "name": "Zhongheng Electric",
+    "ticker_guess": null,
+    "why": "Supplies high-voltage DC datacenter power systems and works with Alibaba and ByteDance; is partnering with CATL and VNET on datacenter power infrastructure"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "SemiAnalysis",
+    "article_title": "We Visited China\u2019s Stargate in Inner Mongolia",
+    "article_link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+    "name": "Crusoe",
+    "ticker_guess": null,
+    "why": "Developed the Abilene, Texas AI campus leased to Oracle and operated for OpenAI; its campus is used as a scale comparison with Galaxy and is described as having planned expansion to 1.5GW of IT capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-208/",
+    "name": "D.E. Shaw",
+    "ticker_guess": null,
+    "why": "Profiled as an investment business designed to operate institutionally and withstand complete workforce turnover; discussed in the context of scalable quantitative strategies and academic hiring"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-208/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Employs Charles Porch, whose role focuses on building relationships with celebrities and persuading them that AI is beneficial"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-07",
+    "source": "The Diff",
+    "article_title": "Longreads + Open Thread",
+    "article_link": "https://www.thediff.co/archive/longreads-open-thread-208/",
+    "name": "Instagram",
+    "ticker_guess": null,
+    "why": "Previously employed Charles Porch in a similar celebrity-relations role; its products addressed celebrity needs around attention and image control"
   }
 ]

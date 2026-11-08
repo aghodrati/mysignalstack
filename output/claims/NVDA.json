@@ -6876,5 +6876,43 @@
     "trade_worthy": false,
     "context": "The article predicts that U.S.-China relations will become more complicated after the election and specifically says Jensen Huang\u2019s position in Washington will become more difficult. This implies greater uncertainty around policies affecting NVDA\u2019s China business and access to that market, but it does not identify a specific forthcoming rule, restriction, or financial impact.",
     "source": "Stratechery"
+  },
+  {
+    "id": "9e922a2e2a0d455b",
+    "ticker": "NVDA",
+    "source_link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+    "source_title": "We Visited China\u2019s Stargate in Inner Mongolia",
+    "event_type": "capex",
+    "created": "2026-11-07",
+    "claim": "NVDA\u2019s next-generation racks gain infrastructure compatibility",
+    "direction": "long",
+    "confidence": 0.82,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article reports that Nvidia\u2019s next-generation high-density racks are moving toward 800V DC, while Galaxy already operates a live 5MW pilot converting 10kV AC directly to 800V DC at the rack. This emerging Chinese deployment provides evidence that the power architecture needed for future Nvidia racks is progressing toward operational use, potentially reducing a barrier to hyperscaler adoption as rack power density rises.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "94df70447b9f09ba",
+    "ticker": "NVDA",
+    "source_link": "https://newsletter.semianalysis.com/p/we-visited-chinas-stargate-in-inner",
+    "source_title": "We Visited China\u2019s Stargate in Inner Mongolia",
+    "event_type": "capex",
+    "created": "2026-11-07",
+    "claim": "Vera Rubin can reduce datacenter cooling costs",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Nvidia says Vera Rubin can operate with 45\u00b0C water without chillers. Galaxy uses a shared liquid- and air-cooling water loop without a central chiller plant, a design the article says has operated at scale in northern China. If customers can deploy Rubin-based systems without conventional chillers, they may face lower cooling infrastructure costs and simpler datacenter designs, improving the economics and deployability of Nvidia\u2019s high-density systems.",
+    "source": "SemiAnalysis"
   }
 ]
