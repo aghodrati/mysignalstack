@@ -16765,5 +16765,30 @@
       "summary": "This edition of The Diff is a collection of longform recommendations and commentary rather than a report of a discrete corporate event. It discusses D.E. Shaw's institutional approach to quantitative investing, the intellectual origins of parts of the AI industry, OpenAI's celebrity outreach, historical trade patterns, prediction-market implications for private companies, and the evolution from analog to digital technology. It also includes a review of a book on digital signal processing, an open discussion thread, and listings for jobs at AI and technology startups."
     },
     "source": "The Diff"
+  },
+  "https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/": {
+    "seen_date": "2026-11-09",
+    "article_date": "2026-11-09",
+    "title": "Jensen Huang\u2019s Affair, The Culper Report, Huang\u2019s Righteousness",
+    "text": "Nvidia CEO Jensen Huang admitted to an affair with a Chinese spy, and that might not be the end of his troubles. I hope he survives, but his influence will never be the same.",
+    "event": {
+      "event": "Nvidia CEO Jensen Huang admitted to having an affair with a Chinese spy, potentially creating further personal and reputational troubles.",
+      "companies": [
+        "NVDA"
+      ],
+      "other_companies_mentioned": [],
+      "event_type": "other",
+      "importance": 5,
+      "time_horizon": "months",
+      "key_facts": [
+        "Jensen Huang admitted to an affair with a Chinese spy",
+        "The article says Huang may face additional troubles",
+        "The author believes Huang's influence will be permanently diminished"
+      ],
+      "type": "analysis",
+      "novel": true,
+      "summary": "The article alleges that Nvidia CEO Jensen Huang admitted to an affair with a Chinese spy. It suggests this could lead to further difficulties for Huang and argues that his influence will not fully recover, while expressing hope that he remains able to withstand the situation."
+    },
+    "source": "Stratechery"
   }
 }

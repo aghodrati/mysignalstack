@@ -1,0 +1,55 @@
+[
+  {
+    "call_date": "2026-11-12",
+    "when": "2026-11-12T16:00:00-05:00",
+    "eps_estimate": -0.14,
+    "reported_quarters": [
+      {
+        "earnings_date": "2026-06-23",
+        "eps_estimate": -0.15,
+        "reported_eps": -0.04,
+        "surprise_pct": 73.96
+      },
+      {
+        "earnings_date": "2026-08-12",
+        "eps_estimate": -0.18,
+        "reported_eps": -0.05,
+        "surprise_pct": 74.57
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-09",
+    "call_date": "2026-11-12",
+    "narrative": "Investors should watch whether Cerebras\u2019 Q3 results and management commentary support the \u201c2027 story,\u201d particularly sustained demand for its wafer-scale AI systems and a credible path to scaling deployments. The Google-versus-Nvidia rivalry headlines suggest the broader AI-chip market is becoming more competitive, so the call should clarify Cerebras\u2019 differentiation, customer traction, and ability to win business as hyperscalers develop specialized chips. My expectation is for an upbeat demand narrative if recent AI enthusiasm is translating into orders, but investors should remain alert for execution risks, concentration among major customers, and signs that competition could pressure the company\u2019s growth outlook.",
+    "headlines_used": [
+      {
+        "title": "'Google Escalates Nvidia Rivalry With Specialized Versions of AI Chips' - Bloomberg Exclusive",
+        "domain": "Benzinga",
+        "date": "20261109"
+      },
+      {
+        "title": "Top 3 Tech Stocks That May Explode In Q4",
+        "domain": "Benzinga",
+        "date": "20261109"
+      },
+      {
+        "title": "2 big AI narratives wrestle with each other: What to watch this week",
+        "domain": "Yahoo",
+        "date": "20261108"
+      },
+      {
+        "title": "3 Fast Growing Stocks With Earnings Growth Up To 120%",
+        "domain": "Yahoo",
+        "date": "20261108"
+      },
+      {
+        "title": "Cerebras: Q3 Could Validate The 2027 Story",
+        "domain": "SeekingAlpha",
+        "date": "20261103"
+      }
+    ],
+    "type": "earnings_preview"
+  }
+]

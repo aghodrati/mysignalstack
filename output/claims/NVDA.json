@@ -6914,5 +6914,24 @@
     "trade_worthy": false,
     "context": "Nvidia says Vera Rubin can operate with 45\u00b0C water without chillers. Galaxy uses a shared liquid- and air-cooling water loop without a central chiller plant, a design the article says has operated at scale in northern China. If customers can deploy Rubin-based systems without conventional chillers, they may face lower cooling infrastructure costs and simpler datacenter designs, improving the economics and deployability of Nvidia\u2019s high-density systems.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "19a70f5bd6b76a8a",
+    "ticker": "NVDA",
+    "source_link": "https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/",
+    "source_title": "Jensen Huang\u2019s Affair, The Culper Report, Huang\u2019s Righteousness",
+    "event_type": "other",
+    "created": "2026-11-09",
+    "claim": "Huang\u2019s diminished influence creates a reputational and leadership risk for NVDA",
+    "direction": "short",
+    "confidence": 0.96,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Huang admitted to an affair with a Chinese spy, may face additional personal troubles, and believes his influence will be permanently diminished. It does not specify how this would affect NVDA\u2019s operations, competitive position, financial results, or valuation.",
+    "source": "Stratechery"
   }
 ]

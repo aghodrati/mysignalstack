@@ -22,5 +22,75 @@
       "Capacity expansion depends on GPU availability, power procurement, construction, and deployment at gigawatt scale, creating significant operational concentration risk."
     ],
     "summary": "NBIS reported an exceptionally strong quarter, with revenue up 454% year over year to $582 million, 41% group adjusted EBITDA margin, $3 billion ARR, substantial customer prepayments, and multiple billion-dollar contracts. The Q&A reinforced strong demand and pricing power, while management presented short-term capacity deals, auctions, asset-light partnerships, and asset-backed financing as levers for higher returns and faster scaling. The bullish outlook is tempered by enormous CapEx needs, potential dilution or leverage, permitting and construction risk, and the lag between connected power and realized revenue."
+  },
+  {
+    "call_date": "2026-11-12",
+    "when": "2026-11-12T08:00:00-05:00",
+    "eps_estimate": -1.24,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-11",
+        "eps_estimate": -0.52,
+        "reported_eps": -0.4,
+        "surprise_pct": 23.33
+      },
+      {
+        "earnings_date": "2026-02-12",
+        "eps_estimate": -0.6,
+        "reported_eps": -0.99,
+        "surprise_pct": -63.06
+      },
+      {
+        "earnings_date": "2026-05-13",
+        "eps_estimate": -0.71,
+        "reported_eps": 2.11,
+        "surprise_pct": 396.14
+      },
+      {
+        "earnings_date": "2026-08-12",
+        "eps_estimate": -0.86,
+        "reported_eps": -0.68,
+        "surprise_pct": 21.24
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-09",
+    "call_date": "2026-11-12",
+    "narrative": "Investors should focus on whether Nebius can demonstrate strong AI-cloud demand while explaining its capital needs, funding access, and data-center expansion plans, especially amid concerns that lenders are questioning the sustainability of some AI infrastructure financing. The turbulence in IREN and CoreWeave suggests the market may be increasingly sensitive to execution, leverage, and the gap between ambitious capacity plans and near-term profitability, so Nebius\u2019s guidance and cash-burn outlook will matter as much as its reported results. The call should also clarify customer momentum, utilization of existing capacity, and whether potential demand from major AI developers\u2014including the broader Anthropic/IPO theme\u2014translates into durable commitments. Given the \u201cbuy, hold or sell\u201d framing ahead of earnings, expectations appear cautious: a credible growth outlook with disciplined financing could reassure investors, while weaker bookings, delays, or heavier funding requirements could pressure the stock.",
+    "headlines_used": [
+      {
+        "title": "Alphabet Has $75.7 Billion of Data-Center Backstops. Lenders Just Started Doubting Them",
+        "domain": "Yahoo",
+        "date": "20261109"
+      },
+      {
+        "title": "Nebius Stock Ahead of Q3 Earnings: Should You Buy, Hold or Sell?",
+        "domain": "Yahoo",
+        "date": "20261109"
+      },
+      {
+        "title": "Why Is IREN Stock Falling on Monday?",
+        "domain": "Benzinga",
+        "date": "20261109"
+      },
+      {
+        "title": "CoreWeave Stock Hits Turbulence Monday: What's Going On?",
+        "domain": "Benzinga",
+        "date": "20261109"
+      },
+      {
+        "title": "Wall Street Brunch: Anthropic IPO Goes On The Road",
+        "domain": "SeekingAlpha",
+        "date": "20261108"
+      },
+      {
+        "title": "Wall Street Week Ahead",
+        "domain": "SeekingAlpha",
+        "date": "20261108"
+      }
+    ],
+    "type": "earnings_preview"
   }
 ]

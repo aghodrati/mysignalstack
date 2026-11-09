@@ -39,5 +39,55 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-11-09",
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.9,
+    "summary": "QBTS remains fundamentally weak: revenue is roughly flat, operating and free-cash-flow margins are deeply negative, and valuation remains extraordinarily high at 280x revenue despite no profitability. The sharp increase in analyst-implied upside and institutional flows offers support, but these sentiment and ownership signals do not offset the speculative valuation, ongoing losses, negative revisions, and heavy insider selling.",
+    "key_changes": [
+      "Revenue growth improved dramatically from -80.9% to -0.6%, moving from severe contraction to approximately flat performance.",
+      "EV-to-revenue fell 49.1%, from 550.4x to 280.0x, but remains exceptionally elevated for an unprofitable company.",
+      "Analyst-implied upside rose 161.2%, from 79.3% to 207.2%, while institutional flow increased 539.8%, from 22.6 to 144.4.",
+      "The forward P/E became less negative, improving from -53.1 to -28.5, although earnings remain negative and the metric is not economically meaningful.",
+      "Operating margin improved modestly from -19.1% to -17.3%, while free-cash-flow margin deteriorated from -7.8% to -8.9%.",
+      "Low-short-interest support weakened from -20.0 to -23.7, and revisions remain negative with no net upgrades."
+    ],
+    "risks": [
+      "Extreme valuation leaves substantial downside if growth, commercialization, or technology expectations disappoint.",
+      "Persistent operating and free-cash-flow losses could require additional capital, creating dilution and financing risk.",
+      "Revenue growth is only approximately flat, providing little fundamental support for the current revenue multiple.",
+      "Heavy insider selling may indicate limited internal conviction and creates an adverse ownership signal.",
+      "Negative revisions and zero net upgrades could undermine the analyst fair-value anchor.",
+      "Quantum-computing commercialization, competitive, execution, and technology risks remain substantial."
+    ],
+    "reasoning": "The fundamentals imply a short because extreme valuation and sustained losses overwhelmingly outweigh near-flat growth and supportive analyst or institutional sentiment, warranting high but not absolute conviction.",
+    "fair_value_estimate": 33.21,
+    "current_price": 10.81,
+    "implied_return_pct": 207.2,
+    "factors": {
+      "Growth": {
+        "revenue_growth": -0.006
+      },
+      "Valuation": {
+        "forward_pe": -28.53598,
+        "ev_to_revenue": 280.044
+      },
+      "Quality": {
+        "operating_margin": -17.32055,
+        "fcf_margin": -8.923943661971832
+      },
+      "Sentiment": {
+        "analyst_upside": 207.2155411655874,
+        "revisions_trend": -5.882352941176472,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 144.431995021,
+        "insider_flow": -329517076.0,
+        "low_short_interest": -23.66
+      }
+    },
+    "trigger": "earnings"
   }
 ]
