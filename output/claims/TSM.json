@@ -967,5 +967,24 @@
     "trade_worthy": false,
     "context": "Furiosa expects to produce about 20,000 RNGD accelerators in 2026 and roughly twice that in 2027, while its next accelerator is planned for a 2 nm process with chiplets and HBM4 or HBM4e. The article says the process is presumably TSMC's, creating a potential source of incremental advanced-node and packaging demand for TSMC, although the foundry choice and resulting revenue contribution remain unconfirmed and likely small relative to TSMC's overall business.",
     "source": "Next Platform"
+  },
+  {
+    "id": "9c5ac81d274d915c",
+    "ticker": "TSM",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/09/google-rejiggers-tpu-accelerators-for-broader-ai-inference-work/5308534",
+    "source_title": "Google Rejiggers TPU Accelerators For Broader AI Inference Work",
+    "event_type": "product_launch",
+    "created": "2026-11-09",
+    "claim": "Google\u2019s TPU expansion supports incremental TSMC AI-chip manufacturing demand",
+    "direction": "long",
+    "confidence": 0.84,
+    "importance": 6,
+    "expected_return_pct": 1.5,
+    "expected_horizon_days": 365,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The TPU 8t is being developed by Broadcom for Google and is expected to use chips manufactured by TSMC. The TPU 8i is being shepherded by MediaTek, with the article also referring to MediaTek and TSMC in discussing its chip supply. Google plans to deploy the modified TPU 8tx and TPU 8i Max systems beginning in 2027 and ramp them across multiple Cloud regions, creating a potential additional source of advanced AI-accelerator wafer demand for TSMC, although volumes and pricing remain undisclosed and the TPU 8i rollout has experienced delays.",
+    "source": "Next Platform"
   }
 ]

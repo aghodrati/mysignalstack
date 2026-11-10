@@ -3361,5 +3361,43 @@
     "trade_worthy": false,
     "context": "AMD\u2019s fifth-generation Epyc Turin CPUs and Instinct MI355X GPUs will power Oak Ridge\u2019s Umbra HPC system in IBM\u2019s co-located quantum error-correction platform. The systems will be used for decoding optimization, AI-assisted error correction, software orchestration, and hybrid quantum-classical workflows, giving AMD a strategic reference deployment and exposure to a potential future computing market. However, the article provides no purchase volume, revenue contribution, or commercial deployment timetable, and IBM\u2019s fault-tolerant system is not expected until 2029.",
     "source": "Next Platform"
+  },
+  {
+    "id": "8b32c5f61424e5c8",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/09/google-rejiggers-tpu-accelerators-for-broader-ai-inference-work/5308534",
+    "source_title": "Google Rejiggers TPU Accelerators For Broader AI Inference Work",
+    "event_type": "product_launch",
+    "created": "2026-11-09",
+    "claim": "AMD gains a Google TPU 8tx processor design win",
+    "direction": "long",
+    "confidence": 0.94,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google is replacing its Axion Arm server CPU with an unnamed AMD Epyc processor in the TPU 8tx, citing AMD\u2019s on-board root-of-trust and encryption accelerators for keeping workloads encrypted through processing. The systems are expected to deploy beginning in 2027, but Google has not disclosed pricing, processor identity, volumes, or customer uptake, limiting the direct financial significance that can be estimated.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "fcc9bd7c42a5b70c",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/09/google-rejiggers-tpu-accelerators-for-broader-ai-inference-work/5308534",
+    "source_title": "Google Rejiggers TPU Accelerators For Broader AI Inference Work",
+    "event_type": "product_launch",
+    "created": "2026-11-09",
+    "claim": "AMD\u2019s TPU processor advantage may be temporary",
+    "direction": "short",
+    "confidence": 0.68,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article characterizes AMD\u2019s selection as potentially a short-term victory, arguing that Google could embed comparable security functionality into its TPU 9 architecture and next-generation Axion CPUs. This creates a longer-term risk that AMD will lose the TPU 8tx processor role in future Google designs, although the article presents this as speculation rather than a disclosed roadmap.",
+    "source": "Next Platform"
   }
 ]

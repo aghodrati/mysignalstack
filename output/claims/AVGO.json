@@ -986,5 +986,24 @@
     "trade_worthy": false,
     "context": "The combined Marvell-Lumentum would span optical fabrics from datacenter and rack connectivity down to near-package and co-packaged optics, strengthening Marvell\u2019s ability to serve hyperscalers\u2019 custom CPUs and XPUs while supplying other chipmakers. This could challenge Broadcom\u2019s position in AI connectivity over the long term, although the article says Nvidia and Broadcom will still have connectivity businesses several times larger than the expanded Marvell-Lumentum. The deal is not expected to close until the first half of 2028 and faces potential Chinese and European antitrust scrutiny, making the competitive impact distant and uncertain.",
     "source": "Next Platform"
+  },
+  {
+    "id": "b5f0f12b9a3857b7",
+    "ticker": "AVGO",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/09/google-rejiggers-tpu-accelerators-for-broader-ai-inference-work/5308534",
+    "source_title": "Google Rejiggers TPU Accelerators For Broader AI Inference Work",
+    "event_type": "product_launch",
+    "created": "2026-11-09",
+    "claim": "AVGO gains a future Google TPU custom-silicon opportunity",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google is developing the TPU 8t and its inference-focused TPU 8tx variant with Broadcom\u2019s chip-shepherding unit, and expects TPU 8tx deployments to begin in 2027 and ramp across Google Cloud regions over roughly the following year and a half. The article says the chips are expected to be manufactured by TSMC, creating potential future custom-chip demand for Broadcom, although pricing, volumes, and the precise scope of Broadcom\u2019s revenue participation are undisclosed. The TPU 8i Max is instead associated with MediaTek, so the opportunity described is limited primarily to the TPU 8t/8tx family.",
+    "source": "Next Platform"
   }
 ]

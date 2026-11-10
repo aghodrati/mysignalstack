@@ -6933,5 +6933,43 @@
     "trade_worthy": false,
     "context": "The article says Huang admitted to an affair with a Chinese spy, may face additional personal troubles, and believes his influence will be permanently diminished. It does not specify how this would affect NVDA\u2019s operations, competitive position, financial results, or valuation.",
     "source": "Stratechery"
+  },
+  {
+    "id": "6d6bb69cdde10dd9",
+    "ticker": "NVDA",
+    "source_link": "https://www.thediff.co/archive/irr-dollars-of-alpha-or-dollars-of-fees/",
+    "source_title": "IRR, Dollars of Alpha, or Dollars of Fees",
+    "event_type": "other",
+    "created": "2026-11-09",
+    "claim": "Nvidia faces heightened governance and reputational risk",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Jensen Huang was accused of an extramarital relationship with Megaspeed CEO Alice Huang, prompting Nvidia to announce an investigation and Huang to apologize to employees. Culper Research had also questioned Nvidia\u2019s relationship with Megaspeed and Megaspeed\u2019s relationship with Alibaba, increasing scrutiny around the company\u2019s commercial and leadership relationships.",
+    "source": "The Diff"
+  },
+  {
+    "id": "a168eb267c921d1b",
+    "ticker": "NVDA",
+    "source_link": "https://www.thediff.co/archive/irr-dollars-of-alpha-or-dollars-of-fees/",
+    "source_title": "IRR, Dollars of Alpha, or Dollars of Fees",
+    "event_type": "other",
+    "created": "2026-11-09",
+    "claim": "AI policy could weaken Nvidia\u2019s long-term economics",
+    "direction": "short",
+    "confidence": 0.8,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that Nvidia is becoming harder to analyze because presidential-level decisions about AI proliferation may prioritize Nvidia\u2019s stock performance over national-security considerations. It specifically suggests that Nvidia could face a materially higher cost of capital or lower revenue beginning around January 2029 as policymakers address AI proliferation.",
+    "source": "The Diff"
   }
 ]

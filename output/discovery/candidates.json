@@ -10097,5 +10097,100 @@
     "name": "Instagram",
     "ticker_guess": null,
     "why": "Previously employed Charles Porch in a similar celebrity-relations role; its products addressed celebrity needs around attention and image control"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Next Platform",
+    "article_title": "Datacenter Systems Spending To Go Through The Roof In 2027",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/10/datacenter-systems-spending-to-go-through-the-roof-in-2027/5308636",
+    "name": "datacenter systems",
+    "why": "2027 datacenter systems spending projected $1.73T; 48% YoY growth"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Next Platform",
+    "article_title": "Datacenter Systems Spending To Go Through The Roof In 2027",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/10/datacenter-systems-spending-to-go-through-the-roof-in-2027/5308636",
+    "name": "IaaS",
+    "why": "IaaS extracted as separate category; 2027 IaaS + datacenter > enterprise software"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Next Platform",
+    "article_title": "Datacenter Systems Spending To Go Through The Roof In 2027",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/10/datacenter-systems-spending-to-go-through-the-roof-in-2027/5308636",
+    "name": "AI systems",
+    "why": "AI spending driving hardware demand; GenAI boom likened to Dot Com"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Next Platform",
+    "article_title": "Datacenter Systems Spending To Go Through The Roof In 2027",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/10/datacenter-systems-spending-to-go-through-the-roof-in-2027/5308636",
+    "name": "electricity",
+    "why": "political uprising against tech titans tied to electricity needs; concerns over 2030 power ramp-up"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Next Platform",
+    "article_title": "Datacenter Systems Spending To Go Through The Roof In 2027",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/10/datacenter-systems-spending-to-go-through-the-roof-in-2027/5308636",
+    "name": "enterprise software",
+    "why": "enterprise software historically 2-3x datacenter sales; 2027 forecast $1.68T"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "Next Platform",
+    "article_title": "Google Rejiggers TPU Accelerators For Broader AI Inference Work",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/09/google-rejiggers-tpu-accelerators-for-broader-ai-inference-work/5308534",
+    "name": "MediaTek",
+    "ticker_guess": "2454.TW",
+    "why": "Shepherding Google\u2019s TPU 8i accelerator; experienced delays earlier in 2026 and is involved in the TPU 8i Max design."
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "The Diff",
+    "article_title": "IRR, Dollars of Alpha, or Dollars of Fees",
+    "article_link": "https://www.thediff.co/archive/irr-dollars-of-alpha-or-dollars-of-fees/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Planning quarterly earnings calls as part of completing a fundraise; increasingly operating like a public company but faces valuation uncertainty that complicates an IPO"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "The Diff",
+    "article_title": "IRR, Dollars of Alpha, or Dollars of Fees",
+    "article_link": "https://www.thediff.co/archive/irr-dollars-of-alpha-or-dollars-of-fees/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Expected to go public within weeks, barring adverse headlines or a major shift in investor sentiment; may raise less or delay the IPO depending on public-market valuation"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "The Diff",
+    "article_title": "IRR, Dollars of Alpha, or Dollars of Fees",
+    "article_link": "https://www.thediff.co/archive/irr-dollars-of-alpha-or-dollars-of-fees/",
+    "name": "Citadel",
+    "ticker_guess": null,
+    "why": "Presented as a successful example of a quant firm expanding into discretionary long/short investing; described as a potential parent platform for investment talent and adjacent strategies"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "The Diff",
+    "article_title": "IRR, Dollars of Alpha, or Dollars of Fees",
+    "article_link": "https://www.thediff.co/archive/irr-dollars-of-alpha-or-dollars-of-fees/",
+    "name": "Megaspeed",
+    "ticker_guess": null,
+    "why": "Named in allegations involving Nvidia CEO Jensen Huang and a suspected relationship with a Chinese spy; its relationship with Alibaba was also raised by short seller Culper Research"
   }
 ]

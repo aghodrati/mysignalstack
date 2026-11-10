@@ -243,5 +243,50 @@
     "final_multiplier": 0.82,
     "confidence_before": 0.91,
     "confidence_after": 0.7462
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-10",
+    "thesis": "TSM remains a high-conviction long because exceptional AI/HPC demand, leading-edge process and packaging leadership, expanding customer diversification, and strong pricing power are driving unusually rapid growth despite rising CapEx, margin dilution, bottlenecks, and longer-term competition.",
+    "direction": "long",
+    "confidence": 0.92,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.9,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.88,
+    "pre_critic_confidence": 0.92,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 28,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Q4 2026 revenue reaches or exceeds the $52.3-$54.3 billion guidance range and confirms approximately 44% full-year growth.",
+      "Continued multi-year AI/HPC demand from NVIDIA, Broadcom, Google TPUs, AMD, Microsoft Maia 300, and other custom accelerators keeps advanced-node capacity and packaging fully utilized.",
+      "N2 capacity more than doubles in 2027, with AMD Venice and MI455X plus other customers accelerating 2nm revenue and mix improvement.",
+      "CoWoS, CoWoS-L, hybrid bonding, liquid cooling, custom HBM assembly, and related packaging expansions allow TSMC to convert constrained AI demand into additional shipments.",
+      "OpenAI Jalape\u00f1o and Broadcom custom-accelerator programs ramp through 2027-2028, diversifying AI demand beyond NVIDIA.",
+      "Pricing for scarce advanced-node capacity remains firm, preserving gross margins near the guided 65%-67% range."
+    ],
+    "invalidation": [
+      "AI infrastructure demand weakens because of data-center power, financing, HBM, packaging, networking, or customer-capital constraints, causing utilization or forecasts to fall.",
+      "Aggressive $60-$64 billion 2026 CapEx and elevated 2026-2028 investment produce materially weaker free-cash-flow conversion, underutilization, or execution problems.",
+      "N2 ramp difficulties, CoWoS-L shortages, or other packaging bottlenecks prevent TSMC from converting wafer demand into timely customer shipments.",
+      "Overseas-fab dilution expands beyond the expected 3%-4%, while pricing weakens and gross margins fall materially below guidance.",
+      "Intel 18A, Samsung, SMIC, Tesla's Terafab, or alternative packaging technologies achieve commercially meaningful scale and reduce TSMC's market share or pricing power.",
+      "Taiwan geopolitical disruption materially impairs leading-edge production, or earnings growth and margins normalize enough to make the roughly 20x forward P/E and expanded EV-to-revenue multiple unattractive."
+    ],
+    "reasoning": "The news consensus, independent fundamentals, and confident earnings-call outlook all point strongly higher, while the latest quarter showed a real $4.60 EPS result versus $4.52 expected, so the bullish thesis outweighs meaningful but mostly medium- to long-term capacity, capital-intensity, competitive, and geopolitical risks.",
+    "claims_considered": 52
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-10",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.92,
+    "confidence_after": 0.92
   }
 ]
