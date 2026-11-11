@@ -38,5 +38,53 @@
       }
     },
     "trigger": "manual"
+  },
+  {
+    "date": "2026-11-11",
+    "fundamental_direction": "short",
+    "fundamental_confidence": 0.94,
+    "summary": "RGTI's fundamental profile has deteriorated materially: revenue growth has shifted from exceptionally strong to negative, while operating losses have widened sharply and free cash flow remains negative. Although EV/revenue has fallen substantially and consensus upside is large, the valuation remains extraordinarily demanding for an unprofitable, shrinking business, making the shares highly dependent on a major execution and profitability turnaround.",
+    "key_changes": [
+      "Revenue growth deteriorated from 198.9% to -27.5%, eliminating the prior high-growth support for the valuation.",
+      "Operating margin worsened from -5.9% to -23.5%, indicating materially weaker operating economics.",
+      "EV/revenue declined from 490.6x to 295.6x, an improvement but still an exceptionally expensive multiple.",
+      "Consensus analyst upside increased from 77.1% to 116.3%, but this is a sentiment-based fair-value anchor rather than evidence of fundamental improvement.",
+      "Institutional buying slowed from 44.9% to 11.2%, while low short interest became somewhat less favorable.",
+      "Free-cash-flow margin improved modestly from -6.1% to -5.0% but remains negative, and forward P/E remains negative because earnings are still unavailable."
+    ],
+    "risks": [
+      "The company may require substantial additional capital, creating dilution and financing risk.",
+      "Negative growth combined with deeply negative operating margins raises the risk that the business model or commercialization timeline is not scaling as expected.",
+      "The extremely high EV/revenue multiple leaves substantial downside if growth, contracts, or technology milestones disappoint.",
+      "Consensus fair value may embed optimistic assumptions and should not be treated as reliable fundamental support.",
+      "Insider selling and reduced institutional-flow momentum may signal weaker alignment or declining investor conviction."
+    ],
+    "reasoning": "The combination of sharply negative growth, worsening operating losses, ongoing cash burn, and an extreme valuation outweighs the lower EV/revenue multiple and optimistic analyst target, supporting a high-confidence short fundamental view.",
+    "fair_value_estimate": 26.275,
+    "current_price": 12.15,
+    "implied_return_pct": 116.3,
+    "factors": {
+      "Growth": {
+        "revenue_growth": -0.275
+      },
+      "Valuation": {
+        "forward_pe": -57.857143,
+        "ev_to_revenue": 295.601
+      },
+      "Quality": {
+        "operating_margin": -23.51949,
+        "fcf_margin": -4.990403370523524
+      },
+      "Sentiment": {
+        "analyst_upside": 116.2551440329218,
+        "net_upgrades": 0.0
+      },
+      "Ownership": {
+        "institutional_flow": 11.215500023499999,
+        "insider_flow": -73471288,
+        "low_short_interest": -20.549999
+      }
+    },
+    "trigger": "earnings"
   }
 ]

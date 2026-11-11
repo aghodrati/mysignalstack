@@ -6971,5 +6971,43 @@
     "trade_worthy": false,
     "context": "The article argues that Nvidia is becoming harder to analyze because presidential-level decisions about AI proliferation may prioritize Nvidia\u2019s stock performance over national-security considerations. It specifically suggests that Nvidia could face a materially higher cost of capital or lower revenue beginning around January 2029 as policymakers address AI proliferation.",
     "source": "The Diff"
+  },
+  {
+    "id": "1c1fd8bb1be170e9",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/10/amd-tunes-up-cpus-for-agentic-ai-with-venice-epyc-processors/5308850",
+    "source_title": "AMD Tunes Up CPUs For Agentic AI With \u201cVenice\u201d Epyc Processors",
+    "event_type": "product_launch",
+    "created": "2026-11-10",
+    "claim": "Agentic AI could reduce Nvidia\u2019s GPU intensity advantage",
+    "direction": "short",
+    "confidence": 0.84,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues agentic AI workloads require substantial CPU capacity for orchestration, database access, enterprise applications, code execution, security and policy tasks. AMD estimates the current GPU-to-CPU ratio of roughly 1:4\u20131:8 could move toward 1:1, which would increase CPU demand relative to GPUs and potentially reduce the amount of GPU infrastructure required per agentic-AI deployment. This is a workload-mix risk to Nvidia, although the article does not quantify any reduction in total GPU demand.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "5c1e413bc7561ada",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/10/amd-tunes-up-cpus-for-agentic-ai-with-venice-epyc-processors/5308850",
+    "source_title": "AMD Tunes Up CPUs For Agentic AI With \u201cVenice\u201d Epyc Processors",
+    "event_type": "product_launch",
+    "created": "2026-11-10",
+    "claim": "AMD\u2019s Venice creates competitive pressure on Nvidia\u2019s Vera AI systems",
+    "direction": "short",
+    "confidence": 0.72,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD claims its 256-core, 400-watt Venice processor delivers 3.3 times Nvidia Vera\u2019s agents-per-watt and supports 1.5 times as many agents per AI rack as a Vera rack. If customers prioritize agent throughput, power efficiency and rack density for agentic workloads, these claimed advantages could weaken Nvidia\u2019s competitive positioning and pricing power in portions of AI infrastructure, despite the comparisons being AMD-provided and focused on CPU-enabled agentic workloads rather than general GPU performance.",
+    "source": "Next Platform"
   }
 ]

@@ -10192,5 +10192,60 @@
     "name": "Megaspeed",
     "ticker_guess": null,
     "why": "Named in allegations involving Nvidia CEO Jensen Huang and a suspected relationship with a Chinese spy; its relationship with Alibaba was also raised by short seller Culper Research"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-11",
+    "source": "Doomberg",
+    "article_title": "Cat-Scratch Fervo",
+    "article_link": "https://newsletter.doomberg.com/p/cat-scratch-fervo",
+    "name": "Fervo Energy",
+    "ticker_guess": null,
+    "why": "Plans to produce more than 1 GW of geothermal power by 2030; raised more than $2 billion in its May IPO; faced a critical short-seller report from Morpheus Research and significant post-IPO volatility"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Normal Tech",
+    "article_title": "The missing quadrant in responses to AI",
+    "article_link": "https://www.normaltech.ai/p/the-missing-quadrant-in-responses",
+    "name": "artificial intelligence",
+    "why": "STABL treats frontier AI as a transformative general-purpose technology; Societal effects are expected to be constrained by organizational, regulatory, and human bottlenecks"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Normal Tech",
+    "article_title": "The missing quadrant in responses to AI",
+    "article_link": "https://www.normaltech.ai/p/the-missing-quadrant-in-responses",
+    "name": "AI safety",
+    "why": "The proposed safety portfolio extends beyond alignment and non-proliferation to system control, monitoring, cybersecurity, and societal resilience; STABL calls for domain-specific, high-ambition, worst-case planning for AI disasters"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Normal Tech",
+    "article_title": "The missing quadrant in responses to AI",
+    "article_link": "https://www.normaltech.ai/p/the-missing-quadrant-in-responses",
+    "name": "labor market",
+    "why": "The article says AI adoption has not yet produced broad productivity gains or major aggregate unemployment changes; STABL favors AI augmentation and worker tools over automation focused solely on replacing labor"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Normal Tech",
+    "article_title": "The missing quadrant in responses to AI",
+    "article_link": "https://www.normaltech.ai/p/the-missing-quadrant-in-responses",
+    "name": "AI regulation",
+    "why": "Clinical trials, professional rules, and other regulatory processes can delay AI-enabled benefits such as faster drug development; STABL proposes reforming institutions while preserving useful safeguards"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-10",
+    "source": "Normal Tech",
+    "article_title": "The missing quadrant in responses to AI",
+    "article_link": "https://www.normaltech.ai/p/the-missing-quadrant-in-responses",
+    "name": "recursive self-improvement",
+    "why": "STABL plans recurring open-ended evaluations of whether AI agents can conduct AI research; It argues that progress on easily verifiable tasks may not translate into broad, open-ended capabilities"
   }
 ]

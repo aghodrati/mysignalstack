@@ -986,5 +986,43 @@
     "trade_worthy": true,
     "context": "The TPU 8t is being developed by Broadcom for Google and is expected to use chips manufactured by TSMC. The TPU 8i is being shepherded by MediaTek, with the article also referring to MediaTek and TSMC in discussing its chip supply. Google plans to deploy the modified TPU 8tx and TPU 8i Max systems beginning in 2027 and ramp them across multiple Cloud regions, creating a potential additional source of advanced AI-accelerator wafer demand for TSMC, although volumes and pricing remain undisclosed and the TPU 8i rollout has experienced delays.",
     "source": "Next Platform"
+  },
+  {
+    "id": "a565990195df549f",
+    "ticker": "TSM",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/10/how-the-venice-epycs-measure-up-against-prior-amd-server-cpus/5308901",
+    "source_title": "How The \u201cVenice\u201d Epycs Measure Up Against Prior AMD Server CPUs",
+    "event_type": "product_launch",
+    "created": "2026-11-10",
+    "claim": "AMD\u2019s Venice launch adds incremental demand for TSMC\u2019s advanced-node capacity",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Venice compute dies are manufactured on TSMC\u2019s 2nm process, while its SP7 and SP8 I/O and memory dies use TSMC\u2019s 6nm process. AMD is launching 31 CPUs, with SP7 products available immediately and SP8 products expected in the first half of 2027; however, the article provides no shipment volumes or wafer commitments, so the direct financial impact on TSMC cannot be quantified confidently.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "88540dc64f23ea55",
+    "ticker": "TSM",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/10/how-the-venice-epycs-measure-up-against-prior-amd-server-cpus/5308901",
+    "source_title": "How The \u201cVenice\u201d Epycs Measure Up Against Prior AMD Server CPUs",
+    "event_type": "product_launch",
+    "created": "2026-11-10",
+    "claim": "AMD\u2019s broad Venice rollout supports TSMC\u2019s 2nm customer adoption",
+    "direction": "long",
+    "confidence": 0.79,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD is using TSMC\u2019s 2nm process for both 12-core and 32-core Zen 6-derived compute dies, with the generation offering up to 256 cores and a cited 20% per-core IPC improvement over Zen 5. The successful launch and broad 31-CPU lineup provide a high-profile commercial use case for TSMC\u2019s 2nm technology, potentially supporting future customer confidence and utilization, although the article does not establish incremental orders or financial timing beyond this product generation.",
+    "source": "Next Platform"
   }
 ]

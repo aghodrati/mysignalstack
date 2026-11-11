@@ -1,0 +1,43 @@
+[
+  {
+    "date": "2026-11-11",
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "summary": "CBRS has exceptional revenue growth of 74.3% and positive free-cash-flow margin of 9.7%, while analyst sentiment and institutional flows are strongly supportive. However, the valuation is extremely demanding at 73.2x forward earnings and 23.2x EV/revenue, alongside deeply negative operating margins, making the fundamentals substantially mixed despite the growth profile.",
+    "key_changes": [],
+    "risks": [
+      "Extreme valuation leaves substantial downside if growth slows, estimates are reduced, or the path to sustainable profitability is delayed.",
+      "Operating margin of -265% indicates severe underlying operating losses despite positive reported free cash flow, raising questions about earnings quality and durability.",
+      "Large insider selling is a significant alignment and supply risk.",
+      "The 161.8% consensus upside may reflect optimistic assumptions and should not be treated as a reliable valuation target."
+    ],
+    "reasoning": "The exceptional growth and supportive sentiment are offset by extreme valuation, deeply negative operating profitability, and insider selling, so the fundamentals alone support a neutral view with relatively high confidence.",
+    "fair_value_estimate": 245.18182,
+    "current_price": 93.66,
+    "implied_return_pct": 161.8,
+    "factors": {
+      "Growth": {
+        "revenue_growth": 0.743
+      },
+      "Valuation": {
+        "forward_pe": 73.212494,
+        "ev_to_revenue": 23.235
+      },
+      "Quality": {
+        "operating_margin": -2.64968,
+        "fcf_margin": 0.0974109413215118
+      },
+      "Sentiment": {
+        "analyst_upside": 161.7785821054879,
+        "revisions_trend": 9.090909090909093,
+        "net_upgrades": 1.0
+      },
+      "Ownership": {
+        "institutional_flow": 76.32649999999998,
+        "insider_flow": -415300996.0,
+        "low_short_interest": -19.780001
+      }
+    },
+    "trigger": "earnings"
+  }
+]

@@ -1442,5 +1442,24 @@
     "trade_worthy": false,
     "context": "The combined Marvell-Lumentum company would vertically integrate important optical-fabric and indium-phosphide laser capabilities used in AI connectivity, potentially making Marvell a more important supplier to AWS custom CPUs and XPUs. The article explicitly notes the resulting single-source and customer-concentration risks; disruptions, allocation decisions, or dependence on one integrated vendor could constrain AWS deployments, though the article does not establish a specific disruption or financial impact.",
     "source": "Next Platform"
+  },
+  {
+    "id": "ec4f68b66b6000bc",
+    "ticker": "AMZN",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/10/amd-tunes-up-cpus-for-agentic-ai-with-venice-epyc-processors/5308850",
+    "source_title": "AMD Tunes Up CPUs For Agentic AI With \u201cVenice\u201d Epyc Processors",
+    "event_type": "product_launch",
+    "created": "2026-11-10",
+    "claim": "AMD intensifies competition with AWS\u2019s Graviton-based infrastructure",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD says its 256-core Venice Epyc 9996 outperforms Amazon\u2019s 192-core Graviton5 by a greater margin than the prior-generation Turin processor did. If validated in customer workloads, this gives AWS customers a stronger non-Amazon CPU alternative and could pressure AWS\u2019s custom-CPU differentiation or infrastructure economics, though the article provides no adoption, pricing, or financial impact data.",
+    "source": "Next Platform"
   }
 ]

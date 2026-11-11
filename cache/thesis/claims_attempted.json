@@ -1129,5 +1129,17 @@
   ],
   "https://www.thediff.co/archive/irr-dollars-of-alpha-or-dollars-of-fees/": [
     "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/11/10/how-the-venice-epycs-measure-up-against-prior-amd-server-cpus/5308901": [
+    "AMD",
+    "INTC",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/compute/2026/11/10/amd-tunes-up-cpus-for-agentic-ai-with-venice-epyc-processors/5308850": [
+    "AMD",
+    "AMZN",
+    "ARM",
+    "INTC",
+    "NVDA"
   ]
 }

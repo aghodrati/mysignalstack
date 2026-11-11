@@ -321,5 +321,24 @@
     "trade_worthy": false,
     "context": "The article argues that CPUs are becoming central to agentic AI for sequential latency-sensitive work, orchestration, retrieval, scheduling, tool execution, state management, and accelerator utilization. It cites a projected increase in the overall CPU market from $26 billion in 2025 to $246 billion five years later, with growth expected from AI host CPUs and agentic AI sandboxes. This supports a larger potential market for Arm-based server CPUs, but the article does not quantify Arm\u2019s likely share or identify purchase commitments.",
     "source": "Next Platform"
+  },
+  {
+    "id": "35a3fd80bafa9763",
+    "ticker": "ARM",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/10/amd-tunes-up-cpus-for-agentic-ai-with-venice-epyc-processors/5308850",
+    "source_title": "AMD Tunes Up CPUs For Agentic AI With \u201cVenice\u201d Epyc Processors",
+    "event_type": "product_launch",
+    "created": "2026-11-10",
+    "claim": "AMD\u2019s Venice increases competitive pressure on Arm-based server CPUs",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD says its 256-core Epyc 9996 Venice outperforms Amazon\u2019s 192-core Graviton5 by a greater margin than the prior-generation Turin Epyc 9965 did. The article also places Venice in performance comparisons with Arm processors, suggesting AMD may strengthen its position against Arm-based alternatives as agentic AI expands CPU demand. The implication for ARM is indirect because the comparison concerns Amazon\u2019s product rather than ARM\u2019s licensing revenue directly.",
+    "source": "Next Platform"
   }
 ]

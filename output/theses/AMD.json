@@ -605,5 +605,48 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.78,
     "confidence_after": 0.78
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-11",
+    "thesis": "AMD remains a high-growth long as accelerating data-center CPU demand, Venice adoption, and the Helios/Instinct ramp can drive substantial earnings growth, but elevated valuation, HBM and system-supply constraints, and a persistent Nvidia/custom-accelerator software gap limit upside and warrant moderate conviction.",
+    "direction": "long",
+    "confidence": 0.76,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.76,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 15,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "Venice Epyc deployments convert its claimed performance, memory-bandwidth, and agentic-AI advantages into further share gains and premium pricing.",
+      "Helios and MI455X shipments to Microsoft, Meta, OpenAI, Oracle, and other customers ramp successfully, with improving yields and sufficient HBM, packaging, and optical-component supply.",
+      "Data-center revenue continues to accelerate, supported by server CPU growth above 80% in the second half of 2026 and management's expectation that the segment more than doubles in 2027.",
+      "ROCm, ATOM, TileRT, and upstream vLLM/SGLang improvements close enough of Nvidia's distributed-inference gap to improve utilization and customer adoption.",
+      "The latest quarter's 2.09 reported EPS, versus a 1.95 estimate and a 7.44% surprise, is followed by sustained revenue, margin, and cash-flow execution."
+    ],
+    "invalidation": [
+      "HBM, packaging, wafer, substrate, or optical-component shortages prevent AMD from supplying committed Instinct and Helios demand through 2027.",
+      "Helios yields, manufacturing complexity, margins, or customer data-center build-out timing materially disappoint, causing the large 2027 outlook to be deferred or reduced.",
+      "Nvidia Rubin, Google TPUv7, Microsoft Maia, AWS Trainium, custom hyperscaler XPUs, or sovereign alternatives sustain major performance-per-dollar and software advantages that limit AMD accelerator share and pricing.",
+      "ROCm and AMD serving software remain materially behind on production distributed inference, long-context workloads, networking, and model bring-up despite ATOM and upstream optimization efforts.",
+      "Venice fails to convert its claimed advantages into additional server share as hyperscalers shift toward Arm and internally designed CPUs, or AMD's demanding valuation compresses despite operational growth."
+    ],
+    "reasoning": "The news consensus and bullish earnings-call picture are reinforced by strong reported execution and a 7.44% EPS beat, while the independent fundamental view supports growth but flags roughly 37x forward earnings, 20.9x EV/revenue, and only modest consensus upside; together they support a long thesis with meaningful execution and valuation risk rather than high conviction.",
+    "claims_considered": 183
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-11",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.76,
+    "confidence_after": 0.76
   }
 ]

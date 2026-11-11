@@ -129,5 +129,48 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.68,
     "confidence_after": 0.68
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-11",
+    "thesis": "Intel offers a cautiously bullish, execution-dependent recovery story as strong DCAI demand, CPU scarcity, Panther Lake/18A progress, and a recent EPS beat support near-term upside, but AMD share gains, Intel's lack of a meaningful AI accelerator, foundry losses, dilution, and demanding valuation cap conviction.",
+    "direction": "long",
+    "confidence": 0.62,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.62,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 16,
+    "expected_horizon_days": 180,
+    "catalysts": [
+      "Sustained DCAI growth, server-CPU pricing power, and constrained supply lifting revenue and margins",
+      "Further evidence that Panther Lake and 18A achieve competitive performance, yields, and cost economics",
+      "External customer ramps for Intel Foundry, 18A-P, Terafab, or EMIB-T packaging",
+      "Continued agentic-AI and inference-driven expansion of CPU demand",
+      "Additional earnings beats and free-cash-flow strength"
+    ],
+    "invalidation": [
+      "AMD Venice and subsequent products accelerating Intel server-CPU share and pricing losses",
+      "Intel remaining unable to capture demand because of Xeon supply constraints or inferior performance per watt",
+      "Foundry losses persisting while external customer revenue remains limited",
+      "Failure of 18A, Panther Lake, advanced packaging, or 14A to achieve competitive yields and economics",
+      "A valuation derating caused by weak operating-margin expansion, reduced estimates, or further shareholder dilution"
+    ],
+    "reasoning": "The long case is supported by the 0.52 reported EPS versus 0.40 estimate, 25.4% fundamental revenue growth, strong free-cash-flow margin, and repeated DCAI recovery evidence, but the absence of an earnings-call picture, 42x forward P/E and 8.8x EV/revenue, moderate operating margin, and highly credible AMD-led competitive risks warrant only moderate confidence.",
+    "claims_considered": 71
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-11",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.62,
+    "confidence_after": 0.62
   }
 ]
