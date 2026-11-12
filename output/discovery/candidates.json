@@ -10247,5 +10247,65 @@
     "article_link": "https://www.normaltech.ai/p/the-missing-quadrant-in-responses",
     "name": "recursive self-improvement",
     "why": "STABL plans recurring open-ended evaluations of whether AI agents can conduct AI research; It argues that progress on easily verifiable tasks may not translate into broad, open-ended capabilities"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-12",
+    "source": "Stratechery",
+    "article_title": "An Interview With Roblox CEO David Baszucki About Aggregating Play",
+    "article_link": "https://stratechery.com/2026/an-interview-with-roblox-ceo-david-baszucki-about-aggregating-play/",
+    "name": "Roblox",
+    "ticker_guess": "RBLX",
+    "why": "Developing Roblox Build, an AI tool that creates playable games from natural-language prompts on phones; expanding Roblox Everywhere and Universal Player so games can run across devices and potentially as standalone apps; building recommendation and advertising businesses around an abundant supply of AI-assisted games"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-11",
+    "source": "Not Boring",
+    "article_title": "Of Miracles and Moats",
+    "article_link": "https://www.notboring.co/p/of-miracles-and-moats",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Reportedly committed $900.9 billion of compute through 2045, with roughly half expected before 2030; generated operating profit in Q2 and would have done so again in Q3 excluding about $2 billion in noncash donation-matching charges; presented as both a potential winner-take-all AI company and a major overinvestment risk"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-11",
+    "source": "Not Boring",
+    "article_title": "Of Miracles and Moats",
+    "article_link": "https://www.notboring.co/p/of-miracles-and-moats",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Targeted approximately $600 billion in compute spending by 2030, down from a previously cited $1.4 trillion figure; cited as an aggressive competitor that could contribute to AI compute oversupply"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-11",
+    "source": "Not Boring",
+    "article_title": "Of Miracles and Moats",
+    "article_link": "https://www.notboring.co/p/of-miracles-and-moats",
+    "name": "Qwest Communications",
+    "ticker_guess": null,
+    "why": "Expanded fiber capacity during the late-1990s bandwidth boom as internet demand surged; its market capitalization reached $91 billion in 2000 before falling to $1.9 billion by August 2002 as bandwidth prices collapsed"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-11",
+    "source": "Not Boring",
+    "article_title": "Of Miracles and Moats",
+    "article_link": "https://www.notboring.co/p/of-miracles-and-moats",
+    "name": "Level 3 Communications",
+    "ticker_guess": null,
+    "why": "Built a cost advantage by deploying more conduits than competitors and later acquired industry assets after the bandwidth bust; ultimately sold to CenturyLink in 2017 at a price 97% below its peak"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-11",
+    "source": "Not Boring",
+    "article_title": "Of Miracles and Moats",
+    "article_link": "https://www.notboring.co/p/of-miracles-and-moats",
+    "name": "Global Crossing",
+    "ticker_guess": null,
+    "why": "Filed for bankruptcy after the bandwidth overbuild, with debt reduced from $11 billion to $200 million and shareholders receiving nothing; network traffic later grew 130% while revenue still fell 6% because bandwidth prices had collapsed"
   }
 ]

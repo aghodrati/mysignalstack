@@ -7009,5 +7009,43 @@
     "trade_worthy": false,
     "context": "AMD claims its 256-core, 400-watt Venice processor delivers 3.3 times Nvidia Vera\u2019s agents-per-watt and supports 1.5 times as many agents per AI rack as a Vera rack. If customers prioritize agent throughput, power efficiency and rack density for agentic workloads, these claimed advantages could weaken Nvidia\u2019s competitive positioning and pricing power in portions of AI infrastructure, despite the comparisons being AMD-provided and focused on CPU-enabled agentic workloads rather than general GPU performance.",
     "source": "Next Platform"
+  },
+  {
+    "id": "d96474c293fc93fc",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/cloud/2026/11/12/coreweave-is-accelerating-to-escape-velocity-thanks-to-gpu-shortages/5309222",
+    "source_title": "CoreWeave Is Accelerating To Escape Velocity Thanks To GPU Shortages",
+    "event_type": "earnings",
+    "created": "2026-11-12",
+    "claim": "Persistent GPU scarcity supports NVDA demand and pricing power",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 8.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "CoreWeave reported sharply higher GPU rental prices despite using older Nvidia hardware: A100 prices rose 30% sequentially and H100/H200 prices rose 50%. It also raised prices across SKUs, continued expanding capacity, and ended the quarter with a $132.5 billion backlog. These conditions indicate strong demand and constrained supply for Nvidia GPUs, supporting NVDA\u2019s near-term sales environment and potentially its pricing power, although the article does not quantify direct Nvidia financial effects.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "cf42aaeee566afbb",
+    "ticker": "NVDA",
+    "source_link": "https://www.nextplatform.com/cloud/2026/11/12/coreweave-is-accelerating-to-escape-velocity-thanks-to-gpu-shortages/5309222",
+    "source_title": "CoreWeave Is Accelerating To Escape Velocity Thanks To GPU Shortages",
+    "event_type": "earnings",
+    "created": "2026-11-12",
+    "claim": "CoreWeave\u2019s debt burden creates a potential financing risk to NVDA demand",
+    "direction": "short",
+    "confidence": 0.68,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "CoreWeave is spending aggressively on datacenter gear and facilities while carrying roughly $48 billion of debt; third-quarter net loss reached $709 million despite positive operating income because of debt-service costs. If financing pressures or a future AI-market downturn limited CoreWeave\u2019s expansion, its purchases of Nvidia GPUs could slow, creating customer-concentration and demand risk for NVDA. The article provides no specific timing or probability for such a reversal.",
+    "source": "Next Platform"
   }
 ]

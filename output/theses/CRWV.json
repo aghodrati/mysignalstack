@@ -142,5 +142,54 @@
     "final_multiplier": 0.84,
     "confidence_before": 0.68,
     "confidence_after": 0.5712
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-12",
+    "thesis": "CRWV has a favorable demand, pricing, backlog, and execution trajectory that supports a cautiously bullish multi-quarter outlook, but extreme leverage, ongoing net losses, valuation, and potential margin-mix pressure materially limit conviction.",
+    "direction": "long",
+    "confidence": 0.5376,
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.64,
+    "critic_multiplier": 0.84,
+    "expected_return_pct": 25,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Revenue backlog remains around $132.5 billion or continues growing as Meta, OpenAI, Google, and Anthropic commitments convert into deployments.",
+      "GPU scarcity and further pricing increases sustain strong utilization and contribution-margin expansion, particularly across depreciated A100, H100, and H200 capacity.",
+      "Capacity ramps toward approximately 1.7 GW of active power by year-end 2026 without material additional delays.",
+      "CoreWeave maintains its technical and operational lead in Blackwell and Vera Rubin deployments, supporting premium pricing and customer retention.",
+      "Customer diversification and prepaid or success-based commitments allow expansion to be funded while quarterly operating income continues improving."
+    ],
+    "invalidation": [
+      "Debt rises toward or beyond roughly $48 billion while financing costs keep net losses near or above the reported $709 million quarterly level and cash falls materially below $5.6 billion.",
+      "GPU pricing, utilization, or scarcity weakens enough to reverse the recent margin improvement and $207 million quarterly operating income.",
+      "Capacity delays prevent delivery of contracted power or backlog, forcing additional equity or expensive debt financing.",
+      "Large customers increasingly shift to self-managed bare metal, compressing managed-cluster margins and reducing CoreWeave's share of their infrastructure spend.",
+      "The Rubin performance advantage fails to validate in production, or stronger competitors such as Nebius materially erode CoreWeave's technical and pricing premium.",
+      "Valuation near 13.7 times forward revenue leaves insufficient upside if growth decelerates, operating profitability remains negative, or the reported unusually high free-cash-flow margin proves nonrecurring or accounting-related."
+    ],
+    "reasoning": "The latest quarter showed a real EPS beat of -$1.27 versus -$1.55 expected and strong reported operating momentum, while the claims support exceptional backlog and demand visibility, but the neutral fundamental picture, absent earnings-call evidence, high valuation, and debt-driven $709 million net loss warrant a moderate rather than high-confidence long view.",
+    "claims_considered": 29
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-12",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [
+      "The thesis asserts valuation is a material limitation, but none of the provided claims address CRWV\u2019s valuation, so that part is unsupported by the evidence set.",
+      "\u201cFavorable pricing\u201d overstates a mixed record: claims support technical premiums and potential premium pricing, but also identify Nebius competition, migration toward lower-margin bare metal, and incomplete inference-platform competitiveness.",
+      "A favorable \u201cexecution trajectory\u201d is stronger than the claims warrant because delivery delays, financing constraints, and the unverified Rubin production evidence remain explicit execution risks.",
+      "The bullish demand and backlog case is well supported, but the claims do not establish that contracted backlog will translate into attractive shareholder returns given the repeated warnings about debt, capital spending, cost of capital, and margin mix."
+    ],
+    "llm_multiplier": 0.84,
+    "llm_reasoning": "The cautious bullish direction is broadly supported, but the synthesis overreaches by treating pricing and execution as clearly favorable and by including valuation despite no valuation evidence in the supplied claims.",
+    "final_multiplier": 0.84,
+    "confidence_before": 0.64,
+    "confidence_after": 0.5376
   }
 ]
