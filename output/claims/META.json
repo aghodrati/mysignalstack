@@ -2088,5 +2088,43 @@
     "trade_worthy": false,
     "context": "Meta is working with Arista on ESUN scale-up networks for its MTIA accelerators. Arista expects trials to begin in 2027, with production rollouts not expected until 2028; ESUN and UALink over Ethernet are presented as more open alternatives to Nvidia\u2019s proprietary NVLink/NVSwitch stack, potentially giving Meta greater supplier flexibility and networking-cost leverage as MTIA clusters expand.",
     "source": "Next Platform"
+  },
+  {
+    "id": "13489fe2f2513e8b",
+    "ticker": "META",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "Tighter China restrictions could disrupt Meta\u2019s AI supply chain",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article states that Meta, alongside Nvidia, AMD, Broadcom, Google, Amazon, Microsoft, Supermicro, and Dell, depends on Chinese companies and engineers across its supply chain. It argues that broader restrictions on Chinese access, personnel, and component suppliers could reduce chip production and slow AI progress, creating procurement and development risks for Meta.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "93510dd1feb41f53",
+    "ticker": "META",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "Reduced Chinese access to Nvidia GPUs could weaken Meta\u2019s open-source AI ecosystem",
+    "direction": "short",
+    "confidence": 0.73,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that Chinese frontier labs using Blackwell GPUs and Nvidia DevTech support contribute open-source models, kernels, and optimization work used by Western startups and projects such as SGLang and vLLM. If Jensen Huang\u2019s departure strengthens China hawks and leads to restrictions such as RASA, the article expects less Chinese contribution to the global open-source AI ecosystem, which could impair Meta\u2019s access to shared AI research and software innovation.",
+    "source": "SemiAnalysis"
   }
 ]

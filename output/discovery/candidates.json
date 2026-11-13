@@ -10307,5 +10307,45 @@
     "name": "Global Crossing",
     "ticker_guess": null,
     "why": "Filed for bankruptcy after the bandwidth overbuild, with debt reduced from $11 billion to $200 million and shareholders receiving nothing; network traffic later grew 130% while revenue still fell 6% because bandwidth prices had collapsed"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-12",
+    "source": "SemiAnalysis",
+    "article_title": "Nvidia and the World Without Jensen",
+    "article_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "name": "Supermicro",
+    "ticker_guess": "SMCI",
+    "why": "Executives and affiliates were indicted in two alleged schemes involving the diversion or smuggling of Nvidia GPU servers to China; one case alleges $2.5 billion of servers were sold into Southeast Asia, with $510 million later smuggled into China; a separate Taiwan case involved 130 B300 servers, 74 of which allegedly reached China"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-12",
+    "source": "Next Platform",
+    "article_title": "The Nvidia Machine Is Self-Sustaining \u2013 And Was Already Facing A Tougher Future",
+    "article_link": "https://www.nextplatform.com/ai/2026/11/12/the-nvidia-machine-is-self-sustaining-and-was-already-facing-a-tougher-future/5309473",
+    "name": "Megaspeed International",
+    "ticker_guess": null,
+    "why": "A sister company reportedly bought $4.8 billion of Nvidia GPU systems between June 2024 and February 2026; Megaspeed and affiliates allegedly acquired $7.5 billion in Nvidia GPU systems since 2023; US authorities have reportedly investigated possible diversion of Nvidia systems or computing capacity to Chinese customers"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-12",
+    "source": "Next Platform",
+    "article_title": "The Nvidia Machine Is Self-Sustaining \u2013 And Was Already Facing A Tougher Future",
+    "article_link": "https://www.nextplatform.com/ai/2026/11/12/the-nvidia-machine-is-self-sustaining-and-was-already-facing-a-tougher-future/5309473",
+    "name": "Alibaba Group",
+    "ticker_guess": null,
+    "why": "Identified as a potential customer of computing capacity rented through Megaspeed; the article says Alibaba could benefit from access to Nvidia GPUs subject to China export controls"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-12",
+    "source": "Next Platform",
+    "article_title": "The Nvidia Machine Is Self-Sustaining \u2013 And Was Already Facing A Tougher Future",
+    "article_link": "https://www.nextplatform.com/ai/2026/11/12/the-nvidia-machine-is-self-sustaining-and-was-already-facing-a-tougher-future/5309473",
+    "name": "DeepSeek",
+    "ticker_guess": null,
+    "why": "Named as a Chinese model developer that may have accessed Nvidia-based GPU systems or capacity allegedly channeled through Megaspeed"
   }
 ]

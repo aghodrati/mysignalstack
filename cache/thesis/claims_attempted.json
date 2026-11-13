@@ -1145,5 +1145,20 @@
   "https://www.nextplatform.com/cloud/2026/11/12/coreweave-is-accelerating-to-escape-velocity-thanks-to-gpu-shortages/5309222": [
     "CRWV",
     "NVDA"
+  ],
+  "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen": [
+    "AMD",
+    "AMZN",
+    "AVGO",
+    "GOOGL",
+    "META",
+    "MSFT",
+    "NVDA",
+    "ORCL",
+    "SKHY",
+    "TSM"
+  ],
+  "https://www.nextplatform.com/ai/2026/11/12/the-nvidia-machine-is-self-sustaining-and-was-already-facing-a-tougher-future/5309473": [
+    "NVDA"
   ]
 }

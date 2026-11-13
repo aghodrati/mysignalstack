@@ -758,5 +758,24 @@
     "trade_worthy": true,
     "context": "AMD says insufficient HBM allocations from Samsung, SK Hynix, and Micron are limiting its Instinct GPU production, while AMD is also using heavier HBM configurations than Nvidia. This indicates AI accelerator demand materially exceeds available HBM supply, supporting strong demand, allocation leverage, and potentially favorable pricing for SK Hynix\u2019s HBM business over the coming quarters, although its own capacity may remain constrained.",
     "source": "Next Platform"
+  },
+  {
+    "id": "f51eb9e8f277df51",
+    "ticker": "SKHY",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "SK Hynix gains pricing and customer-allocation leverage as Nvidia\u2019s preferential access weakens",
+    "direction": "long",
+    "confidence": 0.72,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues Jensen Huang personally secured Nvidia\u2019s supply commitments and preferential South Korean HBM allocation. It estimates SK Hynix\u2019s 2027 HBM4 pricing at roughly $3.0\u2013$3.3 per Gb for Nvidia versus $3.7\u2013$4.1 per Gb for other Tier 1 customers, with Nvidia\u2019s priority allegedly supported by reciprocal GPU allocation. Huang\u2019s departure could reduce that preferential relationship, allowing SK Hynix to allocate more capacity to AMD, Broadcom, Amazon, Google, and other customers at higher prices; the article estimates more than 70% of total capacity could be non-Nvidia by 2028.",
+    "source": "SemiAnalysis"
   }
 ]

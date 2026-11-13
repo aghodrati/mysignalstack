@@ -1005,5 +1005,43 @@
     "trade_worthy": false,
     "context": "Google is developing the TPU 8t and its inference-focused TPU 8tx variant with Broadcom\u2019s chip-shepherding unit, and expects TPU 8tx deployments to begin in 2027 and ramp across Google Cloud regions over roughly the following year and a half. The article says the chips are expected to be manufactured by TSMC, creating potential future custom-chip demand for Broadcom, although pricing, volumes, and the precise scope of Broadcom\u2019s revenue participation are undisclosed. The TPU 8i Max is instead associated with MediaTek, so the opportunity described is limited primarily to the TPU 8t/8tx family.",
     "source": "Next Platform"
+  },
+  {
+    "id": "869ba7cd0cf24db1",
+    "ticker": "AVGO",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "AVGO may gain capacity and allocation as Nvidia\u2019s influence weakens",
+    "direction": "long",
+    "confidence": 0.67,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues Jensen Huang personally secured Nvidia\u2019s preferential access to logic wafers, HBM and other components, leaving competitors\u2014including Broadcom\u2014with limited supply. It expects Nvidia\u2019s supply-chain stranglehold to loosen after his departure and estimates that more than 70% of total capacity could be non-Nvidia by 2028, potentially improving Broadcom\u2019s access to constrained components and customer opportunities. However, the article does not quantify Broadcom\u2019s resulting revenue or margin benefit.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "8607e87ee0943f19",
+    "ticker": "AVGO",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "Tighter China GPU restrictions could disrupt AVGO\u2019s supply chain and ecosystem",
+    "direction": "short",
+    "confidence": 0.63,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Broadcom is explicitly listed among the U.S. companies dependent on Chinese companies, Chinese engineers, and Chinese suppliers in the AI hardware supply chain. The article argues that passage of the Remote Access Security Act or similar measures would sever Chinese labs\u2019 remote access to U.S. GPUs, reduce cross-border engineering and open-source collaboration, motivate China to accelerate domestic accelerators, and potentially reduce chip production and AI-sector growth. These effects could raise supply-chain friction or weaken demand across Broadcom\u2019s AI-related business, but the article provides no direct estimate of Broadcom\u2019s exposure.",
+    "source": "SemiAnalysis"
   }
 ]

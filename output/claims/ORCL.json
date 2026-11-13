@@ -644,5 +644,24 @@
     "trade_worthy": false,
     "context": "The article identifies Oracle as an external Google TPU customer, alongside OpenAI, Anthropic, and Meta. Broader TPU externalization and improving TPU software support could give Oracle access to a competitive accelerator option for serving AI workloads, potentially strengthening its ability to offer AI infrastructure capacity. However, the article provides no details on Oracle\u2019s deployment scale, pricing, utilization, margins, or resulting customer demand, so the financial impact remains indirect.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "cb158f1a611805c2",
+    "ticker": "ORCL",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "RASA passage threatens Oracle\u2019s China-linked GPU cloud revenues",
+    "direction": "short",
+    "confidence": 0.72,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Oracle as heavily lobbying against the Remote Access Security Act, which would restrict Chinese companies from remotely accessing GPUs hosted outside China. It argues that current remote-access arrangements generate profits for American cloud providers, while RASA or similar legislation would reduce Oracle\u2019s ability to serve Chinese AI customers and could impair related revenue and margins. Jensen Huang\u2019s departure is portrayed as strengthening China hawks and increasing the likelihood of tighter restrictions, although the legislative outcome remains uncertain.",
+    "source": "SemiAnalysis"
   }
 ]

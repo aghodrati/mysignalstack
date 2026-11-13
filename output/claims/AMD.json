@@ -3475,5 +3475,43 @@
     "trade_worthy": false,
     "context": "The article argues that agentic workloads require CPUs to orchestrate models, query databases, call APIs, run enterprise applications, execute generated code, and handle security and policy tasks. AMD expects the current GPU-to-CPU ratio of roughly 1:4 to 1:8 could move toward 1:1 as agentic AI expands, increasing CPU requirements across search, enterprise applications, databases, and AI sandboxes. This would benefit AMD\u2019s server CPU opportunity, although the article presents the market expansion and ratio shift as expectations rather than established outcomes.",
     "source": "Next Platform"
+  },
+  {
+    "id": "dd0e11a1678a70d6",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "AMD may gain AI-chip capacity as Nvidia\u2019s supply-chain advantage weakens",
+    "direction": "long",
+    "confidence": 0.62,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that Jensen Huang personally secured Nvidia\u2019s logic-wafer, memory, and component supply, including preferential South Korean HBM pricing and allocation. Without him, suppliers may prioritize Nvidia less, making capacity easier for other Tier 1 customers including AMD to acquire; the article estimates that non-Nvidia customers could account for more than 70% of total capacity by 2028. This could improve AMD\u2019s ability to ship accelerators and compete for AI demand, although the estimate is speculative.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "38219605c1058ecb",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+    "source_title": "Nvidia and the World Without Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-12",
+    "claim": "Broader China GPU restrictions could hurt AMD\u2019s revenue and technology ecosystem",
+    "direction": "short",
+    "confidence": 0.73,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article explicitly includes AMD among the U.S. companies that profit from Chinese customers\u2019 remote access to GPUs, employ Chinese engineers developing hardware and low-level software, rely on Chinese suppliers, and benefit from Chinese open-source AI research. It argues that legislation such as RASA, by restricting remote access to GPUs hosted outside China, could reduce American-company profits, disrupt supply chains and engineering, accelerate China\u2019s shift toward domestic accelerators, and limit open-source contributions. These effects would be adverse for AMD, but the article provides no AMD-specific revenue exposure or implementation timeline.",
+    "source": "SemiAnalysis"
   }
 ]
