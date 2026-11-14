@@ -1347,5 +1347,43 @@
     "trade_worthy": false,
     "context": "The article argues that agentic AI requires more CPU-intensive orchestration, database access, enterprise applications, code execution, security and policy tasks, potentially shifting the GPU-to-CPU ratio from roughly 1:4\u20131:8 toward 1:1. As a major server CPU supplier, Intel could benefit from higher overall CPU demand, although the article indicates AMD is better positioned competitively and does not quantify Intel\u2019s likely share of the incremental market.",
     "source": "Next Platform"
+  },
+  {
+    "id": "91b579d1cf32ed52",
+    "ticker": "INTC",
+    "source_link": "https://stratechery.com/2026/the-end-of-jensen/",
+    "source_title": "2026.46: The End of Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-13",
+    "claim": "Intel faces further near-term earnings and guidance disappointment",
+    "direction": "short",
+    "confidence": 0.96,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Intel reported disappointing earnings and issued 2027 guidance implying additional letdowns, reinforcing pressure on its operating outlook and investor expectations.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "1fa7581c56610b7a",
+    "ticker": "INTC",
+    "source_link": "https://stratechery.com/2026/the-end-of-jensen/",
+    "source_title": "2026.46: The End of Jensen",
+    "event_type": "leadership_change",
+    "created": "2026-11-13",
+    "claim": "Intel\u2019s structural strategy leaves it trailing AMD in AI-era growth",
+    "direction": "short",
+    "confidence": 0.91,
+    "importance": 9,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Intel remains on the back foot in AI while its foundry ambitions continue to struggle. The article contrasts Intel\u2019s flat consumer sales with AMD\u2019s surging enterprise demand and attributes the divergence to differences in chiplet strategy, organizational culture, and long-term structure, implying a persistent competitive disadvantage rather than a temporary fluctuation.",
+    "source": "Stratechery"
   }
 ]

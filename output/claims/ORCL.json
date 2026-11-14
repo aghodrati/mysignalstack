@@ -663,5 +663,24 @@
     "trade_worthy": false,
     "context": "The article identifies Oracle as heavily lobbying against the Remote Access Security Act, which would restrict Chinese companies from remotely accessing GPUs hosted outside China. It argues that current remote-access arrangements generate profits for American cloud providers, while RASA or similar legislation would reduce Oracle\u2019s ability to serve Chinese AI customers and could impair related revenue and margins. Jensen Huang\u2019s departure is portrayed as strengthening China hawks and increasing the likelihood of tighter restrictions, although the legislative outcome remains uncertain.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "957a9c59ce1ea810",
+    "ticker": "ORCL",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/14/cerebras-readies-cs-5-systems-for-2027-launch-as-it-bags-another-hyperscaler/5309932",
+    "source_title": "Cerebras Readies CS-5 Systems For 2027 Launch As It Bags Another Hyperscaler",
+    "event_type": "product_launch",
+    "created": "2026-11-14",
+    "claim": "Oracle Cloud\u2019s Cerebras partnership may strengthen its AI infrastructure offering",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Oracle Cloud as one of Cerebras\u2019s hyperscaler customers or planned customers for integrating CS systems into inference workloads, potentially using the faster WSE-5/CS-5 platform for decode operations. However, the arrangement is vague and has not been included in Cerebras\u2019s backlog or revenue, so the direct impact on Oracle\u2019s cloud demand, revenue, margins, and timing remains uncertain.",
+    "source": "Next Platform"
   }
 ]

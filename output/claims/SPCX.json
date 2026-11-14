@@ -606,5 +606,43 @@
     "trade_worthy": false,
     "context": "The article argues that if U.S. zoning, permitting, and political opposition persistently constrain terrestrial AI data-center construction, data centers in space could become an increasingly attractive alternative despite higher technical difficulty and cost. It specifically identifies SpaceX\u2019s previously discussed space-based compute opportunity as benefiting from stronger, more durable demand and lower investor risk if terrestrial capacity becomes difficult to build. This remains a long-term scenario rather than a demonstrated near-term revenue or earnings catalyst.",
     "source": "Stratechery"
+  },
+  {
+    "id": "d36beb083e5cc3ea",
+    "ticker": "SPCX",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "source_title": "Weekly Dose of Optimism #219",
+    "event_type": "other",
+    "created": "2026-11-13",
+    "claim": "SPCX gains strategic solar-manufacturing capacity and vertical-integration optionality",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "SpaceX signed a turnkey heterojunction solar-cell production-line contract with SINGULUS for delivery in the first half of 2027 to its Bastrop, Texas satellite factory. The initial line is worth slightly more than \u20ac60 million, while SINGULUS described potential expansion beyond 100 GW of annual production equipment, potentially supporting SpaceX\u2019s satellite ambitions or other solar-panel applications and reducing reliance on external suppliers.",
+    "source": "Not Boring"
+  },
+  {
+    "id": "addcb6808996ce9f",
+    "ticker": "SPCX",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "source_title": "Weekly Dose of Optimism #219",
+    "event_type": "other",
+    "created": "2026-11-13",
+    "claim": "SPCX\u2019s 100-GW solar expansion target carries substantial execution and overcapacity risk",
+    "direction": "short",
+    "confidence": 0.8,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article characterizes more than 100 GW of annual equipment capacity as a preposterous figure, equivalent to solar arrays for roughly 475,000 210-kW satellites annually, despite only about 15,000 active satellites being cited. The scale may reflect speculative or bubble-like ambitions rather than funded demand; the only identified commitment is the initial line worth slightly over \u20ac60 million, so the longer-term investment case depends on SpaceX actually deploying or profitably repurposing that capacity.",
+    "source": "Not Boring"
   }
 ]

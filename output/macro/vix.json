@@ -1300,5 +1300,84 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W45"
+  },
+  {
+    "period": "week",
+    "date": "2026-11-14",
+    "value": 19.299999237060547,
+    "delta": -6.340000152587891,
+    "history": [
+      [
+        "2026-11-09",
+        19.920000076293945
+      ],
+      [
+        "2026-11-10",
+        19.459999084472656
+      ],
+      [
+        "2026-11-11",
+        17.489999771118164
+      ],
+      [
+        "2026-11-12",
+        18.700000762939453
+      ],
+      [
+        "2026-11-13",
+        19.299999237060547
+      ]
+    ],
+    "narrative": "No clear single catalyst for the week\u2019s VIX decline; it most plausibly reflects broad easing in equity-risk positioning and volatility after a calmer market tone. The India-focused headlines\u2014especially the reported Sensex/Nifty rally and India VIX falling 7% on November 13\u2014are directionally consistent with improved risk appetite, but they do not specifically explain the U.S. VIX move.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "India equity surge brightens outlook for exchanges, brokerages",
+        "domain": "The Economic Times",
+        "date": "20261113"
+      },
+      {
+        "title": "Stock Market Close: Sensex snaps 3-day winning run, ends 319 pts lower; Nifty at 25,144; VIX down 7%",
+        "domain": "Business Standard",
+        "date": "20261113"
+      },
+      {
+        "title": "Rosal\u00eda opens the 2026 Latin Grammy Awards, Juanes wins the first award",
+        "domain": "The Atlanta Journal-Constitution",
+        "date": "20261112"
+      },
+      {
+        "title": "Daddy Yankee and Rosal\u00eda dominate the 2026 Latin Grammy Awards with stunning performances",
+        "domain": "The Atlanta Journal-Constitution",
+        "date": "20261112"
+      },
+      {
+        "title": "Forget The VIX: Is Tokyo Where The AI Unwind Breaks Something?",
+        "domain": "ZeroHedge",
+        "date": "20261112"
+      },
+      {
+        "title": "GEP Global Supply Chain Volatility Index: Manufacturers Increase Stockpiling as Costs Rise",
+        "domain": "EUROPE SAYS",
+        "date": "20261111"
+      },
+      {
+        "title": "GLOBAL MANUFACTURERS ACCELERATE STOCKPILING TO MITIGATE FUTURE INFLATION AND SHORTAGES: GEP GLOBAL SUPPLY CHAIN VOLATILITY INDEX",
+        "domain": "PR Newswire UK",
+        "date": "20261111"
+      },
+      {
+        "title": "India VIX jumps 68% in three weeks despite 7% rally in Sensex, Nifty",
+        "domain": "The Economic Times",
+        "date": "20261110"
+      },
+      {
+        "title": "Current rally increases possibility of market consolidation? Milan Vaishnav expects Bank Nifty to outperform broader index",
+        "domain": "Moneycontrol",
+        "date": "20261109"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W46"
   }
 ]

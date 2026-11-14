@@ -82,5 +82,48 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.58,
     "confidence_after": 0.58
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-14",
+    "thesis": "CBRS has strong AI-infrastructure demand, product momentum, and a recent EPS beat, but its extreme valuation, very low hardware margins, customer concentration, memory and power constraints, and intensifying GPU-based inference competition make downside more likely than further upside over the next year.",
+    "direction": "short",
+    "confidence": 0.7,
+    "fundamental_direction": "neutral",
+    "fundamental_confidence": 0.72,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.7,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": -22,
+    "expected_horizon_days": 270,
+    "catalysts": [
+      "TileRT and increasingly fungible NVIDIA-based inference reduce demand for dedicated Cerebras systems.",
+      "Third-quarter hardware margins remain near 11% or deteriorate as aggressive pricing and factory-ramp costs persist.",
+      "OpenAI options are delayed or not exercised, leaving the $26.1 billion backlog less monetizable than expected.",
+      "CS-4 adoption is constrained by unchanged 44GB SRAM capacity, high rack power requirements, or fixed prefill-to-decode ratios.",
+      "Oracle OCI offers Cerebras alongside multiple accelerators without producing meaningful incremental share gains."
+    ],
+    "invalidation": [
+      "CS-4 and CS-5 enter sustained high-volume production and 2027 sales actually approach management's roughly threefold growth target.",
+      "Manufacturing partners materially improve hardware margins toward the long-term 60% objective while revenue growth remains strong.",
+      "OpenAI, AWS, Oracle, Microsoft, or other hyperscalers convert commitments into diversified, durable deployments and backlog revenue.",
+      "Cerebras demonstrates that its bandwidth and memory advantages remain decisively superior to TileRT-enabled NVIDIA systems in large-model, low-latency inference.",
+      "Operating losses narrow substantially and valuation falls to a level supported by durable earnings and free cash flow."
+    ],
+    "reasoning": "The bullish growth, partnerships, CS-4/CS-5 roadmap, cloud expansion, and reported EPS beat are outweighed by a 23.2x EV/revenue valuation, -265% operating margin, roughly 11% hardware gross margin, concentration and execution risks, and credible substitution threats, while no earnings-call evidence is available to offset those concerns.",
+    "claims_considered": 29
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-14",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.7,
+    "confidence_after": 0.7
   }
 ]

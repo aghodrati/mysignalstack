@@ -1084,5 +1084,69 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W45"
+  },
+  {
+    "period": "week",
+    "date": "2026-11-14",
+    "value": 5.1539998054504395,
+    "delta": 0.2949995994567871,
+    "history": [
+      [
+        "2026-11-09",
+        4.863999843597412
+      ],
+      [
+        "2026-11-10",
+        4.982999801635742
+      ],
+      [
+        "2026-11-11",
+        4.998000144958496
+      ],
+      [
+        "2026-11-12",
+        5.103000164031982
+      ],
+      [
+        "2026-11-13",
+        5.1539998054504395
+      ]
+    ],
+    "narrative": "The clearest driver was renewed inflation and rate-hike concern: the headline about hotter-than-expected October CPI and warnings that the Fed could be fighting the wrong inflation likely pushed investors to demand higher Treasury yields. The \u201cBond Rally Faces a Reality Check\u201d commentary and the smallest foreign-linked share of a three-year Treasury auction in 15 months reinforced the bond-market selloff, though they appear more like confirmation than the primary catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "The Bond Rally Faces A Reality Check",
+        "domain": "SeekingAlpha",
+        "date": "20261112"
+      },
+      {
+        "title": "AIER's Everyday Price Index Rises On Grocery And Restaurant Prices",
+        "domain": "SeekingAlpha",
+        "date": "20261112"
+      },
+      {
+        "title": "\u2018Fed Is Fighting the Wrong Inflation\u2019: Strategist Warns Kevin Warsh Against \u2018Reckless\u2019 50-Basis-Point Rate Hike After Hotter-Than-Expected October CPI",
+        "domain": "Benzinga",
+        "date": "20261111"
+      },
+      {
+        "title": "Foreign-Linked Buyers Took Their Smallest Share of a 3-Year Treasury Auction in 15 Months",
+        "domain": "Yahoo",
+        "date": "20261110"
+      },
+      {
+        "title": "Peter Schiff Says Congress Can't Lower Prices Without Cutting Government Spending, Calls Higher Prices 'the Tax Americans Pay' for Programs 'Democrats Love'",
+        "domain": "Yahoo",
+        "date": "20261110"
+      },
+      {
+        "title": "QUICK SPARK: SPY, QQQ Attract $9B as ETF Investors Shrug Off Volatility Worries",
+        "domain": "Benzinga",
+        "date": "20261110"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W46"
   }
 ]

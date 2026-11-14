@@ -951,5 +951,57 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-14",
+    "value": 6.079500198364258,
+    "delta": -2.2274001001986843,
+    "history": [
+      [
+        "2026-11-09",
+        6.328499794006348
+      ],
+      [
+        "2026-11-10",
+        6.2195000648498535
+      ],
+      [
+        "2026-11-11",
+        6.274499893188477
+      ],
+      [
+        "2026-11-12",
+        6.182499885559082
+      ],
+      [
+        "2026-11-13",
+        6.079500198364258
+      ]
+    ],
+    "narrative": "Copper's sharp weekly decline was plausibly driven by concerns that an NVIDIA shakeup could weaken the AI-related demand narrative for copper, as highlighted by \u201cNVIDIA\u2019s Shakeup Clouds Copper\u2019s AI Boom.\u201d The \u201cStronger Dollar Weighs On Commodities\u201d headline adds a broad macro headwind, while the oil-focused geopolitical headline offers little direct explanation for copper.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "NVIDIA\u2019s Shakeup Clouds Copper\u2019s AI Boom",
+        "domain": "Benzinga",
+        "date": "20261113"
+      },
+      {
+        "title": "Commodities: Stronger Dollar Weighs On Commodities",
+        "domain": "SeekingAlpha",
+        "date": "20261112"
+      },
+      {
+        "title": "Commodities: Oil Rebounds As Geopolitical Risks Linger",
+        "domain": "SeekingAlpha",
+        "date": "20261111"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W46",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

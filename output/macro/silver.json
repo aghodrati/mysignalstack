@@ -1131,5 +1131,62 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-14",
+    "value": 49.03099822998047,
+    "delta": -5.351047427194677,
+    "history": [
+      [
+        "2026-11-09",
+        52.56399917602539
+      ],
+      [
+        "2026-11-10",
+        51.10100173950195
+      ],
+      [
+        "2026-11-11",
+        51.88100051879883
+      ],
+      [
+        "2026-11-12",
+        49.97200012207031
+      ],
+      [
+        "2026-11-13",
+        49.03099822998047
+      ]
+    ],
+    "narrative": "No clear single catalyst is identified in these headlines for silver's 5.35 decline; the coverage is largely retrospective, including \"Silver ETF vs. Silver Miners ETF: Which Has Held Up Better This Year?\" and \"What $10,000 in Silver on Jan. 1 Is Worth Today.\" The \"Gold And Silver Bounce Back As Tech Stocks Stumble\" and \"The Precious Metals Sector's Impressive Relative Breakout\" headlines suggest some underlying safe-haven and relative-strength interest, but they do not explain the sharp weekly reversal or provide a reliable near-term signal.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Silver ETF vs. Silver Miners ETF: Which Has Held Up Better This Year?",
+        "domain": "Yahoo",
+        "date": "20261112"
+      },
+      {
+        "title": "What $10,000 in Silver on Jan. 1 Is Worth Today",
+        "domain": "Yahoo",
+        "date": "20261112"
+      },
+      {
+        "title": "The Precious Metals Sector's Impressive Relative Breakout - And What It Portends",
+        "domain": "SeekingAlpha",
+        "date": "20261109"
+      },
+      {
+        "title": "Gold And Silver Bounce Back As Tech Stocks Stumble",
+        "domain": "SeekingAlpha",
+        "date": "20261109"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W46",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

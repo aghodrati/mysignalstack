@@ -1194,5 +1194,70 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-14",
+    "value": 67075.8671875,
+    "delta": -11.448169238084137,
+    "history": [
+      [
+        "2026-11-08",
+        74584.6484375
+      ],
+      [
+        "2026-11-09",
+        75223.1484375
+      ],
+      [
+        "2026-11-10",
+        73720.1171875
+      ],
+      [
+        "2026-11-11",
+        73964.46875
+      ],
+      [
+        "2026-11-12",
+        71342.96875
+      ],
+      [
+        "2026-11-13",
+        68249.2734375
+      ],
+      [
+        "2026-11-14",
+        67075.8671875
+      ]
+    ],
+    "narrative": "Bitcoin's roughly 5% weekly decline appears to reflect broad risk-asset positioning and relative underperformance rather than a clearly identified crypto-specific catalyst. The SeekingAlpha headline that \u201cOil Lifted Stocks And Gold - Bitcoin Couldn't Keep Up\u201d supports a rotation toward other assets, while the equity-futures recovery headlines do not provide a direct bullish or bearish Bitcoin signal.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Cryptocurrencies: Bitcoin Down 5% This Week",
+        "domain": "SeekingAlpha",
+        "date": "20261111"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Wednesday as Nvidia Stock Recovers",
+        "domain": "Yahoo",
+        "date": "20261111"
+      },
+      {
+        "title": "Market Brief: Oil Lifted Stocks And Gold\u00a0- Bitcoin Couldn't Keep Up",
+        "domain": "SeekingAlpha",
+        "date": "20261110"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Monday Amid Global Market Recovery",
+        "domain": "Yahoo",
+        "date": "20261109"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W46",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

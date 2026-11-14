@@ -1160,5 +1160,27 @@
   ],
   "https://www.nextplatform.com/ai/2026/11/12/the-nvidia-machine-is-self-sustaining-and-was-already-facing-a-tougher-future/5309473": [
     "NVDA"
+  ],
+  "https://stratechery.com/2026/the-end-of-jensen/": [
+    "AMD",
+    "INTC",
+    "NVDA"
+  ],
+  "https://www.nextplatform.com/compute/2026/11/14/cerebras-readies-cs-5-systems-for-2027-launch-as-it-bags-another-hyperscaler/5309932": [
+    "AMD",
+    "AMZN",
+    "CBRS",
+    "MSFT",
+    "NVDA",
+    "ORCL",
+    "TSM"
+  ],
+  "https://www.interconnects.ai/p/open-source-ai-without-jensen": [
+    "NVDA"
+  ],
+  "https://www.notboring.co/p/weekly-dose-of-optimism-219": [
+    "GOOGL",
+    "NVDA",
+    "SPCX"
   ]
 }

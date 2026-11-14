@@ -162,5 +162,25 @@
     "closed_date": null,
     "actual_return_pct": null,
     "close_reason": null
+  },
+  {
+    "event": "closed",
+    "id": "80d72b8fae3d6963",
+    "closed_date": "2026-11-14",
+    "actual_return_pct": -27.686935410921286,
+    "close_reason": "invalidated"
+  },
+  {
+    "event": "created",
+    "id": "5463e8d7819aa896",
+    "ticker": "SKHY",
+    "created": "2026-11-14",
+    "entry_confidence": 0.78,
+    "expected_horizon_days": 365,
+    "rule": "loop_a",
+    "status": "open",
+    "closed_date": null,
+    "actual_return_pct": null,
+    "close_reason": null
   }
 ]

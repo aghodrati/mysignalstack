@@ -180,5 +180,75 @@
     ],
     "summary": "The call was strongly bullish on demand, platform expansion and Vera Rubin, with management guiding to $108 billion of near-term revenue and approximately 70% fiscal 2028 growth despite saying unconstrained demand is substantially higher. The main deterioration is profitability and risk quality: memory inflation is expected to compress gross margin to 71%-72%, while NVIDIA is increasingly using guarantees, investments and financing support to enable customers and infrastructure partners. Q&A responses remained highly confident but were broad on supply prioritization and financial exposure, making the call directionally positive but with meaningful execution, credit and margin risks.",
     "type": "earnings_transcript"
+  },
+  {
+    "call_date": "2026-11-17",
+    "when": "2026-11-17T16:00:00-05:00",
+    "eps_estimate": 2.47,
+    "reported_quarters": [
+      {
+        "earnings_date": "2025-11-19",
+        "eps_estimate": 1.26,
+        "reported_eps": 1.3,
+        "surprise_pct": 3.46
+      },
+      {
+        "earnings_date": "2026-02-25",
+        "eps_estimate": 1.54,
+        "reported_eps": 1.62,
+        "surprise_pct": 5.32
+      },
+      {
+        "earnings_date": "2026-05-20",
+        "eps_estimate": 1.77,
+        "reported_eps": 1.87,
+        "surprise_pct": 5.54
+      },
+      {
+        "earnings_date": "2026-08-26",
+        "eps_estimate": 2.09,
+        "reported_eps": 2.22,
+        "surprise_pct": 6.16
+      }
+    ],
+    "type": "earnings_reminder"
+  },
+  {
+    "date": "2026-11-14",
+    "call_date": "2026-11-17",
+    "narrative": "Investors should watch whether Nvidia\u2019s interim-CEO situation and the reported focus on Jensen Huang\u2019s possible exit are addressed clearly, since leadership uncertainty appears to be weighing on sentiment ahead of the call. They should also look for evidence that demand remains strong despite AI leadership rotating toward AMD and Palantir, and whether Nvidia can maintain its competitive position as customers and the broader ecosystem continue investing heavily in AI infrastructure. The discussion of a possible \u201c$250 Billion Credit Backstop\u201d for OpenAI makes customer financing, concentration risk, and the sustainability of AI-capital spending especially relevant, while Oracle\u2019s exposure could provide important context. Expectations should be for a results-driven but volatile reaction: strong execution and confident guidance could reassert Nvidia\u2019s leadership, whereas any signs of slowing demand, customer funding pressure, or management instability could reinforce the recent lag into earnings.",
+    "headlines_used": [
+      {
+        "title": "Prediction: ASML Will Join the $800 Billion Club in 2029",
+        "domain": "Yahoo",
+        "date": "20261114"
+      },
+      {
+        "title": "Nvidia\u2019s Interim CEO Pushed Back on a \u201c$250 Billion Credit Backstop\u201d for OpenAI. Oracle Has the Most at Stake",
+        "domain": "Yahoo",
+        "date": "20261114"
+      },
+      {
+        "title": "Most Active Stocks on Nov. 13, 2026: Small-Cap Movers and Tech Decliners",
+        "domain": "ChartMill",
+        "date": "20261113"
+      },
+      {
+        "title": "AI Stocks Bounce, but Leadership Rotates to AMD and Palantir as Nvidia Lags Into Earnings",
+        "domain": "ChartMill",
+        "date": "20261113"
+      },
+      {
+        "title": "Jim Cramer Questions If Jensen Huang Betrayed Nvidia Shareholders, Says Former CEO Let Investors Down: \u2018Yes. End Of Story\u2019",
+        "domain": "Benzinga",
+        "date": "20261113"
+      },
+      {
+        "title": "Stock Market Today: Dow Jones, S&P 500, Nasdaq 100  Futures Rise as Nvidia CEO Exit Remains in Focus\u2014 CSCO, AMAT, NU in Focus(UPDATED)",
+        "domain": "Benzinga",
+        "date": "20261113"
+      }
+    ],
+    "type": "earnings_preview"
   }
 ]

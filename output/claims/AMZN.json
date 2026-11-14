@@ -1537,5 +1537,24 @@
     "trade_worthy": false,
     "context": "The article says RASA would restrict Chinese companies from remotely accessing GPUs hosted outside China and that neoclouds in the U.S. and other regions sell capacity to Chinese customers. Amazon is identified as a major American cloud and AI infrastructure company, so comparable restrictions could limit China-related GPU utilization or revenue and reduce the commercial value of serving Chinese labs remotely.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "fe2800571f60c7b7",
+    "ticker": "AMZN",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/14/cerebras-readies-cs-5-systems-for-2027-launch-as-it-bags-another-hyperscaler/5309932",
+    "source_title": "Cerebras Readies CS-5 Systems For 2027 Launch As It Bags Another Hyperscaler",
+    "event_type": "product_launch",
+    "created": "2026-11-14",
+    "claim": "Cerebras adoption could strengthen AWS\u2019s AI inference competitiveness",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 5,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Cerebras has announced planned work with Amazon Web Services, alongside Oracle Cloud and Microsoft Azure, and says its CS systems will be incorporated into hyperscalers\u2019 inference workloads, presumably for decode operations. The partnership could give AWS access to Cerebras\u2019s faster, potentially lower-cost inference hardware while diversifying its AI infrastructure beyond Nvidia and its own accelerators, but the deal\u2019s terms, scale, timing, and revenue contribution are undisclosed and it is not yet included in Cerebras\u2019s backlog or revenue.",
+    "source": "Next Platform"
   }
 ]

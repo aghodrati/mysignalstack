@@ -1024,5 +1024,24 @@
     "trade_worthy": false,
     "context": "AMD is using TSMC\u2019s 2nm process for both 12-core and 32-core Zen 6-derived compute dies, with the generation offering up to 256 cores and a cited 20% per-core IPC improvement over Zen 5. The successful launch and broad 31-CPU lineup provide a high-profile commercial use case for TSMC\u2019s 2nm technology, potentially supporting future customer confidence and utilization, although the article does not establish incremental orders or financial timing beyond this product generation.",
     "source": "Next Platform"
+  },
+  {
+    "id": "3a933feb7cfb4d67",
+    "ticker": "TSM",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/14/cerebras-readies-cs-5-systems-for-2027-launch-as-it-bags-another-hyperscaler/5309932",
+    "source_title": "Cerebras Readies CS-5 Systems For 2027 Launch As It Bags Another Hyperscaler",
+    "event_type": "product_launch",
+    "created": "2026-11-14",
+    "claim": "Cerebras\u2019 ramp modestly supports TSMC\u2019s AI-chip wafer demand",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 2,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Cerebras\u2019 WSE-5 and CS-5 will be produced on TSMC\u2019s 5-nanometer process, which management favors because wafer availability is better and costs are lower than newer nodes. If Cerebras expands manufacturing for its OpenAI, AWS, Oracle, and Microsoft workloads, TSMC could receive additional 5-nanometer wafer orders. However, the article provides no order volumes, and Cerebras\u2019 hyperscaler agreements are not yet contributing revenue, so the direct financial effect on TSMC remains limited and indirect.",
+    "source": "Next Platform"
   }
 ]

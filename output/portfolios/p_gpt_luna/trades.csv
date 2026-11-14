@@ -13,3 +13,5 @@ date,ticker,action,shares,price,note,rule
 2026-09-24,ARM,BUY,0.7540498770087637,332.55999755859375,loop_a 6f6d35a23af368f3 entry_conf=63% horizon=365d: ARM has a moderately strong long-term bullish outlook as accelerating Arm-based ,loop_a
 2026-09-24,CRWV,SELL,2.375296912114014,86.87000274658203,"loop_a 2ff1195170b90161 closed (invalidated, return=-17.5%)",loop_a
 2026-09-24,ORCL,BUY,1.7351703421232,144.52000427246094,loop_a 08d0cf6a176e9d93 entry_conf=69% horizon=365d: Oracle offers an attractive but high-risk long opportunity as exceptional OCI gr,loop_a
+2026-11-14,NVDA,SELL,1.1103215310618275,162.82009887695312,"loop_a 80d72b8fae3d6963 closed (invalidated, return=-27.7%)",loop_a
+2026-11-14,SKHY,BUY,3.68443478174507,131.83990478515625,"loop_a 5463e8d7819aa896 entry_conf=78% horizon=365d: SK Hynix remains a fundamentally attractive long as tight AI-driven HBM, DRAM, a",loop_a

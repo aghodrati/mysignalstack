@@ -648,5 +648,50 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.76,
     "confidence_after": 0.76
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-14",
+    "thesis": "AMD remains a high-growth, fundamentally supported long as accelerating Data Center revenue, strong EPYC/Venice CPU demand, and Helios/Instinct adoption can drive substantial earnings growth, though HBM constraints, AI software and system execution gaps, custom accelerators, and demanding valuation cap near-term upside.",
+    "direction": "long",
+    "confidence": 0.78,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.78,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Data Center revenue continues to accelerate and 2027 revenue guidance is raised above the current expectation of more than doubling.",
+      "Venice EPYC ramps broadly across hyperscaler, enterprise, OEM, and HPE platforms, converting agentic-AI CPU demand into sustained share gains and pricing power.",
+      "Helios and MI455X deployments at Microsoft, Meta, OpenAI, Oracle, and other customers ramp successfully with improving yields, supply, and gross margins.",
+      "ROCm, ATOM, and related inference software close production gaps against NVIDIA, improving AMD performance per dollar on long-context and distributed workloads.",
+      "HBM, packaging, wafer, and substrate capacity expands sufficiently for AMD to monetize existing Instinct demand.",
+      "Additional design wins such as Google TPU 8tx and Lumi-AI validate AMD CPUs and accelerators across enterprise, cloud, and HPC markets."
+    ],
+    "invalidation": [
+      "MI455X and Helios suffer material delays, yield problems, weak customer build-outs, or persistently below-average margins.",
+      "HBM, packaging, optical, substrate, or wafer shortages prevent AMD from shipping enough accelerators and CPUs to meet demand through 2027.",
+      "NVIDIA, Google TPU, AWS Trainium, Microsoft Maia, OpenAI Jalape\u00f1o, Cerebras, or custom hyperscaler XPUs sustain large performance-per-dollar and software advantages that reduce AMD accelerator share, utilization, or pricing.",
+      "ROCm, ATOM, networking, and distributed-inference software fail to become production-reliable, leaving AMD materially behind on agentic and long-context workloads.",
+      "Arm CPUs and internally designed hyperscaler processors materially constrain EPYC growth despite Venice's performance advantages.",
+      "Revenue or earnings growth slows enough to expose AMD's roughly 37x forward-earnings and 20.9x EV/revenue valuation to substantial multiple compression, or operating margins deteriorate below expectations."
+    ],
+    "reasoning": "The long case is supported by the latest quarter's $2.09 EPS versus a $1.95 estimate, a 7.44% beat, strong 50% revenue growth and 56% gross-margin earnings-call picture, and repeated evidence of accelerating Data Center and EPYC demand, while the independent fundamental view is bullish but valuation-sensitive and the major counterweights are real execution, supply, software, and custom-accelerator risks.",
+    "claims_considered": 189
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-14",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.78,
+    "confidence_after": 0.78
   }
 ]

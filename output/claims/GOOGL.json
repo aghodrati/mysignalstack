@@ -2734,5 +2734,24 @@
     "trade_worthy": false,
     "context": "The article claims Google, along with Nvidia, AMD, Broadcom, Amazon, Microsoft, Meta, Supermicro, and Dell, depends on Chinese companies and engineers in its supply chain and software development. It also argues that cutting Chinese labs off from Nvidia GPUs would reduce the open-source models, kernels, and optimization work that flow into Western startups and AI projects, potentially raising development friction or slowing Google\u2019s AI progress.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "a87743f24617048f",
+    "ticker": "GOOGL",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "source_title": "Weekly Dose of Optimism #219",
+    "event_type": "other",
+    "created": "2026-11-13",
+    "claim": "AlphaGenome 2 strengthens GOOGL\u2019s AI competitive position",
+    "direction": "long",
+    "confidence": 0.88,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google DeepMind\u2019s AlphaGenome 2 analyzes up to one million DNA letters under a specific tissue, cell type, cell state, or user-provided cell condition. Trained on more than 107 million cell profiles from 68 human and mouse tissues, it identified 30% of believed-causal variants in a 28-immune-cell benchmark, versus 16% for the prior model. This demonstrates meaningful model progress and could improve Google\u2019s standing in high-value scientific AI, although the article provides no direct revenue, monetization, or adoption evidence.",
+    "source": "Not Boring"
   }
 ]

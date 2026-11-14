@@ -1087,5 +1087,72 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-11-14",
+    "value": 88.55999755859375,
+    "delta": -2.499178935043056,
+    "history": [
+      [
+        "2026-11-09",
+        86.8499984741211
+      ],
+      [
+        "2026-11-10",
+        86.04000091552734
+      ],
+      [
+        "2026-11-11",
+        86.52999877929688
+      ],
+      [
+        "2026-11-12",
+        88.73999786376953
+      ],
+      [
+        "2026-11-13",
+        88.55999755859375
+      ]
+    ],
+    "narrative": "WTI's weekly decline appears to reflect broad commodity pressure and fading geopolitical risk premium, consistent with the headline that oil prices are returning to prewar levels and commentary that a stronger dollar is weighing on commodities. The Iran inspection standoff and persistent refining-capacity problems are countervailing risks, but neither provides a clear explanation for the week's move in crude itself.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Fed's Goolsbee Says Even If The Price Of Oil Drops Rapidly, Refining Capacity Remains 'Problematic' And Will Keep Diesel And Jet Fuel Prices Elevated",
+        "domain": "Benzinga",
+        "date": "20261113"
+      },
+      {
+        "title": "'UN watchdog calls on Iran to reopen nuclear facilities to inspection; Tehran has told the IAEA that it is not possible to resume inspections in the current security situation' - Al Jazeera",
+        "domain": "Benzinga",
+        "date": "20261113"
+      },
+      {
+        "title": "SolarEdge Slides 5% as Rising Yields Weigh on Solar Stocks; Sunrun Drops 4%, Enphase Falls 3%",
+        "domain": "Yahoo",
+        "date": "20261112"
+      },
+      {
+        "title": "The Treasury Secretary Is Now Living on a Military Base After Iranian Threats",
+        "domain": "Yahoo",
+        "date": "20261112"
+      },
+      {
+        "title": "Oil Prices Returning To Prewar Levels, Is Not A Sure Bet",
+        "domain": "SeekingAlpha",
+        "date": "20261112"
+      },
+      {
+        "title": "Commodities: Stronger Dollar Weighs On Commodities",
+        "domain": "SeekingAlpha",
+        "date": "20261112"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W46",
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

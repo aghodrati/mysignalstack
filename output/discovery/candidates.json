@@ -10347,5 +10347,155 @@
     "name": "DeepSeek",
     "ticker_guess": null,
     "why": "Named as a Chinese model developer that may have accessed Nvidia-based GPU systems or capacity allegedly channeled through Megaspeed"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-13",
+    "source": "Stratechery",
+    "article_title": "2026.46: The End of Jensen",
+    "article_link": "https://stratechery.com/2026/the-end-of-jensen/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Its Link digital wallet is designed to control spending by AI agents; agentic-commerce purchases with Link reportedly grew 38x in September"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-13",
+    "source": "Stratechery",
+    "article_title": "2026.46: The End of Jensen",
+    "article_link": "https://stratechery.com/2026/the-end-of-jensen/",
+    "name": "Roblox",
+    "ticker_guess": null,
+    "why": "Its CEO David Baszucki was interviewed about AI transforming game creation; the article says AI could expand Roblox\u2019s opportunities as both an aggregator and platform"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Next Platform",
+    "article_title": "Cerebras Readies CS-5 Systems For 2027 Launch As It Bags Another Hyperscaler",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/14/cerebras-readies-cs-5-systems-for-2027-launch-as-it-bags-another-hyperscaler/5309932",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Cerebras has a $10 billion inference deal covering 750 megawatts of capacity; the potential expanded arrangement could be worth $20 billion-$30 billion through 2032"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Next Platform",
+    "article_title": "Cerebras Readies CS-5 Systems For 2027 Launch As It Bags Another Hyperscaler",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/14/cerebras-readies-cs-5-systems-for-2027-launch-as-it-bags-another-hyperscaler/5309932",
+    "name": "Flex",
+    "ticker_guess": null,
+    "why": "Named as a manufacturing partner expected to help Cerebras ramp production and improve hardware margins"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Next Platform",
+    "article_title": "Cerebras Readies CS-5 Systems For 2027 Launch As It Bags Another Hyperscaler",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/14/cerebras-readies-cs-5-systems-for-2027-launch-as-it-bags-another-hyperscaler/5309932",
+    "name": "Sanmina",
+    "ticker_guess": null,
+    "why": "Named as a manufacturing partner expected to help Cerebras ramp production and improve hardware margins"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Interconnects",
+    "article_title": "Open-source AI without Jensen",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Identified as one of the leading closed AI labs attracting top talent; described as having strong economies of scale and an exceptionally promising business model; cited as purchasing substantial AI compute capacity"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Interconnects",
+    "article_title": "Open-source AI without Jensen",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Identified as one of the leading closed AI labs attracting top talent; cited alongside Anthropic as buying substantial compute capacity, limiting availability for inference startups"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Interconnects",
+    "article_title": "Open-source AI without Jensen",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+    "name": "Thinking Machines Lab",
+    "ticker_guess": null,
+    "why": "Presented as a potential US frontier open-model contender with a strong team; its Inkling 2 Small model is described as one of the best recent Western open-weight models, but still behind leading Chinese models"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Interconnects",
+    "article_title": "Open-source AI without Jensen",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Described as having model-building talent comparable to leading US labs; cited as ahead of Western open-model efforts on skill while constrained by compute and deployment deficits"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-14",
+    "source": "Interconnects",
+    "article_title": "Open-source AI without Jensen",
+    "article_link": "https://www.interconnects.ai/p/open-source-ai-without-jensen",
+    "name": "Zhipu AI",
+    "ticker_guess": null,
+    "why": "Its expected next GLM model update is presented as a significant benchmark for the open-model ecosystem; described as part of China\u2019s leading open-weight model competition"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-13",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #219",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "name": "argenx",
+    "ticker_guess": "ARGX",
+    "why": "Agreed to acquire Unnatural Products for $550 million upfront and up to $595 million in milestones; plans to use the acquired team as its peptide-discovery hub"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-13",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #219",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "name": "Path Robotics",
+    "ticker_guess": null,
+    "why": "Raised a $300 million Series E at a $2.45 billion valuation; reported revenue growth of 17x in 18 months and customers including Lockheed Martin and HII"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-13",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #219",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "name": "SINGULUS TECHNOLOGIES",
+    "ticker_guess": "SNG1",
+    "why": "Announced a contract to supply SpaceX with a turnkey heterojunction solar-cell production line worth slightly over \u20ac60 million; said additional equipment could scale beyond 100 GW of annual production"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-13",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #219",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "name": "Unnatural Products",
+    "ticker_guess": null,
+    "why": "Macrocycle-drug developer acquired by argenx; had been developing an oral FcRn-targeting pill in partnership with argenx"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-13",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #219",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-219",
+    "name": "Runway",
+    "ticker_guess": null,
+    "why": "Said to have more than 65 million users and over 80 media models; provides generative video, image and audio tools used by major enterprises and integrated into several AI applications"
   }
 ]

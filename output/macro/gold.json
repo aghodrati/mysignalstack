@@ -1196,5 +1196,72 @@
     "direction": "bullish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-11-14",
+    "value": 3886.300048828125,
+    "delta": -4.628330953777504,
+    "history": [
+      [
+        "2026-11-09",
+        4114.5
+      ],
+      [
+        "2026-11-10",
+        4030.199951171875
+      ],
+      [
+        "2026-11-11",
+        4000.5
+      ],
+      [
+        "2026-11-12",
+        3885.300048828125
+      ],
+      [
+        "2026-11-13",
+        3886.300048828125
+      ]
+    ],
+    "narrative": "Gold\u2019s modest weekly decline was most plausibly driven by renewed Fed rate-hike fears, as reflected in \u201cGold Prices Plunge as Fed Rate Hike Fears Intensify,\u201d alongside a stronger dollar weighing on commodities. The Nvidia-related headline also explicitly linked the market\u2019s risk shift to gold falling below $4,000, though it appears secondary to rates and dollar strength.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "What If You Had Invested $10,000 in Bitcoin 5 Years Ago?",
+        "domain": "Yahoo",
+        "date": "20261112"
+      },
+      {
+        "title": "Gold Prices Plunge as Fed Rate Hike Fears Intensify",
+        "domain": "Yahoo",
+        "date": "20261112"
+      },
+      {
+        "title": "Trading Halt: Halt status updated at 9:40:00 AM ET: Quotation Resumption: New Issue Available",
+        "domain": "Benzinga",
+        "date": "20261112"
+      },
+      {
+        "title": "Nvidia Crisis \u2013 Visionary Huang\u2019s Resignation Puts America's AI Advantage at Risk; Gold Falls Below $4000",
+        "domain": "Benzinga",
+        "date": "20261112"
+      },
+      {
+        "title": "Commodities: Stronger Dollar Weighs On Commodities",
+        "domain": "SeekingAlpha",
+        "date": "20261112"
+      },
+      {
+        "title": "Commodities: Oil Rebounds As Geopolitical Risks Linger",
+        "domain": "SeekingAlpha",
+        "date": "20261111"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W46",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]
