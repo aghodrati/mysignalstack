@@ -10497,5 +10497,50 @@
     "name": "Runway",
     "ticker_guess": null,
     "why": "Said to have more than 65 million users and over 80 media models; provides generative video, image and audio tools used by major enterprises and integrated into several AI applications"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Doomberg",
+    "article_title": "Lame Duck \u00e0 L\u2019Orange",
+    "article_link": "https://newsletter.doomberg.com/p/lame-duck-a-lorange",
+    "name": "AI data centers",
+    "why": "China has 24GW of operational data-center computing capacity and another 50GW under construction or announced; Ulanqab in Inner Mongolia has 89 data centers built or planned"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Doomberg",
+    "article_title": "Lame Duck \u00e0 L\u2019Orange",
+    "article_link": "https://newsletter.doomberg.com/p/lame-duck-a-lorange",
+    "name": "US-China competition",
+    "why": "The article argues China can build data centers and supporting power plants faster and more cheaply than the US; China\u2019s data-center expansion is presented as a growing threat to US AI dominance"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Doomberg",
+    "article_title": "Lame Duck \u00e0 L\u2019Orange",
+    "article_link": "https://newsletter.doomberg.com/p/lame-duck-a-lorange",
+    "name": "Energy permitting",
+    "why": "A lame-duck Congress may pass legislation overhauling US energy permitting; the bill could accelerate oil, gas, wind, solar, nuclear, and data-center development"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Doomberg",
+    "article_title": "Lame Duck \u00e0 L\u2019Orange",
+    "article_link": "https://newsletter.doomberg.com/p/lame-duck-a-lorange",
+    "name": "Data-center regulation",
+    "why": "Voters in 10 states backed restrictions or rejected data-center proposals in the November 3 midterm elections; 40 of 41 tracked ballot measures sought to restrict data-center establishment"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Doomberg",
+    "article_title": "Lame Duck \u00e0 L\u2019Orange",
+    "article_link": "https://newsletter.doomberg.com/p/lame-duck-a-lorange",
+    "name": "Electricity infrastructure",
+    "why": "China is using abundant electricity and cheap land in its hinterland to build computing hubs; US data-center projects could become viable if new energy infrastructure is easier to permit"
   }
 ]
