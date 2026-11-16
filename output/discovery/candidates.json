@@ -10542,5 +10542,35 @@
     "article_link": "https://newsletter.doomberg.com/p/lame-duck-a-lorange",
     "name": "Electricity infrastructure",
     "why": "China is using abundant electricity and cheap land in its hinterland to build computing hubs; US data-center projects could become viable if new energy infrastructure is easier to permit"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Stratechery",
+    "article_title": "Obituaries",
+    "article_link": "https://stratechery.com/2026/obituaries/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Developed expertise running models on Amazon Trainium and Google TPUs; cited as a leading LLM company without Nvidia dependency; characterized as broadly aligned with AI safety and export-control concerns"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Stratechery",
+    "article_title": "Obituaries",
+    "article_link": "https://stratechery.com/2026/obituaries/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Described as Microsoft's frontier-model partner and an early beneficiary of Nvidia's GPU platform; contrasted with Anthropic's ability to operate without Nvidia dependency"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Stratechery",
+    "article_title": "Obituaries",
+    "article_link": "https://stratechery.com/2026/obituaries/",
+    "name": "Megaspeed",
+    "ticker_guess": null,
+    "why": "Singaporean AI data-center company linked to allegations of routing Nvidia chips into China; its executive Alice Huang was identified as having had an affair with Jensen Huang; U.S. officials delayed efforts to blacklist the company"
   }
 ]

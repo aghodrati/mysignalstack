@@ -2753,5 +2753,24 @@
     "trade_worthy": false,
     "context": "Google DeepMind\u2019s AlphaGenome 2 analyzes up to one million DNA letters under a specific tissue, cell type, cell state, or user-provided cell condition. Trained on more than 107 million cell profiles from 68 human and mouse tissues, it identified 30% of believed-causal variants in a 28-immune-cell benchmark, versus 16% for the prior model. This demonstrates meaningful model progress and could improve Google\u2019s standing in high-value scientific AI, although the article provides no direct revenue, monetization, or adoption evidence.",
     "source": "Not Boring"
+  },
+  {
+    "id": "b50267b5c5682122",
+    "ticker": "GOOGL",
+    "source_link": "https://stratechery.com/2026/obituaries/",
+    "source_title": "Obituaries",
+    "event_type": "leadership_change",
+    "created": "2026-11-16",
+    "claim": "GOOGL\u2019s TPU ecosystem strengthens its competitive position against Nvidia",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Google\u2019s TPUs as a meaningful challenge to Nvidia\u2019s networking and systems moat. Anthropic, supported by Google and Amazon, learned to run models on Google TPUs and Amazon Trainium rather than depending on Nvidia, demonstrating that leading AI developers can operate outside Nvidia\u2019s CUDA ecosystem. This could improve Google\u2019s ability to supply AI compute internally and to attract customers seeking alternatives to Nvidia hardware.",
+    "source": "Stratechery"
   }
 ]

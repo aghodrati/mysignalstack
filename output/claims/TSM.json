@@ -1043,5 +1043,43 @@
     "trade_worthy": false,
     "context": "Cerebras\u2019 WSE-5 and CS-5 will be produced on TSMC\u2019s 5-nanometer process, which management favors because wafer availability is better and costs are lower than newer nodes. If Cerebras expands manufacturing for its OpenAI, AWS, Oracle, and Microsoft workloads, TSMC could receive additional 5-nanometer wafer orders. However, the article provides no order volumes, and Cerebras\u2019 hyperscaler agreements are not yet contributing revenue, so the direct financial effect on TSMC remains limited and indirect.",
     "source": "Next Platform"
+  },
+  {
+    "id": "e6c953890b0a0b68",
+    "ticker": "TSM",
+    "source_link": "https://stratechery.com/2026/obituaries/",
+    "source_title": "Obituaries",
+    "event_type": "leadership_change",
+    "created": "2026-11-16",
+    "claim": "TSMC may lose Nvidia\u2019s founder-backed supply-chain commitments",
+    "direction": "short",
+    "confidence": 0.83,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Nvidia\u2019s unusually strong supply-chain position depended partly on Jensen Huang\u2019s personal relationships, especially his three-decade handshake relationship with TSMC. With Huang gone and no clear succession structure, the article questions whether TSMC will retain the same trust and willingness to commit capacity to Nvidia, creating uncertainty around Nvidia-related demand and supply coordination for TSMC.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "baf1ab6a3928f42b",
+    "ticker": "TSM",
+    "source_link": "https://stratechery.com/2026/obituaries/",
+    "source_title": "Obituaries",
+    "event_type": "leadership_change",
+    "created": "2026-11-16",
+    "claim": "China\u2019s indigenous semiconductor ecosystem could weaken TSMC\u2019s long-term strategic position",
+    "direction": "short",
+    "confidence": 0.7,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that tighter U.S. export controls and China\u2019s decision to force domestic demand toward inferior local alternatives could eventually produce a rival Chinese semiconductor and AI ecosystem. If that ecosystem matures, TSMC could face reduced access to Chinese demand and greater long-term competition from an alternative supply chain, although the article describes this as a distant, uncertain outcome.",
+    "source": "Stratechery"
   }
 ]

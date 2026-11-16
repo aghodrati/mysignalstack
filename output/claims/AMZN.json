@@ -1556,5 +1556,43 @@
     "trade_worthy": false,
     "context": "Cerebras has announced planned work with Amazon Web Services, alongside Oracle Cloud and Microsoft Azure, and says its CS systems will be incorporated into hyperscalers\u2019 inference workloads, presumably for decode operations. The partnership could give AWS access to Cerebras\u2019s faster, potentially lower-cost inference hardware while diversifying its AI infrastructure beyond Nvidia and its own accelerators, but the deal\u2019s terms, scale, timing, and revenue contribution are undisclosed and it is not yet included in Cerebras\u2019s backlog or revenue.",
     "source": "Next Platform"
+  },
+  {
+    "id": "cdf50bbc2924c827",
+    "ticker": "AMZN",
+    "source_link": "https://stratechery.com/2026/obituaries/",
+    "source_title": "Obituaries",
+    "event_type": "leadership_change",
+    "created": "2026-11-16",
+    "claim": "AMZN\u2019s custom AI chips strengthen AWS\u2019s position against Nvidia",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article identifies Amazon\u2019s Trainium chips as a viable alternative to Nvidia GPUs and says Anthropic learned to operate on Trainium, alongside Google TPUs, without Nvidia dependency. This suggests Amazon can reduce reliance on Nvidia for AI infrastructure and use differentiated silicon to improve AWS\u2019s competitive position as model companies and enterprises seek alternatives.",
+    "source": "Stratechery"
+  },
+  {
+    "id": "6165b8e9e6428bc0",
+    "ticker": "AMZN",
+    "source_link": "https://stratechery.com/2026/obituaries/",
+    "source_title": "Obituaries",
+    "event_type": "leadership_change",
+    "created": "2026-11-16",
+    "claim": "AMZN gains relative advantage as AI infrastructure demand concentrates with hyperscalers",
+    "direction": "long",
+    "confidence": 0.78,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article argues that hyperscalers such as Amazon are better positioned than neoclouds because they have stronger cash generation, financing access, and existing businesses. If AI infrastructure revenue disappoints or Nvidia stops supporting neocloud financing after Huang\u2019s departure, hyperscalers are likely to prioritize their own compute and serve as safer counterparties, potentially shifting demand and investment toward AWS.",
+    "source": "Stratechery"
   }
 ]
