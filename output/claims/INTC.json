@@ -1385,5 +1385,43 @@
     "trade_worthy": false,
     "context": "Intel remains on the back foot in AI while its foundry ambitions continue to struggle. The article contrasts Intel\u2019s flat consumer sales with AMD\u2019s surging enterprise demand and attributes the divergence to differences in chiplet strategy, organizational culture, and long-term structure, implying a persistent competitive disadvantage rather than a temporary fluctuation.",
     "source": "Stratechery"
+  },
+  {
+    "id": "534996d08e9ec346",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "source_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "event_type": "capex",
+    "created": "2026-11-16",
+    "claim": "Intel\u2019s HPC CPU roadmap uncertainty risks delaying server demand",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article says Diamond Rapids Xeon 7 may arrive about a year late, while Intel has canceled the mainstream eight-memory-channel version and will rely on Granite Rapids Xeon 6+ until a future Xeon 8 refresh. Such a transition could lead HPC customers to postpone testing or installations while waiting for the next platform, weakening near-term Intel server demand, although the article presents the timing as a broader industry issue rather than an Intel-specific collapse.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "000a01ea9e502b3c",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "source_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "event_type": "capex",
+    "created": "2026-11-16",
+    "claim": "Intel remains disadvantaged in accelerated HPC systems",
+    "direction": "short",
+    "confidence": 0.9,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Accelerated systems account for 58% of Top500 machines and 79.9% of aggregate peak performance. Nvidia and AMD GPUs dominate this segment, while the article explicitly notes that Intel has no HPC-focused GPU in the market, only products aimed at inference. This leaves Intel without a comparable accelerator offering as HPC customers increasingly deploy GPU-based systems, potentially limiting its competitive position in high-performance computing.",
+    "source": "Next Platform"
   }
 ]

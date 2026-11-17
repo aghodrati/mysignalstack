@@ -10572,5 +10572,75 @@
     "name": "Megaspeed",
     "ticker_guess": null,
     "why": "Singaporean AI data-center company linked to allegations of routing Nvidia chips into China; its executive Alice Huang was identified as having had an affair with Jensen Huang; U.S. officials delayed efforts to blacklist the company"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Next Platform",
+    "article_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Built the Hangang system with Cray EX254n nodes and Slingshot 400 interconnect; supplied ProLiant XD685 nodes for Oak Ridge\u2019s Lux supercomputer"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Next Platform",
+    "article_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "name": "China Telecom",
+    "ticker_guess": null,
+    "why": "Operates the eSurfing Cloud cluster in Shanghai; its cloud system accounted for 93.3% of the cores across the 27 new November Top500 machines"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Next Platform",
+    "article_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "name": "Hygon Information Technology",
+    "ticker_guess": null,
+    "why": "Its 56-core C86 x86 server CPU, derived from an AMD Zen1 core, powers the China Telecom eSurfing Cloud system"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Next Platform",
+    "article_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "name": "MetaX",
+    "ticker_guess": null,
+    "why": "Supplied C588 GPUs used in China Telecom\u2019s eSurfing Cloud cluster"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Next Platform",
+    "article_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "name": "Korea Institute of Science and Technology Information",
+    "ticker_guess": null,
+    "why": "Operates the Hangang supercomputer, the most powerful new system on the November 2026 Top500 list"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "The Diff",
+    "article_title": "The Elasticity Business",
+    "article_link": "https://www.thediff.co/archive/the-elasticity-business/",
+    "name": "Strategy (formerly MicroStrategy)",
+    "ticker_guess": "MSTR",
+    "why": "Pivoted to issuing stock to buy Bitcoin; added more complex financing instruments and cash-raising after the strategy was widely replicated; author argues the resulting mix of crypto exposure, liquidity, debt service and paperwork may deserve a discount"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "The Diff",
+    "article_title": "The Elasticity Business",
+    "article_link": "https://www.thediff.co/archive/the-elasticity-business/",
+    "name": "Saudi Aramco",
+    "ticker_guess": null,
+    "why": "Used as an example of relatively inelastic oil supply because its marginal cost of production is low; could theoretically remain profitable at very low oil prices, though Saudi Arabia\u2019s broader state finances would be vulnerable"
   }
 ]

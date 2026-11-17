@@ -3589,5 +3589,43 @@
     "trade_worthy": false,
     "context": "Cerebras currently uses AMD GPUs for prefill in its cloud while positioning its own waferscale systems for fast inference decode. Expansion of Cerebras cloud capacity to support OpenAI and other hyperscaler work could therefore create incremental demand for AMD GPUs, but the article gives no volumes, contract economics, timing, or indication that these arrangements are included in Cerebras\u2019s backlog or AMD\u2019s revenue outlook.",
     "source": "Next Platform"
+  },
+  {
+    "id": "2d8f1a3014f4a21d",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "source_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "event_type": "capex",
+    "created": "2026-11-16",
+    "claim": "AMD\u2019s HPC revenue may be delayed as customers await next-generation platforms",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The November 2026 Top500 installation slump is attributed more to roadmap and networking timing than permanently weaker demand. Customers may defer testing or deploying AMD\u2019s forthcoming Altair MI400 GPUs and Venice Epyc 9006 processors, alongside competing Nvidia Rubin and Vera products, shifting some AMD HPC revenue and system installations into 2027 and later. The article expects delayed systems to produce above-average installations on subsequent lists, implying timing pressure rather than clearly lost demand.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "f1f48d8d9aa9f8b4",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/hpc/2026/11/16/supercomputer-installs-take-a-dive-in-the-second-half-of-2026/5310221",
+    "source_title": "Supercomputer Installs Take A Dive In The Second Half Of 2026",
+    "event_type": "capex",
+    "created": "2026-11-16",
+    "claim": "AMD has an opportunity to strengthen its HPC accelerator position",
+    "direction": "long",
+    "confidence": 0.69,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD-based GPU systems accounted for 37.7% of aggregate FP64 peak performance on the Top500, versus 52.9% for Nvidia-based systems, indicating meaningful but secondary scale in HPC. The article says AMD\u2019s upcoming MI430X is explicitly aimed at HPC and offers high real FP64 performance, potentially improving AMD\u2019s competitiveness against Nvidia products that rely more on software-emulated FP64 atop matrix-math engines as shipments ramp over the next year and a half.",
+    "source": "Next Platform"
   }
 ]
