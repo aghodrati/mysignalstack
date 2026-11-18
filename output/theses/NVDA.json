@@ -983,5 +983,50 @@
     "final_multiplier": 0.84,
     "confidence_before": 0.68,
     "confidence_after": 0.5712
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-18",
+    "thesis": "NVDA remains a high-conviction long because exceptional demand, record growth, Rubin-driven product momentum, and a durable full-stack advantage outweigh rising leadership, supply-chain, margin, financing, and custom-accelerator risks over the next year.",
+    "direction": "long",
+    "confidence": 0.78,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.9,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.78,
+    "pre_critic_confidence": 0.78,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 22,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Fiscal Q4 revenue near or above the approximately $130 billion guide as Vera-Rubin systems ramp.",
+      "Management sustains its approximately 75% fiscal 2028 growth outlook and demonstrates that supply constraints, rather than demand, remain the binding limitation.",
+      "Rubin validates its reported agentic-inference performance and power-efficiency advantages in broader production deployments.",
+      "HBM, packaging, optical, and testing capacity expansions improve shipment volumes without materially worsening gross margins.",
+      "Continued hyperscaler, sovereign-AI, Oracle, Dell, HPE, OpenAI, and neocloud deployments support GPU and networking demand.",
+      "NVIDIA preserves software and ecosystem leadership as vLLM, SGLang, CUDA, NVLink, and full-stack factory-built systems scale."
+    ],
+    "invalidation": [
+      "A prolonged leadership transition after Jensen Huang's departure disrupts execution, supplier coordination, customer allocation, or financing commitments.",
+      "Gross margin falls materially below the guided 71%-72% trough or memory and optical shortages prevent NVIDIA from converting demand into shipments.",
+      "Google TPU, AWS Trainium, Microsoft Maia, Broadcom custom XPUs, Cerebras, AMD, or other alternatives achieve sustained production cost and performance advantages that cause meaningful customer share loss.",
+      "Hyperscaler capex, AI monetization, token demand, or datacenter construction slows enough to reduce orders or create neocloud defaults and losses under NVIDIA's guarantees and financing programs.",
+      "Export-control investigations produce material penalties, shipment restrictions, or further eliminate China-related demand and ecosystem access.",
+      "Fundamental growth decelerates sharply relative to expectations, causing multiple compression despite continued AI adoption."
+    ],
+    "reasoning": "The independent fundamentals, bullish earnings-call tone, strong latest-quarter EPS beat of 8.36%, record reported revenue and raised outlook support the long thesis, while leadership turmoil, declining margins, financing exposure, component constraints, and increasingly credible alternative accelerators justify moderate rather than extreme confidence.",
+    "claims_considered": 200
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-18",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.78,
+    "confidence_after": 0.78
   }
 ]

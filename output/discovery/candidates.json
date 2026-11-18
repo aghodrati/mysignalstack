@@ -10642,5 +10642,45 @@
     "name": "Saudi Aramco",
     "ticker_guess": null,
     "why": "Used as an example of relatively inelastic oil supply because its marginal cost of production is low; could theoretically remain profitable at very low oil prices, though Saudi Arabia\u2019s broader state finances would be vulnerable"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-18",
+    "source": "Stratechery",
+    "article_title": "Nvidia Earnings; Office Convergence; OS Wars, AI Edition",
+    "article_link": "https://stratechery.com/2026/nvidia-earnings-office-convergence-os-wars-ai-edition/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Released an AI-focused operating system update; positioned as a direct competitor to Microsoft's update"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-17",
+    "source": "Next Platform",
+    "article_title": "IBM Links Two Nighthawk r3 Chips To Make A 1,040-Qubit Quantum System",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/17/ibm-links-two-nighthawk-r3-chips-to-make-a-1040-qubit-quantum-system/5310545",
+    "name": "IBM",
+    "ticker_guess": "IBM",
+    "why": "Plans to launch Nighthawk r3 with more than 520 qubits and 10,000 quantum operations in 2027; plans to link two r3 processors with long-range couplers into a 1,040-qubit system; targets a fault-tolerant Starling system with 200 logical qubits and 100 million quantum operations in 2029"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-17",
+    "source": "Next Platform",
+    "article_title": "Quantinuum Aligns Software Development For Quantum Hardware Generations",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/17/quantinuum-aligns-software-development-for-quantum-hardware-generations/5310485",
+    "name": "Quantinuum",
+    "ticker_guess": null,
+    "why": "Unveiled a Nexus roadmap spanning upcoming Sol hardware and Apollo, its planned first fault-tolerant system in 2029; reported 98-qubit Helios accuracy of 99.9995% and 215 companies building on Nexus; reported third-quarter revenue of $9.1 million, up 233% year over year, and raised full-year guidance from $31 million to $34 million"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-17",
+    "source": "Next Platform",
+    "article_title": "Quantinuum Aligns Software Development For Quantum Hardware Generations",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/17/quantinuum-aligns-software-development-for-quantum-hardware-generations/5310485",
+    "name": "Classiq",
+    "ticker_guess": null,
+    "why": "Intel is pursuing a reported $2.3 billion acquisition of the quantum software company; its technology is intended to help Intel shift its quantum group from research and development toward a commercial business"
   }
 ]

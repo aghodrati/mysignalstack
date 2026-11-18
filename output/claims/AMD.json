@@ -3627,5 +3627,24 @@
     "trade_worthy": false,
     "context": "AMD-based GPU systems accounted for 37.7% of aggregate FP64 peak performance on the Top500, versus 52.9% for Nvidia-based systems, indicating meaningful but secondary scale in HPC. The article says AMD\u2019s upcoming MI430X is explicitly aimed at HPC and offers high real FP64 performance, potentially improving AMD\u2019s competitiveness against Nvidia products that rely more on software-emulated FP64 atop matrix-math engines as shipments ramp over the next year and a half.",
     "source": "Next Platform"
+  },
+  {
+    "id": "81ac6606f6788f3c",
+    "ticker": "AMD",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/17/ibm-links-two-nighthawk-r3-chips-to-make-a-1040-qubit-quantum-system/5310545",
+    "source_title": "IBM Links Two Nighthawk r3 Chips To Make A 1,040-Qubit Quantum System",
+    "event_type": "product_launch",
+    "created": "2026-11-17",
+    "claim": "AMD gains strategic validation in quantum-classical computing",
+    "direction": "long",
+    "confidence": 0.87,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "IBM and Oak Ridge National Laboratory are using an error-correction co-design platform pairing IBM\u2019s Nighthawk r2 quantum processor with the Umbra supercomputer, powered by AMD Epyc CPUs and Instinct GPUs. IBM is also integrating CPU- and GPU-based classical resources with quantum workloads in one managed Quantum Platform, giving AMD hardware visibility in an emerging hybrid-computing use case. The article does not indicate revenue, purchase volume, or a firm commercial commitment, so the business impact remains indirect.",
+    "source": "Next Platform"
   }
 ]

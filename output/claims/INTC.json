@@ -1423,5 +1423,24 @@
     "trade_worthy": false,
     "context": "Accelerated systems account for 58% of Top500 machines and 79.9% of aggregate peak performance. Nvidia and AMD GPUs dominate this segment, while the article explicitly notes that Intel has no HPC-focused GPU in the market, only products aimed at inference. This leaves Intel without a comparable accelerator offering as HPC customers increasingly deploy GPU-based systems, potentially limiting its competitive position in high-performance computing.",
     "source": "Next Platform"
+  },
+  {
+    "id": "36b80ad37420abb3",
+    "ticker": "INTC",
+    "source_link": "https://www.nextplatform.com/compute/2026/11/17/quantinuum-aligns-software-development-for-quantum-hardware-generations/5310485",
+    "source_title": "Quantinuum Aligns Software Development For Quantum Hardware Generations",
+    "event_type": "m_and_a",
+    "created": "2026-11-17",
+    "claim": "Intel gains a path toward a commercial full-stack quantum business",
+    "direction": "long",
+    "confidence": 0.9,
+    "importance": 8,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Intel is pursuing a reported $2.3 billion acquisition of quantum software maker Classiq. CTO Pushkar Ranade said adding Classiq would shift Intel\u2019s quantum group from a decade-long research-and-development effort into an actual quantum computing business, complementing Intel\u2019s quantum chips and SDK with software capabilities. The move could improve Intel\u2019s competitive positioning against vendors such as IBM, D-Wave, Rigetti, and IonQ that already emphasize full-stack offerings, although the acquisition remains only a reported pursuit and the article provides no evidence of near-term revenue impact.",
+    "source": "Next Platform"
   }
 ]
