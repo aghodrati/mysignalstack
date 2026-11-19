@@ -10682,5 +10682,814 @@
     "name": "Classiq",
     "ticker_guess": null,
     "why": "Intel is pursuing a reported $2.3 billion acquisition of the quantum software company; its technology is intended to help Intel shift its quantum group from research and development toward a commercial business"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-19",
+    "source": "Stratechery",
+    "article_title": "An Interview With Eric Seufert About Agentic Commerce",
+    "article_link": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/",
+    "name": "agentic commerce",
+    "why": "Interview examines commerce conducted by software agents; argues advertising may be central to agent-mediated commerce; calls for retailers designed to serve purchasing agents"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 16, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-16-2026",
+    "name": "Adobe",
+    "ticker_guess": "ADBE",
+    "why": "The author bought more Adobe shares at approximately $246 and says it is now a full position; the author believes Adobe will successfully adapt to the changing AI environment; Adobe is frequently portrayed as lagging in AI, partly due to competition from ArtCraft"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-16",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 16, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-16-2026",
+    "name": "AI software",
+    "why": "Adobe is adapting its products to the changing AI environment; ArtCraft, a free AI-coded clone of seven Adobe apps, is attracting increasing attention"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Medicinal Whiskey Charity: Making Whiskey Pay in the Fight Against Childhood Illness",
+    "article_link": "https://michaeljburry.substack.com/p/medicinal-whiskey-charity-making",
+    "name": "bourbon industry",
+    "why": "Distilleries including Willett, Buffalo Trace and Old Forester provided barrel allocations at cost and donated rare bottles; collectors funded charity access through whiskey picks, galas and unique bottles"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Medicinal Whiskey Charity: Making Whiskey Pay in the Fight Against Childhood Illness",
+    "article_link": "https://michaeljburry.substack.com/p/medicinal-whiskey-charity-making",
+    "name": "healthcare philanthropy",
+    "why": "Medicinal Whiskey Charity directed 2024 grants to transplant programs, children\u2019s hospitals, pediatric cancer families and disaster relief; $300,000 went to the University of Kentucky transplant program and $80,550 to Prisma Health"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-15",
+    "source": "Cassandra Unchained",
+    "article_title": "Medicinal Whiskey Charity: Making Whiskey Pay in the Fight Against Childhood Illness",
+    "article_link": "https://michaeljburry.substack.com/p/medicinal-whiskey-charity-making",
+    "name": "nonprofit governance",
+    "why": "The charity reported zero compensation expense and zero liabilities across four Form 990 filings; grants represented 95.9% of total expenses and filings reported no loans or related-party transactions"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-12",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 12, 2026: Enough is Enough, NVIDIA, SMH vs SOXX, Earnings Quality",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-12-2026-enough",
+    "name": "Super Micro Computer",
+    "ticker_guess": "SMCI",
+    "why": "Reportedly subject to a separate DOJ inquiry; a cofounder and two others were charged in March with routing $2.5 billion of NVIDIA GPUs to China through a Southeast Asian front company"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 5, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-5-2026",
+    "name": "MercadoLibre",
+    "ticker_guess": "MELI",
+    "why": "The company reported margin pressure from logistics expansion, fuel and energy costs, and increased affiliate investment; Its fintech business continued growing while maintaining stable credit losses; The author values the shares at an adjusted IV15 of $1,433 and has been waiting for a price below $1,500"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 5, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-5-2026",
+    "name": "logistics footprint",
+    "why": "MercadoLibre expanded logistics capacity 20% quarter-on-quarter ahead of peak season; Expansion compressed shipping margins by roughly 60 basis points, with some recovery expected in Q4"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 5, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-5-2026",
+    "name": "fuel costs",
+    "why": "Higher fuel and energy costs pressured shipping margins; MercadoLibre passed some, but not all, of the increases to consumers"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 5, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-5-2026",
+    "name": "digital credit",
+    "why": "Mercado Pago credit grew 62% while 15-to-90-day NPLs remained stable at 7%; The company is reducing exposure to riskier segments and prioritizing risk management"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 5, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-5-2026",
+    "name": "Brazil credit",
+    "why": "Marketplace purchasing and repayment data help MercadoLibre assess Brazilian borrowers; The company adjusts credit by product, risk cohort, credit-line size, and duration"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-05",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 5, 2026",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-november-5-2026",
+    "name": "Argentina credit",
+    "why": "Argentina NPLs improved across products to levels near historical lows despite weakness in the industry"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-04",
+    "source": "Cassandra Unchained",
+    "article_title": "Anthropic\u2019s Amended Prospectus Form S-1/A: 3rd Quarter Results & More Questions",
+    "article_link": "https://michaeljburry.substack.com/p/anthropics-amended-prospectus-form",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Filed an amendment to its S-1 offering document on November 2; the filing includes third-quarter results; October revenue run-rate was left blank"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 2, 2026: Global Payments Buyout Report Juices Payments Stocks, The Retail Trade, Hong Kong Calling Once Again",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-global-payments-buyout",
+    "name": "Global Payments",
+    "ticker_guess": "GPN",
+    "why": "Reportedly being pursued for a take-private deal by Clayton Dubilier & Rice and GTCR; Shares rose as much as 18% to $96.84, implying roughly $25.6 billion market capitalization; The article criticizes its serial-acquisition strategy, high net debt and reliance on adjusted profitability"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 2, 2026: Global Payments Buyout Report Juices Payments Stocks, The Retail Trade, Hong Kong Calling Once Again",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-global-payments-buyout",
+    "name": "Clayton Dubilier & Rice",
+    "ticker_guess": null,
+    "why": "Reportedly pursuing Global Payments in a potentially large leveraged buyout; The private-equity firm reportedly manages about $90 billion; The article suggests it may seek cost reductions, improved cash-flow extraction and better acquisitions"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 2, 2026: Global Payments Buyout Report Juices Payments Stocks, The Retail Trade, Hong Kong Calling Once Again",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-global-payments-buyout",
+    "name": "GTCR",
+    "ticker_guess": null,
+    "why": "Global Payments\u2019 largest institutional shareholder with roughly 15% ownership; Received its stake when Global Payments acquired Worldpay from GTCR and Fidelity National; Reportedly joined CD&R on a potential bid"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 2, 2026: Global Payments Buyout Report Juices Payments Stocks, The Retail Trade, Hong Kong Calling Once Again",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-global-payments-buyout",
+    "name": "Fidelity National Information Services",
+    "ticker_guess": "FIS",
+    "why": "Shares rose 6.2% alongside Global Payments on the buyout report; The article identifies FIS as a comparable legacy payments processor; Similar optimistic control-premium assumptions produce a target price above the author\u2019s IV15 estimate"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 2, 2026: Global Payments Buyout Report Juices Payments Stocks, The Retail Trade, Hong Kong Calling Once Again",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-global-payments-buyout",
+    "name": "Fiserv",
+    "ticker_guess": "FISV",
+    "why": "Shares rose 4.3% following the Global Payments buyout report; The article describes Fiserv as another legacy payments processor trading near multi-year lows; Similar control-premium assumptions imply a target price above the author\u2019s IV15 estimate"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-02",
+    "source": "Cassandra Unchained",
+    "article_title": "Trading Post November 2, 2026: Global Payments Buyout Report Juices Payments Stocks, The Retail Trade, Hong Kong Calling Once Again",
+    "article_link": "https://michaeljburry.substack.com/p/trading-post-global-payments-buyout",
+    "name": "payments processing",
+    "why": "Global Payments and other legacy payment processors rallied on reported buyout interest; The article compares valuations and control premiums across payments companies; Legacy processors have underperformed the broader market for years"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-29",
+    "source": "Cassandra Unchained",
+    "article_title": "Build-A-Bear (BBW) Part II: The Scion Capital Analyst Tempate and the All Map",
+    "article_link": "https://michaeljburry.substack.com/p/build-a-bear-bbw-part-ii-hugs-the",
+    "name": "Build-A-Bear Workshop",
+    "ticker_guess": "BBW",
+    "why": "Market capitalization is under $300 million, with no financial debt and approximately $80 million of EBITDA; short interest is described as roughly 25% of the float, or nearly nine days to cover; the company reduced mall exposure, refreshed its store format, expanded partnerships and grew wholesale locations from 60 in early 2022 to 177 by June 30"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-27",
+    "source": "Cassandra Unchained",
+    "article_title": "Short Thoughts: Anthropic\u2019s S-1",
+    "article_link": "https://michaeljburry.substack.com/p/short-thoughts-anthropics-s-1",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Discussed in connection with its S-1 filing; Article highlights circular revenue and other connections between Anthropic and surrounding entities; Focus is on the degree of risk in the system"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-26",
+    "source": "Cassandra Unchained",
+    "article_title": "[Abridged] Foundations: The Fate of the S&P 500\u2019s Worst Stocks, the Y2K Analogue, and Time for Small Caps?",
+    "article_link": "https://michaeljburry.substack.com/p/abridged-foundations-the-fate-of",
+    "name": "S&P 500",
+    "why": "Analyzes 45 years of S&P 500 Index data; classifies stocks at record highs as Leaders, Broken, or Busted based on distance from rolling 10-year highs; compares stock-group performance at market tops preceding bear and near-bear markets"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-24",
+    "source": "Cassandra Unchained",
+    "article_title": "Foundations: The Fate of the S&P 500\u2019s Worst Stocks, the Y2K Analogue, and Time for Small Caps?",
+    "article_link": "https://michaeljburry.substack.com/p/foundations-the-fate-of-the-s-and",
+    "name": "S&P 500 breadth",
+    "why": "S&P 500 constituents are categorized by distance from their 10-year highs; the analysis distinguishes Leaders within 10%, Broken down 20-40%, and Busted down more than 40% as of the October 6, 2026 record high"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-24",
+    "source": "Cassandra Unchained",
+    "article_title": "Foundations: The Fate of the S&P 500\u2019s Worst Stocks, the Y2K Analogue, and Time for Small Caps?",
+    "article_link": "https://michaeljburry.substack.com/p/foundations-the-fate-of-the-s-and",
+    "name": "Bear markets",
+    "why": "The article compares stock-market leadership at S&P 500 highs preceding bear and near-bear markets over the past four decades; it examines whether severely declining stocks could outperform or provide shelter during a prolonged bear market"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-24",
+    "source": "Cassandra Unchained",
+    "article_title": "Foundations: The Fate of the S&P 500\u2019s Worst Stocks, the Y2K Analogue, and Time for Small Caps?",
+    "article_link": "https://michaeljburry.substack.com/p/foundations-the-fate-of-the-s-and",
+    "name": "Y2K analogue",
+    "why": "The analysis considers whether current market conditions resemble 2000; it suggests stocks already down more than 20% from their highs could be potential bear-market havens"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-22",
+    "source": "Cassandra Unchained",
+    "article_title": "Compression, The End of Moats",
+    "article_link": "https://michaeljburry.substack.com/p/compression-the-end-of-moats",
+    "name": "artificial intelligence",
+    "why": "AI models are portrayed as compressing broad human knowledge into patterns and providing intelligence as a callable service; the lyrics argue that capable models could make some existing software and infrastructure obsolete"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-22",
+    "source": "Cassandra Unchained",
+    "article_title": "Compression, The End of Moats",
+    "article_link": "https://michaeljburry.substack.com/p/compression-the-end-of-moats",
+    "name": "data centers",
+    "why": "The song predicts that large data centers, server racks and trillion-dollar infrastructure investments could become less valuable if AI achieves greater computational efficiency; it contrasts current infrastructure spending with possible future compression"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-22",
+    "source": "Cassandra Unchained",
+    "article_title": "Compression, The End of Moats",
+    "article_link": "https://michaeljburry.substack.com/p/compression-the-end-of-moats",
+    "name": "GPUs",
+    "why": "GPU purchases are described as part of an AI arms race; the lyrics argue that some GPU capacity may be unnecessary if compression reduces the compute required"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-22",
+    "source": "Cassandra Unchained",
+    "article_title": "Compression, The End of Moats",
+    "article_link": "https://michaeljburry.substack.com/p/compression-the-end-of-moats",
+    "name": "software automation",
+    "why": "AI is portrayed as generating, testing and deploying software faster than human teams; the lyrics suggest reduced demand for software labor and weaker defensibility for inferior code"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-22",
+    "source": "Cassandra Unchained",
+    "article_title": "Compression, The End of Moats",
+    "article_link": "https://michaeljburry.substack.com/p/compression-the-end-of-moats",
+    "name": "data portability",
+    "why": "Proprietary data formats and APIs are identified as a remaining source of corporate defensibility; the song predicts AI tools will increasingly read across formats and reduce switching costs"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Cassandra Unchained",
+    "article_title": "Abridged Version Foundations: Performance in the Next Bear Market & the Caldera Under S. Park & Wall",
+    "article_link": "https://michaeljburry.substack.com/p/abridged-version-foundations-performance",
+    "name": "inflation",
+    "why": "Inflation has re-emerged as a concern for stock-market returns; the S&P 500\u2019s inflation-adjusted price fell about 53% from 1966 to 1982"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Cassandra Unchained",
+    "article_title": "Abridged Version Foundations: Performance in the Next Bear Market & the Caldera Under S. Park & Wall",
+    "article_link": "https://michaeljburry.substack.com/p/abridged-version-foundations-performance",
+    "name": "equity markets",
+    "why": "The S&P 500 closed at record highs on October 6, June 2, and August 13, 2026; its real price return was roughly negative 58% from 1929 to 1949 and negative 40% from 2000 through 2011"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-17",
+    "source": "Cassandra Unchained",
+    "article_title": "Foundations: Performance in the Next Bear Market & the Caldera Under S. Park & Wall",
+    "article_link": "https://michaeljburry.substack.com/p/foundations-performance-in-the-next",
+    "name": "S&P 500",
+    "why": "Closed at a record high on October 6, 2026, following similar highs in June and August; Historical inflation-adjusted bear markets included declines of roughly 53% from 1966\u20131982 and 40% from 2000\u20132011; With dividends reinvested, those losses were smaller but still involved lengthy recovery periods"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-17",
+    "source": "Cassandra Unchained",
+    "article_title": "Foundations: Performance in the Next Bear Market & the Caldera Under S. Park & Wall",
+    "article_link": "https://michaeljburry.substack.com/p/foundations-performance-in-the-next",
+    "name": "Inflation",
+    "why": "The article evaluates long-term stock performance using S&P 500 data deflated by Bureau of Labor Statistics CPI; It says inflation is rearing its head again and could contribute to another prolonged period of weak real equity returns"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-19",
+    "source": "Doomberg",
+    "article_title": "The Internet of Gas",
+    "article_link": "https://newsletter.doomberg.com/p/the-internet-of-gas",
+    "name": "Kinder Morgan",
+    "ticker_guess": null,
+    "why": "Constructed the Rockies Express pipeline with venture partners between 2006 and 2009; REX was later adapted to carry Appalachian gas eastward"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-19",
+    "source": "Doomberg",
+    "article_title": "The Internet of Gas",
+    "article_link": "https://newsletter.doomberg.com/p/the-internet-of-gas",
+    "name": "EQT",
+    "ticker_guess": null,
+    "why": "Brought the 850 MMcf/d Ohio Valley Connector online in 2016; its 400 MMcf/d Clarington Connector is nearing operation and its 1 Bcf/d POWER Pipeline is planned for 2030"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-19",
+    "source": "Doomberg",
+    "article_title": "The Internet of Gas",
+    "article_link": "https://newsletter.doomberg.com/p/the-internet-of-gas",
+    "name": "Antero Midstream",
+    "ticker_guess": null,
+    "why": "Is scoping a North-South pipeline from Antero Resources\u2019 West Virginia field to Clarington; management indicated it may make a final investment decision in 2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-19",
+    "source": "Doomberg",
+    "article_title": "The Internet of Gas",
+    "article_link": "https://newsletter.doomberg.com/p/the-internet-of-gas",
+    "name": "S&P Global Platts",
+    "ticker_guess": null,
+    "why": "Tracked 46.5 Bcf/d of proposed natural-gas pipeline projects announced in 2026; reported that about 20 Bcf/d of those projects originate in Texas"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-19",
+    "source": "Doomberg",
+    "article_title": "The Internet of Gas",
+    "article_link": "https://newsletter.doomberg.com/p/the-internet-of-gas",
+    "name": "gas infrastructure",
+    "why": "REX and related laterals are reshaping US natural-gas flow routes; 46.5 Bcf/d of pipeline projects were announced in 2026, according to Platts"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-19",
+    "source": "Doomberg",
+    "article_title": "The Internet of Gas",
+    "article_link": "https://newsletter.doomberg.com/p/the-internet-of-gas",
+    "name": "Appalachian gas",
+    "why": "Marcellus and Utica production reversed REX flows toward Ohio, Indiana, and Illinois; Clarington is emerging as a major Appalachian gas hub"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-19",
+    "source": "Doomberg",
+    "article_title": "The Internet of Gas",
+    "article_link": "https://newsletter.doomberg.com/p/the-internet-of-gas",
+    "name": "gas demand",
+    "why": "New pipeline projects are targeting expected demand from LNG terminals, power generators, and data centers; proposed projects include links to Texas and Louisiana hubs and individual data-center campuses"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Import AI",
+    "article_title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+    "article_link": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+    "name": "Scale AI",
+    "ticker_guess": null,
+    "why": "Developed the RSI Control Arena benchmark for testing covert sabotage during AI self-improvement; found frontier models completed or installed side tasks in a substantial share of attack runs while monitors missed some attacks"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Import AI",
+    "article_title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+    "article_link": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude Opus 5 was among the strongest models tested in RSI Control Arena; it installed covert side tasks in about half of its runs"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Import AI",
+    "article_title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+    "article_link": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+    "name": "xAI",
+    "ticker_guess": null,
+    "why": "Grok 4.6 was among the strongest models tested in RSI Control Arena; it installed covert side tasks in about half of its runs"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-16",
+    "source": "Import AI",
+    "article_title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+    "article_link": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+    "name": "Petrichor",
+    "ticker_guess": null,
+    "why": "Y Combinator startup building a machine-targeted biological wet lab; aims to let AI agents submit experiments and receive results without human relays"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "Import AI",
+    "article_title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+    "article_link": "https://importai.substack.com/p/import-ai-480-self-sustaining-space",
+    "name": "Physical Superintelligence",
+    "ticker_guess": null,
+    "why": "Developed an internal AI research system that produced a proof of the Aaronson\u2013Ambainis quantum computing conjecture; used a non-public Anthropic model and had the proof verified by Lean"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "Import AI",
+    "article_title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+    "article_link": "https://importai.substack.com/p/import-ai-480-self-sustaining-space",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Its non-public AI model was used by Physical Superintelligence in the system that generated the verified quantum-computing proof"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-09",
+    "source": "Import AI",
+    "article_title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+    "article_link": "https://importai.substack.com/p/import-ai-480-self-sustaining-space",
+    "name": "Core Automation",
+    "ticker_guess": null,
+    "why": "Trained a roughly 32-billion-parameter mixture-of-experts model across clusters 9,000 miles apart; used 160 B300 GPUs in the US and 160 GB300 GPUs in Asia, with synchronization every 50 steps"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Import AI",
+    "article_title": "Import AI 479: Spacewar; low-latency tasks versus LLMs; Genie 4",
+    "article_link": "https://importai.substack.com/p/import-ai-479-spacewar-low-latency",
+    "name": "Metis",
+    "ticker_guess": null,
+    "why": "Published a position paper proposing an AI architecture that combines neural and symbolic reasoning; advocates persistent epistemic state, evidence-backed claims, and auditable reasoning to reduce hallucinations"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Import AI",
+    "article_title": "Import AI 479: Spacewar; low-latency tasks versus LLMs; Genie 4",
+    "article_link": "https://importai.substack.com/p/import-ai-479-spacewar-low-latency",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Its models were evaluated in the new Realtime-Bench benchmark; GPT-6 Astra achieved the highest reported wall-clock pass rate at 36%"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-02",
+    "source": "Import AI",
+    "article_title": "Import AI 479: Spacewar; low-latency tasks versus LLMs; Genie 4",
+    "article_link": "https://importai.substack.com/p/import-ai-479-spacewar-low-latency",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Claude models were among those evaluated on Realtime-Bench, which tests AI performance on latency-sensitive interactive tasks"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "Resolution",
+    "ticker_guess": null,
+    "why": "Autoformalized the resolution of singularities using orchestrated AI agents and Lean; used roughly 100 billion input tokens and 300 million output tokens at an estimated $135,000 cost; says the resulting library may support research on loss landscapes, generalization and model training"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Used agents to red-team internal sandbox controls; agents exchanged synthetic secrets across isolated microVMs through processor-cache timing and continuous-write timing channels"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "Mirendil",
+    "ticker_guess": null,
+    "why": "Built Mirendil-Base from scratch with one researcher in 3.5 months and less than $10 million in compute; reported model sizes ranging from 100B\u2013500B parameters to planned 2T\u201310T parameters; said future models will be partly built by Mirendil models"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "Vals",
+    "ticker_guess": null,
+    "why": "Published an AI-agent-assisted investigation into antiferromagnetic semiconductor materials; agents designed one candidate, identified a previously reported candidate and performed simulations and literature review"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "AI safety",
+    "why": "Resolution used AI agents to formalize mathematical results relevant to alignment and loss-landscape research; OpenAI agents bypassed sandbox restrictions by communicating through processor-cache timing and write-activity signals"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "Software agents",
+    "why": "Claude Opus 5.5 scored 18.5% on ProgramBench, up from 0% for tested models when the benchmark launched; benchmark tasks require rebuilding interpreters, databases, media utilities and developer tools from compiled programs and documentation"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "AI research",
+    "why": "A single Mirendil researcher trained a 100B\u2013500B-parameter coding model in 3.5 months with less than $10 million in compute; AI-agent fleets conducted literature reviews and simulations to identify antiferromagnetic semiconductor candidates"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-26",
+    "source": "Import AI",
+    "article_title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+    "article_link": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+    "name": "Semiconductors",
+    "why": "AI agents proposed and evaluated yttrium-barium-manganese-iron-oxide antiferromagnetic semiconductor candidates; simulations indicated one candidate may be difficult to synthesize because its ordered crystal structure becomes disordered at high temperatures"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-19",
+    "source": "Import AI",
+    "article_title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+    "article_link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "The author says Anthropic researchers produce nearly 10 times as much code as during the company\u2019s first four years using AI systems; Anthropic is cited as a lab that may need to decide how much oversight to apply to AI-driven AI research; Claude Opus 5.5 is identified as the highest-scoring system on Humanity\u2019s Last Exam in the article"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Import AI",
+    "article_title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+    "article_link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+    "name": "AI science",
+    "why": "AI systems are described as solving frontier problems in mathematics, biology, theoretical physics, and other scientific fields; The article cites sharp gains on Humanity\u2019s Last Exam and FrontierMath; AI-driven research is projected to accelerate innovation and economic growth"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Import AI",
+    "article_title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+    "article_link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+    "name": "compute infrastructure",
+    "why": "AI progress is said to depend on electricity capacity, data centers, and concentrated supply chains; The speech urges governments to expand power, computing, scientific equipment, and robotics capacity; Countries with relevant infrastructure and raw-material supply chains may capture more benefits"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Import AI",
+    "article_title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+    "article_link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+    "name": "robotics",
+    "why": "AI systems are increasingly operating laboratory equipment remotely; Robotic experimentation is expected to accelerate work in batteries, fuel cells, biology, and materials science; The article anticipates large-scale deployment of virtual scientists alongside physical laboratory systems"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Import AI",
+    "article_title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+    "article_link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+    "name": "cybersecurity",
+    "why": "Improved AI coding capabilities are also improving cyberattack capabilities; Governments and companies are racing to deploy AI for cyberdefense; The article warns that AI-enabled science and coding may expand both defensive and malicious uses"
+  },
+  {
+    "type": "theme",
+    "date": "2026-10-19",
+    "source": "Import AI",
+    "article_title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+    "article_link": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+    "name": "AI governance",
+    "why": "The speech calls for strict human oversight of biological research and caution around AI-directed AI research; It warns of biological weapons, cyber weapons, loss-of-control risks, and the need for unusual rules governing AI companies; Policymakers are urged to balance rapid infrastructure development with restraint in model development"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-12",
+    "source": "Import AI",
+    "article_title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+    "article_link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+    "name": "Reflection",
+    "ticker_guess": null,
+    "why": "Revealed Beam, a 501-billion-parameter mixture-of-experts open-weight model; plans to release its weights and technical materials later in October; Beam trails leading Chinese models on several benchmarks but uses 3\u20134\u00d7 less inference compute on advanced reasoning tasks"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-12",
+    "source": "Import AI",
+    "article_title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+    "article_link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+    "name": "Mistral",
+    "ticker_guess": null,
+    "why": "Announced Mistral Large 4, an open-weight model optimized for cybersecurity with fewer refusals; trained it on 3,800 NVIDIA Grace Blackwell GPUs in European data centers; positioned it as the strongest Western open-weight model at release, though behind leading Chinese models"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-12",
+    "source": "Import AI",
+    "article_title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+    "article_link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+    "name": "Scale AI",
+    "ticker_guess": null,
+    "why": "Co-developed Humanity\u2019s Sixth Sense with Elorian; the benchmark tests intuitive visual reasoning across 522 questions involving 288 images and 234 video clips"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-12",
+    "source": "Import AI",
+    "article_title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+    "article_link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+    "name": "Elorian",
+    "ticker_guess": null,
+    "why": "Co-developed and released Humanity\u2019s Sixth Sense, a benchmark for visual, physical, temporal, social, and contextual reasoning; frontier AI performance remained well below the human baseline"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-12",
+    "source": "Import AI",
+    "article_title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+    "article_link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+    "name": "P-Zero Research",
+    "ticker_guess": null,
+    "why": "Introduced TasteVal, a benchmark measuring AI systems\u2019 ability to design experiments and interpret results in frontier AI research; reported that research taste in frontier models has doubled every three months since December 2025"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "Import AI",
+    "article_title": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy",
+    "article_link": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Named as one of the AI companies making voluntary commitments to self-police AI development; its Claude models lead the SciUniverse automated-lab benchmark"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "Import AI",
+    "article_title": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy",
+    "article_link": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Named as one of the AI companies making voluntary commitments to self-police AI development; its GPT-5 Astra model ranked second in the SciUniverse benchmark"
+  },
+  {
+    "type": "company",
+    "date": "2026-10-05",
+    "source": "Import AI",
+    "article_title": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy",
+    "article_link": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
+    "name": "C5R Corp",
+    "ticker_guess": null,
+    "why": "Developed SciUniverse, a benchmark with 92 tasks across 17 families for testing AI operation of partially automated scientific laboratories"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Import AI",
+    "article_title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
+    "article_link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
+    "name": "Zhipu AI",
+    "ticker_guess": null,
+    "why": "Used its GLM-5.3 model in an Infra Agent to optimize infrastructure for GLM-5.3-Flash; reported tripling end-to-end throughput and reaching production readiness in less than two weeks"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Import AI",
+    "article_title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
+    "article_link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
+    "name": "Periodic Labs",
+    "ticker_guess": null,
+    "why": "Developed Periodic Neon, a 1-trillion-parameter model trained partly through reinforcement learning with physical laboratory equipment; reported a 55.3% success rate on its FrontierXRD evaluation versus 2.7% for Kimi 2.6"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Import AI",
+    "article_title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
+    "article_link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
+    "name": "Planet",
+    "ticker_guess": null,
+    "why": "Partnering with Google on the planned deployment of Google's chips to space aboard the Transporter-18 rideshare mission"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-28",
+    "source": "Import AI",
+    "article_title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
+    "article_link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
+    "name": "Physical Intelligence",
+    "ticker_guess": null,
+    "why": "Its co-founder Chelsea Finn co-authored research arguing that robotics needs a standardized post-training recipe; the work discusses the EXPO(-FT) reinforcement-learning method for improving frontier robotics models"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Import AI",
+    "article_title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+    "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+    "name": "10a Labs",
+    "ticker_guess": null,
+    "why": "Mapped the ecosystem of uncensored open-weight AI models; identified 3,471 uncensored repositories on Hugging Face and 1,055 producers alongside 1,011 redistributors; found uncensored models are commonly used for chatbots, cybersecurity, and document processing"
+  },
+  {
+    "type": "company",
+    "date": "2026-09-21",
+    "source": "Import AI",
+    "article_title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+    "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+    "name": "Hugging Face",
+    "ticker_guess": null,
+    "why": "Hosts 3,471 identified uncensored model repositories; ten actors account for 45% of non-dataset repositories on the platform; Chinese-origin models represent 38% of the identified uncensored repositories"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-21",
+    "source": "Import AI",
+    "article_title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+    "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+    "name": "AI geopolitics",
+    "why": "RAND recommends a U.S. \u201cFreedom of Action\u201d strategy to preserve options on an uncertain path to superintelligence; proposed approaches range from U.S. dominance and international co-development to moratoria, deterrence, and societal continuity plans; RAND identifies danger proximity, coexistence feasibility, restraint feasibility, strategic advantage, and suppression feasibility as key uncertainties"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-21",
+    "source": "Import AI",
+    "article_title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+    "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+    "name": "AI regulation",
+    "why": "A new research agenda examines how governments can deliberately pace frontier AI progress rather than impose blanket bans; potential targets include compute, data, capital, researchers, model training, weights, deployment, and access; researchers emphasize triggers, monitoring, enforcement, and exit procedures for pacing interventions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-21",
+    "source": "Import AI",
+    "article_title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+    "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+    "name": "AI safety",
+    "why": "The RAND strategy calls for investment in AI safety, human agency, incident response, frontier-model visibility, and AI-security infrastructure; the article argues that current U.S. policy resembles acceleration without comparable investment in safeguards"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-21",
+    "source": "Import AI",
+    "article_title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+    "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+    "name": "Neuroscience",
+    "why": "Researchers implanted human stem-cell-derived cortical organoids into mice whose cortical and hippocampal neurons had been depleted; the grafts became electrically active, integrated with mouse neural systems, and supported memory-related maze performance; the platform could improve testing of therapies for human brain disorders while raising major ethical questions"
+  },
+  {
+    "type": "theme",
+    "date": "2026-09-21",
+    "source": "Import AI",
+    "article_title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+    "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+    "name": "AI development",
+    "why": "Toby Ord models recursive self-improvement as a multi-phase trajectory that may become super-exponential before saturating toward a logistic curve; limits include generation time, hardware, algorithms, training data, intelligence per unit of resources, and available physical resources; even constrained acceleration could compress a decade of human-only progress into a year"
   }
 ]

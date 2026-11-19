@@ -644,5 +644,24 @@
     "trade_worthy": false,
     "context": "The article characterizes more than 100 GW of annual equipment capacity as a preposterous figure, equivalent to solar arrays for roughly 475,000 210-kW satellites annually, despite only about 15,000 active satellites being cited. The scale may reflect speculative or bubble-like ambitions rather than funded demand; the only identified commitment is the initial line worth slightly over \u20ac60 million, so the longer-term investment case depends on SpaceX actually deploying or profitably repurposing that capacity.",
     "source": "Not Boring"
+  },
+  {
+    "id": "100500b44c274f85",
+    "ticker": "SPCX",
+    "source_link": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
+    "source_title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
+    "event_type": "capex",
+    "created": "2026-09-28",
+    "claim": "SpaceX gains incremental rideshare demand from Google\u2019s orbital-compute test",
+    "direction": "long",
+    "confidence": 0.87,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Google is preparing with Planet to fly Trillium TPU hardware on SpaceX\u2019s Transporter-18 rideshare mission as part of Project Suncatcher. This indicates a potential customer and incremental rideshare activity for SpaceX, but the article provides no contract value, margin impact, launch date certainty, or evidence that orbital-compute demand will materially scale SpaceX\u2019s business.",
+    "source": "Import AI"
   }
 ]

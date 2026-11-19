@@ -3646,5 +3646,24 @@
     "trade_worthy": false,
     "context": "IBM and Oak Ridge National Laboratory are using an error-correction co-design platform pairing IBM\u2019s Nighthawk r2 quantum processor with the Umbra supercomputer, powered by AMD Epyc CPUs and Instinct GPUs. IBM is also integrating CPU- and GPU-based classical resources with quantum workloads in one managed Quantum Platform, giving AMD hardware visibility in an emerging hybrid-computing use case. The article does not indicate revenue, purchase volume, or a firm commercial commitment, so the business impact remains indirect.",
     "source": "Next Platform"
+  },
+  {
+    "id": "d434b9ca411340fa",
+    "ticker": "AMD",
+    "source_link": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+    "source_title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+    "event_type": "competitive",
+    "created": "2026-10-12",
+    "claim": "AMD\u2019s government AI opportunity remains limited relative to frontier-scale demand",
+    "direction": "short",
+    "confidence": 0.82,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "AMD MI300A accelerators are being used alongside NVIDIA H100s in distributed training across U.S. national laboratories, providing some deployment validation and potential government demand. However, the article says these government efforts are roughly 100\u00d7 smaller than frontier industry systems and would require roughly 100,000 or more chips to approach parity, limiting the near-term commercial significance for AMD.",
+    "source": "Import AI"
   }
 ]

@@ -2126,5 +2126,24 @@
     "trade_worthy": false,
     "context": "The article argues that Chinese frontier labs using Blackwell GPUs and Nvidia DevTech support contribute open-source models, kernels, and optimization work used by Western startups and projects such as SGLang and vLLM. If Jensen Huang\u2019s departure strengthens China hawks and leads to restrictions such as RASA, the article expects less Chinese contribution to the global open-source AI ecosystem, which could impair Meta\u2019s access to shared AI research and software innovation.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "6ae24bd835960eb8",
+    "ticker": "META",
+    "source_link": "https://importai.substack.com/p/import-ai-480-self-sustaining-space",
+    "source_title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+    "event_type": "other",
+    "created": "2026-11-09",
+    "claim": "META gains long-term embodied-AI platform optionality",
+    "direction": "long",
+    "confidence": 0.81,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Meta Reality Labs Research\u2019s Tactus glove captures tactile forces, hand pose, and manipulation data through textile-integrated sensors designed to remain useful during hand-object occlusion. The article suggests such hardware could supply training data and real-time feedback for AI agents acting through humans in physical environments, potentially strengthening Meta\u2019s longer-term position in embodied AI; however, it provides no evidence of commercialization, revenue, or a near-term product impact.",
+    "source": "Import AI"
   }
 ]

@@ -378,5 +378,24 @@
     "trade_worthy": false,
     "context": "Nebius\u2019s health checks detected a synthetic error immediately and ultimately returned a failed node to service automatically, while other tested GB300 providers did not automatically recover failed nodes. However, the full recovery process took approximately 8 hours and 40 minutes, indicating that the remediation workflow works but is not yet optimized for speed; the article still gives Nebius Platinum status because NVL72 remediation is inherently more difficult than hot-swapping conventional HGX nodes.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "8fde81afeb09e70c",
+    "ticker": "NBIS",
+    "source_link": "https://michaeljburry.substack.com/p/trading-post-november-12-2026-enough",
+    "source_title": "Trading Post November 12, 2026: Enough is Enough, NVIDIA, SMH vs SOXX, Earnings Quality",
+    "event_type": "regulatory",
+    "created": "2026-11-12",
+    "claim": "NBIS faces negative sentiment from broader AI-chip regulatory scrutiny",
+    "direction": "short",
+    "confidence": 0.95,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article reports that NBIS fell 20% on the day as the DOJ investigations into NVIDIA, Megaspeed, and Super Micro raised broader concerns around AI-chip distribution and the infrastructure ecosystem. It does not identify a direct investigation, operational exposure, or business impact specific to NBIS; the implication is limited to near-term market sentiment. Recent data shows NBIS down 16.84% today and 31.72% over one month.",
+    "source": "Cassandra Unchained"
   }
 ]

@@ -1205,5 +1205,36 @@
   ],
   "https://www.nextplatform.com/compute/2026/11/17/quantinuum-aligns-software-development-for-quantum-hardware-generations/5310485": [
     "INTC"
+  ],
+  "https://michaeljburry.substack.com/p/how-nvidias-changed-asian-revenue": [
+    "NVDA"
+  ],
+  "https://michaeljburry.substack.com/p/say-it-aint-so-nvidia-on-fire-read": [
+    "NVDA"
+  ],
+  "https://michaeljburry.substack.com/p/trading-post-november-12-2026-enough": [
+    "NBIS",
+    "NVDA"
+  ],
+  "https://importai.substack.com/p/import-ai-480-self-sustaining-space": [
+    "META",
+    "SPCX"
+  ],
+  "https://importai.substack.com/p/import-ai-479-spacewar-low-latency": [
+    "GOOGL"
+  ],
+  "https://importai.substack.com/p/import-ai-476-creativity-and-rsi": [
+    "AMD",
+    "GOOGL",
+    "INTC",
+    "MSFT",
+    "NVDA"
+  ],
+  "https://importai.substack.com/p/import-ai-475-swarm-scaling-google": [
+    "GOOGL"
+  ],
+  "https://importai.substack.com/p/import-ai-474-platonic-mindspace": [
+    "GOOGL",
+    "SPCX"
   ]
 }
