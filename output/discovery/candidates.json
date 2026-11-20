@@ -11491,5 +11491,64 @@
     "article_link": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
     "name": "AI development",
     "why": "Toby Ord models recursive self-improvement as a multi-phase trajectory that may become super-exponential before saturating toward a logistic curve; limits include generation time, hardware, algorithms, training data, intelligence per unit of resources, and available physical resources; even constrained acceleration could compress a decade of human-only progress into a year"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Citrini Research",
+    "article_title": "Grand Expectations",
+    "article_link": "https://www.citriniresearch.com/p/grand-expectations",
+    "name": "Take-Two Interactive",
+    "ticker_guess": "TTWO",
+    "why": "Owns Rockstar Games, the developer of Grand Theft Auto VI; The article examines whether GTA VI's commercial success can translate into a strong investment outcome for Take-Two"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Citrini Research",
+    "article_title": "Grand Expectations",
+    "article_link": "https://www.citriniresearch.com/p/grand-expectations",
+    "name": "Rockstar Games",
+    "ticker_guess": null,
+    "why": "Released Grand Theft Auto VI after roughly a decade of development; Built a virtual replica of South Florida, including Miami, Miami Beach, and the Florida Keys"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-20",
+    "source": "Citrini Research",
+    "article_title": "Grand Expectations",
+    "article_link": "https://www.citriniresearch.com/p/grand-expectations",
+    "name": "video games",
+    "why": "Grand Theft Auto VI launched after several years of delays and received a 99 Metacritic score; Development spending is estimated above $1 billion, with total investment potentially reaching $1.5-$2 billion after marketing and advertising"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #220",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-220",
+    "name": "Runway",
+    "ticker_guess": null,
+    "why": "Building foundational AI for generating, editing, and producing video, images, and audio; used by more than 65 million people and reportedly by Nvidia, Amazon, and over 95% of Fortune 100 companies; integrated through ChatGPT, Claude, Grok, Cursor, and Replit via its MCP"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #220",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-220",
+    "name": "SELLAS Life Sciences",
+    "ticker_guess": null,
+    "why": "Reported positive topline Phase 3 REGAL results for its galinpepimut-S leukemia vaccine; treatment produced median overall survival of 24.0 months versus 14.7 months for best available treatment, a 41% reduction in risk of death"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #220",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-220",
+    "name": "Earth AI",
+    "ticker_guess": null,
+    "why": "Its Alpheus AI model identified a copper, gold, platinum-group metals, and tungsten system extending at least 3 kilometers in New South Wales; drilled 35 holes and traced mineralization from 30 to 478 meters deep, with indications the system may extend 8 kilometers"
   }
 ]

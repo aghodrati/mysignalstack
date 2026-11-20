@@ -207,5 +207,24 @@
     "trade_worthy": false,
     "context": "The article speculates that Tesla may manufacture modular mechanical, electrical, and plumbing equipment for SpaceX\u2019s rapidly expanding datacenters, while also suggesting Tesla could become more than a battery-storage merchant to SpaceX. If realized, this could create additional equipment and BESS demand for Tesla, but the article provides no confirmed agreement, revenue figure, or timing, so the implication is indirect and highly uncertain.",
     "source": "SemiAnalysis"
+  },
+  {
+    "id": "ec15e0ec3212a568",
+    "ticker": "TSLA",
+    "source_link": "https://www.notboring.co/p/weekly-dose-of-optimism-220",
+    "source_title": "Weekly Dose of Optimism #220",
+    "event_type": "product_launch",
+    "created": "2026-11-20",
+    "claim": "Powercore positions Tesla to capture growing solid-state transformer demand",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Tesla unveiled Powercore, a 7.4 MW solid-state transformer intended to reduce electrical bottlenecks in data-center construction and potentially support grid stabilization. The article argues that strong demand for solid-state transformers could benefit Tesla alongside Heron Power, while Tesla\u2019s broader vertically integrated industrial ecosystem may support its ability to manufacture and deploy the technology. However, the article provides no orders, revenue guidance, production capacity, or adoption timeline.",
+    "source": "Not Boring"
   }
 ]
