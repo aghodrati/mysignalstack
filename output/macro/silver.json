@@ -1188,5 +1188,72 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-21",
+    "value": 41.03499984741211,
+    "delta": -16.30804729910461,
+    "history": [
+      [
+        "2026-11-16",
+        46.78499984741211
+      ],
+      [
+        "2026-11-17",
+        47.28799819946289
+      ],
+      [
+        "2026-11-18",
+        44.999000549316406
+      ],
+      [
+        "2026-11-19",
+        44.31800079345703
+      ],
+      [
+        "2026-11-20",
+        41.03499984741211
+      ]
+    ],
+    "narrative": "The week's sharp decline appears to have been driven primarily by a broad risk-off liquidation and rising fears that the Fed will keep rates higher for longer, rather than by a silver-specific fundamental shock. The SeekingAlpha report that nearly everything sold off except Treasuries, along with headlines saying gold and silver sank as Fed rate fears mounted, directly supports that explanation; however, the move looks more like forced de-risking than a clean new silver catalyst.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Week In Review: Nov 16-20, 2026 - When Everything Sells Off At Once",
+        "domain": "SeekingAlpha",
+        "date": "20261121"
+      },
+      {
+        "title": "Fear Erupts, AI Stocks Tank, But So Do Gold, Silver, Cryptos, Nearly Everything But Treasuries",
+        "domain": "SeekingAlpha",
+        "date": "20261120"
+      },
+      {
+        "title": "Gold and Silver Stocks Drop: What's Going On?",
+        "domain": "Benzinga",
+        "date": "20261118"
+      },
+      {
+        "title": "Gold, Silver Divide Widens: Why SLV Looks Riskier Than GLD As Fed Rate Fears Mount",
+        "domain": "Benzinga",
+        "date": "20261118"
+      },
+      {
+        "title": "GLD, SLV Sink To Near 14-Month Lows \u2013 But This Commodities Expert Sees A \u2018Relative Bright Spot\u2019",
+        "domain": "Yahoo",
+        "date": "20261118"
+      },
+      {
+        "title": "Silver Crashes 61% From All-Time High: One Wall Street Bull Sees A Buy Signal, Another Critic Says Wait",
+        "domain": "Yahoo",
+        "date": "20261117"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W47",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": false
   }
 ]

@@ -1148,5 +1148,64 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W46"
+  },
+  {
+    "period": "week",
+    "date": "2026-11-21",
+    "value": 4.9120001792907715,
+    "delta": -0.24199962615966797,
+    "history": [
+      [
+        "2026-11-16",
+        5.120999813079834
+      ],
+      [
+        "2026-11-17",
+        5.103000164031982
+      ],
+      [
+        "2026-11-18",
+        5.065999984741211
+      ],
+      [
+        "2026-11-19",
+        5.052000045776367
+      ],
+      [
+        "2026-11-20",
+        4.9120001792907715
+      ]
+    ],
+    "narrative": "No clear single catalyst appears in the listed headlines for the 24-basis-point weekly decline in the 10-year yield. The Yahoo reports that bond ETFs have become unusually rewarding and that AGG has struggled over five years may reflect shifting duration positioning and renewed demand for Treasuries, but the move is best characterized as broad positioning and market drift rather than a headline-driven repricing.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Treasury Yields Snapshot: November 20, 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261120"
+      },
+      {
+        "title": "Ignore The European Central Bank's AI Warning At Your Peril",
+        "domain": "SeekingAlpha",
+        "date": "20261120"
+      },
+      {
+        "title": "Bond ETFs Haven\u2019t Been This Rewarding in Years, So Why Is Wall Street Dumping Them?",
+        "domain": "Yahoo",
+        "date": "20261119"
+      },
+      {
+        "title": "AGG Lost Money Over 5 Years. Is 60/40 Broken?",
+        "domain": "Yahoo",
+        "date": "20261119"
+      },
+      {
+        "title": "\u2018The Cost Of US Debt Is Surging At An Alarming Rate\u2019: Interest Eats Record 31% Of Spending, Says Market Commentator",
+        "domain": "Benzinga",
+        "date": "20261117"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W47"
   }
 ]

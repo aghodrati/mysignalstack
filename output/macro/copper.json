@@ -1003,5 +1003,72 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-11-21",
+    "value": 5.4770002365112305,
+    "delta": -9.910353519112236,
+    "history": [
+      [
+        "2026-11-16",
+        5.997499942779541
+      ],
+      [
+        "2026-11-17",
+        5.97599983215332
+      ],
+      [
+        "2026-11-18",
+        5.6595001220703125
+      ],
+      [
+        "2026-11-19",
+        5.625
+      ],
+      [
+        "2026-11-20",
+        5.4770002365112305
+      ]
+    ],
+    "narrative": "This week's sharp decline appears driven by a speculative-positioning unwind: the headlines describe copper crashing 5% after Druckenmiller disclosed a short and traders dumping AI-linked copper bets in a roughly $50 billion wipeout. \"Metals Sell-Off Runs Ahead Of Physical Markets\" reinforces that the move was led by financial selling rather than a clearly documented deterioration in physical demand, but the immediate flow signal remains bearish.",
+    "has_clear_driver": true,
+    "headlines_used": [
+      {
+        "title": "Metals Sell-Off Runs Ahead Of Physical Markets",
+        "domain": "SeekingAlpha",
+        "date": "20261120"
+      },
+      {
+        "title": "Whatever Happens to Copper Next, These 3 Investments Offer Different Ways to Play It",
+        "domain": "Yahoo",
+        "date": "20261119"
+      },
+      {
+        "title": "Copper Just Crashed 5% a Day After Druckenmiller Said He\u2019s Short",
+        "domain": "Yahoo",
+        "date": "20261119"
+      },
+      {
+        "title": "Critical Resources: Supplying The Foundations Of Innovation",
+        "domain": "SeekingAlpha",
+        "date": "20261119"
+      },
+      {
+        "title": "Copper Traders Dump AI Bets, Triggering a $50 Billion Wipeout",
+        "domain": "Benzinga",
+        "date": "20261119"
+      },
+      {
+        "title": "Druckenmiller Buys Miners, Warns '27 Could Be 'Disappointing'",
+        "domain": "Benzinga",
+        "date": "20261118"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W47",
+    "direction": "bearish",
+    "confidence": "medium",
+    "trade_worthy": true
   }
 ]

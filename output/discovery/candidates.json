@@ -11550,5 +11550,53 @@
     "name": "Earth AI",
     "ticker_guess": null,
     "why": "Its Alpheus AI model identified a copper, gold, platinum-group metals, and tungsten system extending at least 3 kilometers in New South Wales; drilled 35 holes and traced mineralization from 30 to 478 meters deep, with indications the system may extend 8 kilometers"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Stratechery",
+    "article_title": "2026.47: Down in DC",
+    "article_link": "https://stratechery.com/2026/down-in-dc/",
+    "name": "OpenRouter",
+    "ticker_guess": null,
+    "why": "Provides businesses access to and governance over hundreds of AI models; its customers using at least $100 per month reportedly doubled their median number of model families used from three to six over the past year"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Stratechery",
+    "article_title": "2026.47: Down in DC",
+    "article_link": "https://stratechery.com/2026/down-in-dc/",
+    "name": "Stripe",
+    "ticker_guess": null,
+    "why": "Recently joined by OpenRouter; presented as the platform through which OpenRouter offers model access and governance"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-21",
+    "source": "Doomberg",
+    "article_title": "Basin Kings",
+    "article_link": "https://newsletter.doomberg.com/p/basin-kings",
+    "name": "EQT",
+    "ticker_guess": "EQT",
+    "why": "Featured as the central subject of the presentation; described as arguably the most powerful natural gas producer in the US"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-21",
+    "source": "Doomberg",
+    "article_title": "Basin Kings",
+    "article_link": "https://newsletter.doomberg.com/p/basin-kings",
+    "name": "natural gas",
+    "why": "Presentation focuses on EQT, described as arguably the most powerful natural gas producer in the US"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-21",
+    "source": "Doomberg",
+    "article_title": "Basin Kings",
+    "article_link": "https://newsletter.doomberg.com/p/basin-kings",
+    "name": "Appalachia",
+    "why": "Presentation examines how the Rice family conquered Appalachia"
   }
 ]

@@ -1154,5 +1154,77 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-21",
+    "value": 83.9800033569336,
+    "delta": -5.17162864489682,
+    "history": [
+      [
+        "2026-11-16",
+        85.72000122070312
+      ],
+      [
+        "2026-11-17",
+        86.01000213623047
+      ],
+      [
+        "2026-11-18",
+        83.26000213623047
+      ],
+      [
+        "2026-11-19",
+        83.20999908447266
+      ],
+      [
+        "2026-11-20",
+        83.9800033569336
+      ]
+    ],
+    "narrative": "No clear single catalyst explains WTI's 5.17 weekly decline. Headlines about Iranian oil being moved between tankers, potential Hormuz risk, and Houthi threats to Saudi Red Sea ports are ostensibly bullish for crude, but the market's selloff suggests those risks were either discounted or outweighed by broader risk-off positioning; the equity weakness and mixed energy-sector trading offer only indirect context.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Energy Markets Underestimate The Hormuz Risk: Good News For Upstream, Bad News For Yields",
+        "domain": "SeekingAlpha",
+        "date": "20261120"
+      },
+      {
+        "title": "Yemeni Houthis Rebels Say That All Saudi Arabian Red Sea Ports Including Jeddah Will Be Targeted If The Coalition Strikes Yemen\u2019s Hodeidah Port",
+        "domain": "Benzinga",
+        "date": "20261120"
+      },
+      {
+        "title": "Reported Earlier, 'Iranian Oil Moved Between Tankers as US Widens Blockade' - Bloomberg",
+        "domain": "Benzinga",
+        "date": "20261120"
+      },
+      {
+        "title": "Exchange-Traded Funds Lower as US Equities Fall After Midday",
+        "domain": "Yahoo",
+        "date": "20261119"
+      },
+      {
+        "title": "Sector Update: Energy Stocks Mixed in Early Thursday Trading",
+        "domain": "Yahoo",
+        "date": "20261119"
+      },
+      {
+        "title": "RAAX: This Fund Offers Investors Diversification And Long-Term Tailwinds",
+        "domain": "SeekingAlpha",
+        "date": "20261119"
+      },
+      {
+        "title": "Stock Market Today: Nvidia\u2019s Board Shuts the Door on Huang as Chip Stocks Sink Before a Make-or-Break AI Week",
+        "domain": "ChartMill",
+        "date": "20261117"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W47",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

@@ -1263,5 +1263,72 @@
     "direction": "bearish",
     "confidence": "medium",
     "trade_worthy": true
+  },
+  {
+    "period": "week",
+    "date": "2026-11-21",
+    "value": 3515.39990234375,
+    "delta": -9.543785652788605,
+    "history": [
+      [
+        "2026-11-16",
+        3853.0
+      ],
+      [
+        "2026-11-17",
+        3864.199951171875
+      ],
+      [
+        "2026-11-18",
+        3741.89990234375
+      ],
+      [
+        "2026-11-19",
+        3685.5
+      ],
+      [
+        "2026-11-20",
+        3515.39990234375
+      ]
+    ],
+    "narrative": "Gold's modest weekly decline appears to have been driven by broad de-risking and liquidity preference rather than a gold-specific shock: Seeking Alpha's \"Fear Erupts, AI Stocks Tank, But So Do Gold, Silver, Cryptos, Nearly Everything But Treasuries\" captures the pattern. The headlines offer no clear single catalyst for the next move, though continued pressure from a hawkish inflation fight and preference for Treasuries could keep gold choppy or slightly pressured.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Week In Review: Nov 16-20, 2026 - When Everything Sells Off At Once",
+        "domain": "SeekingAlpha",
+        "date": "20261121"
+      },
+      {
+        "title": "Fear Erupts, AI Stocks Tank, But So Do Gold, Silver, Cryptos, Nearly Everything But Treasuries",
+        "domain": "SeekingAlpha",
+        "date": "20261120"
+      },
+      {
+        "title": "Peter Schiff Warns Fed\u2019s Inflation Fight Means \u2018Greater Financial Crisis' Than 2008",
+        "domain": "Yahoo",
+        "date": "20261120"
+      },
+      {
+        "title": "Does Gold Protect You When Stocks Fall?",
+        "domain": "Yahoo",
+        "date": "20261120"
+      },
+      {
+        "title": "Gold Stocks Fall: What's Going On?",
+        "domain": "Benzinga",
+        "date": "20261119"
+      },
+      {
+        "title": "Gold and Silver Stocks Drop: What's Going On?",
+        "domain": "Benzinga",
+        "date": "20261118"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W47",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

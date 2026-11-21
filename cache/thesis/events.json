@@ -18561,5 +18561,65 @@
       "summary": "This optimistic weekly roundup presents advances in reusable spaceflight, cancer treatment, industrial power infrastructure, mineral exploration, and AI-enabled creative tools. It describes SpaceX\u2019s successful orbital Starship catch and Tesla\u2019s Powercore transformer as major engineering developments, alongside encouraging leukemia and pancreatic-cancer treatment results. The article also discusses Earth AI\u2019s newly identified mineral system and briefly surveys additional developments involving Anthropic, Google, robotics, biotechnology, and other technology companies."
     },
     "source": "Not Boring"
+  },
+  "https://stratechery.com/2026/down-in-dc/": {
+    "seen_date": "2026-11-21",
+    "article_date": "2026-11-20",
+    "title": "2026.47: Down in DC",
+    "text": "Andrew made the fatal mistake of getting his hopes up for the Wizards; on Sharp Text he wonders how it all went wrong. (Photo by Todd Olszewski/Getty Images) Welcome back to This Week in Stratechery! As a reminder, each week, every Friday, we\u2019re sending out this overview of content in the Stratechery bundle; highlighted links are free for everyone . Additionally, you have complete control over what we send to you. If you don\u2019t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in your delivery settings . On that note, here were a few of our favorites this week. Obituaries and Exceptionalism. After several days to mull the shocking departure of Jensen Huang, Ben\u2019s article on Monday delivered an omnibus obituary for a variety of American eras that may now be ending. Tracing the decisions that made Huang great, the strategies that made him a target, the implications of his demise for the rest of the tech ecosystem, and a shift in the U.S. government\u2019s perspective on tech companies \u2014 and specifically AI companies \u2014 to which Huang never quite adapted, Monday\u2019s piece was both comprehensive and poignant. \u2014 Andrew Sharp Arguments About Agents. Recurring Stratechery guest and advertising expert Eric Seufert is often aligned with Ben in his view of the digital advertising landscape, which is why this week\u2019s Stratechery Interview was fun: Ben is a big believer in the potential upside in agentic commerce, while Eric has been (correctly) calling BS on a variety of hyped agentic commerce stories and trends over the past year. Both of them made their case Thursday, and it was sandwiched between thoughts on how Muse plans to monetize, why the market have misread Google\u2019s recent earnings report, and ChatGPT\u2019s progress building an ads business. \u2014 AS Ben Gets a Duo. In the middle of a heavy week of Nvidia takes and ominous infrastructure failures, I was delighted to find out that Ben not only purchased an iPhone Duo, but loved it . Come for his review at the end of Tuesday\u2019s Update , and then stay for his discussion with John Gruber on Tuesday\u2019s Dithering . We doubled back (Duo\u2019d back?) to discuss all of it at the end of this week\u2019s Sharp Tech , including some hands-on testing, comparisons to the iPhone Air, and a variety of shots fired at the iPhone Pro. \u2014 AS Presented by As AI models improve, you might expect the market will consolidate around a handful of providers. But user data tells a different story. Among OpenRouter customers spending at least $100 a month, the median number of AI model families in use has doubled over the past year , from three to six. Even as AI models become more capable, businesses are using more models, not fewer. This makes sense when you consider that intelligence isn\u2019t one-dimensional. A model that\u2019s exceptional at writing code may not be the fastest at answering customer questions, or the most economical at processing millions of documents. The question is shifting from \u201cwhich AI model should we build on?\u201d to \u201cwhich model should handle each task?\u201d The answer, increasingly, is \u2018it depends.\u2019 Which is great for flexibility, less great for simplicity. OpenRouter, which recently joined Stripe , allows businesses to access and govern hundreds of models with the flexibility to optimize for cost, performance, and reliability as the market evolves. Learn more at openrouter.ai . Stratechery Articles and Updates Obituaries \u2014 The demise of Jensen Huang was the end of a great many things, including Nvidia\u2019s long-term prospects, the AI bubble, and the exceptional way in which the U.S. viewed itself in the world. Apple Permissions Update, The New App Paradigm, My iPhone Duo Review \u2014 Apple doesn\u2019t ruin the Mac, but they don\u2019t fix the agent problem, raising questions if they can think outside the app paradigm. Then, my iPhone Duo review. Nvidia Earnings; Office Convergence; OS Wars, AI Edition \u2014 Nvidia\u2019s earnings were boring, and also a statement as to why Jensen Huang probably isn\u2019t coming back; then, Microsoft and Anthropic ship dueling operating system updates. An Interview With Eric Seufert About Agentic Commerce \u2014 An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents. Sharp Text by Andrew Sharp Wizards Groundhog Day \u2014 Four more years of winter for basketball fans in Washington. Dithering with Ben Thompson and Daring Fireball\u2019s John Gruber Ben Gets a Duo GTA and Windows Apps Asianometry with Jon Yu The Rise and Fall of the Soviet Union\u2019s Workhorse Computer TSMC Making 3D DRAM? Greatest of All Talk The West Reigns Supreme (Again), The Micah Nori Sweepstakes, Trading Dejounte and Ice Earning Omissions Sharp Tech with Andrew Sharp and Ben Thompson Subscriber Mail: Intel, Anthropic\u2019s IPO, Machiavellian Hyperscalers, and Push Notification Tyranny Jensen\u2019s Not Coming Back, Adventures in Agentic Commerce, Q&A on United, GTA VI, iPhone Duo This week\u2019s Sharp Tech is on Jensen\u2019s Not Coming Back, Adventures in Agentic Commerce, Q&A on United, GTA VI, iPhone Duo .",
+    "event": {
+      "event": "Stratechery published an analytical roundup covering Jensen Huang\u2019s reported departure and its implications for Nvidia and AI, along with Apple\u2019s iPhone Duo and agent strategy, Google\u2019s recent earnings, and competing AI operating-system updates from Microsoft and Anthropic.",
+      "companies": [
+        "AAPL",
+        "GOOGL",
+        "MSFT",
+        "NVDA"
+      ],
+      "other_companies_mentioned": [
+        {
+          "name": "OpenRouter",
+          "ticker": null,
+          "why": "Provides businesses access to and governance over hundreds of AI models; its customers using at least $100 per month reportedly doubled their median number of model families used from three to six over the past year"
+        },
+        {
+          "name": "Stripe",
+          "ticker": null,
+          "why": "Recently joined by OpenRouter; presented as the platform through which OpenRouter offers model access and governance"
+        }
+      ],
+      "event_type": "competitive",
+      "importance": 5,
+      "time_horizon": "months",
+      "key_facts": [
+        "The article says Jensen Huang\u2019s departure could mark the end of Nvidia\u2019s long-term prospects, the AI bubble, and an exceptional U.S. view of the technology sector.",
+        "It states that Nvidia\u2019s recent earnings were boring and suggests Huang probably will not return.",
+        "Stratechery argues that Apple does not fix the agent problem and questions whether it can move beyond the traditional app paradigm.",
+        "The roundup says the author purchased and favorably reviewed an iPhone Duo, comparing it with the iPhone Air and iPhone Pro.",
+        "Eric Seufert and Ben Thompson disagreed over the prospects for agentic commerce, including whether advertising will be the primary monetization model.",
+        "The article says the market may have misread Google\u2019s recent earnings report and discusses ChatGPT\u2019s progress in building an advertising business.",
+        "It says Microsoft and Anthropic shipped competing AI-oriented operating-system updates.",
+        "OpenRouter customer data indicates that the median number of AI model families used by customers spending at least $100 per month rose from three to six over the past year."
+      ],
+      "type": "analysis",
+      "novel": false,
+      "summary": "This Stratechery newsletter roundup highlights commentary on Jensen Huang\u2019s reported departure and the resulting implications for Nvidia, the AI market, and U.S. technology policy. It also summarizes analysis of Apple\u2019s iPhone Duo and agent strategy, debates over agentic commerce and advertising, interpretations of Google\u2019s earnings, and AI operating-system updates from Microsoft and Anthropic. A sponsored section describes growing enterprise use of multiple AI model families through OpenRouter."
+    },
+    "source": "Stratechery"
+  },
+  "https://www.thediff.co/archive/the-excel-dashboard-efficient-frontier/": {
+    "seen_date": "2026-11-21",
+    "article_date": "2026-11-20",
+    "title": "The Excel/Dashboard Efficient Frontier",
+    "text": "Plus! ANT; Airgaps; Self-Regulation; Cultural Entrep\u00f4ts; Fraud and Borrowing from the Future",
+    "event": null,
+    "source": "The Diff"
+  },
+  "https://newsletter.doomberg.com/p/basin-kings": {
+    "seen_date": "2026-11-21",
+    "article_date": "2026-11-21",
+    "title": "Basin Kings",
+    "text": "Hello, Doomberg Pro members! We have something truly decadent for you to sink your teeth into for November besides those Thanksgiving side dishes (skip the bird!). In this month\u2019s Pro Tier presentation, Basin Kings: How the Rice Family Conquered Appalachia , we take a deep dive into EQT, arguably the most powerful natural gas producer in the US, and the v\u2026 Read more",
+    "event": null,
+    "source": "Doomberg"
   }
 }

@@ -1259,5 +1259,70 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-21",
+    "value": 60499.03125,
+    "delta": -5.6590204864157005,
+    "history": [
+      [
+        "2026-11-15",
+        65305.0625
+      ],
+      [
+        "2026-11-16",
+        64855.84375
+      ],
+      [
+        "2026-11-17",
+        64893.9453125
+      ],
+      [
+        "2026-11-18",
+        62987.265625
+      ],
+      [
+        "2026-11-19",
+        61901.8203125
+      ],
+      [
+        "2026-11-20",
+        58798.98046875
+      ],
+      [
+        "2026-11-21",
+        60499.03125
+      ]
+    ],
+    "narrative": "Bitcoin's roughly 5.7% weekly decline appears most plausibly tied to broad risk-off positioning: the headline that AI stocks, gold, silver, and cryptos all fell while Treasuries rallied, alongside weaker equity futures amid the AI selloff, points to a liquidity and de-risking episode rather than a Bitcoin-specific shock. The Anthropic IPO headline may have reinforced concerns about stretched AI valuations, but there is no clear single crypto-specific catalyst in the headlines.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Whale's Insight: Can Bitcoin Find Support After Anthropic's Record IPO?",
+        "domain": "SeekingAlpha",
+        "date": "20261121"
+      },
+      {
+        "title": "Fear Erupts, AI Stocks Tank, But So Do Gold, Silver, Cryptos, Nearly Everything But Treasuries",
+        "domain": "SeekingAlpha",
+        "date": "20261120"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Fall Pre-Bell Friday Amid Continued AI Stock Selloff",
+        "domain": "Yahoo",
+        "date": "20261120"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Lower Pre-Bell Monday Amid Weakness in AI-Linked Stocks",
+        "domain": "Yahoo",
+        "date": "20261116"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W47",
+    "direction": "bearish",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]
