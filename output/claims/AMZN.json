@@ -1594,5 +1594,43 @@
     "trade_worthy": false,
     "context": "The article argues that hyperscalers such as Amazon are better positioned than neoclouds because they have stronger cash generation, financing access, and existing businesses. If AI infrastructure revenue disappoints or Nvidia stops supporting neocloud financing after Huang\u2019s departure, hyperscalers are likely to prioritize their own compute and serve as safer counterparties, potentially shifting demand and investment toward AWS.",
     "source": "Stratechery"
+  },
+  {
+    "id": "38ab63c89410e560",
+    "ticker": "AMZN",
+    "source_link": "https://www.nextplatform.com/hpc/2026/11/20/casing-the-hpc-and-ai-sci-market-with-hyperion-research/5311388",
+    "source_title": "Casing The HPC And AI-Sci Market With Hyperion Research",
+    "event_type": "competitive",
+    "created": "2026-11-20",
+    "claim": "AWS has a large installed base supporting AI infrastructure competitiveness",
+    "direction": "long",
+    "confidence": 0.86,
+    "importance": 3,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The article estimates Amazon has roughly 3 million Trainium chips and 1 million to 2 million Inferentia chips deployed worldwide, making AWS one of the largest custom-accelerator operators. This suggests AWS has meaningful proprietary hardware scale for AI workloads, although the article provides no data on utilization, economics, or competitive share.",
+    "source": "Next Platform"
+  },
+  {
+    "id": "07cb33419c314a2a",
+    "ticker": "AMZN",
+    "source_link": "https://www.nextplatform.com/hpc/2026/11/20/casing-the-hpc-and-ai-sci-market-with-hyperion-research/5311388",
+    "source_title": "Casing The HPC And AI-Sci Market With Hyperion Research",
+    "event_type": "competitive",
+    "created": "2026-11-20",
+    "claim": "AWS faces a substantially expanding cloud HPC and AI market",
+    "direction": "long",
+    "confidence": 0.8,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Hyperion forecasts cloud spending for HPC and AI-for-Science applications to grow nearly fivefold from 2022 to approximately $30 billion in 2030. AWS could participate in this expansion, but the article does not identify Amazon\u2019s current share, expected share gains, or the portion of this market that would flow through AWS.",
+    "source": "Next Platform"
   }
 ]

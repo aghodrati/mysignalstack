@@ -11598,5 +11598,25 @@
     "article_link": "https://newsletter.doomberg.com/p/basin-kings",
     "name": "Appalachia",
     "why": "Presentation examines how the Rice family conquered Appalachia"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Next Platform",
+    "article_title": "Casing The HPC And AI-Sci Market With Hyperion Research",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/20/casing-the-hpc-and-ai-sci-market-with-hyperion-research/5311388",
+    "name": "Dell Technologies",
+    "ticker_guess": "DELL",
+    "why": "Overtook HPE as the on-premises HPC and AI-for-Science revenue leader in the first half of 2026; sales rose 67.7% year over year to $3.93 billion; may have benefited from preferential Nvidia GPU allocations"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-20",
+    "source": "Next Platform",
+    "article_title": "Casing The HPC And AI-Sci Market With Hyperion Research",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/20/casing-the-hpc-and-ai-sci-market-with-hyperion-research/5311388",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Previously led on-premises HPC and AI-for-Science installations; revenue grew only 1.1% to $3.44 billion in the first half of 2026; may be selling more CPU-only traditional HPC systems than Dell"
   }
 ]

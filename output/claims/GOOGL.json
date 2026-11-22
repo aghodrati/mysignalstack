@@ -2867,5 +2867,24 @@
     "trade_worthy": false,
     "context": "Google is preparing to test Trillium TPUs in orbit with Planet on SpaceX\u2019s Transporter-18 mission under Project Suncatcher. The chips reportedly survived launch g-forces and radiation exceeding a projected five-year mission dose, while Google is still developing heat-rejection systems for vacuum conditions. If the technical hurdles are solved, orbital solar-powered compute could eventually expand Google\u2019s AI capacity and reduce dependence on terrestrial energy and infrastructure, but the project remains experimental and far from commercial deployment.",
     "source": "Import AI"
+  },
+  {
+    "id": "8e9147a1311c801d",
+    "ticker": "GOOGL",
+    "source_link": "https://www.nextplatform.com/hpc/2026/11/20/casing-the-hpc-and-ai-sci-market-with-hyperion-research/5311388",
+    "source_title": "Casing The HPC And AI-Sci Market With Hyperion Research",
+    "event_type": "competitive",
+    "created": "2026-11-20",
+    "claim": "GOOGL retains a leading position in custom AI accelerators",
+    "direction": "long",
+    "confidence": 0.83,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Hyperion estimates Google has roughly 9 million to 11 million TPUs in the worldwide installed base, more than any other identified custom-accelerator fleet. This scale supports Google\u2019s competitive position in AI infrastructure and potentially its ability to serve AI workloads through Google Cloud, although the article provides no direct evidence on TPU economics, market share, or incremental revenue.",
+    "source": "Next Platform"
   }
 ]
