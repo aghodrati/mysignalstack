@@ -1632,5 +1632,24 @@
     "trade_worthy": false,
     "context": "Hyperion forecasts cloud spending for HPC and AI-for-Science applications to grow nearly fivefold from 2022 to approximately $30 billion in 2030. AWS could participate in this expansion, but the article does not identify Amazon\u2019s current share, expected share gains, or the portion of this market that would flow through AWS.",
     "source": "Next Platform"
+  },
+  {
+    "id": "d42c0e10d9ad26e4",
+    "ticker": "AMZN",
+    "source_link": "https://www.thediff.co/archive/toward-a-bipartisan-rejection-of-slopulism/",
+    "source_title": "Toward a Bipartisan Rejection of Slopulism",
+    "event_type": "leadership_change",
+    "created": "2026-11-23",
+    "claim": "NYC delivery mandate should have only a modest impact on Amazon earnings",
+    "direction": "long",
+    "confidence": 0.91,
+    "importance": 6,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "New York City\u2019s proposed Delivery Protection Act would require Amazon to employ delivery drivers directly rather than use third-party contractors. Amazon claims the change could add as much as $5 per order, but the article argues that delivery volumes of roughly 10\u201335 stops per hour make that estimate implausibly high. The likely outcome is a smaller cost increase split between modestly higher prices, somewhat lower margins, and potentially slightly fewer Manhattan shipments, with little overall effect on Amazon\u2019s earnings.",
+    "source": "The Diff"
   }
 ]

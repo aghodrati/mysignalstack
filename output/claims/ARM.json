@@ -340,5 +340,24 @@
     "trade_worthy": false,
     "context": "AMD says its 256-core Epyc 9996 Venice outperforms Amazon\u2019s 192-core Graviton5 by a greater margin than the prior-generation Turin Epyc 9965 did. The article also places Venice in performance comparisons with Arm processors, suggesting AMD may strengthen its position against Arm-based alternatives as agentic AI expands CPU demand. The implication for ARM is indirect because the comparison concerns Amazon\u2019s product rather than ARM\u2019s licensing revenue directly.",
     "source": "Next Platform"
+  },
+  {
+    "id": "6cc4c44be019a485",
+    "ticker": "ARM",
+    "source_link": "https://www.nextplatform.com/ai/2026/11/23/jensen-huang-back-in-charge-of-nvidia/5311691",
+    "source_title": "Jensen Huang Back In Charge Of Nvidia",
+    "event_type": "leadership_change",
+    "created": "2026-11-23",
+    "claim": "ARM gains leadership continuity through 2033",
+    "direction": "long",
+    "confidence": 0.96,
+    "importance": 7,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "Arm CEO Rene Haas extended his contract through 2033, while Nvidia reinstated Jensen Huang as CEO. This materially reduces the likelihood that Haas will leave Arm to succeed Huang, lowering near- to medium-term CEO succession and leadership-disruption risk for Arm.",
+    "source": "Next Platform"
   }
 ]
