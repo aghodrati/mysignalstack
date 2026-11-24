@@ -11618,5 +11618,140 @@
     "name": "Hewlett Packard Enterprise",
     "ticker_guess": "HPE",
     "why": "Previously led on-premises HPC and AI-for-Science installations; revenue grew only 1.1% to $3.44 billion in the first half of 2026; may be selling more CPU-only traditional HPC systems than Dell"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-24",
+    "source": "Stratechery",
+    "article_title": "The Individual Exception",
+    "article_link": "https://stratechery.com/2026/the-individual-exception/",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Presented as a seminal AI company with $35.3 billion in inflation-adjusted 2026 revenue, 5,300 employees, and a $1.17 trillion market capitalization; Used as an example of the rising revenue and market-cap productivity of AI companies"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-24",
+    "source": "Stratechery",
+    "article_title": "The Individual Exception",
+    "article_link": "https://stratechery.com/2026/the-individual-exception/",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Compared with Nvidia over the reinstatement of a prominent CEO; Sam Altman was described as having been deposed and reinstated over the same weekend three Thanksgivings earlier"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-24",
+    "source": "Doomberg",
+    "article_title": "Everything is Awesome",
+    "article_link": "https://newsletter.doomberg.com/p/everything-is-awesome",
+    "name": "Saudi Aramco",
+    "ticker_guess": null,
+    "why": "The article reports alleged Houthi strikes on Aramco\u2019s headquarters in Dhahran and its Riyadh financial-district building; the Dhahran attack allegedly caused extensive damage and the Riyadh strike visibly damaged several floors"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-24",
+    "source": "Doomberg",
+    "article_title": "Everything is Awesome",
+    "article_link": "https://newsletter.doomberg.com/p/everything-is-awesome",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic mathematician Levent Alpoge claimed to have completed a Riemann hypothesis proof in collaboration with Claude; the claim was accompanied by computer code intended to verify the result"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-24",
+    "source": "Doomberg",
+    "article_title": "Everything is Awesome",
+    "article_link": "https://newsletter.doomberg.com/p/everything-is-awesome",
+    "name": "geopolitics",
+    "why": "Saudi-backed forces are reportedly collapsing against the Houthis in Yemen; Houthi missile strikes reportedly damaged Saudi Aramco and Public Investment Fund facilities; the potential loss of Aden is described as politically existential for Mohammed bin Salman"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-24",
+    "source": "Doomberg",
+    "article_title": "Everything is Awesome",
+    "article_link": "https://newsletter.doomberg.com/p/everything-is-awesome",
+    "name": "oil",
+    "why": "Saudi Arabia is portrayed as financially vulnerable amid war spending and pressure on its oil-centered economy; Houthi attacks have expanded to high-profile Saudi energy and financial infrastructure"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-24",
+    "source": "Doomberg",
+    "article_title": "Everything is Awesome",
+    "article_link": "https://newsletter.doomberg.com/p/everything-is-awesome",
+    "name": "grid/energy",
+    "why": "The Federal Reserve modeled potential European gas shortages during the 2026\u201327 winter; a notable decline in LNG imports could leave European storage nearly empty by spring"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-24",
+    "source": "Doomberg",
+    "article_title": "Everything is Awesome",
+    "article_link": "https://newsletter.doomberg.com/p/everything-is-awesome",
+    "name": "climate policy",
+    "why": "COP31 negotiations reportedly broke down without a final agreement; Saudi Arabia and other oil producers blocked language addressing fossil fuels"
+  },
+  {
+    "type": "theme",
+    "date": "2026-11-24",
+    "source": "Doomberg",
+    "article_title": "Everything is Awesome",
+    "article_link": "https://newsletter.doomberg.com/p/everything-is-awesome",
+    "name": "artificial intelligence",
+    "why": "Anthropic mathematician Levent Alpoge claimed to have completed a proof of the Riemann hypothesis with Claude; the claimed result relied on linked computer code rather than a traditional mathematical paper"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-23",
+    "source": "Normal Tech",
+    "article_title": "Management consulting is not a thin wrapper on intelligence",
+    "article_link": "https://www.normaltech.ai/p/management-consulting-is-not-a-thin",
+    "name": "Accenture",
+    "ticker_guess": null,
+    "why": "Reported $2.7 billion in advanced AI revenue in fiscal 2025, triple the prior year; worked on more than 6,000 advanced AI projects in 2025; expanded its AI and data workforce from about 40,000 in 2023 to roughly 77,000"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-23",
+    "source": "Normal Tech",
+    "article_title": "Management consulting is not a thin wrapper on intelligence",
+    "article_link": "https://www.normaltech.ai/p/management-consulting-is-not-a-thin",
+    "name": "Boston Consulting Group",
+    "ticker_guess": null,
+    "why": "Reported 25% year-over-year growth in AI services; its technology division, BCG X, employs nearly 3,000 technologists, scientists, engineers, and designers; partnered with GPT-4 in a study where consultants completed product-development tasks more than 25% faster with higher quality"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-23",
+    "source": "Normal Tech",
+    "article_title": "Management consulting is not a thin wrapper on intelligence",
+    "article_link": "https://www.normaltech.ai/p/management-consulting-is-not-a-thin",
+    "name": "McKinsey & Company",
+    "ticker_guess": null,
+    "why": "Its technology and AI leader said pure strategy work represents less than 20% of the firm\u2019s work; QuantumBlack employs about 1,700 people; partnered with OpenAI and Anthropic on AI adoption"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-23",
+    "source": "Normal Tech",
+    "article_title": "Management consulting is not a thin wrapper on intelligence",
+    "article_link": "https://www.normaltech.ai/p/management-consulting-is-not-a-thin",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "Is building an AI implementation and deployment business that could compete with consulting firms; partnered with Accenture and McKinsey on enterprise AI deployment"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-23",
+    "source": "Normal Tech",
+    "article_title": "Management consulting is not a thin wrapper on intelligence",
+    "article_link": "https://www.normaltech.ai/p/management-consulting-is-not-a-thin",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Is building its own AI deployment capabilities while partnering with consulting firms; about 30,000 Accenture professionals were expected to be trained on Claude"
   }
 ]
