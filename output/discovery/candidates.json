@@ -11753,5 +11753,45 @@
     "name": "Anthropic",
     "ticker_guess": null,
     "why": "Is building its own AI deployment capabilities while partnering with consulting firms; about 30,000 Accenture professionals were expected to be trained on Claude"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-25",
+    "source": "Next Platform",
+    "article_title": "Dell Is Finally Making Money On GenAI As Traditional Servers Boom",
+    "article_link": "https://www.nextplatform.com/compute/2026/11/25/dell-is-finally-making-money-on-genai-as-traditional-servers-boom/5312184",
+    "name": "Dell Technologies",
+    "ticker_guess": "DELL",
+    "why": "Reported Q3 fiscal 2027 revenue of $54.94 billion across datacenter and PC businesses, more than double year on year; AI-server revenue exceeded guidance at slightly above $22 billion, with bookings of $60.2 billion and backlog of $132.3 billion; Infrastructure Solutions Group operating income increased 4.1 times year on year to $7.12 billion"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-24",
+    "source": "Next Platform",
+    "article_title": "NCSA Gets Supercomputing Capacity With $334 Million Schmidt Sciences Grant",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/24/ncsa-gets-supercomputing-capacity-with-334-million-schmidt-sciences-grant/5311971",
+    "name": "Hewlett Packard Enterprise",
+    "ticker_guess": "HPE",
+    "why": "Won NCSA\u2019s competitive bid to build the Garnet supercomputer; will deploy the Nvidia-based system and provide associated infrastructure."
+  },
+  {
+    "type": "company",
+    "date": "2026-11-24",
+    "source": "Next Platform",
+    "article_title": "NCSA Gets Supercomputing Capacity With $334 Million Schmidt Sciences Grant",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/24/ncsa-gets-supercomputing-capacity-with-334-million-schmidt-sciences-grant/5311971",
+    "name": "VAST Data",
+    "ticker_guess": null,
+    "why": "Will provide Garnet\u2019s all-flash storage system; the deployment is planned with 50 PB of raw capacity and at least 100 PB of usable capacity after data reduction."
+  },
+  {
+    "type": "company",
+    "date": "2026-11-24",
+    "source": "Next Platform",
+    "article_title": "NCSA Gets Supercomputing Capacity With $334 Million Schmidt Sciences Grant",
+    "article_link": "https://www.nextplatform.com/hpc/2026/11/24/ncsa-gets-supercomputing-capacity-with-334-million-schmidt-sciences-grant/5311971",
+    "name": "DataDirect Networks",
+    "ticker_guess": null,
+    "why": "Its Taiga Lustre file system, with 25 PB of capacity, will be augmented by Garnet\u2019s new VAST Data storage."
   }
 ]
