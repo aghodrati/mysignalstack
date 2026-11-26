@@ -2145,5 +2145,24 @@
     "trade_worthy": false,
     "context": "Meta Reality Labs Research\u2019s Tactus glove captures tactile forces, hand pose, and manipulation data through textile-integrated sensors designed to remain useful during hand-object occlusion. The article suggests such hardware could supply training data and real-time feedback for AI agents acting through humans in physical environments, potentially strengthening Meta\u2019s longer-term position in embodied AI; however, it provides no evidence of commercialization, revenue, or a near-term product impact.",
     "source": "Import AI"
+  },
+  {
+    "id": "fc569c37293f26b5",
+    "ticker": "META",
+    "source_link": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+    "source_title": "Evaluating Recent Model Releases on GDPx",
+    "event_type": "competitive",
+    "created": "2026-11-26",
+    "claim": "Meta trails leading AI labs, risking a weaker frontier-AI position",
+    "direction": "short",
+    "confidence": 0.78,
+    "importance": 4,
+    "expected_return_pct": 0.0,
+    "expected_horizon_days": 0,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": false,
+    "context": "The GDPx ranking places Meta among companies competing for fourth place, well behind OpenAI and Anthropic and behind Google\u2019s distinct third tier. The benchmark covers high-value frontier domains including software engineering, finance, cybersecurity, biology, hardware, and materials science, implying Meta currently lacks comparable demonstrated capability across the areas that may drive advanced-AI adoption and commercial differentiation.",
+    "source": "SemiAnalysis"
   }
 ]

@@ -11793,5 +11793,55 @@
     "name": "DataDirect Networks",
     "ticker_guess": null,
     "why": "Its Taiga Lustre file system, with 25 PB of capacity, will be augmented by Garnet\u2019s new VAST Data storage."
+  },
+  {
+    "type": "company",
+    "date": "2026-11-26",
+    "source": "SemiAnalysis",
+    "article_title": "Evaluating Recent Model Releases on GDPx",
+    "article_link": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+    "name": "OpenAI",
+    "ticker_guess": null,
+    "why": "GPT-6.2 Astra leads the GDPx leaderboard at 19.3%; OpenAI models dominate the cost-performance frontier and excel in complex reasoning, finance, hardware design, materials science, and recursive self-improvement"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-26",
+    "source": "SemiAnalysis",
+    "article_title": "Evaluating Recent Model Releases on GDPx",
+    "article_link": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Fable 5.2 ranks second at 16.4%; it leads chip design, software engineering, and quant trading but is substantially more expensive to run than competing models"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-26",
+    "source": "SemiAnalysis",
+    "article_title": "Evaluating Recent Model Releases on GDPx",
+    "article_link": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+    "name": "Alibaba",
+    "ticker_guess": null,
+    "why": "Alibaba\u2019s Qwen4-Max is identified as the highest-scoring Chinese model on GDPx at 7.44%; its largest improvements over Qwen3.8 are in software engineering, recursive self-improvement, cybersecurity, and biology"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-26",
+    "source": "SemiAnalysis",
+    "article_title": "Evaluating Recent Model Releases on GDPx",
+    "article_link": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+    "name": "Moonshot AI",
+    "ticker_guess": null,
+    "why": "Moonshot\u2019s Kimi K3.1 Pro is evaluated on GDPx; the article says it performs worse than its standing on other benchmarks and still trails leading models in agentic coding"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-26",
+    "source": "SemiAnalysis",
+    "article_title": "Evaluating Recent Model Releases on GDPx",
+    "article_link": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+    "name": "Google DeepMind",
+    "ticker_guess": null,
+    "why": "Gemini 4 Neon represents a significant performance improvement over Gemini 3.8 Flash and leads biology; Google remains behind OpenAI and Anthropic across most frontier domains"
   }
 ]
