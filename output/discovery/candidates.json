@@ -11843,5 +11843,85 @@
     "name": "Google DeepMind",
     "ticker_guess": null,
     "why": "Gemini 4 Neon represents a significant performance improvement over Gemini 3.8 Flash and leads biology; Google remains behind OpenAI and Anthropic across most frontier domains"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-27",
+    "source": "Next Platform",
+    "article_title": "The Software-Defined Mirage And The Alien Worlds Of Socket Cores And OS Kernels",
+    "article_link": "https://www.nextplatform.com/control/2026/11/27/the-software-defined-mirage-and-the-alien-worlds-of-socket-cores-and-os-kernels/5313186",
+    "name": "IBM",
+    "ticker_guess": null,
+    "why": "Cited as an architectural inspiration for hardware virtualization; mentioned in connection with early mainframe virtualization in the 1960s"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-23",
+    "source": "Import AI",
+    "article_title": "Import AI 482: Huawei kernel benchmarks; airborne drone detection; and a national lab's AI science benchmark",
+    "article_link": "https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks",
+    "name": "Huawei",
+    "ticker_guess": null,
+    "why": "Researchers released AscendGYM to evaluate and improve AI-designed kernels for Huawei Ascend NPUs; The benchmark is intended to help Chinese organizations improve chip performance despite semiconductor export controls"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-23",
+    "source": "Import AI",
+    "article_title": "Import AI 482: Huawei kernel benchmarks; airborne drone detection; and a national lab's AI science benchmark",
+    "article_link": "https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks",
+    "name": "Noeri",
+    "ticker_guess": null,
+    "why": "Stanford professors Yejin Choi and Carlos Guestrin launched the AI startup focused on plural, continually learning intelligence; Raised $110 million"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-27",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #221",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-221",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic mathematician Levent Alp\u00f6ge developed a formally verified proof of the Riemann and Generalized Riemann hypotheses with an unreleased Claude model; Anthropic also reportedly posted an AI-generated proof related to VP \u2260 VNP"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-27",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #221",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-221",
+    "name": "Neuralink",
+    "ticker_guess": null,
+    "why": "Received FDA approval to launch the first pivotal U.S. trial of its implantable LINK brain-computer interface; patients with ALS may be eligible"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-27",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #221",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-221",
+    "name": "Hadrian",
+    "ticker_guess": null,
+    "why": "Plans to open a one-million-square-foot development factory and engineering campus in San Francisco in January 2027; recently raised $1.37 billion at a $7.87 billion valuation"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-27",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #221",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-221",
+    "name": "eGenesis",
+    "ticker_guess": null,
+    "why": "Its genetically engineered pig kidney enabled a patient to live one year without dialysis; plans to launch formal trials in 33 patients in Q1 2027"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-27",
+    "source": "Not Boring",
+    "article_title": "Weekly Dose of Optimism #221",
+    "article_link": "https://www.notboring.co/p/weekly-dose-of-optimism-221",
+    "name": "United Therapeutics",
+    "ticker_guess": null,
+    "why": "Performed its first pig thymo-kidney transplant; already has FDA clearance for a pig-heart trial"
   }
 ]
