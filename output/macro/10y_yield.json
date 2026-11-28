@@ -1207,5 +1207,50 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W47"
+  },
+  {
+    "period": "week",
+    "date": "2026-11-28",
+    "value": 4.935999870300293,
+    "delta": 0.023999691009521484,
+    "history": [
+      [
+        "2026-11-23",
+        4.918000221252441
+      ],
+      [
+        "2026-11-24",
+        4.9039998054504395
+      ],
+      [
+        "2026-11-25",
+        4.8480000495910645
+      ],
+      [
+        "2026-11-27",
+        4.935999870300293
+      ]
+    ],
+    "narrative": "The modest 2-basis-point rise was plausibly supported by ongoing fiscal and inflation concerns: the report on U.S. government interest payments, deficits, and debt-to-GDP highlights supply and borrowing pressures, while \u201cEnergy Prices Cooled But Core Inflation Stayed Hot\u201d argues against rapid disinflation. Still, neither headline is a clear new catalyst for such a small weekly move, so broad positioning and drift likely played a substantial role.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "U.S. Government Interest Payments On Debt, Interest Rates, Tax Receipts, Deficits, Debt-To-GDP In Q3 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261128"
+      },
+      {
+        "title": "Energy Prices Cooled But Core Inflation Stayed Hot",
+        "domain": "SeekingAlpha",
+        "date": "20261127"
+      },
+      {
+        "title": "Vanguard and iShares Bond ETFs Skip January Every Year. The Missing Check Arrives in December",
+        "domain": "Yahoo",
+        "date": "20261125"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W48"
   }
 ]

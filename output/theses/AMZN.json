@@ -135,5 +135,49 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.84,
     "confidence_after": 0.84
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-28",
+    "thesis": "Amazon remains a high-conviction long because accelerating AWS AI demand, improving Trainium and custom-silicon economics, expanding capacity, and durable commerce monetization outweigh heavy capital intensity, financing, competitive, regulatory, and execution risks.",
+    "direction": "long",
+    "confidence": 0.82,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.8,
+    "earnings_direction": null,
+    "earnings_confidence": null,
+    "pre_critic_confidence": 0.82,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 16,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Sustained AWS growth supported by largely booked capacity, the reported $496 billion backlog, Bedrock demand, and AI workloads remaining capacity-constrained.",
+      "Meaningful Trainium3 adoption demonstrating its reported inference cost and margin advantage, alongside broader PyTorch, vLLM, and agentic-AI compatibility.",
+      "Successful deployment of Cerebras-integrated inference systems, Graviton5 instances, and Annapurna custom silicon improving AWS performance, utilization, and margins.",
+      "Project Houdini, SAMDC, nuclear co-location, and other power and modular-datacenter initiatives bringing AI capacity online faster through 2027.",
+      "Continued strength in seller, advertising, Prime, and AI-mediated commerce monetization, with Amazon retaining control of its customer interface."
+    ],
+    "invalidation": [
+      "AWS growth, backlog conversion, or AI demand materially slows while Amazon's $220 billion 2026 capital-expenditure plan continues to pressure free cash flow and returns.",
+      "Trainium3's prefill limitations, software immaturity, execution issues, power constraints, or Nvidia's superior tokens-per-megawatt economics prevent meaningful adoption and margin gains.",
+      "Debt-funded infrastructure expansion encounters materially higher financing costs, component and memory shortages, or datacenter permitting and commissioning delays.",
+      "Meta, ChatGPT, neoclouds, AMD, or cheaper inference alternatives such as Tensordyne materially erode AWS share, pricing, or utilization.",
+      "Anthropic access restrictions, platform antitrust action, agent-mediated commerce competition, or other regulatory intervention damages Amazon's AI and marketplace economics.",
+      "Reported earnings continue to miss expectations or the underlying earnings and cash-flow improvement fails to match the strong fundamental growth narrative."
+    ],
+    "reasoning": "The independent fundamental picture is bullish with 19.6% revenue growth, improving profitability, a PEG of 1.46, and roughly 15.6% consensus upside, while the latest quarter modestly missed EPS estimates at $1.89 versus $1.96 and no earnings-call evidence was available, so confidence is high but tempered by valuation, capex, financing, and execution risks.",
+    "claims_considered": 91
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-28",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.82,
+    "confidence_after": 0.82
   }
 ]

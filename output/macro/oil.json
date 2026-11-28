@@ -1226,5 +1226,68 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-28",
+    "value": 83.08000183105469,
+    "delta": -1.0716855083390486,
+    "history": [
+      [
+        "2026-11-23",
+        80.16999816894531
+      ],
+      [
+        "2026-11-24",
+        82.05000305175781
+      ],
+      [
+        "2026-11-25",
+        83.68000030517578
+      ],
+      [
+        "2026-11-27",
+        83.08000183105469
+      ]
+    ],
+    "narrative": "No clear single catalyst explains the modest weekly decline. Reports that Iraq is in talks with OPEC to raise its production ceiling were mildly bearish for supply, but the headline about Iraqi loadings being pushed back was potentially supportive, leaving the overall signal mixed; the broader market headlines do not provide a specific oil-price driver.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Short-Term Energy Outlook, November 2026",
+        "domain": "SeekingAlpha",
+        "date": "20261127"
+      },
+      {
+        "title": "Exchange-Traded Funds Higher as US Equities Advance in Friday Trading",
+        "domain": "Yahoo",
+        "date": "20261127"
+      },
+      {
+        "title": "Sector Update: Energy Stocks Advance Premarket Friday",
+        "domain": "Yahoo",
+        "date": "20261127"
+      },
+      {
+        "title": "Iraqi Oil Minister Says That We Are In Talks With OPEC To Raise Iraq\u2019s Production Ceiling",
+        "domain": "Benzinga",
+        "date": "20261127"
+      },
+      {
+        "title": "Reported Earlier, 'Iraqi Oil Loadings Get Pushed Back as Buyers Weigh Alternatives' - Bloomberg",
+        "domain": "Benzinga",
+        "date": "20261127"
+      },
+      {
+        "title": "Commodities: Copper And Gold Rebound While Oil Extends Gains",
+        "domain": "SeekingAlpha",
+        "date": "20261127"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W48",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

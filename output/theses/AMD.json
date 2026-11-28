@@ -693,5 +693,50 @@
     "final_multiplier": 1.0,
     "confidence_before": 0.78,
     "confidence_after": 0.78
+  },
+  {
+    "event": "aggregated",
+    "date": "2026-11-28",
+    "thesis": "AMD remains a moderate-conviction long because exceptional Data Center and EPYC growth, Venice and Helios adoption, and expanding AI infrastructure demand outweigh serious HBM, software, custom-silicon, execution, and valuation risks, though accelerator upside depends on converting strong demand into economically competitive production deployments.",
+    "direction": "long",
+    "confidence": 0.74,
+    "fundamental_direction": "long",
+    "fundamental_confidence": 0.68,
+    "earnings_direction": "long",
+    "earnings_confidence": 0.9,
+    "pre_critic_confidence": 0.74,
+    "critic_multiplier": 1.0,
+    "expected_return_pct": 18,
+    "expected_horizon_days": 365,
+    "catalysts": [
+      "Data Center revenue continues to more than double year over year and server CPU revenue grows above management's second-half 2026 and 2027 targets.",
+      "Venice EPYC 9006 ramps across hyperscaler, OEM, enterprise, and agentic-AI systems, converting its performance and memory-bandwidth advantages into further share gains.",
+      "Helios and MI455X shipments to Microsoft, Meta, OpenAI, Oracle, and other customers ramp successfully, with improving yields, supply, and gross margins.",
+      "ROCm, ATOM, TileRT, and mainstream vLLM/SGLang integration close the production-inference gap, allowing MI355X and next-generation accelerators to win latency-sensitive and high-throughput workloads.",
+      "HBM, packaging, substrate, and optical-component availability improves enough for AMD to fulfill demand and monetize its accelerator backlog.",
+      "The reported $2.09 EPS versus a $1.95 estimate is followed by further earnings beats and quantified upward revisions to 2027 data-center revenue and profit expectations."
+    ],
+    "invalidation": [
+      "AMD cannot secure sufficient HBM, wafers, packaging, substrates, or optical components, causing accelerator and EPYC shipments to miss demand and management's growth outlook.",
+      "Helios yields, rack complexity, customer build-out timing, power availability, or early product margins materially disappoint, preventing the expected 2027 AI ramp.",
+      "Nvidia, Google TPU, AWS Trainium, Microsoft Maia, Cerebras, or hyperscaler custom accelerators sustain large production performance-per-dollar and software advantages that reduce AMD deployments, pricing, and utilization.",
+      "ROCm, ATOM, TileRT, RCCL, vLLM, and SGLang fail to achieve dependable distributed, long-context, and agentic-inference performance, leaving AMD dependent on narrow benchmark wins.",
+      "Arm and internally designed CPUs limit EPYC share gains despite agentic-AI demand, or Venice fails to deliver the expected performance, supply, or customer adoption.",
+      "Growth slows enough that the roughly 37x forward-earnings and 20.9x EV/revenue valuation compresses, particularly if operating margins remain near 14.4% or fall as Helios and accelerator mix rises."
+    ],
+    "reasoning": "The latest quarter beat EPS estimates by 7.44% and the independent fundamental and earnings-call pictures are strongly bullish on revenue, cash generation, Data Center growth, and 2027 potential, but the thesis is moderated by demanding valuation, slightly below-company-average AI margins, supply constraints, and increasingly credible custom-silicon and software competitors.",
+    "claims_considered": 194
+  },
+  {
+    "event": "critic",
+    "date": "2026-11-28",
+    "deterministic_flags": [],
+    "deterministic_multiplier": 1.0,
+    "llm_concerns": [],
+    "llm_multiplier": null,
+    "llm_reasoning": null,
+    "final_multiplier": 1.0,
+    "confidence_before": 0.74,
+    "confidence_after": 0.74
   }
 ]

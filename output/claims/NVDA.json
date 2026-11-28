@@ -8187,5 +8187,43 @@
     "trade_worthy": false,
     "context": "NCSA\u2019s $334 million Schmidt Sciences grant includes roughly $240 million for Garnet hardware, which will use Nvidia Grace CPUs, Blackwell B200 and B300 GPUs, ConnectX-8 networking, and Quantum-X InfiniBand switches. HPE won the build contract, with installation planned for mid-2027. The purchase demonstrates institutional demand for Nvidia\u2019s integrated CPU, GPU, and networking platform, although the hardware budget also includes a large VAST Data storage component and the order is small relative to NVDA\u2019s overall business.",
     "source": "Next Platform"
+  },
+  {
+    "id": "a252e8abd2ae1613",
+    "ticker": "NVDA",
+    "source_link": "https://newsletter.semianalysis.com/p/trainium3-inferencex",
+    "source_title": "AWS Challenger: Trainium3 Inference and Microarchitecture Deep Dive",
+    "event_type": "competitive",
+    "created": "2026-11-27",
+    "claim": "NVDA faces inference pricing and margin pressure from Trainium3",
+    "direction": "short",
+    "confidence": 0.86,
+    "importance": 9,
+    "expected_return_pct": -7.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article reports Trainium3 with vLLM outperforming every tested accelerator except Vera Rubin across the inference TCO-versus-p90-interactivity frontier. At 135 tokens per second per user, it estimates a 73.5% inference profit margin for Trainium3 versus 53% for GB300, based on three-year rental prices, Z.ai token pricing, and 60% utilization. Trainium3 reportedly delivers 4.9 TB/s of bandwidth at roughly 30% of GB300\u2019s TCO, making AWS\u2019s custom silicon a credible lower-cost alternative for decode-heavy inference and potentially pressuring Nvidia accelerator pricing, margins, and share over coming quarters.",
+    "source": "SemiAnalysis"
+  },
+  {
+    "id": "6ec398457e4377a1",
+    "ticker": "NVDA",
+    "source_link": "https://newsletter.semianalysis.com/p/trainium3-inferencex",
+    "source_title": "AWS Challenger: Trainium3 Inference and Microarchitecture Deep Dive",
+    "event_type": "competitive",
+    "created": "2026-11-27",
+    "claim": "NVDA retains a latency advantage in compute-bound inference prefill",
+    "direction": "long",
+    "confidence": 0.79,
+    "importance": 6,
+    "expected_return_pct": 2.0,
+    "expected_horizon_days": 90,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "Trainium3 reportedly has only 2,517 theoretical FP4 TFLOPS, or 17% of Blackwell Ultra\u2019s 15,000 TFLOPS, and the article identifies time-to-first-token as its main weakness because prefill is compute-bound. GB300 therefore remains faster in some p90 TTFT cases, preserving Nvidia\u2019s value proposition for latency-sensitive workloads even though Trainium3 is highly competitive during memory-bound decode. This could limit near-term displacement of Nvidia in applications where prompt-processing latency matters more than inference cost per token.",
+    "source": "SemiAnalysis"
   }
 ]

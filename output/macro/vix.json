@@ -1448,5 +1448,84 @@
     ],
     "fetch_succeeded": true,
     "week": "2026-W47"
+  },
+  {
+    "period": "week",
+    "date": "2026-11-28",
+    "value": 23.809999465942383,
+    "delta": -12.079999923706055,
+    "history": [
+      [
+        "2026-11-23",
+        26.6200008392334
+      ],
+      [
+        "2026-11-24",
+        26.360000610351562
+      ],
+      [
+        "2026-11-25",
+        28.290000915527344
+      ],
+      [
+        "2026-11-26",
+        26.799999237060547
+      ],
+      [
+        "2026-11-27",
+        23.809999465942383
+      ]
+    ],
+    "narrative": "The week's decline appears to reflect a reversal from the panic-driven volatility spike around the U.S. equity correction, with sentiment stabilizing as traders began positioning for lower volatility; CNBC reported that the VIX had flashed a \"buy sign\" and that traders were betting against a higher VIX. The move looks more like broad positioning and mean reversion than a response to one clearly identifiable catalyst, despite continued concerns about tariffs and tech weakness.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Investors urged to tread cautiously as options signal more market volatility",
+        "domain": "The Economic Times",
+        "date": "20261126"
+      },
+      {
+        "title": "Bullish hopes spring as traders bet against a higher VIX: Options Action Live",
+        "domain": "CNBC",
+        "date": "20261125"
+      },
+      {
+        "title": "Volatility-weary investors fret as new U.S. tariffs add to tech pain",
+        "domain": "The Globe and Mail",
+        "date": "20261125"
+      },
+      {
+        "title": "Buy the stock dip? U.S. options market signals say wait",
+        "domain": "The Globe and Mail",
+        "date": "20261125"
+      },
+      {
+        "title": "Wall Street's 'Fear Gauge' just flashed a buy sign",
+        "domain": "CNBC",
+        "date": "20261123"
+      },
+      {
+        "title": "The VIX is surging: Should investors be afraid?",
+        "domain": "MarketScreener",
+        "date": "20261123"
+      },
+      {
+        "title": "Global Market Today Live Updates: NYC Mayor Zohran Mamdani says US pensions exposed to Nvidia-linked volatility",
+        "domain": "The Indian Express",
+        "date": "20261123"
+      },
+      {
+        "title": "US stocks enter correction territory as investors search for market bottom",
+        "domain": "The Economic Times",
+        "date": "20261123"
+      },
+      {
+        "title": "\"As Challenging As We Have Seen\": Goldman's Panic Index Hits Record 9.8 After Fifth-Biggest VIX Spike On Record... Here's What Happened After The Other Four",
+        "domain": "ZeroHedge",
+        "date": "20261123"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W48"
   }
 ]

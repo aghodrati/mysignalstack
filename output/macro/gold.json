@@ -1330,5 +1330,68 @@
     "direction": "neutral",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-28",
+    "value": 3639.60009765625,
+    "delta": 3.533031767728456,
+    "history": [
+      [
+        "2026-11-23",
+        3651.39990234375
+      ],
+      [
+        "2026-11-24",
+        3561.89990234375
+      ],
+      [
+        "2026-11-25",
+        3535.800048828125
+      ],
+      [
+        "2026-11-27",
+        3639.60009765625
+      ]
+    ],
+    "narrative": "No clear single catalyst drove the week's marginal move higher; gold was essentially flat despite headlines highlighting weakness, including Yahoo's report that it is having its worst November since at least 2000 and Seeking Alpha's GLTR downgrade. The pawn-shop article suggests resilient physical demand, but it is not a strong enough signal to explain the small weekly gain or establish a near-term trend.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "The Next Decade Belongs To Boring Cash Flow",
+        "domain": "SeekingAlpha",
+        "date": "20261128"
+      },
+      {
+        "title": "GLTR Is Not Glittering, Which Could Be A Golden Opportunity (Rating Downgrade)",
+        "domain": "SeekingAlpha",
+        "date": "20261127"
+      },
+      {
+        "title": "Pawn Shops Are Booming, But Gold, Not Desperation, Is Doing The Heavy Lifting",
+        "domain": "Benzinga",
+        "date": "20261126"
+      },
+      {
+        "title": "Holding GLD For Stock Falls? Gold Missed This One",
+        "domain": "Yahoo",
+        "date": "20261126"
+      },
+      {
+        "title": "Gold Is Having Its Worst November Since at Least 2000",
+        "domain": "Yahoo",
+        "date": "20261125"
+      },
+      {
+        "title": "Bitcoin Needs to Return to 'Original Narrative' to Hit $100,000, Bloomberg Analyst Says",
+        "domain": "Benzinga",
+        "date": "20261125"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W48",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

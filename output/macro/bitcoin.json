@@ -1324,5 +1324,70 @@
     "direction": "bearish",
     "confidence": "low",
     "trade_worthy": false
+  },
+  {
+    "period": "week",
+    "date": "2026-11-28",
+    "value": 59262.6796875,
+    "delta": -1.3835140167889115,
+    "history": [
+      [
+        "2026-11-22",
+        61161.91015625
+      ],
+      [
+        "2026-11-23",
+        61210.984375
+      ],
+      [
+        "2026-11-24",
+        59747.765625
+      ],
+      [
+        "2026-11-25",
+        60378.19921875
+      ],
+      [
+        "2026-11-26",
+        60494.7109375
+      ],
+      [
+        "2026-11-27",
+        59866.37109375
+      ],
+      [
+        "2026-11-28",
+        59262.6796875
+      ]
+    ],
+    "narrative": "No clear single catalyst drove the modest 1.38% weekly decline: the bullish signal from Paul Tudor Jones\u2019 firm nearly doubling its Bitcoin ETF shares was offset by the hawkish shift described in \u201cFrom Cuts To Hikes,\u201d while the Nvidia rebound headline underscored Bitcoin\u2019s continued weakness despite stronger technology equities. The move most plausibly reflects broad positioning and macro uncertainty rather than a decisive new fundamental impulse.",
+    "has_clear_driver": false,
+    "headlines_used": [
+      {
+        "title": "Billionaire Paul Tudor Jones\u2019 Firm Nearly Doubled Its Bitcoin ETF Shares to 1.36 Million",
+        "domain": "Yahoo",
+        "date": "20261127"
+      },
+      {
+        "title": "Exchange-Traded Funds, Equity Futures Higher Pre-Bell Friday Amid Technology Stock Rebound",
+        "domain": "Yahoo",
+        "date": "20261127"
+      },
+      {
+        "title": "From Cuts To Hikes: How 2026 Rewrote Bitcoin's Macro Outlook",
+        "domain": "SeekingAlpha",
+        "date": "20261127"
+      },
+      {
+        "title": "Market Brief: Nvidia Surges 31% - Why Is Bitcoin Still Struggling?",
+        "domain": "SeekingAlpha",
+        "date": "20261125"
+      }
+    ],
+    "fetch_succeeded": true,
+    "week": "2026-W48",
+    "direction": "neutral",
+    "confidence": "low",
+    "trade_worthy": false
   }
 ]

@@ -3665,5 +3665,24 @@
     "trade_worthy": false,
     "context": "AMD MI300A accelerators are being used alongside NVIDIA H100s in distributed training across U.S. national laboratories, providing some deployment validation and potential government demand. However, the article says these government efforts are roughly 100\u00d7 smaller than frontier industry systems and would require roughly 100,000 or more chips to approach parity, limiting the near-term commercial significance for AMD.",
     "source": "Import AI"
+  },
+  {
+    "id": "e07a5678ab775209",
+    "ticker": "AMD",
+    "source_link": "https://newsletter.semianalysis.com/p/trainium3-inferencex",
+    "source_title": "AWS Challenger: Trainium3 Inference and Microarchitecture Deep Dive",
+    "event_type": "competitive",
+    "created": "2026-11-27",
+    "claim": "AMD faces worsening AI accelerator competitiveness and margin pressure",
+    "direction": "short",
+    "confidence": 0.8,
+    "importance": 8,
+    "expected_return_pct": -8.0,
+    "expected_horizon_days": 180,
+    "catalysts": [],
+    "invalidation": [],
+    "trade_worthy": true,
+    "context": "The article reports that Trainium3 with vLLM outperforms every tested accelerator except Vera Rubin across the inference TCO-versus-p90-interactivity frontier, implying AMD accelerators trail Amazon\u2019s in-house silicon on a key commercial workload. Trainium3 reportedly delivers a 73.5% inference profit margin at 135 tokens per second per user versus 53% for Nvidia GB300, while achieving roughly comparable inference economics at about 30% of GB300\u2019s TCO. Although the article does not quantify AMD\u2019s exact performance or pricing gap, the results increase the risk that hyperscalers favor custom silicon over AMD GPUs for inference, limiting AMD AI demand and pricing power over the coming quarters.",
+    "source": "SemiAnalysis"
   }
 ]

@@ -11923,5 +11923,15 @@
     "name": "United Therapeutics",
     "ticker_guess": null,
     "why": "Performed its first pig thymo-kidney transplant; already has FDA clearance for a pig-heart trial"
+  },
+  {
+    "type": "company",
+    "date": "2026-11-27",
+    "source": "SemiAnalysis",
+    "article_title": "AWS Challenger: Trainium3 Inference and Microarchitecture Deep Dive",
+    "article_link": "https://newsletter.semianalysis.com/p/trainium3-inferencex",
+    "name": "Anthropic",
+    "ticker_guess": null,
+    "why": "Anthropic performance engineers are cited as users and strong proponents of Trainium's profiler; the article references Anthropic-related performance analysis and workloads"
   }
 ]
